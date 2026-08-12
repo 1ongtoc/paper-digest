@@ -1,0 +1,24 @@
+# 兼容 Paper Pulse 的可读关键词清单。
+# 实际运行以 config.toml 的 interest.terms 为准：先宽召回，再由 AI 语义筛选。
+secure inference
+crypto secure inference
+private inference
+privacy-preserving inference
+confidential inference
+encrypted inference
+secure transformer
+transformer
+GPT
+MPC inference
+MPC
+function secret sharing
+distributed point function
+FSS
+DPF
+DPFs
+lookup table
+garbled circuit
+homomorphic encryption
+secret sharing
+trusted execution environment
+LLM security

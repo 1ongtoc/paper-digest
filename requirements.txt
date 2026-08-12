@@ -1,0 +1,4 @@
+feedparser==6.0.14
+pypdf==6.15.0
+requests==2.34.2
+tzdata==2026.3

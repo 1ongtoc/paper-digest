@@ -1,0 +1,75 @@
+[general]
+# GitHub Pages 地址。留空时，Actions 会根据仓库名自动生成。
+# 自定义域名或本地运行时可改成 "https://你的用户名.github.io/仓库名"。
+site_url = ""
+data_dir = "data"
+retention_days = 30
+first_run_hours = 24
+# 为来源同步延迟保留少量重叠；论文 ID 去重，不会重复发信。
+fetch_overlap_hours = 2
+
+[fetchers.arxiv]
+categories = ["cs.CR", "cs.AI", "cs.LG", "cs.CL"]
+delay = 3.0
+batch_size = 100
+timeout = 45
+
+[fetchers.iacr]
+delay = 1.0
+timeout = 45
+
+[interest]
+# 第一阶段先用这些词做宽召回，再让 AI 根据标题和摘要做语义判断。
+terms = [
+  "secure inference",
+  "crypto secure inference",
+  "private inference",
+  "privacy-preserving inference",
+  "confidential inference",
+  "encrypted inference",
+  "secure neural network",
+  "secure transformer",
+  "transformer",
+  "GPT",
+  "MPC inference",
+  "MPC",
+  "multi-party computation",
+  "secure computation",
+  "function secret sharing",
+  "distributed point function",
+  "FSS",
+  "DPF",
+  "DPFs",
+  "lookup table",
+  "oblivious lookup",
+  "garbled circuit",
+  "homomorphic encryption",
+  "fully homomorphic encryption",
+  "secret sharing",
+  "private machine learning",
+  "trusted execution environment",
+  "TEE inference",
+  "LLM security",
+  "large language model security",
+  "privacy computing",
+]
+semantic_batch_size = 10
+
+[ai]
+# 可被 AI_BASE_URL / AI_MODEL 环境变量覆盖；AI_API_KEY 只放 Secrets。
+base_url = "https://api.deepseek.com/v1"
+model = "deepseek-chat"
+temperature = 0.1
+timeout = 120
+max_retries = 3
+retry_delay = 5.0
+classification_max_tokens = 6000
+summary_max_tokens = 4000
+fulltext_chunk_chars = 18000
+pdf_max_mb = 50
+
+[frontend]
+papers_per_page = 12
+
+[rss]
+max_items = 100
