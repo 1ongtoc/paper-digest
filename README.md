@@ -62,6 +62,8 @@ QQ 邮箱需在 **设置 → 账号 → POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV �
 
 ## 后续修改位置
 
+完整操作说明见：[AI 提示词与模型 API 配置说明](docs/AI_CONFIGURATION.md)。
+
 - 兴趣词与同义词：[config.toml](config.toml) 的 `[interest].terms`
 - 兴趣画像和安全推理边界：[scripts/main.py](scripts/main.py) 的 `INTEREST_PROFILE`
 - AI 模型、超时、PDF 大小与分块：[config.toml](config.toml) 的 `[ai]`
@@ -85,7 +87,7 @@ pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-本地完整运行前设置 `.env.example` 中列出的环境变量，然后执行：
+本地完整运行前，在当前 shell 中设置 `.env.example` 列出的环境变量；程序不会自动读取 `.env` 文件。具体示例见 [AI 配置说明的本地安全测试](docs/AI_CONFIGURATION.md#4-本地安全测试)。然后执行：
 
 ```bash
 python scripts/main.py --dry-run  # 不发信、不改变投递状态
