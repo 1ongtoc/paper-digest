@@ -19,7 +19,7 @@ class AIClient:
         self.base_url = config.get("base_url", "https://api.deepseek.com/v1").rstrip(
             "/"
         )
-        self.model = config.get("model", "deepseek-chat")
+        self.model = config.get("model", "deepseek-v4-flash")
         self.temperature = float(config.get("temperature", 0.1))
         self.timeout = int(config.get("timeout", 120))
         self.max_retries = int(config.get("max_retries", 3))

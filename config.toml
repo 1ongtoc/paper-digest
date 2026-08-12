@@ -58,7 +58,7 @@ semantic_batch_size = 10
 [ai]
 # 可被 AI_BASE_URL / AI_MODEL 环境变量覆盖；AI_API_KEY 只放 Secrets。
 base_url = "https://api.deepseek.com/v1"
-model = "deepseek-chat"
+model = "deepseek-v4-flash"
 temperature = 0.1
 timeout = 120
 max_retries = 3

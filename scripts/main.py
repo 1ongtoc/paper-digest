@@ -248,7 +248,7 @@ def build_digest(papers, now, site_url):
 
 def send_digest(body, now):
     server = os.getenv("SMTP_SERVER", "").strip()
-    port = int(os.getenv("SMTP_PORT", "465"))
+    port = int(os.getenv("SMTP_PORT") or "465")
     username = os.getenv("SMTP_USERNAME", "").strip()
     password = os.getenv("SMTP_PASSWORD", "")
     sender = os.getenv("EMAIL_FROM", "").strip() or username

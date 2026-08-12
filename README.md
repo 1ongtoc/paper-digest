@@ -28,7 +28,7 @@
 |---|---|
 | `AI_BASE_URL` | `https://api.deepseek.com/v1`，也可换成其他兼容 API |
 | `AI_API_KEY` | 你的 API Key |
-| `AI_MODEL` | `deepseek-chat`，按供应商实际模型名修改 |
+| `AI_MODEL` | `deepseek-v4-flash`，按供应商实际模型名修改 |
 | `SMTP_SERVER` | QQ：`smtp.qq.com`；163：`smtp.163.com` |
 | `SMTP_PORT` | `465` |
 | `SMTP_USERNAME` | 完整发件邮箱地址 |
