@@ -1,8 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>安全推理论文脉搏</title>
-    <link>https://github.com</link>
+    <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 新论文与安全推理相关 arXiv 论文中文导读</description>
+    <lastBuildDate>Wed, 12 Aug 2026 14:41:12 +0000</lastBuildDate>
+    <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On the Sensitivity to Errors in Homomorphic Computing: Single Transient Bit-flip Client-side Error Characterization</title>
+      <link>https://arxiv.org/abs/2608.11155</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.11155</guid>
+      <description>### 一句话结论
+本文分析了同态加密（Homomorphic Encryption, HE）中 CKKS 方案对单次瞬时位翻转（transient bit-flip）故障的敏感性，发现同态乘法是最易受错误影响的操作，并刻画了故障的传播与放大机制。
+
+### 问题与动机
+HE 允许在加密数据上直接计算，是医疗、金融、政府等敏感领域隐私保护计算的关键原语。其安全性依赖噪声注入，但这带来内在的错误敏感性。硬件或软件故障可能绕过传统检测机制，导致静默数据损坏（silent data corruption），因此评估 HE 系统的容错性至关重要。
+
+### 方法
+对 CKKS（Cheon–Kim–Kim–Song）方案——AI 与机器学习负载中常用的近似算术方案——进行位级故障敏感性分析，重点研究故障如何通过同态运算传播和放大。
+
+### 主要结果
+识别出同态乘法（homomorphic multiplication）是实际 HE 流水线中错误敏感度最高的操作；故障在该操作中会被传播并放大，暴露了 HE 在鲁棒性方面的关键弱点。
+
+### 为什么与兴趣相关
+该研究属于 HE 鲁棒性分析而非模型推理保护。它提示：在将 HE 用于安全关键场景时，仅关注加密安全性还不够，还需考虑位级故障导致的静默数据破坏风险，从而推动更鲁棒的 HE 部署方案设计。</description>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>homomorphic encryption</category>
+    </item>
+    <item>
+      <title>When and Where Faults Matter: A Study of Transient Errors in CKKS Multiplication</title>
+      <link>https://arxiv.org/abs/2608.11147</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.11147</guid>
+      <description>## 一句话结论
+本文研究未优化 CKKS（Cheon–Kim–Kim–Song）同态加密方案中服务端乘法运算的瞬态错误，发现错误发生的**时机（timing）**与**位置（location）**（即密文分量 \(c_0\) 与 \(c_1\) 中）会显著影响最终 FHE 输出的正确性。
+
+## 问题与动机
+同态加密（Homomorphic Encryption, HE）是一种隐私保护加密范式，允许在不解密的条件下直接对密文进行计算。全同态加密（Fully Homomorphic Encryption, FHE）虽功能强大，但计算过程复杂，容易受到硬件瞬态错误（如电压波动、粒子撞击等引起的临时位翻转）的干扰。已有工作多关注算法噪声或参数选择，而对错误发生在何时、作用于哪个密文分量的影响缺乏系统分析。本文聚焦服务器端同态乘法，试图回答“错误在何时、何处出现才真正要紧”这一问题。
+
+## 方法
+作者针对未优化的 CKKS 方案中的服务器端同态乘法，考察密文分量 \(c_0\) 和 \(c_1\) 在不同时间点被注入瞬态错误后的行为。通过比较错误时机与位置对最终解密结果的影响，识别出决定 FHE 输出正确性的关键因素。
+
+## 主要结果
+结果表明，并非所有瞬态错误都会同等程度地破坏最终输出。错误发生的**时间点**以及错误落在 \(c_0\) 还是 \(c_1\) 上，都会显著影响结果的正确性。这意味着在 CKKS 乘法中，某些密文分量和计算阶段对瞬态错误更敏感，需要优先保护。
+
+## 为什么与兴趣相关
+该研究为 FHE 系统的容错设计提供了针对性依据：与其对所有计算步骤均匀加固，不如根据错误敏感度优化检错与纠错资源。这对于将 FHE 部署到真实硬件（尤其是易受瞬态错误影响的场景）具有实际指导意义。</description>
+      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>homomorphic encryption</category>
+      <category>fully homomorphic encryption</category>
+    </item>
   </channel>
 </rss>
