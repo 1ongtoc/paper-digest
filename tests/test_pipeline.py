@@ -64,6 +64,39 @@ class PipelineTests(unittest.TestCase):
         self.assertIn("这是中文全文总结", digest)
         self.assertIn("安全推理·全文精选", digest)
 
+    def test_digest_explains_arxiv_selection_funnel(self):
+        digest = main.build_digest(
+            [],
+            datetime(2026, 8, 12, tzinfo=timezone.utc),
+            "",
+            {
+                "iacr_new": 0,
+                "arxiv_new": 57,
+                "arxiv_recalled": 5,
+                "arxiv_selected": 2,
+            },
+        )
+        self.assertIn(
+            "arXiv 新论文 57 篇 → 关键词宽召回 5 篇 → AI 判定相关 2 篇", digest
+        )
+
+    def test_summary_prompts_require_detailed_evidence_bound_method(self):
+        client = AIClient(
+            "test", {"base_url": "https://example.test/v1", "model": "test"}
+        )
+        paper = {
+            "title": "Secure Inference",
+            "source": "arXiv",
+            "abstract": "An abstract.",
+        }
+        with patch.object(client, "_text_chat", return_value="summary") as chat:
+            client.summarize_abstract(paper)
+        prompt = chat.call_args.args[1]
+        self.assertIn("方法与技术路线", prompt)
+        self.assertIn("关键步骤或模块", prompt)
+        self.assertIn("摘要未说明", prompt)
+        self.assertIn("不要为凑长度补造细节", prompt)
+
     def test_no_new_items_does_not_send_or_advance_cursor(self):
         class FakeAI:
             def __init__(self, *args, **kwargs):

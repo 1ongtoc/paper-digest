@@ -197,7 +197,7 @@ def prepare_new_paper(paper, decision, ai):
     return paper, pending
 
 
-def build_digest(papers, now, site_url):
+def build_digest(papers, now, site_url, selection_stats=None):
     china_time = now.astimezone(ZoneInfo("Asia/Shanghai"))
     lines = [
         f"论文每日简报｜{china_time:%Y-%m-%d}",
@@ -210,6 +210,18 @@ def build_digest(papers, now, site_url):
         "IACR 收录投递窗口内全部首次发布论文；arXiv 仅收录经 AI 判定相关的论文。",
         "",
     ]
+    if selection_stats:
+        lines.extend(
+            [
+                (
+                    f"本期筛选：IACR 新论文 {selection_stats['iacr_new']} 篇（全部收录）；"
+                    f"arXiv 新论文 {selection_stats['arxiv_new']} 篇 → "
+                    f"关键词宽召回 {selection_stats['arxiv_recalled']} 篇 → "
+                    f"AI 判定相关 {selection_stats['arxiv_selected']} 篇。"
+                ),
+                "",
+            ]
+        )
     for index, paper in enumerate(papers, 1):
         level = {
             "secure_inference": "安全推理·全文精选",
@@ -398,6 +410,19 @@ def run(dry_run=False, now=None):
         paper for paper in fresh_arxiv if decisions.get(paper["id"], {}).get("relevant")
     )
     selected.sort(key=lambda item: item.get("published_at", ""), reverse=True)
+    selection_stats = {
+        "iacr_new": len(fresh_iacr),
+        "arxiv_new": len(fresh_arxiv),
+        "arxiv_recalled": sum(paper.get("source") == "arXiv" for paper in candidates),
+        "arxiv_selected": sum(paper.get("source") == "arXiv" for paper in selected),
+    }
+    print(
+        "selection funnel: "
+        f"IACR new={selection_stats['iacr_new']}; "
+        f"arXiv new={selection_stats['arxiv_new']}, "
+        f"wide-recall={selection_stats['arxiv_recalled']}, "
+        f"AI-related={selection_stats['arxiv_selected']}"
+    )
 
     new_papers = []
     for paper in selected:
@@ -422,7 +447,7 @@ def run(dry_run=False, now=None):
     runtime_dir = ROOT / ".runtime"
     runtime_dir.mkdir(exist_ok=True)
     if new_papers:
-        report = build_digest(new_papers, now, url)
+        report = build_digest(new_papers, now, url, selection_stats)
         (runtime_dir / "email_report.txt").write_text(report, encoding="utf-8")
         if dry_run:
             print(report)
