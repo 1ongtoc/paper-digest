@@ -27,18 +27,21 @@ class ArxivFetcher:
 
     def fetch_papers(self, since):
         since = since.astimezone(timezone.utc)
-        by_id = {}
-        for index, category in enumerate(self.categories):
-            print(f"arXiv: fetching {category}")
-            for paper in self._fetch_category(category, since):
-                by_id.setdefault(paper["id"], paper)
-            if index + 1 < len(self.categories):
-                time.sleep(self.delay)
+        if not self.categories:
+            return []
+        search_query = " OR ".join(f"cat:{category}" for category in self.categories)
+        if len(self.categories) > 1:
+            search_query = f"({search_query})"
+        print(f"arXiv: fetching {', '.join(self.categories)}")
+        by_id = {paper["id"]: paper for paper in self._fetch_query(search_query, since)}
         papers = list(by_id.values())
         print(f"arXiv: fetched {len(papers)} first-publication records")
         return papers
 
     def _fetch_category(self, category, since):
+        return self._fetch_query(f"cat:{category}", since)
+
+    def _fetch_query(self, search_query, since):
         papers = []
         start = 0
         ns = {
@@ -51,7 +54,7 @@ class ArxivFetcher:
         while True:
             response = self._get(
                 {
-                    "search_query": f"cat:{category}",
+                    "search_query": search_query,
                     "start": start,
                     "max_results": self.batch_size,
                     "sortBy": "submittedDate",

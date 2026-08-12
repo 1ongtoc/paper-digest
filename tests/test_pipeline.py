@@ -51,6 +51,34 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(get.call_count, 2)
         sleep.assert_called_once_with(7.0)
 
+    def test_arxiv_combines_categories_into_one_query(self):
+        class Response:
+            def __init__(self):
+                self.status_code = 200
+                self.headers = {}
+                self.content = b'<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+
+            def raise_for_status(self):
+                return None
+
+        fetcher = ArxivFetcher(
+            ["cs.CR", "cs.AI", "cs.LG", "cs.CL"],
+            delay=0,
+            batch_size=100,
+            timeout=10,
+        )
+        with patch("fetchers.arxiv.requests.get", return_value=Response()) as get:
+            self.assertEqual(
+                fetcher.fetch_papers(datetime(2026, 8, 12, tzinfo=timezone.utc)),
+                [],
+            )
+
+        self.assertEqual(get.call_count, 1)
+        self.assertEqual(
+            get.call_args.kwargs["params"]["search_query"],
+            "(cat:cs.CR OR cat:cs.AI OR cat:cs.LG OR cat:cs.CL)",
+        )
+
     def test_first_run_and_resume_window(self):
         config = {"general": {"first_run_hours": 24, "fetch_overlap_hours": 2}}
         now = datetime(2026, 8, 12, tzinfo=timezone.utc)
