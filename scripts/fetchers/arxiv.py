@@ -10,6 +10,8 @@ import requests
 
 class ArxivFetcher:
     BASE_URL = "https://export.arxiv.org/api/query"
+    RATE_LIMIT_ATTEMPTS = 3
+    RATE_LIMIT_FALLBACK_SECONDS = 30.0
 
     def __init__(
         self,
@@ -47,19 +49,14 @@ class ArxivFetcher:
         # Continue until the requested first-publication cutoff is reached.
         # A fixed result cap would silently lose papers after a long outage.
         while True:
-            response = requests.get(
-                self.BASE_URL,
-                params={
+            response = self._get(
+                {
                     "search_query": f"cat:{category}",
                     "start": start,
                     "max_results": self.batch_size,
                     "sortBy": "submittedDate",
                     "sortOrder": "descending",
-                },
-                headers={
-                    "User-Agent": "PaperDigest/1.0 (personal research aggregator)"
-                },
-                timeout=self.timeout,
+                }
             )
             response.raise_for_status()
             entries = ET.fromstring(response.content).findall("atom:entry", ns)
@@ -121,6 +118,29 @@ class ArxivFetcher:
             time.sleep(self.delay)
 
         return papers
+
+    def _get(self, params):
+        for attempt in range(self.RATE_LIMIT_ATTEMPTS):
+            response = requests.get(
+                self.BASE_URL,
+                params=params,
+                headers={
+                    "User-Agent": "PaperDigest/1.0 (personal research aggregator)"
+                },
+                timeout=self.timeout,
+            )
+            if response.status_code != 429 or attempt + 1 == self.RATE_LIMIT_ATTEMPTS:
+                return response
+
+            retry_after = response.headers.get("Retry-After", "")
+            try:
+                wait = max(0.0, float(retry_after))
+            except (TypeError, ValueError):
+                wait = self.RATE_LIMIT_FALLBACK_SECONDS * (2**attempt)
+            print(f"arXiv rate limited; retrying in {wait:g}s")
+            time.sleep(wait)
+
+        raise AssertionError("unreachable")
 
 
 def _text(element, path, namespace):

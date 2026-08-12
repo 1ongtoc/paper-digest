@@ -6,6 +6,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
+import requests
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -19,6 +21,35 @@ class PipelineTests(unittest.TestCase):
     def test_arxiv_fetcher_has_no_silent_result_cap(self):
         fetcher = ArxivFetcher(["cs.CR"], delay=0, batch_size=100, timeout=10)
         self.assertFalse(hasattr(fetcher, "max_results"))
+
+    def test_arxiv_retries_after_rate_limit(self):
+        class Response:
+            def __init__(self, status_code, retry_after=None):
+                self.status_code = status_code
+                self.headers = {"Retry-After": retry_after} if retry_after else {}
+                self.content = b'<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+
+            def raise_for_status(self):
+                if self.status_code >= 400:
+                    raise requests.HTTPError(response=self)
+
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get",
+                side_effect=[Response(429, "7"), Response(200)],
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            self.assertEqual(
+                fetcher._fetch_category(
+                    "cs.AI", datetime(2026, 8, 12, tzinfo=timezone.utc)
+                ),
+                [],
+            )
+
+        self.assertEqual(get.call_count, 2)
+        sleep.assert_called_once_with(7.0)
 
     def test_first_run_and_resume_window(self):
         config = {"general": {"first_run_hours": 24, "fetch_overlap_hours": 2}}
