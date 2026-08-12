@@ -1,17 +1,4 @@
 {
-  "items": [
-    {
-      "paper_id": "arxiv_2608.11155",
-      "task": "abstract",
-      "attempts": 0,
-      "last_error": "PromptRefresh"
-    },
-    {
-      "paper_id": "arxiv_2608.11147",
-      "task": "abstract",
-      "attempts": 0,
-      "last_error": "PromptRefresh"
-    }
-  ],
-  "last_updated": "2026-08-12T14:40:40.034577Z"
+  "items": [],
+  "last_updated": "2026-08-12T14:51:29.100354Z"
 }
