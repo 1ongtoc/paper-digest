@@ -106,6 +106,12 @@ h1 {
     text-decoration: underline;
 }
 
+.paper-original-title {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 0.2em;
+}
+
 .paper-meta {
     font-size: 0.85em;
     color: #555;

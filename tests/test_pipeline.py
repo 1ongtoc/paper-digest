@@ -138,11 +138,11 @@ class PipelineTests(unittest.TestCase):
         )
         self.assertIn(
             "arXiv 新论文 57 篇 → 关键词宽召回并收录 5 篇，"
-            "其中 AI 判定相关并生成导读 2 篇，其余 3 篇仅列元数据",
+            "其中 AI 判定相关并生成导读 2 篇，其余 3 篇仅做元数据翻译",
             digest,
         )
 
-    def test_arxiv_wide_recall_metadata_is_delivered_without_summary(self):
+    def test_arxiv_wide_recall_metadata_is_translated_without_summary(self):
         def arxiv_paper(paper_id, title, abstract, author):
             return {
                 "id": paper_id,
@@ -179,6 +179,7 @@ class PipelineTests(unittest.TestCase):
 
         classified = []
         summarized = []
+        translated = []
 
         class FakeAI:
             def __init__(self, *args, **kwargs):
@@ -205,6 +206,13 @@ class PipelineTests(unittest.TestCase):
             def summarize_abstract(self, paper):
                 summarized.append(paper["id"])
                 return f"导读：{paper['id']}"
+
+            def translate_metadata(self, paper):
+                translated.append(paper["id"])
+                return {
+                    "title_zh": f"中文标题：{paper['id']}",
+                    "abstract_zh": f"中文摘要：{paper['id']}",
+                }
 
         class ArxivFetcher:
             def __init__(self, *args, **kwargs):
@@ -246,17 +254,21 @@ class PipelineTests(unittest.TestCase):
 
             self.assertEqual(set(classified), {broad["id"], related["id"]})
             self.assertEqual(summarized, [related["id"]])
+            self.assertEqual(translated, [broad["id"]])
             send.assert_called_once()
             digest = send.call_args.args[0]
-            self.assertIn("arXiv 宽召回·仅元数据", digest)
+            self.assertIn("arXiv 宽召回·元数据翻译", digest)
             self.assertIn(broad["title"], digest)
+            self.assertIn(f"中文标题：{broad['id']}", digest)
+            self.assertIn(f"中文摘要：{broad['id']}", digest)
             self.assertIn(broad["authors"][0], digest)
             self.assertIn(broad["abstract"], digest)
+            self.assertNotIn(f"导读：{broad['id']}", digest)
             self.assertIn(f"导读：{related['id']}", digest)
             self.assertNotIn(unmatched["title"], digest)
             self.assertIn(
                 "arXiv 新论文 3 篇 → 关键词宽召回并收录 2 篇，"
-                "其中 AI 判定相关并生成导读 1 篇，其余 1 篇仅列元数据",
+                "其中 AI 判定相关并生成导读 1 篇，其余 1 篇仅做元数据翻译",
                 digest,
             )
 
@@ -271,6 +283,104 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(broad_stored["summary_status"], "not_requested")
             self.assertEqual(broad_stored["summary_zh"], "")
             self.assertEqual(broad_stored["summary_en"], broad["abstract"])
+            self.assertEqual(broad_stored["title_zh"], f"中文标题：{broad['id']}")
+            self.assertEqual(
+                broad_stored["abstract_zh"], f"中文摘要：{broad['id']}"
+            )
+            self.assertEqual(broad_stored["translation_status"], "success")
+
+    def test_metadata_translation_failure_downgrades_and_retries(self):
+        paper = {
+            "id": "arxiv_2608.00004",
+            "title": "A Broad Transformer Paper",
+            "authors": ["Alice"],
+            "abstract": "An English abstract.",
+            "published": "2026-08-12",
+            "published_at": "2026-08-12T00:30:00Z",
+            "source": "arXiv",
+            "url": "https://arxiv.org/abs/2608.00004",
+            "pdf_link": "https://arxiv.org/pdf/2608.00004",
+            "matched_terms": ["transformer"],
+        }
+        decision = {
+            "relevant": False,
+            "secure_inference": False,
+            "reason_zh": "仅宽召回",
+            "topics": [],
+        }
+
+        class FakeAI:
+            calls = 0
+
+            def translate_metadata(self, unused_paper):
+                self.calls += 1
+                if self.calls < 3:
+                    raise RuntimeError("private provider detail")
+                return {"title_zh": "中文标题", "abstract_zh": "中文摘要翻译"}
+
+        ai = FakeAI()
+        prepared, pending = main.prepare_new_paper(paper, decision, ai)
+        self.assertEqual(prepared["translation_status"], "failed")
+        self.assertEqual(prepared["title_zh"], "")
+        self.assertEqual(prepared["abstract_zh"], "")
+        self.assertEqual(prepared["summary_type"], "metadata")
+        self.assertEqual(prepared["summary_status"], "not_requested")
+        self.assertEqual(prepared["summary_zh"], "")
+        self.assertEqual(prepared["summary_en"], paper["abstract"])
+        self.assertEqual(
+            pending,
+            [
+                {
+                    "paper_id": paper["id"],
+                    "task": "metadata_translation",
+                    "attempts": 1,
+                    "last_error": "RuntimeError",
+                }
+            ],
+        )
+        fallback_digest = main.build_digest(
+            [prepared], datetime(2026, 8, 12, tzinfo=timezone.utc), ""
+        )
+        self.assertIn("中文翻译生成失败", fallback_digest)
+        self.assertIn(paper["title"], fallback_digest)
+        self.assertIn(paper["abstract"], fallback_digest)
+
+        remaining, changed = main.process_retries([prepared], pending, ai)
+        self.assertFalse(changed)
+        self.assertEqual(remaining[0]["attempts"], 2)
+        remaining, changed = main.process_retries([prepared], remaining, ai)
+        self.assertTrue(changed)
+        self.assertEqual(remaining, [])
+        self.assertEqual(prepared["translation_status"], "success")
+        self.assertEqual(prepared["title_zh"], "中文标题")
+        self.assertEqual(prepared["abstract_zh"], "中文摘要翻译")
+        self.assertEqual(prepared["summary_zh"], "")
+        self.assertEqual(prepared["summary"], "")
+
+    def test_metadata_translation_prompt_is_faithful_and_validated(self):
+        client = AIClient(
+            "test", {"base_url": "https://example.test/v1", "model": "test"}
+        )
+        paper = {
+            "title": "A Transformer for Crop Detection",
+            "abstract": "We compare detectors on crop images.",
+        }
+        translated = {"title_zh": "作物检测 Transformer", "abstract_zh": "中文翻译"}
+        with patch.object(client, "_json_chat", return_value=translated) as chat:
+            self.assertEqual(client.translate_metadata(paper), translated)
+        prompt = chat.call_args.args[1]
+        self.assertIn(paper["title"], prompt)
+        self.assertIn(paper["abstract"], prompt)
+        self.assertIn("忠实完整翻译", prompt)
+        self.assertIn("不总结、不分析、不补充", prompt)
+
+        with patch.object(
+            client,
+            "_json_chat",
+            return_value={"title_zh": "", "abstract_zh": "中文翻译"},
+        ):
+            with self.assertRaises(ValueError):
+                client.translate_metadata(paper)
 
     def test_summary_prompts_require_detailed_evidence_bound_method(self):
         client = AIClient(

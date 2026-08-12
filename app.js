@@ -53,10 +53,10 @@ function toggleLanguage(index, lang) {
     const paper = filteredPapers[index];
     if (!paper) return;
 
-    // Get the appropriate summary
+    // Get the appropriate guide or faithful metadata translation.
     const summaryText = lang === 'zh'
-        ? (paper.summary_zh || paper.summary || paper.abstract)
-        : (paper.summary_en || paper.summary || paper.abstract);
+        ? (paper.summary_zh || paper.abstract_zh || paper.summary || paper.abstract)
+        : (paper.summary_en || paper.abstract || paper.summary);
 
     // Update content
     summaryDiv.innerHTML = renderMarkdown(summaryText);
@@ -114,9 +114,13 @@ function filterAndDisplay() {
         if (searchTerm) {
             const searchableText = [
                 paper.title,
+                paper.title_zh || '',
                 (paper.authors || []).join(' '),
                 paper.summary || '',
+                paper.summary_zh || '',
+                paper.summary_en || '',
                 paper.abstract || '',
+                paper.abstract_zh || '',
                 ...(paper.topics || []),
                 ...(paper.keywords || [])
             ].join(' ').toLowerCase();
@@ -198,21 +202,24 @@ function createPaperCard(paper, index) {
 
     const keywords = [...(paper.topics || []), ...(paper.keywords || [])].slice(0, 8).join(', ');
 
-    // Default to Chinese summary
-    const summaryText = paper.summary_zh || paper.summary || paper.abstract;
+    // Default to the Chinese guide or faithful metadata translation.
+    const summaryText = paper.summary_zh || paper.abstract_zh || paper.summary || paper.abstract;
     const summaryHtml = renderMarkdown(summaryText);
 
-    // Check if bilingual summaries are available
-    const hasBilingual = paper.summary_zh && paper.summary_en;
+    const chineseText = paper.summary_zh || paper.abstract_zh || '';
+    const englishText = paper.summary_en || paper.abstract || '';
+    const hasBilingual = Boolean(chineseText && englishText && chineseText !== englishText);
     const paperUrl = safeExternalUrl(paper.url, ['arxiv.org', 'eprint.iacr.org']);
     const pdfUrl = safeExternalUrl(paper.pdf_link, ['arxiv.org', 'eprint.iacr.org']);
+    const displayTitle = paper.title_zh || paper.title;
     const titleLink = paperUrl
-        ? `<a href="${escapeHtml(paperUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(paper.title)}</a>`
-        : escapeHtml(paper.title);
+        ? `<a href="${escapeHtml(paperUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(displayTitle)}</a>`
+        : escapeHtml(displayTitle);
 
     return `
         <div class="paper-entry">
             <div class="paper-title">${titleLink}</div>
+            ${paper.title_zh ? `<div class="paper-original-title">英文原题：${escapeHtml(paper.title)}</div>` : ''}
             <div class="paper-meta">${escapeHtml(paper.source)} | ${escapeHtml(paper.published)} | ${relevanceLabel(paper)}</div>
             <div class="paper-authors">${escapeHtml(authors)}</div>
             ${hasBilingual ? `
@@ -237,7 +244,8 @@ function createPaperCard(paper, index) {
 function relevanceLabel(paper) {
     if (paper.relevance_level === 'secure_inference') return '安全推理·全文精选';
     if (paper.relevance_level === 'related') return '兴趣相关·摘要导读';
-    return paper.source === 'arXiv' ? 'arXiv 宽召回·仅元数据' : 'IACR 元数据';
+    if (paper.source !== 'arXiv') return 'IACR 元数据';
+    return paper.abstract_zh ? 'arXiv 宽召回·元数据翻译' : 'arXiv 宽召回·仅元数据';
 }
 
 // Update statistics

@@ -109,10 +109,19 @@ def process_retries(papers, items, ai):
     for item in items:
         paper = by_id.get(item.get("paper_id"))
         task = item.get("task")
-        if not paper or task not in {"abstract", "fulltext"}:
+        if not paper or task not in {"abstract", "fulltext", "metadata_translation"}:
             continue
         try:
-            if task == "abstract":
+            if task == "metadata_translation":
+                if not (
+                    paper.get("source") == "arXiv"
+                    and paper.get("relevance_level") == "unrelated"
+                ):
+                    continue
+                translated = ai.translate_metadata(paper)
+                paper.update(translated)
+                paper["translation_status"] = "success"
+            elif task == "abstract":
                 if paper.get("summary_type") == "fulltext":
                     continue
                 paper["summary_zh"] = ai.summarize_abstract(paper)
@@ -159,11 +168,25 @@ def prepare_new_paper(paper, decision, ai):
     )
     paper["summary_type"] = "metadata"
     paper["summary_status"] = "not_requested"
+    paper["translation_status"] = "not_requested"
     pending = []
 
     if not is_relevant:
         paper["summary_zh"] = ""
         paper["summary"] = ""
+        if paper.get("source") == "arXiv" and decision is not None:
+            try:
+                paper.update(ai.translate_metadata(paper))
+                paper["translation_status"] = "success"
+            except Exception as exc:  # noqa: BLE001 - English metadata still delivers
+                paper["title_zh"] = ""
+                paper["abstract_zh"] = ""
+                paper["translation_status"] = "failed"
+                pending.append(retry_item(paper["id"], "metadata_translation", exc))
+                print(
+                    f"metadata translation downgraded: {paper['id']}: "
+                    f"{_public_error(exc)}"
+                )
         return paper, pending
 
     try:
@@ -207,7 +230,7 @@ def build_digest(papers, now, site_url, selection_stats=None):
             f"{sum(p['source'] == 'IACR' for p in papers)} 篇，"
             f"arXiv {sum(p['source'] == 'arXiv' for p in papers)} 篇。"
         ),
-        "IACR 收录投递窗口内全部首次发布论文；arXiv 收录关键词宽召回论文，其中 AI 相关论文生成导读，其余仅列元数据。",
+        "IACR 收录投递窗口内全部首次发布论文；arXiv 收录关键词宽召回论文，其中 AI 相关论文生成导读，其余仅翻译标题和原始摘要。",
         "",
     ]
     if selection_stats:
@@ -218,7 +241,7 @@ def build_digest(papers, now, site_url, selection_stats=None):
                     f"arXiv 新论文 {selection_stats['arxiv_new']} 篇 → "
                     f"关键词宽召回并收录 {selection_stats['arxiv_recalled']} 篇，"
                     f"其中 AI 判定相关并生成导读 {selection_stats['arxiv_related']} 篇，"
-                    f"其余 {selection_stats['arxiv_metadata']} 篇仅列元数据。"
+                    f"其余 {selection_stats['arxiv_metadata']} 篇仅做元数据翻译。"
                 ),
                 "",
             ]
@@ -229,16 +252,25 @@ def build_digest(papers, now, site_url, selection_stats=None):
             "related": "兴趣相关·摘要导读",
         }.get(paper.get("relevance_level"))
         if not level:
-            level = (
-                "arXiv 宽召回·仅元数据"
-                if paper.get("source") == "arXiv"
-                else "IACR 元数据"
-            )
+            if paper.get("source") == "arXiv":
+                level = (
+                    "arXiv 宽召回·元数据翻译"
+                    if paper.get("abstract_zh")
+                    else "arXiv 宽召回·仅元数据"
+                )
+            else:
+                level = "IACR 元数据"
         authors = ", ".join(paper.get("authors", [])) or "未知"
         lines.extend(
             [
                 "=" * 72,
                 f"[{index}] {paper['title']}",
+            ]
+        )
+        if paper.get("title_zh"):
+            lines.append(f"中文标题：{paper['title_zh']}")
+        lines.extend(
+            [
                 f"来源：{paper['source']}｜首次发布：{paper['published']}｜{level}",
                 f"作者：{authors}",
                 f"论文：{paper['url']}",
@@ -259,6 +291,15 @@ def build_digest(papers, now, site_url, selection_stats=None):
                     "\n⚠️ PDF 全文处理失败，本期已降级为摘要导读；系统将在后续运行中重试。"
                 )
         else:
+            if paper.get("abstract_zh"):
+                lines.extend(["", "中文摘要翻译：", paper["abstract_zh"]])
+            elif (
+                paper.get("source") == "arXiv"
+                and paper.get("translation_status") == "failed"
+            ):
+                lines.extend(
+                    ["", "⚠️ 中文翻译生成失败，已加入自动重试队列。"]
+                )
             lines.extend(
                 [
                     "",
@@ -438,7 +479,7 @@ def run(dry_run=False, now=None):
         f"arXiv new={selection_stats['arxiv_new']}, "
         f"wide-recall-included={selection_stats['arxiv_recalled']}, "
         f"AI-related={selection_stats['arxiv_related']}, "
-        f"metadata-only={selection_stats['arxiv_metadata']}"
+        f"metadata-translated={selection_stats['arxiv_metadata']}"
     )
 
     new_papers = []

@@ -37,7 +37,7 @@ def generate_rss_feed(
     output_path: Path,
     site_url: str = "",
     title: str = "安全推理论文脉搏",
-    description: str = "IACR ePrint 全部新论文与 arXiv 宽召回论文；相关论文提供中文导读",
+    description: str = "IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读",
     max_items: int = 50,
 ):
     """Generate an RSS 2.0 feed XML file from papers.
@@ -74,14 +74,21 @@ def generate_rss_feed(
     for paper in papers[:max_items]:
         item = ET.SubElement(channel, "item")
 
-        ET.SubElement(item, "title").text = paper.get("title", "Untitled")
+        ET.SubElement(item, "title").text = paper.get("title_zh") or paper.get(
+            "title", "Untitled"
+        )
         ET.SubElement(item, "link").text = paper.get("url", "")
         ET.SubElement(item, "guid", isPermaLink="true").text = paper.get("url", "")
 
-        # Prefer the Chinese guide/full-text selection, fall back to the abstract.
+        # Prefer a Chinese guide/full-text selection or faithful abstract translation.
         desc = (
-            paper.get("summary_zh") or paper.get("summary") or paper.get("abstract", "")
+            paper.get("summary_zh")
+            or paper.get("abstract_zh")
+            or paper.get("summary")
+            or paper.get("abstract", "")
         )
+        if paper.get("title_zh") and paper.get("title"):
+            desc = f"英文原题：{paper['title']}\n\n{desc}"
         ET.SubElement(item, "description").text = desc
 
         pub_date = paper.get("published", "")

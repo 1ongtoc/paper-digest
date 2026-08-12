@@ -11,7 +11,7 @@
 ## 实际规则
 
 - IACR ePrint：通过官方 OAI-PMH 分页回补投递窗口内的全部首次发布论文；相关论文生成摘要导读，直接安全推理论文生成全文精选。OAI 临时不可用时降级到 recent RSS，但不推进回补游标。
-- arXiv：抓取 `cs.CR`、`cs.AI`、`cs.LG`、`cs.CL`。关键词宽召回命中的论文全部列出标题、作者和英文原始摘要；AI 判定相关的论文额外生成中文摘要导读，直接研究安全推理的论文生成全文精选。
+- arXiv：抓取 `cs.CR`、`cs.AI`、`cs.LG`、`cs.CL`。关键词宽召回命中的论文全部收录；AI 判定不相关时忠实翻译标题和原始摘要（保留英文原文，不生成中文总结），相关论文生成中文摘要导读，直接研究安全推理的论文生成全文精选。
 - 筛选分两步：关键词和同义词宽召回决定是否收录 arXiv 元数据，然后由 AI 根据标题与摘要决定是否生成导读以及是否读取全文。
 - 全文精选不限制固定篇数。每篇 PDF 最大 50 MB，正文在本地提取、分块再合并总结。IACR 官方 PDF 若被 Cloudflare 拦截，会尝试标题完全一致的 arXiv 公开副本；找不到时明确降级并进入重试队列。
 - 只处理首次发布，忽略同一论文的后续修订。
@@ -67,7 +67,7 @@ QQ 邮箱需在 **设置 → 账号 → POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV �
 - 兴趣词与同义词：[config.toml](config.toml) 的 `[interest].terms`
 - 兴趣画像和安全推理边界：[scripts/main.py](scripts/main.py) 的 `INTEREST_PROFILE`
 - AI 模型、超时、PDF 大小与分块：[config.toml](config.toml) 的 `[ai]`
-- AI 摘要格式：[scripts/ai.py](scripts/ai.py) 的 `summarize_abstract()` 与 `summarize_fulltext()`
+- AI 元数据翻译与摘要格式：[scripts/ai.py](scripts/ai.py) 的 `translate_metadata()`、`summarize_abstract()` 与 `summarize_fulltext()`
 - arXiv 分类：[config.toml](config.toml) 的 `[fetchers.arxiv].categories`
 - 网页保留天数：[config.toml](config.toml) 的 `retention_days`
 

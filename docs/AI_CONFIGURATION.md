@@ -9,6 +9,7 @@
 | 关键词宽召回 | [`config.toml`](../config.toml) 的 `[interest].terms` |
 | 研究兴趣与筛选边界 | [`scripts/main.py`](../scripts/main.py) 的 `INTEREST_PROFILE` |
 | AI 相关性判断提示词 | [`scripts/ai.py`](../scripts/ai.py) 的 `AIClient.classify()` |
+| 宽召回元数据翻译提示词 | [`scripts/ai.py`](../scripts/ai.py) 的 `AIClient.translate_metadata()` |
 | 摘要导读提示词 | [`scripts/ai.py`](../scripts/ai.py) 的 `AIClient.summarize_abstract()` |
 | 全文分块事实提取提示词 | [`scripts/ai.py`](../scripts/ai.py) 的 `AIClient.summarize_fulltext()` 中分块循环 |
 | 全文最终总结提示词 | [`scripts/ai.py`](../scripts/ai.py) 的 `AIClient.summarize_fulltext()` 中最终 `prompt` |
@@ -46,7 +47,22 @@
 
 必须保留顶层 `papers` 数组，并为每个输入返回一个有效 `id`；遗漏输入 `id` 会使整批论文解析失败并重试。强烈建议保留其余字段：缺少 `relevant` 或 `secure_inference` 会被当作 `false`，缺少理由或主题则会使用默认值。可以调整判定边界和理由要求，但不要改变程序依赖的结构，除非同时修改解析代码与测试。
 
-### 1.2 摘要导读
+### 1.2 宽召回元数据翻译
+
+修改 `AIClient.translate_metadata()`。这一路径只用于 **arXiv 关键词宽召回后被 AI 判定为不相关** 的论文，负责忠实翻译英文原题与英文原始摘要，不生成中文总结、方法分析或导读。
+
+程序要求模型返回以下 JSON；两个值都必须是非空字符串，否则保留英文原文照常投递，并加入后续自动重试：
+
+```json
+{
+  "title_zh": "中文标题",
+  "abstract_zh": "中文摘要翻译"
+}
+```
+
+可以调整术语风格，但建议保留“只翻译，不总结、不分析、不补充”的边界。IACR 全量元数据和已判定相关的论文不会调用这个提示词。
+
+### 1.3 摘要导读
 
 修改 `AIClient.summarize_abstract()`。其中可以调整：
 
@@ -59,7 +75,7 @@
 
 测试 `tests/test_pipeline.py` 中包含对摘要提示词关键约束的断言。删除或改写“方法与技术路线”“关键步骤或模块”“摘要未说明”“不要为凑长度补造细节”等固定短语时，应同步更新该测试，并先运行本地测试。
 
-### 1.3 全文精选
+### 1.4 全文精选
 
 全文总结是两阶段流程，都位于 `AIClient.summarize_fulltext()`：
 
@@ -68,7 +84,7 @@
 
 如果希望方法部分更详细，应同时修改这两层提示词。只改最终总结提示词，无法恢复第一阶段没有保留下来的正文细节。
 
-### 1.4 篇幅与采样参数
+### 1.5 篇幅与采样参数
 
 提示词中的“约 600—1000 字”等内容是写作目标；API 的硬上限在 `config.toml` 的 `[ai]`：
 
@@ -76,7 +92,7 @@
 |---|---|
 | `temperature` | 采样温度；较低通常更稳定 |
 | `classification_max_tokens` | 一批分类结果的最大输出 token 数 |
-| `summary_max_tokens` | 摘要、分块笔记和最终全文总结的最大输出 token 数 |
+| `summary_max_tokens` | 元数据翻译、摘要、分块笔记和最终全文总结的最大输出 token 数 |
 | `fulltext_chunk_chars` | 全文分块的字符数；模型上下文较小时可适当降低 |
 | `timeout` | 单次 API 请求与 PDF 请求超时秒数 |
 | `max_retries`、`retry_delay` | 包含首次请求的最大尝试次数，以及首次重试前的基础等待时间；后续指数退避 |
@@ -181,7 +197,7 @@ Remove-Item Env:AI_API_KEY, Env:AI_BASE_URL, Env:AI_MODEL -ErrorAction SilentlyC
 
 - 修改 GitHub Secrets：下一次工作流运行生效，不需要提交代码。
 - 修改提示词或 `config.toml`：需要提交并推送到默认分支，下一次工作流运行生效。
-- 修改提示词不会自动重写 `data/papers.json` 中已有论文的总结，只影响新生成的摘要，以及已经或后来因失败进入 `data/retry.json` 并实际重试的任务。修改提示词本身不会创建重试任务。
+- 修改提示词不会自动重写 `data/papers.json` 中已有论文的翻译或总结，只影响此后新生成的内容，以及已经或后来因失败进入 `data/retry.json` 并实际重试的任务。修改提示词本身不会创建重试任务。
 - 不要为了重算旧摘要删除 `data/state.json`，否则可能改变投递窗口并造成重复邮件。需要批量重算历史摘要时，应单独设计一次性重试任务。
 
 ## 6. 常见错误
