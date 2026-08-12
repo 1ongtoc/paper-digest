@@ -2,7 +2,11 @@
 
 每天 08:00（Asia/Shanghai）自动抓取 IACR ePrint 与 arXiv 新论文，用兼容 OpenAI `/chat/completions` 的 API 做两阶段筛选和中文导读，随后发送一封邮件并更新 GitHub Pages。
 
-本项目基于 [Jamie-Cui/paper-pulse](https://github.com/Jamie-Cui/paper-pulse) 修改，保留了它的多源抓取、静态网页、RSS、BibTeX 与 GitHub Actions 思路，并继续使用 GPL-3.0 许可证。
+## 上游项目与致谢
+
+本项目基于 Jamie Cui 的开源项目 [Jamie-Cui/paper-pulse](https://github.com/Jamie-Cui/paper-pulse) 二次开发。感谢原作者及贡献者提供 IACR/arXiv 多源抓取、AI 论文摘要、邮件简报、静态网页、RSS、BibTeX 与 GitHub Actions 自动更新等功能和实现基础。
+
+自 2026 年 8 月起，本项目针对安全推理与隐私计算场景，加入了 IACR 全量元数据收录、关键词宽召回与 AI 语义筛选、摘要/全文分级导读、投递游标与失败重试等改进。上游项目采用 GPL-3.0 许可证，本衍生项目继续以相同许可证发布；完整条款见 [LICENSE](LICENSE)。
 
 ## 实际规则
 
