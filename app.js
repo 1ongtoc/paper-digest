@@ -237,7 +237,7 @@ function createPaperCard(paper, index) {
 function relevanceLabel(paper) {
     if (paper.relevance_level === 'secure_inference') return '安全推理·全文精选';
     if (paper.relevance_level === 'related') return '兴趣相关·摘要导读';
-    return 'IACR 元数据';
+    return paper.source === 'arXiv' ? 'arXiv 宽召回·仅元数据' : 'IACR 元数据';
 }
 
 // Update statistics

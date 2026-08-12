@@ -1,5 +1,5 @@
 # 兼容 Paper Pulse 的可读关键词清单。
-# 实际运行以 config.toml 的 interest.terms 为准：先宽召回，再由 AI 语义筛选。
+# 实际运行以 config.toml 的 interest.terms 为准：宽召回决定 arXiv 元数据收录，AI 决定是否生成导读。
 secure inference
 crypto secure inference
 private inference

@@ -26,7 +26,7 @@
 - `prompt = f"""..."""` 是发送给模型的用户提示词；
 - `_json_chat()` 的第一个参数是 system 提示词；
 - `INTEREST_PROFILE` 位于 `scripts/main.py`，用于描述长期研究兴趣；
-- `[interest].terms` 位于 `config.toml`，只负责第一阶段关键词宽召回。
+- `[interest].terms` 位于 `config.toml`，负责第一阶段关键词宽召回。arXiv 命中的论文都会以元数据形式收录，AI 判断决定是否进一步生成摘要导读或全文精选。
 
 分类结果会被程序解析，因此应保留以下 JSON 字段及含义：
 

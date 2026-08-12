@@ -73,12 +73,145 @@ class PipelineTests(unittest.TestCase):
                 "iacr_new": 0,
                 "arxiv_new": 57,
                 "arxiv_recalled": 5,
-                "arxiv_selected": 2,
+                "arxiv_related": 2,
+                "arxiv_metadata": 3,
             },
         )
         self.assertIn(
-            "arXiv 新论文 57 篇 → 关键词宽召回 5 篇 → AI 判定相关 2 篇", digest
+            "arXiv 新论文 57 篇 → 关键词宽召回并收录 5 篇，"
+            "其中 AI 判定相关并生成导读 2 篇，其余 3 篇仅列元数据",
+            digest,
         )
+
+    def test_arxiv_wide_recall_metadata_is_delivered_without_summary(self):
+        def arxiv_paper(paper_id, title, abstract, author):
+            return {
+                "id": paper_id,
+                "arxiv_id": paper_id.removeprefix("arxiv_"),
+                "title": title,
+                "authors": [author],
+                "abstract": abstract,
+                "published": "2026-08-12",
+                "published_at": "2026-08-12T00:30:00Z",
+                "source": "arXiv",
+                "url": f"https://arxiv.org/abs/{paper_id.removeprefix('arxiv_')}",
+                "pdf_link": f"https://arxiv.org/pdf/{paper_id.removeprefix('arxiv_')}",
+                "categories": ["cs.AI"],
+            }
+
+        broad = arxiv_paper(
+            "arxiv_2608.00001",
+            "A Transformer for Crop Detection",
+            "We compare transformer detectors on crop images.",
+            "Broad Author",
+        )
+        related = arxiv_paper(
+            "arxiv_2608.00002",
+            "MPC Inference for Neural Networks",
+            "We protect private inference with multi-party computation.",
+            "Related Author",
+        )
+        unmatched = arxiv_paper(
+            "arxiv_2608.00003",
+            "A Study of Euclidean Geometry",
+            "We prove a result about triangles.",
+            "Unmatched Author",
+        )
+
+        classified = []
+        summarized = []
+
+        class FakeAI:
+            def __init__(self, *args, **kwargs):
+                self.usage = {
+                    "input_tokens": 0,
+                    "output_tokens": 0,
+                    "total_tokens": 0,
+                }
+
+            def classify(self, papers, *args, **kwargs):
+                classified.extend(paper["id"] for paper in papers)
+                return {
+                    paper["id"]: {
+                        "relevant": paper["id"] == related["id"],
+                        "secure_inference": False,
+                        "reason_zh": "相关"
+                        if paper["id"] == related["id"]
+                        else "仅宽召回",
+                        "topics": [],
+                    }
+                    for paper in papers
+                }
+
+            def summarize_abstract(self, paper):
+                summarized.append(paper["id"])
+                return f"导读：{paper['id']}"
+
+        class ArxivFetcher:
+            def __init__(self, *args, **kwargs):
+                pass
+
+            def fetch_papers(self, since):
+                return [broad, related, unmatched]
+
+        class EmptyIacrFetcher:
+            complete = True
+
+            def __init__(self, *args, **kwargs):
+                pass
+
+            def fetch_papers(self, since):
+                return []
+
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "data").mkdir()
+            (root / "config.toml").write_text(
+                (ROOT / "config.toml").read_text(encoding="utf-8"), encoding="utf-8"
+            )
+            for name, value in {
+                "papers.json": {"papers": []},
+                "retry.json": {"items": []},
+                "state.json": {"last_delivered_at": "2026-08-11T00:00:00Z"},
+            }.items():
+                (root / "data" / name).write_text(json.dumps(value), encoding="utf-8")
+
+            with (
+                patch.object(main, "ROOT", root),
+                patch.object(main, "AIClient", FakeAI),
+                patch.object(main, "ArxivFetcher", ArxivFetcher),
+                patch.object(main, "IACRFetcher", EmptyIacrFetcher),
+                patch.object(main, "send_digest") as send,
+            ):
+                main.run(now=datetime(2026, 8, 12, 1, tzinfo=timezone.utc))
+
+            self.assertEqual(set(classified), {broad["id"], related["id"]})
+            self.assertEqual(summarized, [related["id"]])
+            send.assert_called_once()
+            digest = send.call_args.args[0]
+            self.assertIn("arXiv 宽召回·仅元数据", digest)
+            self.assertIn(broad["title"], digest)
+            self.assertIn(broad["authors"][0], digest)
+            self.assertIn(broad["abstract"], digest)
+            self.assertIn(f"导读：{related['id']}", digest)
+            self.assertNotIn(unmatched["title"], digest)
+            self.assertIn(
+                "arXiv 新论文 3 篇 → 关键词宽召回并收录 2 篇，"
+                "其中 AI 判定相关并生成导读 1 篇，其余 1 篇仅列元数据",
+                digest,
+            )
+
+            stored = json.loads(
+                (root / "data" / "papers.json").read_text(encoding="utf-8")
+            )["papers"]
+            self.assertEqual(
+                {paper["id"] for paper in stored}, {broad["id"], related["id"]}
+            )
+            broad_stored = next(paper for paper in stored if paper["id"] == broad["id"])
+            self.assertEqual(broad_stored["summary_type"], "metadata")
+            self.assertEqual(broad_stored["summary_status"], "not_requested")
+            self.assertEqual(broad_stored["summary_zh"], "")
+            self.assertEqual(broad_stored["summary_en"], broad["abstract"])
 
     def test_summary_prompts_require_detailed_evidence_bound_method(self):
         client = AIClient(

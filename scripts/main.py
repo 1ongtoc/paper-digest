@@ -207,7 +207,7 @@ def build_digest(papers, now, site_url, selection_stats=None):
             f"{sum(p['source'] == 'IACR' for p in papers)} 篇，"
             f"arXiv {sum(p['source'] == 'arXiv' for p in papers)} 篇。"
         ),
-        "IACR 收录投递窗口内全部首次发布论文；arXiv 仅收录经 AI 判定相关的论文。",
+        "IACR 收录投递窗口内全部首次发布论文；arXiv 收录关键词宽召回论文，其中 AI 相关论文生成导读，其余仅列元数据。",
         "",
     ]
     if selection_stats:
@@ -216,8 +216,9 @@ def build_digest(papers, now, site_url, selection_stats=None):
                 (
                     f"本期筛选：IACR 新论文 {selection_stats['iacr_new']} 篇（全部收录）；"
                     f"arXiv 新论文 {selection_stats['arxiv_new']} 篇 → "
-                    f"关键词宽召回 {selection_stats['arxiv_recalled']} 篇 → "
-                    f"AI 判定相关 {selection_stats['arxiv_selected']} 篇。"
+                    f"关键词宽召回并收录 {selection_stats['arxiv_recalled']} 篇，"
+                    f"其中 AI 判定相关并生成导读 {selection_stats['arxiv_related']} 篇，"
+                    f"其余 {selection_stats['arxiv_metadata']} 篇仅列元数据。"
                 ),
                 "",
             ]
@@ -226,8 +227,13 @@ def build_digest(papers, now, site_url, selection_stats=None):
         level = {
             "secure_inference": "安全推理·全文精选",
             "related": "兴趣相关·摘要导读",
-            "unrelated": "IACR 元数据",
-        }.get(paper.get("relevance_level"), "元数据")
+        }.get(paper.get("relevance_level"))
+        if not level:
+            level = (
+                "arXiv 宽召回·仅元数据"
+                if paper.get("source") == "arXiv"
+                else "IACR 元数据"
+            )
         authors = ", ".join(paper.get("authors", [])) or "未知"
         lines.extend(
             [
@@ -252,6 +258,14 @@ def build_digest(papers, now, site_url, selection_stats=None):
                 lines.append(
                     "\n⚠️ PDF 全文处理失败，本期已降级为摘要导读；系统将在后续运行中重试。"
                 )
+        else:
+            lines.extend(
+                [
+                    "",
+                    "英文原始摘要：",
+                    paper.get("abstract", "").strip() or "未提供。",
+                ]
+            )
         lines.append("")
     if site_url:
         lines.extend(["=" * 72, f"网页与 RSS：{site_url}"])
@@ -405,23 +419,26 @@ def run(dry_run=False, now=None):
         int(config["interest"].get("semantic_batch_size", 10)),
     )
 
-    selected = list(fresh_iacr)
-    selected.extend(
-        paper for paper in fresh_arxiv if decisions.get(paper["id"], {}).get("relevant")
-    )
+    recalled_arxiv = [paper for paper in candidates if paper.get("source") == "arXiv"]
+    selected = list(fresh_iacr) + recalled_arxiv
     selected.sort(key=lambda item: item.get("published_at", ""), reverse=True)
+    arxiv_related = sum(
+        bool(decisions.get(paper["id"], {}).get("relevant")) for paper in recalled_arxiv
+    )
     selection_stats = {
         "iacr_new": len(fresh_iacr),
         "arxiv_new": len(fresh_arxiv),
-        "arxiv_recalled": sum(paper.get("source") == "arXiv" for paper in candidates),
-        "arxiv_selected": sum(paper.get("source") == "arXiv" for paper in selected),
+        "arxiv_recalled": len(recalled_arxiv),
+        "arxiv_related": arxiv_related,
+        "arxiv_metadata": len(recalled_arxiv) - arxiv_related,
     }
     print(
         "selection funnel: "
         f"IACR new={selection_stats['iacr_new']}; "
         f"arXiv new={selection_stats['arxiv_new']}, "
-        f"wide-recall={selection_stats['arxiv_recalled']}, "
-        f"AI-related={selection_stats['arxiv_selected']}"
+        f"wide-recall-included={selection_stats['arxiv_recalled']}, "
+        f"AI-related={selection_stats['arxiv_related']}, "
+        f"metadata-only={selection_stats['arxiv_metadata']}"
     )
 
     new_papers = []
