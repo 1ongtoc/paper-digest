@@ -12,6 +12,8 @@ class ArxivFetcher:
     BASE_URL = "https://export.arxiv.org/api/query"
     RATE_LIMIT_ATTEMPTS = 3
     RATE_LIMIT_FALLBACK_SECONDS = 30.0
+    NETWORK_RETRIES = 5
+    NETWORK_RETRY_BASE_SECONDS = 5.0
 
     def __init__(
         self,
@@ -123,27 +125,45 @@ class ArxivFetcher:
         return papers
 
     def _get(self, params):
-        for attempt in range(self.RATE_LIMIT_ATTEMPTS):
-            response = requests.get(
-                self.BASE_URL,
-                params=params,
-                headers={
-                    "User-Agent": "PaperDigest/1.0 (personal research aggregator)"
-                },
-                timeout=self.timeout,
-            )
-            if response.status_code != 429 or attempt + 1 == self.RATE_LIMIT_ATTEMPTS:
+        network_retries = 0
+        rate_limit_attempts = 0
+        while True:
+            try:
+                response = requests.get(
+                    self.BASE_URL,
+                    params=params,
+                    headers={
+                        "User-Agent": "PaperDigest/1.0 (personal research aggregator)"
+                    },
+                    timeout=self.timeout,
+                )
+            except (requests.Timeout, requests.ConnectionError) as exc:
+                if network_retries >= self.NETWORK_RETRIES:
+                    raise
+                wait = self.NETWORK_RETRY_BASE_SECONDS * (2**network_retries)
+                network_retries += 1
+                print(
+                    f"arXiv {type(exc).__name__}; retrying in {wait:g}s "
+                    f"({network_retries}/{self.NETWORK_RETRIES})"
+                )
+                time.sleep(wait)
+                continue
+
+            if response.status_code != 429:
                 return response
 
+            rate_limit_attempts += 1
+            if rate_limit_attempts == self.RATE_LIMIT_ATTEMPTS:
+                return response
             retry_after = response.headers.get("Retry-After", "")
             try:
                 wait = max(0.0, float(retry_after))
             except (TypeError, ValueError):
-                wait = self.RATE_LIMIT_FALLBACK_SECONDS * (2**attempt)
+                wait = self.RATE_LIMIT_FALLBACK_SECONDS * (
+                    2 ** (rate_limit_attempts - 1)
+                )
             print(f"arXiv rate limited; retrying in {wait:g}s")
             time.sleep(wait)
-
-        raise AssertionError("unreachable")
 
 
 def _text(element, path, namespace):

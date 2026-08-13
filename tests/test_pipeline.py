@@ -51,6 +51,82 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(get.call_count, 2)
         sleep.assert_called_once_with(7.0)
 
+    def test_arxiv_retries_network_errors_five_times_with_backoff(self):
+        class Response:
+            status_code = 200
+            headers = {}
+            content = b'<feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+
+            def raise_for_status(self):
+                return None
+
+        errors = [
+            requests.ReadTimeout(),
+            requests.ConnectionError(),
+            requests.ReadTimeout(),
+            requests.ConnectionError(),
+            requests.ReadTimeout(),
+        ]
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get", side_effect=[*errors, Response()]
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            self.assertEqual(
+                fetcher._fetch_category(
+                    "cs.AI", datetime(2026, 8, 12, tzinfo=timezone.utc)
+                ),
+                [],
+            )
+
+        self.assertEqual(get.call_count, 6)
+        self.assertEqual(
+            [call.args[0] for call in sleep.call_args_list], [5, 10, 20, 40, 80]
+        )
+
+    def test_arxiv_raises_after_five_network_retries(self):
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get",
+                side_effect=[requests.ReadTimeout()] * 6,
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            with self.assertRaises(requests.ReadTimeout):
+                fetcher._fetch_category(
+                    "cs.AI", datetime(2026, 8, 12, tzinfo=timezone.utc)
+                )
+
+        self.assertEqual(get.call_count, 6)
+        self.assertEqual(sleep.call_count, 5)
+
+    def test_arxiv_network_and_rate_limit_retry_budgets_are_independent(self):
+        class Response:
+            def __init__(self, status_code, retry_after=None):
+                self.status_code = status_code
+                self.headers = {"Retry-After": retry_after} if retry_after else {}
+
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get",
+                side_effect=[
+                    requests.ReadTimeout(),
+                    Response(429, "7"),
+                    requests.ConnectionError(),
+                    Response(200),
+                ],
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            self.assertEqual(fetcher._get({}).status_code, 200)
+
+        self.assertEqual(get.call_count, 4)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [5, 7, 10])
+
     def test_arxiv_combines_categories_into_one_query(self):
         class Response:
             def __init__(self):
