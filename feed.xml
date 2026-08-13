@@ -4,8 +4,85 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Wed, 12 Aug 2026 17:06:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 03:21:45 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>可解释计算机视觉中的类别激活映射：以方法为中心的CNN、Transformer与基础模型时代视觉解释综述</title>
+      <link>https://arxiv.org/abs/2608.12299</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12299</guid>
+      <description>英文原题：Class Activation Mapping in Explainable Computer Vision: A Method-Centered Review of CNN, Transformer, and Foundation-Model-Era Visual Explanations
+
+类别激活映射（CAM）是可解释人工智能中应用最广泛的视觉解释方法家族之一。其目的直观明了：将模型内部证据转化为热力图，突出支持目标类别或概念的图像区域、卷积通道、标记或图像块。自2016年首个CAM公式提出以来，该领域已远远超越了全局平均池化的CNN分类器。CAM风格方法现包括基于梯度的事后解释、无梯度评分与消融方法、高分辨率上采样、弱监督定位与分割、Transformer标记归因、因果与去偏方法，以及使用CLIP、DINO、SAM或特征分布比较的基础模型时代方法。本综述综合了2016年以来发表的57篇以方法为中心的严格论文语料。本文提出了一种按归因机制、架构依赖性和评估目标对方法进行分类的体系。随后综述了基于梯度的CAM方法、近期及混合CAM风格方法，以及基于模型或架构感知的方法。纵观该语料，主要趋势清晰可见：该领域正从解释单个低分辨率CNN层中的单一类别得分，转向比较性、多层、概率性、标记感知和基础模型感知的解释。与此同时，评估仍然分散。保真度、定位、鲁棒性、计算成本和人类信任往往采用不同的协议进行衡量。因此，本综述不仅强调每种方法的贡献，还指出其留下哪些空白，以及哪些后续方法试图填补这些空白。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>大语言模型驱动的小市值交易：整合金融新闻情绪、宏观经济指标与技术信号</title>
+      <link>https://arxiv.org/abs/2608.12283</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12283</guid>
+      <description>英文原题：Large Language Model-Driven Small-Capitalization Trading: Integrating Financial News Sentiment, Macroeconomic Indicators, and Technical Signals
+
+大语言模型能够从金融新闻中提取比固定情绪词典更丰富的信号，近期研究已探索将此类信号输入投资组合构建。我们研究了一种不确定性感知的构建方法，将模型预测的风险（分解为偶然不确定性和认知不确定性）直接输入投资组合配置器的协方差矩阵，而不是将投资组合风险视为固定或仅调整预期收益。我们在罗素2000股票上评估了该流水线，在三种选股机制下：纯alpha触发（隔离无法由宏观指标解释的异常股票变动）、纯beta触发（在股票自身触发之前捕捉宏观指标的变动），以及两个通道一致的beta触发。在完整的持有期网格中，分离的纯alpha和纯beta部分通常在夏普比率和收益上优于beta交集。两个时间跨度尤其有信息量。在一天内，纯beta在低和中等交易成本下有效，因为它捕捉了流动宏观和行业指标向受影响的小盘股的即时领先-滞后溢出效应，但在100个基点（bps）时，由于换手率和微观结构噪声占主导，这一优势消失。在40天时，纯beta有效出于不同原因：较慢的宏观重新定价超过了公司特定的纯alpha通道。最强的保守配置是使用GPT-4o mini情绪、Student-t目标、40天持有期和风险平价配置的纯beta，在100个基点时达到夏普比率2.33。结果表明，选股机制和配置器选择至少与情绪模型同等重要，并且将公司特定触发与宏观暴露触发分开，比要求两者同时触发更具信息量。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>用于增强左前降支动脉三维分割的邻域注意力Transformer网络</title>
+      <link>https://arxiv.org/abs/2608.12274</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12274</guid>
+      <description>英文原题：A Neighborhood Attention Transformer Network for Enhanced 3D Segmentation of the Left Anterior Descending Artery
+
+背景：在三维自由呼吸、非对比剂CT中对左前降支（LAD）动脉进行精确分割对于胸部放疗中的心脏剂量保护至关重要。LAD极其细小，软组织对比度差，且在不同患者间差异显著；即使手动勾画也显示出有限的观察者间一致性，这凸显了血管边界的模糊性。目的：开发一种基于Transformer的框架，通过局部-全局上下文建模和不确定性引导优化来改善低对比度、类别不平衡CT中的LAD勾画。方法：我们提出NA-UNETR，一种基于Transformer的三维分割模型，其邻域注意力（NA）和扩张邻域注意力（DiNA）模块联合捕获精细结构细节和长程上下文。鉴于带标注的LAD数据稀缺，该模型在1,000个一般冠状动脉解剖结构的CTA体数据上进行预训练，并在20个自由呼吸的机构CT扫描上通过基于LoRA的参数高效自适应进行微调。通过同方差不确定性动态平衡的复合Dice-Focal和Hausdorff损失，改善了重叠率和边界精度。结果：NA-UNETR达到了45.64%的Dice、38.16 mm的HD95和10.01 mm的ASD，Dice较nnU-Net提高了3.10个百分点，HD95较Swin UNETR降低了2.96 mm，在所有模型中具有最强的边界精度和改善的中心线稳定性。在ImageCAS上实现了79.49%的Dice、8.89 mm的HD95和1.02 mm的ASD。消融实验证实残差块、可变核和不确定性加权损失均有贡献。结论：NA-UNETR为细小的低对比度LAD结构平衡了局部精度和全局上下文，为放疗计划中的亚结构级心脏分割提供了一种计算高效的框架。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>SCOUT：通过结构化思维链和多目标过程奖励解锁增强的空间推理</title>
+      <link>https://arxiv.org/abs/2608.12220</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12220</guid>
+      <description>英文原题：SCOUT: Unlocking Enhanced Spatial Reasoning via Structured Chain-of-Thought and Multi-Objective Process Reward
+
+现有的视觉-语言模型（VLMs）在鲁棒的空间推理方面表现出一个关键瓶颈。最近的强化学习（RL）方法旨在通过可验证的结果来弥合这一差距，但它们在中间推理步骤中的信用分配方面存在不足。同时，结构化推理方法忽视了进行全面3D理解所必需的关键深度感知。为了解决这些挑战，我们提出了SCOUT（利用过程监督强化学习训练的结构化思维链）。具体而言，我们设计了一个结构化思维链（CoT）框架，显式建模3D环境感知，以确保鲁棒的空间理解和推理。此外，我们引入了一种新颖的RL算法，具有多目标过程奖励和定制化的优势估计方法，促进了推理轨迹不同段落的细粒度信用分配。为了支持我们的框架，我们开发了SCOUT-24k，一个通过定制化流水线合成的结构化空间推理CoT数据集。大量评估表明，SCOUT-3B在通用空间基准和复杂空间推理任务上分别比基线模型提高了16.85%和6.3%。值得注意的是，我们更大的SCOUT-7B甚至以4.28%的优势超越了GPT-4o。此外，尽管仅在单图像上训练，SCOUT-7B在多图像和视频场景中表现出鲁棒的域外泛化能力。这些实证结果使SCOUT成为迈向下一代空间感知视觉-语言模型的关键一步。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>ScreenShot：用于少样本组合药物筛选的基础模型</title>
+      <link>https://arxiv.org/abs/2608.12219</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12219</guid>
+      <description>英文原题：ScreenShot: A Foundation Model for Few-Shot Combination Drug Screening
+
+用联合用药治疗患者可降低对任何单一药物产生耐药性的风险。寻找有效的联合用药方案很困难，因为巨大的搜索空间使得组合筛选成本过高、耗时，且通常在技术上不可行。预测模型可以填补这一空白，但现有方法通常需要对每个样本进行分子谱分析以及针对每个队列单独训练，在时间和组织稀缺时限制了其适用性。为了应对这一挑战，我们提出了ScreenShot，一个在覆盖3,700种药物和6,000个生物样本的40个药物筛选数据集上预训练的分层Transformer，其架构镜像了筛选数据的嵌套结构。给定来自新患者的少量观测作为上下文，ScreenShot通过上下文学习预测样本对联合治疗的反应，直接基于功能测量进行操作，无需微调也无需分子谱分析。在四个保留数据集上，ScreenShot在预测准确性和识别选择性有效治疗方面均优于所有基线。ScreenShot的内部表示对实验设计直接有用：我们利用它们驱动一种加权的k-means++主动学习策略来选择要运行的实验，以三分之一的预算实现了与均匀筛选相同的命中检测。源代码和交互式仪表盘：https://github.com/tansey-lab/screenshot。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>HSTGFormer：用于3D人体姿态估计的超时空图Transformer</title>
+      <link>https://arxiv.org/abs/2608.12187</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12187</guid>
+      <description>英文原题：HSTGFormer: Hyper Spatial-Temporal Graph Transformer for 3D Human Pose Estimation
+
+基于Transformer的方法在单目3D人体姿态估计中取得了强劲的性能，但大多数现有方法将空间和时间推理组织为分离的阶段，这可能削弱人体运动固有的统一时空相互依赖性，并在时间建模之前压缩帧级结构信息。在本文中，我们提出了HSTGFormer，一种图增强的Transformer框架，将时空推理重新表述为在关节-时间节点上的局部耦合图聚合。具体而言，HSTGFormer引入了一种超时空图（HSTG），通过将每帧骨架图扩展到时间邻域，将全局时空推理分解为围绕各个关节-时间节点的局部时空感受野，从而在保留局部结构运动信息的同时实现结构感知的耦合推理。它还进一步整合了自适应双尺度时间图（ADSTG），以在互补的短程和长程窗口上捕获关节特定的时间依赖性。一个轻量级的节点级融合模块进一步针对每个关节-时间节点自适应地整合两种图表示。在Human3.6M和MPI-INF-3DHP上的实验表明，HSTGFormer在实现高计算效率的同时达到了强劲的精度。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>一种面向特定语料的临床RAG系统在HealthBench上达到或超越更新的前沿大语言模型</title>
+      <link>https://arxiv.org/abs/2608.12138</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12138</guid>
+      <description>英文原题：A corpus-specific clinical RAG system matches or outperforms newer frontier LLMs on HealthBench
+
+通用大语言模型（LLM）近来被报道在医学基准测试上达到或超过专门的临床人工智能工具，但这类比较所依据的系统范围狭窄，且基准主要是在高收入环境中开发的。我们评估了VITA，一个专为印度及其他低收入和中等收入（LMIC）环境中的情境化知识检索而构建的检索增强生成（RAG）系统。VITA从经过整理的语料库中检索，该语料库包含特定疾病指南、印度特异性抗菌药物耐药性数据、国家处方集限制以及资源有限环境下的护理方案；其架构和语料库是专有的，但基准、医生编写的评分细则以及我们的完整回答和评分输出均公开，以供独立验证。在4,023道英文HealthBench问题（占基准的80.5%）上，使用GPT-4.1评判员评分，VITA以51.9%的可能细则得分位居第一，超过GPT-5.4（46.1%）、o4-mini（44.3%）、Gemini 3.1 Pro（42.6%）和Claude Sonnet 4.6（37.3%），并在45.4%的问题上得分最高。为测试对更新模型和评判员谱系的鲁棒性，我们使用500道问题的子集对当前一代模型（GPT-5.5、Claude Opus 4.8、Gemini 3.5 Pro、Grok 4.3）重新运行，并由一个与所有被测系统无共享谱系的中立开源权重评判员（DeepSeek-V4-Pro）进行评分。在此，差距缩小至持平：VITA和GPT-5.5在每题平均得分上统计上无法区分，而VITA在加权得分上领先并赢得了最多的问题。VITA在准确性和完整性方面的优势在中立评判员下仍然存在；其沟通得分较低。这些结果表明，一个专门构建的临床RAG系统在开放基准上仍能与前沿LLM竞争，这与语料特异性作为设计变量可以在一定程度上以沟通润色为代价改善基础依据的观点一致。</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
     <item>
       <title>Softmax 注意力的量子路线图：概率单纯形上 Softmax 注意力的精确玻恩规则类比</title>
       <link>https://arxiv.org/abs/2608.11173</link>
