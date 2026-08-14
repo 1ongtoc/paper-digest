@@ -4,8 +4,215 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Thu, 13 Aug 2026 03:21:45 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 03:08:43 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QuoteBench: How Matched Scores Can Hide Command-Path Failures</title>
+      <link>https://arxiv.org/abs/2608.13547</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13547</guid>
+      <description>LLM coding agents issue Bash commands through interfaces that may serialize, wrap, and reparse model output. Matched execution scores alone cannot distinguish command-generation errors from failures introduced after generation. QuoteBench measures this boundary with exact final-state validation on 56 one-shot tasks from 14 incident-derived families, crossing the generation contract with the execution transport around one deliberately unescaped added parser. Escaping at the interpolation point reproduces each replayed reply's raw-path outcome, so any recovery under a disclosed boundary must come from the model changing its generation. Across eight same-window configurations, replaying the same reply through the added parser lowers success by 55.4 to 73.2 percentage points; disclosure recovers 30.4 to 60.7 points for six configurations, and zero or slightly negative for the other two. Raw generation is nearly saturated at the frontier; boundary adaptation is what still separates models. GPT-5.6-sol's matched gap of -3.6 points hides -64.3 points of damage and +60.7 points of compensation. The deployment configuration reorders models: one reversal among 26 comparable pairs is unambiguous and four more sit on single-task margins. Evaluations of command-issuing agents should report the model configuration, generation contract, execution path, operating point, and final-state validator rather than treat a matched score as an intrinsic model property.</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Transformer 长度泛化的代数分解理论</title>
+      <link>https://arxiv.org/abs/2608.13433</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13433</guid>
+      <description>英文原题：Algebraic Decomposition Theory for Transformer Length Generalization
+
+基于Transformer的语言模型已知有时可以泛化到训练时未见过的更长序列，但我们缺乏对哪些任务允许长度泛化的精确刻画。甚至不知道Transformer在哪些正则语言上能够长度泛化——而这是一个基础的语言类别。我们的贡献是首次建立了Transformer在哪些正则语言上能够长度泛化的完整刻画，并提供了一种在语言句法幺半群大小上以多项式时间运行的判定算法。这些结果依赖于对C-RASP中正则语言的有效刻画，C-RASP是一种近期确立的形式体系，用于表达Transformer在哪些语言上能够长度泛化。这一刻画具有挑战性，因为像有限半群的Krohn-Rhodes分解理论这样的经典工具不足以应对C-RASP。首先，Krohn-Rhodes理论的基本构件——触发器（flip-flop）和单群——在C-RASP中不可表达。其次，C-RASP的基本构件（无界计数）无法由Krohn-Rhodes理论的有限半群表达。因此，正则语言上的长度泛化受一种经典有限分解理论无法观察到的代数性质所控制。我们将经典分解理论从有限半群推广到整数的无限加法群，从而能够用整数的迭代圈积来刻画C-RASP，并为正则语言成员资格推导出一个可证明的多项式时间判定算法。跨广泛的正则语言测试套件的实验证实，我们的理论比现有分类更准确地捕捉了Transformer的长度泛化行为。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>约简矩阵乘法：面向LLM推理的输入自适应矩阵乘积约简</title>
+      <link>https://arxiv.org/abs/2608.13426</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13426</guid>
+      <description>英文原题：Reduced Matrix Multiplication: Input-Adaptive Matrix-Product Reduction for LLM Inference
+
+基于Transformer的语言模型虽然取得了强劲的性能，但由于重复的高维矩阵乘法，产生了可观的推理成本。我们提出了约简矩阵乘法（Reduced Matrix Multiplication, RMM），这是一种无需训练、输入自适应的推理方法，通过沿其收缩维度选择信息丰富的切片来约简Transformer矩阵乘积，且不修改模型权重。在简单的保留率控制下，RMM提供了平滑且可预测的精度-效率权衡。在从1B到70B参数的各种语言模型中，我们发现约简容忍度取决于模型家族、任务、组件和保留率，尽管它通常随模型规模增大而提高。在中等约简下，RMM在评估的判别式、自回归生成和长上下文设置中均保持鲁棒性。我们进一步表明，同样的原理可扩展到多模态视觉-语言推理。机制性消融实验揭示了Transformer内部的结构不对称性：注意力侧的计算比MLP组件更可约简。最后，在NVIDIA A100上使用自定义内核的挂钟基准测试表明，这些计算节省可以转化为实际的运行时收益，尤其是在更长的序列长度下。总之，这些结果将RMM定位为输入自适应推理时优化的一个可扩展方向。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>使用基于Transformer的模型联合预测课程与成绩</title>
+      <link>https://arxiv.org/abs/2608.13409</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13409</guid>
+      <description>英文原题：Jointly Predicting Courses and Grades Using a Transformer-Based Model
+
+学习分析中的现有预测模型通常将学生的学业历史视为简单序列，忽略了同一学期内所修课程的并发性。这种简化可能导致性能预测不准确，尤其是对于课程负担繁重或具有挑战性的学生。本文提出了一种用于学术课程成绩估计的Transformer模型（TRACE），通过联合预测学生即将修读的课程集合及其对应成绩来解决这一局限。我们的方法按学期对学生课程进行编码，以捕捉课程并发效应，并利用一种将课程集合预测与成绩预测相结合的新型损失函数。我们证明，在预测课程成绩的同时预测所修课程，能够显著提升预测质量。基于十年的机构数据进行训练，与仅预测成绩的相同架构相比，我们的联合预测模型将平均绝对误差降低了近50%。该模型还优于传统的基于LSTM的序列模型以及基于图神经网络的方法，并提供了将学生属性数据纳入其中的自然方式。这项工作展示了现代神经架构在构建可解释模型方面的实用性，此类模型可通过重新训练和重新校准适应新机构，同时也凸显了关键技术的重要性，例如在训练期间预测所修课程。我们讨论了该模型如何被纳入高等教育机构的早期检测系统。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>基于损失引导的多专家生成对抗网络的手语视频合成</title>
+      <link>https://arxiv.org/abs/2608.13368</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13368</guid>
+      <description>英文原题：Sign Language Video Synthesis via Loss-Guided Multi-Expert GANs
+
+本初步技术报告提出了一种使用损失引导的多专家生成对抗网络（GAN）进行手语视频合成的框架，以增强听力受损个体的沟通能力。三个专门的判别器——全局、手部和头部——分别引导生成器中对应的专家分支关注不同的视觉区域，从而在无需显式多样性损失的情况下实现隐式特征特化。为稳定这一多判别器系统（其在早期训练阶段表现出混沌动态），我们引入了一种联合损失（United Loss）共识机制，以10%的权重将每个判别器向集成平均值正则化。每个分支进一步采用双路径卷积-Transformer设计，并带有可学习的AdaptiveFeatureFusion，以平衡卷积的稳定性与窗口自注意力的细节性。生成器使用交替的三模式调度（判别器、整体生成、分支特化生成）进行训练。在一个自定义156GB数据集上，使用去除简单和重复样本的过滤测试集，我们的0.2B参数变体达到29.8 PSNR，1.3B参数变体达到30.7 PSNR，推理VRAM占用分别为1.5 GB和8 GB，从而能够在消费级硬件上部署。由于在单GPU上训练周期为2-3个月，完整的消融研究仍在进行中。该系统在2025年香港前沿技术峰会上进行了展示。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>训练AI科学家复现研究</title>
+      <link>https://arxiv.org/abs/2608.13331</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13331</guid>
+      <description>英文原题：Training AI Scientists to Replicate Research
+
+论文的可复现性是科学知识的基石，它确保现有结果的可靠性，并为后续实验提供基础。复现行为通常会揭示先前未充分说明的细节，因此需要类似假设驱动的探索，这与开放式研究相似。在这项工作中，我们开发了Replica，一个可扩展的论文复现任务空间。为了提供奖励信号，我们引入了一个基于自动生成评分标准的评判器，该评判器噪声低，且与人类对复现质量的评估一致。我们对Faraday进行了后训练，这是一个270亿参数的“AI科学家”智能体，它利用编码智能体作为工具，在保留的复现任务上超越了Claude Opus 4.8和GPT-5.5的性能。对单个 rollout 的定性分析表明，Faraday采用了更符合科学原则的方法。我们相信，我们的结果为能够进行长周期科学创新且无需复杂外部框架的AI智能体提供了铺垫。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>关键在于你如何提问：LLM中与性别相关的语言偏见</title>
+      <link>https://arxiv.org/abs/2608.13328</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13328</guid>
+      <description>英文原题：It's How You Ask: Gender-Associated Linguistic Bias in LLMs
+
+专业交流日益通过LLM进行——但这些模型是否平等地为所有用户服务？我们表明，当提示词包含更常被女性使用的语言特征（模糊限制语、附加疑问句、集体指称）时，它们在三种文档类型和四个模型上会系统地引出更短、更不复杂且更不正式的回答。在控制提示复杂性和特征遗留效应后，这些效应依然存在。显性性别线索（如署名）与语言方言编码在同一个表征空间中，这表明它们共享潜在机制；然而，语域的影响力要大得多，在名称不产生任何效应的地方产生了大而一致的效应。我们的结果进一步揭示，事后缓解颇具挑战：因为这些模式深植于文化之中且不受意识控制，用户无法通过策略性自我呈现轻易避免它们；机制分析表明，语言特征在Transformer早期层中被编码，并与其他特征纠缠在一起。我们的工作呼吁在上游考虑语言变异的影响，以减轻由LLM中介的职场交流中的差异影响。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>训练混合：将小规模脚手架预训练运行重组为更大的语言模型</title>
+      <link>https://arxiv.org/abs/2608.13277</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13277</guid>
+      <description>英文原题：Mixture of Training: Recombining Small-Scale Scaffolded Pretraining Runs into a Larger Language Model
+
+我们探究语言模型预训练能否被分解为较小、可独立训练的任务，并随后重组为一个连贯的更大模型。我们提出了训练混合（Mixture of Training, MoT），这是一种脚手架式模块化预训练流程，它将目标Transformer划分为连续的层块，在冻结的预训练对齐器脚手架内训练每个块，然后通过可选的短端到端适应阶段重组训练好的块。在一个基于C4训练的13亿参数Gemma风格模型上，MoT提供了小规模机制证明：独立训练的深度切片可以重组为一个可用的语言模型，并且一种质量持平调度达到了与整体式基线相同的报告困惑度。这种持平设置在聚合标记上处理更多，并且在对齐器准备之后具有更短的理想化层等价关键路径；其有效计算优势取决于跨运行复用对齐器。因此，我们并非将MoT作为整体式预训练的通用替代方案，而是作为一个用于研究脚手架式子运行能否充当可复用训练单元的小规模框架。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>视觉语言模型在失明或被误导时的行为表现：科学图像上的行为评估</title>
+      <link>https://arxiv.org/abs/2608.13267</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13267</guid>
+      <description>英文原题：How Do VLMs Behave When Blind or Misled? Behavioral Evaluation of VLMs on Scientific Figures
+
+现有的视觉语言模型（VLM）基准测试侧重于感知和推理的准确性（即VLM如何准确地描述和推理图像中看到的内容），而对不确定性下的行为可靠性（即在视觉证据缺失或具有误导性时它们如何表现）关注有限。我们引入了SciFigBench，一个用于科学图像理解的诊断性VLM基准测试，它联合评估了不确定性下的感知、推理和行为可靠性。该基准包含250幅带有高质量人工标注的图形，涵盖三个评估方面，总计600多小时的标注工作量。我们进一步通过图像变换、推理问题、抵抗性探针、标题偏差探针和已确认的选择性模糊目标对这些图形进行扩展，生成了超过34,000个用于压力测试的评估设置。我们进一步提出了导纳-电阻-电感（A-R-I）框架，以评估模型是否承认证据不足、抵抗误导性上下文，并从部分信息中谨慎推断。我们的结果揭示了模型之间显著的行为差异。GPT-5.2实现了最高的描述质量（MQM 91.6）和较强的推理准确性（78.4%），但在96%的情况下会出现对不可读内容的幻觉，而Gemini 3.1 Pro作为能力相当的模型（MQM 90.2，推理81.0%），在71%的此类情况下承认不确定性，并获得了最强的抵抗得分（0.91）。这些发现表明，高感知和推理准确性本身并不能保证行为可靠性，而这一维度对于科学工作流中的部署至关重要。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>进入时间序列的ORBIT：基础模型的训练范式</title>
+      <link>https://arxiv.org/abs/2608.13262</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13262</guid>
+      <description>英文原题：Into the ORBIT for Time Series: Training Regimes for Foundation Models
+
+时间序列基础模型（TSFMs）主要通过架构创新取得了进展，而面向大规模异构语料库的训练范式仍未得到充分探索。因此，预训练分布在领域不平衡、上下文要求、预测视野和缺失性方面往往难以得到良好控制。我们提出了ORBIT（Omni-Range Bootstrap Incremental Training，全范围自举增量训练），这是一种使该分布显式且可控的训练范式。ORBIT将Bootstrap Multi-Level Sampling（控制数据集暴露，并对记录、目标变量、上下文窗口和预测视野进行采样）与Omni-Range Incremental Training（在单个训练阶段中改变上下文长度和预测视野）相结合。在ORBIT下，我们训练了Falcon-2.0，这是一个简单的单变量仅编码器Transformer，具有缺失感知的三通道分块标记化和并行分块预测。我们进一步引入了Rank-Guided Cross-Depth Alignment（秩引导的跨深度对齐），这是一种训练目标，使用深层表示作为浅层的停止梯度教师，且不增加额外推理成本。在GIFT-Eval和fev-bench上的评估表明，在不同领域和频率上具有强大的零样本预测性能。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>基于神经常微分方程的电力变压器虚拟温度传感器</title>
+      <link>https://arxiv.org/abs/2608.13260</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13260</guid>
+      <description>英文原题：Virtual Temperature Sensors in Power Transformers Using Neural Ordinary Differential Equations
+
+电力变压器热行为的精确建模与预测对于可靠性、资产寿命和电力系统优化运行至关重要。有限元法（FEM）和计算流体动力学（CFD）等数值方法具有高保真度，但计算成本高，需要复杂的网格生成，并且对于实时或大规模应用通常不切实际，尤其是在变压器几何结构未知的情况下。集中参数热模型更为实用，但依赖于变压器特定的热常数，并且可能无法在变化的运行和环境条件下捕捉动态响应。纯数据驱动的机器学习方法，包括人工神经网络、卷积神经网络和长短期记忆（LSTM）网络，在变压器温度预测方面已显示出成功，但通常需要大量高质量的训练数据，并且可能产生物理上不一致或不可解释的结果。本文开发了一种物理感知的神经常微分方程（Neural ODE）框架，用于从真实世界时间序列数据中预测变压器热行为。神经常微分方程在连续时间内对系统动态进行建模，提供平滑的轨迹预测以及连续演化的热动态的自然表示。一个关键贡献是将简化的传热方程直接集成到神经常微分方程公式中。该模型在来自挪威不同地区的十五台变压器（具有不同设计和冷却机制）的数据集上进行了评估。结果表明，所开发的神经常微分方程框架为异构变压器单元提供了一种标准化、物理感知且稳健的预测方法。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>MergeOver：递归视觉Transformer的训练后令牌合并</title>
+      <link>https://arxiv.org/abs/2608.13141</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.13141</guid>
+      <description>英文原题：MergeOver: Post-Training Token Merging for Recursive Vision Transformers
+
+视觉Transformer（ViT）在计算机视觉中展现了卓越的性能，但存在参数量大和计算复杂度呈二次方的问题，严重限制了其在资源受限的边缘硬件上的部署。虽然递归权重共享减少了参数量，令牌合并缓解了计算和内存瓶颈，但将这两种范式整合起来而无需昂贵的重新训练并非易事，这一交叉领域在很大程度上尚未被探索。我们提出了MergeOver，一种训练后方法，将令牌合并（ToMe）集成到递归权重共享的切片递归Transformer（SReT）中。通过一个撤销合并跟踪栈、约束安全的合并率调整，以及跨空间排列的同步令牌质量跟踪，MergeOver解决了这种整合的空间和合并约束。我们进一步采用分阶段单次调度，在每一阶段的第一个块执行令牌缩减，并在其后续递归迭代中保持固定的序列长度。在ImageNet-1K上进行基准测试，我们选择的配置将top-1准确率降低了1.47个百分点。在GPU上，它在批大小1和16时分别将峰值激活内存减少了37.3%和38.4%，而吞吐量在批大小1时下降了21.7%，但在批大小16时增加了21.7%。在Raspberry Pi 5（ARM CPU）上，它在批大小1和16时分别将延迟降低了2.4%和17.6%。这些结果表明，MergeOver可以在无需重新训练的情况下，恢复递归权重共享所带来的吞吐量和内存成本中的有意义的一部分，并为令牌合并与分层递归Transformer的结合提供了基线。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>LycheeMemory V2：通过语义分段级整合实现LLM智能体的高效长期记忆</title>
+      <link>https://arxiv.org/abs/2608.12990</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12990</guid>
+      <description>英文原题：LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation
+
+长时程LLM智能体必须保留过去交互中的信息以支持未来任务。现有的记忆系统通常依赖于急切整合，在每次交互后调用LLM来提取、总结或更新记忆。这种设计使得随着对话增长，记忆构建的成本越来越高。粗粒度的摘要可以降低构建成本，但有丢失细粒度上下文证据的风险，而更大的检索上下文或多跳LLM推理则将开销转移到查询时。我们提出了LycheeMemory V2，一种高效的长期记忆框架，用语义分段级整合取代了轮次级整合。LycheeMemory不是整合每一次交互，而是将多次交流批量成段，并将每个最终确定的段编码为上下文无关的类型化记忆记录。分段级批处理降低了LLM编码频率，而语义边界检测相比固定窗口批处理有助于保留连贯的事件级和时间证据。生成的记录通过轻量级结构化索引进行组织，以支持查询规划的证据检索。使用GPT-4.1-Mini进行的实验表明，LycheeMemory达到了最先进的性能，在LoCoMo上达到89.22%，在LongMemEval-S上达到92.20%。与A-Mem相比，它在LoCoMo上减少了86.0%的构建token，在LongMemEval-S上减少了75.9%，且没有增加查询时的token使用量。更广泛地说，我们的结果表明，长期智能体记忆的准确性与成本之间的权衡不仅取决于保留了哪些信息，还取决于整合的粒度。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>CardioState-JEPA：延迟感知的共享心脏表征跨模态学习</title>
+      <link>https://arxiv.org/abs/2608.12944</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12944</guid>
+      <description>英文原题：CardioState-JEPA: Delay-Aware Cross-Modal Learning of a Shared Cardiac Representation
+
+心电图（ECG）、光电容积脉搏波描记法（PPG）和心音图（PCG）提供了同一心动周期的互补视图，然而现有的心脏基础模型仅针对单一传感模态进行训练，导致跨传感器的共享生理信息未被利用。我们提出了CardioState-JEPA，一种心脏基础模型，用于在ECG、PPG和PCG上联合学习一个单一的共享表征，其构建于一种生理感知的联合嵌入预测架构之上。该模型将异构波形映射到一个共同的token空间，使用一个单一的共享Transformer编码器处理它们，并通过预测掩蔽的潜在心脏状态进行学习，将预训练目标置于共享生理而非传感器特定波形外观之上。为了处理电学、机械和血流动力学事件之间的时间偏移，跨模态预测使用一个学习得到的延迟对齐器，在相应的心脏时间点匹配信号。由于同步多传感器记录稀少，CardioState-JEPA首先从丰富的单模态数据中学习模态内结构，然后使用配对数据在潜在心脏时间上对齐各模态。作为冻结编码器，在涵盖ECG、PPG和PCG的25个下游任务中进行评估，我们的编码器相较于最佳自监督信号基线，将平均PPG分类提高了8.2个AUROC点，PCG杂音检测提高了18.8个AUROC点，ECG分类提高了15.5个AUROC点，并且在多个ECG基准上达到或超过了使用特权临床文本或监督标签训练的心脏模型。这些结果表明，异构心脏信号可以相互监督一个单一的心脏生理基础模型。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>波兰医学视觉问答：视觉语言模型未充分利用视觉证据</title>
+      <link>https://arxiv.org/abs/2608.12928</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12928</guid>
+      <description>英文原题：Polish Medical Visual Question Answering: Vision-Language Models Underutilize Visual Evidence
+
+我们引入了一个波兰语医学视觉问答（VQA）基准，该基准基于针对寻求专科认证的执业医师和牙医的波兰委员会认证考试题目构建。该基准包含涵盖多种医学专科和视觉领域的含图像问题，以及一个纯文本问答（QA）对照集。我们评估了面向波兰语的、通用开源权重以及商业视觉语言模型。该任务仍具有挑战性：最佳模型在完整VQA集上达到79.0%的准确率，且仅有GPT-5.6在具有可用候选答案的子集上超过了近似人类参考水平；所有其他被评估模型的表现均不如人类。为评估视觉锚定，我们将完整输入与省略图像、省略问题或两者均省略的配置进行比较，并按图像重要性对问题进行分类。模型从问题文本中获取的有用信息多于从图像中获取的，且在图像主导的问题上表现更差。在QA和VQA中，它们仅凭答案选项就能达到高于随机水平的准确率，这表明即使在关键任务组件缺失的情况下，非平凡的性能仍能保持。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>短信钓鱼检测中的对抗鲁棒性：经典检测系统与基于Transformer的检测系统的对抗脆弱性比较分析</title>
+      <link>https://arxiv.org/abs/2608.12889</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12889</guid>
+      <description>英文原题：Adversarial Robustness in Smishing Detection: A Comparative Analysis of Adversarial Fragility in Classical vs. Transformer-Based Detection Systems
+
+短信钓鱼检测系统通常在干净的单语文本上进行训练和评估。然而，在低资源环境下，攻击者经常通过字符混淆、跨语言语码转换和结构扰动来绕过这些系统。本研究评估了五种模型架构的对抗鲁棒性：三种经典词法模型（随机森林、XGBoost、CNN+BiLSTM）和两种多语言Transformer模型（mBERT、XLM-RoBERTa），使用了包含27,037条消息的数据集。经典模型受到黑盒通用攻击，而Transformer模型则通过注意力引导的目标攻击进行评估。每个模型均在三种攻击类型和强度级别下进行测试，性能通过鲁棒性退化比率（RDR）来衡量。结果揭示了明显的架构分界：经典模型在字符混淆和结构扰动下遭受近乎灾难性的失败（RDR最高达0.988），而Transformer模型则表现出显著更强的韧性（RDR最高达0.351），其中结构扰动是其最明显的脆弱点。效应量分析（Cliff's d）表明两类模型之间存在显著差异。在Transformer组内，XLM-RoBERTa尽管取得了更高的干净文本基线，但与mBERT相比表现出更大的性能退化。这些发现表明，干净文本性能并不能可靠预测对抗鲁棒性。使用Mann-Whitney U检验和Friedman检验进行的统计验证证实，这些模式归因于模型架构而非采样。结果强调了针对特定架构的防御的必要性，并将短信钓鱼检测界定为一个对抗性网络安全挑战，而非静态分类任务。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>当你的智能体打开聊天应用：对原始聊天日志的智能体控制搜索可与结构化记忆相媲美</title>
+      <link>https://arxiv.org/abs/2608.12888</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12888</guid>
+      <description>英文原题：When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory
+
+智能体记忆系统越来越多地以结构换取检索质量，在提出任何问题之前，将原始对话历史转换为摘要、嵌入、树或知识图谱。我们探究这种收益中有多少来自结构本身，而非来自对原始历史的有效检索。我们提出 ReFind，一个完全不构建任何语义结构的智能体控制搜索界面：它保持对话存档不变，以轮次粒度对其进行词法索引，并将通用迭代关键词搜索循环与四种基于实证重新查找研究的聊天原生控制相结合：会话感知的排序融合、局部上下文扩展、时间范围收窄，以及跳过已检查过的会话。一个独立的推理阶段根据收集到的证据进行回答。在广泛的对话记忆任务套件（单跳和多跳问答、事件排序、事实整合）中，大约 2,800 个关于精确检索和事实跟踪能力的问题在 MemoryAgentBench 的增量多轮设置下进行了评估，ReFind 在所有被比较系统中取得了最高的平均准确率（58.2），超过了最强的基于图和基于树的记忆系统（HippoRAG 2，53.2），所有系统均使用与每个复用基线相匹配的 GPT-4o-mini 骨干模型。与单次 BM25、配对的通用智能体 BM25 对照、组件移除以及智能体密集/混合变体的受控比较，分别支持了智能体控制、聊天原生控制和词法检索的作用。在 LongMemEval-S/M 上，同一接口使用 GPT-5-mini 达到 93.2 ± 3.3 和 89.3 ± 6.0。结果表明，对于针对聊天存档的精确、基于证据的问题，通过让智能体对未修改的记录进行可控搜索，无需任何基于 LLM 的索引构建，即可恢复大部分归因于复杂记忆结构的收益。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>ERSkill：为技能引导的自适应记忆检索而进化</title>
+      <link>https://arxiv.org/abs/2608.12720</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12720</guid>
+      <description>英文原题：ERSkill: Evolving for Skill-Guided Adaptive Memory Retrieval
+
+虽然大语言模型（LLM）智能体越来越依赖长期记忆来进行持久交互，但管理这种记忆的检索机制很少被视为可进化的组件。这种静态方法限制了异构记忆查询上的性能，这些查询往往需要多样化的证据构建策略。为解决此问题，我们引入了ERSkill，一个以检索为中心的框架，用于自进化的、技能引导的记忆访问。ERSkill将交互历史编译为结构化记忆存储，并将检索行为表示为由基本原语组成的可执行技能。在推理时，训练后的路由器动态地将每个查询与最优技能匹配，为答案生成构建定制证据。为了实现持续改进，ERSkill在训练过程中共同进化技能集和路由器。它采用经验字典树高效记录已探索的检索路径，并采用双前沿机制，将新技能能力的扩展与稳定的、面向路由器的部署安全解耦。在多个智能体记忆基准上的实验表明，ERSkill显著优于强大的非进化和自进化基线。值得注意的是，在使用Qwen3-Next-80B-A3B-Instruct时，其在F1、BLEU-1和LLM-judge评分上的整体平均值提高了31.3%，在使用GPT-5.4-nano时提高了28.1%。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>基于扰动的减法映射区域可解释性（PRISM）：语言模型与卒中后失语症中的命名错误分离</title>
+      <link>https://arxiv.org/abs/2608.12717</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.12717</guid>
+      <description>英文原题：Perturbation-based Regional Interpretability through Subtraction Mapping (PRISM): naming-error dissociations in language models and post-stroke aphasia
+
+大语言模型的机制可解释性缺乏具有空间分辨率的、可证伪的工具来检验内部组件是否专门化于不同的认知操作。我们将减法分析——人类神经影像学的标准框架——从生物大脑适配到扰动变换器，并同时对两种基底并行应用相同的逻辑。基于Brain-LLM统一模型（BLUM）（该模型表明层扰动下的LLaVA-1.6-Vicuna-13B错误剖面与失语症患者的病灶模式相匹配），我们开发了PRISM（基于扰动的减法映射区域可解释性）。PRISM映射七个临床费城命名测试类别，成对相减错误类别，并将每个扰动种子视为组分析中的一个被试，沿层轴进行无阈值团块增强。我们使用相关差异病灶-症状映射对213名慢性卒中后失语症患者进行结构匹配的分析，并在留出分割上对两侧进行重复验证。这些设计在被试维度（种子、患者）、空间维度（层、图谱分区皮层）和阈值化方面相匹配，但对比算子不同：LLM采用被试内错误比例差异，皮层采用被试间相关差异。两种基底都恢复了稳健的语音偏好分离、一个深层团块和一个额叶-外侧裂周围皮层团块，且均能重复；语义偏好方向在两者上都是一致的符号但非显著的趋势。因此，PRISM为变换器语言模型中的功能专门化主张提供了一种可证伪的、具有空间分辨率的检验。一个确认性的ROI层面干预（PRISM第3阶段）若能支持最强因果机制主张，则留待后续工作。</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
     <item>
       <title>可解释计算机视觉中的类别激活映射：以方法为中心的CNN、Transformer与基础模型时代视觉解释综述</title>
       <link>https://arxiv.org/abs/2608.12299</link>

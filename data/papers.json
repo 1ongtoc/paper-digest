@@ -1,6 +1,817 @@
 {
   "papers": [
     {
+      "id": "arxiv_2608.13547",
+      "arxiv_id": "2608.13547",
+      "title": "QuoteBench: How Matched Scores Can Hide Command-Path Failures",
+      "authors": [
+        "Shangao Li",
+        "Yao Zhang",
+        "Volker Tresp",
+        "Yuanyuan Yang"
+      ],
+      "abstract": "LLM coding agents issue Bash commands through interfaces that may serialize, wrap, and reparse model output. Matched execution scores alone cannot distinguish command-generation errors from failures introduced after generation. QuoteBench measures this boundary with exact final-state validation on 56 one-shot tasks from 14 incident-derived families, crossing the generation contract with the execution transport around one deliberately unescaped added parser. Escaping at the interpolation point reproduces each replayed reply's raw-path outcome, so any recovery under a disclosed boundary must come from the model changing its generation. Across eight same-window configurations, replaying the same reply through the added parser lowers success by 55.4 to 73.2 percentage points; disclosure recovers 30.4 to 60.7 points for six configurations, and zero or slightly negative for the other two. Raw generation is nearly saturated at the frontier; boundary adaptation is what still separates models. GPT-5.6-sol's matched gap of -3.6 points hides -64.3 points of damage and +60.7 points of compensation. The deployment configuration reorders models: one reversal among 26 comparable pairs is unambiguous and four more sit on single-task margins. Evaluations of command-issuing agents should report the model configuration, generation contract, execution path, operating point, and final-state validator rather than treat a matched score as an intrinsic model property.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T17:57:20Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13547",
+      "pdf_link": "https://arxiv.org/pdf/2608.13547",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "LLM coding agents issue Bash commands through interfaces that may serialize, wrap, and reparse model output. Matched execution scores alone cannot distinguish command-generation errors from failures introduced after generation. QuoteBench measures this boundary with exact final-state validation on 56 one-shot tasks from 14 incident-derived families, crossing the generation contract with the execution transport around one deliberately unescaped added parser. Escaping at the interpolation point reproduces each replayed reply's raw-path outcome, so any recovery under a disclosed boundary must come from the model changing its generation. Across eight same-window configurations, replaying the same reply through the added parser lowers success by 55.4 to 73.2 percentage points; disclosure recovers 30.4 to 60.7 points for six configurations, and zero or slightly negative for the other two. Raw generation is nearly saturated at the frontier; boundary adaptation is what still separates models. GPT-5.6-sol's matched gap of -3.6 points hides -64.3 points of damage and +60.7 points of compensation. The deployment configuration reorders models: one reversal among 26 comparable pairs is unambiguous and four more sit on single-task margins. Evaluations of command-issuing agents should report the model configuration, generation contract, execution path, operating point, and final-state validator rather than treat a matched score as an intrinsic model property.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM评估",
+        "命令执行"
+      ],
+      "relevance_reason_zh": "论文聚焦LLM编码代理的命令生成与执行评估，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "failed",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "",
+      "abstract_zh": ""
+    },
+    {
+      "id": "arxiv_2608.13433",
+      "arxiv_id": "2608.13433",
+      "title": "Algebraic Decomposition Theory for Transformer Length Generalization",
+      "authors": [
+        "Andy Yang",
+        "Blerta Veseli",
+        "Corentin Barloy",
+        "Michaël Cadilhac",
+        "Andreas Krebs",
+        "Charles Paperman",
+        "Howard Straubing",
+        "Michael Hahn"
+      ],
+      "abstract": "Transformer-based language models are known to sometimes generalize to sequences longer than seen during training, but we lack a precise characterization of which tasks admit length generalization. It is not even known which regular languages transformers length-generalize on -- and this is a foundational class of languages. Our contributions are to establish the first complete characterization of which regular languages transformers length-generalize on and provide a decision algorithm running in polynomial time in the size of the language's syntactic monoid. These results rely on an effective characterization of the regular languages in C-RASP, a recently-established formalism that expresses which languages transformers length-generalize on. This characterization is challenging because classical tools like Krohn-Rhodes decomposition theory for finite semigroups are insufficient for C-RASP. Firstly, the basic building blocks of Krohn-Rhodes theory -- flip-flop and simple groups -- are not expressible in C-RASP. Secondly, the basic building block of C-RASP (unbounded counting) is not expressible by the finite semigroups of Krohn-Rhodes theory. Thus, length generalization on regular languages is controlled by an algebraic property that is invisible to classical finite decomposition theory. We generalize classical decomposition theory from finite semigroups to the infinite additive group on the integers, allowing us to characterize C-RASP in terms of iterated wreath products of the integers and derive a provable polynomial-time decision algorithm for regular language membership. Experiments across a broad test suite of regular languages confirm that our theory captures transformers' length-generalization behavior more accurately than existing classifications.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T16:20:56Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13433",
+      "pdf_link": "https://arxiv.org/pdf/2608.13433",
+      "categories": [
+        "cs.FL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Transformer-based language models are known to sometimes generalize to sequences longer than seen during training, but we lack a precise characterization of which tasks admit length generalization. It is not even known which regular languages transformers length-generalize on -- and this is a foundational class of languages. Our contributions are to establish the first complete characterization of which regular languages transformers length-generalize on and provide a decision algorithm running in polynomial time in the size of the language's syntactic monoid. These results rely on an effective characterization of the regular languages in C-RASP, a recently-established formalism that expresses which languages transformers length-generalize on. This characterization is challenging because classical tools like Krohn-Rhodes decomposition theory for finite semigroups are insufficient for C-RASP. Firstly, the basic building blocks of Krohn-Rhodes theory -- flip-flop and simple groups -- are not expressible in C-RASP. Secondly, the basic building block of C-RASP (unbounded counting) is not expressible by the finite semigroups of Krohn-Rhodes theory. Thus, length generalization on regular languages is controlled by an algebraic property that is invisible to classical finite decomposition theory. We generalize classical decomposition theory from finite semigroups to the infinite additive group on the integers, allowing us to characterize C-RASP in terms of iterated wreath products of the integers and derive a provable polynomial-time decision algorithm for regular language membership. Experiments across a broad test suite of regular languages confirm that our theory captures transformers' length-generalization behavior more accurately than existing classifications.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "Transformer理论",
+        "长度泛化"
+      ],
+      "relevance_reason_zh": "论文研究Transformer长度泛化的代数分解理论，属于理论机器学习，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Transformer 长度泛化的代数分解理论",
+      "abstract_zh": "基于Transformer的语言模型已知有时可以泛化到训练时未见过的更长序列，但我们缺乏对哪些任务允许长度泛化的精确刻画。甚至不知道Transformer在哪些正则语言上能够长度泛化——而这是一个基础的语言类别。我们的贡献是首次建立了Transformer在哪些正则语言上能够长度泛化的完整刻画，并提供了一种在语言句法幺半群大小上以多项式时间运行的判定算法。这些结果依赖于对C-RASP中正则语言的有效刻画，C-RASP是一种近期确立的形式体系，用于表达Transformer在哪些语言上能够长度泛化。这一刻画具有挑战性，因为像有限半群的Krohn-Rhodes分解理论这样的经典工具不足以应对C-RASP。首先，Krohn-Rhodes理论的基本构件——触发器（flip-flop）和单群——在C-RASP中不可表达。其次，C-RASP的基本构件（无界计数）无法由Krohn-Rhodes理论的有限半群表达。因此，正则语言上的长度泛化受一种经典有限分解理论无法观察到的代数性质所控制。我们将经典分解理论从有限半群推广到整数的无限加法群，从而能够用整数的迭代圈积来刻画C-RASP，并为正则语言成员资格推导出一个可证明的多项式时间判定算法。跨广泛的正则语言测试套件的实验证实，我们的理论比现有分类更准确地捕捉了Transformer的长度泛化行为。"
+    },
+    {
+      "id": "arxiv_2608.13426",
+      "arxiv_id": "2608.13426",
+      "title": "Reduced Matrix Multiplication: Input-Adaptive Matrix-Product Reduction for LLM Inference",
+      "authors": [
+        "Zixuan Lan",
+        "Yanhong Li",
+        "Jiawei Zhou"
+      ],
+      "abstract": "Transformer-based language models achieve strong performance but incur substantial inference cost due to repeated high-dimensional matrix multiplications. We propose Reduced Matrix Multiplication (RMM), a training-free, input-adaptive inference method that reduces Transformer matrix products by selecting informative slices along their contraction dimensions, without modifying model weights. Under a simple retention-ratio control, RMM provides a smooth and predictable accuracy-efficiency trade-off. Across language models ranging from 1B to 70B parameters, we find that reduction tolerance depends on the model family, task, component, and retention ratio, although it often improves with model scale. Under moderate reduction, RMM remains robust across the evaluated discriminative, autoregressive generation, and long-context settings. We further show that the same principle extends to multimodal vision-language inference. Mechanistic ablations reveal a structural asymmetry within Transformers: attention-side computations are substantially more reducible than MLP components. Finally, wall-clock benchmarks with custom kernels on an NVIDIA A100 show that these computational savings can translate into practical runtime gains, especially at longer sequence lengths. Together, these results position RMM as a scalable direction for input-adaptive inference-time optimization.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T16:16:04Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13426",
+      "pdf_link": "https://arxiv.org/pdf/2608.13426",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Transformer-based language models achieve strong performance but incur substantial inference cost due to repeated high-dimensional matrix multiplications. We propose Reduced Matrix Multiplication (RMM), a training-free, input-adaptive inference method that reduces Transformer matrix products by selecting informative slices along their contraction dimensions, without modifying model weights. Under a simple retention-ratio control, RMM provides a smooth and predictable accuracy-efficiency trade-off. Across language models ranging from 1B to 70B parameters, we find that reduction tolerance depends on the model family, task, component, and retention ratio, although it often improves with model scale. Under moderate reduction, RMM remains robust across the evaluated discriminative, autoregressive generation, and long-context settings. We further show that the same principle extends to multimodal vision-language inference. Mechanistic ablations reveal a structural asymmetry within Transformers: attention-side computations are substantially more reducible than MLP components. Finally, wall-clock benchmarks with custom kernels on an NVIDIA A100 show that these computational savings can translate into practical runtime gains, especially at longer sequence lengths. Together, these results position RMM as a scalable direction for input-adaptive inference-time optimization.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "LLM推理加速",
+        "矩阵乘法"
+      ],
+      "relevance_reason_zh": "论文提出LLM推理加速的矩阵乘法缩减方法，属于普通推理优化，不涉及任何安全保护机制。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "约简矩阵乘法：面向LLM推理的输入自适应矩阵乘积约简",
+      "abstract_zh": "基于Transformer的语言模型虽然取得了强劲的性能，但由于重复的高维矩阵乘法，产生了可观的推理成本。我们提出了约简矩阵乘法（Reduced Matrix Multiplication, RMM），这是一种无需训练、输入自适应的推理方法，通过沿其收缩维度选择信息丰富的切片来约简Transformer矩阵乘积，且不修改模型权重。在简单的保留率控制下，RMM提供了平滑且可预测的精度-效率权衡。在从1B到70B参数的各种语言模型中，我们发现约简容忍度取决于模型家族、任务、组件和保留率，尽管它通常随模型规模增大而提高。在中等约简下，RMM在评估的判别式、自回归生成和长上下文设置中均保持鲁棒性。我们进一步表明，同样的原理可扩展到多模态视觉-语言推理。机制性消融实验揭示了Transformer内部的结构不对称性：注意力侧的计算比MLP组件更可约简。最后，在NVIDIA A100上使用自定义内核的挂钟基准测试表明，这些计算节省可以转化为实际的运行时收益，尤其是在更长的序列长度下。总之，这些结果将RMM定位为输入自适应推理时优化的一个可扩展方向。"
+    },
+    {
+      "id": "arxiv_2608.13409",
+      "arxiv_id": "2608.13409",
+      "title": "Jointly Predicting Courses and Grades Using a Transformer-Based Model",
+      "authors": [
+        "Paul Savala"
+      ],
+      "abstract": "Existing predictive models in learning analytics often treat student academic history as a simple sequence, overlooking the concurrent nature of courses taken within a semester. This simplification can lead to inaccurate performance predictions, particularly for students with heavy or challenging course loads. This paper introduces a TRansformer for Academic Course-grade Estimation (TRACE) that addresses this limitation by jointly predicting both the set of courses a student will take and their corresponding grades for an upcoming semester. Our approach encodes courses on a per-semester basis to capture the effects of course concurrency and utilizes a novel loss function combining course-set prediction with grade prediction. We demonstrate that predicting courses taken in addition to the grades in those courses leads to significant improvements in prediction quality. Trained on ten years of institutional data, our joint prediction model reduces mean absolute error by nearly 50% compared to an identical architecture that predicts grades alone. The model also outperforms traditional LSTM-based sequential models, as well as graph neural network-based approaches, and offers natural ways to incorporate student attribute data. This work demonstrates the utility of modern neural architectures for creating interpretable models that can be adapted to new institutions via retraining and recalibration, as well as the importance of key techniques, such as predicting courses taken during training. We discuss how this model could be incorporated into early detection systems at institutions of higher education.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T16:05:22Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13409",
+      "pdf_link": "https://arxiv.org/pdf/2608.13409",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Existing predictive models in learning analytics often treat student academic history as a simple sequence, overlooking the concurrent nature of courses taken within a semester. This simplification can lead to inaccurate performance predictions, particularly for students with heavy or challenging course loads. This paper introduces a TRansformer for Academic Course-grade Estimation (TRACE) that addresses this limitation by jointly predicting both the set of courses a student will take and their corresponding grades for an upcoming semester. Our approach encodes courses on a per-semester basis to capture the effects of course concurrency and utilizes a novel loss function combining course-set prediction with grade prediction. We demonstrate that predicting courses taken in addition to the grades in those courses leads to significant improvements in prediction quality. Trained on ten years of institutional data, our joint prediction model reduces mean absolute error by nearly 50% compared to an identical architecture that predicts grades alone. The model also outperforms traditional LSTM-based sequential models, as well as graph neural network-based approaches, and offers natural ways to incorporate student attribute data. This work demonstrates the utility of modern neural architectures for creating interpretable models that can be adapted to new institutions via retraining and recalibration, as well as the importance of key techniques, such as predicting courses taken during training. We discuss how this model could be incorporated into early detection systems at institutions of higher education.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "学习分析",
+        "Transformer应用"
+      ],
+      "relevance_reason_zh": "论文将Transformer用于学生课程与成绩预测，属教育学习分析，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "使用基于Transformer的模型联合预测课程与成绩",
+      "abstract_zh": "学习分析中的现有预测模型通常将学生的学业历史视为简单序列，忽略了同一学期内所修课程的并发性。这种简化可能导致性能预测不准确，尤其是对于课程负担繁重或具有挑战性的学生。本文提出了一种用于学术课程成绩估计的Transformer模型（TRACE），通过联合预测学生即将修读的课程集合及其对应成绩来解决这一局限。我们的方法按学期对学生课程进行编码，以捕捉课程并发效应，并利用一种将课程集合预测与成绩预测相结合的新型损失函数。我们证明，在预测课程成绩的同时预测所修课程，能够显著提升预测质量。基于十年的机构数据进行训练，与仅预测成绩的相同架构相比，我们的联合预测模型将平均绝对误差降低了近50%。该模型还优于传统的基于LSTM的序列模型以及基于图神经网络的方法，并提供了将学生属性数据纳入其中的自然方式。这项工作展示了现代神经架构在构建可解释模型方面的实用性，此类模型可通过重新训练和重新校准适应新机构，同时也凸显了关键技术的重要性，例如在训练期间预测所修课程。我们讨论了该模型如何被纳入高等教育机构的早期检测系统。"
+    },
+    {
+      "id": "arxiv_2608.13368",
+      "arxiv_id": "2608.13368",
+      "title": "Sign Language Video Synthesis via Loss-Guided Multi-Expert GANs",
+      "authors": [
+        "Dingzhan Nong",
+        "Zhihao Ren",
+        "Ziqi Li",
+        "Tim Lo"
+      ],
+      "abstract": "This preliminary technical report presents a framework for sign language video synthesis using a loss-guided multi-expert Generative Adversarial Network (GAN) to enhance communication for individuals with hearing impairments. Three specialized discriminators -- global, hand, and head -- each guide a corresponding expert branch in the generator toward a distinct visual region, enabling implicit feature specialization without explicit diversity losses. To stabilize this multi-discriminator system, whose early-phase training otherwise exhibits chaotic dynamics, we introduce a United Loss consensus mechanism that regularizes each discriminator toward the ensemble average at a 10% weight. Each branch further adopts a dual-pathway convolutional-transformer design with learnable AdaptiveFeatureFusion, balancing the stability of convolutions against the detail of windowed self-attention. The generator is trained using an alternating three-mode schedule (discriminator, holistic generation, branch-specialized generation). On a custom 156GB dataset with a filtered test set that removes easy and repetitive samples, our 0.2B-parameter variant achieves 29.8 PSNR and the 1.3B-parameter variant achieves 30.7 PSNR, with inference VRAM footprints of 1.5 GB and 8 GB respectively, enabling deployment on consumer-grade hardware. Full ablation studies remain ongoing due to the 2-3 month training cycle on a single GPU. The system was showcased at the 2025 Hong Kong Frontier Technology Summit.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T15:32:40Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13368",
+      "pdf_link": "https://arxiv.org/pdf/2608.13368",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "This preliminary technical report presents a framework for sign language video synthesis using a loss-guided multi-expert Generative Adversarial Network (GAN) to enhance communication for individuals with hearing impairments. Three specialized discriminators -- global, hand, and head -- each guide a corresponding expert branch in the generator toward a distinct visual region, enabling implicit feature specialization without explicit diversity losses. To stabilize this multi-discriminator system, whose early-phase training otherwise exhibits chaotic dynamics, we introduce a United Loss consensus mechanism that regularizes each discriminator toward the ensemble average at a 10% weight. Each branch further adopts a dual-pathway convolutional-transformer design with learnable AdaptiveFeatureFusion, balancing the stability of convolutions against the detail of windowed self-attention. The generator is trained using an alternating three-mode schedule (discriminator, holistic generation, branch-specialized generation). On a custom 156GB dataset with a filtered test set that removes easy and repetitive samples, our 0.2B-parameter variant achieves 29.8 PSNR and the 1.3B-parameter variant achieves 30.7 PSNR, with inference VRAM footprints of 1.5 GB and 8 GB respectively, enabling deployment on consumer-grade hardware. Full ablation studies remain ongoing due to the 2-3 month training cycle on a single GPU. The system was showcased at the 2025 Hong Kong Frontier Technology Summit.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "手语合成",
+        "GAN"
+      ],
+      "relevance_reason_zh": "论文涉及手语视频合成的GAN与Transformer架构，不涉及隐私计算或模型保护。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "基于损失引导的多专家生成对抗网络的手语视频合成",
+      "abstract_zh": "本初步技术报告提出了一种使用损失引导的多专家生成对抗网络（GAN）进行手语视频合成的框架，以增强听力受损个体的沟通能力。三个专门的判别器——全局、手部和头部——分别引导生成器中对应的专家分支关注不同的视觉区域，从而在无需显式多样性损失的情况下实现隐式特征特化。为稳定这一多判别器系统（其在早期训练阶段表现出混沌动态），我们引入了一种联合损失（United Loss）共识机制，以10%的权重将每个判别器向集成平均值正则化。每个分支进一步采用双路径卷积-Transformer设计，并带有可学习的AdaptiveFeatureFusion，以平衡卷积的稳定性与窗口自注意力的细节性。生成器使用交替的三模式调度（判别器、整体生成、分支特化生成）进行训练。在一个自定义156GB数据集上，使用去除简单和重复样本的过滤测试集，我们的0.2B参数变体达到29.8 PSNR，1.3B参数变体达到30.7 PSNR，推理VRAM占用分别为1.5 GB和8 GB，从而能够在消费级硬件上部署。由于在单GPU上训练周期为2-3个月，完整的消融研究仍在进行中。该系统在2025年香港前沿技术峰会上进行了展示。"
+    },
+    {
+      "id": "arxiv_2608.13331",
+      "arxiv_id": "2608.13331",
+      "title": "Training AI Scientists to Replicate Research",
+      "authors": [
+        "Damon Falck",
+        "Samer Sabri",
+        "Anja Surina",
+        "Thom Foster",
+        "Anya Sims",
+        "Sam Devlin",
+        "Dylan Rogers",
+        "Tantum Collins",
+        "Kaloyan Aleksiev",
+        "Louis Kirsch",
+        "Edward Hughes"
+      ],
+      "abstract": "The replicability of papers is a cornerstone of scientific knowledge, ensuring the reliability of existing results and providing a base for further experiments. The act of replication typically illuminates details that were previously underspecified, and thus requires similar hypothesis-driven exploration to open-ended research. In this work, we develop Replica, a scalable task space for paper replication. To provide reward signal, we introduce an auto-generated rubric-based judge that has low noise and agrees with human assessment of replication quality. We post-train Faraday, a 27B-parameter \"AI Scientist\" agent that leverages coding agents as tools, surpassing the performance of Claude Opus 4.8 and GPT-5.5 on held-out replication tasks. Qualitative analysis of individual rollouts reveals that Faraday adopts a more scientifically-principled approach. We believe that our results provide a stepping stone towards AI agents capable of long-horizon scientific innovation without requiring complex harnesses.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T14:59:27Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13331",
+      "pdf_link": "https://arxiv.org/pdf/2608.13331",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "The replicability of papers is a cornerstone of scientific knowledge, ensuring the reliability of existing results and providing a base for further experiments. The act of replication typically illuminates details that were previously underspecified, and thus requires similar hypothesis-driven exploration to open-ended research. In this work, we develop Replica, a scalable task space for paper replication. To provide reward signal, we introduce an auto-generated rubric-based judge that has low noise and agrees with human assessment of replication quality. We post-train Faraday, a 27B-parameter \"AI Scientist\" agent that leverages coding agents as tools, surpassing the performance of Claude Opus 4.8 and GPT-5.5 on held-out replication tasks. Qualitative analysis of individual rollouts reveals that Faraday adopts a more scientifically-principled approach. We believe that our results provide a stepping stone towards AI agents capable of long-horizon scientific innovation without requiring complex harnesses.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "AI智能体",
+        "论文复现"
+      ],
+      "relevance_reason_zh": "论文训练AI智能体复制科研实验，属于智能体与自动化科研，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "训练AI科学家复现研究",
+      "abstract_zh": "论文的可复现性是科学知识的基石，它确保现有结果的可靠性，并为后续实验提供基础。复现行为通常会揭示先前未充分说明的细节，因此需要类似假设驱动的探索，这与开放式研究相似。在这项工作中，我们开发了Replica，一个可扩展的论文复现任务空间。为了提供奖励信号，我们引入了一个基于自动生成评分标准的评判器，该评判器噪声低，且与人类对复现质量的评估一致。我们对Faraday进行了后训练，这是一个270亿参数的“AI科学家”智能体，它利用编码智能体作为工具，在保留的复现任务上超越了Claude Opus 4.8和GPT-5.5的性能。对单个 rollout 的定性分析表明，Faraday采用了更符合科学原则的方法。我们相信，我们的结果为能够进行长周期科学创新且无需复杂外部框架的AI智能体提供了铺垫。"
+    },
+    {
+      "id": "arxiv_2608.13328",
+      "arxiv_id": "2608.13328",
+      "title": "It's How You Ask: Gender-Associated Linguistic Bias in LLMs",
+      "authors": [
+        "Katherine Van Koevering",
+        "Anjalie Field"
+      ],
+      "abstract": "Professional communication is increasingly mediated by LLMs - but do these models serve all users equally? We show that when prompts contain linguistic features more commonly used by women (hedges, tag questions, collective reference), they systematically elicit shorter, less sophisticated, and less formal responses across three document types and four models. These effects persist after controlling for prompt complexity and feature carry-over. Explicit gender cues like sign-off names are encoded in the same representational space as linguistic dialect - suggesting shared underlying mechanisms - yet linguistic register is far more influential, producing large, consistent effects where names produce none. Our results further reveal that post-hoc mitigation is challenging: because these patterns are culturally embedded and outside conscious control, users cannot easily avoid them through strategic self-presentation, and mechanistic analysis reveals that linguistic features are encoded in early transformer layers and entangled with other features. Our work calls for upstream consideration of the influences of linguistic variation to mitigate disparate impacts of LLM-mediated workplace communication.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T14:54:23Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13328",
+      "pdf_link": "https://arxiv.org/pdf/2608.13328",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Professional communication is increasingly mediated by LLMs - but do these models serve all users equally? We show that when prompts contain linguistic features more commonly used by women (hedges, tag questions, collective reference), they systematically elicit shorter, less sophisticated, and less formal responses across three document types and four models. These effects persist after controlling for prompt complexity and feature carry-over. Explicit gender cues like sign-off names are encoded in the same representational space as linguistic dialect - suggesting shared underlying mechanisms - yet linguistic register is far more influential, producing large, consistent effects where names produce none. Our results further reveal that post-hoc mitigation is challenging: because these patterns are culturally embedded and outside conscious control, users cannot easily avoid them through strategic self-presentation, and mechanistic analysis reveals that linguistic features are encoded in early transformer layers and entangled with other features. Our work calls for upstream consideration of the influences of linguistic variation to mitigate disparate impacts of LLM-mediated workplace communication.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "LLM偏见",
+        "语言特征"
+      ],
+      "relevance_reason_zh": "论文研究LLM中性别相关语言偏见，属于模型行为分析，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "关键在于你如何提问：LLM中与性别相关的语言偏见",
+      "abstract_zh": "专业交流日益通过LLM进行——但这些模型是否平等地为所有用户服务？我们表明，当提示词包含更常被女性使用的语言特征（模糊限制语、附加疑问句、集体指称）时，它们在三种文档类型和四个模型上会系统地引出更短、更不复杂且更不正式的回答。在控制提示复杂性和特征遗留效应后，这些效应依然存在。显性性别线索（如署名）与语言方言编码在同一个表征空间中，这表明它们共享潜在机制；然而，语域的影响力要大得多，在名称不产生任何效应的地方产生了大而一致的效应。我们的结果进一步揭示，事后缓解颇具挑战：因为这些模式深植于文化之中且不受意识控制，用户无法通过策略性自我呈现轻易避免它们；机制分析表明，语言特征在Transformer早期层中被编码，并与其他特征纠缠在一起。我们的工作呼吁在上游考虑语言变异的影响，以减轻由LLM中介的职场交流中的差异影响。"
+    },
+    {
+      "id": "arxiv_2608.13277",
+      "arxiv_id": "2608.13277",
+      "title": "Mixture of Training: Recombining Small-Scale Scaffolded Pretraining Runs into a Larger Language Model",
+      "authors": [
+        "Mohammed Sabry",
+        "Sean Augenstein",
+        "Keith Rush",
+        "Lucio Dery"
+      ],
+      "abstract": "We ask whether language-model pre-training can be decomposed into smaller, independently trainable jobs that can later be recomposed into a coherent larger model. We introduce Mixture of Training (MoT), a scaffolded modular pre-training procedure that partitions a target Transformer into contiguous layer blocks, trains each block inside a frozen pretrained aligner scaffold, and then recomposes the trained blocks with an optional short end-to-end adaptation pass. On a 1.3B-parameter Gemma-style model trained on C4, MoT provides a small-scale proof of mechanism: independently trained depth slices can be recomposed into a usable language model, and a quality-parity schedule reaches the same reported perplexity as the monolithic baseline. This parity setting processes more aggregate tokens and has a shorter idealized layer-equivalent critical path after aligner preparation; its effective compute advantage depends on reusing the aligner across runs. We therefore present MoT not as a general replacement for monolithic pre-training, but as a small-scale framework for studying whether scaffolded sub-runs can act as reusable training units.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T14:13:46Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13277",
+      "pdf_link": "https://arxiv.org/pdf/2608.13277",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "We ask whether language-model pre-training can be decomposed into smaller, independently trainable jobs that can later be recomposed into a coherent larger model. We introduce Mixture of Training (MoT), a scaffolded modular pre-training procedure that partitions a target Transformer into contiguous layer blocks, trains each block inside a frozen pretrained aligner scaffold, and then recomposes the trained blocks with an optional short end-to-end adaptation pass. On a 1.3B-parameter Gemma-style model trained on C4, MoT provides a small-scale proof of mechanism: independently trained depth slices can be recomposed into a usable language model, and a quality-parity schedule reaches the same reported perplexity as the monolithic baseline. This parity setting processes more aggregate tokens and has a shorter idealized layer-equivalent critical path after aligner preparation; its effective compute advantage depends on reusing the aligner across runs. We therefore present MoT not as a general replacement for monolithic pre-training, but as a small-scale framework for studying whether scaffolded sub-runs can act as reusable training units.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "预训练",
+        "模块化训练"
+      ],
+      "relevance_reason_zh": "论文提出模块化预训练方法重组Transformer，属于训练技巧，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "训练混合：将小规模脚手架预训练运行重组为更大的语言模型",
+      "abstract_zh": "我们探究语言模型预训练能否被分解为较小、可独立训练的任务，并随后重组为一个连贯的更大模型。我们提出了训练混合（Mixture of Training, MoT），这是一种脚手架式模块化预训练流程，它将目标Transformer划分为连续的层块，在冻结的预训练对齐器脚手架内训练每个块，然后通过可选的短端到端适应阶段重组训练好的块。在一个基于C4训练的13亿参数Gemma风格模型上，MoT提供了小规模机制证明：独立训练的深度切片可以重组为一个可用的语言模型，并且一种质量持平调度达到了与整体式基线相同的报告困惑度。这种持平设置在聚合标记上处理更多，并且在对齐器准备之后具有更短的理想化层等价关键路径；其有效计算优势取决于跨运行复用对齐器。因此，我们并非将MoT作为整体式预训练的通用替代方案，而是作为一个用于研究脚手架式子运行能否充当可复用训练单元的小规模框架。"
+    },
+    {
+      "id": "arxiv_2608.13267",
+      "arxiv_id": "2608.13267",
+      "title": "How Do VLMs Behave When Blind or Misled? Behavioral Evaluation of VLMs on Scientific Figures",
+      "authors": [
+        "Paul Osemudiame Oamen",
+        "Owusu-Banahene Osei",
+        "Ananya Mukherjee",
+        "Christian Greisinger",
+        "Steffen Eger",
+        "Pius Onobhayedo",
+        "Wei Zhao"
+      ],
+      "abstract": "Existing vision-language model (VLM) benchmarks emphasize perception and reasoning accuracy (how well VLMs describe and reason about what they see in an image), with limited attention to behavioral reliability under uncertainty (how they behave when visual evidence is missing or misleading). We introduce SciFigBench, a diagnostic VLM benchmark for scientific figure understanding that jointly evaluates perception, reasoning, and behavioral reliability under uncertainty. It contains 250 figures with high-quality human annotations across three evaluation aspects, totaling 600+ hours of annotation effort. We further extend these figures via image transformations, reasoning questions, resistance probes, caption-bias probes, and confirmed selective-blur targets, producing over 34,000 evaluation setups for stress testing. We further propose the Admittance-Resistance-Inductance (A-R-I) framework to evaluate whether models acknowledge insufficient evidence, resist misleading context, and infer cautiously from partial information. Our results reveal substantial behavioral differences among models. GPT-5.2 achieves the highest description quality (MQM 91.6) with strong reasoning accuracy (78.4%), yet hallucinates unreadable content in 96% of cases, whereas Gemini 3.1 Pro, a comparably capable model (MQM 90.2, reasoning 81.0%), admits uncertainty in 71% of such cases and achieves the strongest resistance score (0.91). These findings show that high perception and reasoning accuracy alone do not guarantee behavioral reliability, a dimension critical for deployment in scientific workflows.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T14:06:35Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13267",
+      "pdf_link": "https://arxiv.org/pdf/2608.13267",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Existing vision-language model (VLM) benchmarks emphasize perception and reasoning accuracy (how well VLMs describe and reason about what they see in an image), with limited attention to behavioral reliability under uncertainty (how they behave when visual evidence is missing or misleading). We introduce SciFigBench, a diagnostic VLM benchmark for scientific figure understanding that jointly evaluates perception, reasoning, and behavioral reliability under uncertainty. It contains 250 figures with high-quality human annotations across three evaluation aspects, totaling 600+ hours of annotation effort. We further extend these figures via image transformations, reasoning questions, resistance probes, caption-bias probes, and confirmed selective-blur targets, producing over 34,000 evaluation setups for stress testing. We further propose the Admittance-Resistance-Inductance (A-R-I) framework to evaluate whether models acknowledge insufficient evidence, resist misleading context, and infer cautiously from partial information. Our results reveal substantial behavioral differences among models. GPT-5.2 achieves the highest description quality (MQM 91.6) with strong reasoning accuracy (78.4%), yet hallucinates unreadable content in 96% of cases, whereas Gemini 3.1 Pro, a comparably capable model (MQM 90.2, reasoning 81.0%), admits uncertainty in 71% of such cases and achieves the strongest resistance score (0.91). These findings show that high perception and reasoning accuracy alone do not guarantee behavioral reliability, a dimension critical for deployment in scientific workflows.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "VLM评估",
+        "行为可靠性"
+      ],
+      "relevance_reason_zh": "论文评估VLM在科学图表上的行为可靠性与幻觉，属模型评测，不涉及密码学或隐私保护推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "视觉语言模型在失明或被误导时的行为表现：科学图像上的行为评估",
+      "abstract_zh": "现有的视觉语言模型（VLM）基准测试侧重于感知和推理的准确性（即VLM如何准确地描述和推理图像中看到的内容），而对不确定性下的行为可靠性（即在视觉证据缺失或具有误导性时它们如何表现）关注有限。我们引入了SciFigBench，一个用于科学图像理解的诊断性VLM基准测试，它联合评估了不确定性下的感知、推理和行为可靠性。该基准包含250幅带有高质量人工标注的图形，涵盖三个评估方面，总计600多小时的标注工作量。我们进一步通过图像变换、推理问题、抵抗性探针、标题偏差探针和已确认的选择性模糊目标对这些图形进行扩展，生成了超过34,000个用于压力测试的评估设置。我们进一步提出了导纳-电阻-电感（A-R-I）框架，以评估模型是否承认证据不足、抵抗误导性上下文，并从部分信息中谨慎推断。我们的结果揭示了模型之间显著的行为差异。GPT-5.2实现了最高的描述质量（MQM 91.6）和较强的推理准确性（78.4%），但在96%的情况下会出现对不可读内容的幻觉，而Gemini 3.1 Pro作为能力相当的模型（MQM 90.2，推理81.0%），在71%的此类情况下承认不确定性，并获得了最强的抵抗得分（0.91）。这些发现表明，高感知和推理准确性本身并不能保证行为可靠性，而这一维度对于科学工作流中的部署至关重要。"
+    },
+    {
+      "id": "arxiv_2608.13262",
+      "arxiv_id": "2608.13262",
+      "title": "Into the ORBIT for Time Series: Training Regimes for Foundation Models",
+      "authors": [
+        "Hongjie Xia",
+        "Yiding Liu",
+        "Yifan Hu",
+        "Peiyuan Liu",
+        "Zewei Dong"
+      ],
+      "abstract": "Time series foundation models (TSFMs) have advanced primarily through architectural innovation, while training regimes for large-scale heterogeneous corpora remain under-explored. As a result, pre-training distributions are often poorly controlled with respect to domain imbalance, context requirements, prediction horizons, and missingness. We introduce ORBIT (Omni-Range Bootstrap Incremental Training), a training paradigm that makes this distribution explicit and controllable. ORBIT combines Bootstrap Multi-Level Sampling, which controls dataset exposure and samples records, target variables, context windows, and prediction horizons, with Omni-Range Incremental Training, which varies context lengths and prediction horizons throughout a single training stage. Under ORBIT, we train Falcon-2.0, a simple univariate encoder-only Transformer with missingness-aware triple-channel patch tokenization and parallel patch prediction. We further introduce Rank-Guided Cross-Depth Alignment, a training objective that uses late-layer representations as stop-gradient teachers for shallow layers without additional inference cost. Evaluations on GIFT-Eval and fev-bench demonstrate strong zero-shot forecasting performance across diverse domains and frequencies.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T14:00:39Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13262",
+      "pdf_link": "https://arxiv.org/pdf/2608.13262",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Time series foundation models (TSFMs) have advanced primarily through architectural innovation, while training regimes for large-scale heterogeneous corpora remain under-explored. As a result, pre-training distributions are often poorly controlled with respect to domain imbalance, context requirements, prediction horizons, and missingness. We introduce ORBIT (Omni-Range Bootstrap Incremental Training), a training paradigm that makes this distribution explicit and controllable. ORBIT combines Bootstrap Multi-Level Sampling, which controls dataset exposure and samples records, target variables, context windows, and prediction horizons, with Omni-Range Incremental Training, which varies context lengths and prediction horizons throughout a single training stage. Under ORBIT, we train Falcon-2.0, a simple univariate encoder-only Transformer with missingness-aware triple-channel patch tokenization and parallel patch prediction. We further introduce Rank-Guided Cross-Depth Alignment, a training objective that uses late-layer representations as stop-gradient teachers for shallow layers without additional inference cost. Evaluations on GIFT-Eval and fev-bench demonstrate strong zero-shot forecasting performance across diverse domains and frequencies.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "时间序列基础模型",
+        "训练范式"
+      ],
+      "relevance_reason_zh": "论文提出时间序列基础模型的训练范式，属于训练方法，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "进入时间序列的ORBIT：基础模型的训练范式",
+      "abstract_zh": "时间序列基础模型（TSFMs）主要通过架构创新取得了进展，而面向大规模异构语料库的训练范式仍未得到充分探索。因此，预训练分布在领域不平衡、上下文要求、预测视野和缺失性方面往往难以得到良好控制。我们提出了ORBIT（Omni-Range Bootstrap Incremental Training，全范围自举增量训练），这是一种使该分布显式且可控的训练范式。ORBIT将Bootstrap Multi-Level Sampling（控制数据集暴露，并对记录、目标变量、上下文窗口和预测视野进行采样）与Omni-Range Incremental Training（在单个训练阶段中改变上下文长度和预测视野）相结合。在ORBIT下，我们训练了Falcon-2.0，这是一个简单的单变量仅编码器Transformer，具有缺失感知的三通道分块标记化和并行分块预测。我们进一步引入了Rank-Guided Cross-Depth Alignment（秩引导的跨深度对齐），这是一种训练目标，使用深层表示作为浅层的停止梯度教师，且不增加额外推理成本。在GIFT-Eval和fev-bench上的评估表明，在不同领域和频率上具有强大的零样本预测性能。"
+    },
+    {
+      "id": "arxiv_2608.13260",
+      "arxiv_id": "2608.13260",
+      "title": "Virtual Temperature Sensors in Power Transformers Using Neural Ordinary Differential Equations",
+      "authors": [
+        "Berk Hadzhamolla",
+        "Alexander Johannes Stasik",
+        "Signe Riemer-Sørensen"
+      ],
+      "abstract": "Accurate modeling and forecasting of power transformer thermal behavior are critical for reliability, asset lifetime, and optimized power system operation. Numerical approaches such as finite element methods (FEM) and computational fluid dynamics (CFD) offer high fidelity but are computationally expensive, require complex mesh generation, and are often impractical for real-time or large-scale applications, particularly when transformer geometries are unknown. Lumped-parameter thermal models are more practical but depend on transformer-specific thermal constants and may fail to capture dynamic responses under varying operating and environmental conditions. Purely data-driven machine learning methods, including artificial neural networks, convolutional neural networks, and long short-term memory (LSTM) networks, have shown success in forecasting transformer temperatures but typically require large volumes of high-quality training data and may produce physically inconsistent or uninterpretable results. This paper develops a physics-aware Neural Ordinary Differential Equation (Neural ODE) framework for forecasting transformer thermal behavior from real-world time-series data. Neural ODEs model system dynamics in continuous time, providing smooth trajectory prediction and a natural representation of continuously evolving thermal dynamics. A key contribution is the integration of simplified heat-transfer equations directly into the Neural ODE formulation. The model is evaluated across datasets from fifteen transformers in different regions of Norway with varying designs and cooling mechanisms. The results demonstrate that the developed Neural ODE framework provides a standardized, physics-aware, and robust forecasting approach for heterogeneous transformer units.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T13:59:32Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13260",
+      "pdf_link": "https://arxiv.org/pdf/2608.13260",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Accurate modeling and forecasting of power transformer thermal behavior are critical for reliability, asset lifetime, and optimized power system operation. Numerical approaches such as finite element methods (FEM) and computational fluid dynamics (CFD) offer high fidelity but are computationally expensive, require complex mesh generation, and are often impractical for real-time or large-scale applications, particularly when transformer geometries are unknown. Lumped-parameter thermal models are more practical but depend on transformer-specific thermal constants and may fail to capture dynamic responses under varying operating and environmental conditions. Purely data-driven machine learning methods, including artificial neural networks, convolutional neural networks, and long short-term memory (LSTM) networks, have shown success in forecasting transformer temperatures but typically require large volumes of high-quality training data and may produce physically inconsistent or uninterpretable results. This paper develops a physics-aware Neural Ordinary Differential Equation (Neural ODE) framework for forecasting transformer thermal behavior from real-world time-series data. Neural ODEs model system dynamics in continuous time, providing smooth trajectory prediction and a natural representation of continuously evolving thermal dynamics. A key contribution is the integration of simplified heat-transfer equations directly into the Neural ODE formulation. The model is evaluated across datasets from fifteen transformers in different regions of Norway with varying designs and cooling mechanisms. The results demonstrate that the developed Neural ODE framework provides a standardized, physics-aware, and robust forecasting approach for heterogeneous transformer units.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "电力变压器",
+        "神经ODE",
+        "温度预测"
+      ],
+      "relevance_reason_zh": "电力变压器热行为建模与预测，仅为电力领域中的transformer一词匹配，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "基于神经常微分方程的电力变压器虚拟温度传感器",
+      "abstract_zh": "电力变压器热行为的精确建模与预测对于可靠性、资产寿命和电力系统优化运行至关重要。有限元法（FEM）和计算流体动力学（CFD）等数值方法具有高保真度，但计算成本高，需要复杂的网格生成，并且对于实时或大规模应用通常不切实际，尤其是在变压器几何结构未知的情况下。集中参数热模型更为实用，但依赖于变压器特定的热常数，并且可能无法在变化的运行和环境条件下捕捉动态响应。纯数据驱动的机器学习方法，包括人工神经网络、卷积神经网络和长短期记忆（LSTM）网络，在变压器温度预测方面已显示出成功，但通常需要大量高质量的训练数据，并且可能产生物理上不一致或不可解释的结果。本文开发了一种物理感知的神经常微分方程（Neural ODE）框架，用于从真实世界时间序列数据中预测变压器热行为。神经常微分方程在连续时间内对系统动态进行建模，提供平滑的轨迹预测以及连续演化的热动态的自然表示。一个关键贡献是将简化的传热方程直接集成到神经常微分方程公式中。该模型在来自挪威不同地区的十五台变压器（具有不同设计和冷却机制）的数据集上进行了评估。结果表明，所开发的神经常微分方程框架为异构变压器单元提供了一种标准化、物理感知且稳健的预测方法。"
+    },
+    {
+      "id": "arxiv_2608.13141",
+      "arxiv_id": "2608.13141",
+      "title": "MergeOver: Post-Training Token Merging for Recursive Vision Transformers",
+      "authors": [
+        "Junseo Kim",
+        "Uraz Odyurt",
+        "Amirreza Yousefzadeh"
+      ],
+      "abstract": "Vision Transformers (ViTs) demonstrate exceptional performance in computer vision but suffer from large parameter counts and quadratic computational complexity, severely limiting their deployment on resource-constrained edge hardware. While recursive weight-sharing reduces parameter counts and token merging mitigates computational and memory bottlenecks, integrating these two paradigms without costly retraining is non-trivial, leaving this intersection largely unexplored. We propose MergeOver, a post-training approach that integrates Token Merging (ToMe) into the recursively weight-shared Sliced Recursive Transformer (SReT). Through an Unmerge tracking stack, constraint-safe merge-rate adjustment, and synchronised token-mass tracking across spatial permutations, MergeOver resolves the spatial and merging constraints of this integration. We further employ a stage-wise single-shot schedule that performs token reduction at the first block of each stage and maintains a fixed sequence length throughout its subsequent recursive iterations. Benchmarked on ImageNet-1K, our selected configuration reduces top-1 accuracy by 1.47 percentage points. On the GPU, it reduces peak activation memory by 37.3% and 38.4% at batch sizes 1 and 16, while throughput decreases by 21.7% at batch size 1 but increases by 21.7% at batch size 16. On a Raspberry Pi 5 (ARM CPU), it reduces latency by 2.4% and 17.6% at batch sizes 1 and 16. These results show that MergeOver can recover a meaningful part of the throughput and memory cost that recursive weight-sharing introduces, without retraining, and provides a baseline for combining token merging with hierarchical recursive transformers.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T12:15:10Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.13141",
+      "pdf_link": "https://arxiv.org/pdf/2608.13141",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Vision Transformers (ViTs) demonstrate exceptional performance in computer vision but suffer from large parameter counts and quadratic computational complexity, severely limiting their deployment on resource-constrained edge hardware. While recursive weight-sharing reduces parameter counts and token merging mitigates computational and memory bottlenecks, integrating these two paradigms without costly retraining is non-trivial, leaving this intersection largely unexplored. We propose MergeOver, a post-training approach that integrates Token Merging (ToMe) into the recursively weight-shared Sliced Recursive Transformer (SReT). Through an Unmerge tracking stack, constraint-safe merge-rate adjustment, and synchronised token-mass tracking across spatial permutations, MergeOver resolves the spatial and merging constraints of this integration. We further employ a stage-wise single-shot schedule that performs token reduction at the first block of each stage and maintains a fixed sequence length throughout its subsequent recursive iterations. Benchmarked on ImageNet-1K, our selected configuration reduces top-1 accuracy by 1.47 percentage points. On the GPU, it reduces peak activation memory by 37.3% and 38.4% at batch sizes 1 and 16, while throughput decreases by 21.7% at batch size 1 but increases by 21.7% at batch size 16. On a Raspberry Pi 5 (ARM CPU), it reduces latency by 2.4% and 17.6% at batch sizes 1 and 16. These results show that MergeOver can recover a meaningful part of the throughput and memory cost that recursive weight-sharing introduces, without retraining, and provides a baseline for combining token merging with hierarchical recursive transformers.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "视觉Transformer",
+        "令牌合并",
+        "推理优化"
+      ],
+      "relevance_reason_zh": "视觉Transformer的令牌合并与推理加速，属普通模型推理优化，不涉及隐私保护或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "MergeOver：递归视觉Transformer的训练后令牌合并",
+      "abstract_zh": "视觉Transformer（ViT）在计算机视觉中展现了卓越的性能，但存在参数量大和计算复杂度呈二次方的问题，严重限制了其在资源受限的边缘硬件上的部署。虽然递归权重共享减少了参数量，令牌合并缓解了计算和内存瓶颈，但将这两种范式整合起来而无需昂贵的重新训练并非易事，这一交叉领域在很大程度上尚未被探索。我们提出了MergeOver，一种训练后方法，将令牌合并（ToMe）集成到递归权重共享的切片递归Transformer（SReT）中。通过一个撤销合并跟踪栈、约束安全的合并率调整，以及跨空间排列的同步令牌质量跟踪，MergeOver解决了这种整合的空间和合并约束。我们进一步采用分阶段单次调度，在每一阶段的第一个块执行令牌缩减，并在其后续递归迭代中保持固定的序列长度。在ImageNet-1K上进行基准测试，我们选择的配置将top-1准确率降低了1.47个百分点。在GPU上，它在批大小1和16时分别将峰值激活内存减少了37.3%和38.4%，而吞吐量在批大小1时下降了21.7%，但在批大小16时增加了21.7%。在Raspberry Pi 5（ARM CPU）上，它在批大小1和16时分别将延迟降低了2.4%和17.6%。这些结果表明，MergeOver可以在无需重新训练的情况下，恢复递归权重共享所带来的吞吐量和内存成本中的有意义的一部分，并为令牌合并与分层递归Transformer的结合提供了基线。"
+    },
+    {
+      "id": "arxiv_2608.12990",
+      "arxiv_id": "2608.12990",
+      "title": "LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation",
+      "authors": [
+        "Dongfang Li",
+        "Zixuan Liu",
+        "Junmai Wang",
+        "Jiahe Huang",
+        "Fuhao Li",
+        "Bonian Jia",
+        "Baotian Hu",
+        "Min Zhang"
+      ],
+      "abstract": "Long-horizon LLM agents must preserve information from past interactions to support future tasks. Existing memory systems typically rely on eager consolidation, invoking LLMs after each interaction to extract, summarize, or update memories. This design makes memory construction increasingly costly as conversations grow. Coarse summarization can reduce construction cost but risks discarding fine-grained contextual evidence, whereas larger retrieval contexts or multi-hop LLM reasoning shift the overhead to query time. We present LycheeMemory V2, an efficient long-term memory framework that replaces turn-level consolidation with semantic segment-level consolidation. Instead of consolidating every interaction, LycheeMemory batches multiple exchanges into segments and encodes each finalized segment into context-independent typed memory records. Segment-level batching lowers LLM encoding frequency, while semantic boundary detection helps preserve coherent event-level and temporal evidence compared with fixed-window batching. The resulting records are organized with lightweight structured indexes for query-planned evidence retrieval. Experiments using GPT-4.1-Mini show that LycheeMemory achieves state-of-the-art performance, reaching 89.22% on LoCoMo and 92.20% on LongMemEval-S. Compared with A-Mem, it reduces construction tokens by 86.0% on LoCoMo and 75.9% on LongMemEval-S without increasing query-time token usage. More broadly, our results suggest that the accuracy--cost trade-off of long-term agent memory depends not only on what information is retained, but also on the granularity at which it is consolidated.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T09:13:15Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12990",
+      "pdf_link": "https://arxiv.org/pdf/2608.12990",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Long-horizon LLM agents must preserve information from past interactions to support future tasks. Existing memory systems typically rely on eager consolidation, invoking LLMs after each interaction to extract, summarize, or update memories. This design makes memory construction increasingly costly as conversations grow. Coarse summarization can reduce construction cost but risks discarding fine-grained contextual evidence, whereas larger retrieval contexts or multi-hop LLM reasoning shift the overhead to query time. We present LycheeMemory V2, an efficient long-term memory framework that replaces turn-level consolidation with semantic segment-level consolidation. Instead of consolidating every interaction, LycheeMemory batches multiple exchanges into segments and encodes each finalized segment into context-independent typed memory records. Segment-level batching lowers LLM encoding frequency, while semantic boundary detection helps preserve coherent event-level and temporal evidence compared with fixed-window batching. The resulting records are organized with lightweight structured indexes for query-planned evidence retrieval. Experiments using GPT-4.1-Mini show that LycheeMemory achieves state-of-the-art performance, reaching 89.22% on LoCoMo and 92.20% on LongMemEval-S. Compared with A-Mem, it reduces construction tokens by 86.0% on LoCoMo and 75.9% on LongMemEval-S without increasing query-time token usage. More broadly, our results suggest that the accuracy--cost trade-off of long-term agent memory depends not only on what information is retained, but also on the granularity at which it is consolidated.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM智能体",
+        "长期记忆",
+        "记忆管理"
+      ],
+      "relevance_reason_zh": "LLM智能体长期记忆管理，关注记忆构建效率，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LycheeMemory V2：通过语义分段级整合实现LLM智能体的高效长期记忆",
+      "abstract_zh": "长时程LLM智能体必须保留过去交互中的信息以支持未来任务。现有的记忆系统通常依赖于急切整合，在每次交互后调用LLM来提取、总结或更新记忆。这种设计使得随着对话增长，记忆构建的成本越来越高。粗粒度的摘要可以降低构建成本，但有丢失细粒度上下文证据的风险，而更大的检索上下文或多跳LLM推理则将开销转移到查询时。我们提出了LycheeMemory V2，一种高效的长期记忆框架，用语义分段级整合取代了轮次级整合。LycheeMemory不是整合每一次交互，而是将多次交流批量成段，并将每个最终确定的段编码为上下文无关的类型化记忆记录。分段级批处理降低了LLM编码频率，而语义边界检测相比固定窗口批处理有助于保留连贯的事件级和时间证据。生成的记录通过轻量级结构化索引进行组织，以支持查询规划的证据检索。使用GPT-4.1-Mini进行的实验表明，LycheeMemory达到了最先进的性能，在LoCoMo上达到89.22%，在LongMemEval-S上达到92.20%。与A-Mem相比，它在LoCoMo上减少了86.0%的构建token，在LongMemEval-S上减少了75.9%，且没有增加查询时的token使用量。更广泛地说，我们的结果表明，长期智能体记忆的准确性与成本之间的权衡不仅取决于保留了哪些信息，还取决于整合的粒度。"
+    },
+    {
+      "id": "arxiv_2608.12944",
+      "arxiv_id": "2608.12944",
+      "title": "CardioState-JEPA: Delay-Aware Cross-Modal Learning of a Shared Cardiac Representation",
+      "authors": [
+        "Hamza Shafiq",
+        "Hung Manh Pham",
+        "Bin Zhu",
+        "Pan Zhou",
+        "Jun Hu",
+        "Aaqib Saeed"
+      ],
+      "abstract": "Electrocardiography (ECG), photoplethysmography (PPG), and phonocardiography (PCG) provide complementary views of the same cardiac cycle, yet existing cardiac foundation models are trained for a single sensing modality, leaving the shared physiology across sensors unexploited. We introduce CardioState-JEPA, a cardiac foundation model to learn a single shared representation jointly across ECG, PPG, and PCG, built on a physiology-aware joint-embedding predictive architecture. The model maps heterogeneous waveforms into a common token space, processes them with a single shared Transformer encoder, and learns by predicting masked latent cardiac states, placing the pretraining target on shared physiology rather than sensor-specific waveform appearance. To handle the temporal offsets between electrical, mechanical, and hemodynamic events, cross-modal prediction uses a learned delay aligner that matches signals at the corresponding cardiac time. Because synchronized multi-sensor recordings are scarce, CardioState-JEPA first learns within-modality structure from abundant unimodal data and then uses paired data to align modalities in latent cardiac time. Evaluated as a frozen encoder across 25 downstream tasks spanning ECG, PPG, and PCG, our encoder improves average PPG classification by 8.2 AUROC points, PCG murmur detection by 18.8 AUROC points, and ECG classification by 15.5 AUROC points over the best self-supervised signal baseline and matches or exceeds cardiac models trained with privileged clinical text or supervised labels on several ECG benchmarks. These results establish that heterogeneous cardiac signals can mutually supervise a single foundation model of cardiac physiology.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T08:21:06Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12944",
+      "pdf_link": "https://arxiv.org/pdf/2608.12944",
+      "categories": [
+        "cs.LG",
+        "eess.IV",
+        "stat.ML"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Electrocardiography (ECG), photoplethysmography (PPG), and phonocardiography (PCG) provide complementary views of the same cardiac cycle, yet existing cardiac foundation models are trained for a single sensing modality, leaving the shared physiology across sensors unexploited. We introduce CardioState-JEPA, a cardiac foundation model to learn a single shared representation jointly across ECG, PPG, and PCG, built on a physiology-aware joint-embedding predictive architecture. The model maps heterogeneous waveforms into a common token space, processes them with a single shared Transformer encoder, and learns by predicting masked latent cardiac states, placing the pretraining target on shared physiology rather than sensor-specific waveform appearance. To handle the temporal offsets between electrical, mechanical, and hemodynamic events, cross-modal prediction uses a learned delay aligner that matches signals at the corresponding cardiac time. Because synchronized multi-sensor recordings are scarce, CardioState-JEPA first learns within-modality structure from abundant unimodal data and then uses paired data to align modalities in latent cardiac time. Evaluated as a frozen encoder across 25 downstream tasks spanning ECG, PPG, and PCG, our encoder improves average PPG classification by 8.2 AUROC points, PCG murmur detection by 18.8 AUROC points, and ECG classification by 15.5 AUROC points over the best self-supervised signal baseline and matches or exceeds cardiac models trained with privileged clinical text or supervised labels on several ECG benchmarks. These results establish that heterogeneous cardiac signals can mutually supervise a single foundation model of cardiac physiology.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "心脏信号",
+        "基础模型",
+        "联合嵌入预测架构"
+      ],
+      "relevance_reason_zh": "心脏信号基础模型学习共享表征，使用Transformer编码器但无任何安全推理或隐私保护内容。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "CardioState-JEPA：延迟感知的共享心脏表征跨模态学习",
+      "abstract_zh": "心电图（ECG）、光电容积脉搏波描记法（PPG）和心音图（PCG）提供了同一心动周期的互补视图，然而现有的心脏基础模型仅针对单一传感模态进行训练，导致跨传感器的共享生理信息未被利用。我们提出了CardioState-JEPA，一种心脏基础模型，用于在ECG、PPG和PCG上联合学习一个单一的共享表征，其构建于一种生理感知的联合嵌入预测架构之上。该模型将异构波形映射到一个共同的token空间，使用一个单一的共享Transformer编码器处理它们，并通过预测掩蔽的潜在心脏状态进行学习，将预训练目标置于共享生理而非传感器特定波形外观之上。为了处理电学、机械和血流动力学事件之间的时间偏移，跨模态预测使用一个学习得到的延迟对齐器，在相应的心脏时间点匹配信号。由于同步多传感器记录稀少，CardioState-JEPA首先从丰富的单模态数据中学习模态内结构，然后使用配对数据在潜在心脏时间上对齐各模态。作为冻结编码器，在涵盖ECG、PPG和PCG的25个下游任务中进行评估，我们的编码器相较于最佳自监督信号基线，将平均PPG分类提高了8.2个AUROC点，PCG杂音检测提高了18.8个AUROC点，ECG分类提高了15.5个AUROC点，并且在多个ECG基准上达到或超过了使用特权临床文本或监督标签训练的心脏模型。这些结果表明，异构心脏信号可以相互监督一个单一的心脏生理基础模型。"
+    },
+    {
+      "id": "arxiv_2608.12928",
+      "arxiv_id": "2608.12928",
+      "title": "Polish Medical Visual Question Answering: Vision-Language Models Underutilize Visual Evidence",
+      "authors": [
+        "Jakub Pokrywka",
+        "Łukasz Grzybowski",
+        "Antoni Lasik",
+        "Marek Kubis",
+        "Jeremi Ignacy Kaczmarek",
+        "Wojciech Kusa"
+      ],
+      "abstract": "We introduce a Polish-language medical visual question answering (VQA) benchmark, built from Polish Board Certification Examination questions for licensed physicians and dentists pursuing specialist certification. The benchmark comprises image-containing questions spanning diverse medical specialties and visual domains, together with a text-only question answering (QA) control set. We evaluate Polish-oriented, general-purpose open-weight, and commercial vision-language models. The task remains challenging: the best model achieves 79.0\\% accuracy on the full VQA set, and only GPT-5.6 surpasses the approximate human reference on the subset with available candidate responses; all other evaluated models perform worse than humans. To assess visual grounding, we compare complete inputs with configurations omitting the image, the question, or both, and categorize questions by image importance. Models derive more useful information from the question text than from the image and perform worse on image-dominant questions. Across both QA and VQA, they nevertheless achieve above-chance accuracy from the answer choices alone, showing that non-trivial performance can persist even when key task components are missing.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T08:07:22Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12928",
+      "pdf_link": "https://arxiv.org/pdf/2608.12928",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "We introduce a Polish-language medical visual question answering (VQA) benchmark, built from Polish Board Certification Examination questions for licensed physicians and dentists pursuing specialist certification. The benchmark comprises image-containing questions spanning diverse medical specialties and visual domains, together with a text-only question answering (QA) control set. We evaluate Polish-oriented, general-purpose open-weight, and commercial vision-language models. The task remains challenging: the best model achieves 79.0\\% accuracy on the full VQA set, and only GPT-5.6 surpasses the approximate human reference on the subset with available candidate responses; all other evaluated models perform worse than humans. To assess visual grounding, we compare complete inputs with configurations omitting the image, the question, or both, and categorize questions by image importance. Models derive more useful information from the question text than from the image and perform worse on image-dominant questions. Across both QA and VQA, they nevertheless achieve above-chance accuracy from the answer choices alone, showing that non-trivial performance can persist even when key task components are missing.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "医学VQA",
+        "视觉语言模型",
+        "评测"
+      ],
+      "relevance_reason_zh": "波兰语医学视觉问答基准与模型评测，属于应用评测而非安全推理或隐私计算。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "波兰医学视觉问答：视觉语言模型未充分利用视觉证据",
+      "abstract_zh": "我们引入了一个波兰语医学视觉问答（VQA）基准，该基准基于针对寻求专科认证的执业医师和牙医的波兰委员会认证考试题目构建。该基准包含涵盖多种医学专科和视觉领域的含图像问题，以及一个纯文本问答（QA）对照集。我们评估了面向波兰语的、通用开源权重以及商业视觉语言模型。该任务仍具有挑战性：最佳模型在完整VQA集上达到79.0%的准确率，且仅有GPT-5.6在具有可用候选答案的子集上超过了近似人类参考水平；所有其他被评估模型的表现均不如人类。为评估视觉锚定，我们将完整输入与省略图像、省略问题或两者均省略的配置进行比较，并按图像重要性对问题进行分类。模型从问题文本中获取的有用信息多于从图像中获取的，且在图像主导的问题上表现更差。在QA和VQA中，它们仅凭答案选项就能达到高于随机水平的准确率，这表明即使在关键任务组件缺失的情况下，非平凡的性能仍能保持。"
+    },
+    {
+      "id": "arxiv_2608.12889",
+      "arxiv_id": "2608.12889",
+      "title": "Adversarial Robustness in Smishing Detection: A Comparative Analysis of Adversarial Fragility in Classical vs. Transformer-Based Detection Systems",
+      "authors": [
+        "Denzel Chiuseni",
+        "Athanase Bahizire",
+        "Silva Hama",
+        "Jema David Ndibwile"
+      ],
+      "abstract": "Smishing detection systems are commonly trained and evaluated on clean, monolingual text. In low-resource settings, however, attackers frequently circumvent these systems through character obfuscation, cross-lingual code-switching, and structural perturbation. This study evaluates adversarial robustness for five model architectures: three classical lexical models (Random Forest, XGBoost, CNN+BiLSTM) and two multilingual transformers (mBERT, XLM-RoBERTa), using a dataset of 27,037 messages. Classical models are subjected to black-box generic attacks, while transformers are evaluated with attention-guided targeting. Each model is tested across three attack types and intensity levels, with performance measured by the Robustness Degradation Ratio (RDR). The results reveal a distinct architectural boundary: classical models experience near-catastrophic failure under character obfuscation and structural perturbation (RDR up to 0.988), whereas transformers demonstrate significantly greater resilience (RDR up to 0.351), with structural perturbation representing their most pronounced vulnerability. Effect-size analysis (Cliff's d) indicates a substantial difference between the two model categories. Within the transformer group, XLM-RoBERTa, despite achieving a higher clean-text baseline, exhibits greater degradation than mBERT. These findings demonstrate that clean-text performance is not a reliable predictor of adversarial robustness. Statistical validation using Mann-Whitney U and Friedman tests confirms that these patterns are attributable to model architecture rather than sampling. The results underscore the necessity for architecture-specific defences and frame smishing detection as an adversarial cybersecurity challenge rather than a static classification task.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T07:12:13Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12889",
+      "pdf_link": "https://arxiv.org/pdf/2608.12889",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Smishing detection systems are commonly trained and evaluated on clean, monolingual text. In low-resource settings, however, attackers frequently circumvent these systems through character obfuscation, cross-lingual code-switching, and structural perturbation. This study evaluates adversarial robustness for five model architectures: three classical lexical models (Random Forest, XGBoost, CNN+BiLSTM) and two multilingual transformers (mBERT, XLM-RoBERTa), using a dataset of 27,037 messages. Classical models are subjected to black-box generic attacks, while transformers are evaluated with attention-guided targeting. Each model is tested across three attack types and intensity levels, with performance measured by the Robustness Degradation Ratio (RDR). The results reveal a distinct architectural boundary: classical models experience near-catastrophic failure under character obfuscation and structural perturbation (RDR up to 0.988), whereas transformers demonstrate significantly greater resilience (RDR up to 0.351), with structural perturbation representing their most pronounced vulnerability. Effect-size analysis (Cliff's d) indicates a substantial difference between the two model categories. Within the transformer group, XLM-RoBERTa, despite achieving a higher clean-text baseline, exhibits greater degradation than mBERT. These findings demonstrate that clean-text performance is not a reliable predictor of adversarial robustness. Statistical validation using Mann-Whitney U and Friedman tests confirms that these patterns are attributable to model architecture rather than sampling. The results underscore the necessity for architecture-specific defences and frame smishing detection as an adversarial cybersecurity challenge rather than a static classification task.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "对抗鲁棒性",
+        "文本分类",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "骚扰短信检测模型的对抗鲁棒性分析，属于一般攻击与安全评测，不涉及保护推理过程的密码学或可信执行。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "短信钓鱼检测中的对抗鲁棒性：经典检测系统与基于Transformer的检测系统的对抗脆弱性比较分析",
+      "abstract_zh": "短信钓鱼检测系统通常在干净的单语文本上进行训练和评估。然而，在低资源环境下，攻击者经常通过字符混淆、跨语言语码转换和结构扰动来绕过这些系统。本研究评估了五种模型架构的对抗鲁棒性：三种经典词法模型（随机森林、XGBoost、CNN+BiLSTM）和两种多语言Transformer模型（mBERT、XLM-RoBERTa），使用了包含27,037条消息的数据集。经典模型受到黑盒通用攻击，而Transformer模型则通过注意力引导的目标攻击进行评估。每个模型均在三种攻击类型和强度级别下进行测试，性能通过鲁棒性退化比率（RDR）来衡量。结果揭示了明显的架构分界：经典模型在字符混淆和结构扰动下遭受近乎灾难性的失败（RDR最高达0.988），而Transformer模型则表现出显著更强的韧性（RDR最高达0.351），其中结构扰动是其最明显的脆弱点。效应量分析（Cliff's d）表明两类模型之间存在显著差异。在Transformer组内，XLM-RoBERTa尽管取得了更高的干净文本基线，但与mBERT相比表现出更大的性能退化。这些发现表明，干净文本性能并不能可靠预测对抗鲁棒性。使用Mann-Whitney U检验和Friedman检验进行的统计验证证实，这些模式归因于模型架构而非采样。结果强调了针对特定架构的防御的必要性，并将短信钓鱼检测界定为一个对抗性网络安全挑战，而非静态分类任务。"
+    },
+    {
+      "id": "arxiv_2608.12888",
+      "arxiv_id": "2608.12888",
+      "title": "When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory",
+      "authors": [
+        "Ruizhe Li",
+        "Licheng Zhang",
+        "Benfeng Xu",
+        "Mingxuan Du",
+        "Zheren Fu",
+        "Weidong Chen"
+      ],
+      "abstract": "Agent-memory systems increasingly buy retrieval quality with structure, transforming raw conversation histories into summaries, embeddings, trees, or knowledge graphs before any question is asked. We ask how much of that benefit comes from the structure itself, rather than from competent retrieval over the raw history. We present ReFind, an agent-controlled search interface that builds no semantic structure at all: it leaves the conversation archive unmodified, indexes it lexically at turn granularity, and combines a generic iterative keyword-search loop with four chat-native controls grounded in empirical refinding work: session-aware rank fusion, local context expansion, temporal narrowing, and skipping already-inspected sessions. A separate reasoning stage answers from the collected evidence. Across a broad suite of conversational-memory tasks (single- and multi-hop QA, event ordering, and fact consolidation), roughly 2,800 questions on precise-retrieval and fact-tracking capabilities evaluated under the incremental multi-turn setting of MemoryAgentBench, ReFind attains the highest mean accuracy (58.2) of any system compared, above the strongest graph- and tree-based memory systems (HippoRAG 2, 53.2), all under a GPT-4o-mini backbone matched to every reused baseline. Controlled comparisons to single-shot BM25, a matched generic-agentic BM25 control, component removals, and agentic dense/hybrid variants separately support the roles of agent control, chat-native controls, and lexical retrieval. On LongMemEval-S/M, the same interface reaches 93.2 +/- 3.3 and 89.3 +/- 6.0 with GPT-5-mini. The results indicate that for precise, evidence-grounded questions over chat archives, much of the benefit credited to elaborate memory structures is recoverable by giving an agent controllable search over the unmodified record, with no LLM-based index construction at all.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T07:10:22Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12888",
+      "pdf_link": "https://arxiv.org/pdf/2608.12888",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Agent-memory systems increasingly buy retrieval quality with structure, transforming raw conversation histories into summaries, embeddings, trees, or knowledge graphs before any question is asked. We ask how much of that benefit comes from the structure itself, rather than from competent retrieval over the raw history. We present ReFind, an agent-controlled search interface that builds no semantic structure at all: it leaves the conversation archive unmodified, indexes it lexically at turn granularity, and combines a generic iterative keyword-search loop with four chat-native controls grounded in empirical refinding work: session-aware rank fusion, local context expansion, temporal narrowing, and skipping already-inspected sessions. A separate reasoning stage answers from the collected evidence. Across a broad suite of conversational-memory tasks (single- and multi-hop QA, event ordering, and fact consolidation), roughly 2,800 questions on precise-retrieval and fact-tracking capabilities evaluated under the incremental multi-turn setting of MemoryAgentBench, ReFind attains the highest mean accuracy (58.2) of any system compared, above the strongest graph- and tree-based memory systems (HippoRAG 2, 53.2), all under a GPT-4o-mini backbone matched to every reused baseline. Controlled comparisons to single-shot BM25, a matched generic-agentic BM25 control, component removals, and agentic dense/hybrid variants separately support the roles of agent control, chat-native controls, and lexical retrieval. On LongMemEval-S/M, the same interface reaches 93.2 +/- 3.3 and 89.3 +/- 6.0 with GPT-5-mini. The results indicate that for precise, evidence-grounded questions over chat archives, much of the benefit credited to elaborate memory structures is recoverable by giving an agent controllable search over the unmodified record, with no LLM-based index construction at all.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "智能体",
+        "信息检索",
+        "聊天记录"
+      ],
+      "relevance_reason_zh": "智能体对聊天记录的检索界面，聚焦检索与记忆效果，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "当你的智能体打开聊天应用：对原始聊天日志的智能体控制搜索可与结构化记忆相媲美",
+      "abstract_zh": "智能体记忆系统越来越多地以结构换取检索质量，在提出任何问题之前，将原始对话历史转换为摘要、嵌入、树或知识图谱。我们探究这种收益中有多少来自结构本身，而非来自对原始历史的有效检索。我们提出 ReFind，一个完全不构建任何语义结构的智能体控制搜索界面：它保持对话存档不变，以轮次粒度对其进行词法索引，并将通用迭代关键词搜索循环与四种基于实证重新查找研究的聊天原生控制相结合：会话感知的排序融合、局部上下文扩展、时间范围收窄，以及跳过已检查过的会话。一个独立的推理阶段根据收集到的证据进行回答。在广泛的对话记忆任务套件（单跳和多跳问答、事件排序、事实整合）中，大约 2,800 个关于精确检索和事实跟踪能力的问题在 MemoryAgentBench 的增量多轮设置下进行了评估，ReFind 在所有被比较系统中取得了最高的平均准确率（58.2），超过了最强的基于图和基于树的记忆系统（HippoRAG 2，53.2），所有系统均使用与每个复用基线相匹配的 GPT-4o-mini 骨干模型。与单次 BM25、配对的通用智能体 BM25 对照、组件移除以及智能体密集/混合变体的受控比较，分别支持了智能体控制、聊天原生控制和词法检索的作用。在 LongMemEval-S/M 上，同一接口使用 GPT-5-mini 达到 93.2 ± 3.3 和 89.3 ± 6.0。结果表明，对于针对聊天存档的精确、基于证据的问题，通过让智能体对未修改的记录进行可控搜索，无需任何基于 LLM 的索引构建，即可恢复大部分归因于复杂记忆结构的收益。"
+    },
+    {
+      "id": "arxiv_2608.12720",
+      "arxiv_id": "2608.12720",
+      "title": "ERSkill: Evolving for Skill-Guided Adaptive Memory Retrieval",
+      "authors": [
+        "Haolong Chen",
+        "Liang Zhang",
+        "Zhuo Li",
+        "Lei Xue",
+        "Guanrxu Zhu"
+      ],
+      "abstract": "While Large Language Model (LLM) agents increasingly rely on long-term memory for persistent interactions, the retrieval mechanisms governing this memory are rarely treated as evolvable components. This static approach limits performance on heterogeneous memory queries, which often demand diverse evidence construction strategies. To address this, we introduce \\textbf{ERSkill}, a retrieval-centric framework for self-evolving, skill-guided memory access. ERSkill compiles interaction histories into a structured memory store and represents retrieval behaviors as executable skills composed of fundamental primitives. At inference time, a trained router dynamically matches each query to the optimal skill to construct tailored evidence for answer generation. To enable continuous improvement, ERSkill co-evolves the skill set and the router during training. It employs an experience trie to efficiently record explored retrieval paths, alongside a double-frontier mechanism that safely decouples the expansion of new skill capabilities from stable, router-facing deployment. Experiments across multiple agent memory benchmarks demonstrate that ERSkill substantially outperforms strong non-evolving and self-evolving baselines. Notably, it improves the overall average across F1, BLEU-1, and LLM-judge scores by 31.3\\% with Qwen3-Next-80B-A3B-Instruct and by 28.1\\% with GPT-5.4-nano.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T02:06:01Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12720",
+      "pdf_link": "https://arxiv.org/pdf/2608.12720",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "While Large Language Model (LLM) agents increasingly rely on long-term memory for persistent interactions, the retrieval mechanisms governing this memory are rarely treated as evolvable components. This static approach limits performance on heterogeneous memory queries, which often demand diverse evidence construction strategies. To address this, we introduce \\textbf{ERSkill}, a retrieval-centric framework for self-evolving, skill-guided memory access. ERSkill compiles interaction histories into a structured memory store and represents retrieval behaviors as executable skills composed of fundamental primitives. At inference time, a trained router dynamically matches each query to the optimal skill to construct tailored evidence for answer generation. To enable continuous improvement, ERSkill co-evolves the skill set and the router during training. It employs an experience trie to efficiently record explored retrieval paths, alongside a double-frontier mechanism that safely decouples the expansion of new skill capabilities from stable, router-facing deployment. Experiments across multiple agent memory benchmarks demonstrate that ERSkill substantially outperforms strong non-evolving and self-evolving baselines. Notably, it improves the overall average across F1, BLEU-1, and LLM-judge scores by 31.3\\% with Qwen3-Next-80B-A3B-Instruct and by 28.1\\% with GPT-5.4-nano.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM智能体",
+        "记忆检索",
+        "技能演化"
+      ],
+      "relevance_reason_zh": "LLM智能体的技能引导记忆检索框架，属于记忆系统设计，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "ERSkill：为技能引导的自适应记忆检索而进化",
+      "abstract_zh": "虽然大语言模型（LLM）智能体越来越依赖长期记忆来进行持久交互，但管理这种记忆的检索机制很少被视为可进化的组件。这种静态方法限制了异构记忆查询上的性能，这些查询往往需要多样化的证据构建策略。为解决此问题，我们引入了ERSkill，一个以检索为中心的框架，用于自进化的、技能引导的记忆访问。ERSkill将交互历史编译为结构化记忆存储，并将检索行为表示为由基本原语组成的可执行技能。在推理时，训练后的路由器动态地将每个查询与最优技能匹配，为答案生成构建定制证据。为了实现持续改进，ERSkill在训练过程中共同进化技能集和路由器。它采用经验字典树高效记录已探索的检索路径，并采用双前沿机制，将新技能能力的扩展与稳定的、面向路由器的部署安全解耦。在多个智能体记忆基准上的实验表明，ERSkill显著优于强大的非进化和自进化基线。值得注意的是，在使用Qwen3-Next-80B-A3B-Instruct时，其在F1、BLEU-1和LLM-judge评分上的整体平均值提高了31.3%，在使用GPT-5.4-nano时提高了28.1%。"
+    },
+    {
+      "id": "arxiv_2608.12717",
+      "arxiv_id": "2608.12717",
+      "title": "Perturbation-based Regional Interpretability through Subtraction Mapping (PRISM): naming-error dissociations in language models and post-stroke aphasia",
+      "authors": [
+        "Xiang Guan",
+        "Roger D. Newman-Norlund",
+        "Yong Yang",
+        "Saeed Ahmadi",
+        "Regan Willis",
+        "Nadra Salman",
+        "Kalil Warren",
+        "Srihari Nelakuditi",
+        "Chris Rorden",
+        "Leonardo Bonilha",
+        "Julius Fridriksson"
+      ],
+      "abstract": "Mechanistic interpretability of large language models lacks spatially resolved, falsifiable tools for testing whether internal components are specialized for distinct cognitive operations. We adapt subtraction analysis, the standard framework of human neuroimaging, from biological brains to perturbed transformers, and apply the same logic to both substrates in parallel. Building on the Brain-LLM Unified Model (BLUM), which showed that layer-perturbed LLaVA-1.6-Vicuna-13B error profiles match the lesion patterns of aphasic patients, we develop PRISM (Perturbation-based Regional Interpretability through Subtraction Mapping). PRISM maps the seven clinical Philadelphia Naming Test categories, subtracts error classes pairwise, and treats each perturbation seed as a subject in a group analysis with threshold-free cluster enhancement along the layer axis. We run a structurally matched analysis on 213 chronic post-stroke aphasia patients using correlation-difference lesion-symptom mapping, and replicate both sides on held-out splits. The designs match in subject dimension (seeds, patients), spatial dimension (layers, atlas-parcellated cortex) and thresholding, but the contrast operator differs: a within-subject error-proportion difference for the LLM, a between-subject correlation difference for the cortex. Both substrates recover a robust phonemic-favoring dissociation, a deep layer cluster and a frontal-perisylvian cortical cluster, both replicating; the semantic-favoring direction is a consistently signed but non-significant trend on both. PRISM thus gives a falsifiable, spatially resolved test of functional-specialization claims in transformer language models. A confirmatory ROI-level intervention (PRISM Stage 3) licensing the strongest causal-mechanism claim is left to subsequent work.",
+      "published": "2026-08-13",
+      "published_at": "2026-08-13T02:02:05Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.12717",
+      "pdf_link": "https://arxiv.org/pdf/2608.12717",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Mechanistic interpretability of large language models lacks spatially resolved, falsifiable tools for testing whether internal components are specialized for distinct cognitive operations. We adapt subtraction analysis, the standard framework of human neuroimaging, from biological brains to perturbed transformers, and apply the same logic to both substrates in parallel. Building on the Brain-LLM Unified Model (BLUM), which showed that layer-perturbed LLaVA-1.6-Vicuna-13B error profiles match the lesion patterns of aphasic patients, we develop PRISM (Perturbation-based Regional Interpretability through Subtraction Mapping). PRISM maps the seven clinical Philadelphia Naming Test categories, subtracts error classes pairwise, and treats each perturbation seed as a subject in a group analysis with threshold-free cluster enhancement along the layer axis. We run a structurally matched analysis on 213 chronic post-stroke aphasia patients using correlation-difference lesion-symptom mapping, and replicate both sides on held-out splits. The designs match in subject dimension (seeds, patients), spatial dimension (layers, atlas-parcellated cortex) and thresholding, but the contrast operator differs: a within-subject error-proportion difference for the LLM, a between-subject correlation difference for the cortex. Both substrates recover a robust phonemic-favoring dissociation, a deep layer cluster and a frontal-perisylvian cortical cluster, both replicating; the semantic-favoring direction is a consistently signed but non-significant trend on both. PRISM thus gives a falsifiable, spatially resolved test of functional-specialization claims in transformer language models. A confirmatory ROI-level intervention (PRISM Stage 3) licensing the strongest causal-mechanism claim is left to subsequent work.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "机械可解释性",
+        "Transformer",
+        "扰动分析"
+      ],
+      "relevance_reason_zh": "基于扰动Transformer的机械可解释性研究，与失语症对比，不属于安全推理或隐私计算。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "基于扰动的减法映射区域可解释性（PRISM）：语言模型与卒中后失语症中的命名错误分离",
+      "abstract_zh": "大语言模型的机制可解释性缺乏具有空间分辨率的、可证伪的工具来检验内部组件是否专门化于不同的认知操作。我们将减法分析——人类神经影像学的标准框架——从生物大脑适配到扰动变换器，并同时对两种基底并行应用相同的逻辑。基于Brain-LLM统一模型（BLUM）（该模型表明层扰动下的LLaVA-1.6-Vicuna-13B错误剖面与失语症患者的病灶模式相匹配），我们开发了PRISM（基于扰动的减法映射区域可解释性）。PRISM映射七个临床费城命名测试类别，成对相减错误类别，并将每个扰动种子视为组分析中的一个被试，沿层轴进行无阈值团块增强。我们使用相关差异病灶-症状映射对213名慢性卒中后失语症患者进行结构匹配的分析，并在留出分割上对两侧进行重复验证。这些设计在被试维度（种子、患者）、空间维度（层、图谱分区皮层）和阈值化方面相匹配，但对比算子不同：LLM采用被试内错误比例差异，皮层采用被试间相关差异。两种基底都恢复了稳健的语音偏好分离、一个深层团块和一个额叶-外侧裂周围皮层团块，且均能重复；语义偏好方向在两者上都是一致的符号但非显著的趋势。因此，PRISM为变换器语言模型中的功能专门化主张提供了一种可证伪的、具有空间分辨率的检验。一个确认性的ROI层面干预（PRISM第3阶段）若能支持最强因果机制主张，则留待后续工作。"
+    },
+    {
       "id": "arxiv_2608.12299",
       "arxiv_id": "2608.12299",
       "title": "Class Activation Mapping in Explainable Computer Vision: A Method-Centered Review of CNN, Transformer, and Foundation-Model-Era Visual Explanations",
@@ -515,6 +1326,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-13T03:20:41.223143Z",
-  "total_count": 12
+  "last_updated": "2026-08-14T03:04:49.389375Z",
+  "total_count": 31
 }
