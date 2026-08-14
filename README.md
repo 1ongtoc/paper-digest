@@ -1,6 +1,6 @@
 # 安全推理论文脉搏
 
-每天 08:00（Asia/Shanghai）自动抓取 IACR ePrint 与 arXiv 新论文，用兼容 OpenAI `/chat/completions` 的 API 做两阶段筛选和中文导读，随后发送一封邮件并更新 GitHub Pages。
+每天 10:17（Asia/Shanghai）自动抓取 IACR ePrint 与 arXiv 新论文，用兼容 OpenAI `/chat/completions` 的 API 做两阶段筛选和中文导读，随后发送一封邮件并更新 GitHub Pages。
 
 ## 上游项目与致谢
 
@@ -58,7 +58,7 @@ QQ 邮箱需在 **设置 → 账号 → POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV �
 - `data/`、`feed.xml` 与 `config.js` 会由机器人提交；
 - 网页地址为 `https://你的用户名.github.io/仓库名/`。
 
-以后 `.github/workflows/daily.yml` 会在每天 `00:00 UTC`，即北京时间 `08:00` 自动运行。GitHub 的计划任务可能有几分钟排队延迟。
+以后 `.github/workflows/daily.yml` 会在每天 `02:17 UTC`，即北京时间 `10:17` 自动运行。GitHub 的计划任务可能有几分钟排队延迟。
 
 ## 后续修改位置
 
