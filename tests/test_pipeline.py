@@ -18,6 +18,12 @@ from fetchers.iacr import IACRFetcher
 
 
 class PipelineTests(unittest.TestCase):
+    def test_daily_schedule_is_1017_beijing(self):
+        workflow = (ROOT / ".github" / "workflows" / "daily.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('- cron: "17 2 * * *"', workflow)
+
     def test_arxiv_fetcher_has_no_silent_result_cap(self):
         fetcher = ArxivFetcher(["cs.CR"], delay=0, batch_size=100, timeout=10)
         self.assertFalse(hasattr(fetcher, "max_results"))
@@ -50,6 +56,45 @@ class PipelineTests(unittest.TestCase):
 
         self.assertEqual(get.call_count, 2)
         sleep.assert_called_once_with(7.0)
+
+    def test_arxiv_retries_rate_limits_five_times_with_backoff(self):
+        class Response:
+            def __init__(self, status_code):
+                self.status_code = status_code
+                self.headers = {}
+
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get",
+                side_effect=[*[Response(429) for _ in range(5)], Response(200)],
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            self.assertEqual(fetcher._get({}).status_code, 200)
+
+        self.assertEqual(get.call_count, 6)
+        self.assertEqual(
+            [call.args[0] for call in sleep.call_args_list], [30, 60, 120, 240, 480]
+        )
+
+    def test_arxiv_stops_after_five_rate_limit_retries(self):
+        class Response:
+            status_code = 429
+            headers = {}
+
+        fetcher = ArxivFetcher(["cs.AI"], delay=0, batch_size=100, timeout=10)
+        with (
+            patch(
+                "fetchers.arxiv.requests.get",
+                side_effect=[Response() for _ in range(6)],
+            ) as get,
+            patch("fetchers.arxiv.time.sleep") as sleep,
+        ):
+            self.assertEqual(fetcher._get({}).status_code, 429)
+
+        self.assertEqual(get.call_count, 6)
+        self.assertEqual(sleep.call_count, 5)
 
     def test_arxiv_retries_network_errors_five_times_with_backoff(self):
         class Response:

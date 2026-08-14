@@ -10,7 +10,7 @@ import requests
 
 class ArxivFetcher:
     BASE_URL = "https://export.arxiv.org/api/query"
-    RATE_LIMIT_ATTEMPTS = 3
+    RATE_LIMIT_RETRIES = 5
     RATE_LIMIT_FALLBACK_SECONDS = 30.0
     NETWORK_RETRIES = 5
     NETWORK_RETRY_BASE_SECONDS = 5.0
@@ -126,7 +126,7 @@ class ArxivFetcher:
 
     def _get(self, params):
         network_retries = 0
-        rate_limit_attempts = 0
+        rate_limit_retries = 0
         while True:
             try:
                 response = requests.get(
@@ -152,17 +152,20 @@ class ArxivFetcher:
             if response.status_code != 429:
                 return response
 
-            rate_limit_attempts += 1
-            if rate_limit_attempts == self.RATE_LIMIT_ATTEMPTS:
+            if rate_limit_retries >= self.RATE_LIMIT_RETRIES:
                 return response
             retry_after = response.headers.get("Retry-After", "")
             try:
                 wait = max(0.0, float(retry_after))
             except (TypeError, ValueError):
                 wait = self.RATE_LIMIT_FALLBACK_SECONDS * (
-                    2 ** (rate_limit_attempts - 1)
+                    2**rate_limit_retries
                 )
-            print(f"arXiv rate limited; retrying in {wait:g}s")
+            rate_limit_retries += 1
+            print(
+                f"arXiv rate limited; retrying in {wait:g}s "
+                f"({rate_limit_retries}/{self.RATE_LIMIT_RETRIES})"
+            )
             time.sleep(wait)
 
 
