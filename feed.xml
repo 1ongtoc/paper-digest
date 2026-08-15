@@ -4,13 +4,15 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Fri, 14 Aug 2026 03:08:43 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 03:05:47 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>QuoteBench: How Matched Scores Can Hide Command-Path Failures</title>
+      <title>QuoteBench：匹配分数如何掩盖命令路径故障</title>
       <link>https://arxiv.org/abs/2608.13547</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2608.13547</guid>
-      <description>LLM coding agents issue Bash commands through interfaces that may serialize, wrap, and reparse model output. Matched execution scores alone cannot distinguish command-generation errors from failures introduced after generation. QuoteBench measures this boundary with exact final-state validation on 56 one-shot tasks from 14 incident-derived families, crossing the generation contract with the execution transport around one deliberately unescaped added parser. Escaping at the interpolation point reproduces each replayed reply's raw-path outcome, so any recovery under a disclosed boundary must come from the model changing its generation. Across eight same-window configurations, replaying the same reply through the added parser lowers success by 55.4 to 73.2 percentage points; disclosure recovers 30.4 to 60.7 points for six configurations, and zero or slightly negative for the other two. Raw generation is nearly saturated at the frontier; boundary adaptation is what still separates models. GPT-5.6-sol's matched gap of -3.6 points hides -64.3 points of damage and +60.7 points of compensation. The deployment configuration reorders models: one reversal among 26 comparable pairs is unambiguous and four more sit on single-task margins. Evaluations of command-issuing agents should report the model configuration, generation contract, execution path, operating point, and final-state validator rather than treat a matched score as an intrinsic model property.</description>
+      <description>英文原题：QuoteBench: How Matched Scores Can Hide Command-Path Failures
+
+LLM编码智能体通过可能对模型输出进行序列化、包装和重新解析的接口发出Bash命令。仅靠匹配执行分数无法区分命令生成错误与生成后引入的失败。QuoteBench通过在来自14个事件衍生族系的56个一次性任务上进行精确最终状态验证来衡量这一边界，将生成契约与执行传输在一个故意未转义的附加解析器周围交叉结合。在插值点进行转义可重现每个重放回复的原始路径结果，因此在已披露边界下的任何恢复必然来自模型改变其生成内容。在八个同窗口配置中，通过附加解析器重放相同回复会使成功率降低55.4至73.2个百分点；披露边界为六个配置恢复30.4至60.7个百分点，另外两个配置恢复为零或略微为负。原始生成在前沿已接近饱和；边界适应才是仍然区分模型的因素。GPT-5.6-sol的匹配差距为-3.6个百分点，其中隐藏着-64.3个百分点的损害和+60.7个百分点的补偿。部署配置会重新排列模型：在26个可比较配对中，有一个反转是明确的，另外四个处于单任务边缘。对命令发出智能体的评估应报告模型配置、生成契约、执行路径、工作点和最终状态验证器，而不是将匹配分数视为模型的固有属性。</description>
       <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>GPT</category>
