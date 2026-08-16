@@ -37,7 +37,7 @@ def generate_rss_feed(
     output_path: Path,
     site_url: str = "",
     title: str = "安全推理论文脉搏",
-    description: str = "IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读",
+    description: str = "IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读",
     max_items: int = 50,
 ):
     """Generate an RSS 2.0 feed XML file from papers.

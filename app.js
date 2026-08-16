@@ -244,8 +244,14 @@ function createPaperCard(paper, index) {
 function relevanceLabel(paper) {
     if (paper.relevance_level === 'secure_inference') return '安全推理·全文精选';
     if (paper.relevance_level === 'related') return '兴趣相关·摘要导读';
-    if (paper.source !== 'arXiv') return 'IACR 元数据';
-    return paper.abstract_zh ? 'arXiv 宽召回·元数据翻译' : 'arXiv 宽召回·仅元数据';
+    const recalled = paper.source === 'arXiv' ||
+        (paper.keywords || []).length > 0 ||
+        (paper.matched_terms || []).length > 0;
+    if (!recalled) return 'IACR 元数据';
+    const source = paper.source === 'arXiv' ? 'arXiv' : 'IACR';
+    return paper.abstract_zh
+        ? `${source} 宽召回·元数据翻译`
+        : `${source} 宽召回·仅元数据`;
 }
 
 // Update statistics

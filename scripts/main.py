@@ -114,8 +114,9 @@ def process_retries(papers, items, ai):
         try:
             if task == "metadata_translation":
                 if not (
-                    paper.get("source") == "arXiv"
+                    paper.get("source") in {"arXiv", "IACR"}
                     and paper.get("relevance_level") == "unrelated"
+                    and (paper.get("matched_terms") or paper.get("keywords"))
                 ):
                     continue
                 translated = ai.translate_metadata(paper)
@@ -174,7 +175,7 @@ def prepare_new_paper(paper, decision, ai):
     if not is_relevant:
         paper["summary_zh"] = ""
         paper["summary"] = ""
-        if paper.get("source") == "arXiv" and decision is not None:
+        if decision is not None:
             try:
                 paper.update(ai.translate_metadata(paper))
                 paper["translation_status"] = "success"
@@ -230,7 +231,7 @@ def build_digest(papers, now, site_url, selection_stats=None):
             f"{sum(p['source'] == 'IACR' for p in papers)} 篇，"
             f"arXiv {sum(p['source'] == 'arXiv' for p in papers)} 篇。"
         ),
-        "IACR 收录投递窗口内全部首次发布论文；arXiv 收录关键词宽召回论文，其中 AI 相关论文生成导读，其余仅翻译标题和原始摘要。",
+        "IACR 收录投递窗口内全部首次发布论文；IACR 与 arXiv 的关键词宽召回论文使用相同分级：AI 相关论文生成导读，其余仅翻译标题和原始摘要。未命中的 IACR 论文保留英文元数据。",
         "",
     ]
     if selection_stats:
@@ -252,11 +253,15 @@ def build_digest(papers, now, site_url, selection_stats=None):
             "related": "兴趣相关·摘要导读",
         }.get(paper.get("relevance_level"))
         if not level:
-            if paper.get("source") == "arXiv":
+            if (
+                paper.get("source") == "arXiv"
+                or paper.get("matched_terms")
+                or paper.get("keywords")
+            ):
                 level = (
-                    "arXiv 宽召回·元数据翻译"
+                    f"{paper['source']} 宽召回·元数据翻译"
                     if paper.get("abstract_zh")
-                    else "arXiv 宽召回·仅元数据"
+                    else f"{paper['source']} 宽召回·仅元数据"
                 )
             else:
                 level = "IACR 元数据"
@@ -293,10 +298,7 @@ def build_digest(papers, now, site_url, selection_stats=None):
         else:
             if paper.get("abstract_zh"):
                 lines.extend(["", "中文摘要翻译：", paper["abstract_zh"]])
-            elif (
-                paper.get("source") == "arXiv"
-                and paper.get("translation_status") == "failed"
-            ):
+            elif paper.get("translation_status") == "failed":
                 lines.extend(
                     ["", "⚠️ 中文翻译生成失败，已加入自动重试队列。"]
                 )

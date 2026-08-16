@@ -410,6 +410,92 @@ class PipelineTests(unittest.TestCase):
             )
             self.assertEqual(broad_stored["translation_status"], "success")
 
+    def test_iacr_wide_recall_metadata_is_translated_and_retryable(self):
+        paper = {
+            "id": "iacr_2026/123",
+            "iacr_id": "2026/123",
+            "title": "A Transformer Paper Outside Secure Inference",
+            "authors": ["Alice"],
+            "abstract": "We study a transformer architecture.",
+            "published": "2026-08-16",
+            "published_at": "2026-08-16T00:30:00Z",
+            "source": "IACR",
+            "url": "https://eprint.iacr.org/2026/123",
+            "pdf_link": "https://eprint.iacr.org/2026/123.pdf",
+            "matched_terms": ["transformer"],
+        }
+        decision = {
+            "relevant": False,
+            "secure_inference": False,
+            "reason_zh": "仅宽召回",
+            "topics": [],
+        }
+
+        class FakeAI:
+            calls = 0
+
+            def translate_metadata(self, unused_paper):
+                self.calls += 1
+                if self.calls == 1:
+                    raise RuntimeError("temporary translation failure")
+                return {"title_zh": "中文标题", "abstract_zh": "中文摘要翻译"}
+
+        ai = FakeAI()
+        prepared, pending = main.prepare_new_paper(paper, decision, ai)
+        self.assertEqual(prepared["translation_status"], "failed")
+        self.assertEqual(pending[0]["task"], "metadata_translation")
+        fallback_digest = main.build_digest(
+            [prepared], datetime(2026, 8, 16, tzinfo=timezone.utc), ""
+        )
+        self.assertIn("IACR 宽召回·仅元数据", fallback_digest)
+        self.assertIn("中文翻译生成失败", fallback_digest)
+        self.assertIn(paper["abstract"], fallback_digest)
+
+        remaining, changed = main.process_retries([prepared], pending, ai)
+        self.assertTrue(changed)
+        self.assertEqual(remaining, [])
+        self.assertEqual(prepared["translation_status"], "success")
+        self.assertEqual(prepared["title_zh"], "中文标题")
+        self.assertEqual(prepared["abstract_zh"], "中文摘要翻译")
+        self.assertEqual(prepared["summary_type"], "metadata")
+        self.assertEqual(prepared["summary_status"], "not_requested")
+        self.assertEqual(prepared["summary_zh"], "")
+        translated_digest = main.build_digest(
+            [prepared], datetime(2026, 8, 16, tzinfo=timezone.utc), ""
+        )
+        self.assertIn("IACR 宽召回·元数据翻译", translated_digest)
+        self.assertIn("中文标题", translated_digest)
+        self.assertIn("中文摘要翻译", translated_digest)
+        self.assertIn(paper["abstract"], translated_digest)
+
+    def test_iacr_unmatched_metadata_remains_untranslated(self):
+        paper = {
+            "id": "iacr_2026/124",
+            "title": "An Unmatched Cryptography Paper",
+            "authors": ["Bob"],
+            "abstract": "An English abstract.",
+            "published": "2026-08-16",
+            "published_at": "2026-08-16T00:30:00Z",
+            "source": "IACR",
+            "url": "https://eprint.iacr.org/2026/124",
+            "matched_terms": [],
+        }
+
+        class FakeAI:
+            def translate_metadata(self, unused_paper):
+                raise AssertionError("unmatched IACR metadata must not be translated")
+
+        prepared, pending = main.prepare_new_paper(paper, None, FakeAI())
+        self.assertEqual(pending, [])
+        self.assertEqual(prepared["translation_status"], "not_requested")
+        self.assertNotIn("title_zh", prepared)
+        self.assertNotIn("abstract_zh", prepared)
+        digest = main.build_digest(
+            [prepared], datetime(2026, 8, 16, tzinfo=timezone.utc), ""
+        )
+        self.assertIn("IACR 元数据", digest)
+        self.assertNotIn("IACR 宽召回", digest)
+
     def test_metadata_translation_failure_downgrades_and_retries(self):
         paper = {
             "id": "arxiv_2608.00004",
