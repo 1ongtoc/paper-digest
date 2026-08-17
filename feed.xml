@@ -3,9 +3,17 @@
   <channel>
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
-    <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；非兴趣论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Sun, 16 Aug 2026 03:13:13 +0000</lastBuildDate>
+    <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
+    <lastBuildDate>Mon, 17 Aug 2026 03:12:47 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DTRU: A Versatile, Compact, Simple, and Robust NTRU KEM with Double $E_8$ Encoding</title>
+      <link>https://eprint.iacr.org/2026/1701</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1701</guid>
+      <description>Responding to China's 2025 call for commercial cryptographic standards mandating 128-bit, 256-bit, and 512-bit security (optional 384-bit), we propose DTRU, a versatile, compact, simple, and robust NTRU-based key encapsulation mechanism (KEM). Our principal design contribution is double $E_8$ encoding, which constructs 16-dimensional lattice codes from $E_8$ with low decoding complexity. We further provide a detailed analysis of decryption-failure probability under this encoding mechanism. DTRU's design achieves a careful balance among versatility, compactness, simplicity, and robustness. To accommodate diverse application requirements, it supports multiple ring structures, including power-of-two cyclotomic rings, tricyclotomic rings, and large-Galois-group prime-degree prime-ideal number fields (LPPNF). The double $E_8$ encoding enables DTRU to achieve enhanced error correction with compact bandwidth. The design prioritizes simplicity to facilitate deployment on low-power devices, achieved by eschewing additional coefficient compression techniques and redundant invertibility checks during key generation, while enabling circuit/code reuse. Security robustness is guaranteed through parameter selections that offer adequate security redundancy, mitigating potential cyclotomic ring risks via LPPNF, and precluding sparse noise distributions in the recommended parameter sets. Complementing our theoretical advances, we present comprehensive implementations of all the parameter sets with dedicated support for C, AVX2, and ARM platforms, leveraging architecture-specific optimizations. For example, compared to NTRU-HRSS and Kyber at the same security levels, our KEM is 49%-52% more compact and 3.84–15.69$\times$ faster than NTRU-HRSS in the round-trip time of ephemeral key exchange, and is 7%-27% more compact and 1.05–1.32$\times$ faster than Kyber.</description>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
     <item>
       <title>The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP</title>
       <link>https://eprint.iacr.org/2026/1693</link>
