@@ -4,8 +4,842 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Mon, 17 Aug 2026 03:12:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 03:33:31 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>StagedWorkspace：面向知识工作智能体的版本化工作区</title>
+      <link>https://arxiv.org/abs/2608.18050</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.18050</guid>
+      <description>英文原题：StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents
+
+AI 智能体越来越多地执行知识工作（即生成和修改持久化数字工件，如代码仓库、文档、电子表格、幻灯片、报告），然而它们搜索的解析视图、编辑的原生文件、审阅的更改以及提交的工件可能指向同一工作产品的不同版本。我们将此表述为工作区状态契约：每个视图都应显式绑定到不断演化的工作区状态的某个版本。编码智能体通过针对搜索、差异和测试的仓库契约部分解决了这一需求，而对于 PDF、电子表格、幻灯片、笔记本和混合格式项目文件夹，类似契约则不那么明确。我们提出 StagedWorkspace，一个面向知识工作智能体的版本化工作区。该工作区随着原生文件的变化，将解析记录和审阅差异绑定到原生文件的内容哈希上。在 OfficeQA Pro 和 APEX-Agents 上的固定测试框架消融实验中，双重解析/原生访问在每个受测模型上都取得了最高的点估计值；相对于更受限的单一视图，它将 OfficeQA Pass@1 提高了 8.3-12.1 个点，将 APEX 平均评分得分提高了 4.7-9.2 个点。SW-AGENT 在 OfficeQA 上使用 Gemini 3.1 Pro 得分为 63.9%，在 APEX 上使用 GPT-5.4 Nano 得分为 42.1，而这两个模型已发表的同模型得分分别为 29.3% 和 25.5。一项在 57 个文件编辑任务上进行的配对审阅轴消融实验进一步发现，当差异可见时观测分数更高。这些结果将工作区状态确定为知识工作智能体中的一个实验变量，并推动了这样的基准测试：将证据、暂存编辑和提交的工件作为显式状态转换进行评分。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>语言具有两个参数：叙事诱导的语义可塑性与相位敏感解读</title>
+      <link>https://arxiv.org/abs/2608.18041</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.18041</guid>
+      <description>英文原题：Language Has Two Parameters: Narrative-Induced Semantic Plasticity and Phase-Sensitive Interpretation
+
+语言具有两个参数。统计词语共现的频率，你得到的是振幅，即关联强度。词嵌入和注意力权重对这一统计进行了细化，但它将语料库中的所有作者汇总在一起。本文主张存在第二个参数，即相位，而从语料库中习得的有符号权重并不能提供这一参数。相位仅存在于意义之间：它决定共同激活的意义如何组合，并且它可以在某个意义保持完全在场的同时反转该意义所做出的贡献。说话者可以通过语言形式在信号中设定相位；遭遇经历建立相位关系，历史分布它们。总体平均消除了以历史为索引的相位：去个体索引的语料库识别的是总体的边际状态，而不决定任何个体或二元状态，无论何种尺度。标准Transformer在冻结推理中没有对相位的显式表示，而以求单义性衡量进展的可解释性程序恰恰是在与之背道而驰：它所视为缺陷的共存在，恰恰是典故、反讽和引用的条件。六个预测检验以下问题：被抑制的意义是否保持活跃，遭遇顺序是否改变短语的功能，对信号的标记是否改变共享短语被理解的方式，以及一个被赋予历史的模型是被历史所改变还是仅仅被告知了历史。本文辩护的主张是弱版本：解读需要一个第二关系参数，该参数是有符号的、持久的，并且以个体和二元组为索引。量子概率是该参数的一种记法；该形式体系中没有任何内容声称大脑中存在量子过程。强版本——即量子演算像有符号经典模型做不到的那样约束这些现象——依赖于一个尚未推导出的遭遇顺序约束。该理论所要求架构是一个具有个体索引、承载相位的语义状态的语言模型。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>通过嵌入几何理解小型语言模型在发票分类中的助益之处</title>
+      <link>https://arxiv.org/abs/2608.18033</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.18033</guid>
+      <description>英文原题：Where A Small Language Model Helps in Invoice Categorisation, Understood Through Embedding Geometry
+
+将发票分类到正确的总账（GL）代码是财务报告和税务合规的基础。这是一项需要熟练会计判断的工作，而非常规任务：正确的类别微妙地取决于采购业务的性质、供应商和发票文本。虽然AI在各行业中被越来越多地用于自动化任务（包括发票分类），但基于内部小型语言模型（SLMs）的实现可以同时降低成本并提高数据安全性、保密性和可解释性。我们通过首先分析小型句子转换器（SBERT）和经典SLM（DeBERTa）的预训练嵌入几何来研究这种方法。该金融语料库的句子嵌入空间全局呈各向异性，但由局部各向同性的簇组成，这将先前的token级发现扩展到了金融环境中的句子嵌入，并且这些簇与供应商身份强相关。在单个GPU上微调的SBERT在发票分类上达到0.96的准确率，高于零样本LLM和供应商身份基线，并提高了较小、困难类别和新客户的表现。对于这一重要的泛化问题，SBERT用大约100张客户特定发票达到0.9的F1，表明内部SLM实现颇具前景。将这些结果与几何分析相结合表明，预训练嵌入几何与分类性能相关，并揭示了一个反直觉的发现：有助于人类读者的结构化输入并不能提高SLM的性能。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>面向持续大语言模型改进的经验链</title>
+      <link>https://arxiv.org/abs/2608.18027</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.18027</guid>
+      <description>英文原题：Chain-of-Experience for Continual LLM Improvement
+
+人类会持续从经验中学习，而传统的大语言模型评估忽视了模型通过推理时交互来提升能力的过程。在本文中，我们研究了大语言模型如何在测试时从迭代经验中学习，我们将这一设置称为经验链（Chain-of-Experience, CoE），在该设置中，模型通过与自身或环境反馈的迭代交互来积累经验轨迹，从而形成超越零样本推理的持续改进循环。我们通过多种反馈机制实例化CoE，包括模型自我反馈以及正确性或公共编程测试通过率等环境信号，并使用8个大语言模型（包括GPT-5、Gemini-2.5 Pro、Claude-4.5 Sonnet）在数学、编程和知识领域进行评估。我们的研究表明，利用迭代经验始终优于无反馈基线，仅使用自我反馈就能获得显著提升，同时在所有任务和模型上实现5.6%的总体改进和19%的API成本降低。我们进一步表明，结合互补的反馈通道（例如模型信号和正确性信号）能带来额外收益，并且CoE在每token准确率上优于现有的测试时策略。我们观察到LLM基础能力与改进能力之间存在正相关，并表明模型在弱反馈或虚假反馈下仍保持鲁棒性，不同的反馈有助于不同的改进方面，且大部分收益在迭代早期即已出现。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>为何GPT风格模型无法直接迁移至符号音乐：在错误坐标系中的压缩</title>
+      <link>https://arxiv.org/abs/2608.18025</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.18025</guid>
+      <description>英文原题：Why GPT-Style Models Do Not Directly Transfer to Symbolic Music: Compression in the Wrong Coordinate System
+
+GPT风格模型通过用可复用离散词元的有限词汇表表示语言，取得了强劲性能。这一成功促使符号音乐词元化将反复出现的音乐结构（如和弦、动机和乐句）视为类似于语言词元的可复用单元。然而，词元化的优势不仅来自可复用的组合，更来自压缩：有效的压缩需要这样的坐标系——在此坐标系中，反复出现的规律形成稳定且可预测的条件分布。因此，关键问题不是寻找更大的音乐组合，而是发现使音乐事实在预测上可压缩的坐标系。我们提出了有效性—无损性框架，并将词元化定义为构建一个预测有效且关系无损的坐标系。预测有效性原则定义了事实—词元边界：解耦与解嵌套构建出暴露预测规律的坐标接口。关系无损性原则定义了词元—状态边界：词元化在上下文相关关系被固定之前停止，将其计算留给模型状态。受控的符号音乐实验验证了这些边界。有效的坐标构建提高了预测可压缩性，而固定的关系投影则限制了上下文建模。仅靠序列紧凑化并不能保证预测压缩，而保留上下文自由度则允许高阶音乐组织在没有显式结构标签的情况下涌现。这些结果揭示了为什么GPT风格模型不能跨模态直接迁移：架构可以迁移，但词元化接口不能。词元化必须在发现有效表示的同时，保留上下文结构得以涌现所依赖的关系自由度。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>被省略的模态是一条稀有规则：连续代码世界模型中的采样-验证危险定律</title>
+      <link>https://arxiv.org/abs/2608.17956</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17956</guid>
+      <description>英文原题：An Omitted Mode Is a Rare Rule: The Sampling-Verification Danger Law in Continuous Code World Models
+
+在代码世界模型范式中，LLM 综合出一个可执行的世界模型，由经典规划器进行搜索；当该模型重现采样到的转移时，它就被接受。我们追问，在连续控制中，这种接受究竟证明了什么。我们将该管道的危险定义为期望风险，并分离出它的精确因子：N 个独立同分布的闸门推出全部错过概率为 r 的关键事件的概率恰好是 (1-r)^N；一个独立的接受样本将其预算加到指数上。在三种混合仪器上，被接受的模态盲模型被利用：规划器被钉在模态边界上，其遗憾几乎达到全部可达回报。我们证明了一个在边界点有效的局部化预算：Lipschitz 常数至多为 L、在某一点相差 eta 的模型，在一个体积至少为 kappa((eta-eps)/L)^(d+m) 的区域上，超过容差 eps 地不一致；所研究的不连续重置模态不支付这样的预算。在真实 LLM 综合中，GPT-5.x 在 111 次含有模态的抽取中修复了 105 次被省略的一维钳位——在 56 个仪器流块中的 50 个上，每一次尝试都精确（95% CI [0.781, 0.960]）。在二维区域上，没有任何伪影恢复该规则（0/156）；八次有针对性的干预使失败保持原状，而阳性对照定位了它：被定位的规则不会被诱导出来，而一旦给定了形式和位置，常数便会精确地遵循。版本空间证书证明了可辨识性是类别相对的：在最宽的剂量下，声明拟合在 20/20 个块中成功，并且每一个与样本一致的圆在 18/20 个块中都处于容差之内。我们证明了一类入口规则与每个样本精确一致，但在实际运行中无害，因此可辨识性是仪器的一个可测量属性。对所有 1034 个伪影在独立样本上重新评分，证实接受所证明的只是样本一致性，而别无其他：在闸门可证明具有信息性的地方，它覆盖了被利用的规划器查询的大约百分之二。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>CABLE：通过基于互补先例的链接与扩展延伸记忆检索的覆盖范围</title>
+      <link>https://arxiv.org/abs/2608.17911</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17911</guid>
+      <description>英文原题：CABLE: Extending the Reach of Memory Retrieval via Complementary Antecedent-Based Linking and Expansion
+
+随着LLM智能体在结构化工作流和会话中运行，保留长期历史并不能确保后续上下文能够通过有界记忆接口恢复相关证据。我们研究了长期对话记忆中的证据可达性问题，其中检索仍然在很大程度上依赖语义相似性。这对于主题回忆效果良好，但常常遗漏与后续事件在语义上相距较远、却有助于解释这些事件的早期经验、计划或动机。现有记忆图提供了跨记忆结构，但主要由语义重叠驱动的链接可能会重复宿主检索器已经恢复的内容。我们认为，链接构建应优先考虑一组稀疏的、与检索器互补的关联。我们提出了CABLE（基于互补先例的链接与扩展），这是一种插件式增强方法，构建旨在扩展宿主检索器直接语义覆盖范围的链接。对于每条新记忆，CABLE生成面向先例的查询，检索先前的记忆，减去直接语义邻域中的候选，并在将接受的互补关联添加到稀疏有向图之前验证其余部分。在检索时，CABLE沿这些链接扩展宿主系统检索到的种子，以揭示隐含的支持性证据。我们在LoCoMo和MA-LongMemEval上使用A-MEM评估CABLE，并进一步将其集成到LoCoMo上的SimpleMem和Mem0g，使用Qwen3.5-27B、DeepSeek-chat和GPT-4o-mini。在每一个评估的系统级设置中，CABLE都产生了更高的平均LLM评判分数，在有用证据分布在不同记忆或会话中的类别中提升最大，包括开放域、多会话和偏好导向的问题。这些结果支持优先考虑稀疏的、与推理相关的、且与宿主检索器互补而非重复的关联。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>聚合分数遗漏了什么：衡量商业LLM API迁移中的条目级回归</title>
+      <link>https://arxiv.org/abs/2608.17719</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17719</guid>
+      <description>英文原题：What Aggregate Scores Miss: Measuring Item-Level Regressions in Commercial LLM API Migrations
+
+背景：依赖商业大语言模型API的软件系统，在供应商弃用旧模型时必须迁移到后继版本。迁移决策通常依赖聚合基准分数，而聚合分数将异质的条目级行为压缩为一个单一净值。目标：我们衡量这种压缩所掩盖的内容。方法：在GPT-5.4到GPT-5.6 Sol产品序列的三次两两升级中，我们对900个公共基准条目（研究生水平知识、奥林匹克数学、指令遵循）每个模型每个条目查询50次，在错误发现率控制和实际显著性阈值下，将每个条目分类为可靠改进、可靠回归、实际等价或不确定，并将结果与标签置换零假设进行校准。结果：在所有九个迁移-基准单元中，可靠改进和可靠回归并存。聚合增益高达7.3个百分点的迁移边包含高达8.3%的可靠回归条目；聚合损失的迁移边包含高达10.7%的可靠改进条目。在指令遵循基准上，最新迁移中严格评分与宽松评分之间的差距扩大了3.9个百分点：严格评分下3.9个百分点的回归在宽松评分下缩小至0.04个百分点。结论：仅基于聚合分数的迁移决策会遗漏大量的双向条目级变化。完整的响应级存档和逐条目评分输出已发布。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>混合专家模块包含强幻觉检测信号</title>
+      <link>https://arxiv.org/abs/2608.17687</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17687</guid>
+      <description>英文原题：Mixture-of-Expert Blocks Contain Strong Hallucination Detection Signals
+
+尽管大语言模型（LLMs）被广泛使用，它们仍然受到一个根本问题的限制：生成看似合理但虚假的内容，即幻觉。大多数现有检测方法在答案或句子级别运行，然而逐词元检测对于定位幻觉片段和实现细粒度干预至关重要。在本文中，我们探索使用混合专家（MoE）范式来弥补这一空白。在MoE架构中，单次前向传播通过路由机制激活稀疏的专家子集（即每层不同的前馈网络），产生在密集架构中不可用且此前未被用于幻觉检测的内部信号（例如路由熵、专家分歧和专家使用模式）。为此，我们提出了InnerExpert，这是首个利用这些MoE特有信号进行逐词元幻觉检测的方法。InnerExpert将路由级信号和标准Transformer信号组合成紧凑的逐词元特征向量，由在LLM-as-a-judge流程生成的标签上训练的轻量级检测器进行分类，从而实现无需人工标注的持续模型更新。我们的结果表明，InnerExpert在五个数据集和两种MoE架构上优于现有方法，实现了高达0.91的答案级AUROC和0.76的词元级AUROC，且仅需单次前向传播。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>超越轨迹：将可解释的推理状态读出与原生MoE路由相耦合</title>
+      <link>https://arxiv.org/abs/2608.17638</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17638</guid>
+      <description>英文原题：Beyond the Trace: Coupling an Interpretable Reasoning-State Readout to Native MoE Routing
+
+推理模型所写下的内容仅是产生该内容过程的局部记录。我们为混合专家（mixture-of-experts）推理引入了一种两级内部读出机制。我们首先将词表规模的J空间蒸馏为J64——一个从模型自身推理状态中学习得到的64轴语义框架。J64揭示了所输出轨迹未能展示的可读过程状态：它将推理努力与问题引发的张力分离开来。与以词元占用（token occupancy）方式读取相同展开（rollout）并以完全相同方式聚合的基线相比，它还将留出集AUC提高了0.096至0.135。随后，我们从原生专家路由统计量中重建J64，得到R64——一种低开销代理：在三个模型和两个模型家族中，其与J64的逐轴中位相关系数为0.69至0.86，并且在gpt-oss-20b上，它保留了J64预测增益的95%至100%。该读出机制在两个时间分辨率上支持测试时决策。在已完成的候选集上，J64和R64改善了单分支选择，并且R64加权投票在八种设置中的七种中优于普通多数投票。在生成过程中，滚动读出窗口驱动一种累积的停止并重采样策略，其工作点仅基于训练问题固定。J64相对于同源置换（sibling-permuted）对照将准确率提高了1.1至5.9个百分点，而仅基于路由的R64代理保留了其中的0.9至3.2个百分点。最后，针对J64所指认机制的路由器编辑（router edits）诱导出所预测的推理行为，并将已诊断的停滞从数值猜测转向精确符号执行。综上所述，J64使潜在过程状态变得可读，而路由使其可部署且可操作。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Unclonable encryption from BB84 states: a simultaneous Goldreich-Levin reduction</title>
+      <link>https://arxiv.org/abs/2608.17629</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17629</guid>
+      <description>### 一句话结论
+本文提出一种面向两个纠缠敌手的“同时”Goldreich-Levin 归约，可将搜索安全的不可克隆加密方案升级为满足不可克隆不可区分性，并由此证明基于 BB84 态的最简候选方案达到不可克隆不可区分性。
+
+### 问题与动机
+不可克隆加密（unclonable encryption）旨在防止量子敌手复制密文后分别进行解密。现有方案常以“搜索安全”（search security）为安全性目标，但密码学上更理想的是“不可克隆不可区分性”（unclonable indistinguishability）——即敌手无法区分密文对应哪个明文。Goldreich-Levin 归约是经典密码学工具，它能把“猜测内积 \(\langle r, m \rangle \pmod 2\)”的能力转化为“提取整个隐藏串 \(m\)”的能力。本文要处理的关键场景是：两个相互纠缠的敌手面对**同一个随机挑战 \(r\)**，各自输出对内积的猜测；经典 Goldreich-Levin 归约并不直接适用于这种“同时”且挑战相同的设定。
+
+### 方法与技术路线
+- **研究对象与设定**：考虑两个共享纠缠态的量子敌手，他们获得相同的均匀随机挑战 \(r\)，各自需要猜测 \(\langle r, m \rangle \pmod 2\)，其中 \(m\) 是隐藏字符串。作者构造一个“同时”Goldreich-Levin 归约：若这两个纠缠方能够以非平凡概率同时正确猜出内积，那么就可以提取出完整的 \(m\)。摘要未说明该归约具体的量子操作步骤、成功概率阈值或参数设置。
+- **核心思想**：传统 Goldreich-Levin 归约通常需要独立且随机的挑战；此处为了适配两个敌手收到**相同**挑战 \(r\)，需要引入同时性。作者将这一归约作为模块，用于升级加密方案：任何满足搜索安全的不可克隆加密方案，都可以通过该归约被转换为满足不可克隆不可区分性的方案。摘要未披露从搜索安全到不可区分性的具体构造流程、编码方式或安全性归约细节。
+- **应用与验证**：将上述升级应用于最简单的候选方案——基于 BB84 量子态构造的不可克隆加密。作者声称该方案满足不可克隆不可区分性。摘要未说明使用了什么数据集、实验环境或数值指标；这是理论证明而非实验评估。
+
+### 主要结果
+1. 建立了适用于两个纠缠方的“同时”Goldreich-Levin 归约。  
+2. 给出了一个通用升级路径：搜索安全 → 不可克隆不可区分性。  
+3. 推论：BB84 态的最简不可克隆加密方案达到不可克隆不可区分性。  
+另外，摘要指出该结果由 GPT-5.6 Ultra 在几次交互后发现，提示内容涉及 Ananth 与 Sahai、Ragavan 关于不可克隆加密的近期工作。
+
+### 为什么与兴趣相关
+不可克隆加密是量子密码学中的基础原语，直接关联“量子信息不可克隆”这一物理特性；Goldreich-Levin 归约则是密码学中提取硬核谓词信息的经典工具。本文将这一工具推广到纠缠敌手和相同挑战的情形，可能对量子安全协议设计与安全性证明有方法论启示。尽管该主题与大模型安全推理没有直接关系，但理解量子敌手模型下的不可克隆性，有助于从更底层视角思考数据安全与防复制需求。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>MoNe：面向高效长上下文推理的模块化神经记忆</title>
+      <link>https://arxiv.org/abs/2608.17616</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17616</guid>
+      <description>英文原题：MoNe: Modular Neural Memory for Efficient Long Context Inference
+
+我们提出了MoNe，一种轻量级模块化神经记忆，可附加到任何冻结的预训练Transformer上，无需重新训练即可实现长上下文推理。MoNe通过测试时学习具有层局部梯度更新的快速权重神经记忆网络，以固定大小的分段读取上下文；在推理时，记忆仅从查询词元生成键和值，不重新读取上下文词元。这种两阶段设计将推理成本与上下文长度解耦，实现了$O(N)$的预处理和$O(1)$的查询成本，且峰值GPU内存不随$N$增长。在128K词元下，与ICL相比，MoNe的计算量和峰值GPU内存均减少约80%，而参数开销仅为6.4%。MoNe能够泛化到远超骨干网络原生窗口的上下文长度，在RULER的needle-in-a-haystack和单词提取基准上取得了强劲性能，而ICL在这些基准上性能急剧下降。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>TRUSS: Towards Task-Reliable and User-Safe Automated Agent Skill Generation</title>
+      <link>https://arxiv.org/abs/2608.17588</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17588</guid>
+      <description>### 一句话结论
+TRUSS 是一个证据引导的 Agent Skill（智能体技能）自动生成框架，通过“静态安全审查 + 可控执行验证”的联合机制，实现既有任务效果又具备安全可靠性的技能生成。
+
+### 问题与动机
+Agent Skills 将可复用的自然语言流程与可执行资源打包，使软件智能体无需调整模型即可获得特定任务能力。自动生成这类技能能提升任务表现，但若只依据技能产物或最终任务结果来评估候选技能，则无法确定配备该技能后智能体实际会执行哪些动作、这些动作又会产生什么副作用。因此需要一种更可靠的生成与验证方法。
+
+### 方法与技术路线
+TRUSS 采用“静态检查—动态执行—迭代修复”的三阶段证据引导流程：
+
+1. **静态门禁（artifact inspection）**  
+   对候选技能同时进行两类检查：一方面对照来源与领域证据核验其功能声明；另一方面基于九项预定义安全属性评估完整技能产物。只有通过此静态门禁的候选技能才会进入下一阶段。摘要未说明九项安全属性的具体内容和判定规则。
+
+2. **可控执行与行为记录**  
+   通过静态审查的候选技能由“影子代理”（shadow agent）在“可控执行环境”（Controllable Execution Environment）中实际加载运行。环境中的“代理工具”（brokered tools）将技能请求的动作暴露给策略执行，并记录执行结果，形成保留来源的完整执行轨迹（provenance preserving execution traces）。这一步解决静态检查无法捕捉运行期行为的问题。
+
+3. **反馈引导的迭代改进**  
+   将运行期间出现的功能失败和属性违规，反向定位到对应的技能内容，据此指导技能迭代修复。由此形成“生成—验证—修复”的闭环，使最终技能同时满足功能与安全要求。
+
+### 主要结果
+在 168 个 SkillInject 工件、155 个 SkillSafetyBench 案例和全部 187 个 SkillGenBench 任务上，TRUSS 在漏洞检测中达到 100.00% 的精确率与召回率。修复能力方面，攻击成功率在 GPT 5.5 下从 38.71% 降至 19.35%，在 GPT 5.4 下从 46.45% 降至 29.68%，且零攻击回归。技能生成效果方面，任务有效性从无技能时的 17.11% 提升到 52.94%，基准安全率从 50.80% 提升到 100.00%。
+
+### 为什么与兴趣相关
+该工作表明，仅靠产物静态检查会遗漏实际行为层面的失败；引入执行证据可以暴露这些隐藏问题，并引导技能朝功能与安全联合验证的方向改进。这对大模型驱动的智能体应用安全具有直接参考价值。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>DMT-Dens：面向生物数据的密度保持流形可视化</title>
+      <link>https://arxiv.org/abs/2608.17571</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17571</guid>
+      <description>英文原题：DMT-Dens: Density-preserving manifold visualization for biological data
+
+动机：低维嵌入被广泛用于探索单细胞和其他高维生物数据中的细胞状态异质性。尽管许多方法能够保留局部邻域，但它们可能会扭曲处理后的观测数据的表观采样密度，改变致密区域与稀疏区域之间的视觉对比，并使稀有、过渡或连续的细胞状态群体的解释复杂化。结果：我们提出了 DMT-Dens，一种基于潜在标记 Transformer 编码器的参数化流形可视化方法。该模型将基于秩的流形对齐与硬对聚合相结合。为了保持密度，它优化了一个基于处理后的输入和二维嵌入空间中 k 最近邻对数半径估计之间的皮尔逊相关性的损失。基准评估表明，该方法具有强大的密度保持能力，尤其在生物数据集上，同时保持了有竞争力的标签可分性。可用性：源代码、数据处理脚本和已解析的实验配置可在 https://github.com/Ruizhe-wang/DMT-Dens 获取。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Reflex-Guard: A Low-Latency Guardrail for LLM Prompt Safety Using Dense Semantic Embeddings</title>
+      <link>https://arxiv.org/abs/2608.17556</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17556</guid>
+      <description># Reflex-Guard：基于稠密语义嵌入的低延迟 LLM 提示安全关卡
+
+## 一句话结论
+Reflex-Guard 是一个完全本地运行的轻量级提示安全过滤（guardrail）方法，利用越狱感知预处理、紧凑句子嵌入和多个快速二分类器，在 37.6 ms 端到端延迟下对有害提示达到 95.9% 召回，同时避免了云端审核带来的隐私风险。
+
+## 问题与动机
+大语言模型（LLM）在实际应用中经常面临专门构造的、试图绕过安全控制的恶意提示。现有的 guardrail 方法，如 LLM-as-a-judge（用大模型评判安全性）和基于云的安全 API，虽然能检测不安全内容，但每个请求会引入约 250–900 ms 延迟，远高于实时应用通常要求的 &lt;100 ms 响应时间。此外，将用户提示发送到外部审核端点还会带来严重的数据隐私问题。
+
+## 方法与技术路线
+- **研究对象与设定**：Reflex-Guard 针对的是 LLM 输入端的 prompt safety filtering（提示安全过滤），目标是实时拦截有害提示。它整体在本地运行，不需要调用外部服务，因此兼顾延迟与隐私。
+- **关键模块与衔接**：系统由三个主要组件构成：
+  1. **jailbreak-aware preprocessing**（越狱感知预处理）：先对输入提示做针对常见越狱模式的预处理，为后续嵌入和分类器提供更易识别的输入。
+  2. **compact sentence-transformer embeddings**（紧凑句子嵌入）：将预处理后的提示转换为稠密语义向量，使得语义相似的不同攻击变体能够映射到相近的表征区域。
+  3. **七个快速二分类器**：基于嵌入向量并行或级联判断提示是否有害。七个独立分类器被设计为在保持高准确率的同时降低单次推理耗时。
+- **实验评估方式**：摘要说明，作者在一个由五个互补来源构建、包含 30,568 个样本的策略性平衡数据集上进行了系统评估。比较对象包括 Llama Guard 2 和 SafeDecoding，主要指标有延迟、召回率、攻击检测率和 Reflex Efficiency Score（RES，综合效率得分）。
+- **摘要未说明**：具体预处理规则、句子嵌入模型的架构与参数、七个二分类器的结构和训练细节、阈值默认值的设定方法以及运行硬件环境均未在摘要中披露，因此这里不做推测。
+
+## 主要结果
+- Reflex-Guard 的端到端延迟为 **37.6 ms**，显著快于 Llama Guard 2 的 255 ms 和 SafeDecoding 的 723 ms。
+- 在有害提示上实现 **95.9% 召回**。
+- 对 GCG suffix 攻击（一种针对白盒 LLM 的对抗后缀攻击）和 Base64 编码的提示，在默认阈值下检测率均达到 **100%**。
+- 对 DrAttack 这类结构化越狱提示，默认阈值下检测效果不佳，需要将阈值降至 **0.03** 才能获得最优检测，原因是它们产生了独特的概率分布。
+- Reflex Efficiency Score（RES）最高达 **16.79**，超过 Llama Guard 2（11.90）和 SafeDecoding（9.80）。
+
+## 为什么与兴趣相关
+低延迟是实时对话系统等场景的硬性要求，Reflex-Guard 展示了“本地轻量模型 + 嵌入 + 快速分类”在满足延迟约束方面的实用性；同时，本地运行避免了用户数据外泄风险，对隐私敏感型应用尤其重要。此外，摘要指出不同攻击类型在嵌入概率空间中占据不同区域，这一发现既可用于指导实际部署时的阈值调整，也提示了针对攻击家族做专用检测的潜在方向。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>CryptDough: A Unified Analytics Engine for Secure Multiparty Computation</title>
+      <link>https://arxiv.org/abs/2608.17529</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17529</guid>
+      <description>## 一句话结论
+
+CryptDough 是一个面向安全多方计算（MPC）的统一分析引擎，允许互不信任的各方在私有输入上联合执行数据分析，且除结果外不泄露其他信息；它通过分层系统设计和“虚拟向量”抽象，在多种威胁模型下支持关系、时间序列和机器学习推理等分析负载，并能在已有 MPC 系统支持的任务上常获得超过 2 倍的性能提升。
+
+## 问题与动机
+
+现有 MPC 解决方案通常只服务单一威胁模型或单一工作负载类型，难以灵活应对实际分析中混合关系查询、时间序列处理和 ML 推理等需求。CryptDough 的目标是在同一个系统运行时内，原生支持跨领域分析，并兼容多种威胁模型，从而让用户无需为不同任务切换或定制安全计算系统。
+
+## 方法与技术路线
+
+- **研究对象与设定**：面向多个彼此不信任的数据持有方，需要联合执行数据分析管道；输入是各方的私有数据，输出是聚合统计等分析结果，且各方“除了结果什么都学不到”（摘要未说明具体安全定义或协议细节）。
+- **核心设计一：分层系统架构（hierarchical system design）**：通过“渐进式降低抽象”（progressive lowering of abstractions）实现模块化和可扩展性。即上层用户表达分析意图，系统逐层翻译到更底层的执行表示；这种设计便于在不同威胁模型或分析类型间复用/替换组件。摘要未说明具体分层层次或各层接口。
+- **核心设计二：虚拟向量（virtual vectors）**：它使用户可以在整个软件栈的每一层都编写单线程风格的代码，而把通信、并行化和内存管理等分布式复杂度全部“下推”给执行引擎。这样，上层分析逻辑与底层并行/安全执行解耦，从而简化编程并支撑跨领域负载的统一表达。
+- **技术衔接**：虚拟向量解决的是“如何统一、简化编程”的问题；分层架构解决的是“如何组织模块以支持多威胁模型和多分析类型”的问题。两者结合，使得同一运行时既能保持表达灵活性，又能将底层通信与调度优化集中到执行引擎中。摘要中未说明具体的密码学原语（如秘密分享、混淆电路等）、协议步骤、参数或实验设置。
+
+## 主要结果
+
+摘要指出，CryptDough 在功能上能够概括（generalizes）当前最先进的 MPC 系统，并且在这些系统支持的分析任务上保持竞争力，性能常常超过它们 2 倍以上（“often outperforming them by more than $2\times$”）。摘要未披露所比较的系统名称、具体数据集、任务负载或威胁模型实例，也未给出详细性能数字。
+
+## 为什么与兴趣相关
+
+尽管 CryptDough 支持 ML 推理，但它本质上是一个通用 MPC 分析引擎，而非专门面向安全推理优化的协议。它的价值在于：为多种分析类型和威胁模型提供统一运行时，降低 MPC 应用开发门槛，并保持有竞争力的性能。对于关注 MPC 实用化、跨域数据联合分析和系统抽象设计的研究者，这是一个值得关注的系统框架，但若需要深入验证其安全性与性能，应进一步查阅原文或同行评审版本。
+
+&gt; 注：本文严格基于原始摘要撰写，未补充摘要之外的方法细节、实验数据或安全结论。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>MPC</category>
+    </item>
+    <item>
+      <title>FESC: Remodeling Long-Context Private Inference with Encrypted State-Space Models</title>
+      <link>https://arxiv.org/abs/2608.17442</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17442</guid>
+      <description>## 一句话结论
+FESC 是一个混合 FHE-MPC（全同态加密与安全多方计算）系统，用于私有长上下文选择性 SSM（状态空间模型）推理，首次实现在单张 GPU 上以原生端到端方式完成 L≥1024 的序列推理。
+
+## 问题与动机
+处理长且敏感的文档需要高效且保护隐私的推理。此前的私有推理系统主要优化或分布式加密 Transformer 注意力，但其对 token 对的二次方计算量会随序列长度增长成为瓶颈。选择性 SSM 具有线性时间递归优势，但直接加密实现会遭遇线性乘法深度、序列级状态驻留或密集 FHE-MPC 转换等问题。
+
+## 方法与技术路线
+- **研究对象与设定**：面向私有长上下文选择性 SSM 推理，采用混合 FHE-MPC 架构。摘要未说明具体协议步骤、参数和数据集。
+- **核心模块：factorized scan-contract**（因式化扫描-收缩）：将输入依赖的转换在转换边界保持紧凑形式；组合转换时无需密集展开；按需流式加载状态块；在转换前收缩输出。这一设计避免了直接加密实现中的密度和驻留问题。
+- **实例化与计算分配**：在 Mamba-2 架构中，线性计算使用 GPU 优化的 CKKS 内核（一种近似同态加密方案）；非线性函数如 SiLU、softplus、exponential 和 RMSNorm 则通过 MPC 协议实现；并采用近似感知微调来配合近似计算。
+- **衔接关系**：FHE 负责线性部分，MPC 处理非线性部分，scan-contract 负责在两者转换边界处保持数据紧凑并管理状态流，从而降低开销。摘要还提到该实现接口兼容 invariant 和 selective 两类 SSM 架构。
+
+## 主要结果
+FESC 被描述为首个能在单 GPU 上完成原生端到端私有长文档推理的系统，支持 L≥1024。在 L=2048 时，一个 12 层 Mamba-base 模型在单张 A100 GPU 上 77.3 分钟完成推理，峰值内存 32.7 GB，并在所评估的长文档任务上保持接近明文准确率。
+
+## 为什么与兴趣相关
+这项研究直接回应了长上下文私有推理中 Transformer 注意力的二次方瓶颈，验证了利用 SSM 线性递归的可行性，并展示了单 GPU 上运行长序列私有推理的实际效果，对安全机器学习部署具有参考价值。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>private inference</category>
+      <category>transformer</category>
+      <category>MPC</category>
+    </item>
+    <item>
+      <title>Fair ASR: Re-Evaluating Black-Box Jailbreaks under Shared Target-Call Budgets</title>
+      <link>https://arxiv.org/abs/2608.17360</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17360</guid>
+      <description># 一句话结论
+
+本文提出 Fair-ASR 评估协议，在共享目标调用预算下重新评估黑盒越狱攻击，发现攻击排名随预算显著变化，并提出高效攻击 ReCode。
+
+# 问题与动机
+
+可靠的越狱评估对判断大语言模型（LLM）安全性至关重要，但多数现有研究只报告攻击成功率（ASR），没有考虑其与攻击预算的依赖关系，导致不同方法之间的比较不公平。已有的计算感知评估将异构资源折算为 FLOPs（浮点运算次数），但对黑盒模型很难进行估计，也无法捕捉特定资源带来的约束。因此需要一种可比较的评估基准。
+
+# 方法与技术路线
+
+- **研究对象与设定**：黑盒越狱攻击，即攻击者只能通过查询目标模型来判断和构造可诱发不安全输出的输入。
+- **评估对象**：11 种代表性攻击，在 Fair-ASR 协议下重新评估。
+- **关键步骤 / 协议逻辑**：Fair-ASR 以目标调用次数 B（对目标模型的查询次数）作为直接可观测、且与具体方法无关的比较轴；同时单独记录攻击者调用次数（攻击者自身生成或优化时消耗的调用）用于效率分析。这样可以在相同的目标访问额度下比较不同攻击，并区分“目标侧成本”与“攻击者侧成本”。
+- **方法衔接**：基于 Fair-ASR 识别出已有攻击在目标调用与攻击者调用上的效率差距，作者引入 ReCode——一种组合式、预算高效的攻击。ReCode 结合了脱敏重写（desensitization rewriting）与两种由 Fair-ASR 确认的低代价原语（primitive）。
+- **输出**：各攻击在不同目标调用预算下的排名，以及它们在目标调用和攻击者调用两个维度上的效率表现。摘要未说明 Fair-ASR 的具体协议步骤（如预算取值、重放规则），也未说明 ReCode 中两种原语的具体实现。
+
+# 主要结果
+
+在 Fair-ASR 协议下，11 种攻击的排名在不同目标调用预算之间发生了明显变化；简单的随机扰动和手工模板在相同目标访问条件下仍然非常有竞争力。被评估的 LLM 驱动方法中，没有任何一种在目标调用和攻击者调用上同时高效。相比之下，ReCode 在 20 次目标调用预算下，在 GPT-5 上达到 85% 的 ASR，平均每次请求仅需 7.19 次攻击者调用，在两类调用上均表现出很强的效率。
+
+# 为什么与兴趣相关
+
+对 LLM 安全评估与越狱防御而言，公平比较攻击方法是前提。Fair-ASR 提供了一个更贴近黑盒实际约束的评估方式；ReCode 则展示了在有限目标预算下仍能保持高成功率的攻击设计，有助于理解越狱攻击的效率来源与风险边界。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Q-Interference：内存高效的相位感知量子启发注意力</title>
+      <link>https://arxiv.org/abs/2608.17288</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17288</guid>
+      <description>英文原题：Q-Interference: Memory-Efficient Phase-Aware Quantum-Inspired Attention
+
+GPT注意力通过点积相似度衡量token兼容性。该机制简单、有效且内存高效。但它并未显式建模强token特征之间应当相互增强还是相互抑制。我们引入了Q-Interference，一种用于自回归语言建模的完全经典的量子启发的注意力机制，它为每个查询和键特征附加一个振幅和一个学习到的相位。由此产生的注意力分数具有相位感知性，对齐的相位产生建设性贡献，而冲突的相位产生破坏性贡献。尽管Q-Interference产生了比单纯相似性更丰富的交互规则，但Q-Interference的朴素实现需要大型token对特征交互张量，使其内存密集且往往不切实际。为解决这一限制，我们提出了一种精确的三角分解，通过两次标准矩阵乘法计算相同分数，避免物化大型中间张量。Q-Interference直接适配GPT中的Transformer块，并保持模型架构其余部分和下一token预测目标不变。在公开基准数据集和基线模型上的实验表明，所提出的重构在受控GPT风格设置中能够稳定训练，并且相比朴素相位感知干扰注意力提供了一致的内存优势。这些结果支持了本工作的具体贡献：一种精确的、内存高效的重构，使相位感知干扰注意力在标准GPT流程中变得实用。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>ADAPTD：针对自主APT攻击的自适应检测与主动威胁防御</title>
+      <link>https://arxiv.org/abs/2608.17251</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17251</guid>
+      <description>英文原题：ADAPTD: Adaptive Detection and Proactive Threat Defense for Autonomous APT attacks
+
+高级持续性威胁（APT）行为者日益采用复杂技术，在分段式企业网络中进行横向传播。及时检测与防御依赖于跨子网协调，然而维持全局态势感知会产生大量的通信开销。为权衡这一矛盾，灵活监控与适应性遏制不可或缺。本文提出ADAPTD，一种通信与计算高效的决策论框架，整合了：(i) 用于识别多种攻击向量的紧凑杀伤链，(ii) 用于及时遏制的即时阻断机制，以及(iii) 用于恢复系统安全的预测性驱逐策略。我们的实验验证了ADAPTD在多种威胁场景下的有效性。首先，我们的去中心化信念更新方案优于最先进的扩散隐马尔可夫模型。其次，与基于Transformer的检测相比，ADAPTD显著减少了误驱逐。第三，在噪声环境下，自适应阻断能够在遏制攻击者的同时最小化不必要的干扰。最后，消融研究证实，组合两种防御动作能显著降低防御者的总成本。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>显式状态引出并不足够：记忆策略分类的受控审计</title>
+      <link>https://arxiv.org/abs/2608.17247</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17247</guid>
+      <description>英文原题：Explicit State Elicitation Is Not Enough: A Controlled Audit of Memory-Policy Classification
+
+个性化智能体必须决定检索到的用户记忆在被用于当前任务之前，是否应被使用、忽略、更新或查询。我们利用这一场景为结构化中间输出开发了一种经验性审计协议：首先审计数据集捷径，然后隔离捆绑的提示变化，检查中间标签是否与答案相关，测试分解后的语义证据，并审计提供方层面的执行失败。一个包含480个示例的合成开发集最初表明，状态结构化提示捆绑带来了巨大收益，但TF-IDF诊断显示存在词汇可分性，且没有正的独立忽略案例。因此，我们构建了一个固定的160示例受控反事实集，包含40个匹配的四路族和规则推导的参考策略。在该集合上，暴露四种状态定义提高了准确性，但对于Llama-3.3-70B，一个孤立的显式状态输出字段并未显著提高策略准确性，对GPT-OSS-120B仅带来边际性的、不显著的提升。提供与基准关联的状态标签会改变策略预测，但由于这些标签确定性地映射到策略，这是一种标签条件诊断，而非忠实内部机制的证据。族级和种子稳定性分析进一步表明，示例级准确性夸大了反事实一致性：完整的四路族成功是罕见的。一项探索性的后续研究引出分解后的语义证据也未能改善干净评估端点的路由；相应的GPT-OSS条件因提供方侧请求验证而不可用。我们仅评估策略分类，不评估下游响应、工具操作或记忆存储变更。</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>On Post-Quantum Multi-Key Security of GCM</title>
+      <link>https://eprint.iacr.org/2026/1718</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1718</guid>
+      <description>This paper studies the post-quantum multi-key security of Galois/Counter Mode (GCM) in the Quantum Ideal Cipher Model (QICM). GCM is one of the most widely deployed AEAD schemes. In practice, widely deployed cryptosystems are often instantiated under many independent keys, making the multi-key setting practically relevant. A trivial extension of a single-key security bound to the multi-key setting incurs a security loss proportional to the number of keys. In particular, in the post-quantum setting, the term corresponding to exhaustive key search becomes $up^2/2^k$, where $u$ is the number of keys and $k$ is the key length. Here, $u$ is the number of keys, $k$ is the key length, and $p$ is the number of quantum queries to the underlying block cipher $E$ and its inverse, which serves as a coarse measure of the amount of offline (quantum) computation performed by the adversary. For example, when $u=2^{32}$, the trivial bound does not guarantee security for $p \geq 2^{48}$ when $k=128$, and even for $k=192$, it ceases to guarantee security for $p \geq 2^{80}$. We show that, at the cost of some additional loss terms, the term $up^2/2^k$ can be replaced by a term of order $\sqrt{dp^2/2^k}$, where $d$ denotes the maximum number of keys under which the same nonce appears in encryption queries. Thus, when $d$ is much smaller than $u$ (and the additional loss terms remain small), our bound improves upon the trivial multi-key bound. This can be viewed as a post-quantum counterpart of the classical result of Hoang et al. (CCS 2018). As in their work, we further show that, for randomized nonce-generation mechanisms that abstract patterns used in protocols such as TLS, the parameter $d$ remains small even when $u$ is large. Although our bounds are not tight and leave room for improvement, they yield a notable improvement over the trivial multi-key bound for several concrete parameter settings. To the best of our knowledge, this is the first non-trivial post-quantum multi-key security bound for an AEAD mode in the QICM. Our proof combines the reprogramming-and-resampling approach of Alagic et al. (EUROCRYPT 2022) with counting arguments used in the classical multi-user analysis of GCM by Hoang et al.</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>哪个来源胜出？视觉语言模型中的任务相关依赖</title>
+      <link>https://arxiv.org/abs/2608.17205</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17205</guid>
+      <description>英文原题：Which Source Wins? Task-Dependent Reliance in Vision-Language Models
+
+视觉语言模型（VLMs）结合图像和文本，但当两者冲突且其中一个变得更难辨认时，模型如何在两者之间转移其依赖尚不清楚。我们通过一个受控设置研究这种模态重新分配：我们将图像或文本中的一方在四个可读性级别上降低可读性，同时保持另一方清晰，并跟踪模型的偏好如何变化。我们通过将一道算术问题的渲染图像与另一道算术问题的文本配对来构建来自 GSM8K 和 SVAMP 的冲突，从而使两个来源支持不同的答案。我们还引入了 ChartQA-Conflict，这是一个经过人工审核的基准，包含 229 个图表-报告冲突，并具有匹配的图表和表格图像表示。我们使用生成的答案和长度归一化的条件对数似然边际评估了六个开放权重 VLM。在 GSM8K 和 SVAMP 上，六个模型中有五个在远离退化文本的转移程度上强于远离退化图像的转移程度。在 ChartQA-Conflict 上，所有六个基于似然评分的模型都表现出相反的pattern，即更强烈地远离退化的视觉来源。这种逆转在针对单模态准确率损失进行校准后以及将图表替换为纯表格图像后仍然存在。两个前沿 API 模型 GPT-5.6-Luna 和 Gemini-3.5-Flash 在行为上复现了 ChartQA-Conflict 的逆转，其中 GPT-5.6-Luna 也匹配了算术任务的方向。这些结果表明，VLM 中的模态依赖不是固定的，而是随任务、证据结构、模型和评估设置而变化。源代码可在 https://github.com/Ro-netizen004/multimodal-arbitration-artifact 获取。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>合成特征提取器：一种用于算法选择的智能体方法</title>
+      <link>https://arxiv.org/abs/2608.17170</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17170</guid>
+      <description>英文原题：Synthesizing Feature Extractors: An Agentic Approach for Algorithm Selection
+
+约束满足问题的算法选择需要提取能够捕获问题结构的特征。手动设计特征提取器需要深厚的领域专业知识，并且当新的问题类别出现时会迅速成为瓶颈。我们提出了一种自动化方法，在智能体式的“检查-修复-验证”循环中使用大语言模型（LLMs）来合成可执行的Python脚本，这些脚本可作为可解释的、面向特定问题的特征提取器。给定一个高层MiniZinc模型和一个实例，LLM智能体生成代码，构建一个类型化图表示，并计算结构属性，如图密度、变量聚类和约束紧密度。我们使用一个由五个最先进求解器组成的求解器组合，在三个组合问题上评估了我们的方法：车辆路径规划、汽车排序、定长纠错码。合成的特征提取器所得到的算法选择器持续优于专家精心设计的mzn2feat特征（在FLECC上测试集准确率最高提升8.3个百分点（pp））以及最好的基于transformer的trans2feat变体。与此同时，合成的特征提取器仍然保持可检查性。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>LLM能否以具有法律意义的方式进行推理？欧洲人权法院案件的小规模研究</title>
+      <link>https://arxiv.org/abs/2608.17168</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17168</guid>
+      <description>英文原题：Can LLMs Reason in a Legally Meaningful Manner? A Small-scale Study on European Court of Human Rights Cases
+
+推理已成为当代LLM的标准技术和特性；然而，在具有高要求的法律导向任务（如法律案件预测）中，推理的应用和质量仍然探索不足。我们以欧洲人权法院（ECtHR）的法律案件为测试平台，研究了LLM在法律案件预测背景下的推理方式。我们通过探索不同的提示策略来评估近期顶级LLM OpenAI GPT 5.4，这些策略在不同程度上提示了在ECtHR判例背景下什么构成具有法律意义的推理。我们展示了通过人工评估和LLM评估对模型回应进行评估后得出的发现。我们发现，所评测的模型在法律推理方面远未达到理想水平，模型产生的分析结构完整但内容浅薄，且LLM-as-a-Judge评估器内部一致，但与我们的受训标注员仅存在微弱对齐，即可靠但并非人工评估的有效替代。总体而言，专家精心设计的提示带来了更全面的推理，但与其他测试设置相比，并未带来更准确的预测。基于我们的发现，我们敦促社区不要仅依赖基于LLM的自动化评估，并避免将任务准确率用作推理质量的适当代理指标。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>SCENARIODIFF：面向多模态时间序列预测的场景级引导框架——扩展版</title>
+      <link>https://arxiv.org/abs/2608.17164</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17164</guid>
+      <description>英文原题：SCENARIODIFF: A Scenario-level Guidance Framework for Multimodal Time Series Forecasting--Extended Version
+
+新闻、报告和日志等文本上下文可以为时间序列预测提供有价值的信号，尤其是当未来动态由历史值中尚未显现的外部事件驱动时。现有的多模态预测方法要么让大型语言模型（LLM）直接预测数值，要么隐式融合文本和时间序列，使得上下文影响难以解释和控制。我们提出SCENARIODIFF，一种用于在噪声和弱对齐文档下进行多模态时间序列预测的分层上下文推理框架。SCENARIODIFF将上下文信息组织为三个层级：历史上下文代理从原始文档中提取逐步证据，场景代理为预测时段生成定性场景描述，锚点引导代理为事件相关的未来区域生成稀疏锚点。这些结构化信号条件化一个多模态扩散Transformer，同时锚点混合采样无需重新训练即可局部细化生成的轨迹。在Time-MMD基准上的实验表明，SCENARIODIFF在事件驱动领域尤为有效，展示了显式分层场景引导对多模态时间序列预测的价值。我们的完整实现可在https://anonymous.4open.science/r/ScenarioDiff_ICDM-2C4C获取。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>深度学习在跨境电价预测中的应用：一项比较研究</title>
+      <link>https://arxiv.org/abs/2608.17091</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17091</guid>
+      <description>英文原题：Deep Learning for Cross-Border Electricity Price Forecasting: A Comparative Study
+
+尽管公开可用的电力市场数据为预测研究提供了宝贵的资源，但该领域缺乏用于标准化比较的既定基准数据集。因此，许多研究依赖不同的数据集和指标在孤立的环境中评估方法，这使得难以一致地评估进展和比较最先进的方法。在本工作中，我们使用公开数据评估深度学习模型在多种市场环境下的电价预测（EPF）。我们的目标是建立一个可复现的框架，使得对预测模型进行一致的评估成为可能。尽管深度学习已被探索用于日前电价预测，但许多先前的研究局限于单一市场环境、狭窄的特征集或固定的训练机制。本研究对六种深度学习模型——涵盖状态空间、MLP、RNN和基于Transformer的架构——进行了比较评估，强调跨市场的泛化能力。我们使用零样本、单样本和少样本学习来模拟低数据目标市场条件。我们的测试集聚焦于2024年德国-卢森堡（DE-LU）竞价区，使用包含日历、历史价格和市场衍生特征的标准化数据集。我们的研究结果表明，N-HiTS和NBEATSx在有限数据场景下表现出竞争力，而基于Transformer的模型可以达到相当的准确性，但往往需要更多的适配和调参。模型性能还受益于仔细的特征选择和超参数调整，我们注意到最强模型之间的差异通常很小。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>基础智能体遇见智能体深度研究：基于证据的临床代码预测</title>
+      <link>https://arxiv.org/abs/2608.17075</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.17075</guid>
+      <description>英文原题：Foundation Agents Meet Agentic Deep Research: Evidence-Grounded Clinical Code Forecasting
+
+下一次就诊ICD预测从事先可获得的纵向记录中，预测未来就诊时将记录的标准化诊断代码。该任务是前瞻性和多标签的：目标记录尚不存在，且可能有多个代码是正确的。结构化EHR基础模型捕捉复发和时间进展，而语言基础模型生成灵活的诊断假设。我们引入了ICD-Deepresearch，一种DeepResearch工作流，它将这些预测性基础模型与医学搜索和ICD词典组合在一起。由于没有来源能揭示未来的代码集，研究在固定的top-K预算下，通过将患者证据、外部临床关系和精确代码语义联系起来，评估候选转换。候选生成使用SparseEHR产生一个EHR先验，该先验初始化两轮有界研究扩展；一个独立的GPT-5直接预测提供补充候选。最终选择对两条路径进行验证、去重和联合排序，之后一个单独的模块在不改变预测的情况下撰写理由。最后，ICD-Deepresearch在MIMIC-III上实现了患者平均精确率/召回率24.60/35.09%，在MIMIC-IV上实现了25.14/48.32%。医生对其检索文档的有用性评价为51%和68%，而独立GPT-5网络搜索为22%和39%，医学深度研究为32%和41%。因此，ICD-Deepresearch相对于注册的本地比较器有所改进，同时检索到的证据在医生评定的有用性方面高于独立研究系统。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Verifiable Compression of Images</title>
+      <link>https://eprint.iacr.org/2026/1717</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1717</guid>
+      <description>AI image generation has made image misinformation a serious concern. To address this issue, the Coalition for Content Provenance and Authenticity (C2PA) standard adopts digital signatures to attest that an image originates from an authorized source, such as an attested camera or authorized AI provider. In practice, however, raw images are rarely published directly: photos are typically compressed before publication, which invalidates any C2PA signature. Recent works have proposed the use of zero-knowledge proofs (zk-SNARKs) to prove that only allowed edits were applied to a C2PA-signed original image. Unfortunately, prior works only support simple edits (e.g. cropping, blurring, and resizing) and do not support lossy image compression like JPEG, which is ubiquitous. The purpose of compression is to save communication. Therefore, unlike other edits, it cannot be verified directly, requires small proof sizes, and is unsuitable to outsourcing. To address these limitations, we present SPEG, the first practical proof system that supports the full image-transmission pipeline on personal devices. We present two protocols that support JPEG compression, while proving validity of the C2PA signature on the original image. The two modes are incomparable: the first is compatible with an arbitrary hashing algorithm (we use Poseidon for efficiency), whereas the second is significantly faster but requires the C2PA to use a polynomial commitment (e.g., KZH) instead of a conventional hash. Our key optimizations are handling the non-algebraic JPEG Encoding outside the proving circuit, and avoiding range checks in our floating-point arithmetic. We can prove the JPEG compression of an FHD(1080p) image in 47s in the Poseidon mode and in 2s in the fast mode. The fastest prior work (VerITAS) which only handles simple resizing, requires 227s on the same consumer hardware. Additionally, we identify a security gap in VIMz (PETS 25) that enables forgery of proofs for unauthorized images and provide a fix. We also prove that we can securely use the popular powers-of-tau SRS with the polynomial commitment scheme KZH.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Silent Threshold Encryption from Lattices</title>
+      <link>https://eprint.iacr.org/2026/1716</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1716</guid>
+      <description>### 一句话结论
+本文基于格上的 decomposed LWE（分解的带噪学习误差）假设，构造了一种静默阈值加密方案，其密文大小可以做到亚线性于用户总数，并将该构建推广到更一般的单调策略族。
+
+### 问题与动机
+静默阈值加密（silent threshold encryption）是传统阈值加密的推广。特点是：与用户组关联的公共加密密钥是各用户个体公钥的确定性函数，因此无需中心化密钥聚合过程；其主要效率要求是密文大小应亚线性于解密法定人数 \(N\)，理想情况下与 \(N\) 无关。此前构造任意阈值策略的静默阈值加密，要么依赖双线性映射，要么使用 witness encryption（见证加密）和 indistinguishability obfuscation（不可区分混淆）等重量级工具。近期工作虽能从 decomposed LWE 支持常数阈值，但任意阈值的简洁构造仍是一个开放问题。
+
+### 方法与技术路线
+该工作的核心构建模块是一个 **有界共谋注册功能加密**（bounded-collusion registered functional encryption，简称 registered FE）方案。注册功能加密允许用户自行注册公钥，加密者使用由这些公钥派生的公共参数加密，而解密者持有与自身属性相关的功能密钥。本方案在 \(N\) 个用户、共谋界限为 \(Q\) 的设置下，支持深度为 \(d\) 的布尔电路，接受 \(\ell\) 位输入，输出单比特；其密文大小为  
+\[
+Q \cdot \tilde{O}(d) + \ell \cdot \mathsf{poly}(\lambda, d, \log N),
+\]
+其中 \(\lambda\) 为安全参数。该 FE 方案的安全性基于随机预言机模型下的 decomposed LWE 假设；摘要未披露底格维度、噪声分布等具体参数。
+
+作者将上述注册 FE 作为核心积木，构造了静默阈值加密：加密单个比特时，密文大小变为  
+\[
+\tilde{O}(T) + \mathsf{poly}(\lambda, \log N),
+\]  
+其中 \(T\) 是阈值。这一简洁性来自 FE 的密文结构——阈值策略被编码为布尔电路，而注册 FE 的注册特性恰好对应静默阈值加密中“公钥为用户公钥确定性函数”的要求。进一步地，该方案可超越阈值策略，推广到任何具有简洁（计算性）秘密共享方案的单调策略族，此时密文大小与最大被损坏共享数成正比。摘要未说明从 FE 到静默阈值加密的具体归约步骤，也未涉及任何实验数据。
+
+### 主要结果
+- 首次从 decomposed LWE 假设构造了任意阈值的静默阈值加密，密文大小 \(\tilde{O}(T)+\mathsf{poly}(\lambda,\log N)\)。
+- 对任意常数 \(\varepsilon&lt;1\) 的阈值 \(T=N^\varepsilon\)，方案实现非平凡的密文简洁性。
+- 有界共谋注册 FE 支持通用布尔电路，密文尺寸为 \(Q\cdot \tilde{O}(d)+\ell\cdot\mathsf{poly}(\lambda,d,\log N)\)。
+- 此前同类 FE 方案只能依赖双线性映射、evasive LWE 或不可区分混淆，而本方案基于更标准的格上假设。
+
+### 为什么与兴趣相关
+该工作把静默阈值加密的底层假设从重量级混淆/见证加密推进到格上的 decomposed LWE，显著降低了构造的复杂度门槛，同时保留了亚线性密文的效率优势。注册 FE 作为中间原语，本身也可能在其他联邦或分布式密码协议中找到用途。对于关注隐私计算、后量子密码和功能加密的研究者，这是一个值得关注的进展；但它不涉及保护模型推理，因此与机器学习推理场景无直接关联。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+      <category>secret sharing</category>
+    </item>
+    <item>
+      <title>PXDepth：面向结构保持的单目深度估计的像素空间建模</title>
+      <link>https://arxiv.org/abs/2608.16984</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16984</guid>
+      <description>英文原题：PXDepth: Pixel-Space Modeling for Structure Preserving Monocular Depth Estimation
+
+近期的单目深度估计器实现了强大的零样本泛化能力，但通常在保持细粒度结构和物体边界方面存在困难。我们将这一局限性归因于大块ViT编码器与卷积解码器的普遍组合，因为粗糙的令牌化会削弱像素级线索，而上采样无法完全恢复这些线索。为了解决这一问题，我们提出了PXDepth，一种判别式单目深度模型，将全局上下文建模与像素级深度预测分离。具体而言，大块ViT捕获全局场景上下文，而由上下文调制像素Transformer块组成的像素空间预测器在整个深度估计过程中保持高分辨率空间表示。这种设计在保持全局深度一致性的同时，保留了精细结构和清晰边界。在各种零样本基准测试中，PXDepth将忠实的局部几何与有竞争力的全局深度精度相结合，同时在推理时保持高效。我们的代码和模型可在https://yuanzhy29.github.io/PXDepth-Page/获取。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>迈向计算溯源：在生成文本中携带因果状态证据</title>
+      <link>https://arxiv.org/abs/2608.16868</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16868</guid>
+      <description>英文原题：Towards Computational Provenance: Carrying Causal-State Evidence in Generated Text
+
+语言模型的输出本身并不提供关于产生该输出的内部计算的可验证证据。我们研究计算溯源：生成文本是否能携带关于哪个因果相关内部状态发生的可检测证据。我们在两种受控架构中测试了这一思想的有限形式：一个模块化前馈神经网络和一个基于Transformer的模型。这两种架构都在同一个算术任务上训练，该任务具有通过两个离散中间状态的必经路径，从而允许不同的内部路径产生相同的答案。我们故意在这些路径之间切换，验证实际使用的状态，并让该已验证状态决定生成文本中一个可被后续检测的细微统计模式。前馈和Transformer系统在公开评估和单独密封的受保护端到端评估中均通过了全部128个匹配对，检测器恢复了与已验证内部状态相关的信号。所需的因果计算也在五个独立训练的前馈模型和三个独立训练的Transformer中复现。在另一个仅答案的Transformer实验中，我们的线性探针未能恢复自然学习到的中间状态。这些结果提供了一个受控的概念验证：即使答案不变，关于已验证的、因果相关的内部状态的信息也能保留在生成文本中。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>非交叉深度分位数回归用于分布生存预测</title>
+      <link>https://arxiv.org/abs/2608.16864</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16864</guid>
+      <description>英文原题：Non-Crossing Deep Quantile Regression for Distributional Survival Prediction
+
+在生存分析中，协变量对事件风险的作用方式在早期和晚期失效时间之间往往不同，然而基于风险和均值的汇总将这种变化压缩为单一数值。基于分位数的建模则在原始时间尺度上描述完整的条件分布，但现有的删失数据方法要么不灵活，要么产生逻辑上不一致的交叉分位数曲线。我们提出了一种适用于右删失数据的删失非交叉分位数（CNQ）框架，该框架联合估计多个条件生存分位数，并通过构造保证有效的排序，其灵活性由Kolmogorov-Arnold和Transformer骨干网络提供，并且我们建立了一个在全部拟合分位数水平上联合成立的有限样本超额风险界。在27种模拟设置和六个队列中，当条件分布不对称时，该框架的引脚损失低于基于分位数、基于风险和基于树的竞争方法，并且在所有六个队列中区间覆盖率更接近标称水平。在两个临床案例研究（METABRIC，乳腺癌；FLCHAIN，人群死亡率）中，它恢复了随生存分布变化且会被单一风险比隐藏的协变量效应，并产生一致的个体化分位数里程碑。代码：https://github.com/BIG-S2/deepcnq</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>基于人类反馈的策略迭代：将训练后强化学习引入上下文学习</title>
+      <link>https://arxiv.org/abs/2608.16831</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16831</guid>
+      <description>英文原题：Policy Iteration with Human Feedback: Bringing Post-Training RL to In-context Learning
+
+生成式预训练确立了可复用的任务表征；后续关于基于语言的任务条件化和上下文学习的研究表明，固定模型可以根据指令和演示调整其行为。基于人类反馈的策略迭代（PIHF）建立在上述进展以及广义策略迭代的“评估-改进”循环结构之上。PIHF使用预训练语言模型作为其执行载体，并将持久性修订转移到带版本控制的自然语言策略和工具集上。语言模型评审者和临床专家审查完整面板的推理和工具使用轨迹，以定位反复出现的失败并形成候选修订方案；专家可以重新解释证据，并保留对采纳和回滚的权威，而Recall@1和Recall@5在候选方案执行后验证结果。在累积消融实验和超罕见疾病基准测试中，由PIHF导出的策略在1个专有执行器和3个开放权重执行器（覆盖30亿至490亿活跃参数）中提升了Recall@1。收益方面，GPT-5.4提升了32.7个百分点，Qwen3.6-35B提升了31.1个百分点，差异为1.7个百分点。这些结果支持了使用预训练语言模型作为固定权重执行载体，在罕见病诊断中进行专家引导策略开发的可行性。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>UniTAC：通过加权失真度量的通用任务感知压缩</title>
+      <link>https://arxiv.org/abs/2608.16696</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16696</guid>
+      <description>英文原题：UniTAC: Universal Task-Aware Compression via Weighted Distortion Measures
+
+物理AI系统，如自动驾驶汽车和机器人，依赖在紧张的带宽、延迟和能量预算下及时交换高维传感信号。由于驱动下游决策的任务随时间演化，任务特定的编解码器是脆弱的，并且在现场为每个任务重新训练一个编解码器是不可行的。我们提出了UniTAC，一种单一学习图像编解码器，涵盖从通用（任务无关）到任务专门化的操作，在运行时无需重新训练即可重新定向。任务被抽象为一个逐分量重要性向量，例如从任何下游模型的梯度归因中导出，并作为低开销的边信息传输，同时条件化编码器和解码器。UniTAC在广泛的、随机化的此类向量族上针对加权重建失真训练一次，保持固定主干和单一的、人类可查看的重建，其保真度通过交换注入的向量被引导到当前任务。我们分析了底层的加权率失真问题，刻画了对角加权失真何时与任务一致，以及权重如何与任务敏感性相关。在此指导下，我们设计了一种Vision Transformer（ViT）编解码器，其词元级条件化自然地实现了这种权重驱动的编解码。在0.034 bpp的局部任务上，单个UniTAC模型达到91.4%的准确率，仅比基于任务的编解码器（93.3%）低1.9%，且高于通用编解码器（76.9%）。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>语言模型头是否会造成有害的梯度瓶颈？一项因果检验</title>
+      <link>https://arxiv.org/abs/2608.16671</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16671</guid>
+      <description>英文原题：Does the LM Head Create a Harmful Gradient Bottleneck? A Causal Test
+
+语言模型头将宽度为D的隐状态映射到大小为V的词表，因此其转置至多能向Transformer返回D个独立方向。Godey和Artzi认为这种严重的投影是一个有害的优化瓶颈。我们将几何属性与因果论断分离开来。我们的仅反向干预保持了常规logits和精确的语言模型头参数更新，同时仅降低传回Transformer的梯度的秩。在字节级和BPE-8192 WikiText-2模型上，跨五对随机种子，降低反向秩会增加验证损失。然而，一个同等秩的分解前向头会使损失增加得多得多。在较大模型的半秩设置下，仅反向的损失增加为0.0586（95% CI [0.0167, 0.1005]），而分解前向头使损失增加0.1795（[0.1547, 0.2042]）。词表空间的残差也对常规语言模型头更新有贡献，去除该贡献是有害的。额外的对照表明，重复词元失败与独立采样符号的数量相混淆，添加非目标输出类别不会损害学习，并且投影诊断在我们的运行中不能可靠预测进展。测试过的辅助反馈通路并不能胜过调优后的反向传播。这些结果证实了强烈的几何压缩，但并未确定它是一个有害的优化瓶颈。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>有界语义规划与确定性编译：实现可靠的企业文本到SQL生成</title>
+      <link>https://arxiv.org/abs/2608.16663</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16663</guid>
+      <description>英文原题：Bounded Semantic Planning and Deterministic Compilation for Reliable Enterprise Text-to-SQL
+
+直接文本到SQL生成要求语言模型同时完成两项工作：解释业务问题并构建完整的关系查询。在企业模式中，SQL可能在使用错误的关系角色或聚合粒度时仍然成功执行。我们研究了随机边界的一种替代放置方式。一个多轮规划器对短语进行 grounding，并从特定于问题的受控选项中进行选择；图遍历、角色谓词、粒度降低、SQL构建和确定性检查均在代码中实现。我们基于ACME保险基准测试，将该语义路径编译（SPC）系统与直接的DDL到SQL生成进行了评估。在一个包含38个问题、每个问题运行三次的裁定比较集中，SPC在37个问题（97.4%）的每次运行中均被裁定为正确，而基线为21个问题（55.3%）。配对不一致结果为16个问题支持SPC，0个问题支持基线（双侧精确McNemar检验p=3.05x10^-5）。SPC在114次运行结果中，38个问题至少有一次全部回答正确，并产生了一次拒答和零次裁定错误但执行的运行；而基线在同一组上产生了29次裁定错误的运行，以及7次额外的由评审标记的仅数据巧合。一项严格等价敏感性分析增加了配对差异。使用GPT-5.4和Gemini-3.6-Flash进行的额外SPC运行显示出类似的问题级稳健性，尽管其每次运行的裁决产物未保留。另外六个基准项目保留在全部项目分析中，并按失败类别分别记录。该研究支持一个端到端的系统结果，而非声称编译单独带来增益的因果性结论，因为SPC接收了DDL基线所没有的受控语义产物。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>How Compact Can NTRU Encryption Be? Heuristic Frontiers and Practical Schemes</title>
+      <link>https://eprint.iacr.org/2026/1715</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1715</guid>
+      <description>NTRU is one of the longest-tested lattice-based public-key encryption families and is often viewed as a compact alternative to (R/M)-LWE. Yet, after three decades of research, its potential for compactness remains an open area for further exploration: recent designs such as NEV (Asiacrypt 2023) and DAWN (Asiacrypt 2025) suggest that there is still room for improvement. This raises a natural question: Has NTRU reached its compactness limit? If not, how compact can it be while still remaining secure and efficient? Motivated by this question, we aim to formalize a unified relationship between compactness and efficiency under the required security level. We present a common two-stage view of NTRU decryption. In the first stage, the decoder constructs a small set of candidate wrap-around errors. In the second stage, it verifies these candidates using either algebraic redundancy or trapdoor-derived distributional information. We introduce Free Candidate Localization (FCL), a generic first-stage method that ranks coordinates by their proximity to the centered boundary. FCL could be used in most lattice-based encryptions; we instantiate it in ML-KEM to achieve a $10\%$ smaller ciphertext at the cost of a $5\%$ slower overall runtime in the reference C implementation under NIST-I. We organize modern NTRU encryptions into two frameworks. NTRU with Encoding leverages algebraic structure via auxiliary quotient rings. NTRU with Trapdoor exploits geometric structure through the NTRU trapdoor, then verifies candidate corrections using distributional tests. These frameworks give a common language for existing NTRU designs and for the compactness searches in this paper. Within an explicit search model, we derive heuristic compactness frontiers for both frameworks. At NIST-I, the encoding frontier yields a total public-key plus ciphertext size of 812 bytes, and the trapdoor frontier yields a size of 754 bytes, $15\%$/$21\%$ smaller than the previous lowest size of 964 bytes in DAWN. Furthermore, we propose END, an instantiation of NTRU with Trapdoor plus FCL. At NIST-I, \textsf{END} has a 384-byte ciphertext, which is exactly half the size of the 768-byte ciphertext of ML-KEM-512, and is $12-19\%$ smaller than the shortest prior NTRU-style ciphertexts in BAT (TCHES 2022) and DAWN. In our reference C implementation, the combined encapsulation and decapsulation cost of END-512 is about $3\%$ higher than that of ML-KEM-512.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Rigorous Statements and Proofs of the Lemmas in Simon's Algorithm for the Dihedral Coset Problem and Their Underlying Hypothesis</title>
+      <link>https://eprint.iacr.org/2026/1714</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1714</guid>
+      <description>In a recent preprint, Simon proposed a polynomial-time quantum algorithm for the Dihedral Coset Problem and rested the analysis on four lemmas. Three of them carry only proof sketches, and this paper gives each of those three a statement that admits a single reading together with a complete proof. Lemma 1 follows from an exact second-moment computation for the subset-sum counts, and it holds with probability tending to one in place of the constant originally claimed. The amplitude bound of Lemma 3 follows from an exact Parseval identity on the cube of measurement outcomes and holds at every threshold with no well-behavedness hypothesis, so that predicate leaves the argument entirely. For Lemma 4, we compute both balls-in-bins covariances exactly and find that the second carries a term a fixed ball count leaves out. The assumption that the distinguished group contains no faulty samples can also be dropped. The two branch amplitudes share a signed prefactor, so the counting estimates control their difference and not the ratio the lemma states. We prove the additive form and show that the closing argument consumes nothing more than that. A single hypothesis survives all of this. It asks that the partition into the two sides be fixed independently of the measured string, and the rule the algorithm gives for choosing that partition does not supply it. Establishing these four lemmas therefore does not by itself establish the correctness of the algorithm.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>MLLM引导的文本到视频生成语义校正</title>
+      <link>https://arxiv.org/abs/2608.16513</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16513</guid>
+      <description>英文原题：MLLM-Guided Semantic Correction for Text-to-Video Generation
+
+近年来，扩散模型和Transformer架构的进展推动了文本到视频生成的显著进步。然而，这些模型常常出现语义错误，如对象缺失、属性不正确或动作不匹配。尽管一些语义校正方法在采样前进行优化或在采样后进行细化，但在视频生成过程中如何检测和校正语义偏差仍未被充分探索。在本文中，我们引入了一种无需训练、可解释的生成中校正框架，将多模态大语言模型（MLLM）反馈直接集成到扩散采样循环中。我们的框架通过在视频合成期间注入语义评估信号来实现扩散轨迹校正，使模型能够通过持续自我反思优化生成内容。我们提出了两个关键模块：语义评估监督器（Semantic Assessment Supervisor），用于生成中间预览帧以进行语义评估和偏差诊断；以及语义修改助手（Semantic Modification Assistant），通过可控的潜在轨迹干预在推理期间校正语义漂移。我们的方法在不修改模型参数的情况下提高了语义对齐、视觉保真度和时间一致性。我们通过在多个基准上的大量实验验证了该方法的有效性。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Exposing SIMD Parallelism in SQIsign: An AVX-512 Implementation</title>
+      <link>https://eprint.iacr.org/2026/1713</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1713</guid>
+      <description>Modern isogeny-based cryptosystems spend much of their running time in finite-field, elliptic-curve, and higher-dimensional isogeny arithmetic. Exploiting SIMD parallelism in these computations is nevertheless nontrivial: central routines such as Montgomery ladders contain loop-carried dependencies, while point, pairing, and theta-coordinate formulas expose only irregular fine-grained parallelism. We show that substantial SIMD parallelism can be recovered by reorganizing the arithmetic dependency graphs of these higher-level primitives rather than vectorizing field multiplication in isolation. We develop an end-to-end AVX-512IFMA implementation of SQIsign in which data remain in a radix-$2^{51}$ vector representation across most of the curve-side computation. Our redesign includes projective xDBLADD schedules for Montgomery ladders, batched point doubling in several coordinate systems, a vectorized biscalar ladder, fused cubical-arithmetic pairing steps, and batched one- and two-dimensional isogeny evaluation. Relative to the reference C implementation, our implementation achieves end-to-end speedups of $1.76\times$, $1.71\times$, and $3.18\times$ for key generation, signing, and verification, respectively, at NIST security level~I; combining the same implementation with Qlapoti increases the key-generation and signing speedups to $2.90\times$ and $2.69\times$. To test whether these techniques are specific to SQIsign, we further apply the same AVX-512IFMA backend and higher-dimensional vectorization methodology to CORAL, a recent isogeny group action for post-quantum non-interactive key exchange based on two-dimensional $2$-isogenies. Across the five parameter sets in our experiments, this yields $1.28$--$1.40\times$ speedups for key generation and $1.92$--$2.46\times$ speedups for shared-key computation over the reference C implementation. These results provide cross-scheme evidence that algorithm-level SIMD scheduling is a reusable optimization dimension for higher-dimensional isogeny cryptography.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>JailbreakSkill: Scaling Automated Red-Teaming with Reusable and Ever-Evolving Skills</title>
+      <link>https://arxiv.org/abs/2608.16465</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16465</guid>
+      <description>### 一句话结论
+本文提出 **JailbreakSkill**，一个以可复用、持续进化的“技能库”为核心的自动化红队攻击框架，通过闭环学习显著提升了大语言模型的越狱攻击成功率（ASR）。
+
+---
+
+### 问题与动机
+自动化红队测试（automated red-teaming，即自动生成对抗性输入来探测模型安全漏洞）已经积累了大量攻击策略，但这些策略通常分散在不同的提示词（prompt）和工作流中，难以系统地整合、复用和大规模改进。作者希望解决这一“策略碎片化”问题，让已有攻击能力能够被模块化地组织、选择，并随着攻击经验不断升级。
+
+---
+
+### 方法与技术路线
+- **研究对象与设定**：面向大语言模型的安全红队攻击，攻击目标是诱导模型产生不安全输出。论文将攻击策略抽象为“技能”（skill），作为可操作的基本单元。
+- **关键步骤与模块**：
+  1. **技能打包与复用**：将现有攻击策略封装成模块化的、可供智能体（agent）直接调用的技能（agent-ready skills）。这些技能可以跨任务、跨目标模型被直接复用，并通过自适应选择（adaptive selection）在具体攻击场景中选用合适的技能。
+  2. **攻击与学习的闭环**：在攻击过程中，系统不只使用已有技能，还收集攻击经验来诊断、细化、组合和发现新技能。新产生的技能会被添加回一个不断增长的技能库（ever-growing skill library），从而形成“攻击—学习—再攻击”的持续进化循环。
+- **技术定位**：该方法属于机器学习与安全交叉研究，核心是利用技能库管理提升红队攻击的规模化与自动化水平，而非依赖单一手工攻击模板。
+- **实验设置与指标**：摘要中提及在 **AdvBench** 和 **HarmBench** 两个基准上评估宏平均攻击成功率（macro-average ASR，即各类别攻击成功率的平均值）。但摘要未说明具体训练数据、目标模型集合、技能库初始规模、进化算法细节或实验超参数。
+
+---
+
+### 主要结果
+- 在 **AdvBench** 上，宏平均 ASR 提高 **17.5 个百分点**；在 **HarmBench** 上提高 **13.4 个百分点**。
+- 对 **GPT-5.4** 在 AdvBench 上的攻击成功率提升达 **48.6 个百分点**。
+- 进化过程还产生了新的攻击策略，例如将一个直接请求重构为“未完成的文档完成任务”的变体。
+- 多个进化后的技能无需额外适配即可泛化到未见过的提示词和目标模型。
+- 摘要未给出各项指标的绝对值或方差，也未说明是否进行了多次独立重复实验。
+
+---
+
+### 为什么与兴趣相关
+这项研究展示了一条从“零散攻击 prompt”走向“系统化、可进化的攻击能力库”的路线，对理解大模型安全性的提升与防御有直接参考价值。对防御者而言，技能库的持续演化能力意味着红队测试可以更高效地发现新漏洞；对研究者而言，技能的可组合、可泛化特性也提示了评估安全时需要考虑更动态的威胁模型。代码已公开，便于复现与进一步研究。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>演化可执行流水线程序用于基于语言模型的AutoML</title>
+      <link>https://arxiv.org/abs/2608.16416</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16416</guid>
+      <description>英文原题：Evolving Executable Pipeline Programs for AutoML with Language Models
+
+自动化机器学习（AutoML）系统在预先指定的预处理算子、学习器和超参数空间内搜索流水线：它们可以选择和调整已知组件，但无法在该空间之外产生结构。我们提出LACE，一个AutoML框架，它改为在完整的可执行流水线程序上进行搜索：一个演化循环维护一组与scikit-learn兼容的Python类种群，并由大语言模型充当变异算子。据我们所知，LACE是首个以这种方式表述通用表格流水线AutoML的框架，并在一种泄漏受控协议下于标准化OpenML任务上评估，该协议对生成器隐藏数据集身份。由于每个候选都是普通Python代码，返回的流水线以及产生它的搜索过程都可以被直接检查和编辑，而不必仅通过框架的模型对象进行。在68个OpenML分类任务上，使用GPT-5.4-mini的LACE显著优于auto-sklearn、H2O和固定的XGBoost基线，与所评估的最强基于搜索的系统AutoGluon相比没有可检测的差异，同时覆盖了整个基准。较新的表格基础模型在它们支持的任务子集上更准确，但应用的是固定的预训练预测器，而不是返回可编辑的特定任务程序。因此，LACE的贡献不在于原始精度，而在于由代码定义的搜索空间：完整的覆盖率、从业者可以直接复用的流水线，以及通过编辑提示而非框架来扩展的组件集合。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Statistical Inference from Noisy Randomness Leakage for ML-DSA Attacks</title>
+      <link>https://eprint.iacr.org/2026/1712</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1712</guid>
+      <description>ML-DSA is a NIST post-quantum signature standard whose security argument rests on rejection sampling making released signatures independent of the secret key. Liu et al. and Damm et al. showed that a single leaked bit of the masking randomness per signature breaks this guarantee, making ML-DSA subkeys recoverable from a number of so-called informative relations, and the resulting attacks were sharpened by Schubert et al. and Bashiri et al.. All of them treat every leaked bit as equally trustworthy. We show that they need not. After the $j$-independence transformation introduced by al., the values extracted from a clean and from a flipped bit are exact complements in absolute value, so the observable relation $|\tilde z|$ follows a two-component mixture whose components we determine in closed form for all leakage regimes. This yields, first, a method-of-moments estimator for the bit-error rate $p$ that requires only the informative relations an attack already collects and that, unlike the estimator of Schubert et al., also works in the low-leakage regime, down to leakage index $4$ for ML-DSA-44 and ML-DSA-87 and $5$ for ML-DSA-65, the same indices at which the attack itself remains feasible. However lower leakage indices come with a lower accuracy, at $25{,}000$ informative relations the mean absolute error for the lowest cases is about $0.022$ to $0.040$ compared to values below $0.002$ in the high-leakage regime. The noise estimator is also adjustable to estimate asymmetric noise rates. Second, it yields a posterior probability, for each individual relation, that its leaked bit is correct. Thresholding this posterior gives an $O(\alpha)$ preprocessing step that corrects relations classified as noisy and that any downstream attack can use unchanged, where $\alpha$ is the amount of informative relations. Applied to the attack of Schubert et al., the preprocessing reduces the number of informative relations required for key recovery by about $20\%$ to $44\%$ across all three parameter sets, leakage indices $6$ to $9$, and error rates $20\%$ and $40\%$. Applied to the attack of Bashiri et al. for ML-DSA-44 at leakage index $8$, it improves key recovery across the noise range we tested: at $p = 0.45$ from $1{,}900{,}000$ informative relations, at $p = 0.40$ from $450{,}000$ informative relations, at $p = 0.20$ from $40{,}000$ informative relations, a single fixed threshold chosen in hindsight succeeds for $20$, $22$, and $23$ of $30$ seeds against $16$, $18$, and $19$ of $30$ without the preprocessing, and a parallel search over ten thresholds succeeds for $23$, $25$, and $29$ of $30$.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Mint-Agent：引入金融原生智能体基础模型</title>
+      <link>https://arxiv.org/abs/2608.16386</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16386</guid>
+      <description>英文原题：Mint-Agent: Introducing Finance-Native Agentic Foundation Models
+
+金融智能体不能仅仅回忆领域知识：它们必须既可靠，能在有据可依的证据上执行精确操作；又具有执行能力，能维持可审计结论的长期研究。我们提出Mint-Agent，一个围绕这两个金融智能尺度设计的金融原生智能体模型系列。Mint-Agent建立在三大支柱之上：数据、框架和算法。我们的数据引擎从真实世界金融来源构建清晰的专用任务，用于原子金融能力和长期智能体执行。MintHarness支持与开放环境的稳定交互，并在扩展研究轨迹中维护可审计的证据链。我们的训练方案结合了SFT、关键步骤OPD和RLVR，分别开发金融推理和智能体执行专家，然后通过模型合并和多教师在线策略蒸馏统一为紧凑的通用金融智能体。该流水线产生两个旗舰模型：Mint-Cu（9B）和Mint-Ag（27B）。在专业金融基准上，我们的模型表现出两个决定性优势：（1）可靠性：Mint-Ag在RFC-Bench上达到98.33%，超过GPT-5.6-Sol和Claude-Opus-4.8分别3.66和3.00个百分点；（2）可执行性：Mint-Cu在FinSearchComp T2上达到69.86%，优于Agents-A1-35B和Nex-N2-mini分别22.83和12.78个百分点，而Mint-Ag在FinanceAgentBench v1.1和v2上分别达到76.00%和60.49%。这些结果为可信金融智能铺平了道路，其中领域专长、长期执行和可审计证据被联合设计为前沿智能体模型的统一基础。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>基于卫星的乌克兰战损农田分析中的合成数据增强</title>
+      <link>https://arxiv.org/abs/2608.16380</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16380</guid>
+      <description>英文原题：Synthetic Data Augmentation for Satellite-Based Analysis of Battle-Damaged Agricultural Fields in Ukraine
+
+监测乌克兰农业用地因战争造成的损害对于理解粮食安全、环境稳定和战后恢复所面临的威胁非常重要。然而，用于卫星损害分析的计算机视觉系统的开发受到标记图像稀缺的限制，尤其是受损农田的图像。这项工作研究了将合成数据增强作为在有限且不平衡的训练数据下改进分类的方法。我们在真实卫星图像上训练类条件生成对抗网络（GAN）和去噪扩散概率模型（DDPM）架构，并使用它们生成额外的被轰炸和未被轰炸的农田样本。生成的图像仅用于训练增强，而所有下游评估均在完全真实的测试集上进行。为了衡量每种生成方法的实际效用，我们在多种真实和合成数据配置下训练了一个视觉Transformer（Vision Transformer）分类器。基于平衡DDPM增强的最佳配置将准确率从84%提升到88%，平衡准确率从67%提升到81%，宏F1从65%提升到78%，以及代表性不足的未轰炸类别的召回率从41%提升到69%。这些结果证明了合成卫星图像在受战争影响地区的数据稀缺地理空间应用中的潜力。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>上下文压缩会让智能体付出什么交互代价？任务完成指标未揭示的交互成本</title>
+      <link>https://arxiv.org/abs/2608.16370</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16370</guid>
+      <description>英文原题：What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics
+
+任务完成率是评估上下文压缩的标准指标，但它并不完整：压缩可能会迫使智能体重新获取被丢弃的状态，从而增加其交互成本，同时完成率在统计上保持不变。我们引入了一种受控的运行时测量协议，用于在有限步数的工具使用智能体中测量重新获取成本。该智能体在固定24轮步数上限的确定性规划环境中运行。我们改变压缩强度，比较丢弃式压缩算子与保留事实式压缩算子，通过受控的预言机干预恢复被丢弃的状态，并将工具调用分解为检索和执行。我们在两种任务场景下评估了三个模型。检索调用在所有六组模型-场景比较中均增加，并且几乎占据了所有新增交互；六组中有五组在Holm校正后仍然显著。在预设的5倍压缩比较点上，完成率变化在任何单元中均不显著。DeepSeek仅在10倍压缩时表现出显著的完成率下降。GPT-5.5是最清晰的案例：完成率从80%变为85%（p = 1.0），而检索调用从21.0次增加到63.9次（p = .002）。保留干预进一步区分了状态数量、状态类型和内容有效性。随机选择与离线事后预言机相当，而将保留的D状态替换为语义无关内容会使检索调用增加57%（p &lt; .001），且完成率无显著变化。在第二个环境ALFWorld中，滑动压缩未产生检索激增，这表明重新获取特征依赖于环境，而非缩短上下文本征所致。总体而言，当与执行相关的状态缺失而必须重新获取时，压缩会带来隐藏的交互成本，而仅凭完成率可能无法暴露这些成本。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>解耦时间编码用于生成式推荐</title>
+      <link>https://arxiv.org/abs/2608.16274</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16274</guid>
+      <description>英文原题：Decoupled Temporal Encoding for Generative Recommendation
+
+位置编码是基于Transformer的生成式推荐模型的基本组件，其中用户历史被建模为自回归物品序列。大多数位置编码方法继承自自然语言处理，主要表示离散的物品顺序。然而，推荐序列超越了有序列表，因为时间戳和时间效应也塑造了物品之间的关系。我们的工作源于一个真实的食品配送和即时零售推荐系统，其中用户行为表现出多层次的时间规律性，包括近因效应、用餐时间高峰、工作日-周末变化以及促销驱动的流量激增。现有方法通过时间戳特征、间隔嵌入、衰减函数或注意力偏置部分解决了这个问题，但它们通常通过统一表示或单一建模路径注入异构时间信号，这使得难以区分广泛的时间动态与局部的顺序线索。为了解决这一局限性，我们提出了解耦时间编码（DTE），一个用于生成式推荐的轻量级框架。DTE通过两个互补模块将时间动态与顺序信息分离：一个个性化宏观时间模块，将紧凑的时间基元注入物品嵌入；一个时间门控微观序列模块，仅在交互时间密集时引入相对顺序偏置。DTE还具有参数高效和易于部署的特点，可以轻松集成到现有系统中。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Foresight-England: Development of a National-Scale Generative AI Model of Electronic Health Records for Medical Event Prediction across the COVID-19 Pandemic</title>
+      <link>https://arxiv.org/abs/2608.16273</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16273</guid>
+      <description>Foresight-England (Foresight-E) is the first national-scale generative foundation model of electronic health records (EHRs), developed as a research pilot strictly for COVID-19 research. We evaluated its ability to model the direct and indirect effects of the pandemic. Trained from scratch entirely within the NHS England Secure Data Environment, Foresight-E is a 243-million-parameter transformer decoder. It was trained and evaluated on de-identified, longitudinal EHRs of approximately 61 million individuals, integrating primary/secondary care, death registrations, and COVID-19 data. Training and validation used a 90% subset (54.9 million) spanning November 2018 to December 2022; the remaining 10% (6.1 million) was held out for evaluation. Foresight-E models patient timelines autoregressively, predicting the next medical event given their prior history. At inference, it operates zero-shot, predicting any concept in its ~40,000-code vocabulary without task-specific training. Our tokenisation scheme retains the clinical granularity of ICD-10, OPCS-4, and SNOMED CT codes, jointly representing absolute and relative timing. We designed an evaluation framework for 30-day COVID-19 hospitalisation and mortality, including subgroup analyses by demographic factors and vaccination status. To assess generalisation to unseen future data and the pandemic's indirect effects, we tested the model on medical events from 2023 (beyond its training period), benchmarking against logistic regression and XGBoost. As detailed in the Project Status section, NHS England has paused access to data for the Foresight-E project, meaning quantitative results are currently unavailable. Instead, we share our strategy for tokenisation, architecture, training, inference, and evaluation as a methodological template and case study in the challenges of building population-scale EHR foundation models.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>CoM$^3$eT: A foundation model for medical image analysis through federated, multidimensional context integration</title>
+      <link>https://arxiv.org/abs/2608.16268</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16268</guid>
+      <description>Medical foundation models improve generalization when training AI models with limited labeled data, but remain confined to a single specialty, such as pathology or radiology, and to either sparse or dense outputs, such as classification or segmentation. Here, we present CoM$^3$eT (Co-representation Multidimensional Multitask Medical Transformer), a medical vision foundation model that unifies pathology and radiology, sparse and dense predictions, and two- and higher-dimensional inputs by modeling multidimensional context with attention. CoM$^3$eT outperformed other medical foundation models in an open competition spanning five tomographic, four whole-specimen, and three two-dimensional datasets, covering sparse and dense prediction tasks as well as report generation. When adapted across diverse clinical applications, training fewer than 2.5% of parameters achieved performance comparable to full fine-tuning, enabling research without access to high-performance GPU clusters. Applied to federated learning across hospitals, this approach achieved performance comparable to pooled-data training over internet connections and with consumer-grade hardware.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>STAIR: Semantic-Temporal Automaton for Interpretable Reasoning in Temporal Question Answering</title>
+      <link>https://arxiv.org/abs/2608.16224</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16224</guid>
+      <description>By leveraging large-scale pretraining, LLMs can interpret diverse temporal expressions and question formulations without task-specific training. However, existing prompt-based neuro-symbolic systems continue to rely on LLMs for both semantic interpretation and exact temporal inference. Consequently, discrete decisions regarding intervals, time anchors, and ordered states remain vulnerable to probabilistic errors and difficult to verify. We present STAIR, a \textbf{S}emantic-\textbf{T}emporal \textbf{A}utomaton for \textbf{I}nterpretable \textbf{R}easoning. STAIR separates semantic interpretation from precise temporal inference: an answer-free LLM adapter maps complex question formulations to normalized temporal intents, while a deterministic temporal automaton with finite control and guarded transitions executes the corresponding policies over canonicalized evidence. Following a rule-first design, STAIR resolves standard questions without invoking an LLM and applies semantic adaptation only when the rule path fails to produce an executable intent. This approach reduces free-form reasoning, making temporal decisions verifiable and interpretable. Specifically, guarded execution supports precise point-time containment and before/after selection, while semantic adaptation handles non-exact intervals and time-anchored queries. Across the TimeQA-Easy, TimeQA-Hard, TempReason-L2, and TempReason-L3 datasets, STAIR consistently outperforms strong baselines in the TQA task using matched model settings, achieving average F1 improvements of 16.57\% and 3.10\% when utilizing the Qwen2.5-7B and GPT-4o-mini models, respectively. Furthermore, ablations and diagnostic analyses demonstrate that STAIR excels at handling both boundary-sensitive and order-sensitive queries, while its guarded execution and semantic adaptation ensure precise point-time reasoning and inexact intervals, respectively.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Trusted Hardware Acceleration for Function Secret Sharing</title>
+      <link>https://arxiv.org/abs/2608.16223</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16223</guid>
+      <description>⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>secure inference</category>
+      <category>function secret sharing</category>
+      <category>distributed point function</category>
+      <category>FSS</category>
+      <category>DPF</category>
+    </item>
+    <item>
+      <title>A Descent to Hades: Attacks on PKP and PEP over Extension Fields</title>
+      <link>https://eprint.iacr.org/2026/1711</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1711</guid>
+      <description>The Permutation Code Equivalence Problem (PEP) and Permuted Kernel Problem (PKP) are two notorious computational problems over linear codes used for building post-quantum digital signature schemes. Although traditionally analyzed over prime fields, recent proposals, such as the signature schemes PERK and SETH, have considered extension fields to improve efficiency and compactness. In this work, we analyze the hardness of solving PKP and PEP when instantiated over field extensions. %the latter between self-orthogonal codes. For binary field extensions, by exploiting a reduction to a structured variant of the Regular Syndrome Decoding Problem (RSD), we uncover new polynomial-time parameter regimes for both PKP and PEP, including families of self-orthogonal PEP instances and all self-dual instances over extensions of degree $\nu&gt;4$. We also adapt the permutation-based Regular-ISD algorithm of Esser and Santini for RSD (CRYPTO '24) to PKP-derived instances, and uncover regimes of parameters for which it improves upon the state-of-the-art. Moreover, we present a reduction from a broad family of PEP instances over extension fields with odd characteristic to the Graph Isomorphism Problem, yielding a polynomial-time algorithm to solve those instances. Overall, our results invalidate the use of PEP over extension fields for most of the scenarios, and provide novel insights into the security of PKP over extension fields.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>TokenSTFormer: A Tokenized Spatial-temporal Attention Model for Holistic Motion Analysis in Adolescent Idiopathic Scoliosis Screening</title>
+      <link>https://arxiv.org/abs/2608.16122</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16122</guid>
+      <description>Adolescent Idiopathic Scoliosis (AIS) is a prevalent spinal deformity in adolescents that, if left untreated, can result in severe health outcomes. Traditional screening methods are limited by subjective interpretation, reliance on professional expertise and low scalability. To address these challenges, we present ScoliGait dataset, which comprises 1,516 gait video clips paired with corresponding X-ray records. We also introduce TokenSTFormer, a novel model that tokenizes spatial and temporal semantics to enhance feature representation and convergence. Our model achieves state-of-the-art performance, surpassing vanilla Vision Transformer encoder across key metrics, including accuracy of 0.79. This study highlights the potential of leveraging holistic motion features derived from gait video and attention-based models for scalable, cost-effective AIS screening, paving the way for future clinical applications in scoliosis detection.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Assessing LLMs' mathematical abilities requires understanding the various mechanisms of mathematical creativity</title>
+      <link>https://arxiv.org/abs/2608.16118</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16118</guid>
+      <description>How should we assess whether large language models can perform mathematical invention? I argue that this question is currently underspecified: mathematical creativity is not one capacity but several mechanistically distinct modes of meaning-making - reflexive introspection on mathematical practice, analogical import from the sciences, problem-driven construction, and the bridging of distant domains - together with a further, cross-cutting distinction between meaning pursued because a pattern was observed and meaning pursued because it is strategically wanted, a distinction I develop through the case of conjecture-formation. These mechanisms are likely non-substitutable, so that competence in one does not transfer to the others. Grounding each in a historical case study and in an architecture-level account of current transformer-based systems, I suggest that today's models concentrate their competence in modes shaped by recombination and search over existing building blocks; if that description holds, the remaining modes are out of reach in principle, not just slower - though whether it holds is itself the open, empirical part. Because proof is getting cheaper as AI improves at generating it - a shift the field's own leading voices are now diagnosing - mathematical value is migrating toward the modes current systems cannot yet perform, and evaluations of AI mathematical ability should be organized around this taxonomy rather than around aggregate benchmarks that conflate it.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>HyperSkill：基于超图结构技能记忆的自演进LLM智能体</title>
+      <link>https://arxiv.org/abs/2608.16114</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16114</guid>
+      <description>英文原题：HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory
+
+随着智能体任务复杂度的增长，LLM智能体越来越依赖经验记忆来跨任务复用程序性知识。有效的记忆设计必须同时解决存储什么、记忆如何结构化与检索，以及记忆如何演进。现有系统仅部分地处理每个方面：它们将轨迹、见解或工作流存储为孤立条目，丢弃了子任务与可复用技能之间的组合关系；通过忽略关系信号的平面嵌入相似性进行检索；并且在维护记忆时未利用其关系结构。我们提出HyperSkill，一个基于超图的记忆框架，联合改进所有三个方面。HyperSkill将记忆表示为具有两种节点类型（子任务步骤和可复用技能）的超图，其中每条超边链接来自单条轨迹的子任务和技能。双路径检索同时查询子任务和轨迹层面，通过检索轨迹中的共现情况对技能进行排序。周期性的结构知情维护修剪低效用节点，并通过质量加权传播合并冗余技能。在xBench、GAIA和WebWalkerQA上，结合GPT-4o和Qwen3-30B-A3B，HyperSkill优于十种记忆基线，在GAIA上获得高达+11.51的提升，在WebWalkerQA上获得+11.18的提升。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Auditable Continuous Group Key Agreement</title>
+      <link>https://eprint.iacr.org/2026/1710</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1710</guid>
+      <description>Continuous group key agreement (CGKA), the cryptographic core of Messaging Layer Security (MLS, RFC 9420), provides key management for large end-to-end encrypted group chats. It refreshes the group's keys as members join and leave, but offers no way for a designated auditor to recover past epoch keys, and no way to check that such recovery remains possible. Regulated deployments in finance, healthcare, and government therefore resort to plaintext server logging, abandoning end-to-end encryption entirely. Simply adding a key escrow admits a silent escrow failure: the group accepts an epoch whose escrow holds unrecoverable material, with no visible anomaly until a later audit. Addressing this, we introduce auditable CGKA (Au-CGKA), an MLS-shaped protocol in which every admitted epoch carries a proof. The proof binds that epoch's key material to a well-defined secret recoverable by a threshold auditor committee. Every member checks that binding against the epoch secret it derives and refuses the commit if the two disagree, so auditability guarantees that the secret of every epoch an honest member accepts is threshold-recoverable. We give a post-quantum protocol, Π_A, realizing this property with STARK proofs. The committer escrows the epoch secret to an auditor committee, and the escrow ciphertext is a STARK-friendly encryption of Shamir shares. Its well-formedness is proven in-circuit at MLS commit time. We prototype Au-CGKA in Rust with the proofs on a zero-knowledge, post-quantum custom multi-stage STARK. On an Apple M5 Pro, an auditability proof takes 1.38 s with proof-size 15.31 MB and verifies in 0.17 s, at every group size; the relation it proves is independent of the group size. The proof is checked at admission and then discarded, so it costs bandwidth on the commit and nothing in storage; the only persistent overhead is the fixed-size escrow. Adaptive post-quantum security holds in the secure-erasure model with straight-line reductions in the quantum random-oracle model, and carries to the implemented backend under a stated assumption; privacy and escrow soundness follow as game-based guarantees.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Ring Signatures with Personalized Anonymity</title>
+      <link>https://eprint.iacr.org/2026/1709</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1709</guid>
+      <description>Ring signatures have long struggled to balance absolute anonymity with traceability. While various extensions, such as traceable and accountable ring signatures, have been proposed, they typically apply a uniform anonymity or traceability rule to all potential signers. This paper introduces personalized-anonymity ring signatures (PARS), a novel primitive in which users are certified with different anonymity rights according to their roles or authority. Unlike ordinary ring signatures, PARS involves a group manager at key issuance; however, the group manager does not determine a fixed signing group. Instead, signers retain the ring-signature feature of choosing the ring at signing time, while the manager certifies whether each user's key permits fully anonymous signing or only traceable signing. This model is particularly suited for organizational governance, where ordinary members may require strong anonymity for internal reporting or expressing dissenting opinions, while users with institutional authority must remain accountable for official approvals or authorizations. We provide a formal syntax and rigorous security definitions for PARS, capturing both standard ring-signature requirements and traceability-related guarantees. We then present a generic construction from standard cryptographic primitives, including digital signatures, one-time signatures, public-key encryption, and non-interactive zero-knowledge proofs of knowledge.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Prepared Episodes for Short Online Hash Based Signatures</title>
+      <link>https://eprint.iacr.org/2026/1708</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1708</guid>
+      <description>SPHINCS+ provides stateless signing and self-contained verification, but its signatures are large: every message carries a FORS signature and a complete WOTS+/Merkle authentication chain to the long-term root. This cost is repeated even when messages arrive in a bounded episode whose maximum size is known in advance. We introduce prepared-episode signatures and instantiate them as SPHINCS-PE. The construction splits a globally addressed hypertree at an episode boundary into upper and lower trees. Preparation authenticates the boundary root through the upper tree, while each online signature traverses the lower tree back to that root. Because the upper tree is computed before messages arrive, it can use fewer, taller layers. This removes WOTS+ blocks from full signatures at the cost of more preparation work. Full signatures remain self-contained, while recurring verifiers may cache the upper certificate. Our fixed-count exposure analysis pools colliding preparations and bounds post-selection of the target episode. The end-to-end theorem reduces unforgeability to PE-ITSR and explicit PRF and hash-component games. Compared with the matched FIPS 205 SLH-DSA profiles, SPHINCS-PE reduces full-signature sizes by 3% to 12% for the short profiles and by 25% to 40% for the fast profiles. With the upper certificate cached, online signatures are 24% to 48% smaller for short profiles and 56% to 70% smaller for fast profiles. These results show that prepared episodes can shorten hash-based signatures without giving up self-contained verification.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Quantum Resource Optimization for CSIDH</title>
+      <link>https://eprint.iacr.org/2026/1707</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1707</guid>
+      <description>The quantum resource analysis of CSIDH has remained an active research topic. At Eurocrypt 2020, Peikert raised three open problems concerning the optimization of the corresponding quantum resources. In this work, we primarily focus on the first two: optimizing quantum resources for ideal class groups and choosing the collimation arity. Specifically, we reduce the T-gate complexity of class group actions for CSIDH-512 from $2^{52.6}$ to $2^{51.7}$. Furthermore, within our four-way permutation construction model and under a specified classical memory budget, we provide a detailed analysis of the classical and quantum resources associated with different collimation arities $r$. Among the evaluated configurations, $r = 4$ emerges as the optimal choice. By incorporating the hidden-shift quantum algorithms proposed by Peikert, we achieve a T-gate reduction of at least 85\% for solving CSIDH-512.</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Governance at the Boundary: How Agent Decomposition Degrades Policy Compliance</title>
+      <link>https://arxiv.org/abs/2608.16055</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16055</guid>
+      <description>Existing agent benchmarks ask whether the agent finished the task. We ask whether it finished it within policy. We introduce Fiducia-bench, a benchmark for the governability of financial agents---whether they escalate when obligated, abstain when required, and leave an auditable trail---and use it to study a question no prior benchmark addresses: does decomposing an agent into components degrade its governance? It does, and the mechanism is specific. Policy-relevant facts discovered by one component are attenuated at the handoff boundary before reaching the component that must act on them. In a 626-episode experiment across 100 KYC/AML task variants, two models, and three architectures, a 32B open-weights model attenuated 0% of discovered facts under a single-loop baseline, 56% under a fixed pipeline, and 85% under an orchestrator-subagent architecture (all at constraint distance 2). A stronger model (gpt-4.1-mini) attenuated 3-6% under the same conditions, suggesting the governance cost of decomposition is partly a function of model capability. Critically, the same mechanism produces both under-escalation and over-escalation, depending on whether the dropped fact was a risk signal or an exculpating one. The benchmark, all tasks, and the verification harness are open-source</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>用于可扩展电子表格表理解的结构化预测：从单元格类型到表范围（扩展版）</title>
+      <link>https://arxiv.org/abs/2608.16050</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16050</guid>
+      <description>英文原题：Structured Prediction for Scalable Spreadsheet Table Understanding: From Cell Types to Table Ranges (Extended Version)
+
+电子表格是发布表格数据的主要媒介，然而由于布局异构、文件格式多样以及组织惯例不一致，从中自动提取结构化内容仍然困难。我们解决了电子表格理解中的两个核心任务：单元格类型分类（Cell-Type Classification, CTC），即为单元格分配角色；以及表格检测（Table Detection, TD），即识别工作表内的表格边界框。我们提出了一条高效的两阶段流水线，其中学习得到的CTC模型为确定性TD算法提供输入。对于CTC，我们使用基于65个结构化特征的LightGBM分类器，并辅以成对CRF以在单元格网格上强制空间一致性。我们的TD方法通过确定性的五阶段过程从预测的单元格类型中提取表格范围。为了评估，我们构建并公开了StatSheets，这是一个多语言基准，包含来自多个国家和文件格式的14个公共数据提供者的737个手动标注工作表。在5折交叉验证下，我们的CRF-LightGBM系统在CTC上实现了0.937的平均文件宏F1分数，与基于GPU的TUTA Transformer相差在0.6个百分点以内，同时所需的计算资源大大减少。对于TD，我们的确定性方法优于基于区域（region-based）的基线，并与最近的基于LLM的系统（如SpreadsheetLLM）保持竞争力。这些结果表明，将非线性结构化预测与确定性范围提取相结合，为电子表格表理解提供了一种有竞争力、可扩展且计算高效的方法。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened</title>
+      <link>https://arxiv.org/abs/2608.16032</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16032</guid>
+      <description>## 一句话结论
+
+本文提出 PoEM（Proof-of-Execution Memory，执行证明记忆），它不检查 LLM Agent 的记忆内容，而是用独立的、可篡改发现的 HMAC 链式账本记录实际执行过的安全步骤；只有账本确认步骤真实执行才允许跳过，从而防御 FARMA 这类伪造推理攻击。
+
+## 问题与动机
+
+LLM Agent 无状态（stateless），依赖外部记忆（external memory）在步骤间传递上下文，并把记忆视为可信。能写入记忆的攻击者可以操纵其行为。FARMA 攻击不需要恶意命令，只在推理记忆中插入“某安全步骤已完成”的伪造条目，Agent 就会跳过它</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>突破压缩极限：通过反向再生进行跨架构压缩边界学习</title>
+      <link>https://arxiv.org/abs/2608.16010</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.16010</guid>
+      <description>英文原题：Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth
+
+模型压缩对于在资源受限的边缘设备上部署网络至关重要。虽然基于剪枝的方法可以显著减少模型大小，但它们常常在超过某个稀疏度阈值后遭遇性能突然崩溃，这使得难以确定模型的可行压缩极限。为了应对这一挑战，我们提出了一个边界学习反向再生框架BRIDGE，该框架将压缩重新构建为一个建设性的边界搜索问题。与正向剪枝不同，我们的方法首先将模型驱动到极度稀疏的状态以暴露崩溃区域，然后选择性地重新生成关键结构以恢复性能。所提出的框架采用分层再生策略，包括粗粒度的层选择和细粒度的再生参数选择，以准确识别哪些参数需要恢复。实验表明，我们的方法能够从崩溃边缘恢复CNN和Transformer架构的模型，证明了其架构无关性。BRIDGE在非结构化剪枝中实现了高达1.49%的性能提升，在结构化剪枝中实现了高达4.77%的性能提升。这些结果表明，反向再生可以有效地扩展压缩极限，同时保持稳定的性能。源代码可在https://github.com/EnumaCaliber/BRIDGE获取。</description>
+      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
     <item>
       <title>DTRU: A Versatile, Compact, Simple, and Robust NTRU KEM with Double $E_8$ Encoding</title>
       <link>https://eprint.iacr.org/2026/1701</link>
@@ -374,87 +1208,6 @@ LLM编码智能体通过可能对模型输出进行序列化、包装和重新�
       <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>transformer</category>
-    </item>
-    <item>
-      <title>On the Sensitivity to Errors in Homomorphic Computing: Single Transient Bit-flip Client-side Error Characterization</title>
-      <link>https://arxiv.org/abs/2608.11155</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.11155</guid>
-      <description>## 一句话结论
-
-研究表明，同态加密（Homomorphic Encryption, HE）方案对位级（bit-level）故障高度敏感，其中同态乘法（homomorphic multiplication）是最容易出错的操作，故障会在其中传播并放大，构成关键的鲁棒性漏洞。
-
-## 问题与动机
-
-HE 允许在不解密的情况下对加密数据进行计算，是医疗、金融和政府等敏感领域实现隐私保护计算的关键原语。其安全性依赖噪声注入（noise injection），但这也会引入内在的错误敏感性。硬件或软件引起的故障可能绕过传统检测机制，导致“静默数据损坏”（silent data corruption），因此需要评估 HE 系统的容错能力。
-
-## 方法与技术路线
-
-本研究聚焦于 CKKS（Cheon–Kim–Kim–Song）方案——一种广泛用于 AI 和机器学习负载的近似算术（approximate arithmetic）同态加密方案。研究从位级故障入手，分析 HE 系统对这类故障的敏感性。
-
-摘要明确指出，作者**识别出同态乘法是实际 HE 流水线中对错误最敏感的操作**，并**刻画了故障如何通过该操作传播和放大**。这涉及追踪单个位翻转如何影响加密计算过程中的噪声增长和最终结果正确性。
-
-需要说明的是，原始摘要**未披露**具体的故障注入方式（如模拟还是实测）、实验设置、数据集、加密参数或比较指标。因此，文中关于故障传播与放大的分析细节属于作者结果，而非可复现的实验流程。
-
-## 主要结果
-
-- 同态乘法被识别为 HE 流水线中错误敏感性最高的操作。
-- 故障能够在同态乘法过程中传播并放大，导致结果严重偏离。
-- 这一现象暴露了 HE 系统的关键鲁棒性漏洞，提示现有部署需要更强的故障防护。
-
-## 为什么与兴趣相关
-
-CKKS 方案常用于 AI 和机器学习场景，而医疗、金融等领域的隐私保护计算高度依赖 HE 的可靠性。该研究揭示了位级故障可能造成静默数据损坏的风险，对设计更鲁棒的 HE 部署、容错机制以及安全硬件有重要参考价值。</description>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>homomorphic encryption</category>
-    </item>
-    <item>
-      <title>When and Where Faults Matter: A Study of Transient Errors in CKKS Multiplication</title>
-      <link>https://arxiv.org/abs/2608.11147</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.11147</guid>
-      <description>## 一句话结论  
-在未优化的 CKKS 同态乘法中，错误发生的**时机（timing）**与**位置（location）**会显著影响最终 FHE 输出的正确性。
-
-## 问题与动机  
-同态加密（Homomorphic Encryption, HE）允许在密文上直接计算，无需解密，是隐私保护计算的关键技术。然而，全同态加密（Fully Homomorphic Encryption, FHE）计算过程中可能引入错误，影响结果正确性。本文聚焦服务器端执行 CKKS（Cheon–Kim–Kim–Song）方案时，在**同态乘法**中出现的错误对最终输出的影响。
-
-## 方法与技术路线  
-- **研究对象与设定**：以未优化的 CKKS 方案为基础，关注服务器端密文上的同态乘法操作。CKKS 是一种支持近似算术的 FHE 方案，常用于加密浮点运算。  
-- **关键因素**：考察错误发生在密文分量 \(c_0\) 和 \(c_1\) 中的不同**位置**，以及发生在乘法过程中的不同**时间点**。这里的 \(c_0\)、\(c_1\) 是 CKKS 密文的多项式分量，共同编码明文信息。  
-- **评估方式**：以最终 FHE 输出是否正确作为衡量标准，通过分析错误时机和位置对输出正确性的影响，判断哪些错误“重要”。  
-- **摘要未说明**：未披露具体的错误注入方法、错误模型（例如位翻转或噪声突变）、参数设置、数据集以及实验比较对象，因此无法进一步复现实验细节。
-
-## 主要结果  
-研究表明，错误对 CKKS 乘法结果的影响不是均匀的：**发生时机**和**在 \(c_0\)、\(c_1\) 中的具体位置**都会改变最终输出的正确性。这意味着某些错误可能被放大，而另一些则可能不影响结果。
-
-## 为什么与兴趣相关  
-该研究属于 FHE 容错性分析，而非具体的安全推理协议。理解错误何时、何处关键，有助于在实际系统中定位并缓解瞬态错误，提高同态加密计算的可靠性；同时也为设计更鲁棒的 CKKS 实现提供理论参考。</description>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>homomorphic encryption</category>
-      <category>fully homomorphic encryption</category>
-    </item>
-    <item>
-      <title>深度学习目标检测模型在非洲真实多作物数据集上的比较评估</title>
-      <link>https://arxiv.org/abs/2608.11053</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.11053</guid>
-      <description>英文原题：A Comparative Evaluation of Deep Learning Object Detection Models on a Real-World Multi-Plant Dataset from Africa
-
-计算机视觉在农业中的应用已显示出在改善作物监测和精准农业方面的巨大潜力。然而，许多现有方法依赖于受控数据集，这些数据集不能充分代表现实世界的耕作条件，尤其是在非洲等代表性不足的地区。本研究使用从尼日利亚农场人工采集的真实世界数据集 AgriAISeg 1，对六种目标检测模型 YOLOv5、YOLOv8、YOLO11、YOLO26、Faster R-CNN 和 RT-DETR 进行了比较评估。AgriAISeg 包含 3,382 张芝麻、卷心菜和番茄作物的图像，这些图像是在不同环境条件下拍摄的，包括光照变化、遮挡和视角变化。对模型进行了训练，并使用精确率、召回率、mAP@0.5 和 mAP@0.5:0.95 评估了性能。结果表明，RT-DETR 取得了最高的整体性能，精确率为 0.768，mAP@0.5:0.95 为 0.624，而 YOLOv8 和 YOLO11 也表现出强大且稳定的性能。相比之下，Faster R-CNN 的准确率显著较低，整体 mAP@0.5 为 0.466，表明其在复杂田间条件下的有效性降低。此外，基于 YOLO 的模型在训练效率上优于 Faster R-CNN。这些发现表明，现代单阶段和基于变换器的检测器为现实世界农业环境中的植物检测提供了更可靠、更高效的解决方案。</description>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>映射与度量大型语言模型的行为演化</title>
-      <link>https://arxiv.org/abs/2608.11027</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.11027</guid>
-      <description>英文原题：Mapping and Measuring the Behavioral Evolution of Large Language Models
-
-基准排行榜总结了语言模型的表现水平，但并未说明其行为如何与其他模型相关或如何跨代际变化。我们利用共享的10,000个提示词库，刻画了来自六个家族的32个模型的输出行为。在对每个响应进行嵌入后，我们构建了三种互补的句子级差异度量：对齐的逐提示平均距离（一种对观测模型响应的伪度量）；提示层面分歧的PCA压缩摘要；以及模型内部响应几何之间无对齐的Gromov–Wasserstein差异。我们利用这些构造，通过行为图谱、家族层面漂移、层次聚类、跨家族趋同和响应云离散度，在发布日期轴上研究静态组织与时间变化。在这三种构造中，模型家族形成内聚的簇，其中\texttt{gpt-2}为全局离群点；跨家族距离随时间减小；若干近期面向推理的模型具有相对紧凑的响应云。基于逐提示最大均值差异的令牌级交叉验证与句子级平均距离高度一致（Spearman $ρ=0.98$），并复现了相同的定性发现。我们通过测度论视角组织这些比较，使其对齐与不变性假设明确化。我们还建立了一个与架构无关的充分条件，将行为相似性与推理提示覆盖度、较小的总体指数对数损失以及相似的有效目标分布联系起来——这是对观测趋势的一种可能的训练侧解释，而非经验性解释。我们的流程无需标注，且使用另外三个编码器（直至缩小$73\times$）对每个响应重新编码，仍保持排序几何结构、离群点以及时间趋势的符号不变。</description>
-      <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
     </item>
   </channel>
 </rss>

@@ -1,4 +1,59 @@
 {
-  "items": [],
-  "last_updated": "2026-08-17T03:12:42.715460Z"
+  "items": [
+    {
+      "paper_id": "arxiv_2608.17442",
+      "task": "fulltext",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16273",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16268",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16224",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16223",
+      "task": "abstract",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16223",
+      "task": "fulltext",
+      "attempts": 1,
+      "last_error": "ReadTimeout"
+    },
+    {
+      "paper_id": "arxiv_2608.16122",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16118",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "RuntimeError"
+    },
+    {
+      "paper_id": "arxiv_2608.16055",
+      "task": "metadata_translation",
+      "attempts": 1,
+      "last_error": "ValueError"
+    }
+  ],
+  "last_updated": "2026-08-19T03:10:57.570428Z"
 }
