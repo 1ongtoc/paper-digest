@@ -1,6 +1,686 @@
 {
   "papers": [
     {
+      "id": "arxiv_2608.19168",
+      "arxiv_id": "2608.19168",
+      "title": "Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training",
+      "authors": [
+        "Zachary Speck",
+        "Asa Shepard"
+      ],
+      "abstract": "A single training example's contribution to a finished model is normally estimated rather than measured, because measuring it takes two expensive full pre-training runs that differ in one row of one batch. We ran that counterfactual 24 times at a small scale. We trained 32 GPT-2 models at 124M parameters from scratch on OpenWebText, over four conditions and eight seeds. At step 200 of 9,536, at peak learning rate, we replaced one row of a 256-row batch with a fixed context injection carrying a 194-token passage. The three injected conditions are: 1. fluent prose with a corpus-attested subject, 2. fluent prose with a fabricated subject matched to it within 0.14% on full-batch gradient delta, and 3. random keyboard characters. The fourth condition is an uninjected twin. The passage is learned from one exposure and then decays. Fifty steps after injection, the arm that saw a passage predicts it better than the arm that did not by 0.039 and 0.044 nats of cross-entropy on the passage, at eight of eight seeds with p < $10^{-4}$. At the final step we do not detect that difference for either passage, at p = 0.25 and p = 0.71, against minimum detectable effects of 0.025 and 0.079 nats, nor between the two passages, at p=0.54. Every geometric measure we report is taken after that decay. Our pre-registered contrast on interpolation loss barrier is +0.0068 with p = 0.509, against a minimum detectable effect of 0.032 barrier units. Held-out cross-entropy is $-0.00044$ with p = 0.310. Per-layer centered kernel alignment does not detectably separate any condition at any layer. Weight displacement reaches 44.1% of the seed-to-seed Euclidean distance and is 92% settled by the midpoint of training, while the barrier reaches 3.0% of the seed-to-seed barrier. Those two figures sit roughly 15 times apart, and that is a lower bound. The injection relocates the model within its basin without moving it out.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T17:46:08Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19168",
+      "pdf_link": "https://arxiv.org/pdf/2608.19168",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "A single training example's contribution to a finished model is normally estimated rather than measured, because measuring it takes two expensive full pre-training runs that differ in one row of one batch. We ran that counterfactual 24 times at a small scale. We trained 32 GPT-2 models at 124M parameters from scratch on OpenWebText, over four conditions and eight seeds. At step 200 of 9,536, at peak learning rate, we replaced one row of a 256-row batch with a fixed context injection carrying a 194-token passage. The three injected conditions are: 1. fluent prose with a corpus-attested subject, 2. fluent prose with a fabricated subject matched to it within 0.14% on full-batch gradient delta, and 3. random keyboard characters. The fourth condition is an uninjected twin. The passage is learned from one exposure and then decays. Fifty steps after injection, the arm that saw a passage predicts it better than the arm that did not by 0.039 and 0.044 nats of cross-entropy on the passage, at eight of eight seeds with p < $10^{-4}$. At the final step we do not detect that difference for either passage, at p = 0.25 and p = 0.71, against minimum detectable effects of 0.025 and 0.079 nats, nor between the two passages, at p=0.54. Every geometric measure we report is taken after that decay. Our pre-registered contrast on interpolation loss barrier is +0.0068 with p = 0.509, against a minimum detectable effect of 0.032 barrier units. Held-out cross-entropy is $-0.00044$ with p = 0.310. Per-layer centered kernel alignment does not detectably separate any condition at any layer. Weight displacement reaches 44.1% of the seed-to-seed Euclidean distance and is 92% settled by the midpoint of training, while the barrier reaches 3.0% of the seed-to-seed barrier. Those two figures sit roughly 15 times apart, and that is a lower bound. The injection relocates the model within its basin without moving it out.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "pre-training",
+        "GPT"
+      ],
+      "relevance_reason_zh": "研究预训练中单个样本贡献的测量，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "failed",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "",
+      "abstract_zh": ""
+    },
+    {
+      "id": "arxiv_2608.19165",
+      "arxiv_id": "2608.19165",
+      "title": "ChildSafeAds Shared Task 2026: Commercial Content in Child-Facing YouTube Videos",
+      "authors": [
+        "Thales Bertaglia",
+        "Catalina Goanta",
+        "Gerasimos Spanakis",
+        "Gunes Acar"
+      ],
+      "abstract": "ChildSafeAds is a shared task on commercial content in YouTube videos likely to reach children and teenagers. It contains 3,360 videos from 939 channels. Each instance begins with a segment submitted to SponsorBlock, an open-source crowdsourced browser extension whose users mark sponsor segments so that others can skip them. We pair the segment with its available transcript, video and channel information, and a sales or service page linked from the video description. Systems determine what kind of offer is being promoted (ST1), assign product categories (ST2), and identify legal risk flags (ST3). The evidence is divided into four cumulative access levels, from the transcript to the linked page, so results can be compared against the cost of collecting the data. 45.5\\% of videos in our data failed to properly use the in-platform ad disclosure method (the ``Includes paid promotion'' label). GPT-5.4 produced the labels after the expert organiser team reviewed samples and iterated on the taxonomy, prompts and model choices. GPT-5.6-luna independently labelled the development set. This report describes the task, data and evaluation. An updated version will add participating systems and shared-task results.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T17:44:58Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19165",
+      "pdf_link": "https://arxiv.org/pdf/2608.19165",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "ChildSafeAds is a shared task on commercial content in YouTube videos likely to reach children and teenagers. It contains 3,360 videos from 939 channels. Each instance begins with a segment submitted to SponsorBlock, an open-source crowdsourced browser extension whose users mark sponsor segments so that others can skip them. We pair the segment with its available transcript, video and channel information, and a sales or service page linked from the video description. Systems determine what kind of offer is being promoted (ST1), assign product categories (ST2), and identify legal risk flags (ST3). The evidence is divided into four cumulative access levels, from the transcript to the linked page, so results can be compared against the cost of collecting the data. 45.5\\% of videos in our data failed to properly use the in-platform ad disclosure method (the ``Includes paid promotion'' label). GPT-5.4 produced the labels after the expert organiser team reviewed samples and iterated on the taxonomy, prompts and model choices. GPT-5.6-luna independently labelled the development set. This report describes the task, data and evaluation. An updated version will add participating systems and shared-task results.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "content detection",
+        "YouTube"
+      ],
+      "relevance_reason_zh": "YouTube儿童视频商业内容检测任务，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "ChildSafeAds 共享任务 2026：面向儿童 YouTube 视频中的商业内容",
+      "abstract_zh": "ChildSafeAds 是一项关于可能触达儿童和青少年的 YouTube 视频中商业内容的共享任务。它包含来自 939 个频道的 3,360 个视频。每个实例以提交给 SponsorBlock 的一个片段开始，SponsorBlock 是一个开源众包浏览器扩展，用户标记赞助片段以便其他人跳过。我们将该片段与其可用的转录文本、视频和频道信息以及视频描述中链接的销售或服务页面配对。系统确定正在推广的优惠类型（ST1）、分配产品类别（ST2）并识别法律风险标志（ST3）。证据分为四个累积访问级别，从转录文本到链接页面，以便根据收集数据的成本比较结果。我们数据中 45.5% 的视频未能正确使用平台内的广告披露方法（“包含付费推广”标签）。GPT-5.4 在专家组织团队审查样本并迭代分类法、提示和模型选择后生成了标签。GPT-5.6-luna 独立标注了开发集。本报告描述了任务、数据和评估。更新版本将加入参与系统和共享任务结果。"
+    },
+    {
+      "id": "arxiv_2608.19052",
+      "arxiv_id": "2608.19052",
+      "title": "Malformer: A Multi-Modal Malware Detector Using Transformers",
+      "authors": [
+        "Samuel Howard",
+        "Kshitiz Aryal",
+        "Mahmoud Abdelsalam",
+        "Maanak Gupta",
+        "Andrew Wheeler",
+        "Pradip Kunwar"
+      ],
+      "abstract": "Traditional malware detection systems that rely on a single representation of malware often fail to identify novel threats. These representations of malware binaries, also known as modalities, do not provide the models with sufficient information to discriminate among all samples. Additionally, individual representations introduce new failure modes, with some modality extraction being dependent upon the success of disassembling. Past works have integrated either additional modalities or more discriminative representations for classification. In this work, we present Malformer, a quadrimodal malware detection model that incorporates text, image, graph, and audio representations of Windows executables. We demonstrate that multimodal transformer fusion can enhance the performance of Windows malware detectors over that of unimodal and bimodal detectors. Malformer employs a combination of two RoBERTa encoders paired with a modified Vision Transformer for image data, WavLM for audio data, and an adaptive loss-weighting scheme to fuse modality-specific representations. Evaluated on a dataset of 201,549 binary samples, Malformer achieved 98.3% accuracy and an F1 score of 0.9833, outperforming both unimodal baselines and bimodal detectors by 4.6-17.6 percentage points. Malformer demonstrates that multimodal fusion provides a promising foundation for countering the growing scale of malware threats, equipping defenders with generalized and resilient detection capabilities.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T15:46:28Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19052",
+      "pdf_link": "https://arxiv.org/pdf/2608.19052",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Traditional malware detection systems that rely on a single representation of malware often fail to identify novel threats. These representations of malware binaries, also known as modalities, do not provide the models with sufficient information to discriminate among all samples. Additionally, individual representations introduce new failure modes, with some modality extraction being dependent upon the success of disassembling. Past works have integrated either additional modalities or more discriminative representations for classification. In this work, we present Malformer, a quadrimodal malware detection model that incorporates text, image, graph, and audio representations of Windows executables. We demonstrate that multimodal transformer fusion can enhance the performance of Windows malware detectors over that of unimodal and bimodal detectors. Malformer employs a combination of two RoBERTa encoders paired with a modified Vision Transformer for image data, WavLM for audio data, and an adaptive loss-weighting scheme to fuse modality-specific representations. Evaluated on a dataset of 201,549 binary samples, Malformer achieved 98.3% accuracy and an F1 score of 0.9833, outperforming both unimodal baselines and bimodal detectors by 4.6-17.6 percentage points. Malformer demonstrates that multimodal fusion provides a promising foundation for countering the growing scale of malware threats, equipping defenders with generalized and resilient detection capabilities.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "malware detection",
+        "transformer"
+      ],
+      "relevance_reason_zh": "恶意软件检测的Transformer多模态模型，非密码学保护下的推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Malformer：一种使用Transformer的多模态恶意软件检测器",
+      "abstract_zh": "依赖单一恶意软件表示的传统恶意软件检测系统通常无法识别新型威胁。这些恶意软件二进制的表示，也称为模态，无法为模型提供足够的信息来区分所有样本。此外，单一的表示会引入新的失败模式，因为某些模态的提取依赖于反汇编的成功。以往的工作已经集成了额外的模态或更具判别性的表示用于分类。在本工作中，我们提出了Malformer，一种四模态恶意软件检测模型，它融合了Windows可执行文件的文本、图像、图和音频表示。我们证明了多模态Transformer融合能够提升Windows恶意软件检测器相对于单模态和双模态检测器的性能。Malformer采用两个RoBERTa编码器与一个用于图像数据的改进Vision Transformer、用于音频数据的WavLM以及一种自适应损失加权方案相结合，以融合特定模态的表示。在一个包含201,549个二进制样本的数据集上评估，Malformer达到了98.3%的准确率和0.9833的F1分数，比单模态基线和双模态检测器高出4.6到17.6个百分点。Malformer表明，多模态融合为应对日益增长的恶意软件威胁提供了有前景的基础，使防御者具备泛化且鲁棒的检测能力。"
+    },
+    {
+      "id": "arxiv_2608.18888",
+      "arxiv_id": "2608.18888",
+      "title": "Assessing Quality of Experience in Natural Language Generation of German Text",
+      "authors": [
+        "Dinh Nam Pham",
+        "Shushen Manakhimova",
+        "Vivien Macketanz",
+        "Sebastian Möller"
+      ],
+      "abstract": "The rapid advancement of Natural Language Generation (NLG) has made the reliable evaluation of generated text increasingly critical, as these systems, such as large language models (LLMs), are now widely deployed in real-world applications. However, traditional automatic metrics fail to capture the multifaceted nature of perceived quality. In this paper, we introduce TextQ-German, a novel dataset suite for human-centered evaluation of German NLG from a Quality of Experience (QoE) perspective, covering automatic text summarization and machine translation. Through crowdsourcing studies with German speakers, we collect human quality ratings and identify relevant perceptual quality dimensions for each task. We develop automatic QoE prediction models, including transformer-based, linguistic feature-based, and hybrid approaches. Hybrid models outperform pure transformer baselines in almost all experimental settings, while linguistic features alone can approach the performance of fine-tuned language models. The dataset is extended with LLM-generated outputs annotated with overall QoE scores. Final validation on held-out sets indicates generalization to unseen data. Our work contributes a publicly accessible resource for NLG evaluation and baselines for automatic QoE prediction, providing a foundation for developing NLG systems that better align with human quality perception.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T13:15:51Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18888",
+      "pdf_link": "https://arxiv.org/pdf/2608.18888",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "The rapid advancement of Natural Language Generation (NLG) has made the reliable evaluation of generated text increasingly critical, as these systems, such as large language models (LLMs), are now widely deployed in real-world applications. However, traditional automatic metrics fail to capture the multifaceted nature of perceived quality. In this paper, we introduce TextQ-German, a novel dataset suite for human-centered evaluation of German NLG from a Quality of Experience (QoE) perspective, covering automatic text summarization and machine translation. Through crowdsourcing studies with German speakers, we collect human quality ratings and identify relevant perceptual quality dimensions for each task. We develop automatic QoE prediction models, including transformer-based, linguistic feature-based, and hybrid approaches. Hybrid models outperform pure transformer baselines in almost all experimental settings, while linguistic features alone can approach the performance of fine-tuned language models. The dataset is extended with LLM-generated outputs annotated with overall QoE scores. Final validation on held-out sets indicates generalization to unseen data. Our work contributes a publicly accessible resource for NLG evaluation and baselines for automatic QoE prediction, providing a foundation for developing NLG systems that better align with human quality perception.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "NLG evaluation",
+        "quality of experience"
+      ],
+      "relevance_reason_zh": "德语文本生成质量评估，与安全推理或隐私计算无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "评估德语文本自然语言生成中的体验质量",
+      "abstract_zh": "自然语言生成（NLG）的快速发展使得对生成文本的可靠评估日益关键，因为这些系统（如大语言模型，LLMs）现已广泛应用于真实世界场景。然而，传统的自动评估指标无法捕捉感知质量的多面性。在本文中，我们引入了TextQ-German，一个从体验质量（QoE）视角对德语NLG进行以人为中心评估的新型数据集套件，涵盖自动文本摘要和机器翻译任务。通过以德语母语者参与的众包研究，我们收集了人类质量评分，并识别出每项任务相关的感知质量维度。我们开发了自动QoE预测模型，包括基于Transformer的方法、基于语言特征的方法以及混合方法。混合模型在几乎所有实验设置中均优于纯Transformer基线，而仅使用语言特征即可接近微调语言模型的性能。该数据集还扩展了带有整体QoE评分标注的LLM生成输出。在留出集上的最终验证表明模型能够泛化到未见数据。我们的工作为NLG评估提供了可公开访问的资源，并为自动QoE预测提供了基线，为开发更符合人类质量感知的NLG系统奠定了基础。"
+    },
+    {
+      "id": "arxiv_2608.18816",
+      "arxiv_id": "2608.18816",
+      "title": "Do Large Language Models Hallucinate Electric Fata Morganas?",
+      "authors": [
+        "Kristina Šekrst"
+      ],
+      "abstract": "AI hallucinations - that is, outputs which are made up, cannot be verified, or contradict the source material - are generally regarded as an engineering flaw to be dealt with. This paper contends that they also have philosophical significance when it comes to the question of machine consciousness. We examine the known causes of hallucinations in large language models - such as source-target divergence, discrepancies between training and inference, and overfitting - and we present two empirical investigations. In the first, we apply successive generations of the GPT model to ambiguous factual questions under different temperature settings, finding that higher temperatures result in plausible but incorrect answers while lower temperatures lead to factually accurate ones. The sampling parameters that cause a model to seem creative or spontaneous and thus more likely to pass behavioral tests of intelligence are the same ones that increase its hallucination rate. In the second, we look at an encoder-only model that has been trained on encyclopedic data and which answers questions of the same type factually and without embellishment, indicating that hallucinations are due to exposure to subjective and socially diverse training data rather than to the development of any cognitive ability. Using references to Turing, Searle's Chinese Room, the frame problem, and the cybernetic tradition of Wiener and Ashby, we claim that a model's self-reports of emotion or sentience come within the definition of hallucination, and that any future occurrence of machine consciousness might remain epistemically inaccessible since it would be indistinguishable from a sufficiently advanced hallucination.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T11:14:06Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18816",
+      "pdf_link": "https://arxiv.org/pdf/2608.18816",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "AI hallucinations - that is, outputs which are made up, cannot be verified, or contradict the source material - are generally regarded as an engineering flaw to be dealt with. This paper contends that they also have philosophical significance when it comes to the question of machine consciousness. We examine the known causes of hallucinations in large language models - such as source-target divergence, discrepancies between training and inference, and overfitting - and we present two empirical investigations. In the first, we apply successive generations of the GPT model to ambiguous factual questions under different temperature settings, finding that higher temperatures result in plausible but incorrect answers while lower temperatures lead to factually accurate ones. The sampling parameters that cause a model to seem creative or spontaneous and thus more likely to pass behavioral tests of intelligence are the same ones that increase its hallucination rate. In the second, we look at an encoder-only model that has been trained on encyclopedic data and which answers questions of the same type factually and without embellishment, indicating that hallucinations are due to exposure to subjective and socially diverse training data rather than to the development of any cognitive ability. Using references to Turing, Searle's Chinese Room, the frame problem, and the cybernetic tradition of Wiener and Ashby, we claim that a model's self-reports of emotion or sentience come within the definition of hallucination, and that any future occurrence of machine consciousness might remain epistemically inaccessible since it would be indistinguishable from a sufficiently advanced hallucination.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "hallucination",
+        "LLM"
+      ],
+      "relevance_reason_zh": "探讨大语言模型幻觉与机器意识哲学问题，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "大型语言模型会产生电子海市蜃楼式的幻觉吗？",
+      "abstract_zh": "AI幻觉——即编造的、无法验证的或与源材料相矛盾的输出——通常被视为需要处理的工程缺陷。本文认为，在机器意识问题上，它们也具有哲学意义。我们考察了大型语言模型中幻觉的已知原因——例如源-目标发散、训练与推理之间的差异以及过拟合——并提出了两项实证研究。在第一项研究中，我们将多代GPT模型应用于不同温度设置下的模糊事实问题，发现较高温度会产生看似合理但不正确的答案，而较低温度则导致事实准确的答案。使模型看起来具有创造性或自发性、从而更可能通过行为智能测试的采样参数，正是那些提高其幻觉率的参数。在第二项研究中，我们考察了一个仅在百科数据上训练的仅编码器模型，该模型对相同类型问题的回答符合事实且不加修饰，表明幻觉源于接触主观和社会多样化的训练数据，而非任何认知能力的发展。借助图灵、塞尔的“中文房间”、框架问题以及维纳和阿什比的控制论传统，我们主张模型对情感或感知的自我报告属于幻觉的定义范围，并且未来任何机器意识的发生可能在认识论上仍然不可及，因为它将与足够高级的幻觉难以区分。"
+    },
+    {
+      "id": "arxiv_2608.18795",
+      "arxiv_id": "2608.18795",
+      "title": "Decomposing Wrong-Consensus Agreement in LLM Self-Consistency: A GPT-4.1 Case Study",
+      "authors": [
+        "Lizhuo Zhang",
+        "Mengmeng Tang",
+        "Chenfeng Long",
+        "Xiaoyong Tang",
+        "Xiang Luo"
+      ],
+      "abstract": "Majority voting over multiple LLM samples is widely used to raise answer accuracy, yet its gain varies erratically: on hard questions it can even backfire. This paper gives a quantitative account of this failure. A pluralistic agreement index Gamma is defined as the expected fraction of the samples of a wrong run that agree with the consensus, normalized by a reference scale d=(1-p)/(C-1), and is decomposed into a mechanical component (what a vote delivers given only a per-case answer preference) and a preference-unexplained residual. The mechanical null is difficulty-matched and leak-free: each case is resimulated at its own accuracy and option preference, estimated from the case's other runs, so no run predicts its own agreement. On GPT-4.1 the decomposition shows benchmark-associated direction (an observational ordering over n=4 cells per benchmark, not a significance claim). On multiple-choice GPQA-Diamond, the per-case answer preference explains 81-93% of the held-out test-run agreement index: the shared-bias-dominates account over-claims here, because a wrong but attractive option the whole cohort latches onto is captured by the per-case preference channel (whether that preference is induced by shared training bias is not identified). On open-domain AIME, the mechanical preference explains only 59-78% (21-29% if shrunk to pure noise), and a preference-unexplained residual of 1.56-2.80 Gamma units survives, which a run-level preference-heterogeneity reference more than absorbs (1.4-2.1). A self-consistency backfire on hard questions is reproduced (binned voting gap down to -0.09, coupled CI [-0.12,-0.07]), and the highest-agreement bin reaches an accuracy of only 0.42-0.83, a 1.2-3.6x lift over base rate: agreement is graded evidence, not certification. No new voting method is proposed; code and evidence are committed and reproducible.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T10:50:15Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18795",
+      "pdf_link": "https://arxiv.org/pdf/2608.18795",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Majority voting over multiple LLM samples is widely used to raise answer accuracy, yet its gain varies erratically: on hard questions it can even backfire. This paper gives a quantitative account of this failure. A pluralistic agreement index Gamma is defined as the expected fraction of the samples of a wrong run that agree with the consensus, normalized by a reference scale d=(1-p)/(C-1), and is decomposed into a mechanical component (what a vote delivers given only a per-case answer preference) and a preference-unexplained residual. The mechanical null is difficulty-matched and leak-free: each case is resimulated at its own accuracy and option preference, estimated from the case's other runs, so no run predicts its own agreement. On GPT-4.1 the decomposition shows benchmark-associated direction (an observational ordering over n=4 cells per benchmark, not a significance claim). On multiple-choice GPQA-Diamond, the per-case answer preference explains 81-93% of the held-out test-run agreement index: the shared-bias-dominates account over-claims here, because a wrong but attractive option the whole cohort latches onto is captured by the per-case preference channel (whether that preference is induced by shared training bias is not identified). On open-domain AIME, the mechanical preference explains only 59-78% (21-29% if shrunk to pure noise), and a preference-unexplained residual of 1.56-2.80 Gamma units survives, which a run-level preference-heterogeneity reference more than absorbs (1.4-2.1). A self-consistency backfire on hard questions is reproduced (binned voting gap down to -0.09, coupled CI [-0.12,-0.07]), and the highest-agreement bin reaches an accuracy of only 0.42-0.83, a 1.2-3.6x lift over base rate: agreement is graded evidence, not certification. No new voting method is proposed; code and evidence are committed and reproducible.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "self-consistency",
+        "GPT"
+      ],
+      "relevance_reason_zh": "LLM自一致性多数投票的失败分解，非安全推理或隐私计算。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "分解LLM自一致性中的错误共识一致性：GPT-4.1案例研究",
+      "abstract_zh": "对多个LLM样本进行多数投票被广泛用于提高答案准确性，但其收益变化无常：在难题上甚至可能适得其反。本文对这一失败给出了定量解释。定义了一个多元一致性指数Gamma，即一次错误运行中与共识一致的样本的期望比例，并通过参考尺度d=(1-p)/(C-1)进行归一化，并将其分解为机械成分（仅给定逐案例答案偏好时投票所产生的结果）和偏好无法解释的残差。该机械零模型是难度匹配且无泄漏的：每个案例在其自身准确率和选项偏好下被重新模拟，这些参数由该案例的其他运行估计而来，因此没有任何运行能预测其自身的一致性。在GPT-4.1上，该分解显示了与基准相关的方向（对每个基准的n=4个单元格的观测排序，而非显著性主张）。在多选题GPQA-Diamond上，逐案例答案偏好解释了81-93%的留出测试运行一致性指数：在此，共享偏差主导的论述过度宣称了其解释力，因为整个群体锁定在一个错误但有吸引力的选项上这一现象，已被逐案例偏好通道捕获（该偏好是否由共享训练偏差诱导，则未被识别）。在开放域AIME上，机械偏好仅解释了59-78%（若收缩为纯噪声则为21-29%），并且存在1.56-2.80个Gamma单位的偏好无法解释残差，而运行级偏好异质性参考值（1.4-2.1）足以超出吸收该残差。难题上的自一致性适得其反现象被复现（分箱投票差距低至-0.09，耦合CI [-0.12,-0.07]），且一致性最高的分箱的准确率仅为0.42-0.83，相对于基础率有1.2-3.6倍的提升：一致性是有分级别的证据，而非认证。未提出新的投票方法；代码和证据已提交且可复现。"
+    },
+    {
+      "id": "arxiv_2608.18746",
+      "arxiv_id": "2608.18746",
+      "title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+      "authors": [
+        "Jiawei Wang",
+        "Ke Rui",
+        "Yushen Zuo",
+        "Yichun Feng",
+        "Minglei Li"
+      ],
+      "abstract": "JEPA-style latent world models can use Euclidean distance to a goal latent as the cost for model-predictive control (MPC). Strong decoding of task variables, however, does not guarantee that this particular cost ranks candidate action sequences by real task progress. We call the latter property \\emph{decision-metric alignment}. We introduce Plan-Real Spearman, which measures latent--real rank agreement on random plans, and CEM-stage Spearman, which measures the same agreement as cross-entropy-method (CEM) search concentrates its proposal. We analyze sufficient conditions under which latent distance preserves real-cost rankings, identifying encoder distortion, terminal rollout error, and candidate margins as the controlling quantities. Guided by the observed empirical alignment gap, DA-LeWM augments LeWM with inverse-dynamics and demonstration-conditioned goal-action heads. Across all our experiments, DA-LeWM accelerates convergence and achieves higher online success than LeWM, while probe scores remain similar. These results show that action-conditioned objectives improve the geometry used by Euclidean-cost, CEM-based latent MPC.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T09:56:39Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18746",
+      "pdf_link": "https://arxiv.org/pdf/2608.18746",
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "matched_terms": [
+        "MPC"
+      ],
+      "summary_en": "JEPA-style latent world models can use Euclidean distance to a goal latent as the cost for model-predictive control (MPC). Strong decoding of task variables, however, does not guarantee that this particular cost ranks candidate action sequences by real task progress. We call the latter property \\emph{decision-metric alignment}. We introduce Plan-Real Spearman, which measures latent--real rank agreement on random plans, and CEM-stage Spearman, which measures the same agreement as cross-entropy-method (CEM) search concentrates its proposal. We analyze sufficient conditions under which latent distance preserves real-cost rankings, identifying encoder distortion, terminal rollout error, and candidate margins as the controlling quantities. Guided by the observed empirical alignment gap, DA-LeWM augments LeWM with inverse-dynamics and demonstration-conditioned goal-action heads. Across all our experiments, DA-LeWM accelerates convergence and achieves higher online success than LeWM, while probe scores remain similar. These results show that action-conditioned objectives improve the geometry used by Euclidean-cost, CEM-based latent MPC.",
+      "keywords": [
+        "MPC"
+      ],
+      "topics": [
+        "world models",
+        "MPC planning"
+      ],
+      "relevance_reason_zh": "潜在世界模型中MPC规划的目标对齐，与安全推理中的MPC无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "潜在世界模型中的决策度量对齐：用于MPC规划的诊断与动作条件目标",
+      "abstract_zh": "JEPA风格的潜在世界模型可以使用到目标潜变量的欧氏距离作为模型预测控制(MPC)的代价。然而，任务变量的强解码并不能保证这一特定代价会根据真实任务进展对候选动作序列进行排序。我们将后一种性质称为决策度量对齐。我们引入了Plan-Real Spearman，它衡量随机计划上的潜在-真实排序一致性，以及CEM-stage Spearman，它衡量交叉熵方法(CEM)搜索集中其提议时相同的排序一致性。我们分析了潜在距离保持真实代价排序的充分条件，将编码器失真、终端展开误差和候选间隔确定为控制量。在观察到的经验对齐差距的指导下，DA-LeWM通过逆动力学和演示条件目标-动作头增强了LeWM。在我们所有的实验中，与LeWM相比，DA-LeWM加速了收敛并获得了更高的在线成功率，而探针分数保持相似。这些结果表明，动作条件目标改善了欧氏代价、基于CEM的潜在MPC所使用的几何结构。"
+    },
+    {
+      "id": "arxiv_2608.18736",
+      "arxiv_id": "2608.18736",
+      "title": "FedLNS: Leverage LayerNorm Signature Modeling to Mitigate Adversarial Manipulation in Federated LLMs",
+      "authors": [
+        "Kai Li",
+        "Jong-Ik Park",
+        "Carlee Joe-Wong",
+        "Wei Ni",
+        "Falko Dressler"
+      ],
+      "abstract": "Federated training enables language models to learn from distributed private text, but the server cannot directly verify the local supervision or optimization process that produces each client update. A malicious client can therefore train on corrupted targets, introduce incorrect context-token associations, and degrade the global model through repeated aggregation. Such degradation can also increase the risk of unreliable or hallucinatory generation. We propose Federated Learning with Normalization Signatures (FedLNS), a server-side framework for lightweight malicious-update screening. FedLNS represents each client update through changes in trainable normalization-layer parameters and screens suspicious updates against a robust, history-aware cross-client reference. Because the signatures are extracted at the server from the returned local models, FedLNS requires no additional client-to-server parameter or metadata exchange compared to standard federated learning (FL) methods. After screening, the retained full-model updates can be aggregated using standard FL or another compatible aggregation rule. FedLNS requires no raw client data, trusted server dataset, labeled attack examples, or separately trained detector. Experiments on GPT-style, BERT-style, and LLaMA-style models trained from scratch with 200 clients show that, under 40% population-level target manipulation, FedLNS achieves lower test perplexity than the strongest of six baselines for all three architectures under both IID (independently and identically distributed) and non-IID data partitions.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T09:43:09Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18736",
+      "pdf_link": "https://arxiv.org/pdf/2608.18736",
+      "categories": [
+        "cs.LG",
+        "cs.CR",
+        "cs.DC"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Federated training enables language models to learn from distributed private text, but the server cannot directly verify the local supervision or optimization process that produces each client update. A malicious client can therefore train on corrupted targets, introduce incorrect context-token associations, and degrade the global model through repeated aggregation. Such degradation can also increase the risk of unreliable or hallucinatory generation. We propose Federated Learning with Normalization Signatures (FedLNS), a server-side framework for lightweight malicious-update screening. FedLNS represents each client update through changes in trainable normalization-layer parameters and screens suspicious updates against a robust, history-aware cross-client reference. Because the signatures are extracted at the server from the returned local models, FedLNS requires no additional client-to-server parameter or metadata exchange compared to standard federated learning (FL) methods. After screening, the retained full-model updates can be aggregated using standard FL or another compatible aggregation rule. FedLNS requires no raw client data, trusted server dataset, labeled attack examples, or separately trained detector. Experiments on GPT-style, BERT-style, and LLaMA-style models trained from scratch with 200 clients show that, under 40% population-level target manipulation, FedLNS achieves lower test perplexity than the strongest of six baselines for all three architectures under both IID (independently and identically distributed) and non-IID data partitions.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "federated learning",
+        "LLM security",
+        "adversarial manipulation"
+      ],
+      "relevance_reason_zh": "联邦LLM中检测恶意客户端更新，属于大模型安全与联邦学习安全，但非推理保护。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\nFedLNS 提出一种仅需服务器端操作的轻量级恶意更新筛查框架，利用层归一化（LayerNorm）参数签名来识别并过滤被操纵的客户端更新，从而缓解联邦大语言模型训练中的投毒攻击。\n\n## 问题与动机\n\n联邦训练（Federated Learning, FL）允许语言模型从分布式私有文本中学习，但服务器无法直接验证每个客户端本地的监督信号或优化过程。恶意客户端可能在被污染的目标上训练，引入错误的上下文-词元关联，并通过多轮聚合持续劣化全局模型，还可能加剧模型生成不可靠或幻觉内容。因此，需要一种不依赖原始数据、不增加通信开销的服务器端筛查机制。\n\n## 方法与技术路线\n\nFedLNS 的对象设定是联邦大语言模型训练中的服务器端防御场景。其输入是各客户端返回的本地模型更新；输出是经过筛查后保留的“干净”完整模型更新，可继续交给标准 FL 或任意兼容聚合规则使用。\n\n关键步骤可概括为：\n\n1. **签名提取**：对每个客户端更新，仅使用其可训练归一化层（LayerNorm）参数的变化来表示该更新。这样得到的“归一化签名”能刻画客户端本地训练行为，而无需检查全部模型参数。\n2. **跨客户端参考比对**：服务器维护一个鲁棒的、历史感知的跨客户端参考签名，将当前各客户端的签名与这一参考进行比较，从而识别出偏离正常分布的可疑更新。\n3. **筛查与聚合**：筛除可疑更新后，保留的完整模型更新进入正常聚合流程。由于签名直接在服务器端从返回的本地模型中提取，不需要客户端额外传输参数或元数据，因此相比标准 FL 没有额外通信成本。\n\n该方法不要求访问原始客户端数据、不需要服务器端可信数据集、不需要带标签的攻击样本，也不需要单独训练检测器。摘要未说明签名建模的具体数学形式、历史参考的更新策略、筛查阈值设定及聚合规则的细节。\n\n## 主要结果\n\n在包含 200 个客户端、从零训练的 GPT 风格、BERT 风格和 LLaMA 风格模型上，当 40% 的客户端受到目标操纵时，FedLNS 在三种架构下、无论是 IID（独立同分布）还是 non-IID（非独立同分布）数据划分下，其测试困惑度（perplexity）均低于六个基线中最强基线。摘要未说明具体困惑度数值、六种基线包含哪些方法、以及各实验的重复次数。\n\n## 为什么与兴趣相关\n\n该工作直接针对联邦大语言模型训练中的“不可信客户端更新”问题，提供了一种轻量、通信友好、无需额外数据的防御思路。它不依赖推理阶段保护，而是从训练过程出发降低模型被投毒后产生不可靠或幻觉输出的风险，对联邦学习安全和大模型安全均有参考价值。",
+      "summary": "## 一句话结论\n\nFedLNS 提出一种仅需服务器端操作的轻量级恶意更新筛查框架，利用层归一化（LayerNorm）参数签名来识别并过滤被操纵的客户端更新，从而缓解联邦大语言模型训练中的投毒攻击。\n\n## 问题与动机\n\n联邦训练（Federated Learning, FL）允许语言模型从分布式私有文本中学习，但服务器无法直接验证每个客户端本地的监督信号或优化过程。恶意客户端可能在被污染的目标上训练，引入错误的上下文-词元关联，并通过多轮聚合持续劣化全局模型，还可能加剧模型生成不可靠或幻觉内容。因此，需要一种不依赖原始数据、不增加通信开销的服务器端筛查机制。\n\n## 方法与技术路线\n\nFedLNS 的对象设定是联邦大语言模型训练中的服务器端防御场景。其输入是各客户端返回的本地模型更新；输出是经过筛查后保留的“干净”完整模型更新，可继续交给标准 FL 或任意兼容聚合规则使用。\n\n关键步骤可概括为：\n\n1. **签名提取**：对每个客户端更新，仅使用其可训练归一化层（LayerNorm）参数的变化来表示该更新。这样得到的“归一化签名”能刻画客户端本地训练行为，而无需检查全部模型参数。\n2. **跨客户端参考比对**：服务器维护一个鲁棒的、历史感知的跨客户端参考签名，将当前各客户端的签名与这一参考进行比较，从而识别出偏离正常分布的可疑更新。\n3. **筛查与聚合**：筛除可疑更新后，保留的完整模型更新进入正常聚合流程。由于签名直接在服务器端从返回的本地模型中提取，不需要客户端额外传输参数或元数据，因此相比标准 FL 没有额外通信成本。\n\n该方法不要求访问原始客户端数据、不需要服务器端可信数据集、不需要带标签的攻击样本，也不需要单独训练检测器。摘要未说明签名建模的具体数学形式、历史参考的更新策略、筛查阈值设定及聚合规则的细节。\n\n## 主要结果\n\n在包含 200 个客户端、从零训练的 GPT 风格、BERT 风格和 LLaMA 风格模型上，当 40% 的客户端受到目标操纵时，FedLNS 在三种架构下、无论是 IID（独立同分布）还是 non-IID（非独立同分布）数据划分下，其测试困惑度（perplexity）均低于六个基线中最强基线。摘要未说明具体困惑度数值、六种基线包含哪些方法、以及各实验的重复次数。\n\n## 为什么与兴趣相关\n\n该工作直接针对联邦大语言模型训练中的“不可信客户端更新”问题，提供了一种轻量、通信友好、无需额外数据的防御思路。它不依赖推理阶段保护，而是从训练过程出发降低模型被投毒后产生不可靠或幻觉输出的风险，对联邦学习安全和大模型安全均有参考价值。"
+    },
+    {
+      "id": "arxiv_2608.18715",
+      "arxiv_id": "2608.18715",
+      "title": "The Impact of CutMix on Reliability and Robustness in Semantic Segmentation",
+      "authors": [
+        "Steven Landgraf",
+        "Markus Ulrich"
+      ],
+      "abstract": "Ensuring not only high accuracy but also reliable and robust predictions is critical for the deployment of semantic segmentation models in safety-critical applications such as autonomous driving. Despite the widespread use of CutMix - a simple yet powerful data augmentation strategy - its effect on the reliability and robustness in dense predictions tasks remains unexplored. Motivated by recent findings that semi-supervised segmentation methods, where CutMix is a core component, can severely degrade reliability, this study isolates and systematically analyzes the influence of CutMix on segmentation accuracy, calibration, and uncertainty quality. We evaluate two representative architectures, the CNN-based DeepLabV3+ and the transformer-based SegFormer, across both in-domain and out-of-domain scenarios. Our results show that CutMix has only a minor impact on segmentation accuracy but consistently improves the reliability, particularly under distribution shifts. These improvements indicate that CutMix primarily enhances the trustworthiness of the model's calibration and uncertainty rather than the raw segmentation prediction itself. This distinction is crucial for safety-critical deployment, where reliable confidence estimates are as important as raw performance.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T09:16:12Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18715",
+      "pdf_link": "https://arxiv.org/pdf/2608.18715",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Ensuring not only high accuracy but also reliable and robust predictions is critical for the deployment of semantic segmentation models in safety-critical applications such as autonomous driving. Despite the widespread use of CutMix - a simple yet powerful data augmentation strategy - its effect on the reliability and robustness in dense predictions tasks remains unexplored. Motivated by recent findings that semi-supervised segmentation methods, where CutMix is a core component, can severely degrade reliability, this study isolates and systematically analyzes the influence of CutMix on segmentation accuracy, calibration, and uncertainty quality. We evaluate two representative architectures, the CNN-based DeepLabV3+ and the transformer-based SegFormer, across both in-domain and out-of-domain scenarios. Our results show that CutMix has only a minor impact on segmentation accuracy but consistently improves the reliability, particularly under distribution shifts. These improvements indicate that CutMix primarily enhances the trustworthiness of the model's calibration and uncertainty rather than the raw segmentation prediction itself. This distinction is crucial for safety-critical deployment, where reliable confidence estimates are as important as raw performance.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "semantic segmentation",
+        "data augmentation"
+      ],
+      "relevance_reason_zh": "CutMix数据增强对语义分割可靠性的影响，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "CutMix对语义分割中可靠性和鲁棒性的影响",
+      "abstract_zh": "确保不仅具有高精度，而且具有可靠和稳健的预测，对于语义分割模型在自动驾驶等安全关键应用中的部署至关重要。尽管CutMix——一种简单而强大的数据增强策略——被广泛使用，但它对密集预测任务中可靠性和鲁棒性的影响仍未得到探索。鉴于近期研究发现，以CutMix为核心组件的半监督分割方法会严重降低可靠性，本研究单独且系统地分析了CutMix对分割精度、校准和不确定性质量的影响。我们评估了两种具有代表性的架构：基于CNN的DeepLabV3+和基于Transformer的SegFormer，涵盖域内和域外场景。我们的结果表明，CutMix对分割精度的影响较小，但能持续提高可靠性，尤其是在分布偏移下。这些改进表明，CutMix主要增强的是模型校准和不确定性的可信度，而非原始分割预测本身。这一区别对于安全关键部署至关重要，因为在其中可靠的置信度估计与原始性能同等重要。"
+    },
+    {
+      "id": "arxiv_2608.18686",
+      "arxiv_id": "2608.18686",
+      "title": "Improving LLM-Based SSH Honeypots Through Prompting and Fine-Tuning",
+      "authors": [
+        "Muris Sladić",
+        "Veronica Valeros",
+        "Eman Alibalić",
+        "Sebastian Garcia"
+      ],
+      "abstract": "LLM-based SSH honeypots often use closed cloud LLMs because they give strong shell realism, but cloud models create deployment problems. These include no stable versioning, provider-side changes, attacker-driven cost, and model decommissioning. Local open-weight models avoid these problems, but they usually perform worse and make mistakes that reveal the honeypot. These mistakes include malformed outputs, command echoing, inconsistent filesystem state, and AI-style artifacts. This paper studies how to improve and evaluate the shell emulation accuracy of local LLM-based SSH honeypots using prompt design and supervised fine-tuning. We fine-tune and evaluate eight models in total: the original fine-tuned GPT-3.5 model used in shelLM and seven open-weight local models, each compared to its base model. We also test how prompt structure transfers across model families. Using 34 automated unit tests that measure shell emulation accuracy in single-session and fresh-session settings, we find that prompt design has a large effect and that fine-tuning depends on dataset coverage. Fine-tuning on the original 112-conversation dataset does not improve aggregate pass rate, while an expanded dataset built from honeypot logs produces clearly stronger local models. Taken together, the results suggest that prompting and fine-tuning can each improve local LLM honeypots on their own, but their effects do not combine straightforwardly, since strong rule-based prompting and supervised adaptation can also conflict by addressing overlapping shell-behavior constraints.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T08:35:04Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18686",
+      "pdf_link": "https://arxiv.org/pdf/2608.18686",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "LLM-based SSH honeypots often use closed cloud LLMs because they give strong shell realism, but cloud models create deployment problems. These include no stable versioning, provider-side changes, attacker-driven cost, and model decommissioning. Local open-weight models avoid these problems, but they usually perform worse and make mistakes that reveal the honeypot. These mistakes include malformed outputs, command echoing, inconsistent filesystem state, and AI-style artifacts. This paper studies how to improve and evaluate the shell emulation accuracy of local LLM-based SSH honeypots using prompt design and supervised fine-tuning. We fine-tune and evaluate eight models in total: the original fine-tuned GPT-3.5 model used in shelLM and seven open-weight local models, each compared to its base model. We also test how prompt structure transfers across model families. Using 34 automated unit tests that measure shell emulation accuracy in single-session and fresh-session settings, we find that prompt design has a large effect and that fine-tuning depends on dataset coverage. Fine-tuning on the original 112-conversation dataset does not improve aggregate pass rate, while an expanded dataset built from honeypot logs produces clearly stronger local models. Taken together, the results suggest that prompting and fine-tuning can each improve local LLM honeypots on their own, but their effects do not combine straightforwardly, since strong rule-based prompting and supervised adaptation can also conflict by addressing overlapping shell-behavior constraints.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM honeypot",
+        "prompting"
+      ],
+      "relevance_reason_zh": "改进LLM蜜罐的提示与微调，属网络安全应用，非隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "通过提示与微调改进基于LLM的SSH蜜罐",
+      "abstract_zh": "基于LLM的SSH蜜罐通常使用封闭云LLM，因为它们提供强大的shell真实感，但云模型会带来部署问题。这些问题包括没有稳定版本控制、供应商端更改、攻击者驱动的成本和模型退役。本地开放权重模型避免了这些问题，但它们通常表现较差，并会犯下暴露蜜罐的错误。这些错误包括格式错误的输出、命令回显、文件系统状态不一致以及AI风格痕迹。本文研究如何使用提示设计和监督微调来改进和评估基于本地LLM的SSH蜜罐的shell模拟准确性。我们总共微调和评估了八个模型：shelLM中使用的原始微调GPT-3.5模型和七个开放权重本地模型，每个模型都与其基础模型进行比较。我们还测试了提示结构如何跨模型系列转移。使用34个自动化单元测试，在单会话和新会话设置中测量shell模拟准确性，我们发现提示设计效果显著，而微调依赖于数据集覆盖范围。在原始的112个对话数据集上微调并不能提高总体通过率，而根据蜜罐日志构建的扩展数据集则明显产生更强的本地模型。总体而言，结果表明提示和微调各自都能单独改进本地LLM蜜罐，但它们的效果并不能简单叠加，因为强基于规则的提示和监督适应也可能通过解决重叠的shell行为约束而相互冲突。"
+    },
+    {
+      "id": "arxiv_2608.18675",
+      "arxiv_id": "2608.18675",
+      "title": "An Empirical Benchmark of Deep Time-Series Models for Smart Meter Energy Forecasting",
+      "authors": [
+        "Behnaz Kavoosighafi",
+        "Maria Eidenskog",
+        "Wiktoria Glad",
+        "Katerina Vrotsou"
+      ],
+      "abstract": "Accurate forecasting of energy consumption is important for the efficient operation of power systems, with direct implications for operational costs, energy management, and system maintenance. Due to the availability of extensive high-resolution consumption data from smart meters, data-driven methods have been used for short-term and long-term forecasting. However, their comparative performance on real-world smart meter data is still not well studied. In this paper, we present an empirical benchmark of nine modern deep learning models for time-series forecasting, including linear, MLP-based, convolutional, and Transformer architectures. We evaluate these models on two publicly available smart meter datasets. Our analysis focuses on three factors that strongly affect forecasting performance: the length of historical input, the prediction horizon, and the choice of model architecture. We show that extending the historical context improves accuracy, but only up to a saturation point, after which additional input provides limited benefit. In contrast, accuracy decreases as the prediction horizon increases. We also investigate the trade-off between prediction accuracy and computational complexity, and assess the statistical significance and practical magnitude of performance differences across models. Our results show that deep learning models consistently outperform classical baselines, while lightweight architectures achieve relatively similar performance at significantly lower computational cost. Additionally, architectural differences only become meaningful at longer forecasting horizons and on more heterogeneous datasets. Finally, a subgroup analysis across geodemographic and household categories shows that model choice has limited impact for most population segments.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T08:27:48Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18675",
+      "pdf_link": "https://arxiv.org/pdf/2608.18675",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Accurate forecasting of energy consumption is important for the efficient operation of power systems, with direct implications for operational costs, energy management, and system maintenance. Due to the availability of extensive high-resolution consumption data from smart meters, data-driven methods have been used for short-term and long-term forecasting. However, their comparative performance on real-world smart meter data is still not well studied. In this paper, we present an empirical benchmark of nine modern deep learning models for time-series forecasting, including linear, MLP-based, convolutional, and Transformer architectures. We evaluate these models on two publicly available smart meter datasets. Our analysis focuses on three factors that strongly affect forecasting performance: the length of historical input, the prediction horizon, and the choice of model architecture. We show that extending the historical context improves accuracy, but only up to a saturation point, after which additional input provides limited benefit. In contrast, accuracy decreases as the prediction horizon increases. We also investigate the trade-off between prediction accuracy and computational complexity, and assess the statistical significance and practical magnitude of performance differences across models. Our results show that deep learning models consistently outperform classical baselines, while lightweight architectures achieve relatively similar performance at significantly lower computational cost. Additionally, architectural differences only become meaningful at longer forecasting horizons and on more heterogeneous datasets. Finally, a subgroup analysis across geodemographic and household categories shows that model choice has limited impact for most population segments.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "时间序列预测",
+        "基准测试"
+      ],
+      "relevance_reason_zh": "智能电表能量预测的模型基准，与安全推理或隐私计算无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "智能电表能源预测的深度时间序列模型经验基准",
+      "abstract_zh": "能源消耗的准确预测对于电力系统的高效运行至关重要，直接影响运营成本、能源管理和系统维护。由于智能电表提供了大量高分辨率的消耗数据，数据驱动方法已被用于短期和长期预测。然而，它们在真实世界智能电表数据上的比较性能仍未得到充分研究。在本文中，我们对九种现代深度学习时间序列预测模型进行了经验基准测试，包括线性、基于MLP的、卷积和Transformer架构。我们在两个公开可用的智能电表数据集上评估这些模型。我们的分析重点关注三个强烈影响预测性能的因素：历史输入长度、预测范围以及模型架构的选择。我们表明，扩展历史上下文可以提高准确性，但仅限于饱和点，之后额外的输入提供的收益有限。相比之下，准确性随着预测范围的增加而降低。我们还研究了预测准确性与计算复杂度之间的权衡，并评估了不同模型之间性能差异的统计显著性和实际幅度。我们的结果表明，深度学习模型始终优于经典基线，而轻量级架构以显著更低的计算成本实现了相对相似的性能。此外，架构差异仅在更长的预测范围和更异质的数据集上才变得有意义。最后，按地理人口和家庭类别进行的亚组分析表明，对于大多数人群细分，模型选择的影响有限。"
+    },
+    {
+      "id": "arxiv_2608.18656",
+      "arxiv_id": "2608.18656",
+      "title": "FlashAttention for Scalable Vector Architectures",
+      "authors": [
+        "Sonia Rani Gupta",
+        "Nikela Papadopoulou",
+        "Miquel Pericàs"
+      ],
+      "abstract": "Inference with transformer models on CPUs is increasingly important, especially for Small Language Models (SLMs), where vector architectures are emerging as a promising execution substrate. The attention module is a major bottleneck due to high memory bandwidth requirements; FlashAttention mitigates this by fusing operations to improve data locality and reduce intermediate memory traffic. In this paper, we present FlashAttention-V, a blocked FlashAttention for scalable vector architectures that adapts efficiently from short to very long vectors by exploiting parallelism across attention heads, inter-head packing to enable efficient utilization of vector lengths beyond the head dimension, and improving vector register utilization and memory access locality. We integrate FlashAttention-V into ggml within llama.cpp and evaluate it on TinyLlama, Llama 3.2, Qwen2.5, and Pythia-410M using gem5 and a Banana Pi BPI-F3. On the Banana Pi BPI-F3, we confirm that loop reordering and loop unrolling across attention heads are effective optimization principles, scaling performance gains with larger models and most pronounced with short contexts and during decoding. Simulation-based analysis shows that FlashAttention-V achieves 22x-42x speedup over scalar FlashAttention at 512-bit VL in prefill, with an additional 2x-2.5x gain scaling to 64 lanes and 4096-bit VL. During decode, FlashAttention-V achieves 8x-11x speedup using 512-bit vector lengths over scalar FlashAttention, with performance showing diminishing sensitivity to vector width and lane count due to single-token, memory-bound execution. We further identify structural bottlenecks in Q8_0 quantized linear layers that limit arithmetic amortization under long-vector execution, consistent across RVV and Arm SVE, indicating that current quantization formats pose a fundamental challenge to long-vector scalability.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T08:02:17Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18656",
+      "pdf_link": "https://arxiv.org/pdf/2608.18656",
+      "categories": [
+        "cs.LG",
+        "cs.PF"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Inference with transformer models on CPUs is increasingly important, especially for Small Language Models (SLMs), where vector architectures are emerging as a promising execution substrate. The attention module is a major bottleneck due to high memory bandwidth requirements; FlashAttention mitigates this by fusing operations to improve data locality and reduce intermediate memory traffic. In this paper, we present FlashAttention-V, a blocked FlashAttention for scalable vector architectures that adapts efficiently from short to very long vectors by exploiting parallelism across attention heads, inter-head packing to enable efficient utilization of vector lengths beyond the head dimension, and improving vector register utilization and memory access locality. We integrate FlashAttention-V into ggml within llama.cpp and evaluate it on TinyLlama, Llama 3.2, Qwen2.5, and Pythia-410M using gem5 and a Banana Pi BPI-F3. On the Banana Pi BPI-F3, we confirm that loop reordering and loop unrolling across attention heads are effective optimization principles, scaling performance gains with larger models and most pronounced with short contexts and during decoding. Simulation-based analysis shows that FlashAttention-V achieves 22x-42x speedup over scalar FlashAttention at 512-bit VL in prefill, with an additional 2x-2.5x gain scaling to 64 lanes and 4096-bit VL. During decode, FlashAttention-V achieves 8x-11x speedup using 512-bit vector lengths over scalar FlashAttention, with performance showing diminishing sensitivity to vector width and lane count due to single-token, memory-bound execution. We further identify structural bottlenecks in Q8_0 quantized linear layers that limit arithmetic amortization under long-vector execution, consistent across RVV and Arm SVE, indicating that current quantization formats pose a fundamental challenge to long-vector scalability.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "推理加速",
+        "注意力机制"
+      ],
+      "relevance_reason_zh": "纯Transformer推理加速（FlashAttention向量化），未涉及密码学或安全保护。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "面向可扩展向量架构的FlashAttention",
+      "abstract_zh": "在CPU上使用Transformer模型进行推理日益重要，尤其是对于小型语言模型（SLMs），其中向量架构正成为一种有前景的执行载体。注意力模块由于高内存带宽需求而成为主要瓶颈；FlashAttention通过融合操作来改善数据局部性并减少中间内存流量，从而缓解这一问题。在本文中，我们提出了FlashAttention-V，一种面向可扩展向量架构的分块FlashAttention，它通过利用注意力头间的并行性、头间打包以在超出头维度的向量长度上实现高效利用，以及改进向量寄存器利用率和内存访问局部性，从而高效适应从短向量到非常长向量。我们将FlashAttention-V集成到llama.cpp中的ggml中，并使用gem5和Banana Pi BPI-F3在TinyLlama、Llama 3.2、Qwen2.5和Pythia-410M上对其进行评估。在Banana Pi BPI-F3上，我们确认跨注意力头的循环重排序和循环展开是有效的优化原则，其性能收益随模型增大而扩展，在短上下文和解码阶段最为明显。基于模拟的分析表明，在预填充阶段，FlashAttention-V在512位VL下相比标量FlashAttention实现了22x-42x的加速，扩展到64条通道和4096位VL时，还额外获得2x-2.5x的增益。在解码阶段，FlashAttention-V使用512位向量长度相比标量FlashAttention实现了8x-11x的加速，由于单token、内存受限的执行方式，性能对向量宽度和通道数量的敏感性逐渐降低。我们进一步识别了Q8_0量化线性层中的结构性瓶颈，这些瓶颈限制了长向量执行下的算术摊销，且这些瓶颈在RVV和Arm SVE上具有一致性，表明当前的量化格式对长向量可扩展性构成了根本性挑战。"
+    },
+    {
+      "id": "arxiv_2608.18592",
+      "arxiv_id": "2608.18592",
+      "title": "Infrared Universality of Collective Dynamics across Transformer and State-Space Architectures",
+      "authors": [
+        "Byung Gyu Chae"
+      ],
+      "abstract": "Whether distinct neural architectures develop common collective dynamics remains an open question. Recent analysis of Transformer language models revealed a nearly flat, weakly infrared-enhanced time-scale density of states (TDOS) associated with near-marginal long-memory dynamics. Here we test whether a closely related organization emerges in Mamba, whose selective state-space dynamics provides a fundamentally different microscopic mechanism. Mamba allows relaxation dynamics to be resolved at three levels: the intrinsic spectrum of the learned state-space generator, its input-conditioned selective rescaling, and the collective TDOS of the complete block measured from its Jacobian. These spectra are not identical: selective dynamics and the remaining block transformations substantially reorganize the microscopic relaxation hierarchy. Nevertheless, the full block develops a reproducible slow-mode continuum whose infrared sector becomes progressively better resolved with increasing sequence length. Cumulative analysis yields $ρ(λ)\\simλ^β$, with the long-sequence Mamba exponent stabilizing near $β_{\\rm M}\\simeq-0.17$. The corresponding memory dynamics follows $K(t)\\sim t^{-(1+β)}$, close to the marginal $1/t$ regime. Despite fundamentally different microscopic dynamics, Transformer full-block spectra exhibit closely related infrared organization, with representative exponents of order $β_{\\rm Tr}\\sim-0.1$. These results separate explicit state-space memory from collective infrared organization and show that distinct sequence architectures can develop closely related near-marginal slow-mode dynamics. They extend infrared collective organization beyond Transformers and provide an independent test of the dynamical structure described by Cognitive Field Theory.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T06:34:04Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18592",
+      "pdf_link": "https://arxiv.org/pdf/2608.18592",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Whether distinct neural architectures develop common collective dynamics remains an open question. Recent analysis of Transformer language models revealed a nearly flat, weakly infrared-enhanced time-scale density of states (TDOS) associated with near-marginal long-memory dynamics. Here we test whether a closely related organization emerges in Mamba, whose selective state-space dynamics provides a fundamentally different microscopic mechanism. Mamba allows relaxation dynamics to be resolved at three levels: the intrinsic spectrum of the learned state-space generator, its input-conditioned selective rescaling, and the collective TDOS of the complete block measured from its Jacobian. These spectra are not identical: selective dynamics and the remaining block transformations substantially reorganize the microscopic relaxation hierarchy. Nevertheless, the full block develops a reproducible slow-mode continuum whose infrared sector becomes progressively better resolved with increasing sequence length. Cumulative analysis yields $ρ(λ)\\simλ^β$, with the long-sequence Mamba exponent stabilizing near $β_{\\rm M}\\simeq-0.17$. The corresponding memory dynamics follows $K(t)\\sim t^{-(1+β)}$, close to the marginal $1/t$ regime. Despite fundamentally different microscopic dynamics, Transformer full-block spectra exhibit closely related infrared organization, with representative exponents of order $β_{\\rm Tr}\\sim-0.1$. These results separate explicit state-space memory from collective infrared organization and show that distinct sequence architectures can develop closely related near-marginal slow-mode dynamics. They extend infrared collective organization beyond Transformers and provide an independent test of the dynamical structure described by Cognitive Field Theory.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "模型动力学",
+        "架构分析"
+      ],
+      "relevance_reason_zh": "Transformer与状态空间架构的集体动力学理论分析，与隐私计算或安全无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Transformer与状态空间架构中集体动力学的红外普适性",
+      "abstract_zh": "不同的神经架构是否会产生共同的集体动力学仍是一个悬而未决的问题。最近对Transformer语言模型的分析揭示了与近边缘长记忆动力学相关的近乎平坦、弱红外增强的态时间尺度密度（TDOS）。在此，我们测试Mamba中是否出现紧密相关的组织，Mamba的选择性状态空间动力学提供了一种根本不同的微观机制。Mamba允许在三个层面上解析弛豫动力学：学习到的状态空间生成器的本征谱、其输入条件选择性重标度，以及从其雅可比矩阵测量的完整块的集体TDOS。这些谱并不相同：选择性动力学和剩余块变换显著重组了微观弛豫层次结构。尽管如此，完整块发展出一个可再现的慢模连续谱，其红外区段随着序列长度的增加而逐渐被更好地分辨。累积分析得到 $\\rho(\\lambda)\\sim\\lambda^{\\beta}$，长序列Mamba的指数稳定在 $\\beta_{\\rm M}\\simeq-0.17$ 附近。相应的记忆动力学遵循 $K(t)\\sim t^{-(1+\\beta)}$，接近边缘 $1/t$ 区间。尽管微观动力学根本不同，Transformer完整块谱表现出紧密相关的红外组织，代表性指数约为 $\\beta_{\\rm Tr}\\sim-0.1$。这些结果将显式状态空间记忆与集体红外组织区分开来，并表明不同的序列架构可以发展出紧密相关的近边缘慢模动力学。它们将红外集体组织扩展到Transformer之外，并为认知场论所描述的动力学结构提供了独立检验。"
+    },
+    {
+      "id": "arxiv_2608.18578",
+      "arxiv_id": "2608.18578",
+      "title": "Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs",
+      "authors": [
+        "Shayan Shahrabi-Farahani",
+        "Dara Rahmati"
+      ],
+      "abstract": "Proactive interference (PI) is a documented failure mode in large language models in which retrieval of a repeatedly overwritten value degrades as prior overwrites accumulate, mirroring a classical phenomenon in human working memory. Post-training quantization (PTQ) is now the default deployment path for open-weight models, yet its effect on this failure mode has not been tested. We evaluate three precision levels (FP16, INT8, INT4/NF4, via bitsandbytes) across three architecturally distinct instruction-tuned models (Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3, Phi-3.5-mini-instruct), holding the retrieval task fixed. INT4 quantization significantly reduces accuracy under high interference in every model (e.g., from 81.0% to 68.3% for Qwen), confirmed by paired McNemar's tests ($p \\le 2.6 \\times 10^{-6}$) and a mixed-effects regression spanning all interference levels; INT8, often assumed safe, also carries a smaller but real penalty in two of three models. The effect is specific to semantically similar (word-type) distractors and reverses sign under a numeric control condition, and is mechanistically linked to a rise in same-key intrusion errors under INT4 (from 21.5% to 24.6% of trials, $p = 4.8 \\times 10^{-7}$). A follow-up ablation shows the effect originates in the quantized transformer backbone rather than the output projection layer. These results suggest that bitsandbytes 4-bit quantization can impose an additional cost on applications relying on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely unaffected. We release our code and tokenizer-verified vocabulary construction method at https://github.com/ShayanShahrabi/compress-and-forget",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T06:17:13Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18578",
+      "pdf_link": "https://arxiv.org/pdf/2608.18578",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Proactive interference (PI) is a documented failure mode in large language models in which retrieval of a repeatedly overwritten value degrades as prior overwrites accumulate, mirroring a classical phenomenon in human working memory. Post-training quantization (PTQ) is now the default deployment path for open-weight models, yet its effect on this failure mode has not been tested. We evaluate three precision levels (FP16, INT8, INT4/NF4, via bitsandbytes) across three architecturally distinct instruction-tuned models (Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3, Phi-3.5-mini-instruct), holding the retrieval task fixed. INT4 quantization significantly reduces accuracy under high interference in every model (e.g., from 81.0% to 68.3% for Qwen), confirmed by paired McNemar's tests ($p \\le 2.6 \\times 10^{-6}$) and a mixed-effects regression spanning all interference levels; INT8, often assumed safe, also carries a smaller but real penalty in two of three models. The effect is specific to semantically similar (word-type) distractors and reverses sign under a numeric control condition, and is mechanistically linked to a rise in same-key intrusion errors under INT4 (from 21.5% to 24.6% of trials, $p = 4.8 \\times 10^{-7}$). A follow-up ablation shows the effect originates in the quantized transformer backbone rather than the output projection layer. These results suggest that bitsandbytes 4-bit quantization can impose an additional cost on applications relying on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely unaffected. We release our code and tokenizer-verified vocabulary construction method at https://github.com/ShayanShahrabi/compress-and-forget",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "量化",
+        "LLM行为"
+      ],
+      "relevance_reason_zh": "研究量化对LLM主动干扰的影响，属于模型压缩行为分析，非安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "压缩与遗忘：bitsandbytes量化放大大型语言模型中的前摄干扰",
+      "abstract_zh": "前摄干扰（PI）是大型语言模型中一种有记载的失败模式，其中对反复覆写值的检索会随着先前覆写的累积而退化，镜像了人类工作记忆中的经典现象。训练后量化（PTQ）现在是开放权重模型的默认部署路径，但其对这一失败模式的影响尚未得到检验。我们通过bitsandbytes评估了三种精度级别（FP16、INT8、INT4/NF4），涵盖三个架构不同的指令微调模型（Qwen2.5-7B-Instruct、Mistral-7B-Instruct-v0.3、Phi-3.5-mini-instruct），并保持检索任务固定不变。INT4量化在每个模型的高干扰条件下都显著降低了准确率（例如，Qwen从81.0%降至68.3%），配对的McNemar检验（$p \\le 2.6 \\times 10^{-6}$）和涵盖所有干扰水平的混合效应回归证实了这一点；INT8虽然常被认为是安全的，但在三个模型中的两个中也带来了较小但真实的性能损失。该效应特定于语义相似（词类型）的干扰项，并在数字控制条件下反转符号，并且机制上与INT4下同键侵入错误的增加有关（从试验的21.5%升至24.6%，$p = 4.8 \\times 10^{-7}$）。一项后续消融实验表明，该效应源于量化的Transformer主干，而非输出投影层。这些结果表明，bitsandbytes 4比特量化可能对依赖长、可更新、语义密集上下文的应用程序施加额外成本，即使总体基准准确率看起来基本不受影响。我们在https://github.com/ShayanShahrabi/compress-and-forget 发布了我们的代码和经分词器验证的词汇构建方法。"
+    },
+    {
+      "id": "arxiv_2608.18516",
+      "arxiv_id": "2608.18516",
+      "title": "OptiModNet: A UNet-Transformer Hybrid with Grouped-Query and Channel Attention for Optic Disc and Cup Segmentation",
+      "authors": [
+        "Soumili Ghosh",
+        "Debapriya Roy",
+        "Aryan Das",
+        "Bikash Santra"
+      ],
+      "abstract": "Precise segmentation of the optic disc and cup is critical for the early detection and diagnosis of glaucoma. However, achieving consistently high performance across datasets while maintaining low computational requirements remains a significant challenge. In glaucoma detection, low-computation methods are crucial for enabling rapid, large-scale screening and facilitating deployment in resource-limited clinical environments. While deep learning models such as UNets, Vision Transformers (ViTs), and Diffusion models have demonstrated strong segmentation performance but these methods often come with substantial computational overhead. UNets are efficient at capturing local features but are limited in modeling global contextual information. Conversely, ViTs excel at long-range dependency modeling but are computationally intensive. Hybrid architectures, such as UNetR, which combine transformer-based encoders with UNet-style decoders, have shown improved performance but while incurring additional complexity. Considering these, in this work, we propose OptiModNet, a light weight novel hybrid architecture tailored for optic disc and cup segmentation. The model integrates diverse attention mechanisms at multiple stages of the network to enhance both local and global feature representation. We include an Aggregated Pyramid Loss that supervises predictions at multiple decoder depths, to promote better gradient flow and structural consistency. We evaluate OptiModNet on the REFUGE2 dataset for both optic disc and cup segmentation tasks. Our method achieves state-of-the-art performance, exceeding existing approaches by over 2.5\\%, while maintaining high efficiency with only 3.73 GFLOPs and 1.93M parameters. The code is available at https://github.com/SG1947/OptiModNet.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T04:10:14Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18516",
+      "pdf_link": "https://arxiv.org/pdf/2608.18516",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Precise segmentation of the optic disc and cup is critical for the early detection and diagnosis of glaucoma. However, achieving consistently high performance across datasets while maintaining low computational requirements remains a significant challenge. In glaucoma detection, low-computation methods are crucial for enabling rapid, large-scale screening and facilitating deployment in resource-limited clinical environments. While deep learning models such as UNets, Vision Transformers (ViTs), and Diffusion models have demonstrated strong segmentation performance but these methods often come with substantial computational overhead. UNets are efficient at capturing local features but are limited in modeling global contextual information. Conversely, ViTs excel at long-range dependency modeling but are computationally intensive. Hybrid architectures, such as UNetR, which combine transformer-based encoders with UNet-style decoders, have shown improved performance but while incurring additional complexity. Considering these, in this work, we propose OptiModNet, a light weight novel hybrid architecture tailored for optic disc and cup segmentation. The model integrates diverse attention mechanisms at multiple stages of the network to enhance both local and global feature representation. We include an Aggregated Pyramid Loss that supervises predictions at multiple decoder depths, to promote better gradient flow and structural consistency. We evaluate OptiModNet on the REFUGE2 dataset for both optic disc and cup segmentation tasks. Our method achieves state-of-the-art performance, exceeding existing approaches by over 2.5\\%, while maintaining high efficiency with only 3.73 GFLOPs and 1.93M parameters. The code is available at https://github.com/SG1947/OptiModNet.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "医学图像分割",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "医学图像分割的UNet-Transformer混合架构，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "OptiModNet：一种融合分组查询与通道注意力的UNet-Transformer混合架构，用于视盘和视杯分割",
+      "abstract_zh": "视盘和视杯的精确分割对于青光眼的早期检测和诊断至关重要。然而，在保持低计算需求的同时，跨数据集实现持续的高性能仍然是一项重大挑战。在青光眼检测中，低计算方法对于实现快速、大规模筛查以及促进在资源有限的临床环境中的部署至关重要。虽然深度学习模型如UNet、视觉Transformer（ViT）和扩散模型已展现出强大的分割性能，但这些方法通常伴随着大量的计算开销。UNet在捕获局部特征方面效率较高，但在建模全局上下文信息方面存在局限。相反，ViT擅长长距离依赖建模，但计算量大。混合架构（如UNetR）将基于Transformer的编码器与UNet风格的解码器相结合，已展现出改进的性能，但同时也带来了额外的复杂性。鉴于这些，在本工作中，我们提出了OptiModNet，一种专为视盘和视杯分割量身定制的轻量级新型混合架构。该模型在网络多个阶段集成了多种注意力机制，以增强局部和全局特征表示。我们引入了一种聚合金字塔损失（Aggregated Pyramid Loss），在多个解码器深度对预测进行监督，以促进更好的梯度流动和结构一致性。我们在REFUGE2数据集上对OptiModNet进行了视盘和视杯分割任务的评估。我们的方法实现了最先进的性能，超过现有方法2.5%以上，同时仅以3.73 GFLOPs和1.93M参数保持了高效率。代码可在https://github.com/SG1947/OptiModNet获取。"
+    },
+    {
+      "id": "arxiv_2608.18486",
+      "arxiv_id": "2608.18486",
+      "title": "WhiteMatter: All-to-All Cross-Layer Connections via KV Mixing",
+      "authors": [
+        "Wenbo Zhang",
+        "Xiang Ren"
+      ],
+      "abstract": "In a Transformer, each layer attends to past tokens only through KV produced at its own depth, despite the presence of deeper representations during autoregressive decoding. Feedback architectures allow shallow consumer layers to attend to KV produced by deeper past-token representations, but give all consumer layers the same fixed connection patterns to source layers. We propose WhiteMatter, which connects every attention layer to the representations from all layers of each past token, with connection weights that can vary across consumer layers and adapt to the source token. For each token, a router implements these connections by mixing its $L$ layer states into $k$ KV channels that are cached for subsequent tokens; each consumer layer attends to one of the channels. The number of channels $k$ controls the KV-cache size. Setting $k<L$ reduces the cache's memory footprint. In our pretraining experiments, WhiteMatter outperforms a vanilla Transformer with 50% more layers and retains most of this gain with a 50% KV-cache compression.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T03:24:51Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18486",
+      "pdf_link": "https://arxiv.org/pdf/2608.18486",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "In a Transformer, each layer attends to past tokens only through KV produced at its own depth, despite the presence of deeper representations during autoregressive decoding. Feedback architectures allow shallow consumer layers to attend to KV produced by deeper past-token representations, but give all consumer layers the same fixed connection patterns to source layers. We propose WhiteMatter, which connects every attention layer to the representations from all layers of each past token, with connection weights that can vary across consumer layers and adapt to the source token. For each token, a router implements these connections by mixing its $L$ layer states into $k$ KV channels that are cached for subsequent tokens; each consumer layer attends to one of the channels. The number of channels $k$ controls the KV-cache size. Setting $k<L$ reduces the cache's memory footprint. In our pretraining experiments, WhiteMatter outperforms a vanilla Transformer with 50% more layers and retains most of this gain with a 50% KV-cache compression.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "Transformer架构",
+        "KV缓存"
+      ],
+      "relevance_reason_zh": "Transformer跨层连接与KV缓存压缩的架构改进，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "WhiteMatter：通过KV混合实现全对全跨层连接",
+      "abstract_zh": "在Transformer中，每一层仅通过其自身深度产生的KV来关注过去的词元，尽管在自回归解码过程中存在更深层的表示。反馈架构允许浅层消费层关注由更深层过去词元表示产生的KV，但所有消费层都被赋予到源层的相同固定连接模式。我们提出WhiteMatter，它将每个注意力层连接到每个过去词元的所有层的表示，连接权重可以随消费层变化并适应源词元。对于每个词元，路由器通过将其L个层状态混合到k个KV通道中来实现这些连接，这些通道被缓存以供后续词元使用；每个消费层关注其中一个通道。通道数k控制KV缓存大小。设置k<L会减少缓存的内存占用。在我们的预训练实验中，WhiteMatter优于具有50%更多层的普通Transformer，并在50%的KV缓存压缩下保留了大部分增益。"
+    },
+    {
+      "id": "arxiv_2608.18469",
+      "arxiv_id": "2608.18469",
+      "title": "ERASE: EaRly bAckpropagation SchEdule for Faster Training of Modern Recommendation Systems",
+      "authors": [
+        "Ergan Shang",
+        "Flavio Sales Truzzi"
+      ],
+      "abstract": "Lightweight proxy models enable rapid experimentation without repeatedly training frontier-scale systems, but their small kernels often leave modern accelerators underutilized. Conventional training compounds this inefficiency by scheduling the forward and backward passes as disjoint phases, so spare capacity in one cannot be filled by work from the other. We reinterpret the detachment mechanism of Forward-Forward (FF) as a scheduling primitive: given a local objective, detaching a block's output removes downstream gradient dependencies, making its backward pass ready when its forward pass finishes. ERASE launches each detached subgraph's backward pass early on a separate CUDA stream, overlapping it with subsequent forward work. Execution trace on a lightweight transformer demonstrates this overlap and its limit: a kernel that saturates the device leaves no capacity for concurrency. On a large-scale click-through-rate model, detaching six dense subarchitectures improves training throughput by up to $9.51\\%$ while keeping normalized entropy close to the baseline.",
+      "published": "2026-08-19",
+      "published_at": "2026-08-19T02:51:08Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18469",
+      "pdf_link": "https://arxiv.org/pdf/2608.18469",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Lightweight proxy models enable rapid experimentation without repeatedly training frontier-scale systems, but their small kernels often leave modern accelerators underutilized. Conventional training compounds this inefficiency by scheduling the forward and backward passes as disjoint phases, so spare capacity in one cannot be filled by work from the other. We reinterpret the detachment mechanism of Forward-Forward (FF) as a scheduling primitive: given a local objective, detaching a block's output removes downstream gradient dependencies, making its backward pass ready when its forward pass finishes. ERASE launches each detached subgraph's backward pass early on a separate CUDA stream, overlapping it with subsequent forward work. Execution trace on a lightweight transformer demonstrates this overlap and its limit: a kernel that saturates the device leaves no capacity for concurrency. On a large-scale click-through-rate model, detaching six dense subarchitectures improves training throughput by up to $9.51\\%$ while keeping normalized entropy close to the baseline.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "训练加速",
+        "推荐系统"
+      ],
+      "relevance_reason_zh": "推荐系统训练加速调度，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "ERASE：用于加速现代推荐系统训练的早期反向传播调度",
+      "abstract_zh": "轻量级代理模型无需重复训练前沿规模系统即可实现快速实验，但其较小的内核往往使现代加速器得不到充分利用。传统训练将前向和反向传播调度为不相交的阶段，这加剧了这种低效，因为一个阶段的空闲容量无法由另一个阶段的工作来填充。我们将Forward-Forward（FF）的分离机制重新解释为一种调度原语：给定一个局部目标，分离某个块的输出会移除下游梯度依赖，从而使其反向传播在其前向传播完成时即可就绪。ERASE在独立的CUDA流上尽早启动每个分离子图的反向传播，使其与后续前向工作重叠。轻量级Transformer上的执行轨迹展示了这种重叠及其局限性：一个使设备饱和的内核不会留下任何并发容量。在大规模点击率模型上，分离六个密集子架构可将训练吞吐量提升高达$9.51\\%$，同时使归一化熵保持接近基线。"
+    },
+    {
       "id": "arxiv_2608.18050",
       "arxiv_id": "2608.18050",
       "title": "StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents",
@@ -686,14 +1366,14 @@
       ],
       "relevance_reason_zh": "用FHE-MPC实现私有长上下文状态空间模型推理，正是安全推理方向。",
       "relevance_level": "secure_inference",
-      "summary_type": "abstract",
+      "summary_type": "fulltext",
       "summary_status": "success",
       "translation_status": "not_requested",
-      "summary_zh": "## 一句话结论\nFESC 是一个混合 FHE-MPC（全同态加密与安全多方计算）系统，用于私有长上下文选择性 SSM（状态空间模型）推理，首次实现在单张 GPU 上以原生端到端方式完成 L≥1024 的序列推理。\n\n## 问题与动机\n处理长且敏感的文档需要高效且保护隐私的推理。此前的私有推理系统主要优化或分布式加密 Transformer 注意力，但其对 token 对的二次方计算量会随序列长度增长成为瓶颈。选择性 SSM 具有线性时间递归优势，但直接加密实现会遭遇线性乘法深度、序列级状态驻留或密集 FHE-MPC 转换等问题。\n\n## 方法与技术路线\n- **研究对象与设定**：面向私有长上下文选择性 SSM 推理，采用混合 FHE-MPC 架构。摘要未说明具体协议步骤、参数和数据集。\n- **核心模块：factorized scan-contract**（因式化扫描-收缩）：将输入依赖的转换在转换边界保持紧凑形式；组合转换时无需密集展开；按需流式加载状态块；在转换前收缩输出。这一设计避免了直接加密实现中的密度和驻留问题。\n- **实例化与计算分配**：在 Mamba-2 架构中，线性计算使用 GPU 优化的 CKKS 内核（一种近似同态加密方案）；非线性函数如 SiLU、softplus、exponential 和 RMSNorm 则通过 MPC 协议实现；并采用近似感知微调来配合近似计算。\n- **衔接关系**：FHE 负责线性部分，MPC 处理非线性部分，scan-contract 负责在两者转换边界处保持数据紧凑并管理状态流，从而降低开销。摘要还提到该实现接口兼容 invariant 和 selective 两类 SSM 架构。\n\n## 主要结果\nFESC 被描述为首个能在单 GPU 上完成原生端到端私有长文档推理的系统，支持 L≥1024。在 L=2048 时，一个 12 层 Mamba-base 模型在单张 A100 GPU 上 77.3 分钟完成推理，峰值内存 32.7 GB，并在所评估的长文档任务上保持接近明文准确率。\n\n## 为什么与兴趣相关\n这项研究直接回应了长上下文私有推理中 Transformer 注意力的二次方瓶颈，验证了利用 SSM 线性递归的可行性，并展示了单 GPU 上运行长序列私有推理的实际效果，对安全机器学习部署具有参考价值。",
-      "summary": "## 一句话结论\nFESC 是一个混合 FHE-MPC（全同态加密与安全多方计算）系统，用于私有长上下文选择性 SSM（状态空间模型）推理，首次实现在单张 GPU 上以原生端到端方式完成 L≥1024 的序列推理。\n\n## 问题与动机\n处理长且敏感的文档需要高效且保护隐私的推理。此前的私有推理系统主要优化或分布式加密 Transformer 注意力，但其对 token 对的二次方计算量会随序列长度增长成为瓶颈。选择性 SSM 具有线性时间递归优势，但直接加密实现会遭遇线性乘法深度、序列级状态驻留或密集 FHE-MPC 转换等问题。\n\n## 方法与技术路线\n- **研究对象与设定**：面向私有长上下文选择性 SSM 推理，采用混合 FHE-MPC 架构。摘要未说明具体协议步骤、参数和数据集。\n- **核心模块：factorized scan-contract**（因式化扫描-收缩）：将输入依赖的转换在转换边界保持紧凑形式；组合转换时无需密集展开；按需流式加载状态块；在转换前收缩输出。这一设计避免了直接加密实现中的密度和驻留问题。\n- **实例化与计算分配**：在 Mamba-2 架构中，线性计算使用 GPU 优化的 CKKS 内核（一种近似同态加密方案）；非线性函数如 SiLU、softplus、exponential 和 RMSNorm 则通过 MPC 协议实现；并采用近似感知微调来配合近似计算。\n- **衔接关系**：FHE 负责线性部分，MPC 处理非线性部分，scan-contract 负责在两者转换边界处保持数据紧凑并管理状态流，从而降低开销。摘要还提到该实现接口兼容 invariant 和 selective 两类 SSM 架构。\n\n## 主要结果\nFESC 被描述为首个能在单 GPU 上完成原生端到端私有长文档推理的系统，支持 L≥1024。在 L=2048 时，一个 12 层 Mamba-base 模型在单张 A100 GPU 上 77.3 分钟完成推理，峰值内存 32.7 GB，并在所评估的长文档任务上保持接近明文准确率。\n\n## 为什么与兴趣相关\n这项研究直接回应了长上下文私有推理中 Transformer 注意力的二次方瓶颈，验证了利用 SSM 线性递归的可行性，并展示了单 GPU 上运行长序列私有推理的实际效果，对安全机器学习部署具有参考价值。",
+      "summary_zh": "# FESC：基于加密状态空间模型重构长上下文私有推理——全文精选\n\n## 核心结论\n\nFESC 是首个面向长文档私有推断的混合 FHE–MPC 系统，用于在加密状态下执行选择性状态空间模型（selective SSM，具体为 Mamba-2）推理。作者声称其核心贡献在于：以**因子化扫描-收缩（factorized scan-contract）** 结构实现加密工作量随序列长度线性增长、乘法深度对数增长，从而绕开 Transformer 注意力二次方瓶颈。在单张 A100 上，12 层 Mamba-base 在 L=2048 下端到端耗时 77.3 分钟，峰值内存 32.7GB；4×A100 路径 36.0 分钟。作者报告，相比 MPCMamba，FESC 的专用非线性协议最多降低 7.7× 在线通信操作。需注意：以上为作者实验观察，而非理论保证；数学上的安全性仅由定理/模拟论证支撑。\n\n## 问题与威胁模型\n\n问题定义：私有长上下文推理（private inference）中，Transformer 的注意力二次方复杂度构成瓶颈；但直接加密 SSM 会遭遇三种失败——线性乘法深度、全序列状态驻留、密集 FHE–MPC 转换。\n\n威胁模型为标准**两方半诚实 MLaaS**：P0 客户端持有私密输入 x 和 CKKS 密钥，P1 服务端持有模型参数 θ 与 CKKS 公钥/求值密钥；单方静态半诚实腐化、不串通。安全性目标由理想功能 **F_SelSSM⟨x,θ,μ⟩→⟨f^dep_θ(x),⊥⟩** 刻画：μ 为公开元数据（模型架构、序列长度、CKKS 参数、近似度、bucket 数等），除 μ、消息大小、固定调度时序和中止状态外不泄露任何信息；客户端除输出外不习得 θ。**定理 1** 声称：若 CKKS 语义安全、MPC 原语和转换模拟安全、预处理与输入无关，则 Π_Infer 安全实现 F_SelSSM。该定理是理论结果，依赖底层假设。\n\n## 方法与关键技术\n\n系统端到端流程如下（参与方：客户端 P0、服务端 P1；输入 x，输出加密最终预测，由客户端解密）：输入投影与卷积在 CKKS 中执行，非线性激活在 MPC 中执行，选择性循环以加密前缀扫描（HEScan）返回，最后输出投影回到 CKKS。全流程构成“FHE–MPC–FHE”交替流水线；其中两处边界转换分别使用 **Π^C_{C2M}（CKKS→MPC）** 与 **Π^C_{M2C}（MPC→CKKS）**。\n\n1. **数据/模型表示与打包**。Mamba-2 递推写为 h_k[h,p,i]=a_k[h]h_{k-1}+x_k[h,p]B_k[g_h,i]，y 经 C_k 收缩、skip/gate、RMSNorm 后由 W_out 投影。每个 token 的扫描包为 (x_k∈R^{H×P}, a_k∈R^H, B_k,C_k∈R^{G×d_s})。核心打包策略为：将 H×P 扩展通道划分为 **E=HP** 维状态块，每块容量 s_state≤n_ckks（复槽），状态块数 **K_s=⌈E·d_s/s_state⌉**；B、C 按 (g,i) 索引对齐。该因子化边界使得输入接口维度为 L(HP+H+2Gd_s)、输出 LHP，而非正比于 L·HP·d_s，从而线性化加密工作量。\n\n2. **密码学原语与转换**。CKKS 侧使用 leveled（无 bootstrapping）近似算术，支持 add、ptmul、ctmul、rot、conj；128-bit 系数模预算下 N=32768/65536 分别对应 881/1782 bits，典型链形如 [60,40×k,60]。MPC 侧为两方算术秘密共享 Z_{2^ℓ} 上的定点数（小数位 F=19，位宽 ℓ=44）；加法与公开标量乘本地完成，乘法用 Beaver 三元组并做安全截断。C2M 转换中，服务端采均匀掩码 r←R_q，客户端仅解密 p+e+r mod q 并在本地解码为模 2^ℓ 份额；M2C 则双方中心提升份额、Ring2Field 至边界模数后由客户端加密、服务端累加。份额模数转换用 Field2Ring/Ring2Field 原语（继承 BLB/SiRNN/EncFormer），FESC 的贡献在于紧凑因子化载荷及其在流水线中的位置。\n\n3. **HEScan 内核**。扫描采用**加密 Brent–Kung 网络**评估仿射映射组合（a_L,s_L)•(a_R,s_R)=(a_Ra_L, a_Rs_L+s_R)，组合节点数 O(L)、组合深度 O(log L)。之所以选 Brent–Kung，源于微基准实验：在各扫描拓扑中其 key-switch 数（L=2048 时 98.0K/层）与延迟最低。状态轴缩减用复数约简：两个实向量配成复信道 v0+iv1，经旋转加法树后一次共轭分离部分和，相比独立归约使旋转次数减半。对于 L>B_blk，采用**常驻块调度**：第一遍计算块摘要并对摘要做 exclusive scan 得传入 carry，第二遍逐块重放注入 carry；仅摘要持久化，修正前缀按需重建，总工作量仅增常数因子。**定理 2**（理论证明）给出：密钥乘法数 N_ctmul=O(L·K_s)、乘法深度 O(log B_blk+log K_blk)=O(log L)、峰值活状态 O(B_blk+K_blk+K_y+K_fac)，且状态块串行处理使 K_s 不进入驻留界。\n\n4. **MPC 非线性协议**。所有非线性激活使用结构特定的低次多项式+比较+选择（mux），固定数据无关调度。MoSiLU/MoSoft 基于 f(-x)=f(x)-x 的偶残差性质，在 [0,τ²] 做 minimax 拟合；NeRMS 用 K-1 个公共桶边界比较选择牛顿迭代初始化器；MMExp 利用 A_h<0、Δ_h≥0 使 z_h≤0，在 [-τ,0] 上多项式逼近并对左尾分流。部署配置为 MoSiLU/MoSoft D4、NeRMS N1、MMExp D4：对应在线原语计数分别为每个激活 2 乘积+2 比较+2 mux、2 乘积+7 比较、5 乘积+1 比较+1 mux。作者据此报告最高 7.7× 在线非线性协议成本减少（实验观察）。\n\n5. **关键优化及复杂度**。整体复杂性：HEScan 乘法深度 O(log L)、峰值驻留 O(B)、通信 O(L(H+E+Gd_s))，均随 L 线性或对数增长；在线通信 C_online=O(L(E+Gd_s+H))，离线 Beaver 预算 T_layer=L(11E+8Gd_s+10H+2)。边界消融显示（L=2048）：FHE 压缩降 1.30×、因子化输入再降 12.4×，合计 16.1× 通信减少；层间密文数从 49955→25955→1958 CTs/layer，在线内存从 99.15→76.46→6.16 GB，12 层 LAN 延迟从 170.3→131.4→10.6 min。\n\n## 安全性\n\nFESC 的安全性属于**理论论证**而非实验测度。理想功能 F_SelSSM 中，泄漏仅限 μ、消息大小及固定调度诱导的时序和中止状态。组件层面：CKKS 隐藏密文；边界转换只解密被掩码后的值（掩码均匀随机）；MPC 侧 Π×、Π_cmp、Π_mux 为模拟安全的固定顺序组合。端到端采用混合论证：固定顺序组合下相邻混合状态不可区分，可为被腐化方构造模拟器。模型明确排除恶意行为、共谋、侧信道与硬件泄漏；L=8192 的安全进位刷新亦不需 bootstrapping，不额外泄露信息。需注意：上述安全论证依赖“有效输入无关预处理”等假设，且半诚实假设限制了实际威胁范围。\n\n## 实验与性能\n\n以下均为作者报告的实验观察（除非注明理论推导）。模型为 Mamba-base（12 层、d_model=768、d_s=128，由 Mamba-2-130M 蒸馏），数据集 SCOTUS/arXiv/Patent，长度 128–4096。\n\n- **精度**：L≥512 时 Mamba-base 在 9 个单元全部匹配或超过 BERT-base，平均高 2.66 个百分点；Plain FESC 相对精确 Mamba-base 平均差 −0.53 点（绝对差 0.62）。加密审计（10% 分层子集，3 seed 共 8010 条）每行距 Plain FESC ≤0.48 个百分点、聚合差距 ≤0.15。\n- **端到端延迟**：单 GPU L=128/256/512/1024/2048/4096 为 4.4/9.0/17.8/38.1/77.3/149.8 min；2 GPU L=2048 为 50.6 min；4 GPU L=2048/4096 为 36.0/68.5 min。L=128→2048 单 GPU 延迟增长 17.6×（近线性），优于 AEGIS 的 26.2×。HEScan 核占约 74% 运行时间（L=2048 时 284.2s/层）。\n- **通信**：在线通信从 4.7GB（L=128）线性增至 73.8GB（L=2048）；对带宽敏感：LAN→WAN1 在 L=2048 增 16.0 min，而 WAN3 相对 WAN2 仅增 1.6 min。\n- **内存**：L=2048 完整 HEScan 需 59.2GB 活状态，超过 40GB 设备；部署的 B_blk=1024 串行进位调度使峰值降至 32.7GB。\n- **与基线对比**：L=2048 单 GPU FESC 快于 AEGIS 四 GPU（83.9 min），GPU·分钟少 4.34×；加密全量评估预计 823 GPU-天/种子/单 A100（作者外推），AEGIS 相应约 3.5×/1.9× 更长。跨 GPU 在 T4/Titan/A100-40/80/H100/H200 均达到 L=2048；扩展至 370M 参数符合 state-chunk 缩放律。\n\n## 局限与阅读判断\n\n**局限（作者声明）**：评估面向半诚实、单查询文档分类，模型为 Mamba-2；Mamba-3 的因子构造将更多工作移入安全非线性路径，构成明显挑战（单层 L=128 时 SISO 179.1s vs Mamba-2 的",
+      "summary": "# FESC：基于加密状态空间模型重构长上下文私有推理——全文精选\n\n## 核心结论\n\nFESC 是首个面向长文档私有推断的混合 FHE–MPC 系统，用于在加密状态下执行选择性状态空间模型（selective SSM，具体为 Mamba-2）推理。作者声称其核心贡献在于：以**因子化扫描-收缩（factorized scan-contract）** 结构实现加密工作量随序列长度线性增长、乘法深度对数增长，从而绕开 Transformer 注意力二次方瓶颈。在单张 A100 上，12 层 Mamba-base 在 L=2048 下端到端耗时 77.3 分钟，峰值内存 32.7GB；4×A100 路径 36.0 分钟。作者报告，相比 MPCMamba，FESC 的专用非线性协议最多降低 7.7× 在线通信操作。需注意：以上为作者实验观察，而非理论保证；数学上的安全性仅由定理/模拟论证支撑。\n\n## 问题与威胁模型\n\n问题定义：私有长上下文推理（private inference）中，Transformer 的注意力二次方复杂度构成瓶颈；但直接加密 SSM 会遭遇三种失败——线性乘法深度、全序列状态驻留、密集 FHE–MPC 转换。\n\n威胁模型为标准**两方半诚实 MLaaS**：P0 客户端持有私密输入 x 和 CKKS 密钥，P1 服务端持有模型参数 θ 与 CKKS 公钥/求值密钥；单方静态半诚实腐化、不串通。安全性目标由理想功能 **F_SelSSM⟨x,θ,μ⟩→⟨f^dep_θ(x),⊥⟩** 刻画：μ 为公开元数据（模型架构、序列长度、CKKS 参数、近似度、bucket 数等），除 μ、消息大小、固定调度时序和中止状态外不泄露任何信息；客户端除输出外不习得 θ。**定理 1** 声称：若 CKKS 语义安全、MPC 原语和转换模拟安全、预处理与输入无关，则 Π_Infer 安全实现 F_SelSSM。该定理是理论结果，依赖底层假设。\n\n## 方法与关键技术\n\n系统端到端流程如下（参与方：客户端 P0、服务端 P1；输入 x，输出加密最终预测，由客户端解密）：输入投影与卷积在 CKKS 中执行，非线性激活在 MPC 中执行，选择性循环以加密前缀扫描（HEScan）返回，最后输出投影回到 CKKS。全流程构成“FHE–MPC–FHE”交替流水线；其中两处边界转换分别使用 **Π^C_{C2M}（CKKS→MPC）** 与 **Π^C_{M2C}（MPC→CKKS）**。\n\n1. **数据/模型表示与打包**。Mamba-2 递推写为 h_k[h,p,i]=a_k[h]h_{k-1}+x_k[h,p]B_k[g_h,i]，y 经 C_k 收缩、skip/gate、RMSNorm 后由 W_out 投影。每个 token 的扫描包为 (x_k∈R^{H×P}, a_k∈R^H, B_k,C_k∈R^{G×d_s})。核心打包策略为：将 H×P 扩展通道划分为 **E=HP** 维状态块，每块容量 s_state≤n_ckks（复槽），状态块数 **K_s=⌈E·d_s/s_state⌉**；B、C 按 (g,i) 索引对齐。该因子化边界使得输入接口维度为 L(HP+H+2Gd_s)、输出 LHP，而非正比于 L·HP·d_s，从而线性化加密工作量。\n\n2. **密码学原语与转换**。CKKS 侧使用 leveled（无 bootstrapping）近似算术，支持 add、ptmul、ctmul、rot、conj；128-bit 系数模预算下 N=32768/65536 分别对应 881/1782 bits，典型链形如 [60,40×k,60]。MPC 侧为两方算术秘密共享 Z_{2^ℓ} 上的定点数（小数位 F=19，位宽 ℓ=44）；加法与公开标量乘本地完成，乘法用 Beaver 三元组并做安全截断。C2M 转换中，服务端采均匀掩码 r←R_q，客户端仅解密 p+e+r mod q 并在本地解码为模 2^ℓ 份额；M2C 则双方中心提升份额、Ring2Field 至边界模数后由客户端加密、服务端累加。份额模数转换用 Field2Ring/Ring2Field 原语（继承 BLB/SiRNN/EncFormer），FESC 的贡献在于紧凑因子化载荷及其在流水线中的位置。\n\n3. **HEScan 内核**。扫描采用**加密 Brent–Kung 网络**评估仿射映射组合（a_L,s_L)•(a_R,s_R)=(a_Ra_L, a_Rs_L+s_R)，组合节点数 O(L)、组合深度 O(log L)。之所以选 Brent–Kung，源于微基准实验：在各扫描拓扑中其 key-switch 数（L=2048 时 98.0K/层）与延迟最低。状态轴缩减用复数约简：两个实向量配成复信道 v0+iv1，经旋转加法树后一次共轭分离部分和，相比独立归约使旋转次数减半。对于 L>B_blk，采用**常驻块调度**：第一遍计算块摘要并对摘要做 exclusive scan 得传入 carry，第二遍逐块重放注入 carry；仅摘要持久化，修正前缀按需重建，总工作量仅增常数因子。**定理 2**（理论证明）给出：密钥乘法数 N_ctmul=O(L·K_s)、乘法深度 O(log B_blk+log K_blk)=O(log L)、峰值活状态 O(B_blk+K_blk+K_y+K_fac)，且状态块串行处理使 K_s 不进入驻留界。\n\n4. **MPC 非线性协议**。所有非线性激活使用结构特定的低次多项式+比较+选择（mux），固定数据无关调度。MoSiLU/MoSoft 基于 f(-x)=f(x)-x 的偶残差性质，在 [0,τ²] 做 minimax 拟合；NeRMS 用 K-1 个公共桶边界比较选择牛顿迭代初始化器；MMExp 利用 A_h<0、Δ_h≥0 使 z_h≤0，在 [-τ,0] 上多项式逼近并对左尾分流。部署配置为 MoSiLU/MoSoft D4、NeRMS N1、MMExp D4：对应在线原语计数分别为每个激活 2 乘积+2 比较+2 mux、2 乘积+7 比较、5 乘积+1 比较+1 mux。作者据此报告最高 7.7× 在线非线性协议成本减少（实验观察）。\n\n5. **关键优化及复杂度**。整体复杂性：HEScan 乘法深度 O(log L)、峰值驻留 O(B)、通信 O(L(H+E+Gd_s))，均随 L 线性或对数增长；在线通信 C_online=O(L(E+Gd_s+H))，离线 Beaver 预算 T_layer=L(11E+8Gd_s+10H+2)。边界消融显示（L=2048）：FHE 压缩降 1.30×、因子化输入再降 12.4×，合计 16.1× 通信减少；层间密文数从 49955→25955→1958 CTs/layer，在线内存从 99.15→76.46→6.16 GB，12 层 LAN 延迟从 170.3→131.4→10.6 min。\n\n## 安全性\n\nFESC 的安全性属于**理论论证**而非实验测度。理想功能 F_SelSSM 中，泄漏仅限 μ、消息大小及固定调度诱导的时序和中止状态。组件层面：CKKS 隐藏密文；边界转换只解密被掩码后的值（掩码均匀随机）；MPC 侧 Π×、Π_cmp、Π_mux 为模拟安全的固定顺序组合。端到端采用混合论证：固定顺序组合下相邻混合状态不可区分，可为被腐化方构造模拟器。模型明确排除恶意行为、共谋、侧信道与硬件泄漏；L=8192 的安全进位刷新亦不需 bootstrapping，不额外泄露信息。需注意：上述安全论证依赖“有效输入无关预处理”等假设，且半诚实假设限制了实际威胁范围。\n\n## 实验与性能\n\n以下均为作者报告的实验观察（除非注明理论推导）。模型为 Mamba-base（12 层、d_model=768、d_s=128，由 Mamba-2-130M 蒸馏），数据集 SCOTUS/arXiv/Patent，长度 128–4096。\n\n- **精度**：L≥512 时 Mamba-base 在 9 个单元全部匹配或超过 BERT-base，平均高 2.66 个百分点；Plain FESC 相对精确 Mamba-base 平均差 −0.53 点（绝对差 0.62）。加密审计（10% 分层子集，3 seed 共 8010 条）每行距 Plain FESC ≤0.48 个百分点、聚合差距 ≤0.15。\n- **端到端延迟**：单 GPU L=128/256/512/1024/2048/4096 为 4.4/9.0/17.8/38.1/77.3/149.8 min；2 GPU L=2048 为 50.6 min；4 GPU L=2048/4096 为 36.0/68.5 min。L=128→2048 单 GPU 延迟增长 17.6×（近线性），优于 AEGIS 的 26.2×。HEScan 核占约 74% 运行时间（L=2048 时 284.2s/层）。\n- **通信**：在线通信从 4.7GB（L=128）线性增至 73.8GB（L=2048）；对带宽敏感：LAN→WAN1 在 L=2048 增 16.0 min，而 WAN3 相对 WAN2 仅增 1.6 min。\n- **内存**：L=2048 完整 HEScan 需 59.2GB 活状态，超过 40GB 设备；部署的 B_blk=1024 串行进位调度使峰值降至 32.7GB。\n- **与基线对比**：L=2048 单 GPU FESC 快于 AEGIS 四 GPU（83.9 min），GPU·分钟少 4.34×；加密全量评估预计 823 GPU-天/种子/单 A100（作者外推），AEGIS 相应约 3.5×/1.9× 更长。跨 GPU 在 T4/Titan/A100-40/80/H100/H200 均达到 L=2048；扩展至 370M 参数符合 state-chunk 缩放律。\n\n## 局限与阅读判断\n\n**局限（作者声明）**：评估面向半诚实、单查询文档分类，模型为 Mamba-2；Mamba-3 的因子构造将更多工作移入安全非线性路径，构成明显挑战（单层 L=128 时 SISO 179.1s vs Mamba-2 的",
       "abstract_guide_zh": "## 一句话结论\nFESC 是一个混合 FHE-MPC（全同态加密与安全多方计算）系统，用于私有长上下文选择性 SSM（状态空间模型）推理，首次实现在单张 GPU 上以原生端到端方式完成 L≥1024 的序列推理。\n\n## 问题与动机\n处理长且敏感的文档需要高效且保护隐私的推理。此前的私有推理系统主要优化或分布式加密 Transformer 注意力，但其对 token 对的二次方计算量会随序列长度增长成为瓶颈。选择性 SSM 具有线性时间递归优势，但直接加密实现会遭遇线性乘法深度、序列级状态驻留或密集 FHE-MPC 转换等问题。\n\n## 方法与技术路线\n- **研究对象与设定**：面向私有长上下文选择性 SSM 推理，采用混合 FHE-MPC 架构。摘要未说明具体协议步骤、参数和数据集。\n- **核心模块：factorized scan-contract**（因式化扫描-收缩）：将输入依赖的转换在转换边界保持紧凑形式；组合转换时无需密集展开；按需流式加载状态块；在转换前收缩输出。这一设计避免了直接加密实现中的密度和驻留问题。\n- **实例化与计算分配**：在 Mamba-2 架构中，线性计算使用 GPU 优化的 CKKS 内核（一种近似同态加密方案）；非线性函数如 SiLU、softplus、exponential 和 RMSNorm 则通过 MPC 协议实现；并采用近似感知微调来配合近似计算。\n- **衔接关系**：FHE 负责线性部分，MPC 处理非线性部分，scan-contract 负责在两者转换边界处保持数据紧凑并管理状态流，从而降低开销。摘要还提到该实现接口兼容 invariant 和 selective 两类 SSM 架构。\n\n## 主要结果\nFESC 被描述为首个能在单 GPU 上完成原生端到端私有长文档推理的系统，支持 L≥1024。在 L=2048 时，一个 12 层 Mamba-base 模型在单张 A100 GPU 上 77.3 分钟完成推理，峰值内存 32.7 GB，并在所评估的长文档任务上保持接近明文准确率。\n\n## 为什么与兴趣相关\n这项研究直接回应了长上下文私有推理中 Transformer 注意力的二次方瓶颈，验证了利用 SSM 线性递归的可行性，并展示了单 GPU 上运行长序列私有推理的实际效果，对安全机器学习部署具有参考价值。",
       "fulltext_source_url": "https://arxiv.org/pdf/2608.17442",
-      "fulltext_status": "failed"
+      "fulltext_status": "success"
     },
     {
       "id": "arxiv_2608.17360",
@@ -1969,11 +2649,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "Foresight-England：开发用于COVID-19大流行期间医疗事件预测的全国规模电子健康记录生成式AI模型",
+      "abstract_zh": "Foresight-England（Foresight-E）是首个全国规模的电子健康记录（EHRs）生成式基础模型，作为严格用于COVID-19研究的研究试点而开发。我们评估了它对大流行的直接和间接效应进行建模的能力。Foresight-E完全在NHS England安全数据环境内从零开始训练，是一个拥有2.43亿参数的transformer解码器。它在大约6100万人的去标识化纵向EHR上进行了训练和评估，整合了初级/二级保健、死亡登记和COVID-19数据。训练和验证使用了2018年11月至2022年12月期间的90%子集（5490万）；剩余10%（610万）被保留用于评估。Foresight-E以自回归方式对患者时间线进行建模，根据既往病史预测下一个医疗事件。在推理时，它以零样本方式运行，无需任务特定训练即可预测其约40,000个代码词汇表中的任何概念。我们的分词方案保留了ICD-10、OPCS-4和SNOMED CT代码的临床粒度，联合表示绝对和相对时间。我们设计了一个针对30天COVID-19住院和死亡的评估框架，包括按人口统计学因素和疫苗接种状态进行的亚组分析。为了评估对未见未来数据的泛化能力以及大流行的间接效应，我们在2023年（超出其训练期）的医疗事件上测试了该模型，并以逻辑回归和XGBoost作为基准。如项目状态部分所述，NHS England已暂停对Foresight-E项目的数据访问，这意味着目前无法获得定量结果。相反，我们分享了我们在分词、架构、训练、推理和评估方面的策略，作为方法论模板以及构建人口规模EHR基础模型所面临挑战的案例研究。"
     },
     {
       "id": "arxiv_2608.16268",
@@ -2037,11 +2717,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "CoM$^3$eT：一种通过联邦多维上下文集成进行医学图像分析的基础模型",
+      "abstract_zh": "医学基础模型在使用有限标注数据训练AI模型时能提升泛化能力，但仍局限于单一专科（如病理学或放射学），以及稀疏或稠密输出（如分类或分割）。在此，我们提出了CoM$^3$eT（Co-representation Multidimensional Multitask Medical Transformer），这是一种医学视觉基础模型，通过注意力机制对多维上下文进行建模，统一了病理学与放射学、稀疏与稠密预测，以及二维与更高维输入。CoM$^3$eT在一个覆盖五个断层成像数据集、四个全标本数据集和三个二维数据集的开放竞赛中优于其他医学基础模型，涵盖稀疏和稠密预测任务以及报告生成。在多种临床应用中适配时，训练少于2.5%的参数即可达到与全量微调相当的性能，使得没有高性能GPU集群的研究成为可能。应用于跨医院的联邦学习时，该方法在互联网连接和消费级硬件条件下取得了与集中式数据训练相当的性能。"
     },
     {
       "id": "arxiv_2608.16224",
@@ -2081,11 +2761,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "STAIR：面向时间问答中可解释推理的语义-时间自动机",
+      "abstract_zh": "通过利用大规模预训练，大语言模型（LLM）无需任务特定训练即可解读多样的时间表达和问题表述。然而，现有的基于提示的神经符号系统仍然依赖LLM同时进行语义解读和精确时间推理。因此，关于时间区间、时间锚点和有序状态的离散决策仍然容易受到概率性错误的影响，且难以验证。我们提出STAIR，一个用于可解释推理的语义-时间自动机（Semantic-Temporal Automaton）。STAIR将语义解读与精确时间推理分离：一个免答案的LLM适配器将复杂的问题表述映射为归一化的时间意图，而一个具有有限控制和带守卫转移的确定性时间自动机在规范化证据上执行相应的策略。遵循规则优先的设计，STAIR无需调用LLM即可解决标准问题，并且仅在规则路径未能产生可执行意图时才应用语义适配。这种方法减少了自由形式的推理，使时间决策可验证且可解释。具体而言，带守卫的执行支持精确的时间点包含关系以及之前/之后的选择，而语义适配处理非精确时间区间和时间锚定查询。在TimeQA-Easy、TimeQA-Hard、TempReason-L2和TempReason-L3数据集上，STAIR在匹配的模型设置下，在TQA任务中持续优于强基线，在使用Qwen2.5-7B和GPT-4o-mini模型时分别实现了16.57%和3.10%的平均F1提升。此外，消融实验和诊断分析表明，STAIR擅长处理边界敏感和顺序敏感的查询，而其带守卫的执行和语义适配分别确保了精确的时间点推理和非精确时间区间的处理。"
     },
     {
       "id": "arxiv_2608.16223",
@@ -2130,13 +2810,14 @@
       ],
       "relevance_reason_zh": "论文为函数秘密共享（FSS/DPF）设计硬件加速器，明确面向安全推理并报告延迟、通信与能耗提升。",
       "relevance_level": "secure_inference",
-      "summary_type": "abstract",
-      "summary_status": "failed",
+      "summary_type": "fulltext",
+      "summary_status": "success",
       "translation_status": "not_requested",
-      "summary_zh": "⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。",
-      "summary": "⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。",
+      "summary_zh": "## 全文精选\n\n### 核心结论\n\n本文提出一种软硬件协同加速系统 DFA（DPF-Focused Accelerator），用于加速函数秘密共享（FSS）的核心原语——分布式点函数（DPF）的生成与评估，从而提升基于 FSS 的私有推理与私有信息检索（PIR）性能。作者声称，与先前 GPU 方案相比，DFA 在私有推理端到端延迟上降低超过 10 倍，通信量最多降低 20 倍，能耗节省超过 5 倍；PIR 吞吐提升超过 5 倍，能耗节省约 10 倍（以上为实验观察结果，见下文实验部分）。其核心洞察是：DPF 占安全推理非线性计算量的 90% 以上并主导离线密钥生成；PIR 中 DPF 评估跨整个数据库域，是主要计算瓶颈。DFA 的贡献在于将 DPF 密钥生成与评估解耦，采用“生成即消费”执行模型，消除可信第三方（TTP）密钥分发、存储和数据移动开销。\n\n### 问题与威胁模型\n\n**问题定义。** 两方 FSS 协议中，Gen(α,β) 生成密钥对(k0,k1)，Eval(ki,x) 得到函数分片，满足 Eval(k0,x)+Eval(k1,x)=f(x)，单个密钥不泄露 f。DPF 实现点函数（f(α)=β，否则为0），DCF 实现比较函数（x>α 时输出 β，否则为0）。DPF 密钥的离线生成与分发构成显著瓶颈：作者给出示例——BERT-Base 单次 FSS 安全推理需生成最多 16.84GB FSS 密钥，LLaMA2-7B 超过 200GB，需从可信第三方经网络分发（此为作者给出的量化示例）；数据库规模 2^20 的单次 PIR 查询需超过一百万次密钥扩展操作。先前工作忽略了密钥生成/分发/存储成本，近期研究表明除非查询率很低，否则这些成本主导性能与能耗（作者基于文献的陈述）。\n\n**威胁模型。** 半诚实安全模型，服务器之间不串通，客户端之间不串通。无 DFA 时假设可信第三方生成并分发 FSS 密钥。DFA 支持两种模式：**不可信模式**仅加速 DPF 评估，不改变协议，安全性完全来自 FSS 协议本身；**可信模式**假设硬件提供机密性与完整性（类似 TPM/TEE），DFA 作为可信第三方在本地生成密钥，隐藏 PRG 种子、计数器和中间状态。DFA 集成于 GPU die，初始化时两个 DFA 互认证并建立共享密钥，主机不可访问。\n\n### 方法与关键技术\n\n以下按端到端流程展开。\n\n**1. 参与方与协议输入输出。** 私有推理场景为两方 MPC：输入 x 分片为[x]0+[x]1，双方不共谋；加法无需通信，乘法与非线性需通信，FSS 用 DCF（比较）和 DPF（查找表）实现非线性算子。PIR 场景为两服务器 DPF-based PIR：客户端将索引 i 编码为点函数，生成两个密钥分发给服务器；每服务器对所有 x 计算 Eval 并与数据库内积，客户端合并响应得 D[i]。密钥为一次性且不可跨查询重用。\n\n**2. 混合硬件架构。** DFA 由固定功能 DPF 引擎（加速 AES-PRG 主导的 DPF 操作）加小型可编程 VPU（处理协议特定前后处理与编排）组成。作者称该架构对 DPF/DCF 重型协议最有效，非 DPF 逻辑依赖 VPU/GPU 路径。DPF 单元为 20 级流水线，预热后每周期完成一次 Gen/Eval 迭代，含 128 位 ADD/XOR 后处理；全路径采用深度优先遍历，将存储从 O(2ⁿ) 降至 O(n·m)，其中 m 为 DPF 单元数。实现含 16 个 DPF 单元、64 个 AES-128 引擎。DPF 引擎不经过 L2，分布式 DPF 单元靠近 L2 bank，预留 DFA 地址范围，采用双缓冲。\n\n**3. 协议重构与生成-消费解耦。** 原有离线阶段由 TTP 生成 FSS 密钥并分发，存在通信、存储、CPU/磁盘传至 GPU 的带宽三重低效。作者重构 FSS 协议，将 DPF 生成与评估合并为“生成即消费”流程：输入为查询索引 x、初始化建立的共享密钥 K、计数器 ctr；输出份额 y_b∈Z_N。用同一 PRG 流驱动生成与评估，中间值立即消费，无需 TTP 显式分发密钥。关键性质是 DPF 生成输入通常是均匀随机 r∈Z_N，或经双射变换 g(r)（如加法、XOR）；作者据此直接采样均匀随机 r̃ 并在 VPU 预处理前独立生成 DPF 密钥，需要原值时用逆变换 g⁻¹(r̃) 恢复；右移无严格逆，用左移并填充均匀随机低位。安全性由模拟证明（理论论证，正文未列细节）。\n\n**4. 端到端执行模型与数据流优化。** 系统消除 CPU、GPU、内存层次间不必要的密钥存储与数据移动，将离线生成、存储、传输、重读改为 GPU 侧生成即用。可信模式下，DPF 密钥和中间状态在 DFA 内消耗并丢弃，不暴露给 CPU/GPU 内存、L2 或全局内存；临时存储由流水线深度决定，不随模型维度扩展。背压机制：输出缓冲满则停顿；慢 VPU 不阻塞 DPF 引擎吞吐。\n\n**5. 关键优化与设计选择。** 作者比较了多种设计：CPU/片外 PRNG 方案仅提供 9–11% 吞吐（受 PCIe 带宽限制，A100 PCIe Gen4 x16 单向 31.5GBps vs DFA 约 290GBps）；集中式 DFA 约 62%（受单内存通道 180GBps 限制）；GPU SM 内 AES 指令需 108 个 AES 引擎、面积 1.69× 且难支持可信模式；每 SM 一个 DFA 面积 1.74× 且单 AES 引擎利用不足。最终选择分布式 DPF 单元靠近 L2 的分区布局。非 DPF 的 128 位整数操作（ADD/MUL/XOR）由 VPU 处理——作者给出每次推理密钥生成的十亿级操作量：如 LLaMA2-7B 需 ADD 0.814G、MUL 0.114G、XOR 0.393G。\n\n### 安全性\n\n- **不可信模式**：作者称即使加速器不可信，仍保留原始 FSS 威胁模型的完整密码学安全保证；该模式主要优化能耗与吞吐，不显著降低私有推理的延迟或通信（作者明确声明）。\n- **可信模式**：DFA 作为 TTP 提供密钥生成，信任边界包括设备身份密钥、证明逻辑、安全密钥存储、计数器/nonce、AES/PRG 引擎、中间状态及未释放的 correction words；CPU/GPU/OS/驱动/网络/内存均不可信。初始化经测量启动和远程证明后，通过不可信网络完成认证密钥交换建立 PRG 种子；证明失败中止。作者声称轻量信任硬件比 CPU/GPU TEE 信任边界更窄，页错误、共享缓存、瞬态执行、Rowhammer 等信道在信任边界外。\n- **理论证明**：作者称协议重构保持功能与输出分布，中间值和最终输出与均匀随机计算不可区分，可用标准模拟范式证明，但正式证明因篇幅省略、见完整版（正文未给出）。\n\n### 实验与性能\n\n**实验设置。** RTL 综合采用 TSMC 28nm，VPU 为开源 Ara RISC-V（16 lane），GPU 模拟用 Accel-Sim；隐私参数 λ=127，份额位宽 64。基线为 GPU 方案：私有推理用 Orca（CNN）、Sigma（Transformer）；PIR 用 GPU-DPF 系统。负载为 ResNet-50、BERT-Base、GPT-Neo、LLaMA2-7B，假设 LAN（1GBps，0.05ms RTT）与 WAN（70MBps，70ms RTT）。PIR 数据库 16k–4M 条目。实验节点：Intel Xeon Gold 6448Y CPU、256GB 内存、A100 GPU，部署 16 个 DPF 单元。\n\n**私有推理结果（每查询，端到端含离线，与 GPU 基线相比）。** 离线通信从数十至数百 GB 降至亚 GB；CPU-GPU 通信减少约 7.5–62 倍。可信 DFA 的 GaC 模式下，ResNet-50 离线通信 0.02GB，BERT-Base 0.1GB，GPT-Neo 0.24GB，LLaMA2-7B 0.81GB；LAN 延迟分别为 0.73s、1.42s、5.93s、18.0s；WAN 延迟达 18.0s、46.4s、101s、193s。LAN 下延迟提升超 10 倍，WAN 下较小。能耗改善常超 5 倍；不可信模式能耗节省略小，但端到端延迟仅小幅改善。瓶颈主要是离线通信数据移动，评估计算占比 <30%。无生成-消费优化时仍存在 CPU-GPU 流量，显示该优化重要性。\n\n**PIR 结果。** 16k 条目吞吐提升 8.52 倍、能耗/请求降低 14.3 倍；1M 条目提升 6.31 倍、能耗降低 10.5 倍；更大数据库加速更大。PIR 为计算受限：基线 GPU 利用率近 100%，DFA 系统 GPU 仅约 20GOPS，DFA 成为瓶颈。16 个 DPF 单元 720MHz 理论峰值约 350GBps，实测约 290GBps。ChaCha20 PRG 可再获 1.5–2 倍加速。\n\n**硬件成本（实验观察）。** 28nm 下全部 DFA（含控制单元及内存子系统）面积 7.67mm²、功耗 1683.5mW；7nm 下面积 0.239mm²、功耗 631mW。开销由内存主导（64KB SRAM、8KB ROM）。受 SM–L2 互连延迟（约 200 周期）限制。\n\n### 局限与阅读判断\n\n作者列出的局限包括：物理攻击与实现漏洞需标准硬件加固；全面侧信道分析留待未来工作；不可信 DFA 不改善延迟/通信瓶颈。可扩展性方面：内存带宽是硬上限，A100 聚合 L2 读带宽约 7TBps；硬件翻倍可近似线性提升性能，但受面积与功耗限制；条目大小超过 16KB 时系统转为计算受限，增加 DFA 容量不再改善端到端吞吐，条目增大时相对加速收益下降。此外，正式安全证明未包含在提取的正文中，属“见完整版”的作者声明；PIR 实验的数据库是否合成、具体批量大小等细节，未从可提取正文完全确认。总体而言，本文的核心贡献是识别 DPF 密钥分发与数据移动为 FSS 实际瓶颈，并通过硬件/软件协同的生成-消费设计予以消除；对大规模模型私有推理与大规模数据库 PIR 场景具有明确参考价值。",
+      "summary": "## 全文精选\n\n### 核心结论\n\n本文提出一种软硬件协同加速系统 DFA（DPF-Focused Accelerator），用于加速函数秘密共享（FSS）的核心原语——分布式点函数（DPF）的生成与评估，从而提升基于 FSS 的私有推理与私有信息检索（PIR）性能。作者声称，与先前 GPU 方案相比，DFA 在私有推理端到端延迟上降低超过 10 倍，通信量最多降低 20 倍，能耗节省超过 5 倍；PIR 吞吐提升超过 5 倍，能耗节省约 10 倍（以上为实验观察结果，见下文实验部分）。其核心洞察是：DPF 占安全推理非线性计算量的 90% 以上并主导离线密钥生成；PIR 中 DPF 评估跨整个数据库域，是主要计算瓶颈。DFA 的贡献在于将 DPF 密钥生成与评估解耦，采用“生成即消费”执行模型，消除可信第三方（TTP）密钥分发、存储和数据移动开销。\n\n### 问题与威胁模型\n\n**问题定义。** 两方 FSS 协议中，Gen(α,β) 生成密钥对(k0,k1)，Eval(ki,x) 得到函数分片，满足 Eval(k0,x)+Eval(k1,x)=f(x)，单个密钥不泄露 f。DPF 实现点函数（f(α)=β，否则为0），DCF 实现比较函数（x>α 时输出 β，否则为0）。DPF 密钥的离线生成与分发构成显著瓶颈：作者给出示例——BERT-Base 单次 FSS 安全推理需生成最多 16.84GB FSS 密钥，LLaMA2-7B 超过 200GB，需从可信第三方经网络分发（此为作者给出的量化示例）；数据库规模 2^20 的单次 PIR 查询需超过一百万次密钥扩展操作。先前工作忽略了密钥生成/分发/存储成本，近期研究表明除非查询率很低，否则这些成本主导性能与能耗（作者基于文献的陈述）。\n\n**威胁模型。** 半诚实安全模型，服务器之间不串通，客户端之间不串通。无 DFA 时假设可信第三方生成并分发 FSS 密钥。DFA 支持两种模式：**不可信模式**仅加速 DPF 评估，不改变协议，安全性完全来自 FSS 协议本身；**可信模式**假设硬件提供机密性与完整性（类似 TPM/TEE），DFA 作为可信第三方在本地生成密钥，隐藏 PRG 种子、计数器和中间状态。DFA 集成于 GPU die，初始化时两个 DFA 互认证并建立共享密钥，主机不可访问。\n\n### 方法与关键技术\n\n以下按端到端流程展开。\n\n**1. 参与方与协议输入输出。** 私有推理场景为两方 MPC：输入 x 分片为[x]0+[x]1，双方不共谋；加法无需通信，乘法与非线性需通信，FSS 用 DCF（比较）和 DPF（查找表）实现非线性算子。PIR 场景为两服务器 DPF-based PIR：客户端将索引 i 编码为点函数，生成两个密钥分发给服务器；每服务器对所有 x 计算 Eval 并与数据库内积，客户端合并响应得 D[i]。密钥为一次性且不可跨查询重用。\n\n**2. 混合硬件架构。** DFA 由固定功能 DPF 引擎（加速 AES-PRG 主导的 DPF 操作）加小型可编程 VPU（处理协议特定前后处理与编排）组成。作者称该架构对 DPF/DCF 重型协议最有效，非 DPF 逻辑依赖 VPU/GPU 路径。DPF 单元为 20 级流水线，预热后每周期完成一次 Gen/Eval 迭代，含 128 位 ADD/XOR 后处理；全路径采用深度优先遍历，将存储从 O(2ⁿ) 降至 O(n·m)，其中 m 为 DPF 单元数。实现含 16 个 DPF 单元、64 个 AES-128 引擎。DPF 引擎不经过 L2，分布式 DPF 单元靠近 L2 bank，预留 DFA 地址范围，采用双缓冲。\n\n**3. 协议重构与生成-消费解耦。** 原有离线阶段由 TTP 生成 FSS 密钥并分发，存在通信、存储、CPU/磁盘传至 GPU 的带宽三重低效。作者重构 FSS 协议，将 DPF 生成与评估合并为“生成即消费”流程：输入为查询索引 x、初始化建立的共享密钥 K、计数器 ctr；输出份额 y_b∈Z_N。用同一 PRG 流驱动生成与评估，中间值立即消费，无需 TTP 显式分发密钥。关键性质是 DPF 生成输入通常是均匀随机 r∈Z_N，或经双射变换 g(r)（如加法、XOR）；作者据此直接采样均匀随机 r̃ 并在 VPU 预处理前独立生成 DPF 密钥，需要原值时用逆变换 g⁻¹(r̃) 恢复；右移无严格逆，用左移并填充均匀随机低位。安全性由模拟证明（理论论证，正文未列细节）。\n\n**4. 端到端执行模型与数据流优化。** 系统消除 CPU、GPU、内存层次间不必要的密钥存储与数据移动，将离线生成、存储、传输、重读改为 GPU 侧生成即用。可信模式下，DPF 密钥和中间状态在 DFA 内消耗并丢弃，不暴露给 CPU/GPU 内存、L2 或全局内存；临时存储由流水线深度决定，不随模型维度扩展。背压机制：输出缓冲满则停顿；慢 VPU 不阻塞 DPF 引擎吞吐。\n\n**5. 关键优化与设计选择。** 作者比较了多种设计：CPU/片外 PRNG 方案仅提供 9–11% 吞吐（受 PCIe 带宽限制，A100 PCIe Gen4 x16 单向 31.5GBps vs DFA 约 290GBps）；集中式 DFA 约 62%（受单内存通道 180GBps 限制）；GPU SM 内 AES 指令需 108 个 AES 引擎、面积 1.69× 且难支持可信模式；每 SM 一个 DFA 面积 1.74× 且单 AES 引擎利用不足。最终选择分布式 DPF 单元靠近 L2 的分区布局。非 DPF 的 128 位整数操作（ADD/MUL/XOR）由 VPU 处理——作者给出每次推理密钥生成的十亿级操作量：如 LLaMA2-7B 需 ADD 0.814G、MUL 0.114G、XOR 0.393G。\n\n### 安全性\n\n- **不可信模式**：作者称即使加速器不可信，仍保留原始 FSS 威胁模型的完整密码学安全保证；该模式主要优化能耗与吞吐，不显著降低私有推理的延迟或通信（作者明确声明）。\n- **可信模式**：DFA 作为 TTP 提供密钥生成，信任边界包括设备身份密钥、证明逻辑、安全密钥存储、计数器/nonce、AES/PRG 引擎、中间状态及未释放的 correction words；CPU/GPU/OS/驱动/网络/内存均不可信。初始化经测量启动和远程证明后，通过不可信网络完成认证密钥交换建立 PRG 种子；证明失败中止。作者声称轻量信任硬件比 CPU/GPU TEE 信任边界更窄，页错误、共享缓存、瞬态执行、Rowhammer 等信道在信任边界外。\n- **理论证明**：作者称协议重构保持功能与输出分布，中间值和最终输出与均匀随机计算不可区分，可用标准模拟范式证明，但正式证明因篇幅省略、见完整版（正文未给出）。\n\n### 实验与性能\n\n**实验设置。** RTL 综合采用 TSMC 28nm，VPU 为开源 Ara RISC-V（16 lane），GPU 模拟用 Accel-Sim；隐私参数 λ=127，份额位宽 64。基线为 GPU 方案：私有推理用 Orca（CNN）、Sigma（Transformer）；PIR 用 GPU-DPF 系统。负载为 ResNet-50、BERT-Base、GPT-Neo、LLaMA2-7B，假设 LAN（1GBps，0.05ms RTT）与 WAN（70MBps，70ms RTT）。PIR 数据库 16k–4M 条目。实验节点：Intel Xeon Gold 6448Y CPU、256GB 内存、A100 GPU，部署 16 个 DPF 单元。\n\n**私有推理结果（每查询，端到端含离线，与 GPU 基线相比）。** 离线通信从数十至数百 GB 降至亚 GB；CPU-GPU 通信减少约 7.5–62 倍。可信 DFA 的 GaC 模式下，ResNet-50 离线通信 0.02GB，BERT-Base 0.1GB，GPT-Neo 0.24GB，LLaMA2-7B 0.81GB；LAN 延迟分别为 0.73s、1.42s、5.93s、18.0s；WAN 延迟达 18.0s、46.4s、101s、193s。LAN 下延迟提升超 10 倍，WAN 下较小。能耗改善常超 5 倍；不可信模式能耗节省略小，但端到端延迟仅小幅改善。瓶颈主要是离线通信数据移动，评估计算占比 <30%。无生成-消费优化时仍存在 CPU-GPU 流量，显示该优化重要性。\n\n**PIR 结果。** 16k 条目吞吐提升 8.52 倍、能耗/请求降低 14.3 倍；1M 条目提升 6.31 倍、能耗降低 10.5 倍；更大数据库加速更大。PIR 为计算受限：基线 GPU 利用率近 100%，DFA 系统 GPU 仅约 20GOPS，DFA 成为瓶颈。16 个 DPF 单元 720MHz 理论峰值约 350GBps，实测约 290GBps。ChaCha20 PRG 可再获 1.5–2 倍加速。\n\n**硬件成本（实验观察）。** 28nm 下全部 DFA（含控制单元及内存子系统）面积 7.67mm²、功耗 1683.5mW；7nm 下面积 0.239mm²、功耗 631mW。开销由内存主导（64KB SRAM、8KB ROM）。受 SM–L2 互连延迟（约 200 周期）限制。\n\n### 局限与阅读判断\n\n作者列出的局限包括：物理攻击与实现漏洞需标准硬件加固；全面侧信道分析留待未来工作；不可信 DFA 不改善延迟/通信瓶颈。可扩展性方面：内存带宽是硬上限，A100 聚合 L2 读带宽约 7TBps；硬件翻倍可近似线性提升性能，但受面积与功耗限制；条目大小超过 16KB 时系统转为计算受限，增加 DFA 容量不再改善端到端吞吐，条目增大时相对加速收益下降。此外，正式安全证明未包含在提取的正文中，属“见完整版”的作者声明；PIR 实验的数据库是否合成、具体批量大小等细节，未从可提取正文完全确认。总体而言，本文的核心贡献是识别 DPF 密钥分发与数据移动为 FSS 实际瓶颈，并通过硬件/软件协同的生成-消费设计予以消除；对大规模模型私有推理与大规模数据库 PIR 场景具有明确参考价值。",
       "abstract_guide_zh": "⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。",
-      "fulltext_status": "failed"
+      "fulltext_status": "success",
+      "fulltext_source_url": "https://arxiv.org/pdf/2608.16223"
     },
     {
       "id": "iacr_2026/1711",
@@ -2205,11 +2886,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "TokenSTFormer：一种用于青少年特发性脊柱侧弯筛查中整体运动分析的标记化时空注意力模型",
+      "abstract_zh": "青少年特发性脊柱侧弯（AIS）是一种常见的青少年脊柱畸形，如果未经治疗，可能导致严重的健康后果。传统的筛查方法受到主观解读、依赖专业知识以及可扩展性低的限制。为了应对这些挑战，我们提出了ScoliGait数据集，该数据集包含1,516个步态视频片段及对应的X光记录。我们还引入了TokenSTFormer，这是一种新颖的模型，通过标记化时空语义来增强特征表示和收敛性。我们的模型达到了最先进的性能，在包括准确率0.79在内的关键指标上超越了普通的Vision Transformer编码器。本研究凸显了利用源自步态视频的整体运动特征和基于注意力的模型进行可扩展、成本效益高的AIS筛查的潜力，为未来脊柱侧弯检测的临床应用铺平了道路。"
     },
     {
       "id": "arxiv_2608.16118",
@@ -2243,11 +2924,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "评估LLMs的数学能力需要理解数学创造性的各种机制",
+      "abstract_zh": "我们应当如何评估大型语言模型能否进行数学发明？我认为这个问题目前界定不足：数学创造性并非一种能力，而是多种机制上不同的意义建构模式——对数学实践的反思性内省、来自科学的类比引入、问题驱动的建构，以及遥远领域之间的桥接——再加上一个进一步的、横切性的区分：因观察到模式而追求的意义与因策略上需要而追求的意义，我通过猜想形成的案例来阐述这一区分。这些机制很可能是不可替代的，因此在一个机制上的能力不会迁移到其他机制上。通过将每种机制植根于一个历史案例研究和对当前基于Transformer系统的架构层面解释，我提出当今模型的能力集中在由对现有构建模块的重组和搜索所塑造的模式中；如果这一描述成立，其余模式原则上无法企及，而不仅仅是更慢——尽管这一描述是否成立本身是一个开放的经验性问题。由于随着AI生成证明能力的提高，证明变得越来越廉价——这一转变正是该领域自身的领军人物目前所诊断的——数学价值正迁移至当前系统尚无法执行的那些模式，对AI数学能力的评估应围绕这一分类法来组织，而非围绕将其混为一谈的总体基准。"
     },
     {
       "id": "arxiv_2608.16114",
@@ -2450,11 +3131,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "边界上的治理：智能体分解如何降低策略合规性",
+      "abstract_zh": "现有的智能体基准测试只询问智能体是否完成了任务。我们则询问它是否在策略范围内完成了任务。我们引入了Fiducia-bench，一个用于评估金融智能体可治理性的基准测试——即它们是否在必要时升级、在要求时弃权，并留下可审计的轨迹——并用它来研究一个此前没有任何基准测试涉及的问题：将智能体分解为多个组件是否会降低其治理能力？答案是肯定的，且其机制是具体的。由一个组件发现的与策略相关的事实，在交接边界处到达必须据此采取行动的组件之前会被削弱。在一项涉及100个KYC/AML任务变体、两种模型和三种架构的626个回合的实验中，一个32B开放权重模型在单循环基线下降解了0%的已发现事实，在固定流水线下为56%，在编排器-子智能体架构下为85%（所有情况均处于约束距离2）。一个更强的模型（gpt-4.1-mini）在相同条件下降解了3-6%，这表明分解的治理成本在一定程度上是模型能力的函数。至关重要的是，同样的机制既会产生不足升级，也会产生过度升级，具体取决于被丢弃的事实是风险信号还是免责信号。该基准测试、所有任务及验证框架均为开源。"
     },
     {
       "id": "arxiv_2608.16050",
@@ -4183,6 +4864,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-19T03:10:57.570428Z",
-  "total_count": 104
+  "last_updated": "2026-08-20T03:10:11.854703Z",
+  "total_count": 121
 }
