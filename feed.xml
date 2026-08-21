@@ -4,13 +4,398 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Thu, 20 Aug 2026 03:29:46 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 03:24:14 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training</title>
+      <title>面向结构化电子健康记录的临床预测任务的可解释Transformer模型</title>
+      <link>https://arxiv.org/abs/2608.20315</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20315</guid>
+      <description>英文原题：Explainable Transformer Models for Clinical Prediction Tasks on Structured Electronic Health Records
+
+基于结构化电子健康记录（EHRs）的预测模型仍然是医疗保健机器学习领域的核心，但很少有模型同时强调定量实验室信息和针对输入医疗事件的可解释性。我们提出了BERT-LER，一种面向编码EHR时间线的BERT风格模型，该模型在包含7500万患者的去标识化EHR数据集上进行预训练和微调，将实验室检测结果编码为离散词元，同时通过基于百分位的分箱保留分级信息，并配对使用积分梯度（Integrated Gradients）以获得基于输入EHR序列的词元级归因。我们在公开的EHRShot基准套件和基于真实世界数据的哮喘严重程度进展研究中评估了我们的方法。这通过将实验室值表示和可解释性统一在单一框架中，填补了EHR基础模型风格建模中的方法论空白，同时评估了预测性能和解释是否都能推广到标准临床预测任务之外。在EHRShot和哮喘任务中，BERT-LER的预测性能与公开可用的基准模型相当，且在实验室相关任务上通常超过这些模型，并提供了与临床已知风险因素一致的归因。我们的架构和可解释性方法可应用于许多治疗领域以及使用在结构化EHR上训练的语言模型的预测任务。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>面向解剖无关分割的层次特征调制的提示条件通道注意力</title>
+      <link>https://arxiv.org/abs/2608.20229</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20229</guid>
+      <description>英文原题：Prompt-Conditioned Channel Attention for Hierarchical Feature Modulation toward Anatomy-Agnostic Segmentation
+
+解剖学上合理的分割由于低对比度、模糊边界和模态特异性伪影仍然具有挑战性。交互式分割已成为一种有前景的策略，用于引导特征提取并改善定位，特别是在结构模糊区域。然而，现有方法通过后期融合整合提示，并且缺乏跨层次特征表示的提示驱动通道级调制的显式机制，限制了它们捕获更深层上下文和模态特异性变化的能力。为了解决这些限制，我们引入了提示条件通道注意力（PCCA），一种新颖的调制机制，能够在编码器-解码器网络内实现语义提示的深度、层次化整合。PCCA通过池化提取紧凑的通道描述符，将其投影到共享空间，并通过门控激励机制融合它们以计算提示感知的通道注意力权重。这些权重自适应地重新校准多个网络阶段中的特征响应，实现提示条件化、语义丰富的层次表示。在此基础上，我们提出了PROMISE-Net，实例化两种网络变体：卷积模型（PROMISE-CNN）和基于Transformer的模型（PROMISE-Txformer）。在ISIC-Lesion、Kvasir-Polyp、CAMUS-Cardiac和Kvasir-Instrument基准上，将PCCA集成到PROMISE-CNN中相对于基线U-Net分别产生了10.4%、8.7%、0.8%和3.4%的相对IoU增益，而PROMISE-Txformer相对于基线UNETR分别实现了7.6%、23.0%、2.1%和1.1%的相应增益。这些结果表明在不同架构、成像模态和解剖目标上的一致改进，将PCCA和PROMISE-Net确立为医学图像分割中提示感知层次特征调制的可扩展、可泛化框架。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Daedalus-150M：为CPU推理设计的卷积-注意力混合模型</title>
+      <link>https://arxiv.org/abs/2608.20210</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20210</guid>
+      <description>英文原题：Daedalus-150M: A Convolution-Attention Hybrid Designed for CPU Inference
+
+小语言模型通常像大模型一样构建，之后才被压缩到CPU上运行。我们反其道而行之：首先确定目标——单个用户、一次一个token、4比特权重、普通CPU，然后选择适合它的架构。最终模型在18个块中仅6个保留完整注意力，其余12个使用短卷积，其记忆宽度为两个时间步，无论对话多长都不变，因此网络三分之二的部分从不重新读取不断增长的缓存。该模型在59.9B token上从头训练，在训练开始前设定的42.20基线之上，于五任务基准上取得47.31分。它超越了GPT-2 124M、Pythia-160M、OPT-125M和GPT-neo-125M（这些模型均使用3到6倍的数据训练），并超过了MobileLLM-125M的已发表分数，尽管后者看到了万亿级token。验证集的bits-per-byte为0.8685。为了检验架构而非训练配方，我们在相同数据上训练了一个同等规模的常规全注意力模型，并在评分前写下了获胜条件。混合模型在所选质量指标上以0.81%的优势获胜，在下游任务上与之持平，生成的4比特文件小6.3%，在2048 token上下文下解码速度快1.76倍，与外部相似规模模型相比快2.08倍。在所有测量中，速度优势在空上下文时接近零，并随长度增长而增大——这正是该机制所预测的，而单纯的更精简模型不会表现出这一点。简单的带宽计算仅预测1.17倍，因此仅内存容量无法解释这一差距。我们还报告了不奏效的部分：未缓解的4比特质量损失，约一半卷积通道最终无效且无法移除，以及超出该模型规模合理范围的词表大小。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>从非侵入性脑电图中解码默读</title>
+      <link>https://arxiv.org/abs/2608.20186</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20186</guid>
+      <description>英文原题：Decoding silent reading from non-invasive EEG
+
+非侵入式内心言语解码面临一个根本性的数据问题：无法收集将大脑活动与个体自发内心独白配对的数据集，而现有的代理范式（提示性重复和回顾性报告的生成性内心言语）采集速度慢、时间锁定不佳，且受试者依从性无法验证。因此，我们将默读视为一种可扩展的代理任务，并探究对比解码器能从中提取多少词汇和语义信息。我们报告了一项开放词汇分析，该分析记录了来自单一密集采样参与者在393轮（约49小时）19通道干电极脑电图中的约24万次单词呈现。连续叙事文本中的单词以快速序列视觉呈现方式展示，每次试验的排版均随机化，以部分去相关单词身份与低级视觉形式。一个卷积脑电图编码器（可选后接因果Transformer）通过CLIP式对比目标进行训练，将短时脑电图窗口与来自大型语言模型的所呈现单词的隐状态嵌入对齐。解码（以按词分组的top-10检索与置换基线进行评估）可靠地高于随机水平，扩展到中频和稀有单词，并随训练数据量呈对数线性增长，且无饱和迹象。移除枕叶和后颞电极后，单词级增益减少了约三分之一，但上下文追踪保持不变。控制分析将单词级解码与叙事上下文追踪以及由Transformer位置嵌入引入的非神经位置先验区分开来。这些结果证实，在默读期间可从脑电图中恢复开放词汇的单词级信息，且解码受数据限制而非饱和。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>视觉Transformer训练过程中的特征演化与迁移</title>
+      <link>https://arxiv.org/abs/2608.20134</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20134</guid>
+      <description>英文原题：Feature Evolution and Migration during Vision Transformer Training
+
+我们通过沿两个维度——网络深度（层）和训练时间（轮次）——可视化训练过程，提出了一种关于视觉Transformer（ViTs）中特征演化的新视角。我们采用稀疏自编码器（SAEs）从CLS-token表示中提取候选稀疏特征，并比较它们在不同epoch-层对上的激活概况。这使我们能够研究从表示级相似性度量中无法直接看到的特征级动态。此外，我们展示了这一特征演化框架如何使我们能够描述特征迁移，即训练过程中特征最可检测层的变化。我们的实验表明，迁移集中在训练早期，更多发生在前面的层而非更深的层，并随着特征组织的稳定而减少。我们进一步发现，深层比浅层更早且更强烈地稳定下来。结果表明，我们的方法可作为理解ViTs如何学习和演化的工具。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Privacy-Preserving Detection of Rare Disease-Associated Cell Subsets via Secure Multi-Party Computation</title>
+      <link>https://arxiv.org/abs/2608.20118</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20118</guid>
+      <description># 全文精选
+
+## 核心结论
+
+本文提出了一种基于安全多方计算（MPC）的 CellCnn 训练与推理框架，用于从高维单细胞数据中检测频率可低至 0.01% 的疾病相关细胞亚群。该方法使多医疗机构无需共享原始数据即可协作训练模型，全程在秘密分享数据上完成运算，参与方与计算服务器均不看到原始数据或中间值。实验表明，在 CMV 与 AML 两个公开数据集上，该方案（称 Ours）的分类准确率与明文 CellCnn 相当，并优于已有 MPC 方案 PriCell；在 AML MRD 回归任务上，Ours 的 Pearson 相关系数为 0.98，接近明文水平的 0.99。需注意，上述结果均为实验观察，作者并未给出安全性定理证明。
+
+## 问题与威胁模型
+
+**问题**：单中心拥有的单细胞数据量不足，且单细胞数据高度敏感，受 GDPR/HIPAA 约束，因此需要多中心协作但不可共享原始数据。
+
+**威胁模型**：采用三方 MPC、半诚实安全模型、诚实多数假设；最多一方被腐化，各方不串谋。原始数据、模型更新、中间激活始终以秘密分享形式存在，仅最终约定输出被重构。作者明确说明，输出本身的泄露（如成员推断、模型反演）不在 MPC 威胁模型覆盖范围内。已有方案 PriCell 基于多方同态加密、被动安全对抗最多 N−1 方合谋，但省略 ReLU 与偏置项、仅支持分类，且要求数据方全程在线——本文针对这些不足进行改进。
+
+## 方法与关键技术
+
+以下为端到端协议流程，依据正文证据整理：
+
+1. **参与方与输入输出**：两个计算代理 P0、P1 和辅助方 P2（Helper）。数据方为医疗机构，将每个数值拆成两个随机分享分别发给 P0、P1。训练与推理全程在秘密分享上进行，数据方只需提供分享，不必保持在线；结束时仅重构约定输出。
+
+2. **数据与模型表示**：使用环 Z₂^64 上的 2-out-of-2 加法秘密分享，实数值用定点表示。模型结构沿用 CellCnn，包含卷积层与全连接层，并保留偏置项。
+
+3. **密码学原语**：加法在本地完成、无通信；乘法需要 P2 预计算相关随机性（Beaver 三元组）以辅助交互，P2 不接触未掩码的分享。
+
+4. **协议阶段与优化**：为适配 MPC，作者做了若干关键修改——用带动量的小批量 SGD 替换 Adam（动量更新仅含本地操作）；ReLU 原生支持，无需近似；采用均值池化（无需通信）；将 softmax/交叉熵替换为逐类 sigmoid one-vs-rest，sigmoid 用三次最小二乘多项式 σ(z) ≈ 0.5 + 0.23323z − 0.00981z³ 近似，适用范围 z ∈ [−3,3]，全连接层输出先裁剪到该区间；回归头使用 tanh 输出和 MSE 损失，通过掩码安全指数与除法计算。
+
+5. **模块衔接与执行流程**：数据方完成秘密分享分发 → P0/P1 在执行训练轮次时，层间前向传播中的卷积、池化、激活均在分享域内完成，乘法步骤借助 P2 的 Beaver 三元组交互实现 → 反向传播与带动量参数更新同样在分享域内进行 → 训练完成后，模型参数用于分享域内的推理 → 最后仅重构输出。
+
+6. **性能特征**：正文未给出显式的通信轮次/复杂度数据（未从可提取正文确认）。运行时间实验显示，在 5 Gbps、0.8 ms RTT 的 LAN 上训练 CMV/NK 20 轮约 1200 秒；限至 1 Gbps 时约 2700 秒，表明带宽为主要瓶颈。
+
+## 安全性
+
+方案在半诚实安全模型、诚实多数假设下保护原始数据和中间值的机密性；参与方与计算服务器在整个流程中不看到明文数据或中间激活。作者指出，威胁模型可加强为恶意安全，且输出发布导致的泄露不在 MPC 覆盖范围内，建议与差分隐私结合。正文未从可提取部分给出形式化安全证明。
+
+## 实验与性能
+
+- **数据集与设置**：CMV 数据集含 20 名供者、37 个标记/细胞，11 CMV−、9 CMV+，14 训练/6 测试，10 次划分；AML 数据集含 16 个标记/细胞，三类（健康、正常核型、CBF 易位），7 训练/6 测试。AML MRD 回归将 CBF 白血病原始细胞以 log 均匀比例 f ∈ [0.1%, 5%] 混入健康骨髓，10% 训练样本令 f=0。比较对象为 Ours、明文 CellCnn、PriCell，使用相同划分与小批量顺序。
+- **CMV 分类**：Ours 多细胞准确率 0.727±0.141、表型准确率 0.681±0.146；明文 CellCnn 为 0.721±0.173、0.716±0.158；PriCell 为 0.633±0.127、0.649±0.146。Ours 对 PriCell 在多细胞指标上显著性 p=0.004（9/10 划分占优）；表型统计无显著差异。
+- **AML 分类**：明文 CellCnn 多细胞准确率 1.000±0.000；Ours 多细胞 0.935±0.047、表型 0.916±0.088；PriCell 分别为 0.898±0.055、0.900±0.086；Ours 多细胞优势 8/10 划分，p=0.08。
+- **AML MRD 回归**：42 个测试多细胞输入（7 个频率，每频率 6 重复），Ours Pearson r=0.98、MAE=1.0 个百分点；明文 r=0.99、MAE=0.8 个百分点。
+- **运行时间**：如上文所述；PriCell 在 1 Gbps、N=10 活动方时约 1550 秒，但部署模式不同，不可直接对比。
+
+## 局限与阅读判断
+
+**局限**：正文明确列出——仍为半诚实安全模型，可加强为恶意安全；输出发布泄露不在 MPC 覆盖范围内；基准测试继承了小队列和合成回归真值，需在更大真实队列和连续临床生物标志物上验证。此外，正文未给出显式的通信轮次/复杂度分析。
+
+**阅读判断**：本文的工作价值在于将 MPC 适配到 CellCnn 这一特定深度学习架构时做了细致的协议层优化（ReLU 原生支持、均值池化免通信、多项式近似 sigmoid），使安全训练精度逼近明文。但其安全性论证仅停留在半诚实模型且无形式化证明，实际临床部署前仍需面对恶意安全、输出隐私和更大规模验证三方面挑战。数据与代码已公开（https://github.com/mdppml/CECILIA-CellCNN），CMV 与 AML 数据集源自原始 CellCnn 研究，可公开获取。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>MPC</category>
+      <category>multi-party computation</category>
+    </item>
+    <item>
+      <title>TrustRAG: Blockchain-Enhanced RAG via Committee-Based Credibility Scoring</title>
+      <link>https://arxiv.org/abs/2608.20097</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20097</guid>
+      <description>## 一句话结论
+
+TrustRAG 在检索增强生成（RAG，让大语言模型从外部知识库获取信息的技术）中引入“委员会评分 + 区块链存证”，为文档可信度提供可验证、防篡改的信任评分机制。
+
+## 问题与动机
+
+RAG 虽能让大语言模型（LLM，Large Language Model）利用实时、领域特定的信息，但现有 RAG 系统大多依赖缺少监督的集中式数据库。文档的来源是否真实、是否被篡改、是否值得信任，都难以验证。在医疗、金融、物流、法律等对检索内容时效性和准确性要求很高的场景中，一份错误或被恶意修改的文档可能直接导致错误决策。
+
+## 方法与技术路线
+
+TrustRAG 是一个“委员会驱动、区块链背书”的 RAG 系统，核心流程如下：
+
+- **研究对象与设定**：面向 RAG 检索链路中“文档入库前”和“排序使用时”两个环节。文档不是直接进入数据库，而是先经过一个由领域专家组成的委员会评审。
+- **关键步骤与模块**：
+  1. **委员会认证**：文档在使用前，由领域专家委员会通过零知识协议（zero-knowledge protocol，一种能在不泄露具体内容的情况下证明某个陈述为真的密码学技术）完成认证。这样做的目的是让文档通过专家审核，同时不暴露评审细节。
+  2. **信任分数合成**：委员会成员各自产生“隐藏评分”，这些评分通过安全多方计算（secure multi-party computation，MPC，允许多方在不公开各自输入的前提下共同计算函数结果）合并成一个统一的信任分数。该分数可被任何客户端验证，但单个成员的评分不会被披露。
+  3. **跨链存证**：信任分数和底层文档数据通过哈希承诺（hash commitment，将数据映射为固定长度哈希值并公开，事后无法抵赖或篡改）在多个区块链上共同维护。这样设计是为了防止任何单一方静默改动或丢弃文档/分数，所有历史状态都可以追溯。
+  4. **排名可重放**：基于信任分数的排序结果被记录上链，任何客户端都可以独立重放并检查排序过程，确保排名未被操纵。
+
+- **输出**：每个文档获得一个公开可验证的信任分数，RAG 系统据此决定检索结果的使用顺序；客户端可随时验证文档和分数的完整性。
+
+需要说明：摘要未披露零知识协议的具体类型、MPC 的具体算法、哈希承诺跨链细节、链结构以及实验数据集和对比指标。
+
+## 主要结果
+
+摘要声明 TrustRAG 能够保证文档和分数不会被静默修改或丢弃，且每个排名结果都能被独立重放和校验。该系统同时保护了委员会评分过程中的隐私性（通过零知识证明与 MPC），又提供了公开可审计性（通过区块链与哈希承诺）。摘要未给出任何实验数据或定量安全结论。
+
+## 为什么与兴趣相关
+
+TrustRAG 将密码学工具（零知识协议、安全多方计算、区块链）用于 RAG 文档的可信度评估，而不是直接保护 LLM 的推理过程。它关注的是“检索内容是否可信”这一横跨隐私计算与 LLM 系统安全的问题，对需要强审计、高可信来源的 RAG 应用（如医疗、法律、金融）有启发意义，也为后续在模型外挂知识管线中引入去中心化信任机制提供了参考思路。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>multi-party computation</category>
+    </item>
+    <item>
+      <title>安全网适用性研究：一种用于神经网络认证的安全性设计解决方案</title>
+      <link>https://arxiv.org/abs/2608.20053</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.20053</guid>
+      <description>英文原题：On the Applicability of Safety Nets: A Safety-By-Design Solution for Certifying Neural Networks
+
+人工智能（AI）在安全关键型航空系统中的集成对认证和部署提出了重大挑战。航空通常被视为最安全的交通方式，依赖众多安全关键系统。对于未来基于AI的安全关键系统，EASA要求采用安全性设计（Safety-by-Design）方法，该方法可通过结合神经网络压缩与查找表的安全网（Safety Nets）来实现，从而确保在离散化操作设计域内100%正确的运行时行为。尽管安全网已被研究，但尚未对其性能特征和系统设计权衡进行全面的研究。本工作首次系统分析了安全网中神经网络与查找表大小之间的权衡。通过系统比较不同架构的神经网络，本研究确定了在保持认证合规性的同时，最小化总体存储和内存需求的最优设计参数。结果表明，具有3至5个隐藏层、每层约50至100个节点并结合独热编码的架构达到了最佳平衡。在这些配置中，神经网络准确表示至少97%的数据，而紧凑的查找表则处理剩余的错误。由此产生的安全网将系统规模减少了近三个数量级，在适应当前航空电子硬件内存预算的同时，保证了整个离散化输入空间上100%的正确输出，符合EASA指南的要求。本工作首次提供了用于HCAS和VCAS的安全网开源实现，且结果可复现，展示了在航空领域实现可认证AI系统的实际路径，并将安全网确立为面向安全关键应用的可行安全性设计解决方案。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>lookup table</category>
+    </item>
+    <item>
+      <title>基于语义结构化分区对基于补丁的多变量时间序列预测的再思考</title>
+      <link>https://arxiv.org/abs/2608.19966</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19966</guid>
+      <description>英文原题：Rethinking Patch Based Multivariate Time Series Forecasting with Semantic Structured Partitioning
+
+多变量时间序列预测（MTSF）是许多实际应用中的基本任务。现有基于补丁的预测方法通常分为三类：固定分区、多尺度分区和可扩展分区。固定分区通常会破坏有意义的时间边界，多尺度分区可能引入跨尺度的冗余表示，而可扩展分区虽然提高了灵活性，但仍缺乏用于组织语义结构和建模异构时间模式间交互的显式机制。为解决这些局限性，我们提出了SCPaT，一个基于Transformer的框架，构建在语义结构化分区之上。SCPaT首先通过自适应语义单元生成将输入序列分解为语义一致的单元，然后构建动态语义图以建模这些单元之间的有向依赖关系，并将它们组织成高阶语义块。基于这些结构化表示，重要性感知的路由机制自适应地将不同的语义块分派给不同的专家以进行定制化建模。在12个真实世界数据集上的大量实验证明了SCPaT的有效性。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>从噪声到信号：利用LLMs与端点特定日志改进安全日志异常检测</title>
+      <link>https://arxiv.org/abs/2608.19938</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19938</guid>
+      <description>英文原题：From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs
+
+现有异常行为日志检测方法（如Wazuh）主要依赖预定义检测规则，而统计异常检测方法（如OpenSearch）则识别与先前观察到的行为模式的偏差。近期研究已探索将LLMs用于日志异常检测，因为它们能够解释语义和上下文信息。然而，基于LLM的方法可能受到提示构建、噪声日志数据以及依赖可能缺乏端点特定认证行为的通用数据集的影响。为解决这些局限，本研究开发了一个标准化的基于指令的LLM分类框架，用于检测异常认证行为，包括边界情况。开发了一个受控网络安全测试平台以生成端点特定认证数据，产出了一个包含正常、边界和异常行为场景的精选数据集。三个指令调优的LLM——Meta Llama 3.1 8B Instruct、Qwen 2.5 7B Instruct和GPT-OSS 20B——在共同真值严重性框架下，与Wazuh基于规则的检测和OpenSearch异常检测进行了评估。Meta Llama 3.1 8B Instruct实现了最强的整体端到端检测性能，准确率为89.3%，召回率为88.2%，F1分数为91.8%，假阴性率为11.8%。相比之下，Wazuh的准确率为52.0%，假阴性率为68.6%，而OpenSearch的准确率为49.3%，假阴性率为74.5%。Meta Llama还检测到了80%的边界异常场景，而Wazuh为20%，OpenSearch为15%。Qwen的整体检测性能低于Meta Llama，但记录了最低的平均推理延迟和100%的结构化响应有效性。GPT-OSS在产生有效响应时表现出强大的分类性能。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>学习如何遗忘：面向长上下文稀疏注意力的微调</title>
+      <link>https://arxiv.org/abs/2608.19920</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19920</guid>
+      <description>英文原题：Learning how to Forget: Fine-tuning for Long-Context Sparse Attention
+
+先前的大量工作通过稀疏注意力解决了键值（KV）缓存选择与压缩问题，以便在没有过高硬件预算的情况下实现Transformer语言模型的长上下文推理。我们提出了一种对稀疏注意力模型进行微调的新方法。该方法适用于任意KV缓存策略，可在适度的硬件预算（例如，单个配备40 GB内存的Nvidia A100 GPU）上运行，并允许模型与策略共同适应，其性能往往优于使用精确注意力（序列并行）训练的模型。我们还提供了H2O稀疏注意力（我们实验中领先的策略）的高效实现，并带有专门的缩放点积注意力内核支持。KeysAndValues（https://github.com/awslabs/keys_values）是一个用于长上下文推理和微调的新开源库，为本文讨论的所有方法提供了易于使用且高性能的代码。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>前向聆听：下一补丁嵌入预测实现可扩展音频学习器</title>
+      <link>https://arxiv.org/abs/2608.19863</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19863</guid>
+      <description>英文原题：Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners
+
+自监督学习（SSL）推动了音频表示学习的显著进展，尽管现有方法日益依赖精心设计的预训练方案以达到有竞争力的性能。一种截然不同的预训练理念支撑着语言建模以及最近视觉表示学习领域最具影响力的进展：不是将编码器训练为静态特征提取器，而是训练模型从先前上下文中预测下一个元素——无论是离散词元还是连续嵌入。自回归预测由此提供了一种跨模态迁移的统一预训练接口，迫使模型学习底层数据分布。鉴于音频的时间结构使得补丁嵌入的自回归预测成为自然契合，我们探究这种简单的因果范式能否产生强大的音频学习器。我们提出NAPE（Next-Audio-Patch-Embedding prediction，下一音频补丁嵌入预测），一种自监督框架，其中因果Transformer从之前的补丁嵌入预测log-mel频谱图的每一个下一补丁嵌入，仅使用因果掩蔽和停止梯度作为训练信号。该设计刻意保持极简，避免重建解码器、声学分词器、师生架构和辅助正则化损失。在六个音频和语音基准测试中，NAPE在若干任务上取得了最先进的微调性能，在编码器规模上持续扩展，并产生了强线性探测结果。NAPE还在没有显式监督的情况下产生了结构化的注意力模式。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents</title>
+      <link>https://arxiv.org/abs/2608.19861</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19861</guid>
+      <description>## 一句话结论
+
+PolicyGuide 通过将领域策略编译为工作流图，并在用户轮次边界调用主动校验器，把客服 LLM 智能体在多领域基准上的策略合规率（Pass⁴）从 0.42 提升到 0.62，同时实现跨模型迁移与较低攻击成功率。
+
+## 问题与动机
+
+客服 LLM 智能体代表用户执行操作时必须遵守组织策略。现有合规失败主要来自两类：一是执行了被禁止的动作（如给予不符合条件的变更），二是遗漏了流程中的必需步骤（如身份识别或确认）。运行时安全防护能对单个风险动作做干预，但“动作局部”的检查无法引导智能体走完多步骤流程；而面向工作流遵循的系统虽支持既定流程执行，却主要关注任务完成而非保障智能体行为合规。
+
+## 方法与技术路线
+
+- **研究对象与设定**：面向客服 LLM 智能体的策略合规防护，覆盖航空、零售、电信三个领域，使用 GPT-5.4 智能体与校验器，并迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro。
+- **核心思路**：PolicyGuide 将每个领域策略编译成“工作流图”（workflow graph），以此替代只对单步动作做检查的机制。工作流图编码了策略允许的操作顺序和必需步骤，从而能够在多步骤流程中判断“当前位置”和“下一步合规动作”。
+- **关键模块与衔接**：在用户轮次边界（user-turn boundaries）调用一个主动校验器（proactive verifier）。校验器读取持久化的图状态（persisted graph state），将当前待办请求与工作流图进行比对，识别缺失步骤或禁止动作，并返回针对当前步骤的修正建议（step-specific remediation），引导智能体沿一条符合策略的路径继续执行。摘要未说明工作流图的具体构建方式、状态表示、校验器的模型结构或提示设计，也未披露实验数据集细节与超参数。
+- **评估方式**：摘要提及两类评估：一是与 τ²-bench 基准上的基线比较，使用 Pass⁴ 指标；二是针对对抗性用户的攻击成功率评估，以及作者设计的流程级（workflow-level）合规性验证。摘要未说明对抗性用户的具体攻击类型、评估样本量或基线方法名称。
+
+## 主要结果
+
+在 τ²-bench 的航空、零售、电信领域中，使用 GPT-5.4 智能体与校验器时，PolicyGuide 将平均 Pass⁴ 从 0.42 提高到 0.62，其中电信领域提升最大（从 0.19 到 0.61），该领域也是工作流结构化程度最高的。相同的工作流可迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro 智能体。补充评估显示：在对抗性用户下取得最低的观测攻击成功率，并在作者设计的流程级验证中表现出最强流程合规性。
+
+## 为什么与兴趣相关
+
+这项研究切中大模型智能体落地中的关键安全缺口：仅做单步动作过滤不足以保证长流程合规。PolicyGuide 把策略显式编码为流程结构，使校验器能提供“下一步做什么”的修正，这比单纯拒绝或告警更实用。对关注 LLM 安全、智能体治理和可信 AI 系统的研究者与工程人员，该方法展示了将领域知识融入运行时防护的新方向，且其跨模型迁移特性对部署具有参考价值。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Repo0：设计驱动的从零到全代码生成</title>
+      <link>https://arxiv.org/abs/2608.19854</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19854</guid>
+      <description>英文原题：Repo0: Design-Driven Zero-to-All Code Generation
+
+大型语言模型智能体在代码生成方面取得了实质性进展，但大多数现有系统假设预定义的仓库架构。这一假设在从零到全代码生成中不成立，因为智能体必须直接从自然语言需求构建整个软件项目，并在整个开发过程中保持模块化的仓库架构。我们提出了Repo0，一个用于从零到全代码生成的持续结构演化框架。Repo0维护一个显式的架构状态，实例化为双有向无环图（Dual-DAG），由需求级DAG、组件级DAG及其对齐关系组成。从自然语言需求出发，它通过由模块化指标引导的结构化操作迭代演化组件边界，直至结构收敛，之后收敛的架构指导测试驱动的开发代码生成。我们使用GPT-5 mini和DeepSeek V3.2在来自RepoCraft的六个真实世界仓库上评估Repo0。Repo0在所有设置中取得了最高的功能覆盖率和通过率。与最强的仓库规划基线RPG相比，Repo0的功能覆盖率提高了高达20.08个百分点，通过率提高了高达29.74个百分点。消融和结构演化分析进一步证明了Dual-DAG架构状态、模块化引导的结构演化以及显式结构收敛的重要性。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>TempJail: Temporal Jailbreak Attack against Large Vision-Language Models via Subtitle Scheduling</title>
+      <link>https://arxiv.org/abs/2608.19737</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19737</guid>
+      <description>## 一句话结论
+TempJail 是一种针对大视觉语言模型（LVLM）的黑盒视频越狱攻击框架，通过优化字幕的时间调度（而非仅字幕语义）来诱导模型输出有害内容。
+
+## 问题与动机
+文本和图像越狱已被广泛研究，但针对 LVLM 的视频越狱仍少有人探索。现有视频越狱方法主要操纵视频中嵌入的文本内容，却忽略了这些信息在时间维度上如何组织。作者发现，越狱效果不仅取决于文本语义，还取决于其时间呈现方式（如持续时长、时间槽分配）。这提示 LVLM 在视频理解中存在“时序漏洞”，而字幕天然适合作为攻击载体：它在真实视频中常见，可对语义内容进行精确的时间控制，且视觉上不突兀。
+
+## 方法与技术路线
+TempJail 是一个黑盒（black-box）的、完全基于视频的越狱框架。研究对象是大型视觉语言模型（LVLM）的视频理解与推理过程；输入是带有有害意图的源查询，以及作为攻击媒介的、由模型生成的查询对齐字幕序列。
+
+技术路线按下述步骤衔接：
+
+1. **构建查询对齐的对话式字幕序列**：不直接使用单句有害提示，而是将源查询拆解/转化为一组以对话形式组织的字幕，使语义内容在时间上分段展开。
+2. **优化时序调度（subtitle scheduling）**：摘要明确提到，攻击只依赖于字幕的语义和时序，因此核心模块是在给定字幕序列的基础上，优化每个字幕的持续时间与时间槽分配。该过程利用 LVLM 的时序脆弱性，使整体呈现方式更易触发模型违反安全约束。
+3. **黑盒攻击执行**：将调度好的字幕序列嵌入视频中，输入待攻击的 LVLM，无需访问模型内部参数或梯度，只通过输入视频和观察输出来完成攻击。
+
+摘要未说明具体的时间调度优化算法、字幕长度/数量、视频生成方式、搜索步数等细节，也未披露实验所用的具体提示模板和越狱评估协议。
+
+## 主要结果
+该框架在四个代表性 LVLM 和两个数据集上进行了评估。结果显示，在所有模型–数据集组合下，TempJail 的攻击成功率（ASR）均最高；与最强基线相比，在数据集平均 ASR 上，对 GPT-5 提升了 53 个百分点，对 Gemini 3.5-Flash 提升了 18 个百分点。摘要未给出其他模型、具体数据集名称、单组实验方差或基线名称。
+
+## 为什么与兴趣相关
+这项工作揭示了大模型安全评估中的一个盲区：即使语义内容本身已被安全对齐，攻击者仍可利用“何时、持续多久、如何排列”等信息的时间结构来绕过防御。由于字幕是视频中最普通的信息载体之一，该攻击具有现实可部署性。对 LVLM 安全研究者而言，它提示防御不能只做文本/语义过滤，还需考虑跨模态时序一致性与对抗鲁棒性；对模型开发者而言，它强调了视频推理中的时间建模与安全对齐之间可能存在的内在张力。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>RecPFN：面向基于上下文内学习的推荐的先验拟合网络</title>
+      <link>https://arxiv.org/abs/2608.19735</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19735</guid>
+      <description>英文原题：RecPFN: Prior-Fitted Networks for In-Context-Based Recommendations
+
+我们介绍RecPFN，一种先验拟合网络，它将上下文内学习引入序列推荐。RecPFN完全在从广泛的结构因果先验中采样的合成点击流环境上进行预训练，使其能够从小支持集中摊销贝叶斯式推理。在推理时，一个轻量级的仅解码器Transformer以少量领域序列为条件，并在单次前向传播中为查询产生下一项预测，无需任何权重更新。在八个公开基准上，RecPFN实现了最先进的零样本性能，同时在低计算和低数据场景中与监督方法保持强劲竞争力。它具有部署高效性且对领域偏移具有鲁棒性，优于依赖大型真实交互语料库的强零样本基线。RecPFN为可泛化、数据高效的推荐器提供了一条实用路径，并为更丰富的先验、更长上下文的ICL以及多模态扩展开辟了途径。用于训练和评估的代码可在https://github.com/SAP-samples/tabular-ai-recpfn/公开获取。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>DeltaML-Bench：在真实世界研究仓库上评估机器学习智能体</title>
+      <link>https://arxiv.org/abs/2608.19653</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19653</guid>
+      <description>英文原题：DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories
+
+用于机器学习实验的自主智能体必须能够在异构仓库中导航、修复训练流水线，并在现实计算约束下评估候选改进。现有基准仅部分涵盖这些条件。我们提出DeltaML-Bench，这是一个包含48个任务的基准，这些任务源自研究论文，要求智能体在不完美的开源仓库中改进已发表的基线。我们使用标准的Modular智能体和基于搜索的ARG脚手架评估GPT-5和Claude Sonnet 4。在4×6小时分配下，ARG将GPT-5的每次运行成功率从9.4%提升至33.9%；在2×12小时分配下，GPT-5 ARG达到49.0%。Modular配置展现出高达47.9%的规格博弈率，而在所评估的ARG配置中未观察到博弈行为。这些结果表明，在部署智能体进行自主机器学习实验时，脚手架设计和完整性检查是重要的考量因素。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Enhancing Privacy in Federated Learning via Dual Obfuscation of Gradients and Training Images</title>
+      <link>https://arxiv.org/abs/2608.19650</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19650</guid>
+      <description>## 一句话结论
+
+本文提出一种在联邦学习中同时混淆**梯度**与**训练图像**的“双重混淆”方法，能在不额外损害分类性能的前提下，降低基于梯度的图像恢复攻击（如 APRIL）所还原出的视觉信息量。
+
+## 问题与动机
+
+联邦学习（Federated Learning, FL）允许客户端在本地保留数据、仅共享模型更新进行协作训练。但近年研究表明，攻击者可以从共享的模型更新（如梯度）中重建训练图像，造成隐私泄露。为应对此类“图像恢复攻击”，作者提出联合混淆更新信息与训练图像，从两个层面削弱攻击者可利用的信息。
+
+## 方法与技术路线
+
+摘要所述方法包含两个互补的混淆模块，并按如下方式协同工作：
+
+- **研究对象与设定**：联邦学习环境中的图像分类任务，客户端本地持有训练图像，需将模型更新上传至服务器。攻击者可能利用这些更新进行图像重建（摘要考察了 Attention Privacy Leakage, APRIL 攻击，即一种通过注意力图泄露隐私的攻击方式）。
+
+- **模块一：随机二进制梯度置零**。该方法基于随机二进制权重，将一部分梯度元素随机置零。其作用是直接减少攻击者可获得的原始梯度信息量，从而降低重建图像时所能利用的信息密度。这一步不依赖图像内容，主要用于“削减信息”。
+
+- **模块二：图像加密**。对训练图像进行加密，使即便攻击者重建出图像，得到的也是缺乏视觉可解释性的内容。该加密方案允许每个客户端、每张图像使用独立密钥，从而避免显式地共享密钥（摘要未说明密钥的具体分发或管理机制）。这一步主要用于“降低重建结果的可用性”。
+
+- **两模块的衔接**：梯度置零从“源头上”减少可供攻击者推断的信息，图像加密则从“结果上”抹除重建图像的视觉意义，两者形成互补。摘要特别指出，这种组合不会在图像加密已造成的性能损失之外，再额外降低分类精度。
+
+- **实验与比较**：实验采用 Vision Transformer（ViT，一种基于自注意力机制的视觉模型）进行图像分类任务，并评估所提方法对 APRIL 攻击的防御效果。摘要未说明数据集、加密算法具体参数、梯度置零比例或实验环境等细节。
+
+## 主要结果
+
+在所述评估设置下，该双重混淆方法能够减少 APRIL 攻击恢复出的视觉信息，同时不会造成超越图像加密本身的额外分类性能下降。作者同时强调，这种组合并不能提供绝对的安全保证，但实验结果显示了将梯度修改与图像加密相结合对增强联邦学习隐私的潜在价值。
+
+## 为什么与兴趣相关
+
+该工作属于隐私计算领域，但针对的是训练过程而非模型推理，面向的是联邦学习中真实存在的梯度泄漏风险。它将梯度扰动与图像加密两种思路结合，并提供了一种支持每客户端、每图像独立密钥的轻量级密钥设计方向，对后续探索更实用的联邦学习隐私保护方案具有参考意义。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>一种两阶段时间感知Transformer用于短期AECOPD风险预测</title>
+      <link>https://arxiv.org/abs/2608.19578</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19578</guid>
+      <description>英文原题：A Two-Stage Time-Aware Transformer for Short-Horizon AECOPD Risk Prediction
+
+慢性阻塞性肺疾病急性加重（AECOPD）可能迅速恶化，使得及时预测成为临床优先事项。现有的大多数机器学习方法依赖于间歇性收集的临床变量，这会引入延迟，限制了它们在家庭监测场景中的实际效用。家用呼吸机提供了一种低延迟的替代方案，在日常使用期间产生近乎连续的呼吸状态记录。然而，现有的基于呼吸机的方法要么将波形压缩为手工设计的特征，要么主要关注二元风险分类，导致即将发生事件的时间点问题仍未解决。在本文中，我们提出了一种两阶段框架，直接处理来自最近七天家用呼吸机使用的原始压力和流量波形。第一阶段分类模型识别具有严重恶化高风险的患者。第二阶段回归模型随后估计事件发生前还剩多少天。我们的实验结果表明，两阶段模型在风险分类和事件发生时间估计方面均优于传统基线模型，我们选定的第一阶段分类器达到F1 = 0.91，第二阶段回归模型达到RMSE = 1.00天和R^2 = 0.76，从而为临床医生在严重恶化发生前提供早期预警和可操作的提前时间。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>CVSD-Reg：面向鲁棒LiDAR配准的跨模态视觉语义先验蒸馏</title>
+      <link>https://arxiv.org/abs/2608.19536</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19536</guid>
+      <description>英文原题：CVSD-Reg: Cross-Modal Visual Semantic Prior Distillation for Robust LiDAR Registration
+
+基于学习的全局点云配准已经取得了显著进展，但其对几何表示的依赖使得现有方法对点密度、扫描模式、视角和传感器特性的变化敏感。我们提出了CVSD-Reg，一个鲁棒的全局LiDAR配准框架，它将来自视觉基础模型的视觉语义先验蒸馏到LiDAR表示中。在第一阶段，Point Transformer V3学生网络通过对比蒸馏和球面流形对齐从冻结的DINOv2教师网络中学习，这保留了教师嵌入空间的超球面几何。自监督InfoNCE一致性和软SE(3)不变性进一步促进了视角鲁棒的描述符。在第二阶段，蒸馏后的表示通过对应关系学习、密度感知的点丢弃增强和端到端位姿优化来适应配准任务。凭借单一检查点，CVSD-Reg无需针对特定传感器的适配即可泛化到单传感器和零样本跨传感器场景，并且在推理时完全不需要相机。在KITTI、nuScenes和HeLiPR上，CVSD-Reg分别实现了97.7%、99.0%和99.3%的严格成功率（SR@0.5 m/1°），包括在稀疏的16线Velodyne扫描上达到97.3%。在不需要相机输入或事后ICP精化的情况下，它比最先进的几何配准方法高出多达44.0个百分点。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>AEGIS: Attention-Embedding Gradient Isolation Shield - Triple-Channel Gradient Masking for Privacy-Preserving Federated LLM Fine-Tuning</title>
+      <link>https://arxiv.org/abs/2608.19534</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.19534</guid>
+      <description>## 一句话结论
+AEGIS（Attention-Embedding Gradient Isolation Shield，注意力-嵌入梯度隔离盾）是一种轻量级防御，通过三个反向路径操作同时关闭联邦学习（Federated Learning）微调中Transformer梯度的三个信息泄露通道，将梯度反演攻击下的token（词元）恢复率降至接近零，且保持或提升模型效用。
+
+## 问题与动机
+联邦学习中，客户端本地数据不离开设备，但共享梯度可被梯度反演攻击（gradient inversion attacks）利用，重建私有训练文本。作者分析Transformer（一种基于注意力机制的神经网络架构）的梯度结构后，发现三个泄露通道：Channel 1中注意力输出投影梯度（attention output projection gradient）的低秩子空间编码了输入嵌入（input embeddings）；Channel 2中嵌入梯度（embedding gradient）的行范数稀疏性直接暴露了哪些token存在；Channel 3中MLP（多层感知机）扩展梯度携带了类似于Channel 1的可恢复子空间信号。最先进的攻击可利用这些通道在数秒内近乎精确地恢复token。现有防御大多只处理其中一个通道，且要么损害模型效用，要么留下其余结构信号。
+
+## 方法与技术路线
+AEGIS面向联邦微调场景，输入是本地计算的原始梯度，输出是掩码后的梯度；该梯度同时驱动本地优化器步骤和上传服务器的导出过程，因此本地和服务器均不保留干净信号，防止攻击者从任何一侧取回未掩码信息。
+
+方法由三个反向路径操作组成，按通道逐一设计：
+1. 冻结注意力投影参数（freezing attention projection parameters）：通过令该参数不再产生可学习梯度，从构造上消除Channel 1。
+2. 对嵌入梯度进行校准噪声注入（calibrated noise injection into the embedding gradient）：用添加噪声的方式破坏Channel 2的token存在性信号，使梯度行范数的稀疏性无法解读。
+3. 对MLP扩展梯度进行逐块噪声注入（per-block noise injection）：以类似方式掩蔽Channel 3中的可恢复子空间信号。
+
+这三个步骤均在反向传播路径上完成，不需要修改模型架构。研究者在11个模型和6个数据集上评估了AEGIS，比较对象包括基于分析的和基于优化的多种梯度反演攻击，指标为token恢复率；并为Channel 1和2提供了正式安全保证，同时针对完全了解机制的自适应对手（adaptive adversaries）进行了经验验证。摘要未说明噪声注入的具体分布、校准方法、冻结参数的细节、数据集及模型清单，也未给出恢复率的定量数值。
+
+## 主要结果
+AEGIS将token恢复率降至接近零（摘要未给出具体数值），同时保持或提高模型效用。它同时覆盖三个泄露通道，并为其中两个提供形式化保证，对自适应对手的经验评估也支持其有效性。
+
+## 为什么与兴趣相关
+大语言模型（LLM）微调常依赖联邦协作，而梯度反演攻击可能暴露训练语料中的敏感文本。AEGIS提供了一种轻量、无需架构改动且不牺牲效用的防御路线，具有较强的实用潜力。该工作不涉及密码学协议下的模型推理，属于梯度隐私保护范畴。</description>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>习得，然后遗忘：预训练中一个可测量的单样本反事实</title>
       <link>https://arxiv.org/abs/2608.19168</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2608.19168</guid>
-      <description>A single training example's contribution to a finished model is normally estimated rather than measured, because measuring it takes two expensive full pre-training runs that differ in one row of one batch. We ran that counterfactual 24 times at a small scale. We trained 32 GPT-2 models at 124M parameters from scratch on OpenWebText, over four conditions and eight seeds. At step 200 of 9,536, at peak learning rate, we replaced one row of a 256-row batch with a fixed context injection carrying a 194-token passage. The three injected conditions are: 1. fluent prose with a corpus-attested subject, 2. fluent prose with a fabricated subject matched to it within 0.14% on full-batch gradient delta, and 3. random keyboard characters. The fourth condition is an uninjected twin. The passage is learned from one exposure and then decays. Fifty steps after injection, the arm that saw a passage predicts it better than the arm that did not by 0.039 and 0.044 nats of cross-entropy on the passage, at eight of eight seeds with p &lt; $10^{-4}$. At the final step we do not detect that difference for either passage, at p = 0.25 and p = 0.71, against minimum detectable effects of 0.025 and 0.079 nats, nor between the two passages, at p=0.54. Every geometric measure we report is taken after that decay. Our pre-registered contrast on interpolation loss barrier is +0.0068 with p = 0.509, against a minimum detectable effect of 0.032 barrier units. Held-out cross-entropy is $-0.00044$ with p = 0.310. Per-layer centered kernel alignment does not detectably separate any condition at any layer. Weight displacement reaches 44.1% of the seed-to-seed Euclidean distance and is 92% settled by the midpoint of training, while the barrier reaches 3.0% of the seed-to-seed barrier. Those two figures sit roughly 15 times apart, and that is a lower bound. The injection relocates the model within its basin without moving it out.</description>
+      <description>英文原题：Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training
+
+一个训练样本对已完成模型的贡献通常是估计而非测量的，因为测量它需要两次昂贵的完整预训练运行，而这两次运行仅在一个批次中的一行上有所不同。我们以小规模将该反事实运行了24次。我们在OpenWebText上从头训练了32个124M参数的GPT-2模型，涵盖四个条件和八个随机种子。在第9,536步中的第200步、处于峰值学习率时，我们将一个256行批次中的一行替换为一个固定上下文注入，该注入携带一段194个token的文本。三个注入条件分别是：1. 流畅的散文，主题在语料库中有据可查；2. 流畅的散文，主题为虚构，并且在全批次梯度增量上与前者匹配到0.14%以内；3. 随机键盘字符。第四个条件是其未注入的孪生对照。该文本在一次暴露中被学习，然后衰减。注入后五十步，看到该文本的臂对它的预测优于未看到该文本的臂，在文本上的交叉熵分别低0.039和0.044 nats，八个种子全部如此，p &lt; $10^{-4}$。在最后一步，我们没有检测到任一文本的这种差异，p = 0.25和p = 0.71，对应的最小可检测效应为0.025和0.079 nats；两个文本之间也没有检测到差异，p=0.54。我们报告的每一个几何度量都是在这次衰减之后取得的。我们预注册的关于插值损失障碍的对比为+0.0068，p = 0.509，最小可检测效应为0.032个障碍单位。留出交叉熵为$-0.00044$，p = 0.310。逐层中心核对齐在任意层都没有可检测地区分出任何条件。权重位移达到种子间欧氏距离的44.1%，并且在训练中点时已安定92%；而障碍达到种子间障碍的3.0%。这两个数字相差约15倍，而且这是一个下界。注入将模型重新定位在其盆地内，而没有将其移出盆地。</description>
       <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>GPT</category>
@@ -1102,214 +1487,6 @@ Foresight-England（Foresight-E）是首个全国规模的电子健康记录（E
 
 电子表格是发布表格数据的主要媒介，然而由于布局异构、文件格式多样以及组织惯例不一致，从中自动提取结构化内容仍然困难。我们解决了电子表格理解中的两个核心任务：单元格类型分类（Cell-Type Classification, CTC），即为单元格分配角色；以及表格检测（Table Detection, TD），即识别工作表内的表格边界框。我们提出了一条高效的两阶段流水线，其中学习得到的CTC模型为确定性TD算法提供输入。对于CTC，我们使用基于65个结构化特征的LightGBM分类器，并辅以成对CRF以在单元格网格上强制空间一致性。我们的TD方法通过确定性的五阶段过程从预测的单元格类型中提取表格范围。为了评估，我们构建并公开了StatSheets，这是一个多语言基准，包含来自多个国家和文件格式的14个公共数据提供者的737个手动标注工作表。在5折交叉验证下，我们的CRF-LightGBM系统在CTC上实现了0.937的平均文件宏F1分数，与基于GPU的TUTA Transformer相差在0.6个百分点以内，同时所需的计算资源大大减少。对于TD，我们的确定性方法优于基于区域（region-based）的基线，并与最近的基于LLM的系统（如SpreadsheetLLM）保持竞争力。这些结果表明，将非线性结构化预测与确定性范围提取相结合，为电子表格表理解提供了一种有竞争力、可扩展且计算高效的方法。</description>
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened</title>
-      <link>https://arxiv.org/abs/2608.16032</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16032</guid>
-      <description>## 一句话结论
-
-本文提出 PoEM（Proof-of-Execution Memory，执行证明记忆），它不检查 LLM Agent 的记忆内容，而是用独立的、可篡改发现的 HMAC 链式账本记录实际执行过的安全步骤；只有账本确认步骤真实执行才允许跳过，从而防御 FARMA 这类伪造推理攻击。
-
-## 问题与动机
-
-LLM Agent 无状态（stateless），依赖外部记忆（external memory）在步骤间传递上下文，并把记忆视为可信。能写入记忆的攻击者可以操纵其行为。FARMA 攻击不需要恶意命令，只在推理记忆中插入“某安全步骤已完成”的伪造条目，Agent 就会跳过它</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>突破压缩极限：通过反向再生进行跨架构压缩边界学习</title>
-      <link>https://arxiv.org/abs/2608.16010</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16010</guid>
-      <description>英文原题：Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth
-
-模型压缩对于在资源受限的边缘设备上部署网络至关重要。虽然基于剪枝的方法可以显著减少模型大小，但它们常常在超过某个稀疏度阈值后遭遇性能突然崩溃，这使得难以确定模型的可行压缩极限。为了应对这一挑战，我们提出了一个边界学习反向再生框架BRIDGE，该框架将压缩重新构建为一个建设性的边界搜索问题。与正向剪枝不同，我们的方法首先将模型驱动到极度稀疏的状态以暴露崩溃区域，然后选择性地重新生成关键结构以恢复性能。所提出的框架采用分层再生策略，包括粗粒度的层选择和细粒度的再生参数选择，以准确识别哪些参数需要恢复。实验表明，我们的方法能够从崩溃边缘恢复CNN和Transformer架构的模型，证明了其架构无关性。BRIDGE在非结构化剪枝中实现了高达1.49%的性能提升，在结构化剪枝中实现了高达4.77%的性能提升。这些结果表明，反向再生可以有效地扩展压缩极限，同时保持稳定的性能。源代码可在https://github.com/EnumaCaliber/BRIDGE获取。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>DTRU: A Versatile, Compact, Simple, and Robust NTRU KEM with Double $E_8$ Encoding</title>
-      <link>https://eprint.iacr.org/2026/1701</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1701</guid>
-      <description>Responding to China's 2025 call for commercial cryptographic standards mandating 128-bit, 256-bit, and 512-bit security (optional 384-bit), we propose DTRU, a versatile, compact, simple, and robust NTRU-based key encapsulation mechanism (KEM). Our principal design contribution is double $E_8$ encoding, which constructs 16-dimensional lattice codes from $E_8$ with low decoding complexity. We further provide a detailed analysis of decryption-failure probability under this encoding mechanism. DTRU's design achieves a careful balance among versatility, compactness, simplicity, and robustness. To accommodate diverse application requirements, it supports multiple ring structures, including power-of-two cyclotomic rings, tricyclotomic rings, and large-Galois-group prime-degree prime-ideal number fields (LPPNF). The double $E_8$ encoding enables DTRU to achieve enhanced error correction with compact bandwidth. The design prioritizes simplicity to facilitate deployment on low-power devices, achieved by eschewing additional coefficient compression techniques and redundant invertibility checks during key generation, while enabling circuit/code reuse. Security robustness is guaranteed through parameter selections that offer adequate security redundancy, mitigating potential cyclotomic ring risks via LPPNF, and precluding sparse noise distributions in the recommended parameter sets. Complementing our theoretical advances, we present comprehensive implementations of all the parameter sets with dedicated support for C, AVX2, and ARM platforms, leveraging architecture-specific optimizations. For example, compared to NTRU-HRSS and Kyber at the same security levels, our KEM is 49%-52% more compact and 3.84–15.69$\times$ faster than NTRU-HRSS in the round-trip time of ephemeral key exchange, and is 7%-27% more compact and 1.05–1.32$\times$ faster than Kyber.</description>
-      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>The ePrint:2026/1591 Quantum Algorithm Does Not Solve DCP</title>
-      <link>https://eprint.iacr.org/2026/1693</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1693</guid>
-      <description>In this note, we formally show that the recent algorithm by Simon (ePrint:2026/1591, August 11 2026) does not extract the least-significant bit of the dihedral coset problem (DCP) secret with non-negligible guessing advantage, and therefore does not solve DCP. We emphasize that our result is not merely about Simon's analysis of his algorithm; we are showing directly that the algorithm cannot possibly work. Our no-go encompasses a much broader class of algorithms than the specific algorithm by Simon. The main message of our no-go is that an algorithm for DCP following the template of the reduction by Regev (SIAM Journal on Computing, 2004) will probably have to make extensive use of the classical Fourier labels in the uncomputation stage. On the other hand, the algorithm by Simon can be implemented, up to error $\mathsf{poly}(n)2^{-n/3}$, using only the most-significant third of the classical Fourier labels, and therefore cannot succeed. To help with verifiability, we release Lean 4 code for our results, available at https://github.com/sragavan99/lean-ePrint-2026-1591-refutation.</description>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>From Round Skipping to S-Box Skipping: Attacking Poseidon's Partial Layer via Subspace Restriction</title>
-      <link>https://eprint.iacr.org/2026/1692</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1692</guid>
-      <description>Poseidon [Grassi, Khovratovich, Rechberger, Roy, and Schofnegger; USENIX'21] is an arithmetization-oriented (AO) hash function designed to be efficient in real-world zero-knowledge (ZK) applications. We present GSR, a generalized S-box skipping gadget that absorbs a single initial full round and $t-2k$ partial rounds without increasing the polynomial degree of the Poseidon polynomial system with state size $t$ and input-output constraints $2k$. By restricting the subspace of the total constraints satisfying solutions, independent of the rounds constants and MDS matrix selection, the distinguisher expends input degrees of freedom to linearize the internal state transitions where the dense algebraic mixing usually occurs. This maps a computationally infeasible polynomial system into a bounded, low-degree ideal parameterized by $k$ free variables. We show how to use the gadget to construct a probability 1 distinguisher over $t-2k+1$ rounds of Poseidon. We then show how this distinguisher can be used as a basis for interpolation-based attacks. We go on to present experimental solutions to the CICO-1 problem over 28 out of 31 rounds and CICO-2 problem over 25 out of 31 rounds in the setting set by the Ethereum Poseidon initiative (i.e., using the KoalaBear field with $t=24$ and $\alpha=3$). Crucially, since the subspace restriction approach is tuned only by $t$ and $k$, our results apply to the Poseidon structure regardless of the choice of round constants, MDS matrix, S-box exponent $\alpha$, or field size $p$.</description>
-      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Equivalence Between Average-Case Hardness of Learning and Cryptography for Mixed Quantum States</title>
-      <link>https://eprint.iacr.org/2026/1691</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1691</guid>
-      <description>The relationship between cryptography and learning theory has long been a central theme in the foundations of theoretical computer science: cryptographic primitives can imply hardness of learning, while hardness of learning can in turn be used to construct cryptographic schemes. Recent works have begun exploring analogous connections in the quantum setting, relating the average-case hardness of learning quantum states (AHL) to cryptographic primitives such as one-way state generators (OWSG). Despite recent progress exploring this for pure states, the relationship for mixed states has remained an open question. In this work, we prove that the existence of AHL for mixed quantum states is equivalent to the existence of inefficiently verifiable one-way state generators (IV-OWSGs). As a consequence, this relates mixed-state AHL to EFI pairs. Moreover, as a corollary of existing results, we obtain a separation between IV-OWSGs and OWSGs relative to the SWAP oracle.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Concurrently Secure Compact Blind Signatures from Module-SIS</title>
-      <link>https://eprint.iacr.org/2026/1690</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1690</guid>
-      <description>A blind signature scheme allows a user to interact with a signer to obtain a valid signature on a message, while ensuring that the signer cannot learn any information on the message being signed, nor link a given couple message-signature to the specific interaction that produced it (blindness). In round-optimal (i.e., two-move) blind signature schemes, a user sends a request (typically a commitment) for a message, and the signer responds with a signature. To achieve blindness, the resulting blind signature usually consists of a zero-knowledge proof of knowledge of a valid signature from the signer on a request. This reliance on zero-knowledge proofs has become the main bottleneck in reducing the blind signature size. In particular, state-of-the-art lattice-based blind signature schemes are instantiated based on the zero-knowledge proof system from [Lyubashevsky et al., EUROCRYPT, 2022], which results in blind signatures of at least 22 KB. In this work, we carefully design a blind signature protocol following the classical lattice-based Σ-protocol as in [Ducas et al., CRYPTO, 2013], so that the last component naturally forms a short preimage of the hash of the message, as a classical GPV signature. As a result, this removes the need for zero-knowledge proofs in the blind signature. Eventually, this design allows us to obtain a significantly more compact blind signature of size 4.7 KB, with concurrent security under the Module-SIS assumption. As a trade-off, our protocol may require more than one round with small probability, due to the rejection sampling in lattice-based Σ-protocols. Under our proposed parameters, however, the expected number of rounds for honest users can be as small as 1.1, which is very close to optimal. To minimize the number of rounds, we require users to prove that they failed to derive a blind signature in the previous round, before starting a new one. This technique yields a moderately looser bound on the expected number of rounds for malicious users, who will be forced to terminate in at most 2.6 rounds.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>A Hybrid Post-Quantum Encryption Architecture with Self-Hosted Key Management for SME Cloud Data Protection</title>
-      <link>https://eprint.iacr.org/2026/1689</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1689</guid>
-      <description>Harvesting ciphertext from cloud storage needs no quantum computer; decrypting it later does. That gap is the harvest-now-decrypt-later exposure: anything protected by RSA or ECDH today that must stay secret for decades is already compromised. Small and medium-sized enterprises are least able to respond: they neither run the infrastructure on which their data sits on nor employ a cryptographer. Bespoke migration suits firms with security budgets; a managed key service relocates trust rather than removing it. The obstacle is architectural, not cryptographic. We present Quantum Cloud Guard (QCG), a software-only three-layer architecture. No prior SME-oriented system combines its three elements: client-side hybrid post-quantum encryption, self-hosted key custody with client-verifiable ML-DSA-87 signatures on served keys, and an integrated application-layer abuse-prevention gateway. Files never leave the client: each is sealed under AES-256-GCM, its key wrapped to an ML-KEM-1024 public key from the enterprise’s key service. The enterprise alone administers it; it signs every key with ML-DSA-87, so a client that pinned it detects substitution. Separating key custody from data custody is the point: a provider holding both can read the data. On a 24 MHz STM32F407, ML-KEM-1024 key generation takes 40.8 ms and decapsulation 44.0 ms; on the server every post-quantum operation stays sub-millisecond, signing adding 0.24 ms per request. The service runs on a 4.49 EUR/month virtual server. Under sustained flooding, the in-process gateway Sentinel Gate rejected 98.8% of attack traffic while a legitimate client’s median latency moved from 621 to 625 ms. Being single-source, this shows filtering effectiveness, not DDoS resilience.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Hell’s Bells: A Neural Network Pipeline for Ternary Fast Matrix Multiplication Algorithms</title>
-      <link>https://eprint.iacr.org/2026/1688</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1688</guid>
-      <description>We present a neural network-based pipeline for efficiently generating fast matrix multiplication (FMM) algorithms of small but arbitrary dimensions $(n,m,k)$. Our neural network is general and tunable to output FMM schemes with specific properties, and in this paper we specifically target aspects that are useful and important in practical implementation, such as ternarity (coefficients in $\{-1, 0, 1\}$), sparseness and a low number of additions after optimization (addition reduction carried out separately). We generate and optimize thousands of FMM algorithms and show that our generation method is beneficial in terms of performance across the entire FMM pipeline (both the FMM generation itself and optimization of additions). We discuss performance metrics and utilize heatmaps to visualize and understand this performance. We achieve record-low arithmetic (additive) complexity for various combinations of dimensions. For $(n,m,k) = (2,2,k)$, our method performs particularly well. Our improvement compared to previous results increases with $k$. We show that the (addition) optimization process can behave very differently depending on the dimensions considered, indicating how further improvements (beyond our results) can be targeted. In particular, in the $(n,m,k) = (2,2,k)$ setting, we show evidence of structural FMM properties coming into play, concretely showing that FMM generation with a minimal number of additions is sometimes suboptimal with respect to the entire FMM pipeline. Finally, we make our neural network implementation, our generated FMM schemes, heatmap utilities and datasets publicly available.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Theoretical Open Problems in Symmetric Cryptography: Verifiable LLM-Guided Analysis</title>
-      <link>https://eprint.iacr.org/2026/1687</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1687</guid>
-      <description>We present the Pilot--Sailor Framework, an LLM-guided system for studying theoretical open problems in symmetric cryptography. Pilot proposes intermediate statements and proof plans. Sailor attempts formal proofs, and the proof assistant admits only checked declarations to the verified context. We apply this methodology to Boolean-function theory and symmetric cryptanalysis through fourteen mathematical case studies, comprising complete resolutions, corrected formulations, counterexamples, and scoped quantitative advances. In particular, we prove the original pointwise Tu--Deng conjecture for all word lengths and admissible residues. We further characterize equality in this bound: if \(t\) has \(z\) zero bits, equality holds exactly when every cyclic gap between consecutive zeros is at least \(z\). This criterion also gives a closed formula for the number of equality cases for each \(z\). We also prove that, for \(n=2k\geq6\) and \(k&lt;m&lt;2k\), every mapping \(F:\mathbb F_2^n\to\mathbb F_2^m\) satisfies \(\operatorname{NL}(F)\leq2^{n-1}-2^{n/2-1}-2\). This improves both the covering-radius estimate and the bound obtained from Nyberg's obstruction and integrality. Using an exact computer-assisted spectral classification, we also prove that the maximum nonlinearity of a balanced Boolean function in eight variables is 116, resolving whether the value 118 can occur. Beyond the well-known long-standing problems highlighted above, we also establish new results for ten further research questions in symmetric cryptography.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>A Unifying Umbrella for Circular-Secure Cryptographic Primitives</title>
-      <link>https://eprint.iacr.org/2026/1686</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1686</guid>
-      <description>The main message of this paper is that several seemingly different circular-style primitives are existentially equivalent. In particular, somewhat surprisingly, we show that hinting PRGs (Koppula and Waters, CRYPTO 2019) are equivalent to secret-key encryption (SKE) schemes satisfying key-dependent-message (KDM) security. As a conceptual centerpiece, we introduce key-dependent-shift (KDS) security for weak pseudorandom functions (PRFs), and show that they serve as a convenient hub connecting these primitives. We also show that KDS secure weak PRFs imply other cryptographic primitives with circular-style security, such as linear-resistant PRGs (Hajiabadi et al., ITC 2023) and hinting weak PRFs (Alamati and Patranabis, ASIACRYPT 2022), all of which are thus existentially equivalent to KDM secure SKE and hinting PRGs as well. Hence, KDS secure weak PRFs can be thought of as a unifying umbrella for circular-secure cryptographic primitives. As another application of our new notion, we show that KDS security enables new constructions of public-key encryption (PKE) satisfying randomness-dependent-message (RDM) security and correlated-product secure trapdoor functions (TDFs). Our key technical contribution is a generic construction of KDS secure weak PRFs from any KDM secure SKE.</description>
-      <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>QuoteBench：匹配分数如何掩盖命令路径故障</title>
-      <link>https://arxiv.org/abs/2608.13547</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13547</guid>
-      <description>英文原题：QuoteBench: How Matched Scores Can Hide Command-Path Failures
-
-LLM编码智能体通过可能对模型输出进行序列化、包装和重新解析的接口发出Bash命令。仅靠匹配执行分数无法区分命令生成错误与生成后引入的失败。QuoteBench通过在来自14个事件衍生族系的56个一次性任务上进行精确最终状态验证来衡量这一边界，将生成契约与执行传输在一个故意未转义的附加解析器周围交叉结合。在插值点进行转义可重现每个重放回复的原始路径结果，因此在已披露边界下的任何恢复必然来自模型改变其生成内容。在八个同窗口配置中，通过附加解析器重放相同回复会使成功率降低55.4至73.2个百分点；披露边界为六个配置恢复30.4至60.7个百分点，另外两个配置恢复为零或略微为负。原始生成在前沿已接近饱和；边界适应才是仍然区分模型的因素。GPT-5.6-sol的匹配差距为-3.6个百分点，其中隐藏着-64.3个百分点的损害和+60.7个百分点的补偿。部署配置会重新排列模型：在26个可比较配对中，有一个反转是明确的，另外四个处于单任务边缘。对命令发出智能体的评估应报告模型配置、生成契约、执行路径、工作点和最终状态验证器，而不是将匹配分数视为模型的固有属性。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Transformer 长度泛化的代数分解理论</title>
-      <link>https://arxiv.org/abs/2608.13433</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13433</guid>
-      <description>英文原题：Algebraic Decomposition Theory for Transformer Length Generalization
-
-基于Transformer的语言模型已知有时可以泛化到训练时未见过的更长序列，但我们缺乏对哪些任务允许长度泛化的精确刻画。甚至不知道Transformer在哪些正则语言上能够长度泛化——而这是一个基础的语言类别。我们的贡献是首次建立了Transformer在哪些正则语言上能够长度泛化的完整刻画，并提供了一种在语言句法幺半群大小上以多项式时间运行的判定算法。这些结果依赖于对C-RASP中正则语言的有效刻画，C-RASP是一种近期确立的形式体系，用于表达Transformer在哪些语言上能够长度泛化。这一刻画具有挑战性，因为像有限半群的Krohn-Rhodes分解理论这样的经典工具不足以应对C-RASP。首先，Krohn-Rhodes理论的基本构件——触发器（flip-flop）和单群——在C-RASP中不可表达。其次，C-RASP的基本构件（无界计数）无法由Krohn-Rhodes理论的有限半群表达。因此，正则语言上的长度泛化受一种经典有限分解理论无法观察到的代数性质所控制。我们将经典分解理论从有限半群推广到整数的无限加法群，从而能够用整数的迭代圈积来刻画C-RASP，并为正则语言成员资格推导出一个可证明的多项式时间判定算法。跨广泛的正则语言测试套件的实验证实，我们的理论比现有分类更准确地捕捉了Transformer的长度泛化行为。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>约简矩阵乘法：面向LLM推理的输入自适应矩阵乘积约简</title>
-      <link>https://arxiv.org/abs/2608.13426</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13426</guid>
-      <description>英文原题：Reduced Matrix Multiplication: Input-Adaptive Matrix-Product Reduction for LLM Inference
-
-基于Transformer的语言模型虽然取得了强劲的性能，但由于重复的高维矩阵乘法，产生了可观的推理成本。我们提出了约简矩阵乘法（Reduced Matrix Multiplication, RMM），这是一种无需训练、输入自适应的推理方法，通过沿其收缩维度选择信息丰富的切片来约简Transformer矩阵乘积，且不修改模型权重。在简单的保留率控制下，RMM提供了平滑且可预测的精度-效率权衡。在从1B到70B参数的各种语言模型中，我们发现约简容忍度取决于模型家族、任务、组件和保留率，尽管它通常随模型规模增大而提高。在中等约简下，RMM在评估的判别式、自回归生成和长上下文设置中均保持鲁棒性。我们进一步表明，同样的原理可扩展到多模态视觉-语言推理。机制性消融实验揭示了Transformer内部的结构不对称性：注意力侧的计算比MLP组件更可约简。最后，在NVIDIA A100上使用自定义内核的挂钟基准测试表明，这些计算节省可以转化为实际的运行时收益，尤其是在更长的序列长度下。总之，这些结果将RMM定位为输入自适应推理时优化的一个可扩展方向。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>使用基于Transformer的模型联合预测课程与成绩</title>
-      <link>https://arxiv.org/abs/2608.13409</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13409</guid>
-      <description>英文原题：Jointly Predicting Courses and Grades Using a Transformer-Based Model
-
-学习分析中的现有预测模型通常将学生的学业历史视为简单序列，忽略了同一学期内所修课程的并发性。这种简化可能导致性能预测不准确，尤其是对于课程负担繁重或具有挑战性的学生。本文提出了一种用于学术课程成绩估计的Transformer模型（TRACE），通过联合预测学生即将修读的课程集合及其对应成绩来解决这一局限。我们的方法按学期对学生课程进行编码，以捕捉课程并发效应，并利用一种将课程集合预测与成绩预测相结合的新型损失函数。我们证明，在预测课程成绩的同时预测所修课程，能够显著提升预测质量。基于十年的机构数据进行训练，与仅预测成绩的相同架构相比，我们的联合预测模型将平均绝对误差降低了近50%。该模型还优于传统的基于LSTM的序列模型以及基于图神经网络的方法，并提供了将学生属性数据纳入其中的自然方式。这项工作展示了现代神经架构在构建可解释模型方面的实用性，此类模型可通过重新训练和重新校准适应新机构，同时也凸显了关键技术的重要性，例如在训练期间预测所修课程。我们讨论了该模型如何被纳入高等教育机构的早期检测系统。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>基于损失引导的多专家生成对抗网络的手语视频合成</title>
-      <link>https://arxiv.org/abs/2608.13368</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13368</guid>
-      <description>英文原题：Sign Language Video Synthesis via Loss-Guided Multi-Expert GANs
-
-本初步技术报告提出了一种使用损失引导的多专家生成对抗网络（GAN）进行手语视频合成的框架，以增强听力受损个体的沟通能力。三个专门的判别器——全局、手部和头部——分别引导生成器中对应的专家分支关注不同的视觉区域，从而在无需显式多样性损失的情况下实现隐式特征特化。为稳定这一多判别器系统（其在早期训练阶段表现出混沌动态），我们引入了一种联合损失（United Loss）共识机制，以10%的权重将每个判别器向集成平均值正则化。每个分支进一步采用双路径卷积-Transformer设计，并带有可学习的AdaptiveFeatureFusion，以平衡卷积的稳定性与窗口自注意力的细节性。生成器使用交替的三模式调度（判别器、整体生成、分支特化生成）进行训练。在一个自定义156GB数据集上，使用去除简单和重复样本的过滤测试集，我们的0.2B参数变体达到29.8 PSNR，1.3B参数变体达到30.7 PSNR，推理VRAM占用分别为1.5 GB和8 GB，从而能够在消费级硬件上部署。由于在单GPU上训练周期为2-3个月，完整的消融研究仍在进行中。该系统在2025年香港前沿技术峰会上进行了展示。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>训练AI科学家复现研究</title>
-      <link>https://arxiv.org/abs/2608.13331</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13331</guid>
-      <description>英文原题：Training AI Scientists to Replicate Research
-
-论文的可复现性是科学知识的基石，它确保现有结果的可靠性，并为后续实验提供基础。复现行为通常会揭示先前未充分说明的细节，因此需要类似假设驱动的探索，这与开放式研究相似。在这项工作中，我们开发了Replica，一个可扩展的论文复现任务空间。为了提供奖励信号，我们引入了一个基于自动生成评分标准的评判器，该评判器噪声低，且与人类对复现质量的评估一致。我们对Faraday进行了后训练，这是一个270亿参数的“AI科学家”智能体，它利用编码智能体作为工具，在保留的复现任务上超越了Claude Opus 4.8和GPT-5.5的性能。对单个 rollout 的定性分析表明，Faraday采用了更符合科学原则的方法。我们相信，我们的结果为能够进行长周期科学创新且无需复杂外部框架的AI智能体提供了铺垫。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>关键在于你如何提问：LLM中与性别相关的语言偏见</title>
-      <link>https://arxiv.org/abs/2608.13328</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13328</guid>
-      <description>英文原题：It's How You Ask: Gender-Associated Linguistic Bias in LLMs
-
-专业交流日益通过LLM进行——但这些模型是否平等地为所有用户服务？我们表明，当提示词包含更常被女性使用的语言特征（模糊限制语、附加疑问句、集体指称）时，它们在三种文档类型和四个模型上会系统地引出更短、更不复杂且更不正式的回答。在控制提示复杂性和特征遗留效应后，这些效应依然存在。显性性别线索（如署名）与语言方言编码在同一个表征空间中，这表明它们共享潜在机制；然而，语域的影响力要大得多，在名称不产生任何效应的地方产生了大而一致的效应。我们的结果进一步揭示，事后缓解颇具挑战：因为这些模式深植于文化之中且不受意识控制，用户无法通过策略性自我呈现轻易避免它们；机制分析表明，语言特征在Transformer早期层中被编码，并与其他特征纠缠在一起。我们的工作呼吁在上游考虑语言变异的影响，以减轻由LLM中介的职场交流中的差异影响。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>训练混合：将小规模脚手架预训练运行重组为更大的语言模型</title>
-      <link>https://arxiv.org/abs/2608.13277</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13277</guid>
-      <description>英文原题：Mixture of Training: Recombining Small-Scale Scaffolded Pretraining Runs into a Larger Language Model
-
-我们探究语言模型预训练能否被分解为较小、可独立训练的任务，并随后重组为一个连贯的更大模型。我们提出了训练混合（Mixture of Training, MoT），这是一种脚手架式模块化预训练流程，它将目标Transformer划分为连续的层块，在冻结的预训练对齐器脚手架内训练每个块，然后通过可选的短端到端适应阶段重组训练好的块。在一个基于C4训练的13亿参数Gemma风格模型上，MoT提供了小规模机制证明：独立训练的深度切片可以重组为一个可用的语言模型，并且一种质量持平调度达到了与整体式基线相同的报告困惑度。这种持平设置在聚合标记上处理更多，并且在对齐器准备之后具有更短的理想化层等价关键路径；其有效计算优势取决于跨运行复用对齐器。因此，我们并非将MoT作为整体式预训练的通用替代方案，而是作为一个用于研究脚手架式子运行能否充当可复用训练单元的小规模框架。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>视觉语言模型在失明或被误导时的行为表现：科学图像上的行为评估</title>
-      <link>https://arxiv.org/abs/2608.13267</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13267</guid>
-      <description>英文原题：How Do VLMs Behave When Blind or Misled? Behavioral Evaluation of VLMs on Scientific Figures
-
-现有的视觉语言模型（VLM）基准测试侧重于感知和推理的准确性（即VLM如何准确地描述和推理图像中看到的内容），而对不确定性下的行为可靠性（即在视觉证据缺失或具有误导性时它们如何表现）关注有限。我们引入了SciFigBench，一个用于科学图像理解的诊断性VLM基准测试，它联合评估了不确定性下的感知、推理和行为可靠性。该基准包含250幅带有高质量人工标注的图形，涵盖三个评估方面，总计600多小时的标注工作量。我们进一步通过图像变换、推理问题、抵抗性探针、标题偏差探针和已确认的选择性模糊目标对这些图形进行扩展，生成了超过34,000个用于压力测试的评估设置。我们进一步提出了导纳-电阻-电感（A-R-I）框架，以评估模型是否承认证据不足、抵抗误导性上下文，并从部分信息中谨慎推断。我们的结果揭示了模型之间显著的行为差异。GPT-5.2实现了最高的描述质量（MQM 91.6）和较强的推理准确性（78.4%），但在96%的情况下会出现对不可读内容的幻觉，而Gemini 3.1 Pro作为能力相当的模型（MQM 90.2，推理81.0%），在71%的此类情况下承认不确定性，并获得了最强的抵抗得分（0.91）。这些发现表明，高感知和推理准确性本身并不能保证行为可靠性，而这一维度对于科学工作流中的部署至关重要。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>进入时间序列的ORBIT：基础模型的训练范式</title>
-      <link>https://arxiv.org/abs/2608.13262</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.13262</guid>
-      <description>英文原题：Into the ORBIT for Time Series: Training Regimes for Foundation Models
-
-时间序列基础模型（TSFMs）主要通过架构创新取得了进展，而面向大规模异构语料库的训练范式仍未得到充分探索。因此，预训练分布在领域不平衡、上下文要求、预测视野和缺失性方面往往难以得到良好控制。我们提出了ORBIT（Omni-Range Bootstrap Incremental Training，全范围自举增量训练），这是一种使该分布显式且可控的训练范式。ORBIT将Bootstrap Multi-Level Sampling（控制数据集暴露，并对记录、目标变量、上下文窗口和预测视野进行采样）与Omni-Range Incremental Training（在单个训练阶段中改变上下文长度和预测视野）相结合。在ORBIT下，我们训练了Falcon-2.0，这是一个简单的单变量仅编码器Transformer，具有缺失感知的三通道分块标记化和并行分块预测。我们进一步引入了Rank-Guided Cross-Depth Alignment（秩引导的跨深度对齐），这是一种训练目标，使用深层表示作为浅层的停止梯度教师，且不增加额外推理成本。在GIFT-Eval和fev-bench上的评估表明，在不同领域和频率上具有强大的零样本预测性能。</description>
-      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>transformer</category>
     </item>

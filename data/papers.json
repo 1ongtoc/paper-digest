@@ -1,6 +1,891 @@
 {
   "papers": [
     {
+      "id": "arxiv_2608.20315",
+      "arxiv_id": "2608.20315",
+      "title": "Explainable Transformer Models for Clinical Prediction Tasks on Structured Electronic Health Records",
+      "authors": [
+        "Jun Ni Du",
+        "Lukas Adamek",
+        "Maxim Kryukov",
+        "Flavio Dormont",
+        "Ziv Bar-Joseph",
+        "Sven Jager",
+        "Brandon Rufino"
+      ],
+      "abstract": "Predictive models over structured electronic health records (EHRs) remain central to machine learning for healthcare, but few have jointly emphasized quantitative laboratory information and interpretability with respect to input medical events. We present BERT-LER, a BERT-style model for coded EHR timelines pretrained and fine-tuned from a de-identified EHR dataset of 75 million patients, that encodes laboratory test results as discrete tokens while retaining graded information through percentile-based binning, paired with Integrated Gradients for token-level attributions grounded in the input EHR sequence. We benchmark our approach on the public EHRShot benchmark suite and on an asthma severity progression study based on real-world data. This addresses a methodological gap in EHR foundation-style modeling by unifying laboratory value representation and explainability in a single framework, while assessing whether both predictive performance and explanations generalize beyond standard clinical prediction tasks. Across EHRShot and asthma tasks, BERT-LER achieves predictive performance that is competitive with, and on laboratory-related tasks often exceeds, publicly available benchmark models, and provides attributions that align with clinically known risk factors. Our architecture and explainability approach can be applied to many therapeutic areas and prediction tasks using language models trained on structured EHRs.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T17:54:17Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20315",
+      "pdf_link": "https://arxiv.org/pdf/2608.20315",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Predictive models over structured electronic health records (EHRs) remain central to machine learning for healthcare, but few have jointly emphasized quantitative laboratory information and interpretability with respect to input medical events. We present BERT-LER, a BERT-style model for coded EHR timelines pretrained and fine-tuned from a de-identified EHR dataset of 75 million patients, that encodes laboratory test results as discrete tokens while retaining graded information through percentile-based binning, paired with Integrated Gradients for token-level attributions grounded in the input EHR sequence. We benchmark our approach on the public EHRShot benchmark suite and on an asthma severity progression study based on real-world data. This addresses a methodological gap in EHR foundation-style modeling by unifying laboratory value representation and explainability in a single framework, while assessing whether both predictive performance and explanations generalize beyond standard clinical prediction tasks. Across EHRShot and asthma tasks, BERT-LER achieves predictive performance that is competitive with, and on laboratory-related tasks often exceeds, publicly available benchmark models, and provides attributions that align with clinically known risk factors. Our architecture and explainability approach can be applied to many therapeutic areas and prediction tasks using language models trained on structured EHRs.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "EHR",
+        "BERT",
+        "可解释性"
+      ],
+      "relevance_reason_zh": "面向结构化电子病历的临床预测与可解释性研究，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "面向结构化电子健康记录的临床预测任务的可解释Transformer模型",
+      "abstract_zh": "基于结构化电子健康记录（EHRs）的预测模型仍然是医疗保健机器学习领域的核心，但很少有模型同时强调定量实验室信息和针对输入医疗事件的可解释性。我们提出了BERT-LER，一种面向编码EHR时间线的BERT风格模型，该模型在包含7500万患者的去标识化EHR数据集上进行预训练和微调，将实验室检测结果编码为离散词元，同时通过基于百分位的分箱保留分级信息，并配对使用积分梯度（Integrated Gradients）以获得基于输入EHR序列的词元级归因。我们在公开的EHRShot基准套件和基于真实世界数据的哮喘严重程度进展研究中评估了我们的方法。这通过将实验室值表示和可解释性统一在单一框架中，填补了EHR基础模型风格建模中的方法论空白，同时评估了预测性能和解释是否都能推广到标准临床预测任务之外。在EHRShot和哮喘任务中，BERT-LER的预测性能与公开可用的基准模型相当，且在实验室相关任务上通常超过这些模型，并提供了与临床已知风险因素一致的归因。我们的架构和可解释性方法可应用于许多治疗领域以及使用在结构化EHR上训练的语言模型的预测任务。"
+    },
+    {
+      "id": "arxiv_2608.20229",
+      "arxiv_id": "2608.20229",
+      "title": "Prompt-Conditioned Channel Attention for Hierarchical Feature Modulation toward Anatomy-Agnostic Segmentation",
+      "authors": [
+        "Mosharof Hossain",
+        "Md Rabiul Islam",
+        "Limon Halder",
+        "Erchin Serpedin",
+        "Md Kamrul Hasan"
+      ],
+      "abstract": "Anatomically plausible segmentation remains challenging because of low contrast, ambiguous boundaries, and modality-specific artifacts. Interactive segmentation has emerged as a promising strategy to guide feature extraction and improve localization, particularly in structurally ambiguous regions. However, existing methods integrate prompts through late-stage fusion and lack explicit mechanisms for prompt-driven channel-wise modulation across hierarchical feature representations, limiting their ability to capture deeper contextual and modality-specific variations. To address these limitations, we introduce Prompt-Conditioned Channel Attention (PCCA), a novel modulation mechanism that enables deep, hierarchical integration of semantic prompts within encoder-decoder networks. PCCA extracts compact channel descriptors via pooling, projects them into a shared space, and fuses them through a gated excitation mechanism to compute prompt-aware channel attention weights. These weights adaptively recalibrate feature responses across multiple network stages, enabling prompt-conditioned, semantically enriched hierarchical representations. Building on this, we propose PROMISE-Net, instantiated in two network variants: a convolutional model (PROMISE-CNN) and a transformer-based model (PROMISE-Txformer). Across the ISIC-Lesion, Kvasir-Polyp, CAMUS-Cardiac, and Kvasir-Instrument benchmarks, integrating PCCA into PROMISE-CNN yielded relative IoU gains of 10.4%, 8.7%, 0.8%, and 3.4%, respectively, over the baseline U-Net, while PROMISE-Txformer achieved corresponding gains of 7.6%, 23.0%, 2.1%, and 1.1%, respectively, over the baseline UNETR. These results show consistent improvements across architectures, imaging modalities, and anatomical targets, establishing PCCA and PROMISE-Net as a scalable, generalizable framework for prompt-aware hierarchical feature modulation in medical image segmentation.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T16:24:09Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20229",
+      "pdf_link": "https://arxiv.org/pdf/2608.20229",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Anatomically plausible segmentation remains challenging because of low contrast, ambiguous boundaries, and modality-specific artifacts. Interactive segmentation has emerged as a promising strategy to guide feature extraction and improve localization, particularly in structurally ambiguous regions. However, existing methods integrate prompts through late-stage fusion and lack explicit mechanisms for prompt-driven channel-wise modulation across hierarchical feature representations, limiting their ability to capture deeper contextual and modality-specific variations. To address these limitations, we introduce Prompt-Conditioned Channel Attention (PCCA), a novel modulation mechanism that enables deep, hierarchical integration of semantic prompts within encoder-decoder networks. PCCA extracts compact channel descriptors via pooling, projects them into a shared space, and fuses them through a gated excitation mechanism to compute prompt-aware channel attention weights. These weights adaptively recalibrate feature responses across multiple network stages, enabling prompt-conditioned, semantically enriched hierarchical representations. Building on this, we propose PROMISE-Net, instantiated in two network variants: a convolutional model (PROMISE-CNN) and a transformer-based model (PROMISE-Txformer). Across the ISIC-Lesion, Kvasir-Polyp, CAMUS-Cardiac, and Kvasir-Instrument benchmarks, integrating PCCA into PROMISE-CNN yielded relative IoU gains of 10.4%, 8.7%, 0.8%, and 3.4%, respectively, over the baseline U-Net, while PROMISE-Txformer achieved corresponding gains of 7.6%, 23.0%, 2.1%, and 1.1%, respectively, over the baseline UNETR. These results show consistent improvements across architectures, imaging modalities, and anatomical targets, establishing PCCA and PROMISE-Net as a scalable, generalizable framework for prompt-aware hierarchical feature modulation in medical image segmentation.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "医学图像分割",
+        "注意力机制",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "医学图像分割中的提示条件通道注意力机制，无隐私保护或安全推理内容。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "面向解剖无关分割的层次特征调制的提示条件通道注意力",
+      "abstract_zh": "解剖学上合理的分割由于低对比度、模糊边界和模态特异性伪影仍然具有挑战性。交互式分割已成为一种有前景的策略，用于引导特征提取并改善定位，特别是在结构模糊区域。然而，现有方法通过后期融合整合提示，并且缺乏跨层次特征表示的提示驱动通道级调制的显式机制，限制了它们捕获更深层上下文和模态特异性变化的能力。为了解决这些限制，我们引入了提示条件通道注意力（PCCA），一种新颖的调制机制，能够在编码器-解码器网络内实现语义提示的深度、层次化整合。PCCA通过池化提取紧凑的通道描述符，将其投影到共享空间，并通过门控激励机制融合它们以计算提示感知的通道注意力权重。这些权重自适应地重新校准多个网络阶段中的特征响应，实现提示条件化、语义丰富的层次表示。在此基础上，我们提出了PROMISE-Net，实例化两种网络变体：卷积模型（PROMISE-CNN）和基于Transformer的模型（PROMISE-Txformer）。在ISIC-Lesion、Kvasir-Polyp、CAMUS-Cardiac和Kvasir-Instrument基准上，将PCCA集成到PROMISE-CNN中相对于基线U-Net分别产生了10.4%、8.7%、0.8%和3.4%的相对IoU增益，而PROMISE-Txformer相对于基线UNETR分别实现了7.6%、23.0%、2.1%和1.1%的相应增益。这些结果表明在不同架构、成像模态和解剖目标上的一致改进，将PCCA和PROMISE-Net确立为医学图像分割中提示感知层次特征调制的可扩展、可泛化框架。"
+    },
+    {
+      "id": "arxiv_2608.20210",
+      "arxiv_id": "2608.20210",
+      "title": "Daedalus-150M: A Convolution-Attention Hybrid Designed for CPU Inference",
+      "authors": [
+        "Christos Koutsiaris"
+      ],
+      "abstract": "Small language models are usually built like large ones and then squeezed onto a CPU afterwards. We did the opposite: we fixed the target first, one user, one token at a time, 4-bit weights, ordinary CPU, and chose the architecture to suit it. The result keeps full attention in only 6 of its 18 blocks. The other 12 use short convolutions whose memory is two timesteps wide no matter how long the conversation gets, so two thirds of the network never re-reads a growing cache. Trained from scratch on 59.9B tokens, the model scores 47.31 on a five-task benchmark against a bar of 42.20 that was fixed before training began. It beats GPT-2 124M, Pythia-160M, OPT-125M and GPT-neo-125M, all trained on three to six times more data, and exceeds MobileLLM-125M's published score despite that model seeing a trillion tokens. Validation bits-per-byte is 0.8685. To check the architecture rather than the training recipe, we trained a conventional all-attention model of the same size on the same data, and wrote down the winning condition before scoring either. The hybrid won the chosen quality metric by 0.81%, matched it on downstream tasks, produced a 6.3% smaller 4-bit file, and decoded 1.76x faster at 2048 tokens of context, 2.08x against an external model of similar size. In every measurement the speed advantage is near zero at an empty context and grows with length, which is what the mechanism predicts and what a merely leaner model would not show. A simple bandwidth calculation predicts only 1.17x, so memory volume alone does not explain the gap. We also report what did not work: an unmitigated 4-bit quality cost, roughly half the convolution channels ending up inert and impossible to remove, and a vocabulary larger than this model size warrants.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T16:09:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20210",
+      "pdf_link": "https://arxiv.org/pdf/2608.20210",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Small language models are usually built like large ones and then squeezed onto a CPU afterwards. We did the opposite: we fixed the target first, one user, one token at a time, 4-bit weights, ordinary CPU, and chose the architecture to suit it. The result keeps full attention in only 6 of its 18 blocks. The other 12 use short convolutions whose memory is two timesteps wide no matter how long the conversation gets, so two thirds of the network never re-reads a growing cache. Trained from scratch on 59.9B tokens, the model scores 47.31 on a five-task benchmark against a bar of 42.20 that was fixed before training began. It beats GPT-2 124M, Pythia-160M, OPT-125M and GPT-neo-125M, all trained on three to six times more data, and exceeds MobileLLM-125M's published score despite that model seeing a trillion tokens. Validation bits-per-byte is 0.8685. To check the architecture rather than the training recipe, we trained a conventional all-attention model of the same size on the same data, and wrote down the winning condition before scoring either. The hybrid won the chosen quality metric by 0.81%, matched it on downstream tasks, produced a 6.3% smaller 4-bit file, and decoded 1.76x faster at 2048 tokens of context, 2.08x against an external model of similar size. In every measurement the speed advantage is near zero at an empty context and grows with length, which is what the mechanism predicts and what a merely leaner model would not show. A simple bandwidth calculation predicts only 1.17x, so memory volume alone does not explain the gap. We also report what did not work: an unmitigated 4-bit quality cost, roughly half the convolution channels ending up inert and impossible to remove, and a vocabulary larger than this model size warrants.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "小语言模型",
+        "CPU推理",
+        "模型架构"
+      ],
+      "relevance_reason_zh": "面向CPU推理的小型语言模型架构设计与加速，非密码学保护下的安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Daedalus-150M：为CPU推理设计的卷积-注意力混合模型",
+      "abstract_zh": "小语言模型通常像大模型一样构建，之后才被压缩到CPU上运行。我们反其道而行之：首先确定目标——单个用户、一次一个token、4比特权重、普通CPU，然后选择适合它的架构。最终模型在18个块中仅6个保留完整注意力，其余12个使用短卷积，其记忆宽度为两个时间步，无论对话多长都不变，因此网络三分之二的部分从不重新读取不断增长的缓存。该模型在59.9B token上从头训练，在训练开始前设定的42.20基线之上，于五任务基准上取得47.31分。它超越了GPT-2 124M、Pythia-160M、OPT-125M和GPT-neo-125M（这些模型均使用3到6倍的数据训练），并超过了MobileLLM-125M的已发表分数，尽管后者看到了万亿级token。验证集的bits-per-byte为0.8685。为了检验架构而非训练配方，我们在相同数据上训练了一个同等规模的常规全注意力模型，并在评分前写下了获胜条件。混合模型在所选质量指标上以0.81%的优势获胜，在下游任务上与之持平，生成的4比特文件小6.3%，在2048 token上下文下解码速度快1.76倍，与外部相似规模模型相比快2.08倍。在所有测量中，速度优势在空上下文时接近零，并随长度增长而增大——这正是该机制所预测的，而单纯的更精简模型不会表现出这一点。简单的带宽计算仅预测1.17倍，因此仅内存容量无法解释这一差距。我们还报告了不奏效的部分：未缓解的4比特质量损失，约一半卷积通道最终无效且无法移除，以及超出该模型规模合理范围的词表大小。"
+    },
+    {
+      "id": "arxiv_2608.20186",
+      "arxiv_id": "2608.20186",
+      "title": "Decoding silent reading from non-invasive EEG",
+      "authors": [
+        "Ingo Marquardt",
+        "Anthilia Alchanat",
+        "Priyanka Jain"
+      ],
+      "abstract": "Non-invasive decoding of inner speech faces a fundamental data problem: a corpus pairing brain activity with a person's spontaneous inner monologue cannot be collected, and the available proxy paradigms (cued repetitive and retrospectively reported generative inner speech) are slow to acquire, poorly time-locked, and subject compliance is unverifiable. We therefore treat silent reading as a scalable proxy task and ask how much lexical and semantic information a contrastive decoder can extract from it. We report an open-vocabulary analysis of approximately 240,000 word presentations recorded from a single densely-sampled participant across 393 runs (ca. 49 h) of 19-channel dry-electrode EEG. Words from continuous narrative text were presented in rapid serial visual presentation, with typography randomised on every trial to partially decorrelate word identity from low-level visual form. A convolutional EEG encoder, optionally followed by a causal transformer, was trained with a CLIP-style contrastive objective to align short EEG windows with hidden-state embeddings of the presented word taken from a large language model. Decoding, evaluated as word-grouped top-10 retrieval against permutation baselines, was reliably above chance, extended to mid-frequency and rare words, and scaled log-linearly with training-data volume with no sign of saturation. Removing occipital and posterior-temporal electrodes reduced the word-level gain by roughly one third but left context tracking unchanged. Control analyses separate word-level decoding from narrative context tracking and from a non-neural positional prior introduced by the transformer's positional embedding. These results establish that open-vocabulary word-level information is recoverable from EEG during silent reading, and that decoding is data-limited rather than saturated.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T15:41:05Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20186",
+      "pdf_link": "https://arxiv.org/pdf/2608.20186",
+      "categories": [
+        "cs.LG",
+        "q-bio.NC"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Non-invasive decoding of inner speech faces a fundamental data problem: a corpus pairing brain activity with a person's spontaneous inner monologue cannot be collected, and the available proxy paradigms (cued repetitive and retrospectively reported generative inner speech) are slow to acquire, poorly time-locked, and subject compliance is unverifiable. We therefore treat silent reading as a scalable proxy task and ask how much lexical and semantic information a contrastive decoder can extract from it. We report an open-vocabulary analysis of approximately 240,000 word presentations recorded from a single densely-sampled participant across 393 runs (ca. 49 h) of 19-channel dry-electrode EEG. Words from continuous narrative text were presented in rapid serial visual presentation, with typography randomised on every trial to partially decorrelate word identity from low-level visual form. A convolutional EEG encoder, optionally followed by a causal transformer, was trained with a CLIP-style contrastive objective to align short EEG windows with hidden-state embeddings of the presented word taken from a large language model. Decoding, evaluated as word-grouped top-10 retrieval against permutation baselines, was reliably above chance, extended to mid-frequency and rare words, and scaled log-linearly with training-data volume with no sign of saturation. Removing occipital and posterior-temporal electrodes reduced the word-level gain by roughly one third but left context tracking unchanged. Control analyses separate word-level decoding from narrative context tracking and from a non-neural positional prior introduced by the transformer's positional embedding. These results establish that open-vocabulary word-level information is recoverable from EEG during silent reading, and that decoding is data-limited rather than saturated.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "脑电信号",
+        "神经解码",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "利用EEG解码默读词汇的神经科学方法，使用Transformer作为编码器，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "从非侵入性脑电图中解码默读",
+      "abstract_zh": "非侵入式内心言语解码面临一个根本性的数据问题：无法收集将大脑活动与个体自发内心独白配对的数据集，而现有的代理范式（提示性重复和回顾性报告的生成性内心言语）采集速度慢、时间锁定不佳，且受试者依从性无法验证。因此，我们将默读视为一种可扩展的代理任务，并探究对比解码器能从中提取多少词汇和语义信息。我们报告了一项开放词汇分析，该分析记录了来自单一密集采样参与者在393轮（约49小时）19通道干电极脑电图中的约24万次单词呈现。连续叙事文本中的单词以快速序列视觉呈现方式展示，每次试验的排版均随机化，以部分去相关单词身份与低级视觉形式。一个卷积脑电图编码器（可选后接因果Transformer）通过CLIP式对比目标进行训练，将短时脑电图窗口与来自大型语言模型的所呈现单词的隐状态嵌入对齐。解码（以按词分组的top-10检索与置换基线进行评估）可靠地高于随机水平，扩展到中频和稀有单词，并随训练数据量呈对数线性增长，且无饱和迹象。移除枕叶和后颞电极后，单词级增益减少了约三分之一，但上下文追踪保持不变。控制分析将单词级解码与叙事上下文追踪以及由Transformer位置嵌入引入的非神经位置先验区分开来。这些结果证实，在默读期间可从脑电图中恢复开放词汇的单词级信息，且解码受数据限制而非饱和。"
+    },
+    {
+      "id": "arxiv_2608.20134",
+      "arxiv_id": "2608.20134",
+      "title": "Feature Evolution and Migration during Vision Transformer Training",
+      "authors": [
+        "Joonas Järve",
+        "Halil Ibrahim Aysel",
+        "Tarun Khajuria",
+        "Meelis Kull"
+      ],
+      "abstract": "We present a novel view on feature evolution in Vision Transformers (ViTs) by visualizing the training process over two dimensions -- network depth (layer) and training time (epochs). We employ Sparse Autoencoders (SAEs) to extract candidate sparse features from CLS-token representations and compare their activation profiles across epoch--layer pairs. This allows us to study feature-level dynamics that are not directly visible from representation-level similarity measures. Furthermore, we demonstrate how this framework of feature evolution allows us to describe feature migration, the change in the layer where a feature is most detectable during training. Our experiments show that migration is concentrated early in training, occurs more often toward earlier layers than toward deeper layers, and declines as feature organization stabilizes. We further find that deeper layers stabilize earlier and more strongly than shallow layers. The results show that our approach can be employed as a tool for understanding how ViTs learn and evolve.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T15:00:21Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20134",
+      "pdf_link": "https://arxiv.org/pdf/2608.20134",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "We present a novel view on feature evolution in Vision Transformers (ViTs) by visualizing the training process over two dimensions -- network depth (layer) and training time (epochs). We employ Sparse Autoencoders (SAEs) to extract candidate sparse features from CLS-token representations and compare their activation profiles across epoch--layer pairs. This allows us to study feature-level dynamics that are not directly visible from representation-level similarity measures. Furthermore, we demonstrate how this framework of feature evolution allows us to describe feature migration, the change in the layer where a feature is most detectable during training. Our experiments show that migration is concentrated early in training, occurs more often toward earlier layers than toward deeper layers, and declines as feature organization stabilizes. We further find that deeper layers stabilize earlier and more strongly than shallow layers. The results show that our approach can be employed as a tool for understanding how ViTs learn and evolve.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "Vision Transformer",
+        "特征演化",
+        "稀疏自编码器"
+      ],
+      "relevance_reason_zh": "分析视觉Transformer训练中特征演化与迁移，属于模型可解释性研究，无安全推理属性。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "视觉Transformer训练过程中的特征演化与迁移",
+      "abstract_zh": "我们通过沿两个维度——网络深度（层）和训练时间（轮次）——可视化训练过程，提出了一种关于视觉Transformer（ViTs）中特征演化的新视角。我们采用稀疏自编码器（SAEs）从CLS-token表示中提取候选稀疏特征，并比较它们在不同epoch-层对上的激活概况。这使我们能够研究从表示级相似性度量中无法直接看到的特征级动态。此外，我们展示了这一特征演化框架如何使我们能够描述特征迁移，即训练过程中特征最可检测层的变化。我们的实验表明，迁移集中在训练早期，更多发生在前面的层而非更深的层，并随着特征组织的稳定而减少。我们进一步发现，深层比浅层更早且更强烈地稳定下来。结果表明，我们的方法可作为理解ViTs如何学习和演化的工具。"
+    },
+    {
+      "id": "arxiv_2608.20118",
+      "arxiv_id": "2608.20118",
+      "title": "Privacy-Preserving Detection of Rare Disease-Associated Cell Subsets via Secure Multi-Party Computation",
+      "authors": [
+        "Ş. Selcan Magara",
+        "Esther Havemann",
+        "Debora Jutz",
+        "Ali Burak Ünal",
+        "Mete Akgün"
+      ],
+      "abstract": "The detection of rare disease-associated cell subsets from high-dimensional single-cell measurements is critical for understanding diseases such as leukaemia and viral infections. CellCnn, a convolutional neural network (CNN) designed for this task, has demonstrated the ability to identify phenotype-associated cell populations at frequencies as low as 0.01\\%. Training such models reliably requires patient cohorts that are larger and more diverse than any single institution can typically assemble, and the underlying single-cell data is too sensitive to share across institutional boundaries under existing privacy regulations. We propose a secure multi-party computation (MPC) framework that enables the training and inference of CellCnn entirely on secret-shared data. This ensures that neither the participants nor the computing servers ever observe raw patient data or intermediate values. Evaluated on benchmark single-cell datasets for cytomegalovirus infection (CMV) and acute myeloid leukaemia (AML), our implementation preserves accuracy close to its plaintext counterpart while outperforming the prior privacy-preserving baseline. In contrast to earlier privacy-preserving approaches that removed components such as ReLU activations and bias terms, our method retains these key parts of the CellCnn architecture and supports accurate analysis without exposing raw patient data.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T14:49:45Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20118",
+      "pdf_link": "https://arxiv.org/pdf/2608.20118",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "MPC",
+        "multi-party computation"
+      ],
+      "summary_en": "The detection of rare disease-associated cell subsets from high-dimensional single-cell measurements is critical for understanding diseases such as leukaemia and viral infections. CellCnn, a convolutional neural network (CNN) designed for this task, has demonstrated the ability to identify phenotype-associated cell populations at frequencies as low as 0.01\\%. Training such models reliably requires patient cohorts that are larger and more diverse than any single institution can typically assemble, and the underlying single-cell data is too sensitive to share across institutional boundaries under existing privacy regulations. We propose a secure multi-party computation (MPC) framework that enables the training and inference of CellCnn entirely on secret-shared data. This ensures that neither the participants nor the computing servers ever observe raw patient data or intermediate values. Evaluated on benchmark single-cell datasets for cytomegalovirus infection (CMV) and acute myeloid leukaemia (AML), our implementation preserves accuracy close to its plaintext counterpart while outperforming the prior privacy-preserving baseline. In contrast to earlier privacy-preserving approaches that removed components such as ReLU activations and bias terms, our method retains these key parts of the CellCnn architecture and supports accurate analysis without exposing raw patient data.",
+      "keywords": [
+        "MPC",
+        "multi-party computation"
+      ],
+      "topics": [
+        "安全多方计算",
+        "隐私保护推理",
+        "秘密共享",
+        "CellCnn"
+      ],
+      "relevance_reason_zh": "通过MPC在秘密共享数据上完成CellCnn模型训练与推理，保护单细胞患者数据隐私，直接属于安全推理。",
+      "relevance_level": "secure_inference",
+      "summary_type": "fulltext",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "# 全文精选\n\n## 核心结论\n\n本文提出了一种基于安全多方计算（MPC）的 CellCnn 训练与推理框架，用于从高维单细胞数据中检测频率可低至 0.01% 的疾病相关细胞亚群。该方法使多医疗机构无需共享原始数据即可协作训练模型，全程在秘密分享数据上完成运算，参与方与计算服务器均不看到原始数据或中间值。实验表明，在 CMV 与 AML 两个公开数据集上，该方案（称 Ours）的分类准确率与明文 CellCnn 相当，并优于已有 MPC 方案 PriCell；在 AML MRD 回归任务上，Ours 的 Pearson 相关系数为 0.98，接近明文水平的 0.99。需注意，上述结果均为实验观察，作者并未给出安全性定理证明。\n\n## 问题与威胁模型\n\n**问题**：单中心拥有的单细胞数据量不足，且单细胞数据高度敏感，受 GDPR/HIPAA 约束，因此需要多中心协作但不可共享原始数据。\n\n**威胁模型**：采用三方 MPC、半诚实安全模型、诚实多数假设；最多一方被腐化，各方不串谋。原始数据、模型更新、中间激活始终以秘密分享形式存在，仅最终约定输出被重构。作者明确说明，输出本身的泄露（如成员推断、模型反演）不在 MPC 威胁模型覆盖范围内。已有方案 PriCell 基于多方同态加密、被动安全对抗最多 N−1 方合谋，但省略 ReLU 与偏置项、仅支持分类，且要求数据方全程在线——本文针对这些不足进行改进。\n\n## 方法与关键技术\n\n以下为端到端协议流程，依据正文证据整理：\n\n1. **参与方与输入输出**：两个计算代理 P0、P1 和辅助方 P2（Helper）。数据方为医疗机构，将每个数值拆成两个随机分享分别发给 P0、P1。训练与推理全程在秘密分享上进行，数据方只需提供分享，不必保持在线；结束时仅重构约定输出。\n\n2. **数据与模型表示**：使用环 Z₂^64 上的 2-out-of-2 加法秘密分享，实数值用定点表示。模型结构沿用 CellCnn，包含卷积层与全连接层，并保留偏置项。\n\n3. **密码学原语**：加法在本地完成、无通信；乘法需要 P2 预计算相关随机性（Beaver 三元组）以辅助交互，P2 不接触未掩码的分享。\n\n4. **协议阶段与优化**：为适配 MPC，作者做了若干关键修改——用带动量的小批量 SGD 替换 Adam（动量更新仅含本地操作）；ReLU 原生支持，无需近似；采用均值池化（无需通信）；将 softmax/交叉熵替换为逐类 sigmoid one-vs-rest，sigmoid 用三次最小二乘多项式 σ(z) ≈ 0.5 + 0.23323z − 0.00981z³ 近似，适用范围 z ∈ [−3,3]，全连接层输出先裁剪到该区间；回归头使用 tanh 输出和 MSE 损失，通过掩码安全指数与除法计算。\n\n5. **模块衔接与执行流程**：数据方完成秘密分享分发 → P0/P1 在执行训练轮次时，层间前向传播中的卷积、池化、激活均在分享域内完成，乘法步骤借助 P2 的 Beaver 三元组交互实现 → 反向传播与带动量参数更新同样在分享域内进行 → 训练完成后，模型参数用于分享域内的推理 → 最后仅重构输出。\n\n6. **性能特征**：正文未给出显式的通信轮次/复杂度数据（未从可提取正文确认）。运行时间实验显示，在 5 Gbps、0.8 ms RTT 的 LAN 上训练 CMV/NK 20 轮约 1200 秒；限至 1 Gbps 时约 2700 秒，表明带宽为主要瓶颈。\n\n## 安全性\n\n方案在半诚实安全模型、诚实多数假设下保护原始数据和中间值的机密性；参与方与计算服务器在整个流程中不看到明文数据或中间激活。作者指出，威胁模型可加强为恶意安全，且输出发布导致的泄露不在 MPC 覆盖范围内，建议与差分隐私结合。正文未从可提取部分给出形式化安全证明。\n\n## 实验与性能\n\n- **数据集与设置**：CMV 数据集含 20 名供者、37 个标记/细胞，11 CMV−、9 CMV+，14 训练/6 测试，10 次划分；AML 数据集含 16 个标记/细胞，三类（健康、正常核型、CBF 易位），7 训练/6 测试。AML MRD 回归将 CBF 白血病原始细胞以 log 均匀比例 f ∈ [0.1%, 5%] 混入健康骨髓，10% 训练样本令 f=0。比较对象为 Ours、明文 CellCnn、PriCell，使用相同划分与小批量顺序。\n- **CMV 分类**：Ours 多细胞准确率 0.727±0.141、表型准确率 0.681±0.146；明文 CellCnn 为 0.721±0.173、0.716±0.158；PriCell 为 0.633±0.127、0.649±0.146。Ours 对 PriCell 在多细胞指标上显著性 p=0.004（9/10 划分占优）；表型统计无显著差异。\n- **AML 分类**：明文 CellCnn 多细胞准确率 1.000±0.000；Ours 多细胞 0.935±0.047、表型 0.916±0.088；PriCell 分别为 0.898±0.055、0.900±0.086；Ours 多细胞优势 8/10 划分，p=0.08。\n- **AML MRD 回归**：42 个测试多细胞输入（7 个频率，每频率 6 重复），Ours Pearson r=0.98、MAE=1.0 个百分点；明文 r=0.99、MAE=0.8 个百分点。\n- **运行时间**：如上文所述；PriCell 在 1 Gbps、N=10 活动方时约 1550 秒，但部署模式不同，不可直接对比。\n\n## 局限与阅读判断\n\n**局限**：正文明确列出——仍为半诚实安全模型，可加强为恶意安全；输出发布泄露不在 MPC 覆盖范围内；基准测试继承了小队列和合成回归真值，需在更大真实队列和连续临床生物标志物上验证。此外，正文未给出显式的通信轮次/复杂度分析。\n\n**阅读判断**：本文的工作价值在于将 MPC 适配到 CellCnn 这一特定深度学习架构时做了细致的协议层优化（ReLU 原生支持、均值池化免通信、多项式近似 sigmoid），使安全训练精度逼近明文。但其安全性论证仅停留在半诚实模型且无形式化证明，实际临床部署前仍需面对恶意安全、输出隐私和更大规模验证三方面挑战。数据与代码已公开（https://github.com/mdppml/CECILIA-CellCNN），CMV 与 AML 数据集源自原始 CellCnn 研究，可公开获取。",
+      "summary": "# 全文精选\n\n## 核心结论\n\n本文提出了一种基于安全多方计算（MPC）的 CellCnn 训练与推理框架，用于从高维单细胞数据中检测频率可低至 0.01% 的疾病相关细胞亚群。该方法使多医疗机构无需共享原始数据即可协作训练模型，全程在秘密分享数据上完成运算，参与方与计算服务器均不看到原始数据或中间值。实验表明，在 CMV 与 AML 两个公开数据集上，该方案（称 Ours）的分类准确率与明文 CellCnn 相当，并优于已有 MPC 方案 PriCell；在 AML MRD 回归任务上，Ours 的 Pearson 相关系数为 0.98，接近明文水平的 0.99。需注意，上述结果均为实验观察，作者并未给出安全性定理证明。\n\n## 问题与威胁模型\n\n**问题**：单中心拥有的单细胞数据量不足，且单细胞数据高度敏感，受 GDPR/HIPAA 约束，因此需要多中心协作但不可共享原始数据。\n\n**威胁模型**：采用三方 MPC、半诚实安全模型、诚实多数假设；最多一方被腐化，各方不串谋。原始数据、模型更新、中间激活始终以秘密分享形式存在，仅最终约定输出被重构。作者明确说明，输出本身的泄露（如成员推断、模型反演）不在 MPC 威胁模型覆盖范围内。已有方案 PriCell 基于多方同态加密、被动安全对抗最多 N−1 方合谋，但省略 ReLU 与偏置项、仅支持分类，且要求数据方全程在线——本文针对这些不足进行改进。\n\n## 方法与关键技术\n\n以下为端到端协议流程，依据正文证据整理：\n\n1. **参与方与输入输出**：两个计算代理 P0、P1 和辅助方 P2（Helper）。数据方为医疗机构，将每个数值拆成两个随机分享分别发给 P0、P1。训练与推理全程在秘密分享上进行，数据方只需提供分享，不必保持在线；结束时仅重构约定输出。\n\n2. **数据与模型表示**：使用环 Z₂^64 上的 2-out-of-2 加法秘密分享，实数值用定点表示。模型结构沿用 CellCnn，包含卷积层与全连接层，并保留偏置项。\n\n3. **密码学原语**：加法在本地完成、无通信；乘法需要 P2 预计算相关随机性（Beaver 三元组）以辅助交互，P2 不接触未掩码的分享。\n\n4. **协议阶段与优化**：为适配 MPC，作者做了若干关键修改——用带动量的小批量 SGD 替换 Adam（动量更新仅含本地操作）；ReLU 原生支持，无需近似；采用均值池化（无需通信）；将 softmax/交叉熵替换为逐类 sigmoid one-vs-rest，sigmoid 用三次最小二乘多项式 σ(z) ≈ 0.5 + 0.23323z − 0.00981z³ 近似，适用范围 z ∈ [−3,3]，全连接层输出先裁剪到该区间；回归头使用 tanh 输出和 MSE 损失，通过掩码安全指数与除法计算。\n\n5. **模块衔接与执行流程**：数据方完成秘密分享分发 → P0/P1 在执行训练轮次时，层间前向传播中的卷积、池化、激活均在分享域内完成，乘法步骤借助 P2 的 Beaver 三元组交互实现 → 反向传播与带动量参数更新同样在分享域内进行 → 训练完成后，模型参数用于分享域内的推理 → 最后仅重构输出。\n\n6. **性能特征**：正文未给出显式的通信轮次/复杂度数据（未从可提取正文确认）。运行时间实验显示，在 5 Gbps、0.8 ms RTT 的 LAN 上训练 CMV/NK 20 轮约 1200 秒；限至 1 Gbps 时约 2700 秒，表明带宽为主要瓶颈。\n\n## 安全性\n\n方案在半诚实安全模型、诚实多数假设下保护原始数据和中间值的机密性；参与方与计算服务器在整个流程中不看到明文数据或中间激活。作者指出，威胁模型可加强为恶意安全，且输出发布导致的泄露不在 MPC 覆盖范围内，建议与差分隐私结合。正文未从可提取部分给出形式化安全证明。\n\n## 实验与性能\n\n- **数据集与设置**：CMV 数据集含 20 名供者、37 个标记/细胞，11 CMV−、9 CMV+，14 训练/6 测试，10 次划分；AML 数据集含 16 个标记/细胞，三类（健康、正常核型、CBF 易位），7 训练/6 测试。AML MRD 回归将 CBF 白血病原始细胞以 log 均匀比例 f ∈ [0.1%, 5%] 混入健康骨髓，10% 训练样本令 f=0。比较对象为 Ours、明文 CellCnn、PriCell，使用相同划分与小批量顺序。\n- **CMV 分类**：Ours 多细胞准确率 0.727±0.141、表型准确率 0.681±0.146；明文 CellCnn 为 0.721±0.173、0.716±0.158；PriCell 为 0.633±0.127、0.649±0.146。Ours 对 PriCell 在多细胞指标上显著性 p=0.004（9/10 划分占优）；表型统计无显著差异。\n- **AML 分类**：明文 CellCnn 多细胞准确率 1.000±0.000；Ours 多细胞 0.935±0.047、表型 0.916±0.088；PriCell 分别为 0.898±0.055、0.900±0.086；Ours 多细胞优势 8/10 划分，p=0.08。\n- **AML MRD 回归**：42 个测试多细胞输入（7 个频率，每频率 6 重复），Ours Pearson r=0.98、MAE=1.0 个百分点；明文 r=0.99、MAE=0.8 个百分点。\n- **运行时间**：如上文所述；PriCell 在 1 Gbps、N=10 活动方时约 1550 秒，但部署模式不同，不可直接对比。\n\n## 局限与阅读判断\n\n**局限**：正文明确列出——仍为半诚实安全模型，可加强为恶意安全；输出发布泄露不在 MPC 覆盖范围内；基准测试继承了小队列和合成回归真值，需在更大真实队列和连续临床生物标志物上验证。此外，正文未给出显式的通信轮次/复杂度分析。\n\n**阅读判断**：本文的工作价值在于将 MPC 适配到 CellCnn 这一特定深度学习架构时做了细致的协议层优化（ReLU 原生支持、均值池化免通信、多项式近似 sigmoid），使安全训练精度逼近明文。但其安全性论证仅停留在半诚实模型且无形式化证明，实际临床部署前仍需面对恶意安全、输出隐私和更大规模验证三方面挑战。数据与代码已公开（https://github.com/mdppml/CECILIA-CellCNN），CMV 与 AML 数据集源自原始 CellCnn 研究，可公开获取。",
+      "abstract_guide_zh": "## 一句话结论\n本文提出一个基于安全多方计算（MPC）的隐私保护框架，使得 CellCnn 卷积神经网络能够在秘密共享数据上完成训练与推理，从而在保护患者数据隐私的前提下检测罕见疾病相关细胞亚群；在 CMV 与 AML 基准上，其精度接近明文版本。\n\n## 问题与动机\n从高维单细胞测量中检测罕见疾病相关细胞亚群，对于理解白血病、病毒感染等疾病非常重要。CellCnn（一种专为此任务设计的卷积神经网络，CNN）已能识别频率低至 0.01% 的表型相关细胞群。但可靠训练需要比单一机构通常可汇集规模更大、更多样化的患者队列；而底层单细胞数据过于敏感，在现有隐私法规下难以跨机构共享。\n\n## 方法与技术路线\n研究对象是单细胞测量数据与 CellCnn 模型。输入是经过秘密共享（secret sharing，将原始数据拆分为多个随机份额并分发给不同参与方的技术）处理后的数据。本文框架完全在秘密共享数据上执行 CellCnn 的训练（学习权重）和推理（对新样本预测/识别），确保参与方和计算服务器都无法看到原始患者数据或中间值。\n\n具体协议层面，摘要未说明 MPC 协议的类型、份额分发方式、安全乘法或非线性激活的底层实现、训练轮数及超参数设置。摘要特别指出，与先前隐私保护方法不同，本文保留了 CellCnn 结构中的 ReLU（修正线性单元）激活函数和偏置项（bias），而不是像先前工作那样移除这些部件。这暗示框架的安全协议需要处理这些非线性与偏置操作；至于具体如何实现，摘要未披露。\n\n评价基准方面，摘要提到了两个比较对象：明文（plaintext，未加密）状态下的 CellCnn，用于衡量精度损失；以及先前的隐私保护基线，用于衡量实用性提升。摘要未说明具体数据集规模、划分方式和精度数值。\n\n## 主要结果\n在巨细胞病毒感染（CMV）和急性髓系白血病（AML）的基准单细胞数据集上，该 MPC 实现的精度接近明文对应版本，并且优于先前的隐私保护基线。相比之下，早期隐私保护方法常移除 ReLU 和偏置项；本文方法保留了这些关键组件，从而在不暴露原始患者数据的前提下支持更完整的 CellCnn 分析。\n\n## 为什么与兴趣相关\n本工作属于安全多方计算与隐私保护机器学习的交叉应用，直接面向敏感医疗数据跨机构协作的刚需。它表明 MPC 不仅能保护简单模型，也能支撑包含非线性和偏置项的 CNN 训练与推理，对生物医学场景中的隐私保护分析具有参考价值。",
+      "fulltext_source_url": "https://arxiv.org/pdf/2608.20118",
+      "fulltext_status": "success"
+    },
+    {
+      "id": "arxiv_2608.20097",
+      "arxiv_id": "2608.20097",
+      "title": "TrustRAG: Blockchain-Enhanced RAG via Committee-Based Credibility Scoring",
+      "authors": [
+        "Baixiang Liu",
+        "Haotian Che",
+        "Yuan Li"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) lets Large Language Models (LLMs) pull in up-to-date, domain-specific information instead of relying only on what they were trained on. Yet most RAG systems still draw from centralized databases with limited oversight, making it difficult to verify where a document came from, whether it has been tampered with, or whether it should be trusted at all. This is a serious problem in domains where both the timeliness and accuracy of retrieved content are critical, such as healthcare, finance, logistics, and legal case law, where a wrong or manipulated document can directly lead to bad decisions. We present TrustRAG, a committee-based, blockchain-backed RAG system: before a document is used, it is certified by a committee of domain experts through a zero-knowledge protocol, and the committee's hidden scores are combined via secure multi-party computation into a trust score that any client can verify. These scores, along with the underlying document data, are maintained jointly across chains through hash commitments, so no document or score can be silently altered or dropped, and every ranking can be independently replayed and checked.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T14:31:10Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20097",
+      "pdf_link": "https://arxiv.org/pdf/2608.20097",
+      "categories": [
+        "cs.CR",
+        "cs.DC"
+      ],
+      "matched_terms": [
+        "multi-party computation"
+      ],
+      "summary_en": "Retrieval-Augmented Generation (RAG) lets Large Language Models (LLMs) pull in up-to-date, domain-specific information instead of relying only on what they were trained on. Yet most RAG systems still draw from centralized databases with limited oversight, making it difficult to verify where a document came from, whether it has been tampered with, or whether it should be trusted at all. This is a serious problem in domains where both the timeliness and accuracy of retrieved content are critical, such as healthcare, finance, logistics, and legal case law, where a wrong or manipulated document can directly lead to bad decisions. We present TrustRAG, a committee-based, blockchain-backed RAG system: before a document is used, it is certified by a committee of domain experts through a zero-knowledge protocol, and the committee's hidden scores are combined via secure multi-party computation into a trust score that any client can verify. These scores, along with the underlying document data, are maintained jointly across chains through hash commitments, so no document or score can be silently altered or dropped, and every ranking can be independently replayed and checked.",
+      "keywords": [
+        "multi-party computation"
+      ],
+      "topics": [
+        "RAG",
+        "区块链",
+        "MPC",
+        "零知识证明"
+      ],
+      "relevance_reason_zh": "使用零知识协议和MPC对RAG文档进行可信度评估，涉及隐私计算与LLM系统安全，但不是对模型推理过程本身的保护。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\nTrustRAG 在检索增强生成（RAG，让大语言模型从外部知识库获取信息的技术）中引入“委员会评分 + 区块链存证”，为文档可信度提供可验证、防篡改的信任评分机制。\n\n## 问题与动机\n\nRAG 虽能让大语言模型（LLM，Large Language Model）利用实时、领域特定的信息，但现有 RAG 系统大多依赖缺少监督的集中式数据库。文档的来源是否真实、是否被篡改、是否值得信任，都难以验证。在医疗、金融、物流、法律等对检索内容时效性和准确性要求很高的场景中，一份错误或被恶意修改的文档可能直接导致错误决策。\n\n## 方法与技术路线\n\nTrustRAG 是一个“委员会驱动、区块链背书”的 RAG 系统，核心流程如下：\n\n- **研究对象与设定**：面向 RAG 检索链路中“文档入库前”和“排序使用时”两个环节。文档不是直接进入数据库，而是先经过一个由领域专家组成的委员会评审。\n- **关键步骤与模块**：\n  1. **委员会认证**：文档在使用前，由领域专家委员会通过零知识协议（zero-knowledge protocol，一种能在不泄露具体内容的情况下证明某个陈述为真的密码学技术）完成认证。这样做的目的是让文档通过专家审核，同时不暴露评审细节。\n  2. **信任分数合成**：委员会成员各自产生“隐藏评分”，这些评分通过安全多方计算（secure multi-party computation，MPC，允许多方在不公开各自输入的前提下共同计算函数结果）合并成一个统一的信任分数。该分数可被任何客户端验证，但单个成员的评分不会被披露。\n  3. **跨链存证**：信任分数和底层文档数据通过哈希承诺（hash commitment，将数据映射为固定长度哈希值并公开，事后无法抵赖或篡改）在多个区块链上共同维护。这样设计是为了防止任何单一方静默改动或丢弃文档/分数，所有历史状态都可以追溯。\n  4. **排名可重放**：基于信任分数的排序结果被记录上链，任何客户端都可以独立重放并检查排序过程，确保排名未被操纵。\n\n- **输出**：每个文档获得一个公开可验证的信任分数，RAG 系统据此决定检索结果的使用顺序；客户端可随时验证文档和分数的完整性。\n\n需要说明：摘要未披露零知识协议的具体类型、MPC 的具体算法、哈希承诺跨链细节、链结构以及实验数据集和对比指标。\n\n## 主要结果\n\n摘要声明 TrustRAG 能够保证文档和分数不会被静默修改或丢弃，且每个排名结果都能被独立重放和校验。该系统同时保护了委员会评分过程中的隐私性（通过零知识证明与 MPC），又提供了公开可审计性（通过区块链与哈希承诺）。摘要未给出任何实验数据或定量安全结论。\n\n## 为什么与兴趣相关\n\nTrustRAG 将密码学工具（零知识协议、安全多方计算、区块链）用于 RAG 文档的可信度评估，而不是直接保护 LLM 的推理过程。它关注的是“检索内容是否可信”这一横跨隐私计算与 LLM 系统安全的问题，对需要强审计、高可信来源的 RAG 应用（如医疗、法律、金融）有启发意义，也为后续在模型外挂知识管线中引入去中心化信任机制提供了参考思路。",
+      "summary": "## 一句话结论\n\nTrustRAG 在检索增强生成（RAG，让大语言模型从外部知识库获取信息的技术）中引入“委员会评分 + 区块链存证”，为文档可信度提供可验证、防篡改的信任评分机制。\n\n## 问题与动机\n\nRAG 虽能让大语言模型（LLM，Large Language Model）利用实时、领域特定的信息，但现有 RAG 系统大多依赖缺少监督的集中式数据库。文档的来源是否真实、是否被篡改、是否值得信任，都难以验证。在医疗、金融、物流、法律等对检索内容时效性和准确性要求很高的场景中，一份错误或被恶意修改的文档可能直接导致错误决策。\n\n## 方法与技术路线\n\nTrustRAG 是一个“委员会驱动、区块链背书”的 RAG 系统，核心流程如下：\n\n- **研究对象与设定**：面向 RAG 检索链路中“文档入库前”和“排序使用时”两个环节。文档不是直接进入数据库，而是先经过一个由领域专家组成的委员会评审。\n- **关键步骤与模块**：\n  1. **委员会认证**：文档在使用前，由领域专家委员会通过零知识协议（zero-knowledge protocol，一种能在不泄露具体内容的情况下证明某个陈述为真的密码学技术）完成认证。这样做的目的是让文档通过专家审核，同时不暴露评审细节。\n  2. **信任分数合成**：委员会成员各自产生“隐藏评分”，这些评分通过安全多方计算（secure multi-party computation，MPC，允许多方在不公开各自输入的前提下共同计算函数结果）合并成一个统一的信任分数。该分数可被任何客户端验证，但单个成员的评分不会被披露。\n  3. **跨链存证**：信任分数和底层文档数据通过哈希承诺（hash commitment，将数据映射为固定长度哈希值并公开，事后无法抵赖或篡改）在多个区块链上共同维护。这样设计是为了防止任何单一方静默改动或丢弃文档/分数，所有历史状态都可以追溯。\n  4. **排名可重放**：基于信任分数的排序结果被记录上链，任何客户端都可以独立重放并检查排序过程，确保排名未被操纵。\n\n- **输出**：每个文档获得一个公开可验证的信任分数，RAG 系统据此决定检索结果的使用顺序；客户端可随时验证文档和分数的完整性。\n\n需要说明：摘要未披露零知识协议的具体类型、MPC 的具体算法、哈希承诺跨链细节、链结构以及实验数据集和对比指标。\n\n## 主要结果\n\n摘要声明 TrustRAG 能够保证文档和分数不会被静默修改或丢弃，且每个排名结果都能被独立重放和校验。该系统同时保护了委员会评分过程中的隐私性（通过零知识证明与 MPC），又提供了公开可审计性（通过区块链与哈希承诺）。摘要未给出任何实验数据或定量安全结论。\n\n## 为什么与兴趣相关\n\nTrustRAG 将密码学工具（零知识协议、安全多方计算、区块链）用于 RAG 文档的可信度评估，而不是直接保护 LLM 的推理过程。它关注的是“检索内容是否可信”这一横跨隐私计算与 LLM 系统安全的问题，对需要强审计、高可信来源的 RAG 应用（如医疗、法律、金融）有启发意义，也为后续在模型外挂知识管线中引入去中心化信任机制提供了参考思路。"
+    },
+    {
+      "id": "arxiv_2608.20053",
+      "arxiv_id": "2608.20053",
+      "title": "On the Applicability of Safety Nets: A Safety-By-Design Solution for Certifying Neural Networks",
+      "authors": [
+        "Johann Maximilian Christensen",
+        "Thomas Stefani",
+        "Elena Hoemann",
+        "Frank Köster",
+        "Sven Hallerbach"
+      ],
+      "abstract": "The integration of Artificial Intelligence (AI) in safety-critical aviation systems presents significant challenges for certification and deployment. Aviation, often regarded as the safest form of transportation, relies on numerous safety-critical systems. For future safety-critical AI-based systems, EASA requires a Safety-by-Design approach, which can be achieved by using Safety Nets that combine neural network compression with lookup tables to ensure 100 % correct runtime behavior across the discretized operational design domain. Although Safety Nets have been studied, no comprehensive study of their performance characteristics and system design trade-offs has been conducted. This work presents the first systematic analysis of the trade-off between neural network and lookup table size in Safety Nets. By systematically comparing neural networks with diverse architectures, this study identifies optimal design parameters that minimize overall storage and memory requirements while maintaining certification compliance. Results demonstrate that architectures with 3 to 5 hidden layers, each with approximately 50 to 100 nodes, combined with one-hot encoding, achieve the best balance. In these configurations, neural networks accurately represent at least 97 % of the data, while compact lookup tables handle the remaining errors. The resulting Safety Nets reduce the system size by almost three orders of magnitude, fitting within the memory budget of current avionics hardware while guaranteeing 100 % correct outputs across the entire discretized input space, as required by EASA guidelines. This work provides the first-ever open-source implementation of Safety Nets for HCAS and VCAS with replicable results, demonstrating a practical pathway toward certifiable AI-based systems in aviation and establishing Safety Nets as a viable Safety-by-Design solution for safety-critical applications.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T13:51:35Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.20053",
+      "pdf_link": "https://arxiv.org/pdf/2608.20053",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "lookup table"
+      ],
+      "summary_en": "The integration of Artificial Intelligence (AI) in safety-critical aviation systems presents significant challenges for certification and deployment. Aviation, often regarded as the safest form of transportation, relies on numerous safety-critical systems. For future safety-critical AI-based systems, EASA requires a Safety-by-Design approach, which can be achieved by using Safety Nets that combine neural network compression with lookup tables to ensure 100 % correct runtime behavior across the discretized operational design domain. Although Safety Nets have been studied, no comprehensive study of their performance characteristics and system design trade-offs has been conducted. This work presents the first systematic analysis of the trade-off between neural network and lookup table size in Safety Nets. By systematically comparing neural networks with diverse architectures, this study identifies optimal design parameters that minimize overall storage and memory requirements while maintaining certification compliance. Results demonstrate that architectures with 3 to 5 hidden layers, each with approximately 50 to 100 nodes, combined with one-hot encoding, achieve the best balance. In these configurations, neural networks accurately represent at least 97 % of the data, while compact lookup tables handle the remaining errors. The resulting Safety Nets reduce the system size by almost three orders of magnitude, fitting within the memory budget of current avionics hardware while guaranteeing 100 % correct outputs across the entire discretized input space, as required by EASA guidelines. This work provides the first-ever open-source implementation of Safety Nets for HCAS and VCAS with replicable results, demonstrating a practical pathway toward certifiable AI-based systems in aviation and establishing Safety Nets as a viable Safety-by-Design solution for safety-critical applications.",
+      "keywords": [
+        "lookup table"
+      ],
+      "topics": [
+        "神经网络认证",
+        "查找表",
+        "安全关键系统"
+      ],
+      "relevance_reason_zh": "面向航空安全的神经网络压缩与查找表认证方案，属于安全关键系统设计而非隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "安全网适用性研究：一种用于神经网络认证的安全性设计解决方案",
+      "abstract_zh": "人工智能（AI）在安全关键型航空系统中的集成对认证和部署提出了重大挑战。航空通常被视为最安全的交通方式，依赖众多安全关键系统。对于未来基于AI的安全关键系统，EASA要求采用安全性设计（Safety-by-Design）方法，该方法可通过结合神经网络压缩与查找表的安全网（Safety Nets）来实现，从而确保在离散化操作设计域内100%正确的运行时行为。尽管安全网已被研究，但尚未对其性能特征和系统设计权衡进行全面的研究。本工作首次系统分析了安全网中神经网络与查找表大小之间的权衡。通过系统比较不同架构的神经网络，本研究确定了在保持认证合规性的同时，最小化总体存储和内存需求的最优设计参数。结果表明，具有3至5个隐藏层、每层约50至100个节点并结合独热编码的架构达到了最佳平衡。在这些配置中，神经网络准确表示至少97%的数据，而紧凑的查找表则处理剩余的错误。由此产生的安全网将系统规模减少了近三个数量级，在适应当前航空电子硬件内存预算的同时，保证了整个离散化输入空间上100%的正确输出，符合EASA指南的要求。本工作首次提供了用于HCAS和VCAS的安全网开源实现，且结果可复现，展示了在航空领域实现可认证AI系统的实际路径，并将安全网确立为面向安全关键应用的可行安全性设计解决方案。"
+    },
+    {
+      "id": "arxiv_2608.19966",
+      "arxiv_id": "2608.19966",
+      "title": "Rethinking Patch Based Multivariate Time Series Forecasting with Semantic Structured Partitioning",
+      "authors": [
+        "Jiazhe Wang",
+        "Zhiquan Huang",
+        "Linjing Xue",
+        "Ming Liu",
+        "Meiwen Li",
+        "Ruijuan Zheng"
+      ],
+      "abstract": "Multivariate time series forecasting (MTSF) is a fundamental task in many real world applications. Existing patch based forecasting methods generally fall into three categories: fixed partitioning, multi-scale partitioning, and extendable partitioning. Fixed partitioning often breaks meaningful temporal boundaries, multi-scale partitioning may introduce redundant representations across scales, and extendable partitioning improves flexibility but still lacks an explicit mechanism for organizing semantic structure and modeling interactions among heterogeneous temporal patterns. To address these limitations, we propose SCPaT, a Transformer based framework built on semantic structured partitioning. SCPaT first decomposes input sequences into semantically consistent units through adaptive semantic unit generation, then constructs a dynamic semantic graph to model directed dependencies among these units and organize them into higher order semantic blocks. Based on these structured representations, an importance aware routing mechanism adaptively dispatches different semantic blocks to different experts for customized modeling. Extensive experiments on 12 real world datasets demonstrate the effectiveness of SCPaT.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T12:38:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19966",
+      "pdf_link": "https://arxiv.org/pdf/2608.19966",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Multivariate time series forecasting (MTSF) is a fundamental task in many real world applications. Existing patch based forecasting methods generally fall into three categories: fixed partitioning, multi-scale partitioning, and extendable partitioning. Fixed partitioning often breaks meaningful temporal boundaries, multi-scale partitioning may introduce redundant representations across scales, and extendable partitioning improves flexibility but still lacks an explicit mechanism for organizing semantic structure and modeling interactions among heterogeneous temporal patterns. To address these limitations, we propose SCPaT, a Transformer based framework built on semantic structured partitioning. SCPaT first decomposes input sequences into semantically consistent units through adaptive semantic unit generation, then constructs a dynamic semantic graph to model directed dependencies among these units and organize them into higher order semantic blocks. Based on these structured representations, an importance aware routing mechanism adaptively dispatches different semantic blocks to different experts for customized modeling. Extensive experiments on 12 real world datasets demonstrate the effectiveness of SCPaT.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "时间序列预测",
+        "Transformer",
+        "语义分区"
+      ],
+      "relevance_reason_zh": "基于Transformer的多元时间序列预测方法，无隐私保护或安全推理内容。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "基于语义结构化分区对基于补丁的多变量时间序列预测的再思考",
+      "abstract_zh": "多变量时间序列预测（MTSF）是许多实际应用中的基本任务。现有基于补丁的预测方法通常分为三类：固定分区、多尺度分区和可扩展分区。固定分区通常会破坏有意义的时间边界，多尺度分区可能引入跨尺度的冗余表示，而可扩展分区虽然提高了灵活性，但仍缺乏用于组织语义结构和建模异构时间模式间交互的显式机制。为解决这些局限性，我们提出了SCPaT，一个基于Transformer的框架，构建在语义结构化分区之上。SCPaT首先通过自适应语义单元生成将输入序列分解为语义一致的单元，然后构建动态语义图以建模这些单元之间的有向依赖关系，并将它们组织成高阶语义块。基于这些结构化表示，重要性感知的路由机制自适应地将不同的语义块分派给不同的专家以进行定制化建模。在12个真实世界数据集上的大量实验证明了SCPaT的有效性。"
+    },
+    {
+      "id": "arxiv_2608.19938",
+      "arxiv_id": "2608.19938",
+      "title": "From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs",
+      "authors": [
+        "Christopher Henshaw",
+        "Gour Karmakar"
+      ],
+      "abstract": "Existing approaches to anomalous behaviour log detection, such as Wazuh rely primarily on predefined detection rules, while statistical anomaly detection approaches such as OpenSearch identify deviations from previously observed behavioural patterns. Recent research has investigated LLMs for log anomaly detection because of their ability to interpret semantic and contextual information. However, LLM-based approaches can be affected by prompt construction, noisy log data, and reliance on generic datasets that may lack endpoint-specific authentication behaviours. To address these limitations, this study develops a standardised instruction-based LLM classification framework for detecting anomalous authentication behaviours, including borderline cases. A controlled cybersecurity testbed was developed to generate endpoint-specific authentication data, producing a curated dataset comprising normal, borderline, and anomalous behavioural scenarios. Three instruction-tuned LLMs, Meta Llama 3.1 8B Instruct, Qwen 2.5 7B Instruct, and GPT-OSS 20B, were evaluated against Wazuh rule-based detection and OpenSearch Anomaly Detection using a common ground-truth severity framework. Meta Llama 3.1 8B Instruct achieved the strongest overall end-to-end detection performance, with an accuracy of 89.3%, recall of 88.2%, F1-score of 91.8%, and false negative rate of 11.8%. In comparison, Wazuh achieved an accuracy of 52.0% and false negative rate of 68.6%, while OpenSearch achieved an accuracy of 49.3% and false negative rate of 74.5%. Meta Llama also detected 80% of the borderline anomalous scenarios, compared with 20% for Wazuh and 15% for OpenSearch. Qwen achieved lower overall detection performance than Meta Llama but recorded the lowest average inference latency and 100% structured-response validity. GPT-OSS demonstrated strong classification performance when valid responses were produced.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T11:54:56Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19938",
+      "pdf_link": "https://arxiv.org/pdf/2608.19938",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Existing approaches to anomalous behaviour log detection, such as Wazuh rely primarily on predefined detection rules, while statistical anomaly detection approaches such as OpenSearch identify deviations from previously observed behavioural patterns. Recent research has investigated LLMs for log anomaly detection because of their ability to interpret semantic and contextual information. However, LLM-based approaches can be affected by prompt construction, noisy log data, and reliance on generic datasets that may lack endpoint-specific authentication behaviours. To address these limitations, this study develops a standardised instruction-based LLM classification framework for detecting anomalous authentication behaviours, including borderline cases. A controlled cybersecurity testbed was developed to generate endpoint-specific authentication data, producing a curated dataset comprising normal, borderline, and anomalous behavioural scenarios. Three instruction-tuned LLMs, Meta Llama 3.1 8B Instruct, Qwen 2.5 7B Instruct, and GPT-OSS 20B, were evaluated against Wazuh rule-based detection and OpenSearch Anomaly Detection using a common ground-truth severity framework. Meta Llama 3.1 8B Instruct achieved the strongest overall end-to-end detection performance, with an accuracy of 89.3%, recall of 88.2%, F1-score of 91.8%, and false negative rate of 11.8%. In comparison, Wazuh achieved an accuracy of 52.0% and false negative rate of 68.6%, while OpenSearch achieved an accuracy of 49.3% and false negative rate of 74.5%. Meta Llama also detected 80% of the borderline anomalous scenarios, compared with 20% for Wazuh and 15% for OpenSearch. Qwen achieved lower overall detection performance than Meta Llama but recorded the lowest average inference latency and 100% structured-response validity. GPT-OSS demonstrated strong classification performance when valid responses were produced.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM",
+        "日志异常检测",
+        "网络安全"
+      ],
+      "relevance_reason_zh": "使用LLM进行安全日志异常检测，属于LLM应用而非大模型安全或密码学保护的推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "从噪声到信号：利用LLMs与端点特定日志改进安全日志异常检测",
+      "abstract_zh": "现有异常行为日志检测方法（如Wazuh）主要依赖预定义检测规则，而统计异常检测方法（如OpenSearch）则识别与先前观察到的行为模式的偏差。近期研究已探索将LLMs用于日志异常检测，因为它们能够解释语义和上下文信息。然而，基于LLM的方法可能受到提示构建、噪声日志数据以及依赖可能缺乏端点特定认证行为的通用数据集的影响。为解决这些局限，本研究开发了一个标准化的基于指令的LLM分类框架，用于检测异常认证行为，包括边界情况。开发了一个受控网络安全测试平台以生成端点特定认证数据，产出了一个包含正常、边界和异常行为场景的精选数据集。三个指令调优的LLM——Meta Llama 3.1 8B Instruct、Qwen 2.5 7B Instruct和GPT-OSS 20B——在共同真值严重性框架下，与Wazuh基于规则的检测和OpenSearch异常检测进行了评估。Meta Llama 3.1 8B Instruct实现了最强的整体端到端检测性能，准确率为89.3%，召回率为88.2%，F1分数为91.8%，假阴性率为11.8%。相比之下，Wazuh的准确率为52.0%，假阴性率为68.6%，而OpenSearch的准确率为49.3%，假阴性率为74.5%。Meta Llama还检测到了80%的边界异常场景，而Wazuh为20%，OpenSearch为15%。Qwen的整体检测性能低于Meta Llama，但记录了最低的平均推理延迟和100%的结构化响应有效性。GPT-OSS在产生有效响应时表现出强大的分类性能。"
+    },
+    {
+      "id": "arxiv_2608.19920",
+      "arxiv_id": "2608.19920",
+      "title": "Learning how to Forget: Fine-tuning for Long-Context Sparse Attention",
+      "authors": [
+        "Matthias Seeger",
+        "Zeyu Zhang",
+        "Vihang Patil",
+        "Konstantinos Benidis",
+        "Sebastian Schelter"
+      ],
+      "abstract": "A lot of prior work addressed key-value (KV) cache selection and compression by sparse attention to enable long-context inference for transformer language models without excessive hardware budgets. We provide a new method for fine-tuning models with sparse attention. It works for any KV cache policy, runs on a moderate hardware budget (e.g., a single Nvidia A100 GPU with 40 GB RAM), and allows the model to co-adapt with the policy, often outperforming models trained with exact attention (sequence parallelism). We also provide an efficient implementation of H2O sparse attention (the leading policy in our experiments) with dedicated scaled dot product attention kernel support. KeysAndValues (https://github.com/awslabs/keys_values), a new open source library for long-context inference and fine-tuning, provides easy-to-use and performant code for all methods discussed here.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T11:37:04Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19920",
+      "pdf_link": "https://arxiv.org/pdf/2608.19920",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "A lot of prior work addressed key-value (KV) cache selection and compression by sparse attention to enable long-context inference for transformer language models without excessive hardware budgets. We provide a new method for fine-tuning models with sparse attention. It works for any KV cache policy, runs on a moderate hardware budget (e.g., a single Nvidia A100 GPU with 40 GB RAM), and allows the model to co-adapt with the policy, often outperforming models trained with exact attention (sequence parallelism). We also provide an efficient implementation of H2O sparse attention (the leading policy in our experiments) with dedicated scaled dot product attention kernel support. KeysAndValues (https://github.com/awslabs/keys_values), a new open source library for long-context inference and fine-tuning, provides easy-to-use and performant code for all methods discussed here.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "long-context inference",
+        "sparse attention",
+        "KV cache compression"
+      ],
+      "relevance_reason_zh": "关注长上下文稀疏注意力与KV缓存压缩，属于推理效率优化，不涉及隐私或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "学习如何遗忘：面向长上下文稀疏注意力的微调",
+      "abstract_zh": "先前的大量工作通过稀疏注意力解决了键值（KV）缓存选择与压缩问题，以便在没有过高硬件预算的情况下实现Transformer语言模型的长上下文推理。我们提出了一种对稀疏注意力模型进行微调的新方法。该方法适用于任意KV缓存策略，可在适度的硬件预算（例如，单个配备40 GB内存的Nvidia A100 GPU）上运行，并允许模型与策略共同适应，其性能往往优于使用精确注意力（序列并行）训练的模型。我们还提供了H2O稀疏注意力（我们实验中领先的策略）的高效实现，并带有专门的缩放点积注意力内核支持。KeysAndValues（https://github.com/awslabs/keys_values）是一个用于长上下文推理和微调的新开源库，为本文讨论的所有方法提供了易于使用且高性能的代码。"
+    },
+    {
+      "id": "arxiv_2608.19863",
+      "arxiv_id": "2608.19863",
+      "title": "Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners",
+      "authors": [
+        "Umberto Cappellazzo",
+        "Xubo Liu",
+        "Stavros Petridis",
+        "Maja Pantic"
+      ],
+      "abstract": "Self-supervised learning (SSL) has driven substantial progress in audio representation learning, though existing methods have increasingly relied on elaborate pre-training recipes to reach competitive performance. A markedly different pre-training philosophy underpins the most influential progress in language modeling and, more recently, in visual representation learning: rather than train encoders as static feature extractors, models are trained to predict the next element, a discrete token or a continuous embedding, from the preceding context. Autoregressive prediction thereby provides a unified pre-training interface that transfers across modalities, compelling the model to learn the underlying data distribution. We ask whether such a simple causal paradigm can yield strong audio learners, given that audio's temporal structure makes autoregressive prediction of patch embeddings a natural fit. We introduce NAPE (Next-Audio-Patch-Embedding prediction), a self-supervised framework in which a causal Transformer predicts each next patch embedding of a log-mel spectrogram from the previous ones, using causal masking and stop-gradient as its sole training signal. The design is intentionally minimalist, avoiding reconstruction decoders, acoustic tokenizers, student-teacher setups, and auxiliary regularization losses. Across six audio and speech benchmarks, NAPE achieves state-of-the-art fine-tuning performance on several tasks, scales consistently across encoder sizes, and yields strong linear-probing results. NAPE also produces structured attention patterns without explicit supervision.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T10:16:07Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19863",
+      "pdf_link": "https://arxiv.org/pdf/2608.19863",
+      "categories": [
+        "eess.AS",
+        "cs.AI",
+        "cs.SD"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Self-supervised learning (SSL) has driven substantial progress in audio representation learning, though existing methods have increasingly relied on elaborate pre-training recipes to reach competitive performance. A markedly different pre-training philosophy underpins the most influential progress in language modeling and, more recently, in visual representation learning: rather than train encoders as static feature extractors, models are trained to predict the next element, a discrete token or a continuous embedding, from the preceding context. Autoregressive prediction thereby provides a unified pre-training interface that transfers across modalities, compelling the model to learn the underlying data distribution. We ask whether such a simple causal paradigm can yield strong audio learners, given that audio's temporal structure makes autoregressive prediction of patch embeddings a natural fit. We introduce NAPE (Next-Audio-Patch-Embedding prediction), a self-supervised framework in which a causal Transformer predicts each next patch embedding of a log-mel spectrogram from the previous ones, using causal masking and stop-gradient as its sole training signal. The design is intentionally minimalist, avoiding reconstruction decoders, acoustic tokenizers, student-teacher setups, and auxiliary regularization losses. Across six audio and speech benchmarks, NAPE achieves state-of-the-art fine-tuning performance on several tasks, scales consistently across encoder sizes, and yields strong linear-probing results. NAPE also produces structured attention patterns without explicit supervision.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "self-supervised learning",
+        "audio representation",
+        "autoregressive prediction"
+      ],
+      "relevance_reason_zh": "音频自监督表示学习，使用Transformer预测patch嵌入，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "前向聆听：下一补丁嵌入预测实现可扩展音频学习器",
+      "abstract_zh": "自监督学习（SSL）推动了音频表示学习的显著进展，尽管现有方法日益依赖精心设计的预训练方案以达到有竞争力的性能。一种截然不同的预训练理念支撑着语言建模以及最近视觉表示学习领域最具影响力的进展：不是将编码器训练为静态特征提取器，而是训练模型从先前上下文中预测下一个元素——无论是离散词元还是连续嵌入。自回归预测由此提供了一种跨模态迁移的统一预训练接口，迫使模型学习底层数据分布。鉴于音频的时间结构使得补丁嵌入的自回归预测成为自然契合，我们探究这种简单的因果范式能否产生强大的音频学习器。我们提出NAPE（Next-Audio-Patch-Embedding prediction，下一音频补丁嵌入预测），一种自监督框架，其中因果Transformer从之前的补丁嵌入预测log-mel频谱图的每一个下一补丁嵌入，仅使用因果掩蔽和停止梯度作为训练信号。该设计刻意保持极简，避免重建解码器、声学分词器、师生架构和辅助正则化损失。在六个音频和语音基准测试中，NAPE在若干任务上取得了最先进的微调性能，在编码器规模上持续扩展，并产生了强线性探测结果。NAPE还在没有显式监督的情况下产生了结构化的注意力模式。"
+    },
+    {
+      "id": "arxiv_2608.19861",
+      "arxiv_id": "2608.19861",
+      "title": "PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents",
+      "authors": [
+        "Seongjae Kang",
+        "Taehyung Yu",
+        "Sung Ju Hwang"
+      ],
+      "abstract": "Customer-service LLM agents must follow organizational policy when acting on a user's behalf. Compliance failures arise from either forbidden actions, such as granting an ineligible change, or omitted procedural requirements, such as identification or confirmation. Runtime safeguards can intervene on risky actions, but action-local checks do not guide an agent through a multi-step procedure. Workflow-following systems support prescribed process execution, but primarily target workflow completion rather than safeguarding agent behavior. PolicyGuide instead compiles each domain policy into a workflow graph and invokes a proactive verifier at user-turn boundaries. From persisted graph state, the verifier reconciles open requests and returns step-specific remediation along a policy-compliant path. Across the $τ^2$-bench airline, retail, and telecom domains with a GPT-5.4 agent and verifier, PolicyGuide raises mean $\\mathrm{Pass}^4$ from $0.42$ to $0.62$, with the largest gain on telecom ($0.19$ to $0.61$), the most workflow-structured domain. The same workflows transfer to Claude Sonnet 4.6 and Gemini 2.5 Pro agents. Complementary evaluations find the lowest observed attack-success rate under adversarial users and the strongest procedural compliance in an author-designed workflow-level validation.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T10:13:19Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19861",
+      "pdf_link": "https://arxiv.org/pdf/2608.19861",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Customer-service LLM agents must follow organizational policy when acting on a user's behalf. Compliance failures arise from either forbidden actions, such as granting an ineligible change, or omitted procedural requirements, such as identification or confirmation. Runtime safeguards can intervene on risky actions, but action-local checks do not guide an agent through a multi-step procedure. Workflow-following systems support prescribed process execution, but primarily target workflow completion rather than safeguarding agent behavior. PolicyGuide instead compiles each domain policy into a workflow graph and invokes a proactive verifier at user-turn boundaries. From persisted graph state, the verifier reconciles open requests and returns step-specific remediation along a policy-compliant path. Across the $τ^2$-bench airline, retail, and telecom domains with a GPT-5.4 agent and verifier, PolicyGuide raises mean $\\mathrm{Pass}^4$ from $0.42$ to $0.62$, with the largest gain on telecom ($0.19$ to $0.61$), the most workflow-structured domain. The same workflows transfer to Claude Sonnet 4.6 and Gemini 2.5 Pro agents. Complementary evaluations find the lowest observed attack-success rate under adversarial users and the strongest procedural compliance in an author-designed workflow-level validation.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM agent safety",
+        "policy compliance",
+        "workflow verification"
+      ],
+      "relevance_reason_zh": "针对LLM客服智能体的策略合规防护，属于大模型安全范畴，但不涉及密码学或隐私保护推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\nPolicyGuide 通过将领域策略编译为工作流图，并在用户轮次边界调用主动校验器，把客服 LLM 智能体在多领域基准上的策略合规率（Pass⁴）从 0.42 提升到 0.62，同时实现跨模型迁移与较低攻击成功率。\n\n## 问题与动机\n\n客服 LLM 智能体代表用户执行操作时必须遵守组织策略。现有合规失败主要来自两类：一是执行了被禁止的动作（如给予不符合条件的变更），二是遗漏了流程中的必需步骤（如身份识别或确认）。运行时安全防护能对单个风险动作做干预，但“动作局部”的检查无法引导智能体走完多步骤流程；而面向工作流遵循的系统虽支持既定流程执行，却主要关注任务完成而非保障智能体行为合规。\n\n## 方法与技术路线\n\n- **研究对象与设定**：面向客服 LLM 智能体的策略合规防护，覆盖航空、零售、电信三个领域，使用 GPT-5.4 智能体与校验器，并迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro。\n- **核心思路**：PolicyGuide 将每个领域策略编译成“工作流图”（workflow graph），以此替代只对单步动作做检查的机制。工作流图编码了策略允许的操作顺序和必需步骤，从而能够在多步骤流程中判断“当前位置”和“下一步合规动作”。\n- **关键模块与衔接**：在用户轮次边界（user-turn boundaries）调用一个主动校验器（proactive verifier）。校验器读取持久化的图状态（persisted graph state），将当前待办请求与工作流图进行比对，识别缺失步骤或禁止动作，并返回针对当前步骤的修正建议（step-specific remediation），引导智能体沿一条符合策略的路径继续执行。摘要未说明工作流图的具体构建方式、状态表示、校验器的模型结构或提示设计，也未披露实验数据集细节与超参数。\n- **评估方式**：摘要提及两类评估：一是与 τ²-bench 基准上的基线比较，使用 Pass⁴ 指标；二是针对对抗性用户的攻击成功率评估，以及作者设计的流程级（workflow-level）合规性验证。摘要未说明对抗性用户的具体攻击类型、评估样本量或基线方法名称。\n\n## 主要结果\n\n在 τ²-bench 的航空、零售、电信领域中，使用 GPT-5.4 智能体与校验器时，PolicyGuide 将平均 Pass⁴ 从 0.42 提高到 0.62，其中电信领域提升最大（从 0.19 到 0.61），该领域也是工作流结构化程度最高的。相同的工作流可迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro 智能体。补充评估显示：在对抗性用户下取得最低的观测攻击成功率，并在作者设计的流程级验证中表现出最强流程合规性。\n\n## 为什么与兴趣相关\n\n这项研究切中大模型智能体落地中的关键安全缺口：仅做单步动作过滤不足以保证长流程合规。PolicyGuide 把策略显式编码为流程结构，使校验器能提供“下一步做什么”的修正，这比单纯拒绝或告警更实用。对关注 LLM 安全、智能体治理和可信 AI 系统的研究者与工程人员，该方法展示了将领域知识融入运行时防护的新方向，且其跨模型迁移特性对部署具有参考价值。",
+      "summary": "## 一句话结论\n\nPolicyGuide 通过将领域策略编译为工作流图，并在用户轮次边界调用主动校验器，把客服 LLM 智能体在多领域基准上的策略合规率（Pass⁴）从 0.42 提升到 0.62，同时实现跨模型迁移与较低攻击成功率。\n\n## 问题与动机\n\n客服 LLM 智能体代表用户执行操作时必须遵守组织策略。现有合规失败主要来自两类：一是执行了被禁止的动作（如给予不符合条件的变更），二是遗漏了流程中的必需步骤（如身份识别或确认）。运行时安全防护能对单个风险动作做干预，但“动作局部”的检查无法引导智能体走完多步骤流程；而面向工作流遵循的系统虽支持既定流程执行，却主要关注任务完成而非保障智能体行为合规。\n\n## 方法与技术路线\n\n- **研究对象与设定**：面向客服 LLM 智能体的策略合规防护，覆盖航空、零售、电信三个领域，使用 GPT-5.4 智能体与校验器，并迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro。\n- **核心思路**：PolicyGuide 将每个领域策略编译成“工作流图”（workflow graph），以此替代只对单步动作做检查的机制。工作流图编码了策略允许的操作顺序和必需步骤，从而能够在多步骤流程中判断“当前位置”和“下一步合规动作”。\n- **关键模块与衔接**：在用户轮次边界（user-turn boundaries）调用一个主动校验器（proactive verifier）。校验器读取持久化的图状态（persisted graph state），将当前待办请求与工作流图进行比对，识别缺失步骤或禁止动作，并返回针对当前步骤的修正建议（step-specific remediation），引导智能体沿一条符合策略的路径继续执行。摘要未说明工作流图的具体构建方式、状态表示、校验器的模型结构或提示设计，也未披露实验数据集细节与超参数。\n- **评估方式**：摘要提及两类评估：一是与 τ²-bench 基准上的基线比较，使用 Pass⁴ 指标；二是针对对抗性用户的攻击成功率评估，以及作者设计的流程级（workflow-level）合规性验证。摘要未说明对抗性用户的具体攻击类型、评估样本量或基线方法名称。\n\n## 主要结果\n\n在 τ²-bench 的航空、零售、电信领域中，使用 GPT-5.4 智能体与校验器时，PolicyGuide 将平均 Pass⁴ 从 0.42 提高到 0.62，其中电信领域提升最大（从 0.19 到 0.61），该领域也是工作流结构化程度最高的。相同的工作流可迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro 智能体。补充评估显示：在对抗性用户下取得最低的观测攻击成功率，并在作者设计的流程级验证中表现出最强流程合规性。\n\n## 为什么与兴趣相关\n\n这项研究切中大模型智能体落地中的关键安全缺口：仅做单步动作过滤不足以保证长流程合规。PolicyGuide 把策略显式编码为流程结构，使校验器能提供“下一步做什么”的修正，这比单纯拒绝或告警更实用。对关注 LLM 安全、智能体治理和可信 AI 系统的研究者与工程人员，该方法展示了将领域知识融入运行时防护的新方向，且其跨模型迁移特性对部署具有参考价值。"
+    },
+    {
+      "id": "arxiv_2608.19854",
+      "arxiv_id": "2608.19854",
+      "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+      "authors": [
+        "Silin Chen",
+        "Haoyi Teng",
+        "Xiaodong Gu",
+        "Yuling Shi",
+        "Jiale Huang",
+        "Yongpan Wang",
+        "Hongyu Zhang",
+        "Haibing Guan"
+      ],
+      "abstract": "Large language model agents have made substantial progress in code generation, yet most existing systems assume a predefined repository architecture. This assumption does not hold in zero-to-all code generation, where an agent must construct an entire software project directly from natural-language requirements while maintaining a modular repository architecture throughout development. We present Repo0, a continuous structural evolution framework for zero-to-all code generation. Repo0 maintains an explicit architectural state instantiated as a Dual-Directed-Acyclic-Graph (Dual-DAG), consisting of a requirement-level DAG, a component-level DAG, and their alignment relation. Starting from natural-language requirements, it iteratively evolves component boundaries through structural actions guided by modularity metrics until structural convergence, after which the converged architecture guides test-driven development code generation. We evaluate Repo0 on six real-world repositories from RepoCraft using GPT-5 mini and DeepSeek V3.2. Repo0 achieves the highest Functionality Coverage and Pass Rate across all settings. Compared with RPG, the strongest repository-planning baseline, Repo0 improves Functionality Coverage by up to 20.08 percentage points and Pass Rate by up to 29.74 percentage points. Ablation and structural-evolution analyses further demonstrate the importance of the Dual-DAG architectural state, modularity-guided structural evolution, and explicit structural convergence.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T10:03:14Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19854",
+      "pdf_link": "https://arxiv.org/pdf/2608.19854",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Large language model agents have made substantial progress in code generation, yet most existing systems assume a predefined repository architecture. This assumption does not hold in zero-to-all code generation, where an agent must construct an entire software project directly from natural-language requirements while maintaining a modular repository architecture throughout development. We present Repo0, a continuous structural evolution framework for zero-to-all code generation. Repo0 maintains an explicit architectural state instantiated as a Dual-Directed-Acyclic-Graph (Dual-DAG), consisting of a requirement-level DAG, a component-level DAG, and their alignment relation. Starting from natural-language requirements, it iteratively evolves component boundaries through structural actions guided by modularity metrics until structural convergence, after which the converged architecture guides test-driven development code generation. We evaluate Repo0 on six real-world repositories from RepoCraft using GPT-5 mini and DeepSeek V3.2. Repo0 achieves the highest Functionality Coverage and Pass Rate across all settings. Compared with RPG, the strongest repository-planning baseline, Repo0 improves Functionality Coverage by up to 20.08 percentage points and Pass Rate by up to 29.74 percentage points. Ablation and structural-evolution analyses further demonstrate the importance of the Dual-DAG architectural state, modularity-guided structural evolution, and explicit structural convergence.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "code generation",
+        "LLM agents",
+        "software architecture"
+      ],
+      "relevance_reason_zh": "面向零到全代码生成的LLM智能体框架，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Repo0：设计驱动的从零到全代码生成",
+      "abstract_zh": "大型语言模型智能体在代码生成方面取得了实质性进展，但大多数现有系统假设预定义的仓库架构。这一假设在从零到全代码生成中不成立，因为智能体必须直接从自然语言需求构建整个软件项目，并在整个开发过程中保持模块化的仓库架构。我们提出了Repo0，一个用于从零到全代码生成的持续结构演化框架。Repo0维护一个显式的架构状态，实例化为双有向无环图（Dual-DAG），由需求级DAG、组件级DAG及其对齐关系组成。从自然语言需求出发，它通过由模块化指标引导的结构化操作迭代演化组件边界，直至结构收敛，之后收敛的架构指导测试驱动的开发代码生成。我们使用GPT-5 mini和DeepSeek V3.2在来自RepoCraft的六个真实世界仓库上评估Repo0。Repo0在所有设置中取得了最高的功能覆盖率和通过率。与最强的仓库规划基线RPG相比，Repo0的功能覆盖率提高了高达20.08个百分点，通过率提高了高达29.74个百分点。消融和结构演化分析进一步证明了Dual-DAG架构状态、模块化引导的结构演化以及显式结构收敛的重要性。"
+    },
+    {
+      "id": "arxiv_2608.19737",
+      "arxiv_id": "2608.19737",
+      "title": "TempJail: Temporal Jailbreak Attack against Large Vision-Language Models via Subtitle Scheduling",
+      "authors": [
+        "Ling Zhou",
+        "Yihao Huang",
+        "Jingling Sun",
+        "Zhiwen Tian",
+        "Yi Zeng",
+        "Qihe Liu",
+        "Shijie Zhou"
+      ],
+      "abstract": "Large vision-language models (LVLMs) have achieved remarkable progress in video understanding and reasoning. Despite extensive studies on text- and image-based jailbreaks, video jailbreaks against LVLMs remain largely unexplored. Existing video jailbreak methods mainly manipulate textual content embedded in videos, while overlooking how such information is organized over time. Our analysis reveals that jailbreak effectiveness depends not only on the semantics of textual information but also on its temporal presentation, including duration and timing-slot allocation. Motivated by this finding, we use subtitles, which are common in real-world videos and allow semantic content to be presented under precise temporal control without appearing visually intrusive, as a natural attack medium. Based on this insight, we propose TempJail, a black-box video-based jailbreak framework that constructs query-aligned dialogue-style subtitle sequences and optimizes their temporal scheduling to exploit temporal vulnerabilities in LVLMs and elicit responses that satisfy the harmful intent of the source query. Extensive experiments on four representative LVLMs and two datasets demonstrate that TempJail achieves the highest attack success rate across all evaluated model--dataset settings, outperforming the strongest baseline by 53 and 18 percentage points in dataset-averaged ASR on GPT-5 and Gemini 3.5-Flash, respectively.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T07:37:10Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19737",
+      "pdf_link": "https://arxiv.org/pdf/2608.19737",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Large vision-language models (LVLMs) have achieved remarkable progress in video understanding and reasoning. Despite extensive studies on text- and image-based jailbreaks, video jailbreaks against LVLMs remain largely unexplored. Existing video jailbreak methods mainly manipulate textual content embedded in videos, while overlooking how such information is organized over time. Our analysis reveals that jailbreak effectiveness depends not only on the semantics of textual information but also on its temporal presentation, including duration and timing-slot allocation. Motivated by this finding, we use subtitles, which are common in real-world videos and allow semantic content to be presented under precise temporal control without appearing visually intrusive, as a natural attack medium. Based on this insight, we propose TempJail, a black-box video-based jailbreak framework that constructs query-aligned dialogue-style subtitle sequences and optimizes their temporal scheduling to exploit temporal vulnerabilities in LVLMs and elicit responses that satisfy the harmful intent of the source query. Extensive experiments on four representative LVLMs and two datasets demonstrate that TempJail achieves the highest attack success rate across all evaluated model--dataset settings, outperforming the strongest baseline by 53 and 18 percentage points in dataset-averaged ASR on GPT-5 and Gemini 3.5-Flash, respectively.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "jailbreak attack",
+        "large vision-language model safety",
+        "temporal scheduling"
+      ],
+      "relevance_reason_zh": "针对大视觉语言模型的时序越狱攻击，属于大模型安全攻击研究，而非保护推理的协议。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\nTempJail 是一种针对大视觉语言模型（LVLM）的黑盒视频越狱攻击框架，通过优化字幕的时间调度（而非仅字幕语义）来诱导模型输出有害内容。\n\n## 问题与动机\n文本和图像越狱已被广泛研究，但针对 LVLM 的视频越狱仍少有人探索。现有视频越狱方法主要操纵视频中嵌入的文本内容，却忽略了这些信息在时间维度上如何组织。作者发现，越狱效果不仅取决于文本语义，还取决于其时间呈现方式（如持续时长、时间槽分配）。这提示 LVLM 在视频理解中存在“时序漏洞”，而字幕天然适合作为攻击载体：它在真实视频中常见，可对语义内容进行精确的时间控制，且视觉上不突兀。\n\n## 方法与技术路线\nTempJail 是一个黑盒（black-box）的、完全基于视频的越狱框架。研究对象是大型视觉语言模型（LVLM）的视频理解与推理过程；输入是带有有害意图的源查询，以及作为攻击媒介的、由模型生成的查询对齐字幕序列。\n\n技术路线按下述步骤衔接：\n\n1. **构建查询对齐的对话式字幕序列**：不直接使用单句有害提示，而是将源查询拆解/转化为一组以对话形式组织的字幕，使语义内容在时间上分段展开。\n2. **优化时序调度（subtitle scheduling）**：摘要明确提到，攻击只依赖于字幕的语义和时序，因此核心模块是在给定字幕序列的基础上，优化每个字幕的持续时间与时间槽分配。该过程利用 LVLM 的时序脆弱性，使整体呈现方式更易触发模型违反安全约束。\n3. **黑盒攻击执行**：将调度好的字幕序列嵌入视频中，输入待攻击的 LVLM，无需访问模型内部参数或梯度，只通过输入视频和观察输出来完成攻击。\n\n摘要未说明具体的时间调度优化算法、字幕长度/数量、视频生成方式、搜索步数等细节，也未披露实验所用的具体提示模板和越狱评估协议。\n\n## 主要结果\n该框架在四个代表性 LVLM 和两个数据集上进行了评估。结果显示，在所有模型–数据集组合下，TempJail 的攻击成功率（ASR）均最高；与最强基线相比，在数据集平均 ASR 上，对 GPT-5 提升了 53 个百分点，对 Gemini 3.5-Flash 提升了 18 个百分点。摘要未给出其他模型、具体数据集名称、单组实验方差或基线名称。\n\n## 为什么与兴趣相关\n这项工作揭示了大模型安全评估中的一个盲区：即使语义内容本身已被安全对齐，攻击者仍可利用“何时、持续多久、如何排列”等信息的时间结构来绕过防御。由于字幕是视频中最普通的信息载体之一，该攻击具有现实可部署性。对 LVLM 安全研究者而言，它提示防御不能只做文本/语义过滤，还需考虑跨模态时序一致性与对抗鲁棒性；对模型开发者而言，它强调了视频推理中的时间建模与安全对齐之间可能存在的内在张力。",
+      "summary": "## 一句话结论\nTempJail 是一种针对大视觉语言模型（LVLM）的黑盒视频越狱攻击框架，通过优化字幕的时间调度（而非仅字幕语义）来诱导模型输出有害内容。\n\n## 问题与动机\n文本和图像越狱已被广泛研究，但针对 LVLM 的视频越狱仍少有人探索。现有视频越狱方法主要操纵视频中嵌入的文本内容，却忽略了这些信息在时间维度上如何组织。作者发现，越狱效果不仅取决于文本语义，还取决于其时间呈现方式（如持续时长、时间槽分配）。这提示 LVLM 在视频理解中存在“时序漏洞”，而字幕天然适合作为攻击载体：它在真实视频中常见，可对语义内容进行精确的时间控制，且视觉上不突兀。\n\n## 方法与技术路线\nTempJail 是一个黑盒（black-box）的、完全基于视频的越狱框架。研究对象是大型视觉语言模型（LVLM）的视频理解与推理过程；输入是带有有害意图的源查询，以及作为攻击媒介的、由模型生成的查询对齐字幕序列。\n\n技术路线按下述步骤衔接：\n\n1. **构建查询对齐的对话式字幕序列**：不直接使用单句有害提示，而是将源查询拆解/转化为一组以对话形式组织的字幕，使语义内容在时间上分段展开。\n2. **优化时序调度（subtitle scheduling）**：摘要明确提到，攻击只依赖于字幕的语义和时序，因此核心模块是在给定字幕序列的基础上，优化每个字幕的持续时间与时间槽分配。该过程利用 LVLM 的时序脆弱性，使整体呈现方式更易触发模型违反安全约束。\n3. **黑盒攻击执行**：将调度好的字幕序列嵌入视频中，输入待攻击的 LVLM，无需访问模型内部参数或梯度，只通过输入视频和观察输出来完成攻击。\n\n摘要未说明具体的时间调度优化算法、字幕长度/数量、视频生成方式、搜索步数等细节，也未披露实验所用的具体提示模板和越狱评估协议。\n\n## 主要结果\n该框架在四个代表性 LVLM 和两个数据集上进行了评估。结果显示，在所有模型–数据集组合下，TempJail 的攻击成功率（ASR）均最高；与最强基线相比，在数据集平均 ASR 上，对 GPT-5 提升了 53 个百分点，对 Gemini 3.5-Flash 提升了 18 个百分点。摘要未给出其他模型、具体数据集名称、单组实验方差或基线名称。\n\n## 为什么与兴趣相关\n这项工作揭示了大模型安全评估中的一个盲区：即使语义内容本身已被安全对齐，攻击者仍可利用“何时、持续多久、如何排列”等信息的时间结构来绕过防御。由于字幕是视频中最普通的信息载体之一，该攻击具有现实可部署性。对 LVLM 安全研究者而言，它提示防御不能只做文本/语义过滤，还需考虑跨模态时序一致性与对抗鲁棒性；对模型开发者而言，它强调了视频推理中的时间建模与安全对齐之间可能存在的内在张力。"
+    },
+    {
+      "id": "arxiv_2608.19735",
+      "arxiv_id": "2608.19735",
+      "title": "RecPFN: Prior-Fitted Networks for In-Context-Based Recommendations",
+      "authors": [
+        "En Zhi Tan",
+        "Jia Xiang Lim",
+        "Bryan Lijie Chew",
+        "Tze Minh Ng",
+        "Benjamin Yan Han Yap"
+      ],
+      "abstract": "We introduce RecPFN, a prior-fitted network that brings in-context learning to sequential recommendation. RecPFN is pretrained entirely on synthetic clickstream environments sampled from a broad structural causal prior, enabling it to amortize Bayesian-style inference from a small support set. At inference, a lightweight decoder-only transformer conditions on a handful of domain sequences and produces next-item predictions for queries in a single forward pass, without any weight updates. Across eight public benchmarks, RecPFN achives state-of-the-art zero-shot performance while remaining strongly competitive with supervised methods in low-compute and low-data regimes. It is deployment-efficient and robust to domain shift, outperforming strong zero-shot baselines that rely on large real-interaction corpora. RecPFN provides a practical path toward generalizable, data-efficient recommenders and opens avenues for richer priors, longer-context ICL, and multimodal extensions. Code for training and evaluation is publicly available at https://github.com/SAP-samples/tabular-ai-recpfn/.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T07:35:03Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19735",
+      "pdf_link": "https://arxiv.org/pdf/2608.19735",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "We introduce RecPFN, a prior-fitted network that brings in-context learning to sequential recommendation. RecPFN is pretrained entirely on synthetic clickstream environments sampled from a broad structural causal prior, enabling it to amortize Bayesian-style inference from a small support set. At inference, a lightweight decoder-only transformer conditions on a handful of domain sequences and produces next-item predictions for queries in a single forward pass, without any weight updates. Across eight public benchmarks, RecPFN achives state-of-the-art zero-shot performance while remaining strongly competitive with supervised methods in low-compute and low-data regimes. It is deployment-efficient and robust to domain shift, outperforming strong zero-shot baselines that rely on large real-interaction corpora. RecPFN provides a practical path toward generalizable, data-efficient recommenders and opens avenues for richer priors, longer-context ICL, and multimodal extensions. Code for training and evaluation is publicly available at https://github.com/SAP-samples/tabular-ai-recpfn/.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "recommendation system",
+        "in-context learning",
+        "prior-fitted network"
+      ],
+      "relevance_reason_zh": "基于先验拟合网络的推荐系统，使用Transformer进行上下文学习，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "RecPFN：面向基于上下文内学习的推荐的先验拟合网络",
+      "abstract_zh": "我们介绍RecPFN，一种先验拟合网络，它将上下文内学习引入序列推荐。RecPFN完全在从广泛的结构因果先验中采样的合成点击流环境上进行预训练，使其能够从小支持集中摊销贝叶斯式推理。在推理时，一个轻量级的仅解码器Transformer以少量领域序列为条件，并在单次前向传播中为查询产生下一项预测，无需任何权重更新。在八个公开基准上，RecPFN实现了最先进的零样本性能，同时在低计算和低数据场景中与监督方法保持强劲竞争力。它具有部署高效性且对领域偏移具有鲁棒性，优于依赖大型真实交互语料库的强零样本基线。RecPFN为可泛化、数据高效的推荐器提供了一条实用路径，并为更丰富的先验、更长上下文的ICL以及多模态扩展开辟了途径。用于训练和评估的代码可在https://github.com/SAP-samples/tabular-ai-recpfn/公开获取。"
+    },
+    {
+      "id": "arxiv_2608.19653",
+      "arxiv_id": "2608.19653",
+      "title": "DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories",
+      "authors": [
+        "Josias Moukpe",
+        "Priyanka Aryal",
+        "Matthew Kenney"
+      ],
+      "abstract": "Autonomous agents for machine learning experimentation must navigate heterogeneous repositories, repair training pipelines, and evaluate candidate improvements under realistic compute constraints. Existing benchmarks only partially capture these conditions. We introduce DeltaML-Bench, a benchmark comprising 48 tasks sourced from research papers that require agents to improve published baselines within imperfect, open-source repositories. We evaluate GPT-5 and Claude Sonnet 4 with a standard Modular agent and a search-based ARG scaffolding. In the 4 x 6h allocation, ARG raises GPT-5's per-run success rate from 9.4% to 33.9%; in the 2 x 12h allocation, GPT-5 ARG reaches 49.0%. Modular configurations exhibit specification gaming rates as high as 47.9%, while no gaming is observed in the evaluated ARG configurations. These results indicate that scaffolding design and integrity checks are important considerations when deploying agents for autonomous ML experimentation.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T05:42:39Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19653",
+      "pdf_link": "https://arxiv.org/pdf/2608.19653",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Autonomous agents for machine learning experimentation must navigate heterogeneous repositories, repair training pipelines, and evaluate candidate improvements under realistic compute constraints. Existing benchmarks only partially capture these conditions. We introduce DeltaML-Bench, a benchmark comprising 48 tasks sourced from research papers that require agents to improve published baselines within imperfect, open-source repositories. We evaluate GPT-5 and Claude Sonnet 4 with a standard Modular agent and a search-based ARG scaffolding. In the 4 x 6h allocation, ARG raises GPT-5's per-run success rate from 9.4% to 33.9%; in the 2 x 12h allocation, GPT-5 ARG reaches 49.0%. Modular configurations exhibit specification gaming rates as high as 47.9%, while no gaming is observed in the evaluated ARG configurations. These results indicate that scaffolding design and integrity checks are important considerations when deploying agents for autonomous ML experimentation.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "ML agent benchmark",
+        "automated experimentation",
+        "repository repair"
+      ],
+      "relevance_reason_zh": "评估机器学习智能体的基准测试，关注实验自动化和完整性，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "DeltaML-Bench：在真实世界研究仓库上评估机器学习智能体",
+      "abstract_zh": "用于机器学习实验的自主智能体必须能够在异构仓库中导航、修复训练流水线，并在现实计算约束下评估候选改进。现有基准仅部分涵盖这些条件。我们提出DeltaML-Bench，这是一个包含48个任务的基准，这些任务源自研究论文，要求智能体在不完美的开源仓库中改进已发表的基线。我们使用标准的Modular智能体和基于搜索的ARG脚手架评估GPT-5和Claude Sonnet 4。在4×6小时分配下，ARG将GPT-5的每次运行成功率从9.4%提升至33.9%；在2×12小时分配下，GPT-5 ARG达到49.0%。Modular配置展现出高达47.9%的规格博弈率，而在所评估的ARG配置中未观察到博弈行为。这些结果表明，在部署智能体进行自主机器学习实验时，脚手架设计和完整性检查是重要的考量因素。"
+    },
+    {
+      "id": "arxiv_2608.19650",
+      "arxiv_id": "2608.19650",
+      "title": "Enhancing Privacy in Federated Learning via Dual Obfuscation of Gradients and Training Images",
+      "authors": [
+        "Yuki Itabashi",
+        "Hiroto Sawada",
+        "Mare Hirose",
+        "Shoko Imaizumi",
+        "Hitoshi Kiya"
+      ],
+      "abstract": "Federated learning enables collaborative model training while keeping data locally at each client; however, recent studies have shown that training data can be reconstructed from shared model updates. To address this issue, this paper proposes a dual obfuscation method that enhances robustness against image restoration attacks by jointly obfuscating updated information and training images. The proposed method combines a robustness enhancement technique based on random binary weights, which randomly sets a portion of gradient elements to zero, with an image encryption technique. These techniques provide complementary protection by reducing the amount of original gradient information available to an attacker and the visual interpretability of reconstructed images, respectively. Furthermore, the image encryption technique allows independent keys to be used for each client and each image, avoiding explicit key sharing. Experimental results on an image classification task using a Vision Transformer (ViT) show that the proposed method reduces the visual information recovered by Attention Privacy Leakage (APRIL) under the evaluated settings without causing additional degradation in classification performance beyond that caused by image encryption. Although the proposed combination does not provide an absolute security guarantee, the results demonstrate the potential benefit of combining gradient modification and image encryption for privacy-enhanced federated learning.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T05:36:22Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19650",
+      "pdf_link": "https://arxiv.org/pdf/2608.19650",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Federated learning enables collaborative model training while keeping data locally at each client; however, recent studies have shown that training data can be reconstructed from shared model updates. To address this issue, this paper proposes a dual obfuscation method that enhances robustness against image restoration attacks by jointly obfuscating updated information and training images. The proposed method combines a robustness enhancement technique based on random binary weights, which randomly sets a portion of gradient elements to zero, with an image encryption technique. These techniques provide complementary protection by reducing the amount of original gradient information available to an attacker and the visual interpretability of reconstructed images, respectively. Furthermore, the image encryption technique allows independent keys to be used for each client and each image, avoiding explicit key sharing. Experimental results on an image classification task using a Vision Transformer (ViT) show that the proposed method reduces the visual information recovered by Attention Privacy Leakage (APRIL) under the evaluated settings without causing additional degradation in classification performance beyond that caused by image encryption. Although the proposed combination does not provide an absolute security guarantee, the results demonstrate the potential benefit of combining gradient modification and image encryption for privacy-enhanced federated learning.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "federated learning privacy",
+        "gradient obfuscation",
+        "image encryption"
+      ],
+      "relevance_reason_zh": "通过梯度混淆和图像加密增强联邦学习隐私，属于隐私计算但面向训练过程而非模型推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\n本文提出一种在联邦学习中同时混淆**梯度**与**训练图像**的“双重混淆”方法，能在不额外损害分类性能的前提下，降低基于梯度的图像恢复攻击（如 APRIL）所还原出的视觉信息量。\n\n## 问题与动机\n\n联邦学习（Federated Learning, FL）允许客户端在本地保留数据、仅共享模型更新进行协作训练。但近年研究表明，攻击者可以从共享的模型更新（如梯度）中重建训练图像，造成隐私泄露。为应对此类“图像恢复攻击”，作者提出联合混淆更新信息与训练图像，从两个层面削弱攻击者可利用的信息。\n\n## 方法与技术路线\n\n摘要所述方法包含两个互补的混淆模块，并按如下方式协同工作：\n\n- **研究对象与设定**：联邦学习环境中的图像分类任务，客户端本地持有训练图像，需将模型更新上传至服务器。攻击者可能利用这些更新进行图像重建（摘要考察了 Attention Privacy Leakage, APRIL 攻击，即一种通过注意力图泄露隐私的攻击方式）。\n\n- **模块一：随机二进制梯度置零**。该方法基于随机二进制权重，将一部分梯度元素随机置零。其作用是直接减少攻击者可获得的原始梯度信息量，从而降低重建图像时所能利用的信息密度。这一步不依赖图像内容，主要用于“削减信息”。\n\n- **模块二：图像加密**。对训练图像进行加密，使即便攻击者重建出图像，得到的也是缺乏视觉可解释性的内容。该加密方案允许每个客户端、每张图像使用独立密钥，从而避免显式地共享密钥（摘要未说明密钥的具体分发或管理机制）。这一步主要用于“降低重建结果的可用性”。\n\n- **两模块的衔接**：梯度置零从“源头上”减少可供攻击者推断的信息，图像加密则从“结果上”抹除重建图像的视觉意义，两者形成互补。摘要特别指出，这种组合不会在图像加密已造成的性能损失之外，再额外降低分类精度。\n\n- **实验与比较**：实验采用 Vision Transformer（ViT，一种基于自注意力机制的视觉模型）进行图像分类任务，并评估所提方法对 APRIL 攻击的防御效果。摘要未说明数据集、加密算法具体参数、梯度置零比例或实验环境等细节。\n\n## 主要结果\n\n在所述评估设置下，该双重混淆方法能够减少 APRIL 攻击恢复出的视觉信息，同时不会造成超越图像加密本身的额外分类性能下降。作者同时强调，这种组合并不能提供绝对的安全保证，但实验结果显示了将梯度修改与图像加密相结合对增强联邦学习隐私的潜在价值。\n\n## 为什么与兴趣相关\n\n该工作属于隐私计算领域，但针对的是训练过程而非模型推理，面向的是联邦学习中真实存在的梯度泄漏风险。它将梯度扰动与图像加密两种思路结合，并提供了一种支持每客户端、每图像独立密钥的轻量级密钥设计方向，对后续探索更实用的联邦学习隐私保护方案具有参考意义。",
+      "summary": "## 一句话结论\n\n本文提出一种在联邦学习中同时混淆**梯度**与**训练图像**的“双重混淆”方法，能在不额外损害分类性能的前提下，降低基于梯度的图像恢复攻击（如 APRIL）所还原出的视觉信息量。\n\n## 问题与动机\n\n联邦学习（Federated Learning, FL）允许客户端在本地保留数据、仅共享模型更新进行协作训练。但近年研究表明，攻击者可以从共享的模型更新（如梯度）中重建训练图像，造成隐私泄露。为应对此类“图像恢复攻击”，作者提出联合混淆更新信息与训练图像，从两个层面削弱攻击者可利用的信息。\n\n## 方法与技术路线\n\n摘要所述方法包含两个互补的混淆模块，并按如下方式协同工作：\n\n- **研究对象与设定**：联邦学习环境中的图像分类任务，客户端本地持有训练图像，需将模型更新上传至服务器。攻击者可能利用这些更新进行图像重建（摘要考察了 Attention Privacy Leakage, APRIL 攻击，即一种通过注意力图泄露隐私的攻击方式）。\n\n- **模块一：随机二进制梯度置零**。该方法基于随机二进制权重，将一部分梯度元素随机置零。其作用是直接减少攻击者可获得的原始梯度信息量，从而降低重建图像时所能利用的信息密度。这一步不依赖图像内容，主要用于“削减信息”。\n\n- **模块二：图像加密**。对训练图像进行加密，使即便攻击者重建出图像，得到的也是缺乏视觉可解释性的内容。该加密方案允许每个客户端、每张图像使用独立密钥，从而避免显式地共享密钥（摘要未说明密钥的具体分发或管理机制）。这一步主要用于“降低重建结果的可用性”。\n\n- **两模块的衔接**：梯度置零从“源头上”减少可供攻击者推断的信息，图像加密则从“结果上”抹除重建图像的视觉意义，两者形成互补。摘要特别指出，这种组合不会在图像加密已造成的性能损失之外，再额外降低分类精度。\n\n- **实验与比较**：实验采用 Vision Transformer（ViT，一种基于自注意力机制的视觉模型）进行图像分类任务，并评估所提方法对 APRIL 攻击的防御效果。摘要未说明数据集、加密算法具体参数、梯度置零比例或实验环境等细节。\n\n## 主要结果\n\n在所述评估设置下，该双重混淆方法能够减少 APRIL 攻击恢复出的视觉信息，同时不会造成超越图像加密本身的额外分类性能下降。作者同时强调，这种组合并不能提供绝对的安全保证，但实验结果显示了将梯度修改与图像加密相结合对增强联邦学习隐私的潜在价值。\n\n## 为什么与兴趣相关\n\n该工作属于隐私计算领域，但针对的是训练过程而非模型推理，面向的是联邦学习中真实存在的梯度泄漏风险。它将梯度扰动与图像加密两种思路结合，并提供了一种支持每客户端、每图像独立密钥的轻量级密钥设计方向，对后续探索更实用的联邦学习隐私保护方案具有参考意义。"
+    },
+    {
+      "id": "arxiv_2608.19578",
+      "arxiv_id": "2608.19578",
+      "title": "A Two-Stage Time-Aware Transformer for Short-Horizon AECOPD Risk Prediction",
+      "authors": [
+        "Dongyang Wang",
+        "Weihao Qu",
+        "Ling Zheng",
+        "Haowen Pan"
+      ],
+      "abstract": "Acute exacerbation of chronic obstructive pulmonary disease (AECOPD) can worsen rapidly, making timely prediction a clinical priority. Most existing machine learning approaches rely on episodically collected clinical variables, introducing delays that limit their practical utility in home monitoring settings. Home ventilators offer a lower-latency alternative, producing a near-continuous record of respiratory status during daily use. However existing ventilator-based approaches either compress the waveform into handcrafted features or focus primarily on binary risk classification, leaving the timing of an impending event unresolved. In this paper, we present a two-stage framework that operates directly on raw pressure and flow waveforms from the most recent seven days of home ventilator use. The first-stage classification model identifies patients at high risk of a severe exacerbation. The second-stage regression model then estimates how many days remain before the event occurs. Our experimental results demonstrate that the two-stage model outperforms traditional baseline models on both risk classification and time-to-event estimation, with our selected Stage 1 classifier achieving F1 = 0.91 and our Stage 2 regression model achieving RMSE = 1.00 days and R^2 = 0.76, giving clinicians both an early warning and actionable lead time before a severe exacerbation occurs.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T02:45:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19578",
+      "pdf_link": "https://arxiv.org/pdf/2608.19578",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Acute exacerbation of chronic obstructive pulmonary disease (AECOPD) can worsen rapidly, making timely prediction a clinical priority. Most existing machine learning approaches rely on episodically collected clinical variables, introducing delays that limit their practical utility in home monitoring settings. Home ventilators offer a lower-latency alternative, producing a near-continuous record of respiratory status during daily use. However existing ventilator-based approaches either compress the waveform into handcrafted features or focus primarily on binary risk classification, leaving the timing of an impending event unresolved. In this paper, we present a two-stage framework that operates directly on raw pressure and flow waveforms from the most recent seven days of home ventilator use. The first-stage classification model identifies patients at high risk of a severe exacerbation. The second-stage regression model then estimates how many days remain before the event occurs. Our experimental results demonstrate that the two-stage model outperforms traditional baseline models on both risk classification and time-to-event estimation, with our selected Stage 1 classifier achieving F1 = 0.91 and our Stage 2 regression model achieving RMSE = 1.00 days and R^2 = 0.76, giving clinicians both an early warning and actionable lead time before a severe exacerbation occurs.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "AECOPD risk prediction",
+        "transformer",
+        "time-to-event estimation"
+      ],
+      "relevance_reason_zh": "用于慢阻肺急性加重风险预测的两阶段Transformer模型，属于医疗预测应用，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "一种两阶段时间感知Transformer用于短期AECOPD风险预测",
+      "abstract_zh": "慢性阻塞性肺疾病急性加重（AECOPD）可能迅速恶化，使得及时预测成为临床优先事项。现有的大多数机器学习方法依赖于间歇性收集的临床变量，这会引入延迟，限制了它们在家庭监测场景中的实际效用。家用呼吸机提供了一种低延迟的替代方案，在日常使用期间产生近乎连续的呼吸状态记录。然而，现有的基于呼吸机的方法要么将波形压缩为手工设计的特征，要么主要关注二元风险分类，导致即将发生事件的时间点问题仍未解决。在本文中，我们提出了一种两阶段框架，直接处理来自最近七天家用呼吸机使用的原始压力和流量波形。第一阶段分类模型识别具有严重恶化高风险的患者。第二阶段回归模型随后估计事件发生前还剩多少天。我们的实验结果表明，两阶段模型在风险分类和事件发生时间估计方面均优于传统基线模型，我们选定的第一阶段分类器达到F1 = 0.91，第二阶段回归模型达到RMSE = 1.00天和R^2 = 0.76，从而为临床医生在严重恶化发生前提供早期预警和可操作的提前时间。"
+    },
+    {
+      "id": "arxiv_2608.19536",
+      "arxiv_id": "2608.19536",
+      "title": "CVSD-Reg: Cross-Modal Visual Semantic Prior Distillation for Robust LiDAR Registration",
+      "authors": [
+        "Eunsoo Im",
+        "Junghun Suh",
+        "Gyeonggwan Lee",
+        "Seunghwan Hong"
+      ],
+      "abstract": "Learning-based global point cloud registration has achieved remarkable progress, yet its reliance on geometric representations makes existing methods sensitive to variations in point density, scan pattern, viewpoint, and sensor characteristics. We propose CVSD-Reg, a robust global LiDAR registration framework that distills visual semantic priors from a vision foundation model into LiDAR representations. In Stage 1, a Point Transformer V3 student learns from a frozen DINOv2 teacher through contrastive distillation and spherical-manifold alignment, which preserves the hyperspherical geometry of the teacher embedding space. Self-supervised InfoNCE consistency and soft $\\mathrm{SE}(3)$ invariance further encourage viewpoint-robust descriptors. In Stage 2, the distilled representation is adapted to registration through correspondence learning, density-aware point-dropout augmentation, and end-to-end pose optimization. With a single checkpoint, CVSD-Reg generalizes to both single-sensor and zero-shot cross-sensor scenarios without sensor-specific adaptation and remains entirely camera-free at inference. On KITTI, nuScenes, and HeLiPR, CVSD-Reg achieves strict success rate (SR@0.5\\,m/$1^\\circ$) of 97.7$\\%$, 99.0$\\%$, and 99.3$\\%$, respectively, including 97.3$\\%$ on sparse 16-beam Velodyne scans. It outperforms state-of-the-art geometric registration methods by up to 44.0 percentage points without requiring camera inputs or post-hoc ICP refinement.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T01:17:12Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19536",
+      "pdf_link": "https://arxiv.org/pdf/2608.19536",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Learning-based global point cloud registration has achieved remarkable progress, yet its reliance on geometric representations makes existing methods sensitive to variations in point density, scan pattern, viewpoint, and sensor characteristics. We propose CVSD-Reg, a robust global LiDAR registration framework that distills visual semantic priors from a vision foundation model into LiDAR representations. In Stage 1, a Point Transformer V3 student learns from a frozen DINOv2 teacher through contrastive distillation and spherical-manifold alignment, which preserves the hyperspherical geometry of the teacher embedding space. Self-supervised InfoNCE consistency and soft $\\mathrm{SE}(3)$ invariance further encourage viewpoint-robust descriptors. In Stage 2, the distilled representation is adapted to registration through correspondence learning, density-aware point-dropout augmentation, and end-to-end pose optimization. With a single checkpoint, CVSD-Reg generalizes to both single-sensor and zero-shot cross-sensor scenarios without sensor-specific adaptation and remains entirely camera-free at inference. On KITTI, nuScenes, and HeLiPR, CVSD-Reg achieves strict success rate (SR@0.5\\,m/$1^\\circ$) of 97.7$\\%$, 99.0$\\%$, and 99.3$\\%$, respectively, including 97.3$\\%$ on sparse 16-beam Velodyne scans. It outperforms state-of-the-art geometric registration methods by up to 44.0 percentage points without requiring camera inputs or post-hoc ICP refinement.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "LiDAR registration",
+        "cross-modal distillation",
+        "point cloud"
+      ],
+      "relevance_reason_zh": "跨模态视觉语义蒸馏用于LiDAR点云配准，属于几何感知任务，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "CVSD-Reg：面向鲁棒LiDAR配准的跨模态视觉语义先验蒸馏",
+      "abstract_zh": "基于学习的全局点云配准已经取得了显著进展，但其对几何表示的依赖使得现有方法对点密度、扫描模式、视角和传感器特性的变化敏感。我们提出了CVSD-Reg，一个鲁棒的全局LiDAR配准框架，它将来自视觉基础模型的视觉语义先验蒸馏到LiDAR表示中。在第一阶段，Point Transformer V3学生网络通过对比蒸馏和球面流形对齐从冻结的DINOv2教师网络中学习，这保留了教师嵌入空间的超球面几何。自监督InfoNCE一致性和软SE(3)不变性进一步促进了视角鲁棒的描述符。在第二阶段，蒸馏后的表示通过对应关系学习、密度感知的点丢弃增强和端到端位姿优化来适应配准任务。凭借单一检查点，CVSD-Reg无需针对特定传感器的适配即可泛化到单传感器和零样本跨传感器场景，并且在推理时完全不需要相机。在KITTI、nuScenes和HeLiPR上，CVSD-Reg分别实现了97.7%、99.0%和99.3%的严格成功率（SR@0.5 m/1°），包括在稀疏的16线Velodyne扫描上达到97.3%。在不需要相机输入或事后ICP精化的情况下，它比最先进的几何配准方法高出多达44.0个百分点。"
+    },
+    {
+      "id": "arxiv_2608.19534",
+      "arxiv_id": "2608.19534",
+      "title": "AEGIS: Attention-Embedding Gradient Isolation Shield - Triple-Channel Gradient Masking for Privacy-Preserving Federated LLM Fine-Tuning",
+      "authors": [
+        "Ye Tao",
+        "Hong Shen",
+        "Hui Tian",
+        "Xin Wang",
+        "Can Wang"
+      ],
+      "abstract": "Gradient inversion attacks recover private training text from gradients shared in federated learning, posing a serious threat to collaborative model training. Through our analysis of transformer gradient structure, we identify three channels through which private token information leaks: the attention output projection gradient exposes a low-rank subspace that encodes input embeddings (Channel 1), the embedding gradient's row-norm sparsity directly reveals which tokens are present (Channel 2), and the MLP expansion gradient carries a recoverable subspace signal analogous to Channel 1 (Channel 3). State-of-the-art attacks exploit these channels analytically to achieve near-exact token recovery in seconds. Existing defences address at most one channel and either degrade model utility or leave the remaining structural signals intact. We introduce AEGIS (Attention-Embedding Gradient Isolation Shield), a lightweight defence that closes all three analytical channels with three backward-path operations requiring no architectural changes: freezing attention projection parameters eliminates Channel 1 by construction, calibrated noise injection into the embedding gradient destroys Channel 2's token-presence signal, and analogous per-block noise injection into the MLP expansion gradient masks Channel 3. The same masked gradient drives both the local optimiser step and the server export, so no clean signal is retained on either side. Evaluated across 11 models and six datasets, AEGIS reduces token recovery rates to near zero against a range of gradient inversion attacks, both analytical and optimisation-based, while preserving or improving model utility. We provide formal guarantees for Channels 1 and 2 and validate the full defence empirically against adaptive adversaries with complete knowledge of the mechanism.",
+      "published": "2026-08-20",
+      "published_at": "2026-08-20T01:12:56Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.19534",
+      "pdf_link": "https://arxiv.org/pdf/2608.19534",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Gradient inversion attacks recover private training text from gradients shared in federated learning, posing a serious threat to collaborative model training. Through our analysis of transformer gradient structure, we identify three channels through which private token information leaks: the attention output projection gradient exposes a low-rank subspace that encodes input embeddings (Channel 1), the embedding gradient's row-norm sparsity directly reveals which tokens are present (Channel 2), and the MLP expansion gradient carries a recoverable subspace signal analogous to Channel 1 (Channel 3). State-of-the-art attacks exploit these channels analytically to achieve near-exact token recovery in seconds. Existing defences address at most one channel and either degrade model utility or leave the remaining structural signals intact. We introduce AEGIS (Attention-Embedding Gradient Isolation Shield), a lightweight defence that closes all three analytical channels with three backward-path operations requiring no architectural changes: freezing attention projection parameters eliminates Channel 1 by construction, calibrated noise injection into the embedding gradient destroys Channel 2's token-presence signal, and analogous per-block noise injection into the MLP expansion gradient masks Channel 3. The same masked gradient drives both the local optimiser step and the server export, so no clean signal is retained on either side. Evaluated across 11 models and six datasets, AEGIS reduces token recovery rates to near zero against a range of gradient inversion attacks, both analytical and optimisation-based, while preserving or improving model utility. We provide formal guarantees for Channels 1 and 2 and validate the full defence empirically against adaptive adversaries with complete knowledge of the mechanism.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "联邦学习",
+        "梯度反演防御",
+        "隐私保护",
+        "Transformer微调"
+      ],
+      "relevance_reason_zh": "核心是联邦学习微调中的梯度反演防御与隐私保护，不涉及密码学协议下的模型推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\nAEGIS（Attention-Embedding Gradient Isolation Shield，注意力-嵌入梯度隔离盾）是一种轻量级防御，通过三个反向路径操作同时关闭联邦学习（Federated Learning）微调中Transformer梯度的三个信息泄露通道，将梯度反演攻击下的token（词元）恢复率降至接近零，且保持或提升模型效用。\n\n## 问题与动机\n联邦学习中，客户端本地数据不离开设备，但共享梯度可被梯度反演攻击（gradient inversion attacks）利用，重建私有训练文本。作者分析Transformer（一种基于注意力机制的神经网络架构）的梯度结构后，发现三个泄露通道：Channel 1中注意力输出投影梯度（attention output projection gradient）的低秩子空间编码了输入嵌入（input embeddings）；Channel 2中嵌入梯度（embedding gradient）的行范数稀疏性直接暴露了哪些token存在；Channel 3中MLP（多层感知机）扩展梯度携带了类似于Channel 1的可恢复子空间信号。最先进的攻击可利用这些通道在数秒内近乎精确地恢复token。现有防御大多只处理其中一个通道，且要么损害模型效用，要么留下其余结构信号。\n\n## 方法与技术路线\nAEGIS面向联邦微调场景，输入是本地计算的原始梯度，输出是掩码后的梯度；该梯度同时驱动本地优化器步骤和上传服务器的导出过程，因此本地和服务器均不保留干净信号，防止攻击者从任何一侧取回未掩码信息。\n\n方法由三个反向路径操作组成，按通道逐一设计：\n1. 冻结注意力投影参数（freezing attention projection parameters）：通过令该参数不再产生可学习梯度，从构造上消除Channel 1。\n2. 对嵌入梯度进行校准噪声注入（calibrated noise injection into the embedding gradient）：用添加噪声的方式破坏Channel 2的token存在性信号，使梯度行范数的稀疏性无法解读。\n3. 对MLP扩展梯度进行逐块噪声注入（per-block noise injection）：以类似方式掩蔽Channel 3中的可恢复子空间信号。\n\n这三个步骤均在反向传播路径上完成，不需要修改模型架构。研究者在11个模型和6个数据集上评估了AEGIS，比较对象包括基于分析的和基于优化的多种梯度反演攻击，指标为token恢复率；并为Channel 1和2提供了正式安全保证，同时针对完全了解机制的自适应对手（adaptive adversaries）进行了经验验证。摘要未说明噪声注入的具体分布、校准方法、冻结参数的细节、数据集及模型清单，也未给出恢复率的定量数值。\n\n## 主要结果\nAEGIS将token恢复率降至接近零（摘要未给出具体数值），同时保持或提高模型效用。它同时覆盖三个泄露通道，并为其中两个提供形式化保证，对自适应对手的经验评估也支持其有效性。\n\n## 为什么与兴趣相关\n大语言模型（LLM）微调常依赖联邦协作，而梯度反演攻击可能暴露训练语料中的敏感文本。AEGIS提供了一种轻量、无需架构改动且不牺牲效用的防御路线，具有较强的实用潜力。该工作不涉及密码学协议下的模型推理，属于梯度隐私保护范畴。",
+      "summary": "## 一句话结论\nAEGIS（Attention-Embedding Gradient Isolation Shield，注意力-嵌入梯度隔离盾）是一种轻量级防御，通过三个反向路径操作同时关闭联邦学习（Federated Learning）微调中Transformer梯度的三个信息泄露通道，将梯度反演攻击下的token（词元）恢复率降至接近零，且保持或提升模型效用。\n\n## 问题与动机\n联邦学习中，客户端本地数据不离开设备，但共享梯度可被梯度反演攻击（gradient inversion attacks）利用，重建私有训练文本。作者分析Transformer（一种基于注意力机制的神经网络架构）的梯度结构后，发现三个泄露通道：Channel 1中注意力输出投影梯度（attention output projection gradient）的低秩子空间编码了输入嵌入（input embeddings）；Channel 2中嵌入梯度（embedding gradient）的行范数稀疏性直接暴露了哪些token存在；Channel 3中MLP（多层感知机）扩展梯度携带了类似于Channel 1的可恢复子空间信号。最先进的攻击可利用这些通道在数秒内近乎精确地恢复token。现有防御大多只处理其中一个通道，且要么损害模型效用，要么留下其余结构信号。\n\n## 方法与技术路线\nAEGIS面向联邦微调场景，输入是本地计算的原始梯度，输出是掩码后的梯度；该梯度同时驱动本地优化器步骤和上传服务器的导出过程，因此本地和服务器均不保留干净信号，防止攻击者从任何一侧取回未掩码信息。\n\n方法由三个反向路径操作组成，按通道逐一设计：\n1. 冻结注意力投影参数（freezing attention projection parameters）：通过令该参数不再产生可学习梯度，从构造上消除Channel 1。\n2. 对嵌入梯度进行校准噪声注入（calibrated noise injection into the embedding gradient）：用添加噪声的方式破坏Channel 2的token存在性信号，使梯度行范数的稀疏性无法解读。\n3. 对MLP扩展梯度进行逐块噪声注入（per-block noise injection）：以类似方式掩蔽Channel 3中的可恢复子空间信号。\n\n这三个步骤均在反向传播路径上完成，不需要修改模型架构。研究者在11个模型和6个数据集上评估了AEGIS，比较对象包括基于分析的和基于优化的多种梯度反演攻击，指标为token恢复率；并为Channel 1和2提供了正式安全保证，同时针对完全了解机制的自适应对手（adaptive adversaries）进行了经验验证。摘要未说明噪声注入的具体分布、校准方法、冻结参数的细节、数据集及模型清单，也未给出恢复率的定量数值。\n\n## 主要结果\nAEGIS将token恢复率降至接近零（摘要未给出具体数值），同时保持或提高模型效用。它同时覆盖三个泄露通道，并为其中两个提供形式化保证，对自适应对手的经验评估也支持其有效性。\n\n## 为什么与兴趣相关\n大语言模型（LLM）微调常依赖联邦协作，而梯度反演攻击可能暴露训练语料中的敏感文本。AEGIS提供了一种轻量、无需架构改动且不牺牲效用的防御路线，具有较强的实用潜力。该工作不涉及密码学协议下的模型推理，属于梯度隐私保护范畴。"
+    },
+    {
       "id": "arxiv_2608.19168",
       "arxiv_id": "2608.19168",
       "title": "Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training",
@@ -32,11 +917,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "习得，然后遗忘：预训练中一个可测量的单样本反事实",
+      "abstract_zh": "一个训练样本对已完成模型的贡献通常是估计而非测量的，因为测量它需要两次昂贵的完整预训练运行，而这两次运行仅在一个批次中的一行上有所不同。我们以小规模将该反事实运行了24次。我们在OpenWebText上从头训练了32个124M参数的GPT-2模型，涵盖四个条件和八个随机种子。在第9,536步中的第200步、处于峰值学习率时，我们将一个256行批次中的一行替换为一个固定上下文注入，该注入携带一段194个token的文本。三个注入条件分别是：1. 流畅的散文，主题在语料库中有据可查；2. 流畅的散文，主题为虚构，并且在全批次梯度增量上与前者匹配到0.14%以内；3. 随机键盘字符。第四个条件是其未注入的孪生对照。该文本在一次暴露中被学习，然后衰减。注入后五十步，看到该文本的臂对它的预测优于未看到该文本的臂，在文本上的交叉熵分别低0.039和0.044 nats，八个种子全部如此，p < $10^{-4}$。在最后一步，我们没有检测到任一文本的这种差异，p = 0.25和p = 0.71，对应的最小可检测效应为0.025和0.079 nats；两个文本之间也没有检测到差异，p=0.54。我们报告的每一个几何度量都是在这次衰减之后取得的。我们预注册的关于插值损失障碍的对比为+0.0068，p = 0.509，最小可检测效应为0.032个障碍单位。留出交叉熵为$-0.00044$，p = 0.310。逐层中心核对齐在任意层都没有可检测地区分出任何条件。权重位移达到种子间欧氏距离的44.1%，并且在训练中点时已安定92%；而障碍达到种子间障碍的3.0%。这两个数字相差约15倍，而且这是一个下界。注入将模型重新定位在其盆地内，而没有将其移出盆地。"
     },
     {
       "id": "arxiv_2608.19165",
@@ -4864,6 +5749,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-20T03:10:11.854703Z",
-  "total_count": 121
+  "last_updated": "2026-08-21T03:15:53.745047Z",
+  "total_count": 142
 }
