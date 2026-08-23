@@ -1,6 +1,543 @@
 {
   "papers": [
     {
+      "id": "iacr_2026/1773",
+      "iacr_id": "2026/1773",
+      "title": "Enforcing Winner-Only Disclosure: Verifiable Tally Hiding for Weighted DAO Governance",
+      "authors": [
+        "Jiayu Li",
+        "Gongli Li"
+      ],
+      "abstract": "Token-weighted voting is widely used in DAO governance, but public voting weights together with weighted tallies can reveal identifiable voters' choices. Publishing only the final outcome reduces this disclosure, yet an output policy alone does not prevent a privileged participant from reconstructing the exact weighted tally during computation. We present a verifiable winner-only tally-hiding construction for weighted binary voting. Registered weights are bound to credentials in zero-knowledge ballots, while weighted contributions remain encrypted through aggregation and comparison against a public threshold. The blockchain adjudicates ballots, an off-chain backend performs the encrypted computation, and exact ciphertext and transcript bindings allow any public verifier to check that the published outcome corresponds to the accepted ballots. The only tally-derived plaintext output is the outcome bit. The construction is parameterized by electorate size and contribution width; our prototype and formal transcript-privacy result deliberately study a bounded eight-voter, eight-bit instance with 134 encrypted gates and an actual three-of-five final release. For honest execution by all five trustees, we prove passive-public-observer backend transcript privacy from the accepted ciphertexts and outcome alone. Privacy against malicious sub-threshold trustees remains open.",
+      "published": "2026-08-22",
+      "published_at": "2026-08-22T07:28:36Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1773",
+      "pdf_link": "https://eprint.iacr.org/2026/1773.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-22T07:28:36Z",
+      "matched_terms": [],
+      "summary_en": "Token-weighted voting is widely used in DAO governance, but public voting weights together with weighted tallies can reveal identifiable voters' choices. Publishing only the final outcome reduces this disclosure, yet an output policy alone does not prevent a privileged participant from reconstructing the exact weighted tally during computation. We present a verifiable winner-only tally-hiding construction for weighted binary voting. Registered weights are bound to credentials in zero-knowledge ballots, while weighted contributions remain encrypted through aggregation and comparison against a public threshold. The blockchain adjudicates ballots, an off-chain backend performs the encrypted computation, and exact ciphertext and transcript bindings allow any public verifier to check that the published outcome corresponds to the accepted ballots. The only tally-derived plaintext output is the outcome bit. The construction is parameterized by electorate size and contribution width; our prototype and formal transcript-privacy result deliberately study a bounded eight-voter, eight-bit instance with 134 encrypted gates and an actual three-of-five final release. For honest execution by all five trustees, we prove passive-public-observer backend transcript privacy from the accepted ciphertexts and outcome alone. Privacy against malicious sub-threshold trustees remains open.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1772",
+      "iacr_id": "2026/1772",
+      "title": "Multi-PGBF: Efficient Oblivious Key-Value Store and Application to Private Set Intersection",
+      "authors": [
+        "Mingli Wu",
+        "Tsz Hon Yuen",
+        "Man Ho Au",
+        "Siu-Ming Yiu"
+      ],
+      "abstract": "An oblivious key-value store is a data structure that can encode and decode $n$ key-value pairs in a table of size $m$ obliviously. After encoding, one cannot distinguish the encoded key-value pairs from other key-value pairs in the input domain. In this paper, we first propose a data structure called Peelable Garbled Bloom Filter (PGBF), which encodes the key-value pairs in a similar way to peeling and unpeeling an \\emph{onion}. Specifically, it can divide the key-value pair set (i.e., onion) as multiple subsets (i.e., peels) and order them from the outermost peel to the innermost peel by using a counting Bloom filter. However, using a small expansion rate (i.e., $\\eta=m/n$) in PGBF will result in a non-empty core issue with non-negligible probability. To handle this issue, we propose Multi-PGBF by combining multiple PGBFs to do the peelings and unpeelings recursively. In addition, we propose a variant C-Multi-PGBF by clustering a large set into small sets to achieve faster encoding efficiency. Our experiments show that Multi-PGBF and C-Multi-PGBF obtain the best encoding and decoding efficiency. Multi-PGBF improves the encoding time of RR (CCS’22) by $65.1\\%\\sim 77.6\\%$, while C-Multi-PGBF improves the encoding time of the clustered RR variant by $60.2\\%\\sim 64.7\\%$. For decoding, Multi-PGBF is $28.6\\%\\sim 62.4\\%$ faster than RR (CCS'22) and $89.7\\%\\sim 96.3\\%$ faster than RB-OKVS (Usenix'23). When integrated into the state-of-the-art two-party and multi-party private set intersection protocols (Eurocrypt'21, Usenix'24), Multi-PGBF and C-Multi-PGBF lead to faster protocols than those using existing OKVS constructions in most settings.",
+      "published": "2026-08-22",
+      "published_at": "2026-08-22T06:58:08Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1772",
+      "pdf_link": "https://eprint.iacr.org/2026/1772.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-22T06:58:08Z",
+      "matched_terms": [],
+      "summary_en": "An oblivious key-value store is a data structure that can encode and decode $n$ key-value pairs in a table of size $m$ obliviously. After encoding, one cannot distinguish the encoded key-value pairs from other key-value pairs in the input domain. In this paper, we first propose a data structure called Peelable Garbled Bloom Filter (PGBF), which encodes the key-value pairs in a similar way to peeling and unpeeling an \\emph{onion}. Specifically, it can divide the key-value pair set (i.e., onion) as multiple subsets (i.e., peels) and order them from the outermost peel to the innermost peel by using a counting Bloom filter. However, using a small expansion rate (i.e., $\\eta=m/n$) in PGBF will result in a non-empty core issue with non-negligible probability. To handle this issue, we propose Multi-PGBF by combining multiple PGBFs to do the peelings and unpeelings recursively. In addition, we propose a variant C-Multi-PGBF by clustering a large set into small sets to achieve faster encoding efficiency. Our experiments show that Multi-PGBF and C-Multi-PGBF obtain the best encoding and decoding efficiency. Multi-PGBF improves the encoding time of RR (CCS’22) by $65.1\\%\\sim 77.6\\%$, while C-Multi-PGBF improves the encoding time of the clustered RR variant by $60.2\\%\\sim 64.7\\%$. For decoding, Multi-PGBF is $28.6\\%\\sim 62.4\\%$ faster than RR (CCS'22) and $89.7\\%\\sim 96.3\\%$ faster than RB-OKVS (Usenix'23). When integrated into the state-of-the-art two-party and multi-party private set intersection protocols (Eurocrypt'21, Usenix'24), Multi-PGBF and C-Multi-PGBF lead to faster protocols than those using existing OKVS constructions in most settings.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1771",
+      "iacr_id": "2026/1771",
+      "title": "New Lower Bounds for Rows of $d$-Disjunct Matrices via Recursive Potentials",
+      "authors": [
+        "Xiaopeng Zhao"
+      ],
+      "abstract": "In nonadaptive combinatorial group testing, given $n$ items with at most $d$ positives, the goal is to identify them using as few pooled tests as possible. A $t\\times n$ binary matrix represents the design, where rows are tests and columns are items. The matrix is $d$-disjunct if no column is contained in the Boolean union of any $d$ others. Let $T(d)$ be the minimum $t$ for which such a matrix exists with $n>t$. Shangguan and Ge proved $T(d)\\ge \\frac{15+\\sqrt{33}}{24}d^2$ by counting private pairs (IEEE Trans. Inf. Theory, 62(12):7518-7521, 2016). In this paper, we strengthen their argument by introducing a column-deletion recurrence in which the light-heavy threshold varies with the recursive state $z=(n-t)/d^2$, rather than remaining fixed. This yields the improved bound $T(d)\\ge 0.9283d^2-O(d)$. The analytic core reduces to a first-order ODE, and a self-contained interval-arithmetic certificate verifies that the solution reaches the required contact point.",
+      "published": "2026-08-22",
+      "published_at": "2026-08-22T00:45:55Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1771",
+      "pdf_link": "https://eprint.iacr.org/2026/1771.pdf",
+      "categories": [
+        "Foundations"
+      ],
+      "updated_at": "2026-08-22T00:45:55Z",
+      "matched_terms": [],
+      "summary_en": "In nonadaptive combinatorial group testing, given $n$ items with at most $d$ positives, the goal is to identify them using as few pooled tests as possible. A $t\\times n$ binary matrix represents the design, where rows are tests and columns are items. The matrix is $d$-disjunct if no column is contained in the Boolean union of any $d$ others. Let $T(d)$ be the minimum $t$ for which such a matrix exists with $n>t$. Shangguan and Ge proved $T(d)\\ge \\frac{15+\\sqrt{33}}{24}d^2$ by counting private pairs (IEEE Trans. Inf. Theory, 62(12):7518-7521, 2016). In this paper, we strengthen their argument by introducing a column-deletion recurrence in which the light-heavy threshold varies with the recursive state $z=(n-t)/d^2$, rather than remaining fixed. This yields the improved bound $T(d)\\ge 0.9283d^2-O(d)$. The analytic core reduces to a first-order ODE, and a self-contained interval-arithmetic certificate verifies that the solution reaches the required contact point.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1770",
+      "iacr_id": "2026/1770",
+      "title": "How Many Traces Suffice? PAC Guarantees for Profiled and Non-profiled Side-Channel Analysis",
+      "authors": [
+        "Seyedmohammad Nouraniboosjin",
+        "Fatemeh Ganji"
+      ],
+      "abstract": "Side-channel analysis (SCA) is commonly evaluated by reporting the number of traces required to reduce the rank of the correct key. Still, such evaluations remain empirical and do not explain how many traces suffice for reliable recovery, how profiling and attack data contribute separately, or when additional traces cannot overcome weak key distinguishability. We address these questions through a Probably Approximately Correct (PAC) formulation of profiled and non-profiled SCA. Our framework treats candidate-key scores as the common cryptanalytic object and separates finite-sample estimation from the intrinsic separation between the correct key and competing hypotheses. This distinction enables confidence guarantees for key rank and helps determine whether an attack failure is due to insufficient data or an inherently weak attack score. We instantiate the framework with representative profiled and non-profiled attacks chosen for their analytical tractability. Experiments on ASCAD-f and ASCAD-r show that this analytical tractability does not come at the cost of impractical attack performance. The profiled attack achieves exact recovery with tens of attack traces, whereas the non-profiled single-attack rank certificate guarantees exact recovery with about 1,000 traces. These results are competitive with recent ASCAD attacks and, in the non-profiled setting, substantially below the smallest trace counts identified in prior studies, while additionally providing finite-sample guarantees on key rank. More generally, the same finite-sample rank analysis can be adapted to other learners and distinguishers by deriving the corresponding score-gap guarantees. Overall, the framework turns trace complexity from an empirical attack observation into a reusable finite-sample criterion for key recovery.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T21:03:55Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1770",
+      "pdf_link": "https://eprint.iacr.org/2026/1770.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-21T21:03:55Z",
+      "matched_terms": [],
+      "summary_en": "Side-channel analysis (SCA) is commonly evaluated by reporting the number of traces required to reduce the rank of the correct key. Still, such evaluations remain empirical and do not explain how many traces suffice for reliable recovery, how profiling and attack data contribute separately, or when additional traces cannot overcome weak key distinguishability. We address these questions through a Probably Approximately Correct (PAC) formulation of profiled and non-profiled SCA. Our framework treats candidate-key scores as the common cryptanalytic object and separates finite-sample estimation from the intrinsic separation between the correct key and competing hypotheses. This distinction enables confidence guarantees for key rank and helps determine whether an attack failure is due to insufficient data or an inherently weak attack score. We instantiate the framework with representative profiled and non-profiled attacks chosen for their analytical tractability. Experiments on ASCAD-f and ASCAD-r show that this analytical tractability does not come at the cost of impractical attack performance. The profiled attack achieves exact recovery with tens of attack traces, whereas the non-profiled single-attack rank certificate guarantees exact recovery with about 1,000 traces. These results are competitive with recent ASCAD attacks and, in the non-profiled setting, substantially below the smallest trace counts identified in prior studies, while additionally providing finite-sample guarantees on key rank. More generally, the same finite-sample rank analysis can be adapted to other learners and distinguishers by deriving the corresponding score-gap guarantees. Overall, the framework turns trace complexity from an empirical attack observation into a reusable finite-sample criterion for key recovery.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1769",
+      "iacr_id": "2026/1769",
+      "title": "Rank Measures and Exponential Lower Bounds for Multilinear Secret Sharing",
+      "authors": [
+        "Shahram Khazaei"
+      ],
+      "abstract": "A multilinear secret-sharing scheme shares a vector secret and can therefore amortize share size over the secret dimension. This amortization can invalidate lower bounds proved for one-dimensional linear schemes, and the best previous explicit lower bound for multilinear schemes was quasipolynomial, $n^{\\Omega(\\log n)}$. We prove that the Razborov--G\\'al rank measure survives amortization: the normalized size of a multi-target monotone span program is at least the rank measure of the function it computes. Combined with the rank witnesses of Pitassi and Robere, this gives an explicit family of access structures for which every perfect multilinear scheme over every finite field has average and maximum information ratio $2^{\\Omega(n)}$. The worst-case multilinear information ratio is therefore $2^{\\Theta(n)}$, answering a question of Beimel. We further extend the bound to schemes whose sharing algorithm is arbitrary and whose reconstruction is affine-linear, under pairwise statistical privacy below one; combined with the degree-reduction theorem of Beimel, Othman, and Peter, this yields exponential normalized lower bounds for every fixed reconstruction degree whenever the secret dimension is $2^{o(n)}$.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T19:55:40Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1769",
+      "pdf_link": "https://eprint.iacr.org/2026/1769.pdf",
+      "categories": [
+        "Foundations"
+      ],
+      "updated_at": "2026-08-21T19:55:40Z",
+      "matched_terms": [
+        "secret sharing"
+      ],
+      "summary_en": "A multilinear secret-sharing scheme shares a vector secret and can therefore amortize share size over the secret dimension. This amortization can invalidate lower bounds proved for one-dimensional linear schemes, and the best previous explicit lower bound for multilinear schemes was quasipolynomial, $n^{\\Omega(\\log n)}$. We prove that the Razborov--G\\'al rank measure survives amortization: the normalized size of a multi-target monotone span program is at least the rank measure of the function it computes. Combined with the rank witnesses of Pitassi and Robere, this gives an explicit family of access structures for which every perfect multilinear scheme over every finite field has average and maximum information ratio $2^{\\Omega(n)}$. The worst-case multilinear information ratio is therefore $2^{\\Theta(n)}$, answering a question of Beimel. We further extend the bound to schemes whose sharing algorithm is arbitrary and whose reconstruction is affine-linear, under pairwise statistical privacy below one; combined with the degree-reduction theorem of Beimel, Othman, and Peter, this yields exponential normalized lower bounds for every fixed reconstruction degree whenever the secret dimension is $2^{o(n)}$.",
+      "keywords": [
+        "secret sharing"
+      ],
+      "topics": [
+        "secret sharing",
+        "multilinear secret sharing",
+        "information ratio",
+        "span program"
+      ],
+      "relevance_reason_zh": "研究多线性秘密共享方案的秩测度与指数下界，属于秘密共享复杂性理论，而非安全推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "# 摘要导读\n\n## 一句话结论\n本文证明 Rázborov–Gál（Razborov–Gál）秩测度（rank measure）在多线性秘密共享中依然有效，从而给出显式访问结构族，使所有有限域上的完美多线性方案的信息率呈指数下界（$2^{\\Omega(n)}$），并回答了 Beimel 提出的最坏情况多线性信息率是否为 $2^{\\Theta(n)}$ 的问题。\n\n## 问题与动机\n多线性秘密共享方案（multilinear secret-sharing scheme）共享的是一个向量秘密，因此可以在秘密维度上摊销（amortize）每个份额的大小。这种摊销会使得针对一维线性方案证明的下界失效。此前多线性方案最好的显式下界仅为拟多项式 $n^{\\Omega(\\log n)}$。本文的核心动机是证明某种复杂性测度能够“存活”于摊销过程，从而获得更强的下界。\n\n## 方法与技术路线\n- **研究对象与设定**：考虑完美多线性秘密共享方案，其对应的计算模型是多目标单调生成程序（multi-target monotone span program，MSP）。一个 MSP 的“归一化大小”（normalized size）是衡量其复杂性的关键指标；该方案实现一个访问结构（access structure），即一个布尔函数/代数函数，规定哪些参与者集合可以重建秘密。\n- **关键步骤 1：秩测度与摊销的兼容性**。作者证明，任一多目标单调生成程序的归一化大小至少等于它计算的函数的 Rázborov–Gál 秩测度。由于秩测度原本用于一维线性方案，这一结果意味着该测度在向量秘密的摊销设定下仍然构成下界，不受摊销影响。\n- **关键步骤 2：结合秩见证构造显式下界**。将上述定理与 Pitassi 和 Robere 的秩见证（rank witnesses）相结合，可以得到一个显式的访问结构族。对于该族中的每个访问结构，任何完美多线性方案（无论基于哪个有限域）的平均信息率和最大信息率都满足 $2^{\\Omega(n)}$ 的下界。由此推出最坏情况多线性信息率为 $2^{\\Theta(n)}$。\n- **关键步骤 3：扩展到更广泛的方案**。进一步将下界推广到共享算法任意、重构算法为仿射线性（affine-linear）且成对统计隐私小于 1（pairwise statistical privacy below one）的方案。结合 Beimel、Othman 和 Peter 的度约化定理（degree-reduction theorem），当秘密维度为 $2^{o(n)}$ 时，任意固定重构度（reconstruction degree）的方案也获得指数级归一化下界。\n- **输出**：最终输出是访问结构族的显式构造与信息率下界证明，属于理论复杂度结果。摘要未说明具体协议参数、数据集合或实验设置（本文为纯理论证明，未涉及实验）。\n\n## 主要结果\n- 存在显式访问结构族，使任何有限域上的任何完美多线性秘密共享方案的平均与最大信息率均为 $2^{\\Omega(n)}$；结合已有上界，最坏情形多线性信息率恰为 $2^{\\Theta(n)}$，回答了 Beimel 的开放问题。\n- 下界可扩展到更一般的方案类（任意共享算法、仿射线性重构、成对统计隐私低于 1），并在秘密维度子指数时对所有固定重构度给出指数级归一化下界。\n\n## 为什么与兴趣相关\n该研究直接推进了秘密共享复杂性理论：它首次将多线性方案的下界从拟多项式提升到指数，并明确了摊销不会破坏秩测度的力量。对于密码学研究者，这有助于理解多线性秘密共享的能力极限，也为设计更优方案或寻找新下界提供了工具。对于机器学习安全领域，秘密共享是安全多方计算和分布式模型训练的基础组件，这类下界刻画了安全协议在存储和通信上的固有成本，因此也对隐私保护机器学习的效率边界具有参考意义。",
+      "summary": "# 摘要导读\n\n## 一句话结论\n本文证明 Rázborov–Gál（Razborov–Gál）秩测度（rank measure）在多线性秘密共享中依然有效，从而给出显式访问结构族，使所有有限域上的完美多线性方案的信息率呈指数下界（$2^{\\Omega(n)}$），并回答了 Beimel 提出的最坏情况多线性信息率是否为 $2^{\\Theta(n)}$ 的问题。\n\n## 问题与动机\n多线性秘密共享方案（multilinear secret-sharing scheme）共享的是一个向量秘密，因此可以在秘密维度上摊销（amortize）每个份额的大小。这种摊销会使得针对一维线性方案证明的下界失效。此前多线性方案最好的显式下界仅为拟多项式 $n^{\\Omega(\\log n)}$。本文的核心动机是证明某种复杂性测度能够“存活”于摊销过程，从而获得更强的下界。\n\n## 方法与技术路线\n- **研究对象与设定**：考虑完美多线性秘密共享方案，其对应的计算模型是多目标单调生成程序（multi-target monotone span program，MSP）。一个 MSP 的“归一化大小”（normalized size）是衡量其复杂性的关键指标；该方案实现一个访问结构（access structure），即一个布尔函数/代数函数，规定哪些参与者集合可以重建秘密。\n- **关键步骤 1：秩测度与摊销的兼容性**。作者证明，任一多目标单调生成程序的归一化大小至少等于它计算的函数的 Rázborov–Gál 秩测度。由于秩测度原本用于一维线性方案，这一结果意味着该测度在向量秘密的摊销设定下仍然构成下界，不受摊销影响。\n- **关键步骤 2：结合秩见证构造显式下界**。将上述定理与 Pitassi 和 Robere 的秩见证（rank witnesses）相结合，可以得到一个显式的访问结构族。对于该族中的每个访问结构，任何完美多线性方案（无论基于哪个有限域）的平均信息率和最大信息率都满足 $2^{\\Omega(n)}$ 的下界。由此推出最坏情况多线性信息率为 $2^{\\Theta(n)}$。\n- **关键步骤 3：扩展到更广泛的方案**。进一步将下界推广到共享算法任意、重构算法为仿射线性（affine-linear）且成对统计隐私小于 1（pairwise statistical privacy below one）的方案。结合 Beimel、Othman 和 Peter 的度约化定理（degree-reduction theorem），当秘密维度为 $2^{o(n)}$ 时，任意固定重构度（reconstruction degree）的方案也获得指数级归一化下界。\n- **输出**：最终输出是访问结构族的显式构造与信息率下界证明，属于理论复杂度结果。摘要未说明具体协议参数、数据集合或实验设置（本文为纯理论证明，未涉及实验）。\n\n## 主要结果\n- 存在显式访问结构族，使任何有限域上的任何完美多线性秘密共享方案的平均与最大信息率均为 $2^{\\Omega(n)}$；结合已有上界，最坏情形多线性信息率恰为 $2^{\\Theta(n)}$，回答了 Beimel 的开放问题。\n- 下界可扩展到更一般的方案类（任意共享算法、仿射线性重构、成对统计隐私低于 1），并在秘密维度子指数时对所有固定重构度给出指数级归一化下界。\n\n## 为什么与兴趣相关\n该研究直接推进了秘密共享复杂性理论：它首次将多线性方案的下界从拟多项式提升到指数，并明确了摊销不会破坏秩测度的力量。对于密码学研究者，这有助于理解多线性秘密共享的能力极限，也为设计更优方案或寻找新下界提供了工具。对于机器学习安全领域，秘密共享是安全多方计算和分布式模型训练的基础组件，这类下界刻画了安全协议在存储和通信上的固有成本，因此也对隐私保护机器学习的效率边界具有参考意义。"
+    },
+    {
+      "id": "iacr_2026/1768",
+      "iacr_id": "2026/1768",
+      "title": "Constant-round MPC protocols with Fall-back Security",
+      "authors": [
+        "Anasuya Acharya",
+        "Aditya Patankar",
+        "Arpita Patra",
+        "Divya Ravi",
+        "Raghavendra Vernekar"
+      ],
+      "abstract": "The notion of Best-of-Both-Worlds introduced in the work of Ishai et al. (CRYPTO 2006) investigated whether an MPC protocol can simultaneously provide two incomparable security guarantees depending on the number of corrupted parties. As a special case of this, Chaum et al. initiated the study of protocols that tolerate unbounded corruption within a certain adversary structure and PPT corruption of any number of parties beyond that. More recently, Acharya et al. (CRYPTO 2023) formalized this notion as MPC with fall-back security. Although the feasibility of such protocols has now been thoroughly studied in prior works, most of the existing protocols require round complexity linear in the number of parties and the computation size. In this work, we study the round complexity of MPC with fall-back security in the threshold corruption setting, presenting constant-round protocols for optimal thresholds. We present a semi-honest fall-back secure protocol for $t < \\frac{n}{2}$ with 3 rounds, in the plain model, whereas the best known protocol in the same setting takes at least 11 rounds. In the CRS model, we present a maliciously fall-back secure protocol for the same threshold with 4 rounds, satisfying unanimous abort (UA). Finally, we extend this to a 5-round protocol that satisfies fairness in the presence of unbounded adversaries for $t < \\frac{n}{2}$ corruptions and UA tolerating PPT adversaries for arbitrary corruption beyond that. In the malicious setting, we construct the first constant-round fall-back secure protocols.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T18:25:38Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1768",
+      "pdf_link": "https://eprint.iacr.org/2026/1768.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-21T18:25:38Z",
+      "matched_terms": [
+        "MPC"
+      ],
+      "summary_en": "The notion of Best-of-Both-Worlds introduced in the work of Ishai et al. (CRYPTO 2006) investigated whether an MPC protocol can simultaneously provide two incomparable security guarantees depending on the number of corrupted parties. As a special case of this, Chaum et al. initiated the study of protocols that tolerate unbounded corruption within a certain adversary structure and PPT corruption of any number of parties beyond that. More recently, Acharya et al. (CRYPTO 2023) formalized this notion as MPC with fall-back security. Although the feasibility of such protocols has now been thoroughly studied in prior works, most of the existing protocols require round complexity linear in the number of parties and the computation size. In this work, we study the round complexity of MPC with fall-back security in the threshold corruption setting, presenting constant-round protocols for optimal thresholds. We present a semi-honest fall-back secure protocol for $t < \\frac{n}{2}$ with 3 rounds, in the plain model, whereas the best known protocol in the same setting takes at least 11 rounds. In the CRS model, we present a maliciously fall-back secure protocol for the same threshold with 4 rounds, satisfying unanimous abort (UA). Finally, we extend this to a 5-round protocol that satisfies fairness in the presence of unbounded adversaries for $t < \\frac{n}{2}$ corruptions and UA tolerating PPT adversaries for arbitrary corruption beyond that. In the malicious setting, we construct the first constant-round fall-back secure protocols.",
+      "keywords": [
+        "MPC"
+      ],
+      "topics": [
+        "MPC",
+        "round complexity",
+        "fall-back security"
+      ],
+      "relevance_reason_zh": "研究具有fall-back安全性的常轮MPC协议，属于隐私计算中的安全多方计算，但不涉及模型推理保护。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "# 摘要导读\n\n## 一句话结论\n本文在阈值腐败设置下为具有fall-back安全性的MPC（安全多方计算，Secure Multi-Party Computation）协议构造了常轮（constant-round）构造：半诚实模型下最优阈值 \\(t<n/2\\) 只需3轮，恶意模型下首次实现了常轮协议。\n\n## 问题与动机\nMPC协议通常假设腐败方数量不超过某个阈值。Ishai等人提出的Best-of-Both-Worlds（两全其美）概念研究：能否让一个协议根据实际腐败数量同时提供两种不可比较的安全保证？Chaum等人进一步考虑了特殊情形：在某个adversary structure（对手结构）内容忍无界腐败（unbounded corruption），超过该结构后容忍任意数量的PPT（概率多项式时间）腐败。Acharya等人（CRYPTO 2023）将其形式化为“fall-back security”（回退安全）。已有工作主要证明可行性，但多数协议轮数与参与方数量和计算规模呈线性关系，限制了实际应用。\n\n## 方法与技术路线\n研究对象为n方MPC协议，采用阈值腐败模型，安全阈值设为最优的 \\(t<n/2\\)（少于一半参与方被腐败）。作者针对不同安全级别和通信设置分别构造协议：\n\n- **半诚实（semi-honest）设置**：在plain model（无公共参考串的普通模型）中，构造3轮fall-back安全协议，容忍无界腐败方数低于 \\(n/2\\)。摘要未说明该协议的具体步骤，也未披露轮数压缩所依赖的密码学技术。\n- **恶意（malicious）设置**：在CRS model（common reference string model，公共参考串模型）中，构造4轮fall-back安全协议，满足unanimous abort（UA，全体一致中止）——所有诚实方都能检测到恶意行为并一致中止。\n- **公平性扩展**：进一步构造5轮协议，在无界对手存在且腐败方数 \\(t<n/2\\) 时满足公平性（fairness）；当腐败方数超过该阈值时，仍能对PPT对手满足UA。\n\n这些协议按“半诚实→恶意→公平性”的强度递进，但摘要未披露内部模块如何衔接以及使用哪些底层原语（如承诺、零知识证明等）。文中明确提到，在恶意设置中这是第一批常轮fall-back安全协议。\n\n## 主要结果\n- 半诚实fall-back安全：3轮（此前同一设置下已知最好为11轮）。\n- 恶意fall-back安全：CRS模型下4轮，满足UA。\n- 恶意+公平性：5轮，无界腐败时公平，PPT腐败时UA。\n- 首次在恶意设置中实现常轮fall-back安全。\n\n## 为什么与兴趣相关\n轮复杂度是MPC协议实际可用性的关键指标。fall-back安全允许协议在敌手能力超出常规阈值时仍能提供较弱的明确安全保证，比单一安全模型更贴近现实威胁。本文为最优阈值提供了常轮构造，缩小了fall-back安全与普通MPC在效率上的差距。",
+      "summary": "# 摘要导读\n\n## 一句话结论\n本文在阈值腐败设置下为具有fall-back安全性的MPC（安全多方计算，Secure Multi-Party Computation）协议构造了常轮（constant-round）构造：半诚实模型下最优阈值 \\(t<n/2\\) 只需3轮，恶意模型下首次实现了常轮协议。\n\n## 问题与动机\nMPC协议通常假设腐败方数量不超过某个阈值。Ishai等人提出的Best-of-Both-Worlds（两全其美）概念研究：能否让一个协议根据实际腐败数量同时提供两种不可比较的安全保证？Chaum等人进一步考虑了特殊情形：在某个adversary structure（对手结构）内容忍无界腐败（unbounded corruption），超过该结构后容忍任意数量的PPT（概率多项式时间）腐败。Acharya等人（CRYPTO 2023）将其形式化为“fall-back security”（回退安全）。已有工作主要证明可行性，但多数协议轮数与参与方数量和计算规模呈线性关系，限制了实际应用。\n\n## 方法与技术路线\n研究对象为n方MPC协议，采用阈值腐败模型，安全阈值设为最优的 \\(t<n/2\\)（少于一半参与方被腐败）。作者针对不同安全级别和通信设置分别构造协议：\n\n- **半诚实（semi-honest）设置**：在plain model（无公共参考串的普通模型）中，构造3轮fall-back安全协议，容忍无界腐败方数低于 \\(n/2\\)。摘要未说明该协议的具体步骤，也未披露轮数压缩所依赖的密码学技术。\n- **恶意（malicious）设置**：在CRS model（common reference string model，公共参考串模型）中，构造4轮fall-back安全协议，满足unanimous abort（UA，全体一致中止）——所有诚实方都能检测到恶意行为并一致中止。\n- **公平性扩展**：进一步构造5轮协议，在无界对手存在且腐败方数 \\(t<n/2\\) 时满足公平性（fairness）；当腐败方数超过该阈值时，仍能对PPT对手满足UA。\n\n这些协议按“半诚实→恶意→公平性”的强度递进，但摘要未披露内部模块如何衔接以及使用哪些底层原语（如承诺、零知识证明等）。文中明确提到，在恶意设置中这是第一批常轮fall-back安全协议。\n\n## 主要结果\n- 半诚实fall-back安全：3轮（此前同一设置下已知最好为11轮）。\n- 恶意fall-back安全：CRS模型下4轮，满足UA。\n- 恶意+公平性：5轮，无界腐败时公平，PPT腐败时UA。\n- 首次在恶意设置中实现常轮fall-back安全。\n\n## 为什么与兴趣相关\n轮复杂度是MPC协议实际可用性的关键指标。fall-back安全允许协议在敌手能力超出常规阈值时仍能提供较弱的明确安全保证，比单一安全模型更贴近现实威胁。本文为最优阈值提供了常轮构造，缩小了fall-back安全与普通MPC在效率上的差距。"
+    },
+    {
+      "id": "iacr_2026/1767",
+      "iacr_id": "2026/1767",
+      "title": "Circle-Linear Cryptanalysis: Bibrace Characters and Weak-Key Linear Distinguishers for CRAFT",
+      "authors": [
+        "Roberto Civino"
+      ],
+      "abstract": "Linear cryptanalysis measures the correlation of a cipher with the characters of the group used to define differences. If that group is replaced by a second elementary abelian group structure on the same set, here the one coming from a binary bibrace, then the admissible masks are no longer the ordinary scalar products: exactly half of them survive, and the other half are forced to be quadratic. Beyne’s geometric approach develops linear cryptanalysis over an arbitrary finite abelian group, providing a natural framework for this setting. We instantiate it on the group of a particular bibrace and apply it to Craft. Over this group the Midori/Craft S-box has four probability-one relations, forming a small subgroup of the dual which the S-box preserves in both directions. Inside that subgroup a mask propagates deterministically and linearly, so the search for the best trail is a minimum weight codeword problem, which we solve exactly by complete enumeration rather than heuristically. A trail costs correlation, and it restricts the key to a weak-key class. The two are usually derived from the same data. We show that the correct reading, obtained by analysing the diffusion layer and the key addition together rather than separately, gives a class several bits larger than the one obtained cell by cell. One concrete consequence is that Craft’s round constants, whatever their values, impose no restriction at all. On Craft we obtain weak-key distinguishers up to eighteen rounds. At fourteen rounds the squared correlation is 2−44 over a class of 2^108 keys, against 2−62.12 for the designers’ linear hull, which is the best known linear result on the cipher and holds for all keys. On that class we therefore improve the best linear correlation by eighteen bits at equal round count, and we reach four rounds further than the best known linear hull. Both the distinguishers and the weak-key criterion are verified experimentally, with a negative control on random keys.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T16:16:57Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1767",
+      "pdf_link": "https://eprint.iacr.org/2026/1767.pdf",
+      "categories": [
+        "Secret-key cryptography"
+      ],
+      "updated_at": "2026-08-21T16:16:57Z",
+      "matched_terms": [],
+      "summary_en": "Linear cryptanalysis measures the correlation of a cipher with the characters of the group used to define differences. If that group is replaced by a second elementary abelian group structure on the same set, here the one coming from a binary bibrace, then the admissible masks are no longer the ordinary scalar products: exactly half of them survive, and the other half are forced to be quadratic. Beyne’s geometric approach develops linear cryptanalysis over an arbitrary finite abelian group, providing a natural framework for this setting. We instantiate it on the group of a particular bibrace and apply it to Craft. Over this group the Midori/Craft S-box has four probability-one relations, forming a small subgroup of the dual which the S-box preserves in both directions. Inside that subgroup a mask propagates deterministically and linearly, so the search for the best trail is a minimum weight codeword problem, which we solve exactly by complete enumeration rather than heuristically. A trail costs correlation, and it restricts the key to a weak-key class. The two are usually derived from the same data. We show that the correct reading, obtained by analysing the diffusion layer and the key addition together rather than separately, gives a class several bits larger than the one obtained cell by cell. One concrete consequence is that Craft’s round constants, whatever their values, impose no restriction at all. On Craft we obtain weak-key distinguishers up to eighteen rounds. At fourteen rounds the squared correlation is 2−44 over a class of 2^108 keys, against 2−62.12 for the designers’ linear hull, which is the best known linear result on the cipher and holds for all keys. On that class we therefore improve the best linear correlation by eighteen bits at equal round count, and we reach four rounds further than the best known linear hull. Both the distinguishers and the weak-key criterion are verified experimentally, with a negative control on random keys.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1766",
+      "iacr_id": "2026/1766",
+      "title": "Eavesdropper-Blind Remote State Preparation and Applications to Quantum Public-Key Encryption",
+      "authors": [
+        "Kaniuar Bacho",
+        "Alexandru Cojocaru"
+      ],
+      "abstract": "Remote state preparation (RSP) is a central primitive in quantum cryptography, enabling classical parties to remotely construct quantum states using only classical communication. As a result, RSP serves as a key building block in numerous protocols involving classical clients and quantum servers, allowing classical parties to leverage the advantages offered by powerful quantum computers. All known constructions of RSP rely on strong cryptographic assumptions, typically variants of trapdoor claw-free functions (TCFs). In this work, we initiate the study of a weaker form of remote state preparation, which we call eavesdropper-blind remote state preparation (EB-RSP). Informally, EB-RSP requires blindness only against external observers who see the transcript of the honest protocol, rather than against the quantum server itself. Despite this relaxed adversarial model, the resulting notion remains sufficient for useful cryptographic applications. In particular, we show that two-message EB-RSP already suffices to construct quantum public-key encryption with classical public keys and quantum ciphertexts. We then construct two-message EB-RSP protocols from specific one-way group actions, yielding a first step toward RSP-type primitives based on assumptions that do not rely on trapdoors. Finally, we observe that existing RSP constructions are likely naturally adaptable to the two-message EB-RSP notion; we demonstrate this explicitly for a concrete TCF-based RSP construction.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T15:57:50Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1766",
+      "pdf_link": "https://eprint.iacr.org/2026/1766.pdf",
+      "categories": [
+        "Foundations"
+      ],
+      "updated_at": "2026-08-21T15:57:50Z",
+      "matched_terms": [],
+      "summary_en": "Remote state preparation (RSP) is a central primitive in quantum cryptography, enabling classical parties to remotely construct quantum states using only classical communication. As a result, RSP serves as a key building block in numerous protocols involving classical clients and quantum servers, allowing classical parties to leverage the advantages offered by powerful quantum computers. All known constructions of RSP rely on strong cryptographic assumptions, typically variants of trapdoor claw-free functions (TCFs). In this work, we initiate the study of a weaker form of remote state preparation, which we call eavesdropper-blind remote state preparation (EB-RSP). Informally, EB-RSP requires blindness only against external observers who see the transcript of the honest protocol, rather than against the quantum server itself. Despite this relaxed adversarial model, the resulting notion remains sufficient for useful cryptographic applications. In particular, we show that two-message EB-RSP already suffices to construct quantum public-key encryption with classical public keys and quantum ciphertexts. We then construct two-message EB-RSP protocols from specific one-way group actions, yielding a first step toward RSP-type primitives based on assumptions that do not rely on trapdoors. Finally, we observe that existing RSP constructions are likely naturally adaptable to the two-message EB-RSP notion; we demonstrate this explicitly for a concrete TCF-based RSP construction.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1765",
+      "iacr_id": "2026/1765",
+      "title": "Exact linear correlations and the cost of Walsh-transform key recovery, with application to SPEEDY",
+      "authors": [
+        "Guoqiang Liu",
+        "Bing Sun"
+      ],
+      "abstract": "When two S-box layers of a round are separated by no key addition, the round correlation is a signed sum over all compatible intermediate masks, not a product of layer correlations, so the product rule can fail in either direction. Our central finding is that evaluating this intra-round sum exactly changes the assessment of the published linear cryptanalysis of SPEEDY, whose two S-box layers are separated only by ShiftColumns. We first develop the linear cryptanalysis of this setting: an exact one-round algorithm with a decidable exactness condition for the product rule, a dependency-graph decomposition, a covering-number bound strengthening linear-trail weight bounds, and a Walsh-support criterion in which the affine dimension of that support, limited by the endpoint key masks, fixes the key-recovery transform cost. Potentials use the independent-round-key model; complexities are in equivalent encryptions. Applied to SPEEDY, these tools revise published results: a reported five-round mask sequence has exact correlation $2^{-90.0962}$, not $2^{-93.0147}$; the new bound raises the unrestricted five-round weight bound from $53.7714$ to $62.2616$ bits; and the full-round attack on SPEEDY-7-192 reported at time $2^{158.06}$ needs at least $2^{199.97}$ encryptions in the pruning class considered. For SPEEDY-6-192 we give a six-round known-plaintext attack (data $2^{169.84}$, time $2^{170.20}$, memory $2^{156}$) and show that the attack class defined here contains no attack with data and time both at most $2^{128}$, its time being at least $2^{136.302}$. The same exact evaluation also revises a four-round differential-linear correlation.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T15:32:36Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1765",
+      "pdf_link": "https://eprint.iacr.org/2026/1765.pdf",
+      "categories": [
+        "Secret-key cryptography"
+      ],
+      "updated_at": "2026-08-21T15:32:36Z",
+      "matched_terms": [],
+      "summary_en": "When two S-box layers of a round are separated by no key addition, the round correlation is a signed sum over all compatible intermediate masks, not a product of layer correlations, so the product rule can fail in either direction. Our central finding is that evaluating this intra-round sum exactly changes the assessment of the published linear cryptanalysis of SPEEDY, whose two S-box layers are separated only by ShiftColumns. We first develop the linear cryptanalysis of this setting: an exact one-round algorithm with a decidable exactness condition for the product rule, a dependency-graph decomposition, a covering-number bound strengthening linear-trail weight bounds, and a Walsh-support criterion in which the affine dimension of that support, limited by the endpoint key masks, fixes the key-recovery transform cost. Potentials use the independent-round-key model; complexities are in equivalent encryptions. Applied to SPEEDY, these tools revise published results: a reported five-round mask sequence has exact correlation $2^{-90.0962}$, not $2^{-93.0147}$; the new bound raises the unrestricted five-round weight bound from $53.7714$ to $62.2616$ bits; and the full-round attack on SPEEDY-7-192 reported at time $2^{158.06}$ needs at least $2^{199.97}$ encryptions in the pruning class considered. For SPEEDY-6-192 we give a six-round known-plaintext attack (data $2^{169.84}$, time $2^{170.20}$, memory $2^{156}$) and show that the attack class defined here contains no attack with data and time both at most $2^{128}$, its time being at least $2^{136.302}$. The same exact evaluation also revises a four-round differential-linear correlation.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1764",
+      "iacr_id": "2026/1764",
+      "title": "Two Novel Multidimensional Affine Variations of the Hill Cipher",
+      "authors": [
+        "Porter Eldridge Coggins"
+      ],
+      "abstract": "Two novel symmetric multidimensional affine nested variations of the Hill Cipher are presented. The Hill Cipher is a block polygraphic substitution encryption scheme based on a linear transformation of plaintext characters into ciphertext characters. In the time since Hill first published his encryption scheme, variations, modifications, and improvements of theoretical and practical importance have been published every year indicating that the Hill Cipher is an active area of cryptography research. The first variation presented in this paper incorporated invertible key matrices of orders 2, 4, and 8 such that the matrix values of the 2×2 matrix rotate positions with each block of characters in a similar manner to the rotating letter wheels of a German Enigma Encoder, then results of the 2×2 key matrices output are passed to 4×4 key matrices, and 8x8 key matrix, 4×4 key matrices, and rotative-value 2×2 key matrices. The second variation is configured with invertible key matrices of orders 4, 8, and 16 without rotation of matrix values in a similar manner to the first variation. In both variations, plaintext characters of each block are operated on by exclusive-or (XOR) vectors prior to multiplication with the matrices to create the affine ciphers. Strengths, weaknesses, and other considerations are provided in the discussion. Two proposals are also argued with rationale for a more robust character set for encryption and the increase in modulus that the character set allows, and the possible advantages and disadvantages of affine XOR vectors.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T14:28:12Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1764",
+      "pdf_link": "https://eprint.iacr.org/2026/1764.pdf",
+      "categories": [
+        "Implementation"
+      ],
+      "updated_at": "2026-08-21T14:28:12Z",
+      "matched_terms": [],
+      "summary_en": "Two novel symmetric multidimensional affine nested variations of the Hill Cipher are presented. The Hill Cipher is a block polygraphic substitution encryption scheme based on a linear transformation of plaintext characters into ciphertext characters. In the time since Hill first published his encryption scheme, variations, modifications, and improvements of theoretical and practical importance have been published every year indicating that the Hill Cipher is an active area of cryptography research. The first variation presented in this paper incorporated invertible key matrices of orders 2, 4, and 8 such that the matrix values of the 2×2 matrix rotate positions with each block of characters in a similar manner to the rotating letter wheels of a German Enigma Encoder, then results of the 2×2 key matrices output are passed to 4×4 key matrices, and 8x8 key matrix, 4×4 key matrices, and rotative-value 2×2 key matrices. The second variation is configured with invertible key matrices of orders 4, 8, and 16 without rotation of matrix values in a similar manner to the first variation. In both variations, plaintext characters of each block are operated on by exclusive-or (XOR) vectors prior to multiplication with the matrices to create the affine ciphers. Strengths, weaknesses, and other considerations are provided in the discussion. Two proposals are also argued with rationale for a more robust character set for encryption and the increase in modulus that the character set allows, and the possible advantages and disadvantages of affine XOR vectors.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1763",
+      "iacr_id": "2026/1763",
+      "title": "Multidimensional Hill Cipher Substitution– Permutation Network",
+      "authors": [
+        "Porter E. Coggins",
+        "III"
+      ],
+      "abstract": "MD-Hill-SPN is the first Hill-based construction to combine a multi-tier diffusion mix layer, a memory-hard KDF, and a simultaneous multi-metric empirical evaluation. Two independent runs of the full metric suite yield: (a) full plaintext avalanche from round 1 (mean 63.97–64.67 of 128 bits, ideal 64); (b) the differential-probability sampling floor of 2 × 10−5 reached at round 4 (50,000 of 50,000 output differences distinct, both sessions); (c) algebraic-degree lower-bound saturation at the maximum observable value from round 1; (d) linear-bias indistinguishable from random (combined exceedance 4.40%, below the 4.55% noise floor); and (e) branch numbers at the Singleton (MDS) bound for every tier (B = 5 for 4 × 4, B = 9 for 8 × 8, B = 17 for 16 × 16), computed exhaustively over weight-1 inputs. MD-Hill-SPN therefore moves beyond theoretical construction to a construction that passes a defined empirical evaluation suite: avalanche, differential sampling, linear-bias probing, algebraic-degree lower bounds, and MDS branch numbers under single-key, known-plaintext conditions with fixed parameters, an evaluation no prior Hill cipher variant has reported in full.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T14:13:03Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1763",
+      "pdf_link": "https://eprint.iacr.org/2026/1763.pdf",
+      "categories": [
+        "Applications"
+      ],
+      "updated_at": "2026-08-21T14:13:03Z",
+      "matched_terms": [],
+      "summary_en": "MD-Hill-SPN is the first Hill-based construction to combine a multi-tier diffusion mix layer, a memory-hard KDF, and a simultaneous multi-metric empirical evaluation. Two independent runs of the full metric suite yield: (a) full plaintext avalanche from round 1 (mean 63.97–64.67 of 128 bits, ideal 64); (b) the differential-probability sampling floor of 2 × 10−5 reached at round 4 (50,000 of 50,000 output differences distinct, both sessions); (c) algebraic-degree lower-bound saturation at the maximum observable value from round 1; (d) linear-bias indistinguishable from random (combined exceedance 4.40%, below the 4.55% noise floor); and (e) branch numbers at the Singleton (MDS) bound for every tier (B = 5 for 4 × 4, B = 9 for 8 × 8, B = 17 for 16 × 16), computed exhaustively over weight-1 inputs. MD-Hill-SPN therefore moves beyond theoretical construction to a construction that passes a defined empirical evaluation suite: avalanche, differential sampling, linear-bias probing, algebraic-degree lower bounds, and MDS branch numbers under single-key, known-plaintext conditions with fixed parameters, an evaluation no prior Hill cipher variant has reported in full.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1762",
+      "iacr_id": "2026/1762",
+      "title": "Pilaf: Fully Tight Two-Round Threshold Signatures with Adaptive Corruptions",
+      "authors": [
+        "Chen Qian",
+        "Xingyu Zhao",
+        "Hao Cheng",
+        "Zengpeng Li",
+        "Puwen Wei",
+        "Quan Yuan"
+      ],
+      "abstract": "Threshold signatures are deployed in settings where an adversary may run many concurrent signing sessions and corrupt signers adaptively. Two-round schemes make this especially delicate. Their first-round messages are independent of the signed message and can be preprocessed offline, so a later corruption must reveal randomness that is consistent with commitments already published in prior transcripts. Existing adaptive constructions address this tension by adding rounds, relying on algebraic or knowledge assumptions, or paying non-tight losses from guessing the corruption pattern, the decisive session, or the final transcript. We construct $\\mathsf{TPilaf}$, the first two-round threshold signature scheme that combines partially non-interactive signing with a fully tight proof against adaptive corruptions. The scheme is pairing-free and is built in prime-order groups from the $\\mathsf{MDDH}$ assumption in the random-oracle model. Its first-round messages can be generated offline, and any threshold set of signers can aggregate their second-round shares into a single publicly verifiable signature. The proof combines two ingredients. First, we introduce a linearly homomorphic dual-mode commitment with targetable opening. This lets the simulator open an already fixed commitment to the aggregate target imposed by a later Fiat-Shamir challenge. Second, we use profile-wise zero-sum masking with posterior completion. Corruption openings and signing responses are therefore sampled from the exact conditional law while values already visible to the adversary remain cached. Together, these tools enable a delayed branch-decision argument. The reduction waits until the adversary's own queries determine the last touched coordinate, completes only latent state, and then binds the forged hidden branch. The final bound has no combinatorial loss in the number of users, threshold, sessions, or corruption patterns, and contains only the explicit bad-event and assumption terms appearing in the theorem.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T13:20:33Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1762",
+      "pdf_link": "https://eprint.iacr.org/2026/1762.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-21T13:20:33Z",
+      "matched_terms": [],
+      "summary_en": "Threshold signatures are deployed in settings where an adversary may run many concurrent signing sessions and corrupt signers adaptively. Two-round schemes make this especially delicate. Their first-round messages are independent of the signed message and can be preprocessed offline, so a later corruption must reveal randomness that is consistent with commitments already published in prior transcripts. Existing adaptive constructions address this tension by adding rounds, relying on algebraic or knowledge assumptions, or paying non-tight losses from guessing the corruption pattern, the decisive session, or the final transcript. We construct $\\mathsf{TPilaf}$, the first two-round threshold signature scheme that combines partially non-interactive signing with a fully tight proof against adaptive corruptions. The scheme is pairing-free and is built in prime-order groups from the $\\mathsf{MDDH}$ assumption in the random-oracle model. Its first-round messages can be generated offline, and any threshold set of signers can aggregate their second-round shares into a single publicly verifiable signature. The proof combines two ingredients. First, we introduce a linearly homomorphic dual-mode commitment with targetable opening. This lets the simulator open an already fixed commitment to the aggregate target imposed by a later Fiat-Shamir challenge. Second, we use profile-wise zero-sum masking with posterior completion. Corruption openings and signing responses are therefore sampled from the exact conditional law while values already visible to the adversary remain cached. Together, these tools enable a delayed branch-decision argument. The reduction waits until the adversary's own queries determine the last touched coordinate, completes only latent state, and then binds the forged hidden branch. The final bound has no combinatorial loss in the number of users, threshold, sessions, or corruption patterns, and contains only the explicit bad-event and assumption terms appearing in the theorem.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1761",
+      "iacr_id": "2026/1761",
+      "title": "Lightweight Lattice-based Single-Party Public-Key Authenticated Key Exchange",
+      "authors": [
+        "Alex Aïdan",
+        "Sébastien Canard",
+        "Emmanuel Fouotsa",
+        "Nyiang Melchisedech Mbeng"
+      ],
+      "abstract": "Authenticated Key Exchange (AKE) is a cornerstone of secure communication, especially in resource-constrained IoT environments where lightweight and post-quantum security are paramount. While lattice-based cryptography offers promising solutions, existing post-quantum AKE protocols often prioritize strong security notions, such as the use of an IND-CCA encryption scheme, incurring overheads incompatible with IoT devices. This raises a critical question: Can one-way security (OW), a weaker but potentially more efficient notion, suffice for secure AKE in the post-quantum era? We address this challenge by revisiting the ALIKE framework (ISO/IEC 29192-4), which achieves OW-CCA-based AKE using deterministic RSA. However, RSA’s quantum vulnerability and the lack of lattice-based OW-CCA schemes hinder its applicability today. Our work bridges this gap through three key contributions. First, we prove that the Hash-Before-Encrypt (HBE) paradigm generically transforms deterministic OW-CPA schemes into OW-CCA-secure ones. We additionally present the Fujisaki–Okamoto transform and its security proof construction, providing a reference for understanding the efficiency advantages of the proposed HBE-based approach. Second, we modify Bai et al.’s efficient lattice-based OW-CPA scheme to a deterministic variant and rigorously prove its security. Third, we generalize the SPAKE framework to support our OW-CCA construction, enabling post-quantum AKE with minimal assumptions, implement and benchmark the resulting protocol, demonstrating state-of-the-art efficiency for lightweight, quantum-resistant AKE. By relaxing security requirements from IND-CCA to OW-CCA while preserving adaptive security we achieve a practical balance between robustness and performance, paving the way for deployable solutions in constrained environments like IoT and connected vehicles.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T10:50:03Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1761",
+      "pdf_link": "https://eprint.iacr.org/2026/1761.pdf",
+      "categories": [
+        "Public-key cryptography"
+      ],
+      "updated_at": "2026-08-21T10:50:03Z",
+      "matched_terms": [],
+      "summary_en": "Authenticated Key Exchange (AKE) is a cornerstone of secure communication, especially in resource-constrained IoT environments where lightweight and post-quantum security are paramount. While lattice-based cryptography offers promising solutions, existing post-quantum AKE protocols often prioritize strong security notions, such as the use of an IND-CCA encryption scheme, incurring overheads incompatible with IoT devices. This raises a critical question: Can one-way security (OW), a weaker but potentially more efficient notion, suffice for secure AKE in the post-quantum era? We address this challenge by revisiting the ALIKE framework (ISO/IEC 29192-4), which achieves OW-CCA-based AKE using deterministic RSA. However, RSA’s quantum vulnerability and the lack of lattice-based OW-CCA schemes hinder its applicability today. Our work bridges this gap through three key contributions. First, we prove that the Hash-Before-Encrypt (HBE) paradigm generically transforms deterministic OW-CPA schemes into OW-CCA-secure ones. We additionally present the Fujisaki–Okamoto transform and its security proof construction, providing a reference for understanding the efficiency advantages of the proposed HBE-based approach. Second, we modify Bai et al.’s efficient lattice-based OW-CPA scheme to a deterministic variant and rigorously prove its security. Third, we generalize the SPAKE framework to support our OW-CCA construction, enabling post-quantum AKE with minimal assumptions, implement and benchmark the resulting protocol, demonstrating state-of-the-art efficiency for lightweight, quantum-resistant AKE. By relaxing security requirements from IND-CCA to OW-CCA while preserving adaptive security we achieve a practical balance between robustness and performance, paving the way for deployable solutions in constrained environments like IoT and connected vehicles.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1760",
+      "iacr_id": "2026/1760",
+      "title": "Midpoint Reset: A Full-Round Poseidon Collision from an Adaptively Chosen MDS Matrix",
+      "authors": [
+        "Sunghyeon Jo"
+      ],
+      "abstract": "We give an explicit compression collision for all 28 rounds of the KoalaBear Poseidon instance with parameters $(t,\\alpha,R_F,R_P)=(16,3,8,20)$, in the setting where the round constants are fixed before the MDS linear layer is chosen. The main problem is to construct a single linear layer that simultaneously controls two executions through both the full and partial rounds. We do this by tracking their midpoint and half-difference. In each two-round block, one prescribed image of the linear layer cancels the midpoint against the next round constant, so the following odd cubic S-box receives opposite states and resets the midpoint to zero. Two additional images are reused throughout the permutation to return the half-difference to the same one-dimensional subspace. The resulting trajectory constraints determine a linear layer, while a scalar recurrence closes the final difference under feed-forward. For the KoalaBear instance we obtain a collision in all sixteen output coordinates with an MDS matrix satisfying the prescribed linear-layer checks. The scalar construction reduces to low-degree equations and admits a family of parameter choices, so the collision is not an isolated instance. The result exposes an adaptive correlation between fixed round constants and a subsequently chosen linear layer that matrix-only checks do not capture.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T08:22:29Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1760",
+      "pdf_link": "https://eprint.iacr.org/2026/1760.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-21T08:22:29Z",
+      "matched_terms": [],
+      "summary_en": "We give an explicit compression collision for all 28 rounds of the KoalaBear Poseidon instance with parameters $(t,\\alpha,R_F,R_P)=(16,3,8,20)$, in the setting where the round constants are fixed before the MDS linear layer is chosen. The main problem is to construct a single linear layer that simultaneously controls two executions through both the full and partial rounds. We do this by tracking their midpoint and half-difference. In each two-round block, one prescribed image of the linear layer cancels the midpoint against the next round constant, so the following odd cubic S-box receives opposite states and resets the midpoint to zero. Two additional images are reused throughout the permutation to return the half-difference to the same one-dimensional subspace. The resulting trajectory constraints determine a linear layer, while a scalar recurrence closes the final difference under feed-forward. For the KoalaBear instance we obtain a collision in all sixteen output coordinates with an MDS matrix satisfying the prescribed linear-layer checks. The scalar construction reduces to low-degree equations and admits a family of parameter choices, so the collision is not an isolated instance. The result exposes an adaptive correlation between fixed round constants and a subsequently chosen linear layer that matrix-only checks do not capture.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1759",
+      "iacr_id": "2026/1759",
+      "title": "Revisiting the Transferability of Chosen- to Known-plaintext Attacks and Applications to Round-reduced AES",
+      "authors": [
+        "Xiaomeng Sun",
+        "Eik List",
+        "Wenying Zhang"
+      ],
+      "abstract": "Differential-based attacks represent the best known results for many block ciphers. Such attacks usually demand that the adversary an choose plaintexts (CP) or ciphertexts (CC) in subspaces to satisfy differential trails. However, many widespread modes of operation or applications prohibit the adversary from directly choosing inputs for the majority of primitive calls. While Biham and Shamir already suggested a straightforward trade-off for standard differential attacks in their work on the DES, studies on advanced differential-based types, such as impossible-differential, rectangle, or mixture attacks, have surprisingly received little attention so far. In this work, we study applications of differential-based attacks in the random known-plaintext model (RKP) of the above. For the AES as the probably most widespread block cipher, we derive the best existing distinguishers and attacks in the RKP model on all versions, improving earlier results by at least one round. Interestingly, we show that Demirci-Selcuk meet-in-the-middle attacks with differential enumeration, which require much related data, can also be effective in that setting without approaching the full codebook too closely. For several of our attacks, we showcase differences between the models as trails that lead to the best known attack complexities under chosen data are suboptimal in the RKP model, and can be replaced by better trails. While our results do not threaten the security of the full AES, and their complexities are too high to represent any threats, we hope to inspire cryptographers to also consider attacks in the RKP for future attacks.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T08:22:26Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1759",
+      "pdf_link": "https://eprint.iacr.org/2026/1759.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-21T08:22:26Z",
+      "matched_terms": [],
+      "summary_en": "Differential-based attacks represent the best known results for many block ciphers. Such attacks usually demand that the adversary an choose plaintexts (CP) or ciphertexts (CC) in subspaces to satisfy differential trails. However, many widespread modes of operation or applications prohibit the adversary from directly choosing inputs for the majority of primitive calls. While Biham and Shamir already suggested a straightforward trade-off for standard differential attacks in their work on the DES, studies on advanced differential-based types, such as impossible-differential, rectangle, or mixture attacks, have surprisingly received little attention so far. In this work, we study applications of differential-based attacks in the random known-plaintext model (RKP) of the above. For the AES as the probably most widespread block cipher, we derive the best existing distinguishers and attacks in the RKP model on all versions, improving earlier results by at least one round. Interestingly, we show that Demirci-Selcuk meet-in-the-middle attacks with differential enumeration, which require much related data, can also be effective in that setting without approaching the full codebook too closely. For several of our attacks, we showcase differences between the models as trails that lead to the best known attack complexities under chosen data are suboptimal in the RKP model, and can be replaced by better trails. While our results do not threaten the security of the full AES, and their complexities are too high to represent any threats, we hope to inspire cryptographers to also consider attacks in the RKP for future attacks.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1758",
+      "iacr_id": "2026/1758",
+      "title": "$\\textsf{Sluice}$: Prove-Phase Bounded-Memory Groth16 via Read-Write Streaming",
+      "authors": [
+        "Kyeongtae Lee",
+        "Jihye Kim",
+        "Hyunok Oh"
+      ],
+      "abstract": "We present $\\textsf{Sluice}$, a read-write streaming Groth16 prover that reduces $\\textit{prove-phase}$ random-access working memory from $\\mathcal{O}(N)$ to $\\mathcal{O}(\\log N)$ once the CRS, QAP, and witness are materialized as private streams. It preserves the standard Groth16 interface: a proof of 3 group elements, 3-pairing verification, and unchanged verifier contracts. Our key technical contribution is $\\textit{Split-Butterfly-Merge}$ ($\\mathsf{SBM}$), an NTT algorithm in the read-write streaming model with $\\mathcal{O}(\\log N)$ memory, $\\mathcal{O}(N \\log N)$ total I/O, and $\\mathcal{O}(\\log N)$ sequential passes over external storage. Combining SBM with streaming sparse R1CS evaluation and chunked Pippenger MSM yields a verifier-compatible Groth16 proving path that exchanges RAM for sequential storage I/O and wall-clock time. Our prototype uses a fixed-window MSM engineering point; the measurements validate memory reduction and proof compatibility, while the theorem states the asymptotically tuned MSM schedule. We implement $\\textsf{Sluice}$ over BN-254. Direct prove-only runs produce valid 128-byte proofs through $N=2^{25}$. The same-size bounded-memory comparison is at $N=2^{23}$: $\\textsf{Sluice}$ succeeds under an 8GB Linux cgroup cap, whereas the standard prover is killed under 8GB and 12GB caps and succeeds only at 16GB. These results position $\\textsf{Sluice}$ as a storage-rich, RAM-limited proving option rather than a replacement for optimized in-memory provers.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T04:30:40Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1758",
+      "pdf_link": "https://eprint.iacr.org/2026/1758.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-21T04:30:40Z",
+      "matched_terms": [],
+      "summary_en": "We present $\\textsf{Sluice}$, a read-write streaming Groth16 prover that reduces $\\textit{prove-phase}$ random-access working memory from $\\mathcal{O}(N)$ to $\\mathcal{O}(\\log N)$ once the CRS, QAP, and witness are materialized as private streams. It preserves the standard Groth16 interface: a proof of 3 group elements, 3-pairing verification, and unchanged verifier contracts. Our key technical contribution is $\\textit{Split-Butterfly-Merge}$ ($\\mathsf{SBM}$), an NTT algorithm in the read-write streaming model with $\\mathcal{O}(\\log N)$ memory, $\\mathcal{O}(N \\log N)$ total I/O, and $\\mathcal{O}(\\log N)$ sequential passes over external storage. Combining SBM with streaming sparse R1CS evaluation and chunked Pippenger MSM yields a verifier-compatible Groth16 proving path that exchanges RAM for sequential storage I/O and wall-clock time. Our prototype uses a fixed-window MSM engineering point; the measurements validate memory reduction and proof compatibility, while the theorem states the asymptotically tuned MSM schedule. We implement $\\textsf{Sluice}$ over BN-254. Direct prove-only runs produce valid 128-byte proofs through $N=2^{25}$. The same-size bounded-memory comparison is at $N=2^{23}$: $\\textsf{Sluice}$ succeeds under an 8GB Linux cgroup cap, whereas the standard prover is killed under 8GB and 12GB caps and succeeds only at 16GB. These results position $\\textsf{Sluice}$ as a storage-rich, RAM-limited proving option rather than a replacement for optimized in-memory provers.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1757",
+      "iacr_id": "2026/1757",
+      "title": "Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures",
+      "authors": [
+        "Paul Gerhart",
+        "Nadav Kohen",
+        "Jesse Posner",
+        "Matias Furszyfer"
+      ],
+      "abstract": "The Bitcoin Lightning Network secures hundreds of millions of dollars, yet channel endpoints rely on vulnerable single online keys. Although threshold signatures are routinely used to protect on-chain Bitcoin, no practical deployment has been possible for Lightning channels. This is because thresholdizing a Lightning party requires nesting a threshold signature scheme inside of an established two-party MuSig2 protocol without altering its nonce exchange or message flow. In this work, we resolve this limitation by formalizing nested threshold multi-signatures, a new cryptographic primitive for thresholdizing one participant inside a multi-signature protocol. As an instance of this primitive, we present Iceberg, the first construction for nested threshold MuSig2 signatures. Iceberg enables one side of a Lightning channel to operate as a $t$-of-$n$ threshold group while appearing to the counterparty as a standard MuSig2 participant. As a result, threshold custody can be deployed unilaterally on today's Lightning Network without requiring any modifications to Bitcoin, the Lightning protocol, or channel counterparties. We prove the security of Iceberg, integrate a prototype into a production Lightning node, and benchmark its performance. Our measurements show that thresholdizing a Lightning channel incurs only modest overhead, since a threshold group tolerating one corrupted member sustains over $93\\%$ of the payment throughput of an unmodified endpoint.",
+      "published": "2026-08-21",
+      "published_at": "2026-08-21T03:00:23Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1757",
+      "pdf_link": "https://eprint.iacr.org/2026/1757.pdf",
+      "categories": [
+        "Cryptography"
+      ],
+      "updated_at": "2026-08-21T03:00:23Z",
+      "matched_terms": [],
+      "summary_en": "The Bitcoin Lightning Network secures hundreds of millions of dollars, yet channel endpoints rely on vulnerable single online keys. Although threshold signatures are routinely used to protect on-chain Bitcoin, no practical deployment has been possible for Lightning channels. This is because thresholdizing a Lightning party requires nesting a threshold signature scheme inside of an established two-party MuSig2 protocol without altering its nonce exchange or message flow. In this work, we resolve this limitation by formalizing nested threshold multi-signatures, a new cryptographic primitive for thresholdizing one participant inside a multi-signature protocol. As an instance of this primitive, we present Iceberg, the first construction for nested threshold MuSig2 signatures. Iceberg enables one side of a Lightning channel to operate as a $t$-of-$n$ threshold group while appearing to the counterparty as a standard MuSig2 participant. As a result, threshold custody can be deployed unilaterally on today's Lightning Network without requiring any modifications to Bitcoin, the Lightning protocol, or channel counterparties. We prove the security of Iceberg, integrate a prototype into a production Lightning node, and benchmark its performance. Our measurements show that thresholdizing a Lightning channel incurs only modest overhead, since a threshold group tolerating one corrupted member sustains over $93\\%$ of the payment throughput of an unmodified endpoint.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
       "id": "arxiv_2608.20315",
       "arxiv_id": "2608.20315",
       "title": "Explainable Transformer Models for Clinical Prediction Tasks on Structured Electronic Health Records",
@@ -5749,6 +6286,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-21T03:15:53.745047Z",
-  "total_count": 142
+  "last_updated": "2026-08-23T03:15:05.764830Z",
+  "total_count": 159
 }

@@ -4,8 +4,190 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Fri, 21 Aug 2026 03:24:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 03:15:49 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enforcing Winner-Only Disclosure: Verifiable Tally Hiding for Weighted DAO Governance</title>
+      <link>https://eprint.iacr.org/2026/1773</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1773</guid>
+      <description>Token-weighted voting is widely used in DAO governance, but public voting weights together with weighted tallies can reveal identifiable voters' choices. Publishing only the final outcome reduces this disclosure, yet an output policy alone does not prevent a privileged participant from reconstructing the exact weighted tally during computation. We present a verifiable winner-only tally-hiding construction for weighted binary voting. Registered weights are bound to credentials in zero-knowledge ballots, while weighted contributions remain encrypted through aggregation and comparison against a public threshold. The blockchain adjudicates ballots, an off-chain backend performs the encrypted computation, and exact ciphertext and transcript bindings allow any public verifier to check that the published outcome corresponds to the accepted ballots. The only tally-derived plaintext output is the outcome bit. The construction is parameterized by electorate size and contribution width; our prototype and formal transcript-privacy result deliberately study a bounded eight-voter, eight-bit instance with 134 encrypted gates and an actual three-of-five final release. For honest execution by all five trustees, we prove passive-public-observer backend transcript privacy from the accepted ciphertexts and outcome alone. Privacy against malicious sub-threshold trustees remains open.</description>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Multi-PGBF: Efficient Oblivious Key-Value Store and Application to Private Set Intersection</title>
+      <link>https://eprint.iacr.org/2026/1772</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1772</guid>
+      <description>An oblivious key-value store is a data structure that can encode and decode $n$ key-value pairs in a table of size $m$ obliviously. After encoding, one cannot distinguish the encoded key-value pairs from other key-value pairs in the input domain. In this paper, we first propose a data structure called Peelable Garbled Bloom Filter (PGBF), which encodes the key-value pairs in a similar way to peeling and unpeeling an \emph{onion}. Specifically, it can divide the key-value pair set (i.e., onion) as multiple subsets (i.e., peels) and order them from the outermost peel to the innermost peel by using a counting Bloom filter. However, using a small expansion rate (i.e., $\eta=m/n$) in PGBF will result in a non-empty core issue with non-negligible probability. To handle this issue, we propose Multi-PGBF by combining multiple PGBFs to do the peelings and unpeelings recursively. In addition, we propose a variant C-Multi-PGBF by clustering a large set into small sets to achieve faster encoding efficiency. Our experiments show that Multi-PGBF and C-Multi-PGBF obtain the best encoding and decoding efficiency. Multi-PGBF improves the encoding time of RR (CCS’22) by $65.1\%\sim 77.6\%$, while C-Multi-PGBF improves the encoding time of the clustered RR variant by $60.2\%\sim 64.7\%$. For decoding, Multi-PGBF is $28.6\%\sim 62.4\%$ faster than RR (CCS'22) and $89.7\%\sim 96.3\%$ faster than RB-OKVS (Usenix'23). When integrated into the state-of-the-art two-party and multi-party private set intersection protocols (Eurocrypt'21, Usenix'24), Multi-PGBF and C-Multi-PGBF lead to faster protocols than those using existing OKVS constructions in most settings.</description>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>New Lower Bounds for Rows of $d$-Disjunct Matrices via Recursive Potentials</title>
+      <link>https://eprint.iacr.org/2026/1771</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1771</guid>
+      <description>In nonadaptive combinatorial group testing, given $n$ items with at most $d$ positives, the goal is to identify them using as few pooled tests as possible. A $t\times n$ binary matrix represents the design, where rows are tests and columns are items. The matrix is $d$-disjunct if no column is contained in the Boolean union of any $d$ others. Let $T(d)$ be the minimum $t$ for which such a matrix exists with $n&gt;t$. Shangguan and Ge proved $T(d)\ge \frac{15+\sqrt{33}}{24}d^2$ by counting private pairs (IEEE Trans. Inf. Theory, 62(12):7518-7521, 2016). In this paper, we strengthen their argument by introducing a column-deletion recurrence in which the light-heavy threshold varies with the recursive state $z=(n-t)/d^2$, rather than remaining fixed. This yields the improved bound $T(d)\ge 0.9283d^2-O(d)$. The analytic core reduces to a first-order ODE, and a self-contained interval-arithmetic certificate verifies that the solution reaches the required contact point.</description>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>How Many Traces Suffice? PAC Guarantees for Profiled and Non-profiled Side-Channel Analysis</title>
+      <link>https://eprint.iacr.org/2026/1770</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1770</guid>
+      <description>Side-channel analysis (SCA) is commonly evaluated by reporting the number of traces required to reduce the rank of the correct key. Still, such evaluations remain empirical and do not explain how many traces suffice for reliable recovery, how profiling and attack data contribute separately, or when additional traces cannot overcome weak key distinguishability. We address these questions through a Probably Approximately Correct (PAC) formulation of profiled and non-profiled SCA. Our framework treats candidate-key scores as the common cryptanalytic object and separates finite-sample estimation from the intrinsic separation between the correct key and competing hypotheses. This distinction enables confidence guarantees for key rank and helps determine whether an attack failure is due to insufficient data or an inherently weak attack score. We instantiate the framework with representative profiled and non-profiled attacks chosen for their analytical tractability. Experiments on ASCAD-f and ASCAD-r show that this analytical tractability does not come at the cost of impractical attack performance. The profiled attack achieves exact recovery with tens of attack traces, whereas the non-profiled single-attack rank certificate guarantees exact recovery with about 1,000 traces. These results are competitive with recent ASCAD attacks and, in the non-profiled setting, substantially below the smallest trace counts identified in prior studies, while additionally providing finite-sample guarantees on key rank. More generally, the same finite-sample rank analysis can be adapted to other learners and distinguishers by deriving the corresponding score-gap guarantees. Overall, the framework turns trace complexity from an empirical attack observation into a reusable finite-sample criterion for key recovery.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Rank Measures and Exponential Lower Bounds for Multilinear Secret Sharing</title>
+      <link>https://eprint.iacr.org/2026/1769</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1769</guid>
+      <description># 摘要导读
+
+## 一句话结论
+本文证明 Rázborov–Gál（Razborov–Gál）秩测度（rank measure）在多线性秘密共享中依然有效，从而给出显式访问结构族，使所有有限域上的完美多线性方案的信息率呈指数下界（$2^{\Omega(n)}$），并回答了 Beimel 提出的最坏情况多线性信息率是否为 $2^{\Theta(n)}$ 的问题。
+
+## 问题与动机
+多线性秘密共享方案（multilinear secret-sharing scheme）共享的是一个向量秘密，因此可以在秘密维度上摊销（amortize）每个份额的大小。这种摊销会使得针对一维线性方案证明的下界失效。此前多线性方案最好的显式下界仅为拟多项式 $n^{\Omega(\log n)}$。本文的核心动机是证明某种复杂性测度能够“存活”于摊销过程，从而获得更强的下界。
+
+## 方法与技术路线
+- **研究对象与设定**：考虑完美多线性秘密共享方案，其对应的计算模型是多目标单调生成程序（multi-target monotone span program，MSP）。一个 MSP 的“归一化大小”（normalized size）是衡量其复杂性的关键指标；该方案实现一个访问结构（access structure），即一个布尔函数/代数函数，规定哪些参与者集合可以重建秘密。
+- **关键步骤 1：秩测度与摊销的兼容性**。作者证明，任一多目标单调生成程序的归一化大小至少等于它计算的函数的 Rázborov–Gál 秩测度。由于秩测度原本用于一维线性方案，这一结果意味着该测度在向量秘密的摊销设定下仍然构成下界，不受摊销影响。
+- **关键步骤 2：结合秩见证构造显式下界**。将上述定理与 Pitassi 和 Robere 的秩见证（rank witnesses）相结合，可以得到一个显式的访问结构族。对于该族中的每个访问结构，任何完美多线性方案（无论基于哪个有限域）的平均信息率和最大信息率都满足 $2^{\Omega(n)}$ 的下界。由此推出最坏情况多线性信息率为 $2^{\Theta(n)}$。
+- **关键步骤 3：扩展到更广泛的方案**。进一步将下界推广到共享算法任意、重构算法为仿射线性（affine-linear）且成对统计隐私小于 1（pairwise statistical privacy below one）的方案。结合 Beimel、Othman 和 Peter 的度约化定理（degree-reduction theorem），当秘密维度为 $2^{o(n)}$ 时，任意固定重构度（reconstruction degree）的方案也获得指数级归一化下界。
+- **输出**：最终输出是访问结构族的显式构造与信息率下界证明，属于理论复杂度结果。摘要未说明具体协议参数、数据集合或实验设置（本文为纯理论证明，未涉及实验）。
+
+## 主要结果
+- 存在显式访问结构族，使任何有限域上的任何完美多线性秘密共享方案的平均与最大信息率均为 $2^{\Omega(n)}$；结合已有上界，最坏情形多线性信息率恰为 $2^{\Theta(n)}$，回答了 Beimel 的开放问题。
+- 下界可扩展到更一般的方案类（任意共享算法、仿射线性重构、成对统计隐私低于 1），并在秘密维度子指数时对所有固定重构度给出指数级归一化下界。
+
+## 为什么与兴趣相关
+该研究直接推进了秘密共享复杂性理论：它首次将多线性方案的下界从拟多项式提升到指数，并明确了摊销不会破坏秩测度的力量。对于密码学研究者，这有助于理解多线性秘密共享的能力极限，也为设计更优方案或寻找新下界提供了工具。对于机器学习安全领域，秘密共享是安全多方计算和分布式模型训练的基础组件，这类下界刻画了安全协议在存储和通信上的固有成本，因此也对隐私保护机器学习的效率边界具有参考意义。</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+      <category>secret sharing</category>
+    </item>
+    <item>
+      <title>Constant-round MPC protocols with Fall-back Security</title>
+      <link>https://eprint.iacr.org/2026/1768</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1768</guid>
+      <description># 摘要导读
+
+## 一句话结论
+本文在阈值腐败设置下为具有fall-back安全性的MPC（安全多方计算，Secure Multi-Party Computation）协议构造了常轮（constant-round）构造：半诚实模型下最优阈值 \(t&lt;n/2\) 只需3轮，恶意模型下首次实现了常轮协议。
+
+## 问题与动机
+MPC协议通常假设腐败方数量不超过某个阈值。Ishai等人提出的Best-of-Both-Worlds（两全其美）概念研究：能否让一个协议根据实际腐败数量同时提供两种不可比较的安全保证？Chaum等人进一步考虑了特殊情形：在某个adversary structure（对手结构）内容忍无界腐败（unbounded corruption），超过该结构后容忍任意数量的PPT（概率多项式时间）腐败。Acharya等人（CRYPTO 2023）将其形式化为“fall-back security”（回退安全）。已有工作主要证明可行性，但多数协议轮数与参与方数量和计算规模呈线性关系，限制了实际应用。
+
+## 方法与技术路线
+研究对象为n方MPC协议，采用阈值腐败模型，安全阈值设为最优的 \(t&lt;n/2\)（少于一半参与方被腐败）。作者针对不同安全级别和通信设置分别构造协议：
+
+- **半诚实（semi-honest）设置**：在plain model（无公共参考串的普通模型）中，构造3轮fall-back安全协议，容忍无界腐败方数低于 \(n/2\)。摘要未说明该协议的具体步骤，也未披露轮数压缩所依赖的密码学技术。
+- **恶意（malicious）设置**：在CRS model（common reference string model，公共参考串模型）中，构造4轮fall-back安全协议，满足unanimous abort（UA，全体一致中止）——所有诚实方都能检测到恶意行为并一致中止。
+- **公平性扩展**：进一步构造5轮协议，在无界对手存在且腐败方数 \(t&lt;n/2\) 时满足公平性（fairness）；当腐败方数超过该阈值时，仍能对PPT对手满足UA。
+
+这些协议按“半诚实→恶意→公平性”的强度递进，但摘要未披露内部模块如何衔接以及使用哪些底层原语（如承诺、零知识证明等）。文中明确提到，在恶意设置中这是第一批常轮fall-back安全协议。
+
+## 主要结果
+- 半诚实fall-back安全：3轮（此前同一设置下已知最好为11轮）。
+- 恶意fall-back安全：CRS模型下4轮，满足UA。
+- 恶意+公平性：5轮，无界腐败时公平，PPT腐败时UA。
+- 首次在恶意设置中实现常轮fall-back安全。
+
+## 为什么与兴趣相关
+轮复杂度是MPC协议实际可用性的关键指标。fall-back安全允许协议在敌手能力超出常规阈值时仍能提供较弱的明确安全保证，比单一安全模型更贴近现实威胁。本文为最优阈值提供了常轮构造，缩小了fall-back安全与普通MPC在效率上的差距。</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+      <category>MPC</category>
+    </item>
+    <item>
+      <title>Circle-Linear Cryptanalysis: Bibrace Characters and Weak-Key Linear Distinguishers for CRAFT</title>
+      <link>https://eprint.iacr.org/2026/1767</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1767</guid>
+      <description>Linear cryptanalysis measures the correlation of a cipher with the characters of the group used to define differences. If that group is replaced by a second elementary abelian group structure on the same set, here the one coming from a binary bibrace, then the admissible masks are no longer the ordinary scalar products: exactly half of them survive, and the other half are forced to be quadratic. Beyne’s geometric approach develops linear cryptanalysis over an arbitrary finite abelian group, providing a natural framework for this setting. We instantiate it on the group of a particular bibrace and apply it to Craft. Over this group the Midori/Craft S-box has four probability-one relations, forming a small subgroup of the dual which the S-box preserves in both directions. Inside that subgroup a mask propagates deterministically and linearly, so the search for the best trail is a minimum weight codeword problem, which we solve exactly by complete enumeration rather than heuristically. A trail costs correlation, and it restricts the key to a weak-key class. The two are usually derived from the same data. We show that the correct reading, obtained by analysing the diffusion layer and the key addition together rather than separately, gives a class several bits larger than the one obtained cell by cell. One concrete consequence is that Craft’s round constants, whatever their values, impose no restriction at all. On Craft we obtain weak-key distinguishers up to eighteen rounds. At fourteen rounds the squared correlation is 2−44 over a class of 2^108 keys, against 2−62.12 for the designers’ linear hull, which is the best known linear result on the cipher and holds for all keys. On that class we therefore improve the best linear correlation by eighteen bits at equal round count, and we reach four rounds further than the best known linear hull. Both the distinguishers and the weak-key criterion are verified experimentally, with a negative control on random keys.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Eavesdropper-Blind Remote State Preparation and Applications to Quantum Public-Key Encryption</title>
+      <link>https://eprint.iacr.org/2026/1766</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1766</guid>
+      <description>Remote state preparation (RSP) is a central primitive in quantum cryptography, enabling classical parties to remotely construct quantum states using only classical communication. As a result, RSP serves as a key building block in numerous protocols involving classical clients and quantum servers, allowing classical parties to leverage the advantages offered by powerful quantum computers. All known constructions of RSP rely on strong cryptographic assumptions, typically variants of trapdoor claw-free functions (TCFs). In this work, we initiate the study of a weaker form of remote state preparation, which we call eavesdropper-blind remote state preparation (EB-RSP). Informally, EB-RSP requires blindness only against external observers who see the transcript of the honest protocol, rather than against the quantum server itself. Despite this relaxed adversarial model, the resulting notion remains sufficient for useful cryptographic applications. In particular, we show that two-message EB-RSP already suffices to construct quantum public-key encryption with classical public keys and quantum ciphertexts. We then construct two-message EB-RSP protocols from specific one-way group actions, yielding a first step toward RSP-type primitives based on assumptions that do not rely on trapdoors. Finally, we observe that existing RSP constructions are likely naturally adaptable to the two-message EB-RSP notion; we demonstrate this explicitly for a concrete TCF-based RSP construction.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Exact linear correlations and the cost of Walsh-transform key recovery, with application to SPEEDY</title>
+      <link>https://eprint.iacr.org/2026/1765</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1765</guid>
+      <description>When two S-box layers of a round are separated by no key addition, the round correlation is a signed sum over all compatible intermediate masks, not a product of layer correlations, so the product rule can fail in either direction. Our central finding is that evaluating this intra-round sum exactly changes the assessment of the published linear cryptanalysis of SPEEDY, whose two S-box layers are separated only by ShiftColumns. We first develop the linear cryptanalysis of this setting: an exact one-round algorithm with a decidable exactness condition for the product rule, a dependency-graph decomposition, a covering-number bound strengthening linear-trail weight bounds, and a Walsh-support criterion in which the affine dimension of that support, limited by the endpoint key masks, fixes the key-recovery transform cost. Potentials use the independent-round-key model; complexities are in equivalent encryptions. Applied to SPEEDY, these tools revise published results: a reported five-round mask sequence has exact correlation $2^{-90.0962}$, not $2^{-93.0147}$; the new bound raises the unrestricted five-round weight bound from $53.7714$ to $62.2616$ bits; and the full-round attack on SPEEDY-7-192 reported at time $2^{158.06}$ needs at least $2^{199.97}$ encryptions in the pruning class considered. For SPEEDY-6-192 we give a six-round known-plaintext attack (data $2^{169.84}$, time $2^{170.20}$, memory $2^{156}$) and show that the attack class defined here contains no attack with data and time both at most $2^{128}$, its time being at least $2^{136.302}$. The same exact evaluation also revises a four-round differential-linear correlation.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Two Novel Multidimensional Affine Variations of the Hill Cipher</title>
+      <link>https://eprint.iacr.org/2026/1764</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1764</guid>
+      <description>Two novel symmetric multidimensional affine nested variations of the Hill Cipher are presented. The Hill Cipher is a block polygraphic substitution encryption scheme based on a linear transformation of plaintext characters into ciphertext characters. In the time since Hill first published his encryption scheme, variations, modifications, and improvements of theoretical and practical importance have been published every year indicating that the Hill Cipher is an active area of cryptography research. The first variation presented in this paper incorporated invertible key matrices of orders 2, 4, and 8 such that the matrix values of the 2×2 matrix rotate positions with each block of characters in a similar manner to the rotating letter wheels of a German Enigma Encoder, then results of the 2×2 key matrices output are passed to 4×4 key matrices, and 8x8 key matrix, 4×4 key matrices, and rotative-value 2×2 key matrices. The second variation is configured with invertible key matrices of orders 4, 8, and 16 without rotation of matrix values in a similar manner to the first variation. In both variations, plaintext characters of each block are operated on by exclusive-or (XOR) vectors prior to multiplication with the matrices to create the affine ciphers. Strengths, weaknesses, and other considerations are provided in the discussion. Two proposals are also argued with rationale for a more robust character set for encryption and the increase in modulus that the character set allows, and the possible advantages and disadvantages of affine XOR vectors.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Multidimensional Hill Cipher Substitution– Permutation Network</title>
+      <link>https://eprint.iacr.org/2026/1763</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1763</guid>
+      <description>MD-Hill-SPN is the first Hill-based construction to combine a multi-tier diffusion mix layer, a memory-hard KDF, and a simultaneous multi-metric empirical evaluation. Two independent runs of the full metric suite yield: (a) full plaintext avalanche from round 1 (mean 63.97–64.67 of 128 bits, ideal 64); (b) the differential-probability sampling floor of 2 × 10−5 reached at round 4 (50,000 of 50,000 output differences distinct, both sessions); (c) algebraic-degree lower-bound saturation at the maximum observable value from round 1; (d) linear-bias indistinguishable from random (combined exceedance 4.40%, below the 4.55% noise floor); and (e) branch numbers at the Singleton (MDS) bound for every tier (B = 5 for 4 × 4, B = 9 for 8 × 8, B = 17 for 16 × 16), computed exhaustively over weight-1 inputs. MD-Hill-SPN therefore moves beyond theoretical construction to a construction that passes a defined empirical evaluation suite: avalanche, differential sampling, linear-bias probing, algebraic-degree lower bounds, and MDS branch numbers under single-key, known-plaintext conditions with fixed parameters, an evaluation no prior Hill cipher variant has reported in full.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Pilaf: Fully Tight Two-Round Threshold Signatures with Adaptive Corruptions</title>
+      <link>https://eprint.iacr.org/2026/1762</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1762</guid>
+      <description>Threshold signatures are deployed in settings where an adversary may run many concurrent signing sessions and corrupt signers adaptively. Two-round schemes make this especially delicate. Their first-round messages are independent of the signed message and can be preprocessed offline, so a later corruption must reveal randomness that is consistent with commitments already published in prior transcripts. Existing adaptive constructions address this tension by adding rounds, relying on algebraic or knowledge assumptions, or paying non-tight losses from guessing the corruption pattern, the decisive session, or the final transcript. We construct $\mathsf{TPilaf}$, the first two-round threshold signature scheme that combines partially non-interactive signing with a fully tight proof against adaptive corruptions. The scheme is pairing-free and is built in prime-order groups from the $\mathsf{MDDH}$ assumption in the random-oracle model. Its first-round messages can be generated offline, and any threshold set of signers can aggregate their second-round shares into a single publicly verifiable signature. The proof combines two ingredients. First, we introduce a linearly homomorphic dual-mode commitment with targetable opening. This lets the simulator open an already fixed commitment to the aggregate target imposed by a later Fiat-Shamir challenge. Second, we use profile-wise zero-sum masking with posterior completion. Corruption openings and signing responses are therefore sampled from the exact conditional law while values already visible to the adversary remain cached. Together, these tools enable a delayed branch-decision argument. The reduction waits until the adversary's own queries determine the last touched coordinate, completes only latent state, and then binds the forged hidden branch. The final bound has no combinatorial loss in the number of users, threshold, sessions, or corruption patterns, and contains only the explicit bad-event and assumption terms appearing in the theorem.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Lightweight Lattice-based Single-Party Public-Key Authenticated Key Exchange</title>
+      <link>https://eprint.iacr.org/2026/1761</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1761</guid>
+      <description>Authenticated Key Exchange (AKE) is a cornerstone of secure communication, especially in resource-constrained IoT environments where lightweight and post-quantum security are paramount. While lattice-based cryptography offers promising solutions, existing post-quantum AKE protocols often prioritize strong security notions, such as the use of an IND-CCA encryption scheme, incurring overheads incompatible with IoT devices. This raises a critical question: Can one-way security (OW), a weaker but potentially more efficient notion, suffice for secure AKE in the post-quantum era? We address this challenge by revisiting the ALIKE framework (ISO/IEC 29192-4), which achieves OW-CCA-based AKE using deterministic RSA. However, RSA’s quantum vulnerability and the lack of lattice-based OW-CCA schemes hinder its applicability today. Our work bridges this gap through three key contributions. First, we prove that the Hash-Before-Encrypt (HBE) paradigm generically transforms deterministic OW-CPA schemes into OW-CCA-secure ones. We additionally present the Fujisaki–Okamoto transform and its security proof construction, providing a reference for understanding the efficiency advantages of the proposed HBE-based approach. Second, we modify Bai et al.’s efficient lattice-based OW-CPA scheme to a deterministic variant and rigorously prove its security. Third, we generalize the SPAKE framework to support our OW-CCA construction, enabling post-quantum AKE with minimal assumptions, implement and benchmark the resulting protocol, demonstrating state-of-the-art efficiency for lightweight, quantum-resistant AKE. By relaxing security requirements from IND-CCA to OW-CCA while preserving adaptive security we achieve a practical balance between robustness and performance, paving the way for deployable solutions in constrained environments like IoT and connected vehicles.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Midpoint Reset: A Full-Round Poseidon Collision from an Adaptively Chosen MDS Matrix</title>
+      <link>https://eprint.iacr.org/2026/1760</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1760</guid>
+      <description>We give an explicit compression collision for all 28 rounds of the KoalaBear Poseidon instance with parameters $(t,\alpha,R_F,R_P)=(16,3,8,20)$, in the setting where the round constants are fixed before the MDS linear layer is chosen. The main problem is to construct a single linear layer that simultaneously controls two executions through both the full and partial rounds. We do this by tracking their midpoint and half-difference. In each two-round block, one prescribed image of the linear layer cancels the midpoint against the next round constant, so the following odd cubic S-box receives opposite states and resets the midpoint to zero. Two additional images are reused throughout the permutation to return the half-difference to the same one-dimensional subspace. The resulting trajectory constraints determine a linear layer, while a scalar recurrence closes the final difference under feed-forward. For the KoalaBear instance we obtain a collision in all sixteen output coordinates with an MDS matrix satisfying the prescribed linear-layer checks. The scalar construction reduces to low-degree equations and admits a family of parameter choices, so the collision is not an isolated instance. The result exposes an adaptive correlation between fixed round constants and a subsequently chosen linear layer that matrix-only checks do not capture.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Revisiting the Transferability of Chosen- to Known-plaintext Attacks and Applications to Round-reduced AES</title>
+      <link>https://eprint.iacr.org/2026/1759</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1759</guid>
+      <description>Differential-based attacks represent the best known results for many block ciphers. Such attacks usually demand that the adversary an choose plaintexts (CP) or ciphertexts (CC) in subspaces to satisfy differential trails. However, many widespread modes of operation or applications prohibit the adversary from directly choosing inputs for the majority of primitive calls. While Biham and Shamir already suggested a straightforward trade-off for standard differential attacks in their work on the DES, studies on advanced differential-based types, such as impossible-differential, rectangle, or mixture attacks, have surprisingly received little attention so far. In this work, we study applications of differential-based attacks in the random known-plaintext model (RKP) of the above. For the AES as the probably most widespread block cipher, we derive the best existing distinguishers and attacks in the RKP model on all versions, improving earlier results by at least one round. Interestingly, we show that Demirci-Selcuk meet-in-the-middle attacks with differential enumeration, which require much related data, can also be effective in that setting without approaching the full codebook too closely. For several of our attacks, we showcase differences between the models as trails that lead to the best known attack complexities under chosen data are suboptimal in the RKP model, and can be replaced by better trails. While our results do not threaten the security of the full AES, and their complexities are too high to represent any threats, we hope to inspire cryptographers to also consider attacks in the RKP for future attacks.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>$\textsf{Sluice}$: Prove-Phase Bounded-Memory Groth16 via Read-Write Streaming</title>
+      <link>https://eprint.iacr.org/2026/1758</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1758</guid>
+      <description>We present $\textsf{Sluice}$, a read-write streaming Groth16 prover that reduces $\textit{prove-phase}$ random-access working memory from $\mathcal{O}(N)$ to $\mathcal{O}(\log N)$ once the CRS, QAP, and witness are materialized as private streams. It preserves the standard Groth16 interface: a proof of 3 group elements, 3-pairing verification, and unchanged verifier contracts. Our key technical contribution is $\textit{Split-Butterfly-Merge}$ ($\mathsf{SBM}$), an NTT algorithm in the read-write streaming model with $\mathcal{O}(\log N)$ memory, $\mathcal{O}(N \log N)$ total I/O, and $\mathcal{O}(\log N)$ sequential passes over external storage. Combining SBM with streaming sparse R1CS evaluation and chunked Pippenger MSM yields a verifier-compatible Groth16 proving path that exchanges RAM for sequential storage I/O and wall-clock time. Our prototype uses a fixed-window MSM engineering point; the measurements validate memory reduction and proof compatibility, while the theorem states the asymptotically tuned MSM schedule. We implement $\textsf{Sluice}$ over BN-254. Direct prove-only runs produce valid 128-byte proofs through $N=2^{25}$. The same-size bounded-memory comparison is at $N=2^{23}$: $\textsf{Sluice}$ succeeds under an 8GB Linux cgroup cap, whereas the standard prover is killed under 8GB and 12GB caps and succeeds only at 16GB. These results position $\textsf{Sluice}$ as a storage-rich, RAM-limited proving option rather than a replacement for optimized in-memory provers.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures</title>
+      <link>https://eprint.iacr.org/2026/1757</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1757</guid>
+      <description>The Bitcoin Lightning Network secures hundreds of millions of dollars, yet channel endpoints rely on vulnerable single online keys. Although threshold signatures are routinely used to protect on-chain Bitcoin, no practical deployment has been possible for Lightning channels. This is because thresholdizing a Lightning party requires nesting a threshold signature scheme inside of an established two-party MuSig2 protocol without altering its nonce exchange or message flow. In this work, we resolve this limitation by formalizing nested threshold multi-signatures, a new cryptographic primitive for thresholdizing one participant inside a multi-signature protocol. As an instance of this primitive, we present Iceberg, the first construction for nested threshold MuSig2 signatures. Iceberg enables one side of a Lightning channel to operate as a $t$-of-$n$ threshold group while appearing to the counterparty as a standard MuSig2 participant. As a result, threshold custody can be deployed unilaterally on today's Lightning Network without requiring any modifications to Bitcoin, the Lightning protocol, or channel counterparties. We prove the security of Iceberg, integrate a prototype into a production Lightning node, and benchmark its performance. Our measurements show that thresholdizing a Lightning channel incurs only modest overhead, since a threshold group tolerating one corrupted member sustains over $93\%$ of the payment throughput of an unmodified endpoint.</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
     <item>
       <title>面向结构化电子健康记录的临床预测任务的可解释Transformer模型</title>
       <link>https://arxiv.org/abs/2608.20315</link>
@@ -1271,224 +1453,6 @@ Q \cdot \tilde{O}(d) + \ell \cdot \mathsf{poly}(\lambda, d, \log N),
       <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>GPT</category>
-    </item>
-    <item>
-      <title>基于卫星的乌克兰战损农田分析中的合成数据增强</title>
-      <link>https://arxiv.org/abs/2608.16380</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16380</guid>
-      <description>英文原题：Synthetic Data Augmentation for Satellite-Based Analysis of Battle-Damaged Agricultural Fields in Ukraine
-
-监测乌克兰农业用地因战争造成的损害对于理解粮食安全、环境稳定和战后恢复所面临的威胁非常重要。然而，用于卫星损害分析的计算机视觉系统的开发受到标记图像稀缺的限制，尤其是受损农田的图像。这项工作研究了将合成数据增强作为在有限且不平衡的训练数据下改进分类的方法。我们在真实卫星图像上训练类条件生成对抗网络（GAN）和去噪扩散概率模型（DDPM）架构，并使用它们生成额外的被轰炸和未被轰炸的农田样本。生成的图像仅用于训练增强，而所有下游评估均在完全真实的测试集上进行。为了衡量每种生成方法的实际效用，我们在多种真实和合成数据配置下训练了一个视觉Transformer（Vision Transformer）分类器。基于平衡DDPM增强的最佳配置将准确率从84%提升到88%，平衡准确率从67%提升到81%，宏F1从65%提升到78%，以及代表性不足的未轰炸类别的召回率从41%提升到69%。这些结果证明了合成卫星图像在受战争影响地区的数据稀缺地理空间应用中的潜力。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>上下文压缩会让智能体付出什么交互代价？任务完成指标未揭示的交互成本</title>
-      <link>https://arxiv.org/abs/2608.16370</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16370</guid>
-      <description>英文原题：What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics
-
-任务完成率是评估上下文压缩的标准指标，但它并不完整：压缩可能会迫使智能体重新获取被丢弃的状态，从而增加其交互成本，同时完成率在统计上保持不变。我们引入了一种受控的运行时测量协议，用于在有限步数的工具使用智能体中测量重新获取成本。该智能体在固定24轮步数上限的确定性规划环境中运行。我们改变压缩强度，比较丢弃式压缩算子与保留事实式压缩算子，通过受控的预言机干预恢复被丢弃的状态，并将工具调用分解为检索和执行。我们在两种任务场景下评估了三个模型。检索调用在所有六组模型-场景比较中均增加，并且几乎占据了所有新增交互；六组中有五组在Holm校正后仍然显著。在预设的5倍压缩比较点上，完成率变化在任何单元中均不显著。DeepSeek仅在10倍压缩时表现出显著的完成率下降。GPT-5.5是最清晰的案例：完成率从80%变为85%（p = 1.0），而检索调用从21.0次增加到63.9次（p = .002）。保留干预进一步区分了状态数量、状态类型和内容有效性。随机选择与离线事后预言机相当，而将保留的D状态替换为语义无关内容会使检索调用增加57%（p &lt; .001），且完成率无显著变化。在第二个环境ALFWorld中，滑动压缩未产生检索激增，这表明重新获取特征依赖于环境，而非缩短上下文本征所致。总体而言，当与执行相关的状态缺失而必须重新获取时，压缩会带来隐藏的交互成本，而仅凭完成率可能无法暴露这些成本。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>解耦时间编码用于生成式推荐</title>
-      <link>https://arxiv.org/abs/2608.16274</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16274</guid>
-      <description>英文原题：Decoupled Temporal Encoding for Generative Recommendation
-
-位置编码是基于Transformer的生成式推荐模型的基本组件，其中用户历史被建模为自回归物品序列。大多数位置编码方法继承自自然语言处理，主要表示离散的物品顺序。然而，推荐序列超越了有序列表，因为时间戳和时间效应也塑造了物品之间的关系。我们的工作源于一个真实的食品配送和即时零售推荐系统，其中用户行为表现出多层次的时间规律性，包括近因效应、用餐时间高峰、工作日-周末变化以及促销驱动的流量激增。现有方法通过时间戳特征、间隔嵌入、衰减函数或注意力偏置部分解决了这个问题，但它们通常通过统一表示或单一建模路径注入异构时间信号，这使得难以区分广泛的时间动态与局部的顺序线索。为了解决这一局限性，我们提出了解耦时间编码（DTE），一个用于生成式推荐的轻量级框架。DTE通过两个互补模块将时间动态与顺序信息分离：一个个性化宏观时间模块，将紧凑的时间基元注入物品嵌入；一个时间门控微观序列模块，仅在交互时间密集时引入相对顺序偏置。DTE还具有参数高效和易于部署的特点，可以轻松集成到现有系统中。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>Foresight-England：开发用于COVID-19大流行期间医疗事件预测的全国规模电子健康记录生成式AI模型</title>
-      <link>https://arxiv.org/abs/2608.16273</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16273</guid>
-      <description>英文原题：Foresight-England: Development of a National-Scale Generative AI Model of Electronic Health Records for Medical Event Prediction across the COVID-19 Pandemic
-
-Foresight-England（Foresight-E）是首个全国规模的电子健康记录（EHRs）生成式基础模型，作为严格用于COVID-19研究的研究试点而开发。我们评估了它对大流行的直接和间接效应进行建模的能力。Foresight-E完全在NHS England安全数据环境内从零开始训练，是一个拥有2.43亿参数的transformer解码器。它在大约6100万人的去标识化纵向EHR上进行了训练和评估，整合了初级/二级保健、死亡登记和COVID-19数据。训练和验证使用了2018年11月至2022年12月期间的90%子集（5490万）；剩余10%（610万）被保留用于评估。Foresight-E以自回归方式对患者时间线进行建模，根据既往病史预测下一个医疗事件。在推理时，它以零样本方式运行，无需任务特定训练即可预测其约40,000个代码词汇表中的任何概念。我们的分词方案保留了ICD-10、OPCS-4和SNOMED CT代码的临床粒度，联合表示绝对和相对时间。我们设计了一个针对30天COVID-19住院和死亡的评估框架，包括按人口统计学因素和疫苗接种状态进行的亚组分析。为了评估对未见未来数据的泛化能力以及大流行的间接效应，我们在2023年（超出其训练期）的医疗事件上测试了该模型，并以逻辑回归和XGBoost作为基准。如项目状态部分所述，NHS England已暂停对Foresight-E项目的数据访问，这意味着目前无法获得定量结果。相反，我们分享了我们在分词、架构、训练、推理和评估方面的策略，作为方法论模板以及构建人口规模EHR基础模型所面临挑战的案例研究。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>CoM$^3$eT：一种通过联邦多维上下文集成进行医学图像分析的基础模型</title>
-      <link>https://arxiv.org/abs/2608.16268</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16268</guid>
-      <description>英文原题：CoM$^3$eT: A foundation model for medical image analysis through federated, multidimensional context integration
-
-医学基础模型在使用有限标注数据训练AI模型时能提升泛化能力，但仍局限于单一专科（如病理学或放射学），以及稀疏或稠密输出（如分类或分割）。在此，我们提出了CoM$^3$eT（Co-representation Multidimensional Multitask Medical Transformer），这是一种医学视觉基础模型，通过注意力机制对多维上下文进行建模，统一了病理学与放射学、稀疏与稠密预测，以及二维与更高维输入。CoM$^3$eT在一个覆盖五个断层成像数据集、四个全标本数据集和三个二维数据集的开放竞赛中优于其他医学基础模型，涵盖稀疏和稠密预测任务以及报告生成。在多种临床应用中适配时，训练少于2.5%的参数即可达到与全量微调相当的性能，使得没有高性能GPU集群的研究成为可能。应用于跨医院的联邦学习时，该方法在互联网连接和消费级硬件条件下取得了与集中式数据训练相当的性能。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>STAIR：面向时间问答中可解释推理的语义-时间自动机</title>
-      <link>https://arxiv.org/abs/2608.16224</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16224</guid>
-      <description>英文原题：STAIR: Semantic-Temporal Automaton for Interpretable Reasoning in Temporal Question Answering
-
-通过利用大规模预训练，大语言模型（LLM）无需任务特定训练即可解读多样的时间表达和问题表述。然而，现有的基于提示的神经符号系统仍然依赖LLM同时进行语义解读和精确时间推理。因此，关于时间区间、时间锚点和有序状态的离散决策仍然容易受到概率性错误的影响，且难以验证。我们提出STAIR，一个用于可解释推理的语义-时间自动机（Semantic-Temporal Automaton）。STAIR将语义解读与精确时间推理分离：一个免答案的LLM适配器将复杂的问题表述映射为归一化的时间意图，而一个具有有限控制和带守卫转移的确定性时间自动机在规范化证据上执行相应的策略。遵循规则优先的设计，STAIR无需调用LLM即可解决标准问题，并且仅在规则路径未能产生可执行意图时才应用语义适配。这种方法减少了自由形式的推理，使时间决策可验证且可解释。具体而言，带守卫的执行支持精确的时间点包含关系以及之前/之后的选择，而语义适配处理非精确时间区间和时间锚定查询。在TimeQA-Easy、TimeQA-Hard、TempReason-L2和TempReason-L3数据集上，STAIR在匹配的模型设置下，在TQA任务中持续优于强基线，在使用Qwen2.5-7B和GPT-4o-mini模型时分别实现了16.57%和3.10%的平均F1提升。此外，消融实验和诊断分析表明，STAIR擅长处理边界敏感和顺序敏感的查询，而其带守卫的执行和语义适配分别确保了精确的时间点推理和非精确时间区间的处理。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Trusted Hardware Acceleration for Function Secret Sharing</title>
-      <link>https://arxiv.org/abs/2608.16223</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16223</guid>
-      <description>## 全文精选
-
-### 核心结论
-
-本文提出一种软硬件协同加速系统 DFA（DPF-Focused Accelerator），用于加速函数秘密共享（FSS）的核心原语——分布式点函数（DPF）的生成与评估，从而提升基于 FSS 的私有推理与私有信息检索（PIR）性能。作者声称，与先前 GPU 方案相比，DFA 在私有推理端到端延迟上降低超过 10 倍，通信量最多降低 20 倍，能耗节省超过 5 倍；PIR 吞吐提升超过 5 倍，能耗节省约 10 倍（以上为实验观察结果，见下文实验部分）。其核心洞察是：DPF 占安全推理非线性计算量的 90% 以上并主导离线密钥生成；PIR 中 DPF 评估跨整个数据库域，是主要计算瓶颈。DFA 的贡献在于将 DPF 密钥生成与评估解耦，采用“生成即消费”执行模型，消除可信第三方（TTP）密钥分发、存储和数据移动开销。
-
-### 问题与威胁模型
-
-**问题定义。** 两方 FSS 协议中，Gen(α,β) 生成密钥对(k0,k1)，Eval(ki,x) 得到函数分片，满足 Eval(k0,x)+Eval(k1,x)=f(x)，单个密钥不泄露 f。DPF 实现点函数（f(α)=β，否则为0），DCF 实现比较函数（x&gt;α 时输出 β，否则为0）。DPF 密钥的离线生成与分发构成显著瓶颈：作者给出示例——BERT-Base 单次 FSS 安全推理需生成最多 16.84GB FSS 密钥，LLaMA2-7B 超过 200GB，需从可信第三方经网络分发（此为作者给出的量化示例）；数据库规模 2^20 的单次 PIR 查询需超过一百万次密钥扩展操作。先前工作忽略了密钥生成/分发/存储成本，近期研究表明除非查询率很低，否则这些成本主导性能与能耗（作者基于文献的陈述）。
-
-**威胁模型。** 半诚实安全模型，服务器之间不串通，客户端之间不串通。无 DFA 时假设可信第三方生成并分发 FSS 密钥。DFA 支持两种模式：**不可信模式**仅加速 DPF 评估，不改变协议，安全性完全来自 FSS 协议本身；**可信模式**假设硬件提供机密性与完整性（类似 TPM/TEE），DFA 作为可信第三方在本地生成密钥，隐藏 PRG 种子、计数器和中间状态。DFA 集成于 GPU die，初始化时两个 DFA 互认证并建立共享密钥，主机不可访问。
-
-### 方法与关键技术
-
-以下按端到端流程展开。
-
-**1. 参与方与协议输入输出。** 私有推理场景为两方 MPC：输入 x 分片为[x]0+[x]1，双方不共谋；加法无需通信，乘法与非线性需通信，FSS 用 DCF（比较）和 DPF（查找表）实现非线性算子。PIR 场景为两服务器 DPF-based PIR：客户端将索引 i 编码为点函数，生成两个密钥分发给服务器；每服务器对所有 x 计算 Eval 并与数据库内积，客户端合并响应得 D[i]。密钥为一次性且不可跨查询重用。
-
-**2. 混合硬件架构。** DFA 由固定功能 DPF 引擎（加速 AES-PRG 主导的 DPF 操作）加小型可编程 VPU（处理协议特定前后处理与编排）组成。作者称该架构对 DPF/DCF 重型协议最有效，非 DPF 逻辑依赖 VPU/GPU 路径。DPF 单元为 20 级流水线，预热后每周期完成一次 Gen/Eval 迭代，含 128 位 ADD/XOR 后处理；全路径采用深度优先遍历，将存储从 O(2ⁿ) 降至 O(n·m)，其中 m 为 DPF 单元数。实现含 16 个 DPF 单元、64 个 AES-128 引擎。DPF 引擎不经过 L2，分布式 DPF 单元靠近 L2 bank，预留 DFA 地址范围，采用双缓冲。
-
-**3. 协议重构与生成-消费解耦。** 原有离线阶段由 TTP 生成 FSS 密钥并分发，存在通信、存储、CPU/磁盘传至 GPU 的带宽三重低效。作者重构 FSS 协议，将 DPF 生成与评估合并为“生成即消费”流程：输入为查询索引 x、初始化建立的共享密钥 K、计数器 ctr；输出份额 y_b∈Z_N。用同一 PRG 流驱动生成与评估，中间值立即消费，无需 TTP 显式分发密钥。关键性质是 DPF 生成输入通常是均匀随机 r∈Z_N，或经双射变换 g(r)（如加法、XOR）；作者据此直接采样均匀随机 r̃ 并在 VPU 预处理前独立生成 DPF 密钥，需要原值时用逆变换 g⁻¹(r̃) 恢复；右移无严格逆，用左移并填充均匀随机低位。安全性由模拟证明（理论论证，正文未列细节）。
-
-**4. 端到端执行模型与数据流优化。** 系统消除 CPU、GPU、内存层次间不必要的密钥存储与数据移动，将离线生成、存储、传输、重读改为 GPU 侧生成即用。可信模式下，DPF 密钥和中间状态在 DFA 内消耗并丢弃，不暴露给 CPU/GPU 内存、L2 或全局内存；临时存储由流水线深度决定，不随模型维度扩展。背压机制：输出缓冲满则停顿；慢 VPU 不阻塞 DPF 引擎吞吐。
-
-**5. 关键优化与设计选择。** 作者比较了多种设计：CPU/片外 PRNG 方案仅提供 9–11% 吞吐（受 PCIe 带宽限制，A100 PCIe Gen4 x16 单向 31.5GBps vs DFA 约 290GBps）；集中式 DFA 约 62%（受单内存通道 180GBps 限制）；GPU SM 内 AES 指令需 108 个 AES 引擎、面积 1.69× 且难支持可信模式；每 SM 一个 DFA 面积 1.74× 且单 AES 引擎利用不足。最终选择分布式 DPF 单元靠近 L2 的分区布局。非 DPF 的 128 位整数操作（ADD/MUL/XOR）由 VPU 处理——作者给出每次推理密钥生成的十亿级操作量：如 LLaMA2-7B 需 ADD 0.814G、MUL 0.114G、XOR 0.393G。
-
-### 安全性
-
-- **不可信模式**：作者称即使加速器不可信，仍保留原始 FSS 威胁模型的完整密码学安全保证；该模式主要优化能耗与吞吐，不显著降低私有推理的延迟或通信（作者明确声明）。
-- **可信模式**：DFA 作为 TTP 提供密钥生成，信任边界包括设备身份密钥、证明逻辑、安全密钥存储、计数器/nonce、AES/PRG 引擎、中间状态及未释放的 correction words；CPU/GPU/OS/驱动/网络/内存均不可信。初始化经测量启动和远程证明后，通过不可信网络完成认证密钥交换建立 PRG 种子；证明失败中止。作者声称轻量信任硬件比 CPU/GPU TEE 信任边界更窄，页错误、共享缓存、瞬态执行、Rowhammer 等信道在信任边界外。
-- **理论证明**：作者称协议重构保持功能与输出分布，中间值和最终输出与均匀随机计算不可区分，可用标准模拟范式证明，但正式证明因篇幅省略、见完整版（正文未给出）。
-
-### 实验与性能
-
-**实验设置。** RTL 综合采用 TSMC 28nm，VPU 为开源 Ara RISC-V（16 lane），GPU 模拟用 Accel-Sim；隐私参数 λ=127，份额位宽 64。基线为 GPU 方案：私有推理用 Orca（CNN）、Sigma（Transformer）；PIR 用 GPU-DPF 系统。负载为 ResNet-50、BERT-Base、GPT-Neo、LLaMA2-7B，假设 LAN（1GBps，0.05ms RTT）与 WAN（70MBps，70ms RTT）。PIR 数据库 16k–4M 条目。实验节点：Intel Xeon Gold 6448Y CPU、256GB 内存、A100 GPU，部署 16 个 DPF 单元。
-
-**私有推理结果（每查询，端到端含离线，与 GPU 基线相比）。** 离线通信从数十至数百 GB 降至亚 GB；CPU-GPU 通信减少约 7.5–62 倍。可信 DFA 的 GaC 模式下，ResNet-50 离线通信 0.02GB，BERT-Base 0.1GB，GPT-Neo 0.24GB，LLaMA2-7B 0.81GB；LAN 延迟分别为 0.73s、1.42s、5.93s、18.0s；WAN 延迟达 18.0s、46.4s、101s、193s。LAN 下延迟提升超 10 倍，WAN 下较小。能耗改善常超 5 倍；不可信模式能耗节省略小，但端到端延迟仅小幅改善。瓶颈主要是离线通信数据移动，评估计算占比 &lt;30%。无生成-消费优化时仍存在 CPU-GPU 流量，显示该优化重要性。
-
-**PIR 结果。** 16k 条目吞吐提升 8.52 倍、能耗/请求降低 14.3 倍；1M 条目提升 6.31 倍、能耗降低 10.5 倍；更大数据库加速更大。PIR 为计算受限：基线 GPU 利用率近 100%，DFA 系统 GPU 仅约 20GOPS，DFA 成为瓶颈。16 个 DPF 单元 720MHz 理论峰值约 350GBps，实测约 290GBps。ChaCha20 PRG 可再获 1.5–2 倍加速。
-
-**硬件成本（实验观察）。** 28nm 下全部 DFA（含控制单元及内存子系统）面积 7.67mm²、功耗 1683.5mW；7nm 下面积 0.239mm²、功耗 631mW。开销由内存主导（64KB SRAM、8KB ROM）。受 SM–L2 互连延迟（约 200 周期）限制。
-
-### 局限与阅读判断
-
-作者列出的局限包括：物理攻击与实现漏洞需标准硬件加固；全面侧信道分析留待未来工作；不可信 DFA 不改善延迟/通信瓶颈。可扩展性方面：内存带宽是硬上限，A100 聚合 L2 读带宽约 7TBps；硬件翻倍可近似线性提升性能，但受面积与功耗限制；条目大小超过 16KB 时系统转为计算受限，增加 DFA 容量不再改善端到端吞吐，条目增大时相对加速收益下降。此外，正式安全证明未包含在提取的正文中，属“见完整版”的作者声明；PIR 实验的数据库是否合成、具体批量大小等细节，未从可提取正文完全确认。总体而言，本文的核心贡献是识别 DPF 密钥分发与数据移动为 FSS 实际瓶颈，并通过硬件/软件协同的生成-消费设计予以消除；对大规模模型私有推理与大规模数据库 PIR 场景具有明确参考价值。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>secure inference</category>
-      <category>function secret sharing</category>
-      <category>distributed point function</category>
-      <category>FSS</category>
-      <category>DPF</category>
-    </item>
-    <item>
-      <title>A Descent to Hades: Attacks on PKP and PEP over Extension Fields</title>
-      <link>https://eprint.iacr.org/2026/1711</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1711</guid>
-      <description>The Permutation Code Equivalence Problem (PEP) and Permuted Kernel Problem (PKP) are two notorious computational problems over linear codes used for building post-quantum digital signature schemes. Although traditionally analyzed over prime fields, recent proposals, such as the signature schemes PERK and SETH, have considered extension fields to improve efficiency and compactness. In this work, we analyze the hardness of solving PKP and PEP when instantiated over field extensions. %the latter between self-orthogonal codes. For binary field extensions, by exploiting a reduction to a structured variant of the Regular Syndrome Decoding Problem (RSD), we uncover new polynomial-time parameter regimes for both PKP and PEP, including families of self-orthogonal PEP instances and all self-dual instances over extensions of degree $\nu&gt;4$. We also adapt the permutation-based Regular-ISD algorithm of Esser and Santini for RSD (CRYPTO '24) to PKP-derived instances, and uncover regimes of parameters for which it improves upon the state-of-the-art. Moreover, we present a reduction from a broad family of PEP instances over extension fields with odd characteristic to the Graph Isomorphism Problem, yielding a polynomial-time algorithm to solve those instances. Overall, our results invalidate the use of PEP over extension fields for most of the scenarios, and provide novel insights into the security of PKP over extension fields.</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>TokenSTFormer：一种用于青少年特发性脊柱侧弯筛查中整体运动分析的标记化时空注意力模型</title>
-      <link>https://arxiv.org/abs/2608.16122</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16122</guid>
-      <description>英文原题：TokenSTFormer: A Tokenized Spatial-temporal Attention Model for Holistic Motion Analysis in Adolescent Idiopathic Scoliosis Screening
-
-青少年特发性脊柱侧弯（AIS）是一种常见的青少年脊柱畸形，如果未经治疗，可能导致严重的健康后果。传统的筛查方法受到主观解读、依赖专业知识以及可扩展性低的限制。为了应对这些挑战，我们提出了ScoliGait数据集，该数据集包含1,516个步态视频片段及对应的X光记录。我们还引入了TokenSTFormer，这是一种新颖的模型，通过标记化时空语义来增强特征表示和收敛性。我们的模型达到了最先进的性能，在包括准确率0.79在内的关键指标上超越了普通的Vision Transformer编码器。本研究凸显了利用源自步态视频的整体运动特征和基于注意力的模型进行可扩展、成本效益高的AIS筛查的潜力，为未来脊柱侧弯检测的临床应用铺平了道路。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>评估LLMs的数学能力需要理解数学创造性的各种机制</title>
-      <link>https://arxiv.org/abs/2608.16118</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16118</guid>
-      <description>英文原题：Assessing LLMs' mathematical abilities requires understanding the various mechanisms of mathematical creativity
-
-我们应当如何评估大型语言模型能否进行数学发明？我认为这个问题目前界定不足：数学创造性并非一种能力，而是多种机制上不同的意义建构模式——对数学实践的反思性内省、来自科学的类比引入、问题驱动的建构，以及遥远领域之间的桥接——再加上一个进一步的、横切性的区分：因观察到模式而追求的意义与因策略上需要而追求的意义，我通过猜想形成的案例来阐述这一区分。这些机制很可能是不可替代的，因此在一个机制上的能力不会迁移到其他机制上。通过将每种机制植根于一个历史案例研究和对当前基于Transformer系统的架构层面解释，我提出当今模型的能力集中在由对现有构建模块的重组和搜索所塑造的模式中；如果这一描述成立，其余模式原则上无法企及，而不仅仅是更慢——尽管这一描述是否成立本身是一个开放的经验性问题。由于随着AI生成证明能力的提高，证明变得越来越廉价——这一转变正是该领域自身的领军人物目前所诊断的——数学价值正迁移至当前系统尚无法执行的那些模式，对AI数学能力的评估应围绕这一分类法来组织，而非围绕将其混为一谈的总体基准。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>HyperSkill：基于超图结构技能记忆的自演进LLM智能体</title>
-      <link>https://arxiv.org/abs/2608.16114</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16114</guid>
-      <description>英文原题：HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory
-
-随着智能体任务复杂度的增长，LLM智能体越来越依赖经验记忆来跨任务复用程序性知识。有效的记忆设计必须同时解决存储什么、记忆如何结构化与检索，以及记忆如何演进。现有系统仅部分地处理每个方面：它们将轨迹、见解或工作流存储为孤立条目，丢弃了子任务与可复用技能之间的组合关系；通过忽略关系信号的平面嵌入相似性进行检索；并且在维护记忆时未利用其关系结构。我们提出HyperSkill，一个基于超图的记忆框架，联合改进所有三个方面。HyperSkill将记忆表示为具有两种节点类型（子任务步骤和可复用技能）的超图，其中每条超边链接来自单条轨迹的子任务和技能。双路径检索同时查询子任务和轨迹层面，通过检索轨迹中的共现情况对技能进行排序。周期性的结构知情维护修剪低效用节点，并通过质量加权传播合并冗余技能。在xBench、GAIA和WebWalkerQA上，结合GPT-4o和Qwen3-30B-A3B，HyperSkill优于十种记忆基线，在GAIA上获得高达+11.51的提升，在WebWalkerQA上获得+11.18的提升。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Auditable Continuous Group Key Agreement</title>
-      <link>https://eprint.iacr.org/2026/1710</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1710</guid>
-      <description>Continuous group key agreement (CGKA), the cryptographic core of Messaging Layer Security (MLS, RFC 9420), provides key management for large end-to-end encrypted group chats. It refreshes the group's keys as members join and leave, but offers no way for a designated auditor to recover past epoch keys, and no way to check that such recovery remains possible. Regulated deployments in finance, healthcare, and government therefore resort to plaintext server logging, abandoning end-to-end encryption entirely. Simply adding a key escrow admits a silent escrow failure: the group accepts an epoch whose escrow holds unrecoverable material, with no visible anomaly until a later audit. Addressing this, we introduce auditable CGKA (Au-CGKA), an MLS-shaped protocol in which every admitted epoch carries a proof. The proof binds that epoch's key material to a well-defined secret recoverable by a threshold auditor committee. Every member checks that binding against the epoch secret it derives and refuses the commit if the two disagree, so auditability guarantees that the secret of every epoch an honest member accepts is threshold-recoverable. We give a post-quantum protocol, Π_A, realizing this property with STARK proofs. The committer escrows the epoch secret to an auditor committee, and the escrow ciphertext is a STARK-friendly encryption of Shamir shares. Its well-formedness is proven in-circuit at MLS commit time. We prototype Au-CGKA in Rust with the proofs on a zero-knowledge, post-quantum custom multi-stage STARK. On an Apple M5 Pro, an auditability proof takes 1.38 s with proof-size 15.31 MB and verifies in 0.17 s, at every group size; the relation it proves is independent of the group size. The proof is checked at admission and then discarded, so it costs bandwidth on the commit and nothing in storage; the only persistent overhead is the fixed-size escrow. Adaptive post-quantum security holds in the secure-erasure model with straight-line reductions in the quantum random-oracle model, and carries to the implemented backend under a stated assumption; privacy and escrow soundness follow as game-based guarantees.</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Ring Signatures with Personalized Anonymity</title>
-      <link>https://eprint.iacr.org/2026/1709</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1709</guid>
-      <description>Ring signatures have long struggled to balance absolute anonymity with traceability. While various extensions, such as traceable and accountable ring signatures, have been proposed, they typically apply a uniform anonymity or traceability rule to all potential signers. This paper introduces personalized-anonymity ring signatures (PARS), a novel primitive in which users are certified with different anonymity rights according to their roles or authority. Unlike ordinary ring signatures, PARS involves a group manager at key issuance; however, the group manager does not determine a fixed signing group. Instead, signers retain the ring-signature feature of choosing the ring at signing time, while the manager certifies whether each user's key permits fully anonymous signing or only traceable signing. This model is particularly suited for organizational governance, where ordinary members may require strong anonymity for internal reporting or expressing dissenting opinions, while users with institutional authority must remain accountable for official approvals or authorizations. We provide a formal syntax and rigorous security definitions for PARS, capturing both standard ring-signature requirements and traceability-related guarantees. We then present a generic construction from standard cryptographic primitives, including digital signatures, one-time signatures, public-key encryption, and non-interactive zero-knowledge proofs of knowledge.</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Prepared Episodes for Short Online Hash Based Signatures</title>
-      <link>https://eprint.iacr.org/2026/1708</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1708</guid>
-      <description>SPHINCS+ provides stateless signing and self-contained verification, but its signatures are large: every message carries a FORS signature and a complete WOTS+/Merkle authentication chain to the long-term root. This cost is repeated even when messages arrive in a bounded episode whose maximum size is known in advance. We introduce prepared-episode signatures and instantiate them as SPHINCS-PE. The construction splits a globally addressed hypertree at an episode boundary into upper and lower trees. Preparation authenticates the boundary root through the upper tree, while each online signature traverses the lower tree back to that root. Because the upper tree is computed before messages arrive, it can use fewer, taller layers. This removes WOTS+ blocks from full signatures at the cost of more preparation work. Full signatures remain self-contained, while recurring verifiers may cache the upper certificate. Our fixed-count exposure analysis pools colliding preparations and bounds post-selection of the target episode. The end-to-end theorem reduces unforgeability to PE-ITSR and explicit PRF and hash-component games. Compared with the matched FIPS 205 SLH-DSA profiles, SPHINCS-PE reduces full-signature sizes by 3% to 12% for the short profiles and by 25% to 40% for the fast profiles. With the upper certificate cached, online signatures are 24% to 48% smaller for short profiles and 56% to 70% smaller for fast profiles. These results show that prepared episodes can shorten hash-based signatures without giving up self-contained verification.</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Quantum Resource Optimization for CSIDH</title>
-      <link>https://eprint.iacr.org/2026/1707</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1707</guid>
-      <description>The quantum resource analysis of CSIDH has remained an active research topic. At Eurocrypt 2020, Peikert raised three open problems concerning the optimization of the corresponding quantum resources. In this work, we primarily focus on the first two: optimizing quantum resources for ideal class groups and choosing the collimation arity. Specifically, we reduce the T-gate complexity of class group actions for CSIDH-512 from $2^{52.6}$ to $2^{51.7}$. Furthermore, within our four-way permutation construction model and under a specified classical memory budget, we provide a detailed analysis of the classical and quantum resources associated with different collimation arities $r$. Among the evaluated configurations, $r = 4$ emerges as the optimal choice. By incorporating the hidden-shift quantum algorithms proposed by Peikert, we achieve a T-gate reduction of at least 85\% for solving CSIDH-512.</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>边界上的治理：智能体分解如何降低策略合规性</title>
-      <link>https://arxiv.org/abs/2608.16055</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16055</guid>
-      <description>英文原题：Governance at the Boundary: How Agent Decomposition Degrades Policy Compliance
-
-现有的智能体基准测试只询问智能体是否完成了任务。我们则询问它是否在策略范围内完成了任务。我们引入了Fiducia-bench，一个用于评估金融智能体可治理性的基准测试——即它们是否在必要时升级、在要求时弃权，并留下可审计的轨迹——并用它来研究一个此前没有任何基准测试涉及的问题：将智能体分解为多个组件是否会降低其治理能力？答案是肯定的，且其机制是具体的。由一个组件发现的与策略相关的事实，在交接边界处到达必须据此采取行动的组件之前会被削弱。在一项涉及100个KYC/AML任务变体、两种模型和三种架构的626个回合的实验中，一个32B开放权重模型在单循环基线下降解了0%的已发现事实，在固定流水线下为56%，在编排器-子智能体架构下为85%（所有情况均处于约束距离2）。一个更强的模型（gpt-4.1-mini）在相同条件下降解了3-6%，这表明分解的治理成本在一定程度上是模型能力的函数。至关重要的是，同样的机制既会产生不足升级，也会产生过度升级，具体取决于被丢弃的事实是风险信号还是免责信号。该基准测试、所有任务及验证框架均为开源。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>用于可扩展电子表格表理解的结构化预测：从单元格类型到表范围（扩展版）</title>
-      <link>https://arxiv.org/abs/2608.16050</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.16050</guid>
-      <description>英文原题：Structured Prediction for Scalable Spreadsheet Table Understanding: From Cell Types to Table Ranges (Extended Version)
-
-电子表格是发布表格数据的主要媒介，然而由于布局异构、文件格式多样以及组织惯例不一致，从中自动提取结构化内容仍然困难。我们解决了电子表格理解中的两个核心任务：单元格类型分类（Cell-Type Classification, CTC），即为单元格分配角色；以及表格检测（Table Detection, TD），即识别工作表内的表格边界框。我们提出了一条高效的两阶段流水线，其中学习得到的CTC模型为确定性TD算法提供输入。对于CTC，我们使用基于65个结构化特征的LightGBM分类器，并辅以成对CRF以在单元格网格上强制空间一致性。我们的TD方法通过确定性的五阶段过程从预测的单元格类型中提取表格范围。为了评估，我们构建并公开了StatSheets，这是一个多语言基准，包含来自多个国家和文件格式的14个公共数据提供者的737个手动标注工作表。在5折交叉验证下，我们的CRF-LightGBM系统在CTC上实现了0.937的平均文件宏F1分数，与基于GPU的TUTA Transformer相差在0.6个百分点以内，同时所需的计算资源大大减少。对于TD，我们的确定性方法优于基于区域（region-based）的基线，并与最近的基于LLM的系统（如SpreadsheetLLM）保持竞争力。这些结果表明，将非线性结构化预测与确定性范围提取相结合，为电子表格表理解提供了一种有竞争力、可扩展且计算高效的方法。</description>
-      <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
     </item>
   </channel>
 </rss>
