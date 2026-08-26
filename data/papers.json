@@ -1,6 +1,935 @@
 {
   "papers": [
     {
+      "id": "arxiv_2608.24876",
+      "arxiv_id": "2608.24876",
+      "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+      "authors": [
+        "Zhaochen Yu",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Kaiyuan Chen",
+        "Zhe Zhao",
+        "Mengdi Wang",
+        "Shuicheng Yan",
+        "Ling Yang"
+      ],
+      "abstract": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T17:56:35Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24876",
+      "pdf_link": "https://arxiv.org/pdf/2608.24876",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "智能体",
+        "记忆架构"
+      ],
+      "relevance_reason_zh": "研究智能体长期任务的递归记忆架构，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "面向长视野智能体框架的递归经验-工作记忆演化",
+      "abstract_zh": "递归自我改进（RSI）在长视野任务中仍然困难，因为不断增长的历史记录掩盖了任务状态并导致技能调用失配。我们提出了Recuris，一种用于长视野智能体框架的递归经验-工作记忆架构，其中工作记忆跟踪任务进度并从经验记忆中选择技能，将技能使用建立在当前需求而非完整历史之上。这种耦合还将执行转化为结构化证据，使失败能够定位到特定的记忆组件。在各种任务中，一个固定的元智能体将该证据转化为对技能记忆的局部化、经验证门控的更新，这些更新重塑执行并产生新的证据，形成一个有界的递归记忆演化循环。在四个长视野基准和十个模型上，Recuris在37个已完成的模型-基准对中提升了35个的任务成功率，将前沿模型推向最先进水平的任务成功率：在tau-bench上，它为GPT-5.6 Sol增加了+17.8个百分点，为Claude Opus 5增加了+15.6个百分点，使Opus 5达到87.9%，并在SkillFlow上为Qwen3.6-27B/35B增加了+16.6/+13.5个百分点。随着交互视野的增长，优势进一步扩大，在最长任务上达到+32.2个百分点，常见的长期失败下降高达80%。这些结果将递归演化的记忆定位为RSI的可扩展基础，使智能体能够不断将积累的经验转化为日益有效的长视野行为。代码：https://github.com/Gen-Verse/Recuris"
+    },
+    {
+      "id": "arxiv_2608.24857",
+      "arxiv_id": "2608.24857",
+      "title": "Prompt Structure Redistributes, Not Reduces: An Empirical Analysis of Security-Weaknesses in LLM-Generated Python Code",
+      "authors": [
+        "Maitreyee Das Urmi",
+        "Jessica Pourleyli",
+        "Fabio Santos",
+        "Glaucia Melo"
+      ],
+      "abstract": "Large Language Models (LLMs) increasingly generate code from natural-language prompts, making prompt engineering a key mechanism for shaping the security of generated software. Structured and security-oriented prompts are widely used to encourage safer code, yet their effects extend beyond whether detected weaknesses are simply present or absent. Using 424 security-sensitive Python tasks, we generate solutions with GPT-4o and LLaMA 3.1-8B under five prompt variants that progressively add structural and security guidance, and evaluate them with Bandit and CodeQL along two axes: generation compliance and security weakness prevalence, severity, and CWE distributions. Structured prompting substantially reduces refusals (e.g., GPT-4o invalid outputs drop from 338 of 424 to 37-52), enabling large-scale analysis, but security-oriented refinements do not consistently reduce overall weakness prevalence. For GPT-4o, stronger prompts primarily redistribute risk: high-severity findings fall (20.8% to 13.6%) while low-severity findings rise (32% to 43.5%); LLaMA shows weaker, less consistent shifts. We also observe security-driven semantic drift, where stricter prompts silently remove or rewrite explicitly requested unsafe constructs. Overall, prompt structure improves compliance but is an unreliable substitute for robust security controls in LLM-assisted development.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T17:43:47Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24857",
+      "pdf_link": "https://arxiv.org/pdf/2608.24857",
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Large Language Models (LLMs) increasingly generate code from natural-language prompts, making prompt engineering a key mechanism for shaping the security of generated software. Structured and security-oriented prompts are widely used to encourage safer code, yet their effects extend beyond whether detected weaknesses are simply present or absent. Using 424 security-sensitive Python tasks, we generate solutions with GPT-4o and LLaMA 3.1-8B under five prompt variants that progressively add structural and security guidance, and evaluate them with Bandit and CodeQL along two axes: generation compliance and security weakness prevalence, severity, and CWE distributions. Structured prompting substantially reduces refusals (e.g., GPT-4o invalid outputs drop from 338 of 424 to 37-52), enabling large-scale analysis, but security-oriented refinements do not consistently reduce overall weakness prevalence. For GPT-4o, stronger prompts primarily redistribute risk: high-severity findings fall (20.8% to 13.6%) while low-severity findings rise (32% to 43.5%); LLaMA shows weaker, less consistent shifts. We also observe security-driven semantic drift, where stricter prompts silently remove or rewrite explicitly requested unsafe constructs. Overall, prompt structure improves compliance but is an unreliable substitute for robust security controls in LLM-assisted development.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大模型安全",
+        "代码安全",
+        "提示工程"
+      ],
+      "relevance_reason_zh": "关注LLM生成代码的安全弱点，属于大模型安全，但不涉及保护推理的密码学或隐私计算。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n结构化提示能提升 LLM（大语言模型）生成 Python 代码的“生成合规性”，但并不能可靠减少安全弱点；它主要是把风险从高危“重新分配”为低危，因此不能替代稳健的安全控制。\n\n## 问题与动机\nLLM 越来越多地根据自然语言提示生成代码，提示工程（prompt engineering）因此成为影响生成软件安全性的关键机制。结构化和安全导向的提示常被用来鼓励生成更安全的代码，但它们的效果并不仅仅体现在检测到的弱点“有或无”上，还可能改变弱点的严重程度、类型分布以及模型的行为方式。摘要因此引入更细粒度的实证分析。\n\n## 方法与技术路线\n- **研究对象与设定**：摘要使用 424 个安全敏感的 Python 编程任务，在 GPT-4o 和 LLaMA 3.1-8B 两个模型上，采用五种提示变体（prompt variants）生成解决方案。这些变体逐步加入结构性指导和安全指导；摘要未说明各变体的具体措辞、任务来源或筛选标准。\n- **评估流程**：对生成代码使用 Bandit（Python 代码弱点检测工具）和 CodeQL（代码分析工具）进行扫描，并沿两条轴评估：一是生成合规性（generation compliance），即模型是否输出有效代码、是否拒绝生成；二是安全弱点状况，包括弱点",
+      "summary": "## 一句话结论\n结构化提示能提升 LLM（大语言模型）生成 Python 代码的“生成合规性”，但并不能可靠减少安全弱点；它主要是把风险从高危“重新分配”为低危，因此不能替代稳健的安全控制。\n\n## 问题与动机\nLLM 越来越多地根据自然语言提示生成代码，提示工程（prompt engineering）因此成为影响生成软件安全性的关键机制。结构化和安全导向的提示常被用来鼓励生成更安全的代码，但它们的效果并不仅仅体现在检测到的弱点“有或无”上，还可能改变弱点的严重程度、类型分布以及模型的行为方式。摘要因此引入更细粒度的实证分析。\n\n## 方法与技术路线\n- **研究对象与设定**：摘要使用 424 个安全敏感的 Python 编程任务，在 GPT-4o 和 LLaMA 3.1-8B 两个模型上，采用五种提示变体（prompt variants）生成解决方案。这些变体逐步加入结构性指导和安全指导；摘要未说明各变体的具体措辞、任务来源或筛选标准。\n- **评估流程**：对生成代码使用 Bandit（Python 代码弱点检测工具）和 CodeQL（代码分析工具）进行扫描，并沿两条轴评估：一是生成合规性（generation compliance），即模型是否输出有效代码、是否拒绝生成；二是安全弱点状况，包括弱点"
+    },
+    {
+      "id": "arxiv_2608.24804",
+      "arxiv_id": "2608.24804",
+      "title": "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
+      "authors": [
+        "Esakkivel Esakkiraja",
+        "Denis Akhiyarov",
+        "Vikas Yadav",
+        "Sai Rajeswar",
+        "Patrice Bechard",
+        "Sridhar Nemala",
+        "Sagar Davasam"
+      ],
+      "abstract": "We present StarHarness, a framework for evolving environment-specific agent harnesses while keeping model weights fixed. The evolved harness can include prompt and task framing, tool interfaces, skills, MCP-backed providers, subagent structure, and agent-loop configuration. StarHarness constructs a compact evolution pool by stratifying tasks according to baseline failure behavior, separates proposer-visible search tasks from proposer-hidden selection tasks, and reserves held-out tasks for evaluating generalization. Across ITBench SRE, EnterpriseOps-Gym ITSM, and AutomationBench Finance, harness evolution improves full-benchmark performance by 20-35 percentage points over the default harness after 4-12 accepted changes per environment. These gains persist on tasks excluded from evolution and transfer without re-evolution across GPT and Qwen model families. Trace analysis links the improvements to interface repairs, environment conventions, and operational knowledge that compresses search, with fewer false-positive diagnoses and shorter trajectories in several settings. StarHarness therefore offers a practical way to reduce persistent model-environment mismatch in tool-rich enterprise tasks.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T16:48:05Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24804",
+      "pdf_link": "https://arxiv.org/pdf/2608.24804",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "We present StarHarness, a framework for evolving environment-specific agent harnesses while keeping model weights fixed. The evolved harness can include prompt and task framing, tool interfaces, skills, MCP-backed providers, subagent structure, and agent-loop configuration. StarHarness constructs a compact evolution pool by stratifying tasks according to baseline failure behavior, separates proposer-visible search tasks from proposer-hidden selection tasks, and reserves held-out tasks for evaluating generalization. Across ITBench SRE, EnterpriseOps-Gym ITSM, and AutomationBench Finance, harness evolution improves full-benchmark performance by 20-35 percentage points over the default harness after 4-12 accepted changes per environment. These gains persist on tasks excluded from evolution and transfer without re-evolution across GPT and Qwen model families. Trace analysis links the improvements to interface repairs, environment conventions, and operational knowledge that compresses search, with fewer false-positive diagnoses and shorter trajectories in several settings. StarHarness therefore offers a practical way to reduce persistent model-environment mismatch in tool-rich enterprise tasks.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "智能体",
+        "工具学习"
+      ],
+      "relevance_reason_zh": "研究企业环境中智能体工具框架的进化，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "StarHarness：面向企业环境的分层搜索harness演化",
+      "abstract_zh": "我们提出了StarHarness，一个在保持模型权重不变的情况下演化特定于环境的智能体harness的框架。演化出的harness可包括提示和任务构建、工具接口、技能、基于MCP的提供者、子代理结构和代理循环配置。StarHarness通过根据基线失败行为对任务进行分层来构建紧凑的演化池，将提议者可见的搜索任务与提议者隐藏的选择任务分开，并保留留出任务以评估泛化能力。在ITBench SRE、EnterpriseOps-Gym ITSM和AutomationBench Finance上，harness演化在每个环境接受4-12次更改后，将全基准性能比默认harness提高了20-35个百分点。这些增益在从演化中排除的任务上持续存在，并在GPT和Qwen模型家族之间无需重新演化即可迁移。轨迹分析将这些改进归因于接口修复、环境惯例和压缩搜索的操作知识，在若干设置中减少了误报诊断并缩短了轨迹。因此，StarHarness提供了一种实用的方法，以减少工具丰富的企业任务中持续存在的模型-环境不匹配。"
+    },
+    {
+      "id": "arxiv_2608.24777",
+      "arxiv_id": "2608.24777",
+      "title": "StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing",
+      "authors": [
+        "Zhijie Zheng",
+        "Yu Li",
+        "Chen Qian",
+        "Yuqian Fu",
+        "Yanwei Fu",
+        "Lu Sheng",
+        "Jing Shao",
+        "Dongrui Liu"
+      ],
+      "abstract": "LLM-based agents can interact with external environments through tool invocation, but this capability also introduces security risks such as file modification, information leakage, and unauthorized actions. Existing guardrails often evaluate completed trajectories, leaving pre-execution monitoring of step-level actions underexplored. We propose StepGuard, a step-level guard model that can audit completed agent trajectories and check tool actions before they are executed. To train StepGuard, we introduce StepGen, an automatic data engine that generates safe and unsafe trajectories with the same context but different actions at the risky step. To further reduce over-defense and under-defense, we propose Balance-GRPO, which dynamically balances learning between safe and unsafe actions based on their observed accuracy. Experiments show that StepGuard achieves the highest average accuracy among open-weight guard models, with performance comparable to GPT-5.4. When used to guard agents on AgentDojo and AgentDyn, StepGuard reduces mean attack success rate by 77.3% relative to the no-guard setting, while mean utility drops by only 2.8 percentage points.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T16:17:27Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24777",
+      "pdf_link": "https://arxiv.org/pdf/2608.24777",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "LLM-based agents can interact with external environments through tool invocation, but this capability also introduces security risks such as file modification, information leakage, and unauthorized actions. Existing guardrails often evaluate completed trajectories, leaving pre-execution monitoring of step-level actions underexplored. We propose StepGuard, a step-level guard model that can audit completed agent trajectories and check tool actions before they are executed. To train StepGuard, we introduce StepGen, an automatic data engine that generates safe and unsafe trajectories with the same context but different actions at the risky step. To further reduce over-defense and under-defense, we propose Balance-GRPO, which dynamically balances learning between safe and unsafe actions based on their observed accuracy. Experiments show that StepGuard achieves the highest average accuracy among open-weight guard models, with performance comparable to GPT-5.4. When used to guard agents on AgentDojo and AgentDyn, StepGuard reduces mean attack success rate by 77.3% relative to the no-guard setting, while mean utility drops by only 2.8 percentage points.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大模型安全",
+        "代理安全",
+        "安全护栏"
+      ],
+      "relevance_reason_zh": "关注LLM代理的工具调用安全护栏，属于大模型安全，但非安全推理协议。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "### 一句话结论\nStepGuard 是一个面向 LLM 代理工具调用的步骤级防护模型，能在工具执行前检查动作，根据摘要报告，可在仅小幅降低效用的前提下显著降低攻击成功率。\n\n### 问题与动机\nLLM-based agents（基于大语言模型的智能体）通过 tool invocation（工具调用）与外部环境交互，但引入了文件修改、信息泄露、未经授权操作等安全风险。现有 guardrails（安全护栏）通常只评估 completed trajectories（已完成轨迹），对 pre-execution（执行前）的 step-level（步骤级）动作监控不足。StepGuard 正是为弥补这一缺口而设计。\n\n### 方法与技术路线\n- **研究对象与设定**：LLM 代理的逐步工具调用动作。模型需要同时支持两类任务：审计已完成的 agent trajectories（代理轨迹），以及检查即将执行的 tool actions（工具动作）是否安全。\n- **训练数据生成**：作者引入 StepGen，一个 automatic data engine（自动数据引擎），生成 safe/unsafe（安全/不安全）轨迹对。这些轨迹对具有相同的上下文，只在“risky step”（风险步骤）处采取不同动作，从而构造可对比的训练信号，帮助模型学习在关键步骤上做安全判别。\n- **学习平衡**：为避免模型偏向“过度防御”（over-defense）或“防御不足”（under-defense），作者提出 Balance-GRPO。该方法基于安全与不安全动作各自被观察到的准确率，动态调整两类样本的学习权重，使训练在防护效果和正常可用性之间保持平衡。\n- **输出与衔接**：StepGuard 对当前步骤动作输出安全性判断，可用于执行前拦截或事后审计；StepGen 和 Balance-GRPO 分别是数据准备与训练优化模块，服务于 StepGuard 的训练。摘要未说明具体的数据集规模、训练参数或护栏部署细节。\n\n### 主要结果\n摘要报告，StepGuard 在 open-weight guard models（开放权重护栏模型）中达到最高平均准确率，性能与 GPT-5.4 相当。在用于保护 AgentDojo 和 AgentDyn 上的代理时，与 no-guard（无护栏）设定相比，平均 attack success rate（攻击成功率）降低 77.3%，同时平均 utility（效用）仅下降 2.8 个百分点。\n\n### 为什么与兴趣相关\n该工作属于大模型安全方向，关注 LLM 代理工具调用的实时防护，而非安全推理协议。步骤级护栏为在动作执行前阻断风险提供了一种可行思路，与代理系统部署中的安全监控需求直接相关。",
+      "summary": "### 一句话结论\nStepGuard 是一个面向 LLM 代理工具调用的步骤级防护模型，能在工具执行前检查动作，根据摘要报告，可在仅小幅降低效用的前提下显著降低攻击成功率。\n\n### 问题与动机\nLLM-based agents（基于大语言模型的智能体）通过 tool invocation（工具调用）与外部环境交互，但引入了文件修改、信息泄露、未经授权操作等安全风险。现有 guardrails（安全护栏）通常只评估 completed trajectories（已完成轨迹），对 pre-execution（执行前）的 step-level（步骤级）动作监控不足。StepGuard 正是为弥补这一缺口而设计。\n\n### 方法与技术路线\n- **研究对象与设定**：LLM 代理的逐步工具调用动作。模型需要同时支持两类任务：审计已完成的 agent trajectories（代理轨迹），以及检查即将执行的 tool actions（工具动作）是否安全。\n- **训练数据生成**：作者引入 StepGen，一个 automatic data engine（自动数据引擎），生成 safe/unsafe（安全/不安全）轨迹对。这些轨迹对具有相同的上下文，只在“risky step”（风险步骤）处采取不同动作，从而构造可对比的训练信号，帮助模型学习在关键步骤上做安全判别。\n- **学习平衡**：为避免模型偏向“过度防御”（over-defense）或“防御不足”（under-defense），作者提出 Balance-GRPO。该方法基于安全与不安全动作各自被观察到的准确率，动态调整两类样本的学习权重，使训练在防护效果和正常可用性之间保持平衡。\n- **输出与衔接**：StepGuard 对当前步骤动作输出安全性判断，可用于执行前拦截或事后审计；StepGen 和 Balance-GRPO 分别是数据准备与训练优化模块，服务于 StepGuard 的训练。摘要未说明具体的数据集规模、训练参数或护栏部署细节。\n\n### 主要结果\n摘要报告，StepGuard 在 open-weight guard models（开放权重护栏模型）中达到最高平均准确率，性能与 GPT-5.4 相当。在用于保护 AgentDojo 和 AgentDyn 上的代理时，与 no-guard（无护栏）设定相比，平均 attack success rate（攻击成功率）降低 77.3%，同时平均 utility（效用）仅下降 2.8 个百分点。\n\n### 为什么与兴趣相关\n该工作属于大模型安全方向，关注 LLM 代理工具调用的实时防护，而非安全推理协议。步骤级护栏为在动作执行前阻断风险提供了一种可行思路，与代理系统部署中的安全监控需求直接相关。"
+    },
+    {
+      "id": "arxiv_2608.24763",
+      "arxiv_id": "2608.24763",
+      "title": "MoTE: Mixture of Task Experts for Multi-Task Video Understanding",
+      "authors": [
+        "Muhammad Asad Ali",
+        "Umar Khan",
+        "Nadia Robertini",
+        "Didier Stricker"
+      ],
+      "abstract": "Procedural video-language models must solve heterogeneous tasks from the same visual evidence, including action recognition, forecasting, and procedure prediction. Dense transformer decoders share the same feed-forward networks across tasks, which can entangle task behavior and make controlled capability expansion difficult. Sparse Mixture-of-Experts (MoE) decoders provide conditional computation, but token-level learned routing is not naturally aligned with task-level procedural objectives. We propose MoTE (Mixture of Task Experts), a decoder architecture that converts large language model feed-forward networks into task-specific experts while keeping the multimodal backbone shared. Each example follows one sample-level task route, so active task-expert computation remains independent of the number of stored task experts. We instantiate this design as VideoLLM-MoTE and evaluate it on five COIN benchmarks using explicit task routes. The five-expert model activates ~2B LLM parameters per sample and achieves higher average top-1 accuracy than recent VideoLLM baselines. Under the same expert topology, it improves over dense all-expert activation and learned sparse-routing controls. These results show that task-structured routing provides an interpretable and compute-efficient decoder alternative for multi-task video-language learning.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T16:00:11Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24763",
+      "pdf_link": "https://arxiv.org/pdf/2608.24763",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Procedural video-language models must solve heterogeneous tasks from the same visual evidence, including action recognition, forecasting, and procedure prediction. Dense transformer decoders share the same feed-forward networks across tasks, which can entangle task behavior and make controlled capability expansion difficult. Sparse Mixture-of-Experts (MoE) decoders provide conditional computation, but token-level learned routing is not naturally aligned with task-level procedural objectives. We propose MoTE (Mixture of Task Experts), a decoder architecture that converts large language model feed-forward networks into task-specific experts while keeping the multimodal backbone shared. Each example follows one sample-level task route, so active task-expert computation remains independent of the number of stored task experts. We instantiate this design as VideoLLM-MoTE and evaluate it on five COIN benchmarks using explicit task routes. The five-expert model activates ~2B LLM parameters per sample and achieves higher average top-1 accuracy than recent VideoLLM baselines. Under the same expert topology, it improves over dense all-expert activation and learned sparse-routing controls. These results show that task-structured routing provides an interpretable and compute-efficient decoder alternative for multi-task video-language learning.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "视频理解",
+        "混合专家模型"
+      ],
+      "relevance_reason_zh": "多任务视频理解中的MoE解码器架构，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "MoTE：用于多任务视频理解的任务专家混合",
+      "abstract_zh": "程序性视频语言模型必须从相同的视觉证据中解决异构任务，包括动作识别、预测和程序预测。密集Transformer解码器跨任务共享相同的前馈网络，这可能会纠缠任务行为并使受控能力扩展变得困难。稀疏混合专家（MoE）解码器提供条件计算，但基于token的学习路由并不自然地与任务级程序目标对齐。我们提出MoTE（任务专家混合），一种解码器架构，将大语言模型的前馈网络转换为任务特定专家，同时保持多模态主干共享。每个样本遵循一条样本级任务路由，因此活跃的任务专家计算与存储的任务专家数量无关。我们将此设计实例化为VideoLLM-MoTE，并使用显式任务路由在五个COIN基准上对其进行评估。五个专家的模型每个样本激活~2B LLM参数，并取得比近期VideoLLM基线更高的平均top-1准确率。在相同专家拓扑下，它优于密集的全专家激活和学习的稀疏路由控制。这些结果表明，任务结构化路由为多任务视频语言学习提供了一种可解释且计算高效的解码器替代方案。"
+    },
+    {
+      "id": "arxiv_2608.24758",
+      "arxiv_id": "2608.24758",
+      "title": "RACE: Scalable Statistical Estimation of Functional Consistency in LLM Neurons",
+      "authors": [
+        "Runyu Wang",
+        "Bo Liu",
+        "Xiaxin Zhang",
+        "Yu Han",
+        "Jiawei Cao",
+        "Xiaoye Zhang",
+        "Zhe Zhang",
+        "Yifan Yang",
+        "Peng Ping"
+      ],
+      "abstract": "Discovering stable neuron behavior across entire domains remains a challenge in mechanistic interpretability. Existing methods often rely on instance-level point estimates or computationally expensive procedures, which either obscure population-level variability or limit scalable domain-wide analysis. We present RACE (Residual Alignment for Consistency Estimation), a forward-pass statistical framework that evaluates the domain-wide functional consistency of Transformer neurons. Perturbation experiments demonstrate that RACE achieves superior domain specificity compared to gradient-based point estimates. Meanwhile, token-distribution-level results verify the association between the selected neurons and the target domain. Furthermore, its computational overhead is two orders of magnitude lower than that of gradient-based methods.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T15:57:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24758",
+      "pdf_link": "https://arxiv.org/pdf/2608.24758",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Discovering stable neuron behavior across entire domains remains a challenge in mechanistic interpretability. Existing methods often rely on instance-level point estimates or computationally expensive procedures, which either obscure population-level variability or limit scalable domain-wide analysis. We present RACE (Residual Alignment for Consistency Estimation), a forward-pass statistical framework that evaluates the domain-wide functional consistency of Transformer neurons. Perturbation experiments demonstrate that RACE achieves superior domain specificity compared to gradient-based point estimates. Meanwhile, token-distribution-level results verify the association between the selected neurons and the target domain. Furthermore, its computational overhead is two orders of magnitude lower than that of gradient-based methods.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "可解释性",
+        "神经元分析"
+      ],
+      "relevance_reason_zh": "Transformer神经元的可解释性统计方法，不属于隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "RACE：LLM神经元功能一致性的可扩展统计估计",
+      "abstract_zh": "发现跨整个领域的稳定神经元行为仍然是机制可解释性中的一个挑战。现有方法通常依赖实例级点估计或计算成本高昂的方法，这要么掩盖了总体水平的变异性，要么限制了可扩展的全域分析。我们提出了RACE（Residual Alignment for Consistency Estimation，一致性估计的残差对齐），一个评估Transformer神经元全域功能一致性的前向传播统计框架。扰动实验表明，与基于梯度的点估计相比，RACE实现了更优的领域特异性。同时，词元分布层面的结果验证了所选神经元与目标领域之间的关联。此外，其计算开销比基于梯度的方法低两个数量级。"
+    },
+    {
+      "id": "arxiv_2608.24654",
+      "arxiv_id": "2608.24654",
+      "title": "Expectation, Backlash, Recovery, and Excitement: How Model Releases Shape Reddit Perceptions of Conversational AI Systems",
+      "authors": [
+        "Vahid Rahimzadeh",
+        "Yury Zhauniarovich",
+        "Savvas Zannettou"
+      ],
+      "abstract": "Conversational AI systems (CAISes) continuously change through model releases, feature updates, safety interventions, and access-policy shifts, yet user perceptions are often studied as static snapshots. We conduct a long-term, large-scale analysis of Reddit discussions to examine how users perceive CAIS model release interventions across providers. By combining sentiment classification and thematic concept analysis, we show that CAIS perceptions are dynamic and intervention-sensitive. Anthropic exhibits the clearest positive release profile through Claude Code and product-model fit, OpenAI shows backlash-and-recovery dynamics around GPT-5 and GPT-5.1, Grok-3 is shaped by provider identity and political discourse, and DeepSeek-R1 combines engineering praise with concerns about censorship, access, and reliability. These findings show that model releases are not merely technical updates, but user-facing interventions that reshape sentiment, expectations, and public discussion.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T15:00:44Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24654",
+      "pdf_link": "https://arxiv.org/pdf/2608.24654",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Conversational AI systems (CAISes) continuously change through model releases, feature updates, safety interventions, and access-policy shifts, yet user perceptions are often studied as static snapshots. We conduct a long-term, large-scale analysis of Reddit discussions to examine how users perceive CAIS model release interventions across providers. By combining sentiment classification and thematic concept analysis, we show that CAIS perceptions are dynamic and intervention-sensitive. Anthropic exhibits the clearest positive release profile through Claude Code and product-model fit, OpenAI shows backlash-and-recovery dynamics around GPT-5 and GPT-5.1, Grok-3 is shaped by provider identity and political discourse, and DeepSeek-R1 combines engineering praise with concerns about censorship, access, and reliability. These findings show that model releases are not merely technical updates, but user-facing interventions that reshape sentiment, expectations, and public discussion.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "用户感知",
+        "模型发布"
+      ],
+      "relevance_reason_zh": "分析模型发布对Reddit用户感知的影响，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "期待、反弹、恢复与兴奋：模型发布如何塑造Reddit上对对话式AI系统的感知",
+      "abstract_zh": "对话式AI系统（CAISes）通过模型发布、功能更新、安全干预和访问政策变化而持续演变，然而用户感知常常被作为静态快照来研究。我们对Reddit讨论进行了长期、大规模的分析，以考察用户如何跨提供商感知CAIS模型发布干预。通过结合情感分类和主题概念分析，我们表明CAIS感知是动态的且对干预敏感。Anthropic通过Claude Code和产品-模型匹配展现出最清晰的正面发布特征，OpenAI围绕GPT-5和GPT-5.1表现出反弹与恢复的动态，Grok-3受到提供商身份和政治话语的塑造，而DeepSeek-R1则将工程上的赞誉与对审查、访问和可靠性的担忧结合在一起。这些发现表明，模型发布不仅仅是技术更新，还是面向用户的干预措施，能够重塑情感、期望和公众讨论。"
+    },
+    {
+      "id": "arxiv_2608.24615",
+      "arxiv_id": "2608.24615",
+      "title": "Quantization Effects on Bangla Language Understanding in Large Language Models: A Systematic Evaluation",
+      "authors": [
+        "Ismail Hossain",
+        "Nafi Ullah Shafin",
+        "Mohammad Abdullah Al Mumin"
+      ],
+      "abstract": "Post-training quantization lowers the memory footprint of Large Language Models (LLMs) and speeds up inference, which is why it is now common for on-device deployment. Most of what we know about its effects, however, comes from English benchmarks. It is not clear whether the same holds for morphologically complex, low-resource languages such as Bangla, and this gap is what we address here. We evaluate three model families---Qwen-2.5-7B, LLaMA-3.1-8B, and GPT-OSS-20B---in full precision and in three quantized formats (GPTQ-Int8, GPTQ-Q8, GGUF-W8A16) across five Bangla natural language understanding benchmarks (Bangla MMLU, CommonsenseQA-BN, OpenBookQA-BN, PIQA-BN, and BoolQ-BN), using zero-shot evaluation through lm-evaluation-harness. To our knowledge this is the first controlled comparison of quantization formats on Bangla NLU. The three families do not respond the same way: GPT-OSS loses up to 57.35% accuracy on reasoning-heavy tasks under GGUF-W8A16, while Qwen and LLaMA hold steady under GPTQ, and in a few cases the quantized version edges out the full-precision one. BoolQ-BN, a comprehension task, stays stable across all three families regardless of format. Taken together, these results suggest quantization can work well for Bangla deployment, but the choice of architecture and quantization method matters more than the bit width alone. We discuss what this means for practitioners choosing a model to run on constrained hardware.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T14:36:09Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24615",
+      "pdf_link": "https://arxiv.org/pdf/2608.24615",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Post-training quantization lowers the memory footprint of Large Language Models (LLMs) and speeds up inference, which is why it is now common for on-device deployment. Most of what we know about its effects, however, comes from English benchmarks. It is not clear whether the same holds for morphologically complex, low-resource languages such as Bangla, and this gap is what we address here. We evaluate three model families---Qwen-2.5-7B, LLaMA-3.1-8B, and GPT-OSS-20B---in full precision and in three quantized formats (GPTQ-Int8, GPTQ-Q8, GGUF-W8A16) across five Bangla natural language understanding benchmarks (Bangla MMLU, CommonsenseQA-BN, OpenBookQA-BN, PIQA-BN, and BoolQ-BN), using zero-shot evaluation through lm-evaluation-harness. To our knowledge this is the first controlled comparison of quantization formats on Bangla NLU. The three families do not respond the same way: GPT-OSS loses up to 57.35% accuracy on reasoning-heavy tasks under GGUF-W8A16, while Qwen and LLaMA hold steady under GPTQ, and in a few cases the quantized version edges out the full-precision one. BoolQ-BN, a comprehension task, stays stable across all three families regardless of format. Taken together, these results suggest quantization can work well for Bangla deployment, but the choice of architecture and quantization method matters more than the bit width alone. We discuss what this means for practitioners choosing a model to run on constrained hardware.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "量化",
+        "多语言理解"
+      ],
+      "relevance_reason_zh": "评估量化对孟加拉语NLU的影响，属于模型部署优化，并非安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "量化对大语言模型孟加拉语理解的影响：一项系统性评估",
+      "abstract_zh": "训练后量化降低了大型语言模型（LLMs）的内存占用并加速了推理，因此目前常用于设备端部署。然而，我们对其影响的大部分认识来自英语基准测试。尚不清楚对于形态复杂、低资源语言（如孟加拉语）是否同样如此，而这一研究空白正是我们在本文中所要填补的。我们评估了三个模型家族——Qwen-2.5-7B、LLaMA-3.1-8B和GPT-OSS-20B——在全精度以及三种量化格式（GPTQ-Int8、GPTQ-Q8、GGUF-W8A16）下，跨越五个孟加拉语自然语言理解基准（Bangla MMLU、CommonsenseQA-BN、OpenBookQA-BN、PIQA-BN和BoolQ-BN），并采用通过lm-evaluation-harness进行的零样本评估。据我们所知，这是首次对孟加拉语NLU上量化格式进行的受控比较。这三个模型家族的反应并不相同：GPT-OSS在GGUF-W8A16下于推理密集型任务上损失高达57.35%的准确率，而Qwen和LLaMA在GPTQ下保持稳定，且在少数情况下量化版本略优于全精度版本。BoolQ-BN这一阅读理解任务在三个模型家族中无论采用何种格式均保持稳定。综合来看，这些结果表明量化可以很好地用于孟加拉语部署，但架构和量化方法的选择比单纯的位宽更为重要。我们讨论了这些发现对在受限硬件上选择运行模型的实际意义。"
+    },
+    {
+      "id": "arxiv_2608.24593",
+      "arxiv_id": "2608.24593",
+      "title": "Delayed Optimizer-State Transport Shapes Short-Horizon Training Decisions",
+      "authors": [
+        "Jinhui Guo"
+      ],
+      "abstract": "Adaptive optimizers retain gradient history in moment variables, allowing a local change in loss weighting to alter later updates. We examine whether this delayed transport is large enough to change prospective short-horizon decisions. On committed future-minibatch sequences, we differentiate eight-step AdamW trajectories through the complete model--optimizer state and select exposure-matched Math--Code loss schedules before independent evaluation. Across 12 unused 0.3M Transformer histories, full transport lowers token-disjoint loss relative to an optimizer-aware immediate derivative in 10/12 histories (mean benefit $4.71\\times10^{-4}$; exact one-sided sign test, $p=0.0193$). The two controllers act equally often but select different schedules in 60/96 windows. Crossed checkpoint--future-path tests attribute this reordering to the interaction between optimizer state and near-future data, while an independent Ising--CNN experiment shows that deleting moment-state transport destroys accurate response prediction. Full-transport scores also concentrate exact-rollout winners in larger candidate libraries, focusing finite-amplitude evaluation on a shortlist. On these committed short paths, optimizer memory and near-future data order are therefore actionable components of the training state, providing a mechanism-based criterion for when finite-horizon rather than one-step intervention is required.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T14:18:29Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24593",
+      "pdf_link": "https://arxiv.org/pdf/2608.24593",
+      "categories": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Adaptive optimizers retain gradient history in moment variables, allowing a local change in loss weighting to alter later updates. We examine whether this delayed transport is large enough to change prospective short-horizon decisions. On committed future-minibatch sequences, we differentiate eight-step AdamW trajectories through the complete model--optimizer state and select exposure-matched Math--Code loss schedules before independent evaluation. Across 12 unused 0.3M Transformer histories, full transport lowers token-disjoint loss relative to an optimizer-aware immediate derivative in 10/12 histories (mean benefit $4.71\\times10^{-4}$; exact one-sided sign test, $p=0.0193$). The two controllers act equally often but select different schedules in 60/96 windows. Crossed checkpoint--future-path tests attribute this reordering to the interaction between optimizer state and near-future data, while an independent Ising--CNN experiment shows that deleting moment-state transport destroys accurate response prediction. Full-transport scores also concentrate exact-rollout winners in larger candidate libraries, focusing finite-amplitude evaluation on a shortlist. On these committed short paths, optimizer memory and near-future data order are therefore actionable components of the training state, providing a mechanism-based criterion for when finite-horizon rather than one-step intervention is required.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "训练优化",
+        "优化器"
+      ],
+      "relevance_reason_zh": "研究优化器状态对训练决策的影响，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "延迟的优化器状态传输塑造短视界训练决策",
+      "abstract_zh": "自适应优化器在矩变量中保留梯度历史，使得损失加权中的局部变化能够改变后续更新。我们检验这种延迟传输是否足够大，以改变预期的短视界决策。在已确定的未来小批量序列上，我们通过完整的模型-优化器状态对八步AdamW轨迹进行微分，并在独立评估之前选择暴露匹配的Math-Code损失调度。在12个未使用的0.3M Transformer历史中，相较于优化器感知的即时导数，完整传输在10/12个历史中降低了令牌不相交损失（平均收益$4.71\\times10^{-4}$；精确单侧符号检验，$p=0.0193$）。两种控制器以相同频率起作用，但在60/96个窗口中选择了不同的调度。交叉检查点-未来路径测试将此重排序归因于优化器状态与近期未来数据之间的交互，而独立的Ising-CNN实验表明，删除矩状态传输会破坏准确的响应预测。完整传输得分还将精确展开赢家集中在更大的候选库中，将有限振幅评估聚焦于候选名单。因此，在这些已确定的短路径上，优化器记忆和近期未来数据顺序是训练状态的可操作组成部分，为何时需要有限视界而非单步干预提供了基于机制的判据。"
+    },
+    {
+      "id": "arxiv_2608.24561",
+      "arxiv_id": "2608.24561",
+      "title": "SeisMamba: Low-Latency Single-Station Seismic Magnitude Estimation for Spatially Distributed Earthquake Early Warning",
+      "authors": [
+        "Quenton Yeo",
+        "Zhaoge Bi",
+        "Linghan Huang",
+        "Luke Stephen Higgins",
+        "Flora Salim",
+        "Huaming Chen"
+      ],
+      "abstract": "Rapid earthquake magnitude estimation is central to earthquake early warning, yet many operational systems depend on dense regional seismic networks and region-specific calibration. This creates a spatial coverage barrier for high-risk areas with sparse sensing infrastructure. Single-station learning offers a lower-cost alternative, but existing models often face an accuracy--latency trade-off and may degrade under regional distribution shift. We present SeisMamba, a lightweight Mamba-based architecture for low-latency magnitude estimation from minimally processed three-component seismic waveforms recorded at a single station. SeisMamba combines hierarchical convolutional encoding, sparse selective state-space modelling, multi-scale feature fusion, and an auxiliary temporal prediction head to support efficient long-sequence waveform analysis. On the STEAD benchmark, SeisMamba achieves the best MSE, RMSE, and $R^2$ among tested baselines while requiring only 0.55 ms for a batch of 32 waveforms on an NVIDIA T4 GPU, making it about three times faster than transformer-based baselines. We further conduct a Chile--Taiwan regional hold-out experiment as a diagnostic test of cross-region deployment, where SeisMamba retains useful performance on geographically unseen seismic regions. These results suggest that selective state-space waveform modelling provides a promising accuracy--latency backbone for spatially distributed, low-cost earthquake early warning.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T13:44:42Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24561",
+      "pdf_link": "https://arxiv.org/pdf/2608.24561",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Rapid earthquake magnitude estimation is central to earthquake early warning, yet many operational systems depend on dense regional seismic networks and region-specific calibration. This creates a spatial coverage barrier for high-risk areas with sparse sensing infrastructure. Single-station learning offers a lower-cost alternative, but existing models often face an accuracy--latency trade-off and may degrade under regional distribution shift. We present SeisMamba, a lightweight Mamba-based architecture for low-latency magnitude estimation from minimally processed three-component seismic waveforms recorded at a single station. SeisMamba combines hierarchical convolutional encoding, sparse selective state-space modelling, multi-scale feature fusion, and an auxiliary temporal prediction head to support efficient long-sequence waveform analysis. On the STEAD benchmark, SeisMamba achieves the best MSE, RMSE, and $R^2$ among tested baselines while requiring only 0.55 ms for a batch of 32 waveforms on an NVIDIA T4 GPU, making it about three times faster than transformer-based baselines. We further conduct a Chile--Taiwan regional hold-out experiment as a diagnostic test of cross-region deployment, where SeisMamba retains useful performance on geographically unseen seismic regions. These results suggest that selective state-space waveform modelling provides a promising accuracy--latency backbone for spatially distributed, low-cost earthquake early warning.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "地震预警",
+        "状态空间模型"
+      ],
+      "relevance_reason_zh": "地震预警中的波形建模架构，不涉及隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "SeisMamba：面向空间分布式地震预警的低延迟单台震级估计",
+      "abstract_zh": "快速地震震级估计是地震预警的核心，但许多运行系统依赖于密集的区域地震台网和特定区域的标定。这给传感基础设施稀疏的高风险地区造成了空间覆盖障碍。单台学习提供了一种更低成本的替代方案，但现有模型常常面临精度与延迟之间的权衡，并可能在区域分布偏移下性能退化。我们提出了SeisMamba，一种轻量级、基于Mamba的架构，用于从单台记录的最少处理的三分量地震波形进行低延迟震级估计。SeisMamba结合了层次卷积编码、稀疏选择性状态空间建模、多尺度特征融合以及一个辅助时间预测头，以支持高效的长序列波形分析。在STEAD基准上，SeisMamba在测试的基线中取得了最佳的MSE、RMSE和$R^2$，同时在NVIDIA T4 GPU上处理一批32个波形仅需0.55毫秒，比基于Transformer的基线快约三倍。我们还进行了智利—台湾区域留出实验，作为跨区域部署的诊断测试，SeisMamba在地理上未见过的地震区域保持了有用的性能。这些结果表明，选择性状态空间波形建模为空间分布的低成本地震预警提供了一种有前景的精度—延迟骨干。"
+    },
+    {
+      "id": "arxiv_2608.24534",
+      "arxiv_id": "2608.24534",
+      "title": "Neurosymbolic Alignment for Physiologically-Safe Clinical Language Models",
+      "authors": [
+        "Abdulhady Abas Abdullah",
+        "Erik Cambria",
+        "Milena Zivkovic"
+      ],
+      "abstract": "Clinical LLMs can generate recommendations that are factually plausible yet physiologically unsafe. We investigate whether safety alignment can be improved by grounding preference optimization in structured physiological knowledge rather than text-only supervision. Methods: We propose Neurosymbolic Alignment, a training-time framework that couples a 7B clinical LLM with an HGNN-based Physiological World Model over an 847K-node biomedical knowledge graph. Candidate responses are scored using homeostatic constraints, multi-hop path plausibility, and drug-interaction penalties, and the resulting rankings drive iterative on-policy ORPO updates. Evaluation is performed on the Clinical Safety Benchmark (CSB), a 2,500-scenario benchmark for physiological constraint violations in generative clinical reasoning. Results: Relative to ORPO, the proposed method improves CSS from 69.5% to 90.8% (+21.3 pp), reduces physician-evaluated HR from 14.1% to 5.1% on the blinded subset, and improves DID from 72.8% to 91.6%. These gains are corroborated by an HGNN-independent Rule-Engine Safety Score (RSS: 86.4%, +21.2 pp over ORPO; r=0.97 concordance with CSS). The method also exceeds GPT-4 (5-shot) on all safety metrics despite a 10x parameter disadvantage, and outperforms an inference-time self-correction pipeline (SFT+SelfCorrect) by 11.4 pp CSS. Under synthetic EHR-style noise, 84.2% CSS is retained. Ablation analysis shows that HGNN scoring (-16.2 pp) and iterative training (-11.5 pp) are the dominant contributors. PhysioScore calibration against 200 clinician labels yielded ECE = 0.038 and kappa = 0.91. Conclusion: Training-time physiological grounding produces measurable and independently verifiable safety improvements in open-weight clinical LLMs under controlled evaluation. External validation on real clinical data is required to determine whether these gains transfer to deployment settings",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T13:20:03Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24534",
+      "pdf_link": "https://arxiv.org/pdf/2608.24534",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Clinical LLMs can generate recommendations that are factually plausible yet physiologically unsafe. We investigate whether safety alignment can be improved by grounding preference optimization in structured physiological knowledge rather than text-only supervision. Methods: We propose Neurosymbolic Alignment, a training-time framework that couples a 7B clinical LLM with an HGNN-based Physiological World Model over an 847K-node biomedical knowledge graph. Candidate responses are scored using homeostatic constraints, multi-hop path plausibility, and drug-interaction penalties, and the resulting rankings drive iterative on-policy ORPO updates. Evaluation is performed on the Clinical Safety Benchmark (CSB), a 2,500-scenario benchmark for physiological constraint violations in generative clinical reasoning. Results: Relative to ORPO, the proposed method improves CSS from 69.5% to 90.8% (+21.3 pp), reduces physician-evaluated HR from 14.1% to 5.1% on the blinded subset, and improves DID from 72.8% to 91.6%. These gains are corroborated by an HGNN-independent Rule-Engine Safety Score (RSS: 86.4%, +21.2 pp over ORPO; r=0.97 concordance with CSS). The method also exceeds GPT-4 (5-shot) on all safety metrics despite a 10x parameter disadvantage, and outperforms an inference-time self-correction pipeline (SFT+SelfCorrect) by 11.4 pp CSS. Under synthetic EHR-style noise, 84.2% CSS is retained. Ablation analysis shows that HGNN scoring (-16.2 pp) and iterative training (-11.5 pp) are the dominant contributors. PhysioScore calibration against 200 clinician labels yielded ECE = 0.038 and kappa = 0.91. Conclusion: Training-time physiological grounding produces measurable and independently verifiable safety improvements in open-weight clinical LLMs under controlled evaluation. External validation on real clinical data is required to determine whether these gains transfer to deployment settings",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大模型安全",
+        "安全对齐",
+        "临床语言模型"
+      ],
+      "relevance_reason_zh": "核心是临床LLM的安全对齐，属于大模型安全，但未涉及密码学保护下的安全推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\n本文提出一种训练时的“神经符号对齐”（Neurosymbolic Alignment）框架，将临床语言模型的偏好优化建立在结构化生理知识之上，显著提升其输出建议的生理安全性。\n\n## 问题与动机\n\n临床大语言模型（LLM）可能生成“事实表面上合理、但生理上不安全”的医疗建议。作者关注：能否用结构化生理知识替代纯文本监督，通过偏好优化（preference optimization）改进安全对齐效果。\n\n## 方法与技术路线\n\n- **研究对象与设定**：以一个 7B 参数的临床 LLM 为基础，引入一个基于 HGNN（异构图神经网络）的“生理世界模型”（Physiological World Model），模型背后的生物医学知识图谱包含 847K 个节点。\n- **输入与关键步骤**：候选临床响应会接受三类生理约束评分：稳态约束（homeostatic constraints）、多跳路径合理性（multi-hop path plausibility）、以及药物相互作用惩罚（drug-interaction penalties）。这些评分形成排序结果。\n- **训练过程**：上述排序结果用于驱动“在线策略 ORPO 更新”（on-policy ORPO；ORPO 为一种偏好优化算法，原文未给出全称），形成迭代式训练时对齐。文本没有披露具体更新步数、超参数或训练环境细节。\n- **评估设定**：使用临床安全基准（Clinical Safety Benchmark, CSB），含 2,500 个关于生成式临床推理中“生理约束违反”的场景。论文摘要未说明具体提示模板、候选响应数量或随机种子等设置。\n\n## 主要结果\n\n- 相比 ORPO 基线，提出的方法将 CSS 指标从 69.5% 提升到 90.8%（+21.3 个百分点）。\n- 在盲法子集上，医师评估的 HR（伤害率指标，原文未展开全称）从 14.1% 降至 5.1%。\n- DID 指标从 72.8% 提升到 91.6%。\n- 使用与 HGNN 无关的规则引擎安全评分（RSS）进行验证，RSS 为 86.4%（较 ORPO 高 21.2 个百分点），与 CSS 的一致性系数 r=0.97。\n- 该方法在所有安全指标上超过 GPT-4（5-shot），尽管模型参数量小 10 倍；并优于推理时自修正流水线（SFT+SelfCorrect），CSS 高 11.4 个百分点。\n- 在合成电子健康记录式噪声下，仍保留 84.2% 的 CSS。\n- 消融分析显示，HGNN 评分和迭代训练是主要贡献因素（分别造成 −16.2 个百分点与 −11.5 个百分点）。\n- 使用 200 名临床医生标注进行 PhysioScore 校准，得到 ECE（期望校准误差）为 0.038，kappa=0.91。\n\n## 为什么与兴趣相关\n\n这项工作直接面向大模型安全对齐中的高风险场景：医疗推荐不能仅追求文本流畅或表面合理，而需要可验证的生理安全约束。它表明训练时融入结构化知识比推理后修正更有效，且不依赖模型规模扩大。对于开放权重临床模型的安全部署，该方法提供了可量化的评估路径；但摘要也明确指出，仍需在真实临床数据上外部验证，以判断这些提升能否迁移到实际部署环境。",
+      "summary": "## 一句话结论\n\n本文提出一种训练时的“神经符号对齐”（Neurosymbolic Alignment）框架，将临床语言模型的偏好优化建立在结构化生理知识之上，显著提升其输出建议的生理安全性。\n\n## 问题与动机\n\n临床大语言模型（LLM）可能生成“事实表面上合理、但生理上不安全”的医疗建议。作者关注：能否用结构化生理知识替代纯文本监督，通过偏好优化（preference optimization）改进安全对齐效果。\n\n## 方法与技术路线\n\n- **研究对象与设定**：以一个 7B 参数的临床 LLM 为基础，引入一个基于 HGNN（异构图神经网络）的“生理世界模型”（Physiological World Model），模型背后的生物医学知识图谱包含 847K 个节点。\n- **输入与关键步骤**：候选临床响应会接受三类生理约束评分：稳态约束（homeostatic constraints）、多跳路径合理性（multi-hop path plausibility）、以及药物相互作用惩罚（drug-interaction penalties）。这些评分形成排序结果。\n- **训练过程**：上述排序结果用于驱动“在线策略 ORPO 更新”（on-policy ORPO；ORPO 为一种偏好优化算法，原文未给出全称），形成迭代式训练时对齐。文本没有披露具体更新步数、超参数或训练环境细节。\n- **评估设定**：使用临床安全基准（Clinical Safety Benchmark, CSB），含 2,500 个关于生成式临床推理中“生理约束违反”的场景。论文摘要未说明具体提示模板、候选响应数量或随机种子等设置。\n\n## 主要结果\n\n- 相比 ORPO 基线，提出的方法将 CSS 指标从 69.5% 提升到 90.8%（+21.3 个百分点）。\n- 在盲法子集上，医师评估的 HR（伤害率指标，原文未展开全称）从 14.1% 降至 5.1%。\n- DID 指标从 72.8% 提升到 91.6%。\n- 使用与 HGNN 无关的规则引擎安全评分（RSS）进行验证，RSS 为 86.4%（较 ORPO 高 21.2 个百分点），与 CSS 的一致性系数 r=0.97。\n- 该方法在所有安全指标上超过 GPT-4（5-shot），尽管模型参数量小 10 倍；并优于推理时自修正流水线（SFT+SelfCorrect），CSS 高 11.4 个百分点。\n- 在合成电子健康记录式噪声下，仍保留 84.2% 的 CSS。\n- 消融分析显示，HGNN 评分和迭代训练是主要贡献因素（分别造成 −16.2 个百分点与 −11.5 个百分点）。\n- 使用 200 名临床医生标注进行 PhysioScore 校准，得到 ECE（期望校准误差）为 0.038，kappa=0.91。\n\n## 为什么与兴趣相关\n\n这项工作直接面向大模型安全对齐中的高风险场景：医疗推荐不能仅追求文本流畅或表面合理，而需要可验证的生理安全约束。它表明训练时融入结构化知识比推理后修正更有效，且不依赖模型规模扩大。对于开放权重临床模型的安全部署，该方法提供了可量化的评估路径；但摘要也明确指出，仍需在真实临床数据上外部验证，以判断这些提升能否迁移到实际部署环境。"
+    },
+    {
+      "id": "arxiv_2608.24462",
+      "arxiv_id": "2608.24462",
+      "title": "Mahalanobis-Based Multi-Head Attention for Complex State Propagation",
+      "authors": [
+        "Xiaohe Li"
+      ],
+      "abstract": "In this paper, we propose \\textbf{Mahalanobis-Based Multi-Head Attention} (MHA-CSP), a novel attention mechanism that replaces the standard dot-product with a \\textbf{Mahalanobis distance-based RBF kernel}, which effectively computes attention in an infinite-dimensional feature space without increasing the parameter count. Crucially, the positive definiteness of the Mahalanobis distance enables a \\textbf{direct construction of Tree Attention}: attention scores are built directly from accumulated distances, with a LogSumExp correction that rectifies the raw distance by subtracting the log-sum of edge exponentials. Moreover, the multi-head Mahalanobis distance matrices are themselves repurposed to construct an \\textbf{attention meshing mechanism}, enabling cross-head kernel collaboration that simultaneously boosts accuracy and training efficiency. Extensive experiments demonstrate that MHA-CSP, with only 119K parameters and \\textbf{teacher forcing applied exclusively at the final hidden state}, consistently outperforms Transformer and GCN baselines trained from scratch under identical conditions on long-sequence state tracking tasks. While these baselines rely on dense attention or graph propagation, MHA-CSP achieves robust structured reasoning via synthetic distance rectification---powered by Mahalanobis-based attention---and efficient information bypass inherited from the CSP backbone. This result highlights the effectiveness of complex-valued state propagation with collaborative multi-head rectification in capturing symbolic structures, establishing a new efficiency-performance trade-off for structured reasoning.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T12:13:28Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24462",
+      "pdf_link": "https://arxiv.org/pdf/2608.24462",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "In this paper, we propose \\textbf{Mahalanobis-Based Multi-Head Attention} (MHA-CSP), a novel attention mechanism that replaces the standard dot-product with a \\textbf{Mahalanobis distance-based RBF kernel}, which effectively computes attention in an infinite-dimensional feature space without increasing the parameter count. Crucially, the positive definiteness of the Mahalanobis distance enables a \\textbf{direct construction of Tree Attention}: attention scores are built directly from accumulated distances, with a LogSumExp correction that rectifies the raw distance by subtracting the log-sum of edge exponentials. Moreover, the multi-head Mahalanobis distance matrices are themselves repurposed to construct an \\textbf{attention meshing mechanism}, enabling cross-head kernel collaboration that simultaneously boosts accuracy and training efficiency. Extensive experiments demonstrate that MHA-CSP, with only 119K parameters and \\textbf{teacher forcing applied exclusively at the final hidden state}, consistently outperforms Transformer and GCN baselines trained from scratch under identical conditions on long-sequence state tracking tasks. While these baselines rely on dense attention or graph propagation, MHA-CSP achieves robust structured reasoning via synthetic distance rectification---powered by Mahalanobis-based attention---and efficient information bypass inherited from the CSP backbone. This result highlights the effectiveness of complex-valued state propagation with collaborative multi-head rectification in capturing symbolic structures, establishing a new efficiency-performance trade-off for structured reasoning.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "注意力机制",
+        "Transformer架构"
+      ],
+      "relevance_reason_zh": "提出马氏距离多头注意力机制，属于普通Transformer架构改进，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "基于马氏距离的多头注意力用于复杂状态传播",
+      "abstract_zh": "在本文中，我们提出了基于马氏距离的多头注意力（MHA-CSP），一种新颖的注意力机制，它用基于马氏距离的RBF核替代标准点积，从而在不增加参数数量的情况下在高维特征空间中有效计算注意力。关键在于，马氏距离的正定性使得树形注意力能够直接构建：注意力得分直接从累积距离中构建，并通过LogSumExp校正，即通过减去边指数对数的和来修正原始距离。此外，多头马氏距离矩阵本身被重新利用来构建注意力网格化机制，从而实现跨头核协作，同时提升准确率和训练效率。大量实验表明，MHA-CSP仅拥有119K参数，并且仅在最终隐藏状态上应用教师强制，在长序列状态跟踪任务中，在相同条件下始终优于从头训练的Transformer和GCN基线。虽然这些基线依赖于稠密注意力或图传播，但MHA-CSP通过合成距离校正——由基于马氏距离的注意力驱动——以及继承自CSP骨干的高效信息旁路，实现了稳健的结构化推理。这一结果凸显了具有协作式多头校正的复值状态传播在捕获符号结构方面的有效性，为结构化推理建立了新的效率-性能权衡。"
+    },
+    {
+      "id": "arxiv_2608.24358",
+      "arxiv_id": "2608.24358",
+      "title": "The Handoff Tax: Continuing Non-Native Trajectories in LLM Agents",
+      "authors": [
+        "Roy Ganz",
+        "Mor Shpigel Nacson",
+        "Adi Kalyanpur",
+        "Ron Litman"
+      ],
+      "abstract": "Coding agents perform long-running tasks spanning dozens of model calls, tool uses, and code edits. As these runs unfold, users face a practical cost-quality trade-off: escalating to a stronger model when a cheaper one struggles, or downshifting once the hard reasoning is complete. Each switch requires the receiver to continue a non-native trajectory produced by another model. We study how this handoff affects quality and cost, and how varying the trajectory information inherited by the receiver changes the outcome. Using pairs of low-cost, low-capability (LC) and high-cost, high-capability (HC) models from the Claude and GPT families, we vary handoff direction, timing, and interface, comparing full-trajectory transfer, compaction, and trajectory removal while preserving the repository state. Across both model families, full-trajectory escalation recovers less than half of the LC-to-HC quality gap while incurring a substantial cost premium. We term this cost-quality penalty the handoff tax. By contrast, downshift offers a favorable cost-quality point. Interestingly, the preferred interface also reverses with direction: reducing LC-model trajectory information improves escalation quality, whereas removing the HC-model trajectory reduces downshift quality.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T10:14:30Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24358",
+      "pdf_link": "https://arxiv.org/pdf/2608.24358",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Coding agents perform long-running tasks spanning dozens of model calls, tool uses, and code edits. As these runs unfold, users face a practical cost-quality trade-off: escalating to a stronger model when a cheaper one struggles, or downshifting once the hard reasoning is complete. Each switch requires the receiver to continue a non-native trajectory produced by another model. We study how this handoff affects quality and cost, and how varying the trajectory information inherited by the receiver changes the outcome. Using pairs of low-cost, low-capability (LC) and high-cost, high-capability (HC) models from the Claude and GPT families, we vary handoff direction, timing, and interface, comparing full-trajectory transfer, compaction, and trajectory removal while preserving the repository state. Across both model families, full-trajectory escalation recovers less than half of the LC-to-HC quality gap while incurring a substantial cost premium. We term this cost-quality penalty the handoff tax. By contrast, downshift offers a favorable cost-quality point. Interestingly, the preferred interface also reverses with direction: reducing LC-model trajectory information improves escalation quality, whereas removing the HC-model trajectory reduces downshift quality.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM Agent",
+        "模型切换",
+        "成本质量权衡"
+      ],
+      "relevance_reason_zh": "研究LLM Agent切换模型的质量-成本权衡，不涉及隐私计算、安全推理或大模型安全核心。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "交接税：LLM智能体中延续非原生轨迹的代价",
+      "abstract_zh": "编码智能体执行长时间运行的任务，涉及数十次模型调用、工具使用和代码编辑。随着这些运行过程的展开，用户面临一个实际的成本-质量权衡：当较便宜的模型遇到困难时升级到更强的模型，或者在困难推理完成后降级。每次切换都要求接收方延续由另一个模型产生的非原生轨迹。我们研究了这种交接如何影响质量和成本，以及接收方继承的轨迹信息的变化如何改变结果。使用来自Claude和GPT系列的廉价低能力（LC）和高成本高能力（HC）模型配对，我们变化交接方向、时机和接口，比较全轨迹传递、压缩以及保留仓库状态的同时移除轨迹。在两个模型系列中，全轨迹升级仅恢复了不到LC到HC质量差距的一半，同时产生了可观的成本溢价。我们将这种成本-质量惩罚称为交接税。相比之下，降级提供了一个有利的成本-质量点。有趣的是，首选接口也随方向反转：减少LC模型轨迹信息可提高升级质量，而移除HC模型轨迹则降低降级质量。"
+    },
+    {
+      "id": "arxiv_2608.24319",
+      "arxiv_id": "2608.24319",
+      "title": "Can a Dynamic Internal Field Govern a Transformer's Cognition? Certifiability, not Superiority, in Homeostatic Compute Control",
+      "authors": [
+        "Francisco M. Arrabal-Campos",
+        "Ignacio Fernandez",
+        "Francisco G. Montoya",
+        "Alfredo Alcayde"
+      ],
+      "abstract": "An intelligent system does not merely reason: it governs its own reasoning - how much to compute, when to stop, which module to activate. Can that role be played by a dynamic internal field - a low-dimensional homeostatic state with explicit physics and certified stability - that modulates cognition without performing it? Ours is a field on the module graph governed by a family of PDEs on the graph Laplacian, advancing with an adaptive-depth reasoner. We certify the stability of the integrator of the whole family - an integrator certificate, not a closed-loop one. New, and proved here: a discrete Schur-Cohn criterion for Verlet with velocity coupling, necessary and sufficient per latent root, with no commutation hypothesis. The answer is threefold: substance no, structure only in part, certifiability yes. The type of the field's physics is irrelevant for accuracy: wave, diffusion, gated mixtures and a 2D Navier-Stokes substrate tie. A twenty-seed preregistered deconfounding campaign bounds the structural claim: at equalized caps the second-order effect is strong in one family (+0.087 [+0.042, +0.132], t=4.0) but is not detected in the other (+0.014 [-0.013, +0.040], n.s.), so part of the original contrast was capacity, not order; and a matched-interface GRU is indistinguishable in the first and nominally exceeds the field in the second (-0.035 [-0.067, -0.002]). What distinguishes the field is not capability but that its one-step operator admits an exact runtime stability check - a difference of kind, not of existence: learned recurrences carry certificates too, sufficient and conservative ones. A kill-gate with a positive control finds no evidence for the field as evidence accumulator (Delta AUC +0.0007 [-0.0065, +0.0079] vs a 0.03 threshold). A dynamic internal field is a viable, certifiable compute governor, but not an enhancer of cognition: it modulates, it does not think.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T09:47:03Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24319",
+      "pdf_link": "https://arxiv.org/pdf/2608.24319",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "An intelligent system does not merely reason: it governs its own reasoning - how much to compute, when to stop, which module to activate. Can that role be played by a dynamic internal field - a low-dimensional homeostatic state with explicit physics and certified stability - that modulates cognition without performing it? Ours is a field on the module graph governed by a family of PDEs on the graph Laplacian, advancing with an adaptive-depth reasoner. We certify the stability of the integrator of the whole family - an integrator certificate, not a closed-loop one. New, and proved here: a discrete Schur-Cohn criterion for Verlet with velocity coupling, necessary and sufficient per latent root, with no commutation hypothesis. The answer is threefold: substance no, structure only in part, certifiability yes. The type of the field's physics is irrelevant for accuracy: wave, diffusion, gated mixtures and a 2D Navier-Stokes substrate tie. A twenty-seed preregistered deconfounding campaign bounds the structural claim: at equalized caps the second-order effect is strong in one family (+0.087 [+0.042, +0.132], t=4.0) but is not detected in the other (+0.014 [-0.013, +0.040], n.s.), so part of the original contrast was capacity, not order; and a matched-interface GRU is indistinguishable in the first and nominally exceeds the field in the second (-0.035 [-0.067, -0.002]). What distinguishes the field is not capability but that its one-step operator admits an exact runtime stability check - a difference of kind, not of existence: learned recurrences carry certificates too, sufficient and conservative ones. A kill-gate with a positive control finds no evidence for the field as evidence accumulator (Delta AUC +0.0007 [-0.0065, +0.0079] vs a 0.03 threshold). A dynamic internal field is a viable, certifiable compute governor, but not an enhancer of cognition: it modulates, it does not think.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "动态计算控制",
+        "Transformer",
+        "稳定性认证"
+      ],
+      "relevance_reason_zh": "讨论Transformer认知的动态内部场与稳定性认证，属于模型控制机制，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "动态内场能否支配Transformer的认知？——同态计算控制中的可认证性而非优越性",
+      "abstract_zh": "一个智能系统不仅仅是推理：它还支配自身的推理——计算多少、何时停止、激活哪个模块。这个角色能否由一个动态内场——一个具有显式物理和已认证稳定性的低维同态状态——来扮演，它对认知进行调节而非执行认知？我们的场是模块图上的一个场，由图拉普拉斯上的一族偏微分方程支配，并随自适应深度推理器一同推进。我们认证了整族积分器的稳定性——这是一个积分器证书，而非闭环证书。本文新提出并证明了：一个用于带速度耦合的Verlet算法的离散Schur-Cohn判据，对每个潜在根既是必要的也是充分的，且无需交换性假设。答案是三重性的：实质上不能，结构上仅部分能，可认证性上能。场的物理类型对精度无关紧要：波动、扩散、门控混合以及二维Navier-Stokes基底均不产生差异。一项二十种子预注册去混杂战役限定了这一结构性主张：在均等化上限下，二阶效应在一个族中较强（+0.087 [+0.042, +0.132]，t=4.0），但在另一个族中未被检测到（+0.014 [-0.013, +0.040]，不显著），因此原始对比的一部分是容量而非阶次；并且一个匹配接口的GRU在第一个族中无法区分，在第二个族中名义上超过该场（-0.035 [-0.067, -0.002]）。区分该场的不是能力，而是其单步算子允许进行精确的运行时稳定性检查——这是一种种类上的差异，而非存在性上的差异：学习到的循环同样携带证书，这些证书是充分且保守的。一个带有阳性对照的kill-gate未发现该场作为证据累积器的证据（Delta AUC +0.0007 [-0.0065, +0.0079]，对比0.03阈值）。动态内场是一个可行的、可认证的计算调节器，但不是认知的增强器：它进行调节，它不思考。"
+    },
+    {
+      "id": "arxiv_2608.24314",
+      "arxiv_id": "2608.24314",
+      "title": "Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight",
+      "authors": [
+        "Anupam Purwar",
+        "Shashank Singh",
+        "Kritika Srivastava"
+      ],
+      "abstract": "Evaluating conversational voice agents at scale re- quires reliable assessment methods that capture both observ- able interaction quality and the contextual judgment typically provided by human evaluators. We investigate LLM-as-a-Judge evaluation by comparing human judgments with GPT-4.1 and GPT-5 on telecom and retail voice-agent conversations, across conversational quality and safety dimensions. The same interac- tions are scored under three evaluation configurations, p0, p1, and p2, to test whether automated judgments are sensitive to the evaluation setup and whether observed patterns generalize across configurations and judge models. Beyond aggregate agreement, we examine metric-level correlations, evaluator consistency, and systematic human-LLM disagreement to identify which conver- sational attributes can be judged reliably by automation and which remain sensitive to interpretation and context. Effective voice-agent evaluation is also shaped by pipeline-level factors such as speech generation, streaming, and error propagation across ASR, reasoning, and tool-calling stages, motivating our focus on comparing how human and LLM judges score the same interactions end to end. Our results show that LLM- based evaluation can serve as an effective component of large- scale voice-agent assessment, but that its reliability is metric- and configuration-dependent rather than uniform. This pro- vides an empirical framework for identifying which metrics suit automated evaluation and supports hybrid pipelines in which LLM judges handle scalable assessment while human evaluators remain engaged for metrics that demand contextual interpretation and higher-confidence judgment.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T09:44:36Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24314",
+      "pdf_link": "https://arxiv.org/pdf/2608.24314",
+      "categories": [
+        "cs.AI",
+        "cs.ET"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Evaluating conversational voice agents at scale re- quires reliable assessment methods that capture both observ- able interaction quality and the contextual judgment typically provided by human evaluators. We investigate LLM-as-a-Judge evaluation by comparing human judgments with GPT-4.1 and GPT-5 on telecom and retail voice-agent conversations, across conversational quality and safety dimensions. The same interac- tions are scored under three evaluation configurations, p0, p1, and p2, to test whether automated judgments are sensitive to the evaluation setup and whether observed patterns generalize across configurations and judge models. Beyond aggregate agreement, we examine metric-level correlations, evaluator consistency, and systematic human-LLM disagreement to identify which conver- sational attributes can be judged reliably by automation and which remain sensitive to interpretation and context. Effective voice-agent evaluation is also shaped by pipeline-level factors such as speech generation, streaming, and error propagation across ASR, reasoning, and tool-calling stages, motivating our focus on comparing how human and LLM judges score the same interactions end to end. Our results show that LLM- based evaluation can serve as an effective component of large- scale voice-agent assessment, but that its reliability is metric- and configuration-dependent rather than uniform. This pro- vides an empirical framework for identifying which metrics suit automated evaluation and supports hybrid pipelines in which LLM judges handle scalable assessment while human evaluators remain engaged for metrics that demand contextual interpretation and higher-confidence judgment.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM评估",
+        "语音Agent",
+        "可靠性"
+      ],
+      "relevance_reason_zh": "评测LLM作为语音Agent评判者的可靠性，属于一般安全评测，按规则不判相关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "对语音代理评估中的LLM评判者进行基准测试：可靠性、校准与人工监督",
+      "abstract_zh": "大规模评估对话式语音代理需要既捕捉可观察的交互质量、又体现通常由人类评估者提供的上下文判断的可靠评估方法。我们通过将人类判断与GPT-4.1和GPT-5对电信和零售语音代理对话的评判进行比较，从对话质量和安全维度研究LLM-as-a-Judge评估。相同的交互在三种评估配置p0、p1和p2下进行评分，以测试自动判断是否对评估设置敏感，以及观察到的模式是否能在不同配置和评判模型之间泛化。在总体一致性之外，我们检查指标层面的相关性、评估者一致性以及系统性的“人类-LLM分歧”，以识别哪些对话属性可以被自动化可靠判断，哪些仍然对解释和上下文敏感。有效的语音代理评估还受到流水线层面因素的影响，例如语音生成、流式处理，以及错误在ASR、推理和工具调用各阶段的传播，这促使我们专注于比较人类和LLM评判者如何端到端地对相同交互进行评分。我们的结果表明，基于LLM的评估可以作为大规模语音代理评估的有效组成部分，但其可靠性取决于指标和配置，而非统一的。这提供了一个经验框架，用于识别哪些指标适合自动化评估，并支持混合流水线：LLM评判者负责可扩展的评估，而人类评估者仍参与需要上下文解释和更高置信度判断的指标。"
+    },
+    {
+      "id": "arxiv_2608.24191",
+      "arxiv_id": "2608.24191",
+      "title": "'Ghaib in Translation' aka Unseen Harm: Measuring Cross-Script Safety Inconsistency with 'Missed-in-Urdu' Scores in LLM Hate Speech Detection",
+      "authors": [
+        "Fawzia Zehra",
+        " Kara-Isitt",
+        "Sonal Khosla",
+        "Stephen Swift"
+      ],
+      "abstract": "Urdu, the world's tenth most spoken language with 246 million speakers, remains almost entirely absent from mainstream LLM safety evaluation and nine years of WOAH proceedings. To investigate whether this absence has measurable consequences for content moderation reliability, five large language models, GPT-4o, Claude Sonnet 4.5, Gemini 2.5 Flash, Qwen-2.5, and Llama-3.1, were tested across six datasets spanning Nastaliq Urdu, Roman Urdu, English, and code-switched Urdu-English. Across the five Urdu-script datasets, label instability between original-script and English-translation classification ranged from 15.9% (Gemini 2.5 Flash) to 31.6% (Qwen-2.5), with a 'Missed-in-Urdu' rate, content flagged as harmful in English translation but passed as normal in the original script, ranging from 2.4% to 9.9% (median 4.3%). A complete enumeration of all 205 papers across nine ALW/WOAH editions via the ACL Anthology API confirms zero dedicated Urdu papers across the entire period. Results indicate that current LLMs provide uneven safety assurance across Urdu's script varieties, with smaller open-weight models showing substantially higher instability and missed-harm rates than frontier closed models.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T07:58:40Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24191",
+      "pdf_link": "https://arxiv.org/pdf/2608.24191",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Urdu, the world's tenth most spoken language with 246 million speakers, remains almost entirely absent from mainstream LLM safety evaluation and nine years of WOAH proceedings. To investigate whether this absence has measurable consequences for content moderation reliability, five large language models, GPT-4o, Claude Sonnet 4.5, Gemini 2.5 Flash, Qwen-2.5, and Llama-3.1, were tested across six datasets spanning Nastaliq Urdu, Roman Urdu, English, and code-switched Urdu-English. Across the five Urdu-script datasets, label instability between original-script and English-translation classification ranged from 15.9% (Gemini 2.5 Flash) to 31.6% (Qwen-2.5), with a 'Missed-in-Urdu' rate, content flagged as harmful in English translation but passed as normal in the original script, ranging from 2.4% to 9.9% (median 4.3%). A complete enumeration of all 205 papers across nine ALW/WOAH editions via the ACL Anthology API confirms zero dedicated Urdu papers across the entire period. Results indicate that current LLMs provide uneven safety assurance across Urdu's script varieties, with smaller open-weight models showing substantially higher instability and missed-harm rates than frontier closed models.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "内容安全",
+        "安全评测",
+        "跨语言不一致性"
+      ],
+      "relevance_reason_zh": "测量LLM跨脚本仇恨言论检测的安全不一致性，属于内容安全评测，不是隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "“翻译中的盖伊布”又名“隐形的伤害”：以“乌尔都语漏检”分数衡量大语言模型仇恨言论检测中的跨文字安全不一致性",
+      "abstract_zh": "乌尔都语是世界第十大语言，拥有2.46亿使用者，但在主流大语言模型安全评估和九年的WOAH会议论文集中几乎完全缺席。为调查这一缺席是否对内容审核可靠性产生可衡量的影响，研究人员在涵盖Nastaliq体乌尔都语、罗马体乌尔都语、英语及乌尔都语-英语语码转换的六个数据集中，对五个大语言模型（GPT-4o、Claude Sonnet 4.5、Gemini 2.5 Flash、Qwen-2.5和Llama-3.1）进行了测试。在五个乌尔都语文字数据集中，原始文字与英文翻译分类之间的标签不稳定性介于15.9%（Gemini 2.5 Flash）至31.6%（Qwen-2.5）之间，其中“乌尔都语漏检”率——即在英文翻译中被标记为有害但在原始文字中被视为正常的内容比例——介于2.4%至9.9%之间（中位数为4.3%）。通过对ACL Anthology API中九个ALW/WOAH版本全部205篇论文的完整枚举，确认整个期间内没有任何一篇专门针对乌尔都语的论文。结果表明，当前大语言模型在乌尔都语的不同文字变体间所提供的安全保证并不均衡，较小规模的开源模型相比前沿闭源模型表现出显著更高的不稳定性和漏检有害内容的比例。"
+    },
+    {
+      "id": "arxiv_2608.24188",
+      "arxiv_id": "2608.24188",
+      "title": "Paritok-4B: Intent-Conditioned Context Compression for Coding Agents",
+      "authors": [
+        "Jiayu Shi",
+        "Luzhuo Chen"
+      ],
+      "abstract": "Coding agents re-send large file reads and tool outputs to a frontier LLM every turn, and this context dominates their token bill. General-purpose prompt compressors are trained on prose and suit code poorly: they paraphrase identifiers and drop the exact spans an agent needs to edit. We present Paritok-4B, a 4B LoRA compressor for coding-agent trajectories built on two commitments. It is extractive: it selects spans rather than rewriting them, and 96.0% of the identifiers, paths, and numbers it emits already appear in its input, holding at 96.2% on held-out SWE-bench Lite output. It is intent-conditioned: told the agent's current task, it acts chiefly inside a retained segment, selecting which lines survive (retained lines are +0.067 more intent-relevant than removed ones, paired 95% CI [+0.056, +0.078]) rather than changing how much is retained. We distil a gpt-4.1-mini teacher over 67,074 real OpenHands trajectories into 40,606 validated examples and fine-tune Qwen3-4B. On all 300 SWE-bench Lite instances, Paritok-4B compresses agent context to 25.7% of its size, 2.0x harder than a gpt-4.1-mini compressor (50.2%) and 2.4x harder than gpt-5 (61.9%), while retaining 86.5% of uncompressed single-shot solve quality. Fed the cat -n line-numbered input real agents produce, it compresses slightly less (27.8%) and retains more (89.3%); there the paired test is informative, with 30 instances solved only uncompressed and 17 only compressed, an exact McNemar p=0.079, so at this sample size compressing context to roughly a quarter of its size does not significantly reduce the solve rate. The model is a 264 MB adapter that self-hosts on one 24 GB GPU with no per-token compressor fee, which at list prices decides the economics: gpt-5 as a compressor is net-negative, costing more than the downstream tokens it saves. Weights, data, and evaluation scripts are open (Apache 2.0).",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T07:53:30Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24188",
+      "pdf_link": "https://arxiv.org/pdf/2608.24188",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Coding agents re-send large file reads and tool outputs to a frontier LLM every turn, and this context dominates their token bill. General-purpose prompt compressors are trained on prose and suit code poorly: they paraphrase identifiers and drop the exact spans an agent needs to edit. We present Paritok-4B, a 4B LoRA compressor for coding-agent trajectories built on two commitments. It is extractive: it selects spans rather than rewriting them, and 96.0% of the identifiers, paths, and numbers it emits already appear in its input, holding at 96.2% on held-out SWE-bench Lite output. It is intent-conditioned: told the agent's current task, it acts chiefly inside a retained segment, selecting which lines survive (retained lines are +0.067 more intent-relevant than removed ones, paired 95% CI [+0.056, +0.078]) rather than changing how much is retained. We distil a gpt-4.1-mini teacher over 67,074 real OpenHands trajectories into 40,606 validated examples and fine-tune Qwen3-4B. On all 300 SWE-bench Lite instances, Paritok-4B compresses agent context to 25.7% of its size, 2.0x harder than a gpt-4.1-mini compressor (50.2%) and 2.4x harder than gpt-5 (61.9%), while retaining 86.5% of uncompressed single-shot solve quality. Fed the cat -n line-numbered input real agents produce, it compresses slightly less (27.8%) and retains more (89.3%); there the paired test is informative, with 30 instances solved only uncompressed and 17 only compressed, an exact McNemar p=0.079, so at this sample size compressing context to roughly a quarter of its size does not significantly reduce the solve rate. The model is a 264 MB adapter that self-hosts on one 24 GB GPU with no per-token compressor fee, which at list prices decides the economics: gpt-5 as a compressor is net-negative, costing more than the downstream tokens it saves. Weights, data, and evaluation scripts are open (Apache 2.0).",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "上下文压缩",
+        "编码Agent",
+        "LLM推理效率"
+      ],
+      "relevance_reason_zh": "面向编码Agent的上下文压缩方法，目的是降低token成本，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Paritok-4B：面向编码代理的意图条件上下文压缩",
+      "abstract_zh": "编码代理在每一轮都会将大型文件读取和工具输出重新发送给前沿LLM，而这部分上下文主导了它们的token账单。通用提示压缩器在散文上训练，不适合代码：它们会改写标识符，并丢弃代理需要编辑的确切跨度。我们提出Paritok-4B，一个4B LoRA压缩器，用于编码代理轨迹，建立在两个承诺之上。它是抽取式的：它选择跨度而不是重写它们，并且它输出的标识符、路径和数字中有96.0%已经出现在其输入中，在保留的SWE-bench Lite输出上保持96.2%。它是意图条件的：在被告知代理的当前任务后，它主要在保留的片段内操作，选择哪些行存活（保留的行比移除的行在意图相关性上高+0.067，配对95% CI [+0.056, +0.078]），而不是改变保留多少。我们在67,074条真实OpenHands轨迹上蒸馏了一个gpt-4.1-mini教师模型，得到40,606个经过验证的示例，并微调Qwen3-4B。在所有300个SWE-bench Lite实例上，Paritok-4B将代理上下文压缩到其大小的25.7%，压缩强度是gpt-4.1-mini压缩器（50.2%）的2.0倍，是gpt-5（61.9%）的2.4倍，同时保留了未压缩单次求解质量的86.5%。当输入真实代理产生的带cat -n行号的内容时，它压缩得略少（27.8%），保留得更多（89.3%）；在那里，配对检验具有信息量：30个实例仅未压缩时解决，17个仅压缩时解决，精确McNemar p=0.079，因此在这个样本量下，将上下文压缩到约四分之一大小并不会显著降低解决率。该模型是一个264 MB的适配器，可在单个24 GB GPU上自托管，无需按token支付压缩器费用，这在目录价格下决定了经济性：gpt-5作为压缩器是净负收益，其成本高于其节省的下游token。权重、数据和评估脚本均已开放（Apache 2.0）。"
+    },
+    {
+      "id": "arxiv_2608.24154",
+      "arxiv_id": "2608.24154",
+      "title": "Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection",
+      "authors": [
+        "Long Hoang Pham",
+        "Quoc Pham-Nam Ho",
+        "Huy-Hung Nguyen",
+        "Duong Nguyen-Ngoc Tran",
+        "Ngoc Doan-Minh Huynh",
+        "Cu Quoc Le",
+        "Hoang-Khang Nguyen",
+        "Hyung-Min Jeon",
+        "Chi Dai Tran",
+        "Son Hong Phan",
+        "Duong Khac Vu",
+        "Trinh Le Ba Khanh",
+        "Jae Wook Jeon"
+      ],
+      "abstract": "Real-world deployment of traffic surveillance systems is bottlenecked by geographic domain shift, in which models trained in one city underperform when applied to an unseen target city. Conventional domain adaptation relies on hyperparameter-sensitive architectures or direct profiling of target data. Both are fundamentally precluded in privacy-conscious ecosystems that require completely blind training and evaluation loops. In this setting, we explore the effects of pre-training and augmentation in addressing the domain shift problem. Specifically, we propose a new modular training pipeline for object detection structured around two core orthogonal pillars: (1) a multi-dataset pre-training strategy featuring a class-agnostic objectness distillation to decouple structural vehicle geometry from semantic taxonomies, and (2) a domain-resilient augmentation stream featuring a novel Grayworld transformation that forces global attention heads to strip volatile chromatic shortcuts in favor of robust shape priors. When evaluated with the real-time transformer-based detector RF-DETR, our framework bridges cross-city distribution gaps while using limited GPU memory (16GB). Our optimized variants, RF-DETR-HR and RF-DETR-Grayworld, deliver a substantial empirical gain of +24.29 over the baseline, achieving 1st place (47.53 mAP) on the AI City Challenge Track 6 leaderboard. Code and data are available at: \\href{https://github.com/SKKUAutoLab/aic26_cross_city}{SKKUAutoLab/aic26\\_cross\\_city}.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T07:16:42Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24154",
+      "pdf_link": "https://arxiv.org/pdf/2608.24154",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Real-world deployment of traffic surveillance systems is bottlenecked by geographic domain shift, in which models trained in one city underperform when applied to an unseen target city. Conventional domain adaptation relies on hyperparameter-sensitive architectures or direct profiling of target data. Both are fundamentally precluded in privacy-conscious ecosystems that require completely blind training and evaluation loops. In this setting, we explore the effects of pre-training and augmentation in addressing the domain shift problem. Specifically, we propose a new modular training pipeline for object detection structured around two core orthogonal pillars: (1) a multi-dataset pre-training strategy featuring a class-agnostic objectness distillation to decouple structural vehicle geometry from semantic taxonomies, and (2) a domain-resilient augmentation stream featuring a novel Grayworld transformation that forces global attention heads to strip volatile chromatic shortcuts in favor of robust shape priors. When evaluated with the real-time transformer-based detector RF-DETR, our framework bridges cross-city distribution gaps while using limited GPU memory (16GB). Our optimized variants, RF-DETR-HR and RF-DETR-Grayworld, deliver a substantial empirical gain of +24.29 over the baseline, achieving 1st place (47.53 mAP) on the AI City Challenge Track 6 leaderboard. Code and data are available at: \\href{https://github.com/SKKUAutoLab/aic26_cross_city}{SKKUAutoLab/aic26\\_cross\\_city}.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "目标检测",
+        "域适应",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "跨城市目标检测的预训练与增强方法，使用Transformer检测器，但不涉及隐私或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "重新思考零样本跨城市目标检测的预训练与数据增强",
+      "abstract_zh": "交通监控系统的实际部署受到地理域偏移的瓶颈制约，即在一个城市训练的模型应用于未见过的目标城市时性能下降。传统域适应方法依赖于超参数敏感的架构或对目标数据的直接剖析。在要求完全盲训练和评估循环的隐私敏感型生态系统中，这两种方法从根本上都是不可行的。在此设定下，我们探讨了预训练和数据增强在解决域偏移问题中的效果。具体而言，我们提出了一种新的模块化目标检测训练流程，围绕两个核心正交支柱构建：(1) 一种多数据集预训练策略，采用类别无关的物体性蒸馏，将结构性的车辆几何特征与语义分类体系解耦；(2) 一种域鲁棒增强流，采用新颖的Grayworld变换，迫使全局注意力头舍弃易变的颜色捷径，转而偏好稳健的形状先验。在与实时基于Transformer的检测器RF-DETR一同评估时，我们的框架在有限的GPU内存（16GB）条件下弥合了跨城市分布差距。我们优化的变体RF-DETR-HR和RF-DETR-Grayworld相对于基线取得了+24.29的显著经验增益，在AI City Challenge Track 6排行榜上以47.53 mAP获得第一名。代码和数据可在以下网址获取：\\href{https://github.com/SKKUAutoLab/aic26_cross_city}{SKKUAutoLab/aic26_cross_city}。"
+    },
+    {
+      "id": "arxiv_2608.24145",
+      "arxiv_id": "2608.24145",
+      "title": "TrustDABench: Benchmarking Reliability and Robustness of LLMs for Structured Data Analysis",
+      "authors": [
+        "Boshen Shi",
+        "Yize Liu",
+        "Chen Zhao",
+        "Ce Chi",
+        "Zhendong Wang",
+        "Xing Wang",
+        "Junlan Feng"
+      ],
+      "abstract": "LLMs are increasingly used to analyze spreadsheets, CSV files, and other structured data, but producing a correct-looking answer is not the same as producing a trustworthy analysis. A trustworthy result should be supported by a valid path from the user question to the relevant data evidence. This requirement creates two diagnostic questions: whether an LLM can refuse to answer or ask for clarification when such a path does not exist, and whether it can preserve the correct analysis when the same evidence is expressed in different table forms. We introduce TrustDABench, a benchmark that operationalizes these questions as reliability and robustness. Starting from the evidence-path view, we derive 19 perturbation operators and instantiate them through an Agentic-LLM-based generation framework. TrustDABench contains 2,340 human-verified perturbed instances, and we evaluate eight representative LLMs. The results show substantial headroom: the best reliability result is only 24.21% average MRS, achieved by GPT-5.5, while the best robustness result still has 9.10% average ASR, achieved by Claude-Sonnet-5. The failures are systematic: models rarely detect conflicting evidence, often continue along executable but unsupported analysis paths, and remain sensitive to perturbations that change observation boundaries or cross-table relations. These findings suggest that stronger evidence-boundary recognition and representation-invariant reasoning are still needed for reliable structured-data analysis.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T07:09:01Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24145",
+      "pdf_link": "https://arxiv.org/pdf/2608.24145",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "LLMs are increasingly used to analyze spreadsheets, CSV files, and other structured data, but producing a correct-looking answer is not the same as producing a trustworthy analysis. A trustworthy result should be supported by a valid path from the user question to the relevant data evidence. This requirement creates two diagnostic questions: whether an LLM can refuse to answer or ask for clarification when such a path does not exist, and whether it can preserve the correct analysis when the same evidence is expressed in different table forms. We introduce TrustDABench, a benchmark that operationalizes these questions as reliability and robustness. Starting from the evidence-path view, we derive 19 perturbation operators and instantiate them through an Agentic-LLM-based generation framework. TrustDABench contains 2,340 human-verified perturbed instances, and we evaluate eight representative LLMs. The results show substantial headroom: the best reliability result is only 24.21% average MRS, achieved by GPT-5.5, while the best robustness result still has 9.10% average ASR, achieved by Claude-Sonnet-5. The failures are systematic: models rarely detect conflicting evidence, often continue along executable but unsupported analysis paths, and remain sensitive to perturbations that change observation boundaries or cross-table relations. These findings suggest that stronger evidence-boundary recognition and representation-invariant reasoning are still needed for reliable structured-data analysis.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "基准测试",
+        "LLM可靠性",
+        "结构化数据分析"
+      ],
+      "relevance_reason_zh": "构建LLM结构化数据分析可靠性与鲁棒性基准，属于一般评测，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "TrustDABench：面向结构化数据分析的LLM可靠性与鲁棒性基准评测",
+      "abstract_zh": "LLM越来越多地被用于分析电子表格、CSV文件和其他结构化数据，但生成一个看起来正确的答案并不等同于生成一份可信的分析。可信的结果应当由一条从用户问题到相关数据证据的有效路径来支撑。这一要求引出了两个诊断性问题：当这样的路径不存在时，LLM能否拒绝回答或请求澄清；以及当相同的证据以不同的表格形式呈现时，LLM能否保持正确的分析。我们提出了TrustDABench，一个将这些操作化为可靠性和鲁棒性指标的基准测试。从证据路径视角出发，我们推导出19个扰动算子，并通过一个基于Agentic-LLM的生成框架对它们进行实例化。TrustDABench包含2,340个人工验证的扰动实例，我们评估了八个具有代表性的LLM。结果表明仍有很大的提升空间：最佳可靠性结果仅达到24.21%的平均MRS，由GPT-5.5取得；而最佳鲁棒性结果仍有9.10%的平均ASR，由Claude-Sonnet-5取得。这些失败是系统性的：模型很少能检测到相互冲突的证据，常常沿着可执行但缺乏支撑的分析路径继续推进，并且对改变观测边界或跨表关系的扰动仍然敏感。这些发现表明，要实现可靠的结构化数据分析，仍然需要更强的证据边界识别能力和表示不变的推理能力。"
+    },
+    {
+      "id": "arxiv_2608.24113",
+      "arxiv_id": "2608.24113",
+      "title": "Structured Frequency-Domain Evidence for LLM-Based Time-Series Anomaly Detection",
+      "authors": [
+        "Jungwook Seo",
+        "Sangwon Son",
+        "Minjeong Kim",
+        "Seungmin Han",
+        "Seojin Yoo",
+        "Sungyong Baik"
+      ],
+      "abstract": "Time-series anomalies can appear not only as pointwise deviations but also as changes in recurring temporal structure, such as shifted periodicity or localized oscillatory fluctuations. However, existing LLM-based time-series anomaly detection methods mainly expose time-domain evidence through indexed values, plots, or de-seasonalized representations, leaving spectral structure implicit. We propose an evidence-augmented zero-shot TSAD framework that preserves indexed de-seasonalized observations while adding compact frequency-domain evidence computed with the Fast Fourier Transform (FFT). The evidence is constructed at two resolutions: global frequency-domain evidence summarizes sequence-level periodic context, while local frequency-domain evidence captures time-localized spectral departures. Experiments on AnomLLM with InternVL2-LLaMA3-76B, Qwen2.5-VL-72B-Instruct, Gemini-2.5-Flash, and GPT-4o, together with evaluation on the TSB-AD-U subset, show that explicit frequency-domain evidence improves LLM-based TSAD baselines. These results suggest that frequency-domain evidence can complement indexed and de-seasonalized time-domain inputs for zero-shot LLM-based TSAD.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T06:22:28Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24113",
+      "pdf_link": "https://arxiv.org/pdf/2608.24113",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Time-series anomalies can appear not only as pointwise deviations but also as changes in recurring temporal structure, such as shifted periodicity or localized oscillatory fluctuations. However, existing LLM-based time-series anomaly detection methods mainly expose time-domain evidence through indexed values, plots, or de-seasonalized representations, leaving spectral structure implicit. We propose an evidence-augmented zero-shot TSAD framework that preserves indexed de-seasonalized observations while adding compact frequency-domain evidence computed with the Fast Fourier Transform (FFT). The evidence is constructed at two resolutions: global frequency-domain evidence summarizes sequence-level periodic context, while local frequency-domain evidence captures time-localized spectral departures. Experiments on AnomLLM with InternVL2-LLaMA3-76B, Qwen2.5-VL-72B-Instruct, Gemini-2.5-Flash, and GPT-4o, together with evaluation on the TSB-AD-U subset, show that explicit frequency-domain evidence improves LLM-based TSAD baselines. These results suggest that frequency-domain evidence can complement indexed and de-seasonalized time-domain inputs for zero-shot LLM-based TSAD.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "时间序列异常检测",
+        "LLM",
+        "频域分析"
+      ],
+      "relevance_reason_zh": "利用频域证据增强LLM时间序列异常检测，不涉及隐私计算、密码学协议或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "用于基于LLM的时间序列异常检测的结构化频域证据",
+      "abstract_zh": "时间序列异常不仅可能表现为逐点偏差，还可能表现为重复出现的时间结构的变化，例如偏移的周期性或局部振荡波动。然而，现有的基于LLM的时间序列异常检测方法主要通过索引值、图或去季节化表示来暴露时域证据，使得频谱结构隐含其中。我们提出了一种证据增强的零样本TSAD框架，该框架在保留索引化的去季节化观测值的同时，添加了使用快速傅里叶变换(FFT)计算的紧凑频域证据。该证据以两种分辨率构建：全局频域证据概括序列级周期性上下文，而局部频域证据捕获时间局部化的频谱偏离。在AnomLLM上使用InternVL2-LLaMA3-76B、Qwen2.5-VL-72B-Instruct、Gemini-2.5-Flash和GPT-4o进行的实验，以及在TSB-AD-U子集上的评估表明，显式频域证据改进了基于LLM的TSAD基线。这些结果表明，对于零样本基于LLM的TSAD，频域证据可以补充索引化和去季节化的时域输入。"
+    },
+    {
+      "id": "arxiv_2608.24079",
+      "arxiv_id": "2608.24079",
+      "title": "RetrievalFormer: A Dual-Encoder Transformer for Efficient Approximate Nearest Neighbor Retrieval and Cold-Item Recommendation",
+      "authors": [
+        "Theodore Rogers",
+        "Joe Standerfer",
+        "Dmitrii Timoshenko",
+        "Haoxue Li",
+        "Zuhaib Akhtar",
+        "Soyoung Yang"
+      ],
+      "abstract": "A shared search-and-recommendation index must score new items from features alone because search has no exploration slot. In a public log covering both surfaces over one catalog, $38.6\\%$ of held-out query-search impressions show an item never previously shown or visited. For user-cold engagements, the feature-based tower serves this demand without measurable loss against $99$ sampled negatives ($0.9595$ Recall@20 versus $0.9510$ warm). A lexical baseline reaches similar parity, while a full-catalog check remains statistically undecided. Dual-encoder retrieval therefore keeps the index \\emph{open} to new items, unlike an ID-softmax recommender that requires retraining. We price this openness on recommendation against six sequential baselines, each retrained and tuned through five rounds on corrected targets. A float32 timestamp bug had reordered leave-one-out targets for $19.7\\%$ of users. On MovieLens-1M, warm accuracy trails the strongest retrained baseline by $5.2\\%$ Recall@20 and $11.4\\%$ NDCG@20. On MIND, the gap narrows to $0.8$--$3.6\\%$ relative to the five strongest baselines, though the model ranks sixth of seven. Under strict zero-leakage cold-start evaluation, the content tower achieves $0.172 \\pm 0.006$ Recall@20, $1.4\\times$ the strongest retrained dedicated method ($0.124 \\pm 0.007$) and $3\\times$ a training-free floor, without cold-specific training. Exact full-softmax training raises Recall@20 by $54\\%$ on MIND-small and $6.9\\%$ on MovieLens-1M over sampled InfoNCE, but recomputes the full catalog each step and exhausts accelerator memory at $240$K items. Approximate nearest-neighbor search explains none of the remaining gap, serving cost does not regress against ID-softmax retrieval, and a history-window sweep explains half the post-recipe remainder. Exact-quality training at catalog scale remains the open problem.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T05:22:09Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.24079",
+      "pdf_link": "https://arxiv.org/pdf/2608.24079",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "A shared search-and-recommendation index must score new items from features alone because search has no exploration slot. In a public log covering both surfaces over one catalog, $38.6\\%$ of held-out query-search impressions show an item never previously shown or visited. For user-cold engagements, the feature-based tower serves this demand without measurable loss against $99$ sampled negatives ($0.9595$ Recall@20 versus $0.9510$ warm). A lexical baseline reaches similar parity, while a full-catalog check remains statistically undecided. Dual-encoder retrieval therefore keeps the index \\emph{open} to new items, unlike an ID-softmax recommender that requires retraining. We price this openness on recommendation against six sequential baselines, each retrained and tuned through five rounds on corrected targets. A float32 timestamp bug had reordered leave-one-out targets for $19.7\\%$ of users. On MovieLens-1M, warm accuracy trails the strongest retrained baseline by $5.2\\%$ Recall@20 and $11.4\\%$ NDCG@20. On MIND, the gap narrows to $0.8$--$3.6\\%$ relative to the five strongest baselines, though the model ranks sixth of seven. Under strict zero-leakage cold-start evaluation, the content tower achieves $0.172 \\pm 0.006$ Recall@20, $1.4\\times$ the strongest retrained dedicated method ($0.124 \\pm 0.007$) and $3\\times$ a training-free floor, without cold-specific training. Exact full-softmax training raises Recall@20 by $54\\%$ on MIND-small and $6.9\\%$ on MovieLens-1M over sampled InfoNCE, but recomputes the full catalog each step and exhausts accelerator memory at $240$K items. Approximate nearest-neighbor search explains none of the remaining gap, serving cost does not regress against ID-softmax retrieval, and a history-window sweep explains half the post-recipe remainder. Exact-quality training at catalog scale remains the open problem.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "推荐系统",
+        "近似最近邻检索",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "论文讨论推荐系统中的双编码器近似最近邻检索与冷启动问题，与隐私计算、安全推理或大模型安全无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "RetrievalFormer：一种用于高效近似最近邻检索和冷物品推荐的双编码器Transformer",
+      "abstract_zh": "共享的搜索和推荐索引必须仅根据特征对新物品进行评分，因为搜索没有探索位。在覆盖同一目录上两个界面的公开日志中，$38.6\\%$ 的留出查询-搜索曝光显示了一个先前从未展示或访问过的物品。对于用户冷交互，基于特征的塔在$99$个采样负样本下服务此需求，且没有可衡量的损失（$0.9595$ Recall@20 对比 $0.9510$ 热启动）。一个词法基线达到相似的水平，而全目录检查在统计上仍无定论。因此，双编码器检索使索引对新物品保持“开放”，不同于需要重新训练的ID-softmax推荐器。我们在推荐上衡量了这种开放性的代价，与六个序列基线对比，每个基线都在修正后的目标上经过五轮重新训练和调优。一个float32时间戳错误曾对$19.7\\%$的用户重新排序了留一法目标。在MovieLens-1M上，热启动准确率落后于最强重新训练基线$5.2\\%$ Recall@20和$11.4\\%$ NDCG@20。在MIND上，相对于五个最强基线，差距缩小到$0.8$--$3.6\\%$，尽管模型在七个中排名第六。在严格的零泄漏冷启动评估下，内容塔实现了$0.172 \\pm 0.006$ Recall@20，是最强重新训练专用方法（$0.124 \\pm 0.007$）的$1.4\\times$倍，是无训练下限的$3\\times$倍，且无需针对冷启动的专门训练。精确的全softmax训练在MIND-small上将Recall@20提高了$54\\%$，在MovieLens-1M上比采样InfoNCE提高了$6.9\\%$，但每一步都重新计算整个目录，并在$240$K物品时耗尽加速器内存。近似最近邻搜索无法解释剩余的差距，服务成本相对于ID-softmax检索并无退化，而历史窗口扫描解释了方案后剩余差距的一半。目录规模下的精确质量训练仍然是未解决的问题。"
+    },
+    {
+      "id": "arxiv_2608.23961",
+      "arxiv_id": "2608.23961",
+      "title": "Evaluating Language Models on Cross-Language Code Functional Equivalence",
+      "authors": [
+        "Hui Sun",
+        "Anderson Uchôa",
+        "Rohit Gheyi",
+        "Wesley K. G. Assunção"
+      ],
+      "abstract": "Background: Large Language Models (LLMs) have demonstrated strong performance across a variety of code-understanding tasks, leading many to believe that they can reason about program semantics. However, existing evaluations primarily focus on single-language settings or rely on synthetically generated code, raising concerns about whether current results reflect true semantic understanding. Aims: We investigate whether LLMs can accurately judge functional equivalence across different programming languages in human-written code, a setting that requires deeper reasoning beyond superficial similarity. Method: We introduce PolyHuman, a dataset of human-written programs in CPP, Java, and Python. Using this dataset, we evaluate intra- and inter-language equivalence detection across open-weight and proprietary LLMs, selecting GPT-o4-mini as a representative model to assess stability. We then manually analyze 81 cases of systematic disagreement in which models incorrectly judge functional equivalence, examining the code logic and the generated Chain-of-Thought reasoning. Finally, we categorize these failures and compare them across GPT-o4-mini, Claude-Opus-4.7, and Gemini-3-Flash to determine whether they reflect model-specific issues or broader limitations of state-of-the-art LLMs. Results: We identify a difficulty-dependent breakdown in equivalence judgment (harder problems make the model increasingly prone to misclassifying non-equivalent code as equivalent), a model-specific sensitivity to programming language for the best-performing model (particularly a more conservative behavior on Python), and a partial reliance on similarity-based cues. GPT-o4-mini also shows substantial run-to-run instability under identical settings, indicating inconsistent rather than absent capability. Conclusions: Current LLMs do not reliably capture functional equivalence within or across languages.",
+      "published": "2026-08-25",
+      "published_at": "2026-08-25T01:41:00Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.23961",
+      "pdf_link": "https://arxiv.org/pdf/2608.23961",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Background: Large Language Models (LLMs) have demonstrated strong performance across a variety of code-understanding tasks, leading many to believe that they can reason about program semantics. However, existing evaluations primarily focus on single-language settings or rely on synthetically generated code, raising concerns about whether current results reflect true semantic understanding. Aims: We investigate whether LLMs can accurately judge functional equivalence across different programming languages in human-written code, a setting that requires deeper reasoning beyond superficial similarity. Method: We introduce PolyHuman, a dataset of human-written programs in CPP, Java, and Python. Using this dataset, we evaluate intra- and inter-language equivalence detection across open-weight and proprietary LLMs, selecting GPT-o4-mini as a representative model to assess stability. We then manually analyze 81 cases of systematic disagreement in which models incorrectly judge functional equivalence, examining the code logic and the generated Chain-of-Thought reasoning. Finally, we categorize these failures and compare them across GPT-o4-mini, Claude-Opus-4.7, and Gemini-3-Flash to determine whether they reflect model-specific issues or broader limitations of state-of-the-art LLMs. Results: We identify a difficulty-dependent breakdown in equivalence judgment (harder problems make the model increasingly prone to misclassifying non-equivalent code as equivalent), a model-specific sensitivity to programming language for the best-performing model (particularly a more conservative behavior on Python), and a partial reliance on similarity-based cues. GPT-o4-mini also shows substantial run-to-run instability under identical settings, indicating inconsistent rather than absent capability. Conclusions: Current LLMs do not reliably capture functional equivalence within or across languages.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大语言模型评测",
+        "代码语义理解",
+        "跨语言等价性"
+      ],
+      "relevance_reason_zh": "论文评估大语言模型跨语言代码功能等价性判断能力，属于模型能力评测，不涉及密码学或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "跨语言代码功能等价性上的语言模型评估",
+      "abstract_zh": "背景：大型语言模型（LLMs）在各类代码理解任务中表现出色，导致许多人认为它们能够对程序语义进行推理。然而，现有评估主要集中于单语言设置或依赖合成生成的代码，这引发了对当前结果是否反映真正语义理解的担忧。目的：我们研究LLMs是否能在人类编写的代码中准确判断跨编程语言的功能等价性，这一设置需要超越表面相似性的更深层推理。方法：我们引入了PolyHuman，一个包含CPP、Java和Python人类编写程序的数据集。利用该数据集，我们评估了开放权重和专有LLMs在语言内和语言间等价性检测上的表现，并选择GPT-o4-mini作为代表性模型以评估稳定性。然后，我们人工分析了81个模型错误判断功能等价性的系统性分歧案例，检查代码逻辑和生成的Chain-of-Thought推理。最后，我们对这些失败进行分类，并在GPT-o4-mini、Claude-Opus-4.7和Gemini-3-Flash之间进行比较，以确定它们反映的是模型特有的问题，还是最先进LLMs的普遍局限。结果：我们发现等价性判断存在依赖难度的失效（问题越难，模型越倾向于将不等价代码误判为等价），最佳模型对编程语言存在模型特有的敏感性（尤其是在Python上表现更为保守），以及部分依赖基于相似性的线索。GPT-o4-mini在相同设置下还表现出显著的运行间不稳定性，表明其能力不一致而非缺失。结论：当前的LLMs无法可靠地捕捉语言内部或跨语言的功能等价性。"
+    },
+    {
       "id": "arxiv_2608.23484",
       "arxiv_id": "2608.23484",
       "title": "Multi-Modal Semantic Expansion with Constrained LLM Reranking for Conversational Music Recommendation",
@@ -437,11 +1366,11 @@
       "relevance_level": "unrelated",
       "summary_type": "metadata",
       "summary_status": "not_requested",
-      "translation_status": "failed",
+      "translation_status": "success",
       "summary_zh": "",
       "summary": "",
-      "title_zh": "",
-      "abstract_zh": ""
+      "title_zh": "用于实时托卡马克平衡预测的AI代理建模：神经架构基准测试及EXL-50U上的验证",
+      "abstract_zh": "快速可靠的等离子体平衡预测对于实时托卡马克运行和控制至关重要，但传统的Grad-Shafranov（GS）求解器往往因计算成本过高而难以满足实时部署需求。我们开发了一个AI代理框架，并在包含100,000个IID样本和10,000个OOD样本的数值GS数据库上，对五种架构（MLP、CNN、FNO、Transformer和KAN）进行了基准测试。在统一协议下，我们评估了准确性、推理效率、模型扩展性和鲁棒性。我们还通过将数值GS解、代理预测和标准Shape Editor参考值联系起来，在EXL-50U托卡马克上建立了设备级验证，以评估仿真到设备的一致性。代理模型相对于GS解实现了$10^{-3}$-$10^{-2}$的误差，而GS到设备的差异保持在$10^{-3}$。Transformer在IID准确性上表现最佳，而CNN在准确性、鲁棒性和速度之间提供了最佳平衡，达到了0.7毫秒的TensorRT延迟。在未见过的等离子体几何形状和参数范围内，CNN和FNO表现出最强的外推稳定性，相对$L_2$误差为4%-5%，而归纳偏置较弱的模型性能下降更为显著。扩展数据和模型容量可以改善插值，但不一定能改善外推，这揭示了容量与OOD泛化之间的权衡。总体而言，这项工作为基于AI的GS预测提供了一个系统性的、设备一致的基准，并为实时等离子体控制和聚变应用中选择可靠代理模型提供了实用指导。"
     },
     {
       "id": "arxiv_2608.23047",
@@ -7999,6 +8928,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-25T03:12:27.403303Z",
-  "total_count": 202
+  "last_updated": "2026-08-26T03:18:01.319610Z",
+  "total_count": 224
 }

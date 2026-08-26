@@ -4,8 +4,296 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Tue, 25 Aug 2026 03:23:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 03:26:45 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面向长视野智能体框架的递归经验-工作记忆演化</title>
+      <link>https://arxiv.org/abs/2608.24876</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24876</guid>
+      <description>英文原题：Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses
+
+递归自我改进（RSI）在长视野任务中仍然困难，因为不断增长的历史记录掩盖了任务状态并导致技能调用失配。我们提出了Recuris，一种用于长视野智能体框架的递归经验-工作记忆架构，其中工作记忆跟踪任务进度并从经验记忆中选择技能，将技能使用建立在当前需求而非完整历史之上。这种耦合还将执行转化为结构化证据，使失败能够定位到特定的记忆组件。在各种任务中，一个固定的元智能体将该证据转化为对技能记忆的局部化、经验证门控的更新，这些更新重塑执行并产生新的证据，形成一个有界的递归记忆演化循环。在四个长视野基准和十个模型上，Recuris在37个已完成的模型-基准对中提升了35个的任务成功率，将前沿模型推向最先进水平的任务成功率：在tau-bench上，它为GPT-5.6 Sol增加了+17.8个百分点，为Claude Opus 5增加了+15.6个百分点，使Opus 5达到87.9%，并在SkillFlow上为Qwen3.6-27B/35B增加了+16.6/+13.5个百分点。随着交互视野的增长，优势进一步扩大，在最长任务上达到+32.2个百分点，常见的长期失败下降高达80%。这些结果将递归演化的记忆定位为RSI的可扩展基础，使智能体能够不断将积累的经验转化为日益有效的长视野行为。代码：https://github.com/Gen-Verse/Recuris</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Prompt Structure Redistributes, Not Reduces: An Empirical Analysis of Security-Weaknesses in LLM-Generated Python Code</title>
+      <link>https://arxiv.org/abs/2608.24857</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24857</guid>
+      <description>## 一句话结论
+结构化提示能提升 LLM（大语言模型）生成 Python 代码的“生成合规性”，但并不能可靠减少安全弱点；它主要是把风险从高危“重新分配”为低危，因此不能替代稳健的安全控制。
+
+## 问题与动机
+LLM 越来越多地根据自然语言提示生成代码，提示工程（prompt engineering）因此成为影响生成软件安全性的关键机制。结构化和安全导向的提示常被用来鼓励生成更安全的代码，但它们的效果并不仅仅体现在检测到的弱点“有或无”上，还可能改变弱点的严重程度、类型分布以及模型的行为方式。摘要因此引入更细粒度的实证分析。
+
+## 方法与技术路线
+- **研究对象与设定**：摘要使用 424 个安全敏感的 Python 编程任务，在 GPT-4o 和 LLaMA 3.1-8B 两个模型上，采用五种提示变体（prompt variants）生成解决方案。这些变体逐步加入结构性指导和安全指导；摘要未说明各变体的具体措辞、任务来源或筛选标准。
+- **评估流程**：对生成代码使用 Bandit（Python 代码弱点检测工具）和 CodeQL（代码分析工具）进行扫描，并沿两条轴评估：一是生成合规性（generation compliance），即模型是否输出有效代码、是否拒绝生成；二是安全弱点状况，包括弱点</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>StarHarness：面向企业环境的分层搜索harness演化</title>
+      <link>https://arxiv.org/abs/2608.24804</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24804</guid>
+      <description>英文原题：StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments
+
+我们提出了StarHarness，一个在保持模型权重不变的情况下演化特定于环境的智能体harness的框架。演化出的harness可包括提示和任务构建、工具接口、技能、基于MCP的提供者、子代理结构和代理循环配置。StarHarness通过根据基线失败行为对任务进行分层来构建紧凑的演化池，将提议者可见的搜索任务与提议者隐藏的选择任务分开，并保留留出任务以评估泛化能力。在ITBench SRE、EnterpriseOps-Gym ITSM和AutomationBench Finance上，harness演化在每个环境接受4-12次更改后，将全基准性能比默认harness提高了20-35个百分点。这些增益在从演化中排除的任务上持续存在，并在GPT和Qwen模型家族之间无需重新演化即可迁移。轨迹分析将这些改进归因于接口修复、环境惯例和压缩搜索的操作知识，在若干设置中减少了误报诊断并缩短了轨迹。因此，StarHarness提供了一种实用的方法，以减少工具丰富的企业任务中持续存在的模型-环境不匹配。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing</title>
+      <link>https://arxiv.org/abs/2608.24777</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24777</guid>
+      <description>### 一句话结论
+StepGuard 是一个面向 LLM 代理工具调用的步骤级防护模型，能在工具执行前检查动作，根据摘要报告，可在仅小幅降低效用的前提下显著降低攻击成功率。
+
+### 问题与动机
+LLM-based agents（基于大语言模型的智能体）通过 tool invocation（工具调用）与外部环境交互，但引入了文件修改、信息泄露、未经授权操作等安全风险。现有 guardrails（安全护栏）通常只评估 completed trajectories（已完成轨迹），对 pre-execution（执行前）的 step-level（步骤级）动作监控不足。StepGuard 正是为弥补这一缺口而设计。
+
+### 方法与技术路线
+- **研究对象与设定**：LLM 代理的逐步工具调用动作。模型需要同时支持两类任务：审计已完成的 agent trajectories（代理轨迹），以及检查即将执行的 tool actions（工具动作）是否安全。
+- **训练数据生成**：作者引入 StepGen，一个 automatic data engine（自动数据引擎），生成 safe/unsafe（安全/不安全）轨迹对。这些轨迹对具有相同的上下文，只在“risky step”（风险步骤）处采取不同动作，从而构造可对比的训练信号，帮助模型学习在关键步骤上做安全判别。
+- **学习平衡**：为避免模型偏向“过度防御”（over-defense）或“防御不足”（under-defense），作者提出 Balance-GRPO。该方法基于安全与不安全动作各自被观察到的准确率，动态调整两类样本的学习权重，使训练在防护效果和正常可用性之间保持平衡。
+- **输出与衔接**：StepGuard 对当前步骤动作输出安全性判断，可用于执行前拦截或事后审计；StepGen 和 Balance-GRPO 分别是数据准备与训练优化模块，服务于 StepGuard 的训练。摘要未说明具体的数据集规模、训练参数或护栏部署细节。
+
+### 主要结果
+摘要报告，StepGuard 在 open-weight guard models（开放权重护栏模型）中达到最高平均准确率，性能与 GPT-5.4 相当。在用于保护 AgentDojo 和 AgentDyn 上的代理时，与 no-guard（无护栏）设定相比，平均 attack success rate（攻击成功率）降低 77.3%，同时平均 utility（效用）仅下降 2.8 个百分点。
+
+### 为什么与兴趣相关
+该工作属于大模型安全方向，关注 LLM 代理工具调用的实时防护，而非安全推理协议。步骤级护栏为在动作执行前阻断风险提供了一种可行思路，与代理系统部署中的安全监控需求直接相关。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>MoTE：用于多任务视频理解的任务专家混合</title>
+      <link>https://arxiv.org/abs/2608.24763</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24763</guid>
+      <description>英文原题：MoTE: Mixture of Task Experts for Multi-Task Video Understanding
+
+程序性视频语言模型必须从相同的视觉证据中解决异构任务，包括动作识别、预测和程序预测。密集Transformer解码器跨任务共享相同的前馈网络，这可能会纠缠任务行为并使受控能力扩展变得困难。稀疏混合专家（MoE）解码器提供条件计算，但基于token的学习路由并不自然地与任务级程序目标对齐。我们提出MoTE（任务专家混合），一种解码器架构，将大语言模型的前馈网络转换为任务特定专家，同时保持多模态主干共享。每个样本遵循一条样本级任务路由，因此活跃的任务专家计算与存储的任务专家数量无关。我们将此设计实例化为VideoLLM-MoTE，并使用显式任务路由在五个COIN基准上对其进行评估。五个专家的模型每个样本激活~2B LLM参数，并取得比近期VideoLLM基线更高的平均top-1准确率。在相同专家拓扑下，它优于密集的全专家激活和学习的稀疏路由控制。这些结果表明，任务结构化路由为多任务视频语言学习提供了一种可解释且计算高效的解码器替代方案。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>RACE：LLM神经元功能一致性的可扩展统计估计</title>
+      <link>https://arxiv.org/abs/2608.24758</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24758</guid>
+      <description>英文原题：RACE: Scalable Statistical Estimation of Functional Consistency in LLM Neurons
+
+发现跨整个领域的稳定神经元行为仍然是机制可解释性中的一个挑战。现有方法通常依赖实例级点估计或计算成本高昂的方法，这要么掩盖了总体水平的变异性，要么限制了可扩展的全域分析。我们提出了RACE（Residual Alignment for Consistency Estimation，一致性估计的残差对齐），一个评估Transformer神经元全域功能一致性的前向传播统计框架。扰动实验表明，与基于梯度的点估计相比，RACE实现了更优的领域特异性。同时，词元分布层面的结果验证了所选神经元与目标领域之间的关联。此外，其计算开销比基于梯度的方法低两个数量级。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>期待、反弹、恢复与兴奋：模型发布如何塑造Reddit上对对话式AI系统的感知</title>
+      <link>https://arxiv.org/abs/2608.24654</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24654</guid>
+      <description>英文原题：Expectation, Backlash, Recovery, and Excitement: How Model Releases Shape Reddit Perceptions of Conversational AI Systems
+
+对话式AI系统（CAISes）通过模型发布、功能更新、安全干预和访问政策变化而持续演变，然而用户感知常常被作为静态快照来研究。我们对Reddit讨论进行了长期、大规模的分析，以考察用户如何跨提供商感知CAIS模型发布干预。通过结合情感分类和主题概念分析，我们表明CAIS感知是动态的且对干预敏感。Anthropic通过Claude Code和产品-模型匹配展现出最清晰的正面发布特征，OpenAI围绕GPT-5和GPT-5.1表现出反弹与恢复的动态，Grok-3受到提供商身份和政治话语的塑造，而DeepSeek-R1则将工程上的赞誉与对审查、访问和可靠性的担忧结合在一起。这些发现表明，模型发布不仅仅是技术更新，还是面向用户的干预措施，能够重塑情感、期望和公众讨论。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>量化对大语言模型孟加拉语理解的影响：一项系统性评估</title>
+      <link>https://arxiv.org/abs/2608.24615</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24615</guid>
+      <description>英文原题：Quantization Effects on Bangla Language Understanding in Large Language Models: A Systematic Evaluation
+
+训练后量化降低了大型语言模型（LLMs）的内存占用并加速了推理，因此目前常用于设备端部署。然而，我们对其影响的大部分认识来自英语基准测试。尚不清楚对于形态复杂、低资源语言（如孟加拉语）是否同样如此，而这一研究空白正是我们在本文中所要填补的。我们评估了三个模型家族——Qwen-2.5-7B、LLaMA-3.1-8B和GPT-OSS-20B——在全精度以及三种量化格式（GPTQ-Int8、GPTQ-Q8、GGUF-W8A16）下，跨越五个孟加拉语自然语言理解基准（Bangla MMLU、CommonsenseQA-BN、OpenBookQA-BN、PIQA-BN和BoolQ-BN），并采用通过lm-evaluation-harness进行的零样本评估。据我们所知，这是首次对孟加拉语NLU上量化格式进行的受控比较。这三个模型家族的反应并不相同：GPT-OSS在GGUF-W8A16下于推理密集型任务上损失高达57.35%的准确率，而Qwen和LLaMA在GPTQ下保持稳定，且在少数情况下量化版本略优于全精度版本。BoolQ-BN这一阅读理解任务在三个模型家族中无论采用何种格式均保持稳定。综合来看，这些结果表明量化可以很好地用于孟加拉语部署，但架构和量化方法的选择比单纯的位宽更为重要。我们讨论了这些发现对在受限硬件上选择运行模型的实际意义。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>延迟的优化器状态传输塑造短视界训练决策</title>
+      <link>https://arxiv.org/abs/2608.24593</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24593</guid>
+      <description>英文原题：Delayed Optimizer-State Transport Shapes Short-Horizon Training Decisions
+
+自适应优化器在矩变量中保留梯度历史，使得损失加权中的局部变化能够改变后续更新。我们检验这种延迟传输是否足够大，以改变预期的短视界决策。在已确定的未来小批量序列上，我们通过完整的模型-优化器状态对八步AdamW轨迹进行微分，并在独立评估之前选择暴露匹配的Math-Code损失调度。在12个未使用的0.3M Transformer历史中，相较于优化器感知的即时导数，完整传输在10/12个历史中降低了令牌不相交损失（平均收益$4.71\times10^{-4}$；精确单侧符号检验，$p=0.0193$）。两种控制器以相同频率起作用，但在60/96个窗口中选择了不同的调度。交叉检查点-未来路径测试将此重排序归因于优化器状态与近期未来数据之间的交互，而独立的Ising-CNN实验表明，删除矩状态传输会破坏准确的响应预测。完整传输得分还将精确展开赢家集中在更大的候选库中，将有限振幅评估聚焦于候选名单。因此，在这些已确定的短路径上，优化器记忆和近期未来数据顺序是训练状态的可操作组成部分，为何时需要有限视界而非单步干预提供了基于机制的判据。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>SeisMamba：面向空间分布式地震预警的低延迟单台震级估计</title>
+      <link>https://arxiv.org/abs/2608.24561</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24561</guid>
+      <description>英文原题：SeisMamba: Low-Latency Single-Station Seismic Magnitude Estimation for Spatially Distributed Earthquake Early Warning
+
+快速地震震级估计是地震预警的核心，但许多运行系统依赖于密集的区域地震台网和特定区域的标定。这给传感基础设施稀疏的高风险地区造成了空间覆盖障碍。单台学习提供了一种更低成本的替代方案，但现有模型常常面临精度与延迟之间的权衡，并可能在区域分布偏移下性能退化。我们提出了SeisMamba，一种轻量级、基于Mamba的架构，用于从单台记录的最少处理的三分量地震波形进行低延迟震级估计。SeisMamba结合了层次卷积编码、稀疏选择性状态空间建模、多尺度特征融合以及一个辅助时间预测头，以支持高效的长序列波形分析。在STEAD基准上，SeisMamba在测试的基线中取得了最佳的MSE、RMSE和$R^2$，同时在NVIDIA T4 GPU上处理一批32个波形仅需0.55毫秒，比基于Transformer的基线快约三倍。我们还进行了智利—台湾区域留出实验，作为跨区域部署的诊断测试，SeisMamba在地理上未见过的地震区域保持了有用的性能。这些结果表明，选择性状态空间波形建模为空间分布的低成本地震预警提供了一种有前景的精度—延迟骨干。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Neurosymbolic Alignment for Physiologically-Safe Clinical Language Models</title>
+      <link>https://arxiv.org/abs/2608.24534</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24534</guid>
+      <description>## 一句话结论
+
+本文提出一种训练时的“神经符号对齐”（Neurosymbolic Alignment）框架，将临床语言模型的偏好优化建立在结构化生理知识之上，显著提升其输出建议的生理安全性。
+
+## 问题与动机
+
+临床大语言模型（LLM）可能生成“事实表面上合理、但生理上不安全”的医疗建议。作者关注：能否用结构化生理知识替代纯文本监督，通过偏好优化（preference optimization）改进安全对齐效果。
+
+## 方法与技术路线
+
+- **研究对象与设定**：以一个 7B 参数的临床 LLM 为基础，引入一个基于 HGNN（异构图神经网络）的“生理世界模型”（Physiological World Model），模型背后的生物医学知识图谱包含 847K 个节点。
+- **输入与关键步骤**：候选临床响应会接受三类生理约束评分：稳态约束（homeostatic constraints）、多跳路径合理性（multi-hop path plausibility）、以及药物相互作用惩罚（drug-interaction penalties）。这些评分形成排序结果。
+- **训练过程**：上述排序结果用于驱动“在线策略 ORPO 更新”（on-policy ORPO；ORPO 为一种偏好优化算法，原文未给出全称），形成迭代式训练时对齐。文本没有披露具体更新步数、超参数或训练环境细节。
+- **评估设定**：使用临床安全基准（Clinical Safety Benchmark, CSB），含 2,500 个关于生成式临床推理中“生理约束违反”的场景。论文摘要未说明具体提示模板、候选响应数量或随机种子等设置。
+
+## 主要结果
+
+- 相比 ORPO 基线，提出的方法将 CSS 指标从 69.5% 提升到 90.8%（+21.3 个百分点）。
+- 在盲法子集上，医师评估的 HR（伤害率指标，原文未展开全称）从 14.1% 降至 5.1%。
+- DID 指标从 72.8% 提升到 91.6%。
+- 使用与 HGNN 无关的规则引擎安全评分（RSS）进行验证，RSS 为 86.4%（较 ORPO 高 21.2 个百分点），与 CSS 的一致性系数 r=0.97。
+- 该方法在所有安全指标上超过 GPT-4（5-shot），尽管模型参数量小 10 倍；并优于推理时自修正流水线（SFT+SelfCorrect），CSS 高 11.4 个百分点。
+- 在合成电子健康记录式噪声下，仍保留 84.2% 的 CSS。
+- 消融分析显示，HGNN 评分和迭代训练是主要贡献因素（分别造成 −16.2 个百分点与 −11.5 个百分点）。
+- 使用 200 名临床医生标注进行 PhysioScore 校准，得到 ECE（期望校准误差）为 0.038，kappa=0.91。
+
+## 为什么与兴趣相关
+
+这项工作直接面向大模型安全对齐中的高风险场景：医疗推荐不能仅追求文本流畅或表面合理，而需要可验证的生理安全约束。它表明训练时融入结构化知识比推理后修正更有效，且不依赖模型规模扩大。对于开放权重临床模型的安全部署，该方法提供了可量化的评估路径；但摘要也明确指出，仍需在真实临床数据上外部验证，以判断这些提升能否迁移到实际部署环境。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>基于马氏距离的多头注意力用于复杂状态传播</title>
+      <link>https://arxiv.org/abs/2608.24462</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24462</guid>
+      <description>英文原题：Mahalanobis-Based Multi-Head Attention for Complex State Propagation
+
+在本文中，我们提出了基于马氏距离的多头注意力（MHA-CSP），一种新颖的注意力机制，它用基于马氏距离的RBF核替代标准点积，从而在不增加参数数量的情况下在高维特征空间中有效计算注意力。关键在于，马氏距离的正定性使得树形注意力能够直接构建：注意力得分直接从累积距离中构建，并通过LogSumExp校正，即通过减去边指数对数的和来修正原始距离。此外，多头马氏距离矩阵本身被重新利用来构建注意力网格化机制，从而实现跨头核协作，同时提升准确率和训练效率。大量实验表明，MHA-CSP仅拥有119K参数，并且仅在最终隐藏状态上应用教师强制，在长序列状态跟踪任务中，在相同条件下始终优于从头训练的Transformer和GCN基线。虽然这些基线依赖于稠密注意力或图传播，但MHA-CSP通过合成距离校正——由基于马氏距离的注意力驱动——以及继承自CSP骨干的高效信息旁路，实现了稳健的结构化推理。这一结果凸显了具有协作式多头校正的复值状态传播在捕获符号结构方面的有效性，为结构化推理建立了新的效率-性能权衡。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>交接税：LLM智能体中延续非原生轨迹的代价</title>
+      <link>https://arxiv.org/abs/2608.24358</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24358</guid>
+      <description>英文原题：The Handoff Tax: Continuing Non-Native Trajectories in LLM Agents
+
+编码智能体执行长时间运行的任务，涉及数十次模型调用、工具使用和代码编辑。随着这些运行过程的展开，用户面临一个实际的成本-质量权衡：当较便宜的模型遇到困难时升级到更强的模型，或者在困难推理完成后降级。每次切换都要求接收方延续由另一个模型产生的非原生轨迹。我们研究了这种交接如何影响质量和成本，以及接收方继承的轨迹信息的变化如何改变结果。使用来自Claude和GPT系列的廉价低能力（LC）和高成本高能力（HC）模型配对，我们变化交接方向、时机和接口，比较全轨迹传递、压缩以及保留仓库状态的同时移除轨迹。在两个模型系列中，全轨迹升级仅恢复了不到LC到HC质量差距的一半，同时产生了可观的成本溢价。我们将这种成本-质量惩罚称为交接税。相比之下，降级提供了一个有利的成本-质量点。有趣的是，首选接口也随方向反转：减少LC模型轨迹信息可提高升级质量，而移除HC模型轨迹则降低降级质量。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>动态内场能否支配Transformer的认知？——同态计算控制中的可认证性而非优越性</title>
+      <link>https://arxiv.org/abs/2608.24319</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24319</guid>
+      <description>英文原题：Can a Dynamic Internal Field Govern a Transformer's Cognition? Certifiability, not Superiority, in Homeostatic Compute Control
+
+一个智能系统不仅仅是推理：它还支配自身的推理——计算多少、何时停止、激活哪个模块。这个角色能否由一个动态内场——一个具有显式物理和已认证稳定性的低维同态状态——来扮演，它对认知进行调节而非执行认知？我们的场是模块图上的一个场，由图拉普拉斯上的一族偏微分方程支配，并随自适应深度推理器一同推进。我们认证了整族积分器的稳定性——这是一个积分器证书，而非闭环证书。本文新提出并证明了：一个用于带速度耦合的Verlet算法的离散Schur-Cohn判据，对每个潜在根既是必要的也是充分的，且无需交换性假设。答案是三重性的：实质上不能，结构上仅部分能，可认证性上能。场的物理类型对精度无关紧要：波动、扩散、门控混合以及二维Navier-Stokes基底均不产生差异。一项二十种子预注册去混杂战役限定了这一结构性主张：在均等化上限下，二阶效应在一个族中较强（+0.087 [+0.042, +0.132]，t=4.0），但在另一个族中未被检测到（+0.014 [-0.013, +0.040]，不显著），因此原始对比的一部分是容量而非阶次；并且一个匹配接口的GRU在第一个族中无法区分，在第二个族中名义上超过该场（-0.035 [-0.067, -0.002]）。区分该场的不是能力，而是其单步算子允许进行精确的运行时稳定性检查——这是一种种类上的差异，而非存在性上的差异：学习到的循环同样携带证书，这些证书是充分且保守的。一个带有阳性对照的kill-gate未发现该场作为证据累积器的证据（Delta AUC +0.0007 [-0.0065, +0.0079]，对比0.03阈值）。动态内场是一个可行的、可认证的计算调节器，但不是认知的增强器：它进行调节，它不思考。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>对语音代理评估中的LLM评判者进行基准测试：可靠性、校准与人工监督</title>
+      <link>https://arxiv.org/abs/2608.24314</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24314</guid>
+      <description>英文原题：Benchmarking LLM Judges for Voice-Agent Evaluation: Reliability, Calibration, and Human Oversight
+
+大规模评估对话式语音代理需要既捕捉可观察的交互质量、又体现通常由人类评估者提供的上下文判断的可靠评估方法。我们通过将人类判断与GPT-4.1和GPT-5对电信和零售语音代理对话的评判进行比较，从对话质量和安全维度研究LLM-as-a-Judge评估。相同的交互在三种评估配置p0、p1和p2下进行评分，以测试自动判断是否对评估设置敏感，以及观察到的模式是否能在不同配置和评判模型之间泛化。在总体一致性之外，我们检查指标层面的相关性、评估者一致性以及系统性的“人类-LLM分歧”，以识别哪些对话属性可以被自动化可靠判断，哪些仍然对解释和上下文敏感。有效的语音代理评估还受到流水线层面因素的影响，例如语音生成、流式处理，以及错误在ASR、推理和工具调用各阶段的传播，这促使我们专注于比较人类和LLM评判者如何端到端地对相同交互进行评分。我们的结果表明，基于LLM的评估可以作为大规模语音代理评估的有效组成部分，但其可靠性取决于指标和配置，而非统一的。这提供了一个经验框架，用于识别哪些指标适合自动化评估，并支持混合流水线：LLM评判者负责可扩展的评估，而人类评估者仍参与需要上下文解释和更高置信度判断的指标。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>“翻译中的盖伊布”又名“隐形的伤害”：以“乌尔都语漏检”分数衡量大语言模型仇恨言论检测中的跨文字安全不一致性</title>
+      <link>https://arxiv.org/abs/2608.24191</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24191</guid>
+      <description>英文原题：'Ghaib in Translation' aka Unseen Harm: Measuring Cross-Script Safety Inconsistency with 'Missed-in-Urdu' Scores in LLM Hate Speech Detection
+
+乌尔都语是世界第十大语言，拥有2.46亿使用者，但在主流大语言模型安全评估和九年的WOAH会议论文集中几乎完全缺席。为调查这一缺席是否对内容审核可靠性产生可衡量的影响，研究人员在涵盖Nastaliq体乌尔都语、罗马体乌尔都语、英语及乌尔都语-英语语码转换的六个数据集中，对五个大语言模型（GPT-4o、Claude Sonnet 4.5、Gemini 2.5 Flash、Qwen-2.5和Llama-3.1）进行了测试。在五个乌尔都语文字数据集中，原始文字与英文翻译分类之间的标签不稳定性介于15.9%（Gemini 2.5 Flash）至31.6%（Qwen-2.5）之间，其中“乌尔都语漏检”率——即在英文翻译中被标记为有害但在原始文字中被视为正常的内容比例——介于2.4%至9.9%之间（中位数为4.3%）。通过对ACL Anthology API中九个ALW/WOAH版本全部205篇论文的完整枚举，确认整个期间内没有任何一篇专门针对乌尔都语的论文。结果表明，当前大语言模型在乌尔都语的不同文字变体间所提供的安全保证并不均衡，较小规模的开源模型相比前沿闭源模型表现出显著更高的不稳定性和漏检有害内容的比例。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Paritok-4B：面向编码代理的意图条件上下文压缩</title>
+      <link>https://arxiv.org/abs/2608.24188</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24188</guid>
+      <description>英文原题：Paritok-4B: Intent-Conditioned Context Compression for Coding Agents
+
+编码代理在每一轮都会将大型文件读取和工具输出重新发送给前沿LLM，而这部分上下文主导了它们的token账单。通用提示压缩器在散文上训练，不适合代码：它们会改写标识符，并丢弃代理需要编辑的确切跨度。我们提出Paritok-4B，一个4B LoRA压缩器，用于编码代理轨迹，建立在两个承诺之上。它是抽取式的：它选择跨度而不是重写它们，并且它输出的标识符、路径和数字中有96.0%已经出现在其输入中，在保留的SWE-bench Lite输出上保持96.2%。它是意图条件的：在被告知代理的当前任务后，它主要在保留的片段内操作，选择哪些行存活（保留的行比移除的行在意图相关性上高+0.067，配对95% CI [+0.056, +0.078]），而不是改变保留多少。我们在67,074条真实OpenHands轨迹上蒸馏了一个gpt-4.1-mini教师模型，得到40,606个经过验证的示例，并微调Qwen3-4B。在所有300个SWE-bench Lite实例上，Paritok-4B将代理上下文压缩到其大小的25.7%，压缩强度是gpt-4.1-mini压缩器（50.2%）的2.0倍，是gpt-5（61.9%）的2.4倍，同时保留了未压缩单次求解质量的86.5%。当输入真实代理产生的带cat -n行号的内容时，它压缩得略少（27.8%），保留得更多（89.3%）；在那里，配对检验具有信息量：30个实例仅未压缩时解决，17个仅压缩时解决，精确McNemar p=0.079，因此在这个样本量下，将上下文压缩到约四分之一大小并不会显著降低解决率。该模型是一个264 MB的适配器，可在单个24 GB GPU上自托管，无需按token支付压缩器费用，这在目录价格下决定了经济性：gpt-5作为压缩器是净负收益，其成本高于其节省的下游token。权重、数据和评估脚本均已开放（Apache 2.0）。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>重新思考零样本跨城市目标检测的预训练与数据增强</title>
+      <link>https://arxiv.org/abs/2608.24154</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24154</guid>
+      <description>英文原题：Rethinking Pre-Training and Augmentation for Zero-Shot Cross-City Object Detection
+
+交通监控系统的实际部署受到地理域偏移的瓶颈制约，即在一个城市训练的模型应用于未见过的目标城市时性能下降。传统域适应方法依赖于超参数敏感的架构或对目标数据的直接剖析。在要求完全盲训练和评估循环的隐私敏感型生态系统中，这两种方法从根本上都是不可行的。在此设定下，我们探讨了预训练和数据增强在解决域偏移问题中的效果。具体而言，我们提出了一种新的模块化目标检测训练流程，围绕两个核心正交支柱构建：(1) 一种多数据集预训练策略，采用类别无关的物体性蒸馏，将结构性的车辆几何特征与语义分类体系解耦；(2) 一种域鲁棒增强流，采用新颖的Grayworld变换，迫使全局注意力头舍弃易变的颜色捷径，转而偏好稳健的形状先验。在与实时基于Transformer的检测器RF-DETR一同评估时，我们的框架在有限的GPU内存（16GB）条件下弥合了跨城市分布差距。我们优化的变体RF-DETR-HR和RF-DETR-Grayworld相对于基线取得了+24.29的显著经验增益，在AI City Challenge Track 6排行榜上以47.53 mAP获得第一名。代码和数据可在以下网址获取：\href{https://github.com/SKKUAutoLab/aic26_cross_city}{SKKUAutoLab/aic26_cross_city}。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>TrustDABench：面向结构化数据分析的LLM可靠性与鲁棒性基准评测</title>
+      <link>https://arxiv.org/abs/2608.24145</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24145</guid>
+      <description>英文原题：TrustDABench: Benchmarking Reliability and Robustness of LLMs for Structured Data Analysis
+
+LLM越来越多地被用于分析电子表格、CSV文件和其他结构化数据，但生成一个看起来正确的答案并不等同于生成一份可信的分析。可信的结果应当由一条从用户问题到相关数据证据的有效路径来支撑。这一要求引出了两个诊断性问题：当这样的路径不存在时，LLM能否拒绝回答或请求澄清；以及当相同的证据以不同的表格形式呈现时，LLM能否保持正确的分析。我们提出了TrustDABench，一个将这些操作化为可靠性和鲁棒性指标的基准测试。从证据路径视角出发，我们推导出19个扰动算子，并通过一个基于Agentic-LLM的生成框架对它们进行实例化。TrustDABench包含2,340个人工验证的扰动实例，我们评估了八个具有代表性的LLM。结果表明仍有很大的提升空间：最佳可靠性结果仅达到24.21%的平均MRS，由GPT-5.5取得；而最佳鲁棒性结果仍有9.10%的平均ASR，由Claude-Sonnet-5取得。这些失败是系统性的：模型很少能检测到相互冲突的证据，常常沿着可执行但缺乏支撑的分析路径继续推进，并且对改变观测边界或跨表关系的扰动仍然敏感。这些发现表明，要实现可靠的结构化数据分析，仍然需要更强的证据边界识别能力和表示不变的推理能力。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>用于基于LLM的时间序列异常检测的结构化频域证据</title>
+      <link>https://arxiv.org/abs/2608.24113</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24113</guid>
+      <description>英文原题：Structured Frequency-Domain Evidence for LLM-Based Time-Series Anomaly Detection
+
+时间序列异常不仅可能表现为逐点偏差，还可能表现为重复出现的时间结构的变化，例如偏移的周期性或局部振荡波动。然而，现有的基于LLM的时间序列异常检测方法主要通过索引值、图或去季节化表示来暴露时域证据，使得频谱结构隐含其中。我们提出了一种证据增强的零样本TSAD框架，该框架在保留索引化的去季节化观测值的同时，添加了使用快速傅里叶变换(FFT)计算的紧凑频域证据。该证据以两种分辨率构建：全局频域证据概括序列级周期性上下文，而局部频域证据捕获时间局部化的频谱偏离。在AnomLLM上使用InternVL2-LLaMA3-76B、Qwen2.5-VL-72B-Instruct、Gemini-2.5-Flash和GPT-4o进行的实验，以及在TSB-AD-U子集上的评估表明，显式频域证据改进了基于LLM的TSAD基线。这些结果表明，对于零样本基于LLM的TSAD，频域证据可以补充索引化和去季节化的时域输入。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>RetrievalFormer：一种用于高效近似最近邻检索和冷物品推荐的双编码器Transformer</title>
+      <link>https://arxiv.org/abs/2608.24079</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.24079</guid>
+      <description>英文原题：RetrievalFormer: A Dual-Encoder Transformer for Efficient Approximate Nearest Neighbor Retrieval and Cold-Item Recommendation
+
+共享的搜索和推荐索引必须仅根据特征对新物品进行评分，因为搜索没有探索位。在覆盖同一目录上两个界面的公开日志中，$38.6\%$ 的留出查询-搜索曝光显示了一个先前从未展示或访问过的物品。对于用户冷交互，基于特征的塔在$99$个采样负样本下服务此需求，且没有可衡量的损失（$0.9595$ Recall@20 对比 $0.9510$ 热启动）。一个词法基线达到相似的水平，而全目录检查在统计上仍无定论。因此，双编码器检索使索引对新物品保持“开放”，不同于需要重新训练的ID-softmax推荐器。我们在推荐上衡量了这种开放性的代价，与六个序列基线对比，每个基线都在修正后的目标上经过五轮重新训练和调优。一个float32时间戳错误曾对$19.7\%$的用户重新排序了留一法目标。在MovieLens-1M上，热启动准确率落后于最强重新训练基线$5.2\%$ Recall@20和$11.4\%$ NDCG@20。在MIND上，相对于五个最强基线，差距缩小到$0.8$--$3.6\%$，尽管模型在七个中排名第六。在严格的零泄漏冷启动评估下，内容塔实现了$0.172 \pm 0.006$ Recall@20，是最强重新训练专用方法（$0.124 \pm 0.007$）的$1.4\times$倍，是无训练下限的$3\times$倍，且无需针对冷启动的专门训练。精确的全softmax训练在MIND-small上将Recall@20提高了$54\%$，在MovieLens-1M上比采样InfoNCE提高了$6.9\%$，但每一步都重新计算整个目录，并在$240$K物品时耗尽加速器内存。近似最近邻搜索无法解释剩余的差距，服务成本相对于ID-softmax检索并无退化，而历史窗口扫描解释了方案后剩余差距的一半。目录规模下的精确质量训练仍然是未解决的问题。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>跨语言代码功能等价性上的语言模型评估</title>
+      <link>https://arxiv.org/abs/2608.23961</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.23961</guid>
+      <description>英文原题：Evaluating Language Models on Cross-Language Code Functional Equivalence
+
+背景：大型语言模型（LLMs）在各类代码理解任务中表现出色，导致许多人认为它们能够对程序语义进行推理。然而，现有评估主要集中于单语言设置或依赖合成生成的代码，这引发了对当前结果是否反映真正语义理解的担忧。目的：我们研究LLMs是否能在人类编写的代码中准确判断跨编程语言的功能等价性，这一设置需要超越表面相似性的更深层推理。方法：我们引入了PolyHuman，一个包含CPP、Java和Python人类编写程序的数据集。利用该数据集，我们评估了开放权重和专有LLMs在语言内和语言间等价性检测上的表现，并选择GPT-o4-mini作为代表性模型以评估稳定性。然后，我们人工分析了81个模型错误判断功能等价性的系统性分歧案例，检查代码逻辑和生成的Chain-of-Thought推理。最后，我们对这些失败进行分类，并在GPT-o4-mini、Claude-Opus-4.7和Gemini-3-Flash之间进行比较，以确定它们反映的是模型特有的问题，还是最先进LLMs的普遍局限。结果：我们发现等价性判断存在依赖难度的失效（问题越难，模型越倾向于将不等价代码误判为等价），最佳模型对编程语言存在模型特有的敏感性（尤其是在Python上表现更为保守），以及部分依赖基于相似性的线索。GPT-o4-mini在相同设置下还表现出显著的运行间不稳定性，表明其能力不一致而非缺失。结论：当前的LLMs无法可靠地捕捉语言内部或跨语言的功能等价性。</description>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
     <item>
       <title>用于对话式音乐推荐的多模态语义扩展与约束大语言模型重排序</title>
       <link>https://arxiv.org/abs/2608.23484</link>
@@ -133,10 +421,12 @@ Phi-PHE-BC 是一种将阈值同态加密（threshold homomorphic encryption）�
       <category>transformer</category>
     </item>
     <item>
-      <title>AI Surrogate Modeling for Real-Time Tokamak Equilibrium Prediction: Benchmarking Neural Architectures and Validation on EXL-50U</title>
+      <title>用于实时托卡马克平衡预测的AI代理建模：神经架构基准测试及EXL-50U上的验证</title>
       <link>https://arxiv.org/abs/2608.23217</link>
       <guid isPermaLink="true">https://arxiv.org/abs/2608.23217</guid>
-      <description>Fast and reliable plasma equilibrium prediction is essential for real-time tokamak operation and control, but conventional Grad-Shafranov (GS) solvers are often too costly for real-time deployment. We develop an AI surrogate framework and benchmark five architectures (MLP, CNN, FNO, Transformer, and KAN) on a numerical GS database with 100,000 IID and 10,000 OOD samples. Under a unified protocol, we evaluate accuracy, inference efficiency, model scaling, and robustness. We also establish device-level validation on the EXL-50U tokamak by linking numerical GS solutions, surrogate predictions, and the standard Shape Editor reference to assess simulation-to-device consistency. The surrogates achieve errors of $10^{-3}$-$10^{-2}$ relative to GS solutions, while the GS-to-device discrepancy remains at $10^{-3}$. Transformer gives the best IID accuracy, whereas CNN offers the best balance of accuracy, robustness, and speed, reaching 0.7 ms TensorRT latency. On unseen plasma geometries and parameter regimes, CNN and FNO show the strongest extrapolation stability, with 4%-5% relative $L_2$ error, while models with weaker inductive biases degrade more substantially. Scaling data and model capacity improves interpolation but not necessarily extrapolation, revealing a trade-off between capacity and OOD generalization. Overall, this work provides a systematic, device-consistent benchmark for AI-based GS prediction and practical guidance for selecting reliable surrogates for real-time plasma control and fusion applications.</description>
+      <description>英文原题：AI Surrogate Modeling for Real-Time Tokamak Equilibrium Prediction: Benchmarking Neural Architectures and Validation on EXL-50U
+
+快速可靠的等离子体平衡预测对于实时托卡马克运行和控制至关重要，但传统的Grad-Shafranov（GS）求解器往往因计算成本过高而难以满足实时部署需求。我们开发了一个AI代理框架，并在包含100,000个IID样本和10,000个OOD样本的数值GS数据库上，对五种架构（MLP、CNN、FNO、Transformer和KAN）进行了基准测试。在统一协议下，我们评估了准确性、推理效率、模型扩展性和鲁棒性。我们还通过将数值GS解、代理预测和标准Shape Editor参考值联系起来，在EXL-50U托卡马克上建立了设备级验证，以评估仿真到设备的一致性。代理模型相对于GS解实现了$10^{-3}$-$10^{-2}$的误差，而GS到设备的差异保持在$10^{-3}$。Transformer在IID准确性上表现最佳，而CNN在准确性、鲁棒性和速度之间提供了最佳平衡，达到了0.7毫秒的TensorRT延迟。在未见过的等离子体几何形状和参数范围内，CNN和FNO表现出最强的外推稳定性，相对$L_2$误差为4%-5%，而归纳偏置较弱的模型性能下降更为显著。扩展数据和模型容量可以改善插值，但不一定能改善外推，这揭示了容量与OOD泛化之间的权衡。总体而言，这项工作为基于AI的GS预测提供了一个系统性的、设备一致的基准，并为实时等离子体控制和聚变应用中选择可靠代理模型提供了实用指导。</description>
       <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>transformer</category>
@@ -1054,290 +1344,6 @@ TempJail 是一个黑盒（black-box）的、完全基于视频的越狱框架�
 
 该工作属于隐私计算领域，但针对的是训练过程而非模型推理，面向的是联邦学习中真实存在的梯度泄漏风险。它将梯度扰动与图像加密两种思路结合，并提供了一种支持每客户端、每图像独立密钥的轻量级密钥设计方向，对后续探索更实用的联邦学习隐私保护方案具有参考意义。</description>
       <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>一种两阶段时间感知Transformer用于短期AECOPD风险预测</title>
-      <link>https://arxiv.org/abs/2608.19578</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19578</guid>
-      <description>英文原题：A Two-Stage Time-Aware Transformer for Short-Horizon AECOPD Risk Prediction
-
-慢性阻塞性肺疾病急性加重（AECOPD）可能迅速恶化，使得及时预测成为临床优先事项。现有的大多数机器学习方法依赖于间歇性收集的临床变量，这会引入延迟，限制了它们在家庭监测场景中的实际效用。家用呼吸机提供了一种低延迟的替代方案，在日常使用期间产生近乎连续的呼吸状态记录。然而，现有的基于呼吸机的方法要么将波形压缩为手工设计的特征，要么主要关注二元风险分类，导致即将发生事件的时间点问题仍未解决。在本文中，我们提出了一种两阶段框架，直接处理来自最近七天家用呼吸机使用的原始压力和流量波形。第一阶段分类模型识别具有严重恶化高风险的患者。第二阶段回归模型随后估计事件发生前还剩多少天。我们的实验结果表明，两阶段模型在风险分类和事件发生时间估计方面均优于传统基线模型，我们选定的第一阶段分类器达到F1 = 0.91，第二阶段回归模型达到RMSE = 1.00天和R^2 = 0.76，从而为临床医生在严重恶化发生前提供早期预警和可操作的提前时间。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>CVSD-Reg：面向鲁棒LiDAR配准的跨模态视觉语义先验蒸馏</title>
-      <link>https://arxiv.org/abs/2608.19536</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19536</guid>
-      <description>英文原题：CVSD-Reg: Cross-Modal Visual Semantic Prior Distillation for Robust LiDAR Registration
-
-基于学习的全局点云配准已经取得了显著进展，但其对几何表示的依赖使得现有方法对点密度、扫描模式、视角和传感器特性的变化敏感。我们提出了CVSD-Reg，一个鲁棒的全局LiDAR配准框架，它将来自视觉基础模型的视觉语义先验蒸馏到LiDAR表示中。在第一阶段，Point Transformer V3学生网络通过对比蒸馏和球面流形对齐从冻结的DINOv2教师网络中学习，这保留了教师嵌入空间的超球面几何。自监督InfoNCE一致性和软SE(3)不变性进一步促进了视角鲁棒的描述符。在第二阶段，蒸馏后的表示通过对应关系学习、密度感知的点丢弃增强和端到端位姿优化来适应配准任务。凭借单一检查点，CVSD-Reg无需针对特定传感器的适配即可泛化到单传感器和零样本跨传感器场景，并且在推理时完全不需要相机。在KITTI、nuScenes和HeLiPR上，CVSD-Reg分别实现了97.7%、99.0%和99.3%的严格成功率（SR@0.5 m/1°），包括在稀疏的16线Velodyne扫描上达到97.3%。在不需要相机输入或事后ICP精化的情况下，它比最先进的几何配准方法高出多达44.0个百分点。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>AEGIS: Attention-Embedding Gradient Isolation Shield - Triple-Channel Gradient Masking for Privacy-Preserving Federated LLM Fine-Tuning</title>
-      <link>https://arxiv.org/abs/2608.19534</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19534</guid>
-      <description>## 一句话结论
-AEGIS（Attention-Embedding Gradient Isolation Shield，注意力-嵌入梯度隔离盾）是一种轻量级防御，通过三个反向路径操作同时关闭联邦学习（Federated Learning）微调中Transformer梯度的三个信息泄露通道，将梯度反演攻击下的token（词元）恢复率降至接近零，且保持或提升模型效用。
-
-## 问题与动机
-联邦学习中，客户端本地数据不离开设备，但共享梯度可被梯度反演攻击（gradient inversion attacks）利用，重建私有训练文本。作者分析Transformer（一种基于注意力机制的神经网络架构）的梯度结构后，发现三个泄露通道：Channel 1中注意力输出投影梯度（attention output projection gradient）的低秩子空间编码了输入嵌入（input embeddings）；Channel 2中嵌入梯度（embedding gradient）的行范数稀疏性直接暴露了哪些token存在；Channel 3中MLP（多层感知机）扩展梯度携带了类似于Channel 1的可恢复子空间信号。最先进的攻击可利用这些通道在数秒内近乎精确地恢复token。现有防御大多只处理其中一个通道，且要么损害模型效用，要么留下其余结构信号。
-
-## 方法与技术路线
-AEGIS面向联邦微调场景，输入是本地计算的原始梯度，输出是掩码后的梯度；该梯度同时驱动本地优化器步骤和上传服务器的导出过程，因此本地和服务器均不保留干净信号，防止攻击者从任何一侧取回未掩码信息。
-
-方法由三个反向路径操作组成，按通道逐一设计：
-1. 冻结注意力投影参数（freezing attention projection parameters）：通过令该参数不再产生可学习梯度，从构造上消除Channel 1。
-2. 对嵌入梯度进行校准噪声注入（calibrated noise injection into the embedding gradient）：用添加噪声的方式破坏Channel 2的token存在性信号，使梯度行范数的稀疏性无法解读。
-3. 对MLP扩展梯度进行逐块噪声注入（per-block noise injection）：以类似方式掩蔽Channel 3中的可恢复子空间信号。
-
-这三个步骤均在反向传播路径上完成，不需要修改模型架构。研究者在11个模型和6个数据集上评估了AEGIS，比较对象包括基于分析的和基于优化的多种梯度反演攻击，指标为token恢复率；并为Channel 1和2提供了正式安全保证，同时针对完全了解机制的自适应对手（adaptive adversaries）进行了经验验证。摘要未说明噪声注入的具体分布、校准方法、冻结参数的细节、数据集及模型清单，也未给出恢复率的定量数值。
-
-## 主要结果
-AEGIS将token恢复率降至接近零（摘要未给出具体数值），同时保持或提高模型效用。它同时覆盖三个泄露通道，并为其中两个提供形式化保证，对自适应对手的经验评估也支持其有效性。
-
-## 为什么与兴趣相关
-大语言模型（LLM）微调常依赖联邦协作，而梯度反演攻击可能暴露训练语料中的敏感文本。AEGIS提供了一种轻量、无需架构改动且不牺牲效用的防御路线，具有较强的实用潜力。该工作不涉及密码学协议下的模型推理，属于梯度隐私保护范畴。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>习得，然后遗忘：预训练中一个可测量的单样本反事实</title>
-      <link>https://arxiv.org/abs/2608.19168</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19168</guid>
-      <description>英文原题：Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training
-
-一个训练样本对已完成模型的贡献通常是估计而非测量的，因为测量它需要两次昂贵的完整预训练运行，而这两次运行仅在一个批次中的一行上有所不同。我们以小规模将该反事实运行了24次。我们在OpenWebText上从头训练了32个124M参数的GPT-2模型，涵盖四个条件和八个随机种子。在第9,536步中的第200步、处于峰值学习率时，我们将一个256行批次中的一行替换为一个固定上下文注入，该注入携带一段194个token的文本。三个注入条件分别是：1. 流畅的散文，主题在语料库中有据可查；2. 流畅的散文，主题为虚构，并且在全批次梯度增量上与前者匹配到0.14%以内；3. 随机键盘字符。第四个条件是其未注入的孪生对照。该文本在一次暴露中被学习，然后衰减。注入后五十步，看到该文本的臂对它的预测优于未看到该文本的臂，在文本上的交叉熵分别低0.039和0.044 nats，八个种子全部如此，p &lt; $10^{-4}$。在最后一步，我们没有检测到任一文本的这种差异，p = 0.25和p = 0.71，对应的最小可检测效应为0.025和0.079 nats；两个文本之间也没有检测到差异，p=0.54。我们报告的每一个几何度量都是在这次衰减之后取得的。我们预注册的关于插值损失障碍的对比为+0.0068，p = 0.509，最小可检测效应为0.032个障碍单位。留出交叉熵为$-0.00044$，p = 0.310。逐层中心核对齐在任意层都没有可检测地区分出任何条件。权重位移达到种子间欧氏距离的44.1%，并且在训练中点时已安定92%；而障碍达到种子间障碍的3.0%。这两个数字相差约15倍，而且这是一个下界。注入将模型重新定位在其盆地内，而没有将其移出盆地。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>ChildSafeAds 共享任务 2026：面向儿童 YouTube 视频中的商业内容</title>
-      <link>https://arxiv.org/abs/2608.19165</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19165</guid>
-      <description>英文原题：ChildSafeAds Shared Task 2026: Commercial Content in Child-Facing YouTube Videos
-
-ChildSafeAds 是一项关于可能触达儿童和青少年的 YouTube 视频中商业内容的共享任务。它包含来自 939 个频道的 3,360 个视频。每个实例以提交给 SponsorBlock 的一个片段开始，SponsorBlock 是一个开源众包浏览器扩展，用户标记赞助片段以便其他人跳过。我们将该片段与其可用的转录文本、视频和频道信息以及视频描述中链接的销售或服务页面配对。系统确定正在推广的优惠类型（ST1）、分配产品类别（ST2）并识别法律风险标志（ST3）。证据分为四个累积访问级别，从转录文本到链接页面，以便根据收集数据的成本比较结果。我们数据中 45.5% 的视频未能正确使用平台内的广告披露方法（“包含付费推广”标签）。GPT-5.4 在专家组织团队审查样本并迭代分类法、提示和模型选择后生成了标签。GPT-5.6-luna 独立标注了开发集。本报告描述了任务、数据和评估。更新版本将加入参与系统和共享任务结果。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Malformer：一种使用Transformer的多模态恶意软件检测器</title>
-      <link>https://arxiv.org/abs/2608.19052</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19052</guid>
-      <description>英文原题：Malformer: A Multi-Modal Malware Detector Using Transformers
-
-依赖单一恶意软件表示的传统恶意软件检测系统通常无法识别新型威胁。这些恶意软件二进制的表示，也称为模态，无法为模型提供足够的信息来区分所有样本。此外，单一的表示会引入新的失败模式，因为某些模态的提取依赖于反汇编的成功。以往的工作已经集成了额外的模态或更具判别性的表示用于分类。在本工作中，我们提出了Malformer，一种四模态恶意软件检测模型，它融合了Windows可执行文件的文本、图像、图和音频表示。我们证明了多模态Transformer融合能够提升Windows恶意软件检测器相对于单模态和双模态检测器的性能。Malformer采用两个RoBERTa编码器与一个用于图像数据的改进Vision Transformer、用于音频数据的WavLM以及一种自适应损失加权方案相结合，以融合特定模态的表示。在一个包含201,549个二进制样本的数据集上评估，Malformer达到了98.3%的准确率和0.9833的F1分数，比单模态基线和双模态检测器高出4.6到17.6个百分点。Malformer表明，多模态融合为应对日益增长的恶意软件威胁提供了有前景的基础，使防御者具备泛化且鲁棒的检测能力。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>评估德语文本自然语言生成中的体验质量</title>
-      <link>https://arxiv.org/abs/2608.18888</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18888</guid>
-      <description>英文原题：Assessing Quality of Experience in Natural Language Generation of German Text
-
-自然语言生成（NLG）的快速发展使得对生成文本的可靠评估日益关键，因为这些系统（如大语言模型，LLMs）现已广泛应用于真实世界场景。然而，传统的自动评估指标无法捕捉感知质量的多面性。在本文中，我们引入了TextQ-German，一个从体验质量（QoE）视角对德语NLG进行以人为中心评估的新型数据集套件，涵盖自动文本摘要和机器翻译任务。通过以德语母语者参与的众包研究，我们收集了人类质量评分，并识别出每项任务相关的感知质量维度。我们开发了自动QoE预测模型，包括基于Transformer的方法、基于语言特征的方法以及混合方法。混合模型在几乎所有实验设置中均优于纯Transformer基线，而仅使用语言特征即可接近微调语言模型的性能。该数据集还扩展了带有整体QoE评分标注的LLM生成输出。在留出集上的最终验证表明模型能够泛化到未见数据。我们的工作为NLG评估提供了可公开访问的资源，并为自动QoE预测提供了基线，为开发更符合人类质量感知的NLG系统奠定了基础。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>大型语言模型会产生电子海市蜃楼式的幻觉吗？</title>
-      <link>https://arxiv.org/abs/2608.18816</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18816</guid>
-      <description>英文原题：Do Large Language Models Hallucinate Electric Fata Morganas?
-
-AI幻觉——即编造的、无法验证的或与源材料相矛盾的输出——通常被视为需要处理的工程缺陷。本文认为，在机器意识问题上，它们也具有哲学意义。我们考察了大型语言模型中幻觉的已知原因——例如源-目标发散、训练与推理之间的差异以及过拟合——并提出了两项实证研究。在第一项研究中，我们将多代GPT模型应用于不同温度设置下的模糊事实问题，发现较高温度会产生看似合理但不正确的答案，而较低温度则导致事实准确的答案。使模型看起来具有创造性或自发性、从而更可能通过行为智能测试的采样参数，正是那些提高其幻觉率的参数。在第二项研究中，我们考察了一个仅在百科数据上训练的仅编码器模型，该模型对相同类型问题的回答符合事实且不加修饰，表明幻觉源于接触主观和社会多样化的训练数据，而非任何认知能力的发展。借助图灵、塞尔的“中文房间”、框架问题以及维纳和阿什比的控制论传统，我们主张模型对情感或感知的自我报告属于幻觉的定义范围，并且未来任何机器意识的发生可能在认识论上仍然不可及，因为它将与足够高级的幻觉难以区分。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>分解LLM自一致性中的错误共识一致性：GPT-4.1案例研究</title>
-      <link>https://arxiv.org/abs/2608.18795</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18795</guid>
-      <description>英文原题：Decomposing Wrong-Consensus Agreement in LLM Self-Consistency: A GPT-4.1 Case Study
-
-对多个LLM样本进行多数投票被广泛用于提高答案准确性，但其收益变化无常：在难题上甚至可能适得其反。本文对这一失败给出了定量解释。定义了一个多元一致性指数Gamma，即一次错误运行中与共识一致的样本的期望比例，并通过参考尺度d=(1-p)/(C-1)进行归一化，并将其分解为机械成分（仅给定逐案例答案偏好时投票所产生的结果）和偏好无法解释的残差。该机械零模型是难度匹配且无泄漏的：每个案例在其自身准确率和选项偏好下被重新模拟，这些参数由该案例的其他运行估计而来，因此没有任何运行能预测其自身的一致性。在GPT-4.1上，该分解显示了与基准相关的方向（对每个基准的n=4个单元格的观测排序，而非显著性主张）。在多选题GPQA-Diamond上，逐案例答案偏好解释了81-93%的留出测试运行一致性指数：在此，共享偏差主导的论述过度宣称了其解释力，因为整个群体锁定在一个错误但有吸引力的选项上这一现象，已被逐案例偏好通道捕获（该偏好是否由共享训练偏差诱导，则未被识别）。在开放域AIME上，机械偏好仅解释了59-78%（若收缩为纯噪声则为21-29%），并且存在1.56-2.80个Gamma单位的偏好无法解释残差，而运行级偏好异质性参考值（1.4-2.1）足以超出吸收该残差。难题上的自一致性适得其反现象被复现（分箱投票差距低至-0.09，耦合CI [-0.12,-0.07]），且一致性最高的分箱的准确率仅为0.42-0.83，相对于基础率有1.2-3.6倍的提升：一致性是有分级别的证据，而非认证。未提出新的投票方法；代码和证据已提交且可复现。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>潜在世界模型中的决策度量对齐：用于MPC规划的诊断与动作条件目标</title>
-      <link>https://arxiv.org/abs/2608.18746</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18746</guid>
-      <description>英文原题：Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning
-
-JEPA风格的潜在世界模型可以使用到目标潜变量的欧氏距离作为模型预测控制(MPC)的代价。然而，任务变量的强解码并不能保证这一特定代价会根据真实任务进展对候选动作序列进行排序。我们将后一种性质称为决策度量对齐。我们引入了Plan-Real Spearman，它衡量随机计划上的潜在-真实排序一致性，以及CEM-stage Spearman，它衡量交叉熵方法(CEM)搜索集中其提议时相同的排序一致性。我们分析了潜在距离保持真实代价排序的充分条件，将编码器失真、终端展开误差和候选间隔确定为控制量。在观察到的经验对齐差距的指导下，DA-LeWM通过逆动力学和演示条件目标-动作头增强了LeWM。在我们所有的实验中，与LeWM相比，DA-LeWM加速了收敛并获得了更高的在线成功率，而探针分数保持相似。这些结果表明，动作条件目标改善了欧氏代价、基于CEM的潜在MPC所使用的几何结构。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>MPC</category>
-    </item>
-    <item>
-      <title>FedLNS: Leverage LayerNorm Signature Modeling to Mitigate Adversarial Manipulation in Federated LLMs</title>
-      <link>https://arxiv.org/abs/2608.18736</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18736</guid>
-      <description>## 一句话结论
-
-FedLNS 提出一种仅需服务器端操作的轻量级恶意更新筛查框架，利用层归一化（LayerNorm）参数签名来识别并过滤被操纵的客户端更新，从而缓解联邦大语言模型训练中的投毒攻击。
-
-## 问题与动机
-
-联邦训练（Federated Learning, FL）允许语言模型从分布式私有文本中学习，但服务器无法直接验证每个客户端本地的监督信号或优化过程。恶意客户端可能在被污染的目标上训练，引入错误的上下文-词元关联，并通过多轮聚合持续劣化全局模型，还可能加剧模型生成不可靠或幻觉内容。因此，需要一种不依赖原始数据、不增加通信开销的服务器端筛查机制。
-
-## 方法与技术路线
-
-FedLNS 的对象设定是联邦大语言模型训练中的服务器端防御场景。其输入是各客户端返回的本地模型更新；输出是经过筛查后保留的“干净”完整模型更新，可继续交给标准 FL 或任意兼容聚合规则使用。
-
-关键步骤可概括为：
-
-1. **签名提取**：对每个客户端更新，仅使用其可训练归一化层（LayerNorm）参数的变化来表示该更新。这样得到的“归一化签名”能刻画客户端本地训练行为，而无需检查全部模型参数。
-2. **跨客户端参考比对**：服务器维护一个鲁棒的、历史感知的跨客户端参考签名，将当前各客户端的签名与这一参考进行比较，从而识别出偏离正常分布的可疑更新。
-3. **筛查与聚合**：筛除可疑更新后，保留的完整模型更新进入正常聚合流程。由于签名直接在服务器端从返回的本地模型中提取，不需要客户端额外传输参数或元数据，因此相比标准 FL 没有额外通信成本。
-
-该方法不要求访问原始客户端数据、不需要服务器端可信数据集、不需要带标签的攻击样本，也不需要单独训练检测器。摘要未说明签名建模的具体数学形式、历史参考的更新策略、筛查阈值设定及聚合规则的细节。
-
-## 主要结果
-
-在包含 200 个客户端、从零训练的 GPT 风格、BERT 风格和 LLaMA 风格模型上，当 40% 的客户端受到目标操纵时，FedLNS 在三种架构下、无论是 IID（独立同分布）还是 non-IID（非独立同分布）数据划分下，其测试困惑度（perplexity）均低于六个基线中最强基线。摘要未说明具体困惑度数值、六种基线包含哪些方法、以及各实验的重复次数。
-
-## 为什么与兴趣相关
-
-该工作直接针对联邦大语言模型训练中的“不可信客户端更新”问题，提供了一种轻量、通信友好、无需额外数据的防御思路。它不依赖推理阶段保护，而是从训练过程出发降低模型被投毒后产生不可靠或幻觉输出的风险，对联邦学习安全和大模型安全均有参考价值。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>CutMix对语义分割中可靠性和鲁棒性的影响</title>
-      <link>https://arxiv.org/abs/2608.18715</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18715</guid>
-      <description>英文原题：The Impact of CutMix on Reliability and Robustness in Semantic Segmentation
-
-确保不仅具有高精度，而且具有可靠和稳健的预测，对于语义分割模型在自动驾驶等安全关键应用中的部署至关重要。尽管CutMix——一种简单而强大的数据增强策略——被广泛使用，但它对密集预测任务中可靠性和鲁棒性的影响仍未得到探索。鉴于近期研究发现，以CutMix为核心组件的半监督分割方法会严重降低可靠性，本研究单独且系统地分析了CutMix对分割精度、校准和不确定性质量的影响。我们评估了两种具有代表性的架构：基于CNN的DeepLabV3+和基于Transformer的SegFormer，涵盖域内和域外场景。我们的结果表明，CutMix对分割精度的影响较小，但能持续提高可靠性，尤其是在分布偏移下。这些改进表明，CutMix主要增强的是模型校准和不确定性的可信度，而非原始分割预测本身。这一区别对于安全关键部署至关重要，因为在其中可靠的置信度估计与原始性能同等重要。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>通过提示与微调改进基于LLM的SSH蜜罐</title>
-      <link>https://arxiv.org/abs/2608.18686</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18686</guid>
-      <description>英文原题：Improving LLM-Based SSH Honeypots Through Prompting and Fine-Tuning
-
-基于LLM的SSH蜜罐通常使用封闭云LLM，因为它们提供强大的shell真实感，但云模型会带来部署问题。这些问题包括没有稳定版本控制、供应商端更改、攻击者驱动的成本和模型退役。本地开放权重模型避免了这些问题，但它们通常表现较差，并会犯下暴露蜜罐的错误。这些错误包括格式错误的输出、命令回显、文件系统状态不一致以及AI风格痕迹。本文研究如何使用提示设计和监督微调来改进和评估基于本地LLM的SSH蜜罐的shell模拟准确性。我们总共微调和评估了八个模型：shelLM中使用的原始微调GPT-3.5模型和七个开放权重本地模型，每个模型都与其基础模型进行比较。我们还测试了提示结构如何跨模型系列转移。使用34个自动化单元测试，在单会话和新会话设置中测量shell模拟准确性，我们发现提示设计效果显著，而微调依赖于数据集覆盖范围。在原始的112个对话数据集上微调并不能提高总体通过率，而根据蜜罐日志构建的扩展数据集则明显产生更强的本地模型。总体而言，结果表明提示和微调各自都能单独改进本地LLM蜜罐，但它们的效果并不能简单叠加，因为强基于规则的提示和监督适应也可能通过解决重叠的shell行为约束而相互冲突。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>智能电表能源预测的深度时间序列模型经验基准</title>
-      <link>https://arxiv.org/abs/2608.18675</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18675</guid>
-      <description>英文原题：An Empirical Benchmark of Deep Time-Series Models for Smart Meter Energy Forecasting
-
-能源消耗的准确预测对于电力系统的高效运行至关重要，直接影响运营成本、能源管理和系统维护。由于智能电表提供了大量高分辨率的消耗数据，数据驱动方法已被用于短期和长期预测。然而，它们在真实世界智能电表数据上的比较性能仍未得到充分研究。在本文中，我们对九种现代深度学习时间序列预测模型进行了经验基准测试，包括线性、基于MLP的、卷积和Transformer架构。我们在两个公开可用的智能电表数据集上评估这些模型。我们的分析重点关注三个强烈影响预测性能的因素：历史输入长度、预测范围以及模型架构的选择。我们表明，扩展历史上下文可以提高准确性，但仅限于饱和点，之后额外的输入提供的收益有限。相比之下，准确性随着预测范围的增加而降低。我们还研究了预测准确性与计算复杂度之间的权衡，并评估了不同模型之间性能差异的统计显著性和实际幅度。我们的结果表明，深度学习模型始终优于经典基线，而轻量级架构以显著更低的计算成本实现了相对相似的性能。此外，架构差异仅在更长的预测范围和更异质的数据集上才变得有意义。最后，按地理人口和家庭类别进行的亚组分析表明，对于大多数人群细分，模型选择的影响有限。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>面向可扩展向量架构的FlashAttention</title>
-      <link>https://arxiv.org/abs/2608.18656</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18656</guid>
-      <description>英文原题：FlashAttention for Scalable Vector Architectures
-
-在CPU上使用Transformer模型进行推理日益重要，尤其是对于小型语言模型（SLMs），其中向量架构正成为一种有前景的执行载体。注意力模块由于高内存带宽需求而成为主要瓶颈；FlashAttention通过融合操作来改善数据局部性并减少中间内存流量，从而缓解这一问题。在本文中，我们提出了FlashAttention-V，一种面向可扩展向量架构的分块FlashAttention，它通过利用注意力头间的并行性、头间打包以在超出头维度的向量长度上实现高效利用，以及改进向量寄存器利用率和内存访问局部性，从而高效适应从短向量到非常长向量。我们将FlashAttention-V集成到llama.cpp中的ggml中，并使用gem5和Banana Pi BPI-F3在TinyLlama、Llama 3.2、Qwen2.5和Pythia-410M上对其进行评估。在Banana Pi BPI-F3上，我们确认跨注意力头的循环重排序和循环展开是有效的优化原则，其性能收益随模型增大而扩展，在短上下文和解码阶段最为明显。基于模拟的分析表明，在预填充阶段，FlashAttention-V在512位VL下相比标量FlashAttention实现了22x-42x的加速，扩展到64条通道和4096位VL时，还额外获得2x-2.5x的增益。在解码阶段，FlashAttention-V使用512位向量长度相比标量FlashAttention实现了8x-11x的加速，由于单token、内存受限的执行方式，性能对向量宽度和通道数量的敏感性逐渐降低。我们进一步识别了Q8_0量化线性层中的结构性瓶颈，这些瓶颈限制了长向量执行下的算术摊销，且这些瓶颈在RVV和Arm SVE上具有一致性，表明当前的量化格式对长向量可扩展性构成了根本性挑战。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>Transformer与状态空间架构中集体动力学的红外普适性</title>
-      <link>https://arxiv.org/abs/2608.18592</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18592</guid>
-      <description>英文原题：Infrared Universality of Collective Dynamics across Transformer and State-Space Architectures
-
-不同的神经架构是否会产生共同的集体动力学仍是一个悬而未决的问题。最近对Transformer语言模型的分析揭示了与近边缘长记忆动力学相关的近乎平坦、弱红外增强的态时间尺度密度（TDOS）。在此，我们测试Mamba中是否出现紧密相关的组织，Mamba的选择性状态空间动力学提供了一种根本不同的微观机制。Mamba允许在三个层面上解析弛豫动力学：学习到的状态空间生成器的本征谱、其输入条件选择性重标度，以及从其雅可比矩阵测量的完整块的集体TDOS。这些谱并不相同：选择性动力学和剩余块变换显著重组了微观弛豫层次结构。尽管如此，完整块发展出一个可再现的慢模连续谱，其红外区段随着序列长度的增加而逐渐被更好地分辨。累积分析得到 $\rho(\lambda)\sim\lambda^{\beta}$，长序列Mamba的指数稳定在 $\beta_{\rm M}\simeq-0.17$ 附近。相应的记忆动力学遵循 $K(t)\sim t^{-(1+\beta)}$，接近边缘 $1/t$ 区间。尽管微观动力学根本不同，Transformer完整块谱表现出紧密相关的红外组织，代表性指数约为 $\beta_{\rm Tr}\sim-0.1$。这些结果将显式状态空间记忆与集体红外组织区分开来，并表明不同的序列架构可以发展出紧密相关的近边缘慢模动力学。它们将红外集体组织扩展到Transformer之外，并为认知场论所描述的动力学结构提供了独立检验。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>压缩与遗忘：bitsandbytes量化放大大型语言模型中的前摄干扰</title>
-      <link>https://arxiv.org/abs/2608.18578</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18578</guid>
-      <description>英文原题：Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs
-
-前摄干扰（PI）是大型语言模型中一种有记载的失败模式，其中对反复覆写值的检索会随着先前覆写的累积而退化，镜像了人类工作记忆中的经典现象。训练后量化（PTQ）现在是开放权重模型的默认部署路径，但其对这一失败模式的影响尚未得到检验。我们通过bitsandbytes评估了三种精度级别（FP16、INT8、INT4/NF4），涵盖三个架构不同的指令微调模型（Qwen2.5-7B-Instruct、Mistral-7B-Instruct-v0.3、Phi-3.5-mini-instruct），并保持检索任务固定不变。INT4量化在每个模型的高干扰条件下都显著降低了准确率（例如，Qwen从81.0%降至68.3%），配对的McNemar检验（$p \le 2.6 \times 10^{-6}$）和涵盖所有干扰水平的混合效应回归证实了这一点；INT8虽然常被认为是安全的，但在三个模型中的两个中也带来了较小但真实的性能损失。该效应特定于语义相似（词类型）的干扰项，并在数字控制条件下反转符号，并且机制上与INT4下同键侵入错误的增加有关（从试验的21.5%升至24.6%，$p = 4.8 \times 10^{-7}$）。一项后续消融实验表明，该效应源于量化的Transformer主干，而非输出投影层。这些结果表明，bitsandbytes 4比特量化可能对依赖长、可更新、语义密集上下文的应用程序施加额外成本，即使总体基准准确率看起来基本不受影响。我们在https://github.com/ShayanShahrabi/compress-and-forget 发布了我们的代码和经分词器验证的词汇构建方法。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>OptiModNet：一种融合分组查询与通道注意力的UNet-Transformer混合架构，用于视盘和视杯分割</title>
-      <link>https://arxiv.org/abs/2608.18516</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18516</guid>
-      <description>英文原题：OptiModNet: A UNet-Transformer Hybrid with Grouped-Query and Channel Attention for Optic Disc and Cup Segmentation
-
-视盘和视杯的精确分割对于青光眼的早期检测和诊断至关重要。然而，在保持低计算需求的同时，跨数据集实现持续的高性能仍然是一项重大挑战。在青光眼检测中，低计算方法对于实现快速、大规模筛查以及促进在资源有限的临床环境中的部署至关重要。虽然深度学习模型如UNet、视觉Transformer（ViT）和扩散模型已展现出强大的分割性能，但这些方法通常伴随着大量的计算开销。UNet在捕获局部特征方面效率较高，但在建模全局上下文信息方面存在局限。相反，ViT擅长长距离依赖建模，但计算量大。混合架构（如UNetR）将基于Transformer的编码器与UNet风格的解码器相结合，已展现出改进的性能，但同时也带来了额外的复杂性。鉴于这些，在本工作中，我们提出了OptiModNet，一种专为视盘和视杯分割量身定制的轻量级新型混合架构。该模型在网络多个阶段集成了多种注意力机制，以增强局部和全局特征表示。我们引入了一种聚合金字塔损失（Aggregated Pyramid Loss），在多个解码器深度对预测进行监督，以促进更好的梯度流动和结构一致性。我们在REFUGE2数据集上对OptiModNet进行了视盘和视杯分割任务的评估。我们的方法实现了最先进的性能，超过现有方法2.5%以上，同时仅以3.73 GFLOPs和1.93M参数保持了高效率。代码可在https://github.com/SG1947/OptiModNet获取。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>WhiteMatter：通过KV混合实现全对全跨层连接</title>
-      <link>https://arxiv.org/abs/2608.18486</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18486</guid>
-      <description>英文原题：WhiteMatter: All-to-All Cross-Layer Connections via KV Mixing
-
-在Transformer中，每一层仅通过其自身深度产生的KV来关注过去的词元，尽管在自回归解码过程中存在更深层的表示。反馈架构允许浅层消费层关注由更深层过去词元表示产生的KV，但所有消费层都被赋予到源层的相同固定连接模式。我们提出WhiteMatter，它将每个注意力层连接到每个过去词元的所有层的表示，连接权重可以随消费层变化并适应源词元。对于每个词元，路由器通过将其L个层状态混合到k个KV通道中来实现这些连接，这些通道被缓存以供后续词元使用；每个消费层关注其中一个通道。通道数k控制KV缓存大小。设置k&lt;L会减少缓存的内存占用。在我们的预训练实验中，WhiteMatter优于具有50%更多层的普通Transformer，并在50%的KV缓存压缩下保留了大部分增益。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>ERASE：用于加速现代推荐系统训练的早期反向传播调度</title>
-      <link>https://arxiv.org/abs/2608.18469</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18469</guid>
-      <description>英文原题：ERASE: EaRly bAckpropagation SchEdule for Faster Training of Modern Recommendation Systems
-
-轻量级代理模型无需重复训练前沿规模系统即可实现快速实验，但其较小的内核往往使现代加速器得不到充分利用。传统训练将前向和反向传播调度为不相交的阶段，这加剧了这种低效，因为一个阶段的空闲容量无法由另一个阶段的工作来填充。我们将Forward-Forward（FF）的分离机制重新解释为一种调度原语：给定一个局部目标，分离某个块的输出会移除下游梯度依赖，从而使其反向传播在其前向传播完成时即可就绪。ERASE在独立的CUDA流上尽早启动每个分离子图的反向传播，使其与后续前向工作重叠。轻量级Transformer上的执行轨迹展示了这种重叠及其局限性：一个使设备饱和的内核不会留下任何并发容量。在大规模点击率模型上，分离六个密集子架构可将训练吞吐量提升高达$9.51\%$，同时使归一化熵保持接近基线。</description>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>StagedWorkspace：面向知识工作智能体的版本化工作区</title>
-      <link>https://arxiv.org/abs/2608.18050</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18050</guid>
-      <description>英文原题：StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents
-
-AI 智能体越来越多地执行知识工作（即生成和修改持久化数字工件，如代码仓库、文档、电子表格、幻灯片、报告），然而它们搜索的解析视图、编辑的原生文件、审阅的更改以及提交的工件可能指向同一工作产品的不同版本。我们将此表述为工作区状态契约：每个视图都应显式绑定到不断演化的工作区状态的某个版本。编码智能体通过针对搜索、差异和测试的仓库契约部分解决了这一需求，而对于 PDF、电子表格、幻灯片、笔记本和混合格式项目文件夹，类似契约则不那么明确。我们提出 StagedWorkspace，一个面向知识工作智能体的版本化工作区。该工作区随着原生文件的变化，将解析记录和审阅差异绑定到原生文件的内容哈希上。在 OfficeQA Pro 和 APEX-Agents 上的固定测试框架消融实验中，双重解析/原生访问在每个受测模型上都取得了最高的点估计值；相对于更受限的单一视图，它将 OfficeQA Pass@1 提高了 8.3-12.1 个点，将 APEX 平均评分得分提高了 4.7-9.2 个点。SW-AGENT 在 OfficeQA 上使用 Gemini 3.1 Pro 得分为 63.9%，在 APEX 上使用 GPT-5.4 Nano 得分为 42.1，而这两个模型已发表的同模型得分分别为 29.3% 和 25.5。一项在 57 个文件编辑任务上进行的配对审阅轴消融实验进一步发现，当差异可见时观测分数更高。这些结果将工作区状态确定为知识工作智能体中的一个实验变量，并推动了这样的基准测试：将证据、暂存编辑和提交的工件作为显式状态转换进行评分。</description>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>语言具有两个参数：叙事诱导的语义可塑性与相位敏感解读</title>
-      <link>https://arxiv.org/abs/2608.18041</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.18041</guid>
-      <description>英文原题：Language Has Two Parameters: Narrative-Induced Semantic Plasticity and Phase-Sensitive Interpretation
-
-语言具有两个参数。统计词语共现的频率，你得到的是振幅，即关联强度。词嵌入和注意力权重对这一统计进行了细化，但它将语料库中的所有作者汇总在一起。本文主张存在第二个参数，即相位，而从语料库中习得的有符号权重并不能提供这一参数。相位仅存在于意义之间：它决定共同激活的意义如何组合，并且它可以在某个意义保持完全在场的同时反转该意义所做出的贡献。说话者可以通过语言形式在信号中设定相位；遭遇经历建立相位关系，历史分布它们。总体平均消除了以历史为索引的相位：去个体索引的语料库识别的是总体的边际状态，而不决定任何个体或二元状态，无论何种尺度。标准Transformer在冻结推理中没有对相位的显式表示，而以求单义性衡量进展的可解释性程序恰恰是在与之背道而驰：它所视为缺陷的共存在，恰恰是典故、反讽和引用的条件。六个预测检验以下问题：被抑制的意义是否保持活跃，遭遇顺序是否改变短语的功能，对信号的标记是否改变共享短语被理解的方式，以及一个被赋予历史的模型是被历史所改变还是仅仅被告知了历史。本文辩护的主张是弱版本：解读需要一个第二关系参数，该参数是有符号的、持久的，并且以个体和二元组为索引。量子概率是该参数的一种记法；该形式体系中没有任何内容声称大脑中存在量子过程。强版本——即量子演算像有符号经典模型做不到的那样约束这些现象——依赖于一个尚未推导出的遭遇顺序约束。该理论所要求架构是一个具有个体索引、承载相位的语义状态的语言模型。</description>
-      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>transformer</category>
     </item>

@@ -1,11 +1,4 @@
 {
-  "items": [
-    {
-      "paper_id": "arxiv_2608.23217",
-      "task": "metadata_translation",
-      "attempts": 1,
-      "last_error": "JSONDecodeError"
-    }
-  ],
-  "last_updated": "2026-08-25T03:12:27.403303Z"
+  "items": [],
+  "last_updated": "2026-08-26T03:18:01.319610Z"
 }
