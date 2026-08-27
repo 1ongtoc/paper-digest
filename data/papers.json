@@ -1,6 +1,720 @@
 {
   "papers": [
     {
+      "id": "arxiv_2608.26052",
+      "arxiv_id": "2608.26052",
+      "title": "How Much Rank Does LoRA Need? Rank-Error Bounds for Transformer Attention",
+      "authors": [
+        "Gerard Conangla Planes"
+      ],
+      "abstract": "Choosing the rank of a low-rank adaptation (LoRA) update is usually an empirical task. In this paper, we provide a task-dependent theory of the approximation error achievable at each LoRA rank for Transformer attention. We fix a pretrained attention head, a target attention function, and a distribution over inputs from the downstream task, and bound the smallest expected Kullback--Leibler (KL) error achievable by a rank-$r$ query LoRA update. When target attention probabilities are bounded away from zero, we prove a lower bound of the error proportional to $ψ(\\|d\\|_2)$, where $d$ is the difference between candidate and target attention scores and $ψ(t)=\\min\\{t^2,t\\}$. We also prove an unconditional upper bound $\\min\\{\\|d\\|_2^2/4,\\sqrt2\\|d\\|_2\\}$. Under explicit realizability, geometry, and moment conditions, we then bound the best rank-$r$ error between an explicit multiple of $ψ(\\sqrt{T_r})$ and $\\min\\{T_r/4,\\sqrt{2T_r}\\}$, where $T_r$ is the downstream-weighted tail energy of the target update. We also provide target-Fisher bounds when candidate scores remain within a fixed range of the target scores, and an unrestricted lower bound when a subset of tokens carries most of the probability mass. These spectral bounds describe finite-score approximation. We then construct explicit families in which softmax saturation makes the rank required to match the attention function strictly smaller than the rank required to match the finite logits. Finally, we extend the analysis to fused multi-head LoRA and joint query/key updates, exposing the effects of rank sharing and query/key factorization constraints.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T17:25:03Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.26052",
+      "pdf_link": "https://arxiv.org/pdf/2608.26052",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Choosing the rank of a low-rank adaptation (LoRA) update is usually an empirical task. In this paper, we provide a task-dependent theory of the approximation error achievable at each LoRA rank for Transformer attention. We fix a pretrained attention head, a target attention function, and a distribution over inputs from the downstream task, and bound the smallest expected Kullback--Leibler (KL) error achievable by a rank-$r$ query LoRA update. When target attention probabilities are bounded away from zero, we prove a lower bound of the error proportional to $ψ(\\|d\\|_2)$, where $d$ is the difference between candidate and target attention scores and $ψ(t)=\\min\\{t^2,t\\}$. We also prove an unconditional upper bound $\\min\\{\\|d\\|_2^2/4,\\sqrt2\\|d\\|_2\\}$. Under explicit realizability, geometry, and moment conditions, we then bound the best rank-$r$ error between an explicit multiple of $ψ(\\sqrt{T_r})$ and $\\min\\{T_r/4,\\sqrt{2T_r}\\}$, where $T_r$ is the downstream-weighted tail energy of the target update. We also provide target-Fisher bounds when candidate scores remain within a fixed range of the target scores, and an unrestricted lower bound when a subset of tokens carries most of the probability mass. These spectral bounds describe finite-score approximation. We then construct explicit families in which softmax saturation makes the rank required to match the attention function strictly smaller than the rank required to match the finite logits. Finally, we extend the analysis to fused multi-head LoRA and joint query/key updates, exposing the effects of rank sharing and query/key factorization constraints.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "LoRA",
+        "Transformer注意力"
+      ],
+      "relevance_reason_zh": "论文仅研究LoRA秩对Transformer注意力近似误差的理论界，与隐私计算、安全推理或大模型安全无实质关联。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LoRA需要多少秩？Transformer注意力的秩-误差界",
+      "abstract_zh": "选择低秩适配（LoRA）更新的秩通常是一项经验性任务。在本文中，我们针对Transformer注意力，提供了在每个LoRA秩下可实现的近似误差的任务相关理论。我们固定一个预训练的注意力头、一个目标注意力函数以及下游任务输入上的分布，并限定由秩为$r$的查询LoRA更新可实现的最小期望Kullback--Leibler（KL）误差。当目标注意力概率有界地远离零时，我们证明误差的一个下界正比于$ψ(\\|d\\|_2)$，其中$d$是候选注意力得分与目标注意力得分之差，$ψ(t)=\\min\\{t^2,t\\}$。我们还证明了一个无条件上界$\\min\\{\\|d\\|_2^2/4,\\sqrt{2}\\|d\\|_2\\}$。在显式可实现性、几何条件和矩条件下，我们将最佳秩$r$误差界定在$ψ(\\sqrt{T_r})$的显式倍数与$\\min\\{T_r/4,\\sqrt{2T_r}\\}$之间，其中$T_r$是目标更新的下游加权尾能量。我们还提供了当候选得分保持在目标得分的固定范围内时的目标Fisher界，以及当一部分token承载了大部分概率质量时的无限制下界。这些谱界描述了有限得分近似。然后我们构造了显式族，在其中softmax饱和使得匹配注意力函数所需的秩严格小于匹配有限logits所需的秩。最后，我们将分析扩展到融合的多头LoRA和联合查询/键更新，揭示了秩共享和查询/键分解约束的影响。"
+    },
+    {
+      "id": "arxiv_2608.26043",
+      "arxiv_id": "2608.26043",
+      "title": "Robust CurveMoE: Multi-Norm Adversarial Defense for Mixture-of-Experts Models via Mode Connectivity",
+      "authors": [
+        "Xu Zhang",
+        "Ren Wang"
+      ],
+      "abstract": "Multi-norm adversarial defense aims to protect neural networks against perturbations defined by different norm constraints, but existing methods typically optimize competing robustness objectives within a single parameter configuration, leading to substantial training cost and unfavorable robustness trade-offs. We propose Robust CurveMoE, an efficient mixture-of-experts framework that connects models specialized for different perturbation norms through a low-loss path and exploits the complementary robustness profiles of models along this path. Robust CurveMoE derives clean and norm-specialized experts from robustness-constrained curve locations and selectively expertizes only influential layers, while sharing the remaining parameters across routing paths. To further reduce curve-construction cost, we introduce contribution-guided partial updating, which selects influential curve parameters using initialization-based gradient scores. We also theoretically bound the objective gap between partial and full curve optimization. Experiments on CIFAR-100 and ImageNet-100 with WideResNet and Vision Transformer architectures show that Robust CurveMoE consistently improves clean, norm-specific, and Union accuracy over MSD and ERMC. In particular, it improves Union accuracy by 2.37 and 2.13 percentage points over the strongest baseline on CIFAR-100 and ImageNet-100, respectively. Extensive ablations further validate the effectiveness of partial updating, selective expertization, and robustness-constrained expert selection.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T17:21:33Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.26043",
+      "pdf_link": "https://arxiv.org/pdf/2608.26043",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Multi-norm adversarial defense aims to protect neural networks against perturbations defined by different norm constraints, but existing methods typically optimize competing robustness objectives within a single parameter configuration, leading to substantial training cost and unfavorable robustness trade-offs. We propose Robust CurveMoE, an efficient mixture-of-experts framework that connects models specialized for different perturbation norms through a low-loss path and exploits the complementary robustness profiles of models along this path. Robust CurveMoE derives clean and norm-specialized experts from robustness-constrained curve locations and selectively expertizes only influential layers, while sharing the remaining parameters across routing paths. To further reduce curve-construction cost, we introduce contribution-guided partial updating, which selects influential curve parameters using initialization-based gradient scores. We also theoretically bound the objective gap between partial and full curve optimization. Experiments on CIFAR-100 and ImageNet-100 with WideResNet and Vision Transformer architectures show that Robust CurveMoE consistently improves clean, norm-specific, and Union accuracy over MSD and ERMC. In particular, it improves Union accuracy by 2.37 and 2.13 percentage points over the strongest baseline on CIFAR-100 and ImageNet-100, respectively. Extensive ablations further validate the effectiveness of partial updating, selective expertization, and robustness-constrained expert selection.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "对抗防御",
+        "Mixture-of-Experts"
+      ],
+      "relevance_reason_zh": "论文关注对抗鲁棒性（MoE多范数防御），属于一般模型安全而非隐私保护下的安全推理或大模型安全。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "鲁棒CurveMoE：基于模式连通性的专家混合模型多范数对抗防御",
+      "abstract_zh": "多范数对抗防御旨在保护神经网络免受由不同范数约束定义的扰动的影响，但现有方法通常会在单个参数配置中优化相互竞争的鲁棒性目标，导致训练成本高昂且产生不利的鲁棒性权衡。我们提出了Robust CurveMoE，一种高效的专家混合框架，它通过低损失路径连接针对不同扰动范数特化的模型，并利用沿该路径模型的互补鲁棒性特征。Robust CurveMoE从受鲁棒性约束的曲线位置中推导出干净专家和范数特化专家，并仅对影响力大的层进行选择性专家化，同时沿路由路径共享其余参数。为进一步降低曲线构建成本，我们引入了贡献引导的部分更新，该方法使用基于初始化的梯度分数来选择有影响力的曲线参数。我们还从理论上界定了部分曲线优化与完整曲线优化之间的目标差距。在CIFAR-100和ImageNet-100上使用WideResNet和Vision Transformer架构的实验表明，Robust CurveMoE在干净准确率、范数特定准确率和Union准确率上均持续优于MSD和ERMC。特别是，它在CIFAR-100和ImageNet-100上分别比最强基线提高了2.37和2.13个百分点的Union准确率。广泛的消融实验进一步验证了部分更新、选择性专家化和鲁棒性约束专家选择的有效性。"
+    },
+    {
+      "id": "arxiv_2608.25990",
+      "arxiv_id": "2608.25990",
+      "title": "Spectral Allocation: Why Muon Outperforms Adam, and How to Improve Muon",
+      "authors": [
+        "Xiaodong Wu",
+        "Wenyi Yu",
+        "Chao Zhang",
+        "Philip Woodland"
+      ],
+      "abstract": "Orthogonal optimisers such as Muon can substantially accelerate large language model pretraining relative to Adam, yet the mechanism remains incompletely understood. We investigate this through an out-of-sample spectral probing analysis of Transformer loss landscapes. At checkpoints along real training trajectories, we decompose each momentum buffer into its singular directions and estimate the loss-optimal step size along each direction on held-out data. The resulting spectral profile is anisotropic yet stable across batches and training stages, and consistent across the optimisers and model scales: a volatile head operating at the Edge-of-Stability supports a much smaller step size than the tolerant bulk, which permits substantially larger steps. This profile provides a unified spectral allocation account of why Muon outperforms Adam, which outperforms SGD. It also exposes a limitation of Muon's uniform scaling: it still underutilises the bulk. Guided by this finding, we introduce Spectral-Aware Muon (SAMuon), which holds the head at the Muon scale and amplifies the bulk using a static spectral prior. We provide two variants: the complete SAMuon follows the measured profile using a low-rank randomised SVD and the simplified SAMuon-lite uses a two-level approximation via rank-one power iteration. Neither method adds persistent optimiser state or notable extra FLOPs beyond Muon at scale, and the idealised exact-whitening versions of both retain Muon's asymptotic convergence rate under standard assumptions. Across \"modded-nanogpt\" models from 124M to 1B parameters, both variants outperform tuned AdamW and Muon (Scion implementation) baselines in all evaluated model-scale and batch-size configurations. SAMuon requires 13.3% to 24.0% fewer training tokens to reach the same validation loss as Muon, while SAMuon-lite retains most of this gain with near-zero wall-clock overhead.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T16:41:12Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25990",
+      "pdf_link": "https://arxiv.org/pdf/2608.25990",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Orthogonal optimisers such as Muon can substantially accelerate large language model pretraining relative to Adam, yet the mechanism remains incompletely understood. We investigate this through an out-of-sample spectral probing analysis of Transformer loss landscapes. At checkpoints along real training trajectories, we decompose each momentum buffer into its singular directions and estimate the loss-optimal step size along each direction on held-out data. The resulting spectral profile is anisotropic yet stable across batches and training stages, and consistent across the optimisers and model scales: a volatile head operating at the Edge-of-Stability supports a much smaller step size than the tolerant bulk, which permits substantially larger steps. This profile provides a unified spectral allocation account of why Muon outperforms Adam, which outperforms SGD. It also exposes a limitation of Muon's uniform scaling: it still underutilises the bulk. Guided by this finding, we introduce Spectral-Aware Muon (SAMuon), which holds the head at the Muon scale and amplifies the bulk using a static spectral prior. We provide two variants: the complete SAMuon follows the measured profile using a low-rank randomised SVD and the simplified SAMuon-lite uses a two-level approximation via rank-one power iteration. Neither method adds persistent optimiser state or notable extra FLOPs beyond Muon at scale, and the idealised exact-whitening versions of both retain Muon's asymptotic convergence rate under standard assumptions. Across \"modded-nanogpt\" models from 124M to 1B parameters, both variants outperform tuned AdamW and Muon (Scion implementation) baselines in all evaluated model-scale and batch-size configurations. SAMuon requires 13.3% to 24.0% fewer training tokens to reach the same validation loss as Muon, while SAMuon-lite retains most of this gain with near-zero wall-clock overhead.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "优化器",
+        "Transformer训练"
+      ],
+      "relevance_reason_zh": "论文分析Muon与Adam优化器的谱特性并改进训练效率，属于模型训练优化，无关安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "谱分配：为什么Muon优于Adam，以及如何改进Muon",
+      "abstract_zh": "诸如Muon之类的正交优化器相对于Adam可以大幅加速大型语言模型的预训练，但其机制仍未完全理解。我们通过对Transformer损失景观的样本外谱探查分析来研究这一问题。在真实训练轨迹的检查点上，我们将每个动量缓冲分解为奇异方向，并在保留数据上估计每个方向上的损失最优步长。由此产生的谱剖面是各向异性的，但在批次和训练阶段之间保持稳定，并且在优化器和模型规模之间保持一致：一个在稳定性边缘（Edge-of-Stability）运行的波动头部所支持的步长远小于容忍的主体（bulk）所支持的步长，后者允许明显更大的步长。该剖面为为什么Muon优于Adam、而Adam优于SGD提供了统一的谱分配解释。它还揭示了Muon均匀缩放的一个局限性：它仍未充分利用主体。在这一发现的指导下，我们引入了谱感知Muon（SAMuon），它将头部保持在Muon尺度，并使用静态谱先验放大主体。我们提供了两个变体：完整的SAMuon使用低秩随机SVD遵循测量的剖面，而简化的SAMuon-lite通过秩一幂迭代使用两级近似。在规模上，这两种方法都没有增加持久优化器状态，也没有在Muon之外增加显著的计算量（FLOPs），并且两者的理想化精确白化版本在标准假设下保留了Muon的渐近收敛率。在从124M到1B参数的“modded-nanogpt”模型中，两个变体在所有评估的模型规模和批大小配置下都优于调优的AdamW和Muon（Scion实现）基线。SAMuon达到与Muon相同的验证损失所需的训练token减少13.3%至24.0%，而SAMuon-lite以接近零的挂钟开销保留了大部分收益。"
+    },
+    {
+      "id": "arxiv_2608.25871",
+      "arxiv_id": "2608.25871",
+      "title": "CEDAR: Controlled and Event-Driven Demand Forecasting via Residual Decomposition",
+      "authors": [
+        "Junjie Meng",
+        "Ranxu Zhang",
+        "Zi-an Zhang",
+        "Shujun Liu",
+        "Xiaoning Qi",
+        "Xiaozhou Xu",
+        "Yanyong Zhang",
+        "Hui Xiong",
+        "Chao Wang"
+      ],
+      "abstract": "Forecasting in large-scale e-commerce marketplaces is increasingly required to support planning: merchants need to evaluate sales outcomes under future action sequences such as budget schedules, rather than passively predicting what happens next. However, most existing time series forecasting (TSF) approaches remain inherently passive. Even when incorporating operational decisions as auxiliary covariates, they typically optimize for correlation-based extrapolation under historical policies. This design suffers from autoregressive inertia and conflates endogenous market evolution with decision-induced transitions, leading to policy-insensitive rollouts and unreliable counterfactual analysis. To bridge this gap, we propose CEDAR (Controlled and Event-Driven Demand forecasting via Action-aware Residual decomposition), a two-stage framework for robust decision-conditioned simulation. In Stage I, an Action-Interleaved Transformer learns controllable action-conditioned state transitions for rollout under planned interventions. In Stage II, a Residual Correction Module leverages external event signals and LLM-assisted text representations to align noisy event descriptions with product context and correct event-driven deviations. Our study is enabled by a large-scale real-world dataset from Alibaba 1688, comprising approximately 32 million product trajectories with paired state-action sequences and aligned event signals. Extensive offline experiments and online controlled experiments in production demonstrate that CEDAR consistently improves simulation accuracy over strong TSF baselines and delivers practical gains for real-world budget planning.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T14:43:56Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25871",
+      "pdf_link": "https://arxiv.org/pdf/2608.25871",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Forecasting in large-scale e-commerce marketplaces is increasingly required to support planning: merchants need to evaluate sales outcomes under future action sequences such as budget schedules, rather than passively predicting what happens next. However, most existing time series forecasting (TSF) approaches remain inherently passive. Even when incorporating operational decisions as auxiliary covariates, they typically optimize for correlation-based extrapolation under historical policies. This design suffers from autoregressive inertia and conflates endogenous market evolution with decision-induced transitions, leading to policy-insensitive rollouts and unreliable counterfactual analysis. To bridge this gap, we propose CEDAR (Controlled and Event-Driven Demand forecasting via Action-aware Residual decomposition), a two-stage framework for robust decision-conditioned simulation. In Stage I, an Action-Interleaved Transformer learns controllable action-conditioned state transitions for rollout under planned interventions. In Stage II, a Residual Correction Module leverages external event signals and LLM-assisted text representations to align noisy event descriptions with product context and correct event-driven deviations. Our study is enabled by a large-scale real-world dataset from Alibaba 1688, comprising approximately 32 million product trajectories with paired state-action sequences and aligned event signals. Extensive offline experiments and online controlled experiments in production demonstrate that CEDAR consistently improves simulation accuracy over strong TSF baselines and delivers practical gains for real-world budget planning.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "时间序列预测",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "论文提出需求预测框架，使用Transformer进行决策条件化模拟，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "CEDAR：基于残差分解的受控与事件驱动需求预测",
+      "abstract_zh": "大规模电子商务市场中的预测日益需要支持规划：商家需要评估未来行动序列（如预算安排）下的销售结果，而不是被动地预测接下来会发生什么。然而，大多数现有时间序列预测（TSF）方法本质上仍然是被动的。即使将运营决策作为辅助协变量纳入，它们通常也在历史策略下优化基于相关性的外推。这种设计存在自回归惯性，并将内生市场演化与决策引发的转变混为一谈，导致对策略不敏感的推演和不可靠的反事实分析。为弥补这一差距，我们提出了CEDAR（通过行动感知残差分解进行受控和事件驱动的需求预测），这是一个用于稳健决策条件模拟的两阶段框架。在第一阶段，行动交织Transformer学习可控的、以行动为条件的状态转换，以在计划干预下进行推演。在第二阶段，残差校正模块利用外部事件信号和LLM辅助的文本表示，将嘈杂的事件描述与产品上下文对齐，并纠正事件驱动的偏差。我们的研究得益于来自阿里巴巴1688的大规模真实世界数据集，包含约3200万条产品轨迹，配有状态-行动序列对和对齐的事件信号。在生产环境中进行的大量离线实验和在线受控实验表明，CEDAR在强TSF基线上持续提高了模拟准确性，并为现实世界的预算规划带来了实际收益。"
+    },
+    {
+      "id": "arxiv_2608.25794",
+      "arxiv_id": "2608.25794",
+      "title": "Cooperative Multi-Agent Reinforcement Learning for Adaptive Aggregation in Semi-Supervised Federated Learning with non-IID Data",
+      "authors": [
+        "Rene Glitza",
+        "Luca Becker",
+        "Rainer Martin"
+      ],
+      "abstract": "Federated Learning (FL) enables distributed training of machine learning models while preserving data privacy. However, FL struggles with heterogeneous, non-IID client data distributions, resulting in sub-optimal and biased global models. In this paper, we propose pFedMARL, a novel approach leveraging Multi-Agent Reinforcement Learning (MARL) with Twin Delayed Deep Deterministic Policy Gradient (TD3) to dynamically adapt aggregation strategies in FL settings. Our method employs a server-side agent adjusting client contributions to optimize global model robustness and client-side agents balancing global and local updates to personalize models effectively without pre-training. We demonstrate superior performance of pFedMARL for training a semi-supervised audio spectrogram transformer, matching or outperforming FedAvg, Ditto, and local training approaches across multiple non-IID scenarios and in the presence of adversarial clients. Our results indicate that pFedMARL actively improves accuracy, robustness, and fairness, making it suitable for real-world deployments.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T13:46:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25794",
+      "pdf_link": "https://arxiv.org/pdf/2608.25794",
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.SD",
+        "eess.AS",
+        "eess.SP"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Federated Learning (FL) enables distributed training of machine learning models while preserving data privacy. However, FL struggles with heterogeneous, non-IID client data distributions, resulting in sub-optimal and biased global models. In this paper, we propose pFedMARL, a novel approach leveraging Multi-Agent Reinforcement Learning (MARL) with Twin Delayed Deep Deterministic Policy Gradient (TD3) to dynamically adapt aggregation strategies in FL settings. Our method employs a server-side agent adjusting client contributions to optimize global model robustness and client-side agents balancing global and local updates to personalize models effectively without pre-training. We demonstrate superior performance of pFedMARL for training a semi-supervised audio spectrogram transformer, matching or outperforming FedAvg, Ditto, and local training approaches across multiple non-IID scenarios and in the presence of adversarial clients. Our results indicate that pFedMARL actively improves accuracy, robustness, and fairness, making it suitable for real-world deployments.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "联邦学习",
+        "非独立同分布",
+        "多智能体强化学习"
+      ],
+      "relevance_reason_zh": "论文属于联邦学习场景下的隐私保护分布式训练，但核心是聚合策略优化而非安全推理协议。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\n本文提出 **pFedMARL**，利用多智能体强化学习（Multi-Agent Reinforcement Learning, MARL）动态调整联邦学习的聚合策略，在半监督音频 Transformer 任务上匹配或超越 FedAvg、Ditto 和本地训练方法。\n\n## 问题与动机\n\n联邦学习（Federated Learning, FL）能在不共享原始数据的前提下进行分布式模型训练，从而保护数据隐私。然而，当客户端数据呈 **non-IID**（非独立同分布）时，传统 FL 训练的全局模型容易次优且有偏。固定或启发式的聚合权重难以适应异构数据分布，因此需要一种能动态调整客户端贡献的自适应聚合机制。\n\n## 方法与技术路线\n\npFedMARL 将聚合策略建模为多智能体协作问题，在 FL 训练过程中引入两类智能体：\n\n- **服务端智能体**：负责调整各客户端的贡献权重（即聚合系数），目标是优化全局模型的鲁棒性；\n- **客户端智能体**：负责在全局更新与本地更新之间做平衡，从而实现有效的个性化模型，且无需预训练。\n\n这些智能体采用 **TD3**（Twin Delayed Deep Deterministic Policy Gradient，双延迟深度确定性策略梯度）算法进行训练。摘要未说明智能体的具体状态空间、动作空间、奖励函数设计，也未说明 TD3 网络结构或训练超参数。\n\n实验设定为：训练一个**半监督音频频谱图 Transformer** 模型。比较对象包括 **FedAvg**（联邦平均）、**Ditto**（一种个性化 FL 方法）以及**本地训练**。评测覆盖多个 non-IID 场景，并引入**对抗客户端**（adversarial clients）来测试鲁棒性。摘要未披露数据集来源、non-IID 划分方式、对抗行为的具体定义或实验轮数等细节。\n\n## 主要结果\n\npFedMARL 在这些场景中匹配或优于 FedAvg、Ditto 和本地训练方法。摘要指出该方法能主动提升**准确性、鲁棒性和公平性**，因此适合真实世界部署。\n\n## 为什么与兴趣相关\n\n联邦学习的核心难点之一是在保护隐私与提升模型泛化之间取得平衡。pFedMARL 将聚合策略从静态规则变为强化学习驱动的动态决策，为异构数据下的分布式训练提供了新思路。虽然本文不涉及具体密码学安全推理协议，但其“服务端-客户端协同”的优化机制对隐私保护场景下的模型聚合、公平性与抗攻击能力研究具有参考价值。",
+      "summary": "## 一句话结论\n\n本文提出 **pFedMARL**，利用多智能体强化学习（Multi-Agent Reinforcement Learning, MARL）动态调整联邦学习的聚合策略，在半监督音频 Transformer 任务上匹配或超越 FedAvg、Ditto 和本地训练方法。\n\n## 问题与动机\n\n联邦学习（Federated Learning, FL）能在不共享原始数据的前提下进行分布式模型训练，从而保护数据隐私。然而，当客户端数据呈 **non-IID**（非独立同分布）时，传统 FL 训练的全局模型容易次优且有偏。固定或启发式的聚合权重难以适应异构数据分布，因此需要一种能动态调整客户端贡献的自适应聚合机制。\n\n## 方法与技术路线\n\npFedMARL 将聚合策略建模为多智能体协作问题，在 FL 训练过程中引入两类智能体：\n\n- **服务端智能体**：负责调整各客户端的贡献权重（即聚合系数），目标是优化全局模型的鲁棒性；\n- **客户端智能体**：负责在全局更新与本地更新之间做平衡，从而实现有效的个性化模型，且无需预训练。\n\n这些智能体采用 **TD3**（Twin Delayed Deep Deterministic Policy Gradient，双延迟深度确定性策略梯度）算法进行训练。摘要未说明智能体的具体状态空间、动作空间、奖励函数设计，也未说明 TD3 网络结构或训练超参数。\n\n实验设定为：训练一个**半监督音频频谱图 Transformer** 模型。比较对象包括 **FedAvg**（联邦平均）、**Ditto**（一种个性化 FL 方法）以及**本地训练**。评测覆盖多个 non-IID 场景，并引入**对抗客户端**（adversarial clients）来测试鲁棒性。摘要未披露数据集来源、non-IID 划分方式、对抗行为的具体定义或实验轮数等细节。\n\n## 主要结果\n\npFedMARL 在这些场景中匹配或优于 FedAvg、Ditto 和本地训练方法。摘要指出该方法能主动提升**准确性、鲁棒性和公平性**，因此适合真实世界部署。\n\n## 为什么与兴趣相关\n\n联邦学习的核心难点之一是在保护隐私与提升模型泛化之间取得平衡。pFedMARL 将聚合策略从静态规则变为强化学习驱动的动态决策，为异构数据下的分布式训练提供了新思路。虽然本文不涉及具体密码学安全推理协议，但其“服务端-客户端协同”的优化机制对隐私保护场景下的模型聚合、公平性与抗攻击能力研究具有参考价值。"
+    },
+    {
+      "id": "arxiv_2608.25777",
+      "arxiv_id": "2608.25777",
+      "title": "LocalLSTC: A Long Short-Term Control Architecture for Locally Deployed GUI Agents",
+      "authors": [
+        "Weiming Li",
+        "Helen Paik",
+        "Yulei Sui"
+      ],
+      "abstract": "Modern GUI-agent frameworks achieve strong desktop task performance with frontier API models, yet persistent control information often remains implicit in growing interaction trajectories. At each step, the planner reconstructs the active task stage, accumulated evidence, and runtime feedback before deciding the next action. This dependence becomes more pronounced under weaker local reasoning backbones. Across four representative state-of-the-art frameworks, replacing GPT-5 with Qwen3.5-9B reduces average OSWorld SR-100 from 60.9\\% to 37.7\\%. Trajectory annotation further identifies at least one control failure in 91.6\\% of failed trajectories. To address this problem, we introduce LocalLSTC, a training-free architecture that organizes control by temporal scope, maintaining persistent cross-step state to guide short-term execution commitments. Long-Term Control maintains the active subgoal, subgoal-aligned evidence, and runtime feedback across interactions, while Short-Term Execution realizes bounded commitments for the current step. Long-to-Short Planning forms each commitment from persistent state, and Short-to-Long Control integrates execution outcomes back into that state for progress assessment, recovery, and termination. With Qwen3.6-27B, LocalLSTC reaches 64.7\\% SR-100 on OSWorld and 65.3\\% on WindowsAgentArena, outperforming the strongest prior local results on both benchmarks. Ablations further support contributions from mechanisms on both sides of execution. These findings identify temporal organization of control information as a distinct architectural dimension for locally deployed GUI agents.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T13:20:27Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25777",
+      "pdf_link": "https://arxiv.org/pdf/2608.25777",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Modern GUI-agent frameworks achieve strong desktop task performance with frontier API models, yet persistent control information often remains implicit in growing interaction trajectories. At each step, the planner reconstructs the active task stage, accumulated evidence, and runtime feedback before deciding the next action. This dependence becomes more pronounced under weaker local reasoning backbones. Across four representative state-of-the-art frameworks, replacing GPT-5 with Qwen3.5-9B reduces average OSWorld SR-100 from 60.9\\% to 37.7\\%. Trajectory annotation further identifies at least one control failure in 91.6\\% of failed trajectories. To address this problem, we introduce LocalLSTC, a training-free architecture that organizes control by temporal scope, maintaining persistent cross-step state to guide short-term execution commitments. Long-Term Control maintains the active subgoal, subgoal-aligned evidence, and runtime feedback across interactions, while Short-Term Execution realizes bounded commitments for the current step. Long-to-Short Planning forms each commitment from persistent state, and Short-to-Long Control integrates execution outcomes back into that state for progress assessment, recovery, and termination. With Qwen3.6-27B, LocalLSTC reaches 64.7\\% SR-100 on OSWorld and 65.3\\% on WindowsAgentArena, outperforming the strongest prior local results on both benchmarks. Ablations further support contributions from mechanisms on both sides of execution. These findings identify temporal organization of control information as a distinct architectural dimension for locally deployed GUI agents.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "GUI智能体",
+        "LLM应用"
+      ],
+      "relevance_reason_zh": "论文面向GUI智能体的控制架构设计，仅提及GPT作为基线，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LocalLSTC：一种用于本地部署GUI智能体的长短期控制架构",
+      "abstract_zh": "现代GUI智能体框架借助前沿API模型在桌面任务上取得了强劲表现，但持续的控制信息在日益增长的交互相轨中往往仍是隐式的。在每一步，规划器需先重建当前任务阶段、累积证据和运行时反馈，然后才决定下一步动作。在较弱的本地推理骨干下，这种依赖性变得更加明显。在四个具有代表性的最新框架中，将GPT-5替换为Qwen3.5-9B会使OSWorld SR-100的平均值从60.9%降至37.7%。轨迹标注进一步表明，91.6%的失败轨迹中至少存在一次控制失败。为解决这一问题，我们提出了LocalLSTC，一种无需训练的架构，按时间范围组织控制，维护跨步骤的持久状态以指导短期执行承诺。长期控制维护跨交互的当前子目标、与子目标一致的证据和运行时反馈，而短期执行则实现当前步骤的有界承诺。长到短规划从持久状态形成每个承诺，而短到长控制将执行结果整合回该状态，用于进度评估、恢复和终止。使用Qwen3.6-27B，LocalLSTC在OSWorld上达到64.7%的SR-100，在WindowsAgentArena上达到65.3%，在两项基准上都优于此前最强的本地结果。消融研究进一步支持执行两侧机制的贡献。这些发现将控制信息的时间组织确立为本地部署GUI智能体的一个独立架构维度。"
+    },
+    {
+      "id": "arxiv_2608.25774",
+      "arxiv_id": "2608.25774",
+      "title": "EXAONE Tabular 1.0 : Technical Report",
+      "authors": [
+        "Moonjung Eo",
+        "Min-Kook Suh",
+        "Hye-Seung Cho",
+        "Jiwon Kim",
+        "Seoyoon Kim",
+        "Sangjun Nam",
+        "Soonyoung Lee"
+      ],
+      "abstract": "EXAONE Tabular is a compact tabular foundation model family for classification and regression via in-context learning, producing predictions without dataset-specific gradient updates. Pretrained exclusively on a synthetic structural-causal-model (SCM) prior, its central contribution is an architecture-centered redesign of tabular in-context learning. Rather than compressing features into a fixed row embedding before a separate row-level learner, EXAONE Tabular interleaves feature-axis attention within each item with support-conditioned item-axis attention within each feature at every Transformer layer, mediated by item-summary and feature-summary tokens. Across four public benchmarks, EXAONE Tabular combines strong predictive performance with high efficiency. On TabArena, its 20.81M-parameter classification model ranks first overall, surpassing tuned ensembles and 4-hour AutoML pipelines, while regression reaches the performance regime of the 1.64B-parameter TabFM at roughly 1/11 the inference cost. On BCCO and TALENT, EXAONE Tabular ranks second in classification and first in regression. On ScoringBench, it achieves the best mean rank for both point-estimation and predictive-distribution quality, leading the $R^2$, RMSE, and CRPS evaluations. Together, these results establish EXAONE Tabular as a state-of-the-art compact tabular foundation model family, combining strong predictive performance across classification, point regression, and probabilistic regression with an efficient model design.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T13:17:20Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25774",
+      "pdf_link": "https://arxiv.org/pdf/2608.25774",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "EXAONE Tabular is a compact tabular foundation model family for classification and regression via in-context learning, producing predictions without dataset-specific gradient updates. Pretrained exclusively on a synthetic structural-causal-model (SCM) prior, its central contribution is an architecture-centered redesign of tabular in-context learning. Rather than compressing features into a fixed row embedding before a separate row-level learner, EXAONE Tabular interleaves feature-axis attention within each item with support-conditioned item-axis attention within each feature at every Transformer layer, mediated by item-summary and feature-summary tokens. Across four public benchmarks, EXAONE Tabular combines strong predictive performance with high efficiency. On TabArena, its 20.81M-parameter classification model ranks first overall, surpassing tuned ensembles and 4-hour AutoML pipelines, while regression reaches the performance regime of the 1.64B-parameter TabFM at roughly 1/11 the inference cost. On BCCO and TALENT, EXAONE Tabular ranks second in classification and first in regression. On ScoringBench, it achieves the best mean rank for both point-estimation and predictive-distribution quality, leading the $R^2$, RMSE, and CRPS evaluations. Together, these results establish EXAONE Tabular as a state-of-the-art compact tabular foundation model family, combining strong predictive performance across classification, point regression, and probabilistic regression with an efficient model design.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "表格基础模型",
+        "上下文学习"
+      ],
+      "relevance_reason_zh": "论文介绍表格基础模型的设计与性能，属于普通模型架构，不涉及隐私保护或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "EXAONE Tabular 1.0：技术报告",
+      "abstract_zh": "EXAONE Tabular是一个紧凑型表格基础模型系列，通过上下文学习进行分类和回归，无需针对特定数据集的梯度更新即可产生预测。其仅使用合成结构因果模型（SCM）先验进行预训练，核心贡献在于对表格上下文学习进行以架构为中心的重新设计。EXAONE Tabular并非在独立的行级学习器之前将特征压缩为固定的行嵌入，而是在每个Transformer层中，将每个项内的特征轴注意力与每个特征内由支持集条件化的项轴注意力交错进行，并通过项摘要和特征摘要token进行中介。在四个公开基准上，EXAONE Tabular兼具强大的预测性能和高效率。在TabArena上，其20.81M参数分类模型总体排名第一，超越了调优后的集成模型和4小时AutoML流水线，而回归则以约1/11的推理成本达到了1.64B参数TabFM的性能水平。在BCCO和TALENT上，EXAONE Tabular分类排名第二、回归排名第一。在ScoringBench上，它在点估计和预测分布质量两方面均取得最佳平均排名，在R²、RMSE和CRPS评估中领先。综上，这些结果确立了EXAONE Tabular作为最先进的紧凑型表格基础模型系列的地位，将分类、点回归和概率回归方面的强预测性能与高效的模型设计相结合。"
+    },
+    {
+      "id": "arxiv_2608.25738",
+      "arxiv_id": "2608.25738",
+      "title": "MeMark: Membrane-Space Watermarking for Spiking Neural Networks",
+      "authors": [
+        "Roberto Riaño",
+        "Gorka Abad",
+        "Stjepan Picek",
+        "Aitor Urbieta"
+      ],
+      "abstract": "Spiking Neural Networks (SNNs) are increasingly distributed as pretrained checkpoints and reused as backbones for new tasks. However, current SNN watermarks are mainly verified against the model output. Thus, a user who replaces the output head can keep most of the original network while removing the evidence used for verification. We present MeMark, a watermark designed for the checkpoint-reuse setting. Instead of storing the watermark in the output head, MeMark embeds a multi-bit identifier in the internal membrane state of selected Leaky Integrate-and-Fire (LIF) neurons. A secret input drives each selected neuron to the chosen side of its own firing threshold, and the same threshold is later used to recover the secret bit, so the verifier does not need a learned decoder. We evaluate MeMark across recurrent, convolutional, residual, and transformer SNNs. On a 215.4M-parameter SpikeGPT checkpoint, all 20 independent 64-bit keys pass the fixed 51/64 verification rule, while none of the $30\\,000$ fresh random keys pass when tested against all 20 protected checkpoints and the clean model. All 20 genuine keys also remain above the threshold after fine-tuning, 90\\% pruning, int8 quantization, and output-head replacement. Under our stated threat model, adaptive attacks can weaken the watermark but do not remove the ownership evidence in the settings we test. Additionally, we study false ownership claims, key-aware and key-agnostic removal, partial key disclosure, rollback, and extraction into a student. The results show that MeMark can provide evidence of checkpoint derivatives, while being resistant to the adversary's attacks and complete head replacement.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T12:50:09Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25738",
+      "pdf_link": "https://arxiv.org/pdf/2608.25738",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Spiking Neural Networks (SNNs) are increasingly distributed as pretrained checkpoints and reused as backbones for new tasks. However, current SNN watermarks are mainly verified against the model output. Thus, a user who replaces the output head can keep most of the original network while removing the evidence used for verification. We present MeMark, a watermark designed for the checkpoint-reuse setting. Instead of storing the watermark in the output head, MeMark embeds a multi-bit identifier in the internal membrane state of selected Leaky Integrate-and-Fire (LIF) neurons. A secret input drives each selected neuron to the chosen side of its own firing threshold, and the same threshold is later used to recover the secret bit, so the verifier does not need a learned decoder. We evaluate MeMark across recurrent, convolutional, residual, and transformer SNNs. On a 215.4M-parameter SpikeGPT checkpoint, all 20 independent 64-bit keys pass the fixed 51/64 verification rule, while none of the $30\\,000$ fresh random keys pass when tested against all 20 protected checkpoints and the clean model. All 20 genuine keys also remain above the threshold after fine-tuning, 90\\% pruning, int8 quantization, and output-head replacement. Under our stated threat model, adaptive attacks can weaken the watermark but do not remove the ownership evidence in the settings we test. Additionally, we study false ownership claims, key-aware and key-agnostic removal, partial key disclosure, rollback, and extraction into a student. The results show that MeMark can provide evidence of checkpoint derivatives, while being resistant to the adversary's attacks and complete head replacement.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "模型水印",
+        "脉冲神经网络"
+      ],
+      "relevance_reason_zh": "论文聚焦脉冲神经网络的水印嵌入与验证，属于模型知识产权保护，而非大模型安全或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "MeMark：脉冲神经网络的膜空间水印",
+      "abstract_zh": "脉冲神经网络（SNNs）越来越多地以预训练检查点的形式分发，并作为新任务的主干网络被复用。然而，当前的SNN水印主要针对模型输出进行验证。因此，替换输出头的用户可以在保留大部分原始网络的同时移除用于验证的证据。我们提出MeMark，一种为检查点复用场景设计的水印。MeMark不是将水印存储在输出头中，而是将多位标识符嵌入所选漏电积分发放（LIF）神经元的内部膜状态。一个秘密输入驱动每个选定神经元到达其自身放电阈值的选定一侧，之后使用同一阈值恢复秘密比特，因此验证者不需要学习得到的解码器。我们在循环、卷积、残差和Transformer SNN上评估了MeMark。在一个215.4M参数的SpikeGPT检查点上，所有20个独立的64位密钥都通过固定的51/64验证规则，而在针对所有20个受保护检查点和干净模型进行测试时，30000个全新的随机密钥没有一个通过。所有20个真实密钥在微调、90%剪枝、int8量化和输出头替换后仍保持在阈值之上。在我们所述的威胁模型下，自适应攻击可以削弱水印，但在我们测试的设置中并不能移除所有权证据。此外，我们研究了虚假所有权声明、密钥相关与密钥无关的移除、部分密钥泄露、回滚以及提取到学生模型。结果表明，MeMark既能提供检查点衍生模型的证据，又能抵抗对手的攻击和完全输出头替换。"
+    },
+    {
+      "id": "arxiv_2608.25697",
+      "arxiv_id": "2608.25697",
+      "title": "LMSM: LLM Security Framework Inspired by Linux Security Modules",
+      "authors": [
+        "XiuYu Zhang",
+        "Bonan Ruan",
+        "Junfeng Fang",
+        "An Zhang",
+        "Tat-Seng Chua",
+        "Zhenkai Liang"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed with layered defenses, yet malicious prompts can still bypass them. Interpretability methods can expose model-internal signals along the generation path that could inform enforcement, but these signals are not security controls by themselves. Deployments that adapt them for safety typically couple each signal to its own calibration, policy logic, and intervention code, so each new artifact creates integration work instead of strengthening a shared defense. We present Language Model Security Modules (LMSM), a security framework that adapts the separation behind Linux Security Modules (LSM) to LLM serving. In LMSM, a selected security backend exposes calibrated evidence, a versioned policy evaluates active rules over trusted per-request context, and a separate gate authorizes buffered output release. This design separates mediation correctness from policy effectiveness, and it allows backend, rule, or schedule changes without rebuilding request handling or enforcement. Our prototype shows the separation working in practice: with Hugging Face Transformers and continuously batched vLLM, the same substrate hosts artifact-backed sparse autoencoder (SAE) and transcoder deployments and task-fitted dense probes, preserves request-specific decisions under scheduler churn, and selectively enforces and composes multiple rules per request. On Qwen3-4B, LMSM-Checkpoint reduces HarmBench attack success rate from 39.20% to 3.32%, with XSTest false refusals rising from 2.40% to 4.40%, while retaining 98.14% of the throughput of a matched serving path that performs no monitoring work at 32 active sequences. LMSM gives advances in interpretability and model-internal analysis a common path to runtime enforcement.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T12:13:05Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25697",
+      "pdf_link": "https://arxiv.org/pdf/2608.25697",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "LLM security"
+      ],
+      "summary_en": "Large language models (LLMs) are increasingly deployed with layered defenses, yet malicious prompts can still bypass them. Interpretability methods can expose model-internal signals along the generation path that could inform enforcement, but these signals are not security controls by themselves. Deployments that adapt them for safety typically couple each signal to its own calibration, policy logic, and intervention code, so each new artifact creates integration work instead of strengthening a shared defense. We present Language Model Security Modules (LMSM), a security framework that adapts the separation behind Linux Security Modules (LSM) to LLM serving. In LMSM, a selected security backend exposes calibrated evidence, a versioned policy evaluates active rules over trusted per-request context, and a separate gate authorizes buffered output release. This design separates mediation correctness from policy effectiveness, and it allows backend, rule, or schedule changes without rebuilding request handling or enforcement. Our prototype shows the separation working in practice: with Hugging Face Transformers and continuously batched vLLM, the same substrate hosts artifact-backed sparse autoencoder (SAE) and transcoder deployments and task-fitted dense probes, preserves request-specific decisions under scheduler churn, and selectively enforces and composes multiple rules per request. On Qwen3-4B, LMSM-Checkpoint reduces HarmBench attack success rate from 39.20% to 3.32%, with XSTest false refusals rising from 2.40% to 4.40%, while retaining 98.14% of the throughput of a matched serving path that performs no monitoring work at 32 active sequences. LMSM gives advances in interpretability and model-internal analysis a common path to runtime enforcement.",
+      "keywords": [
+        "LLM security"
+      ],
+      "topics": [
+        "大模型安全",
+        "提示注入防御",
+        "运行时安全"
+      ],
+      "relevance_reason_zh": "论文提出LLM服务安全框架用于拦截恶意提示，属于大模型安全防御，但未涉及密码学协议保护推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "failed",
+      "translation_status": "not_requested",
+      "summary_zh": "⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。",
+      "summary": "⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。"
+    },
+    {
+      "id": "arxiv_2608.25646",
+      "arxiv_id": "2608.25646",
+      "title": "LDAC-Net: A Learnable Multi-Lag Differencing Attention-Convolution Network for Drift-Robust Recognition with Low-Cost MOX Gas Sensors",
+      "authors": [
+        "Xin Zhang",
+        "Liangxiu Han",
+        "Yue Shi",
+        "Tam Sobeih"
+      ],
+      "abstract": "Portable electronic-nose systems based on low-cost metal-oxide (MOX) gas sensors offer a practical solution for gas and odour recognition, but their signals are affected by slow chemical transients, drifting sensor offsets, scale variation, and cross-channel correlations. Existing pipelines commonly use fixed first-order temporal differencing (FOTD), which requires a manually selected lag and may discard useful response information. We propose LDAC-Net, an end-to-end learnable multi-lag differencing attention-convolution network that operates directly on multi-channel MOX signals. Its learnable differential feature enhancement front-end combines window-conditioned statistical affine normalisation, which compensates for window-specific offset and scale variation, with learnable multi-lag differencing, which weights and combines temporal differences across multiple lags. A compact attention-convolution backbone subsequently models local transients and longer-range temporal dependencies. On the 50-class SmellNet-Base task, LDAC-Net achieves 68.2% top-1 accuracy, exceeding the best FOTD-preprocessed comparison model by approximately 14 percentage points and the raw-input Transformer by more than 30 points. Ablation studies confirm the contributions of both proposed components. The representation also transfers to SmellNet-Mixtures, improving accuracy from 45.4% to 50.5%, and generalises to the 62-channel eNose-Drift benchmark under strong long-term drift, achieving 70.6% top-1 accuracy and 69.6% macro-F1. These results outperform the best comparison model with dataset-retuned FOTD preprocessing by 8.0 and 3.0 points, respectively, demonstrating that learnable, sensor-aware preprocessing is more effective than fixed handcrafted differencing for low-cost MOX gas-sensor recognition.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T11:20:27Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25646",
+      "pdf_link": "https://arxiv.org/pdf/2608.25646",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Portable electronic-nose systems based on low-cost metal-oxide (MOX) gas sensors offer a practical solution for gas and odour recognition, but their signals are affected by slow chemical transients, drifting sensor offsets, scale variation, and cross-channel correlations. Existing pipelines commonly use fixed first-order temporal differencing (FOTD), which requires a manually selected lag and may discard useful response information. We propose LDAC-Net, an end-to-end learnable multi-lag differencing attention-convolution network that operates directly on multi-channel MOX signals. Its learnable differential feature enhancement front-end combines window-conditioned statistical affine normalisation, which compensates for window-specific offset and scale variation, with learnable multi-lag differencing, which weights and combines temporal differences across multiple lags. A compact attention-convolution backbone subsequently models local transients and longer-range temporal dependencies. On the 50-class SmellNet-Base task, LDAC-Net achieves 68.2% top-1 accuracy, exceeding the best FOTD-preprocessed comparison model by approximately 14 percentage points and the raw-input Transformer by more than 30 points. Ablation studies confirm the contributions of both proposed components. The representation also transfers to SmellNet-Mixtures, improving accuracy from 45.4% to 50.5%, and generalises to the 62-channel eNose-Drift benchmark under strong long-term drift, achieving 70.6% top-1 accuracy and 69.6% macro-F1. These results outperform the best comparison model with dataset-retuned FOTD preprocessing by 8.0 and 3.0 points, respectively, demonstrating that learnable, sensor-aware preprocessing is more effective than fixed handcrafted differencing for low-cost MOX gas-sensor recognition.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "气体传感器识别",
+        "时序信号处理"
+      ],
+      "relevance_reason_zh": "论文针对MOX气体传感器信号设计识别网络，与隐私计算或安全推理完全无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LDAC-Net: 一种用于低成本MOX气体传感器漂移鲁棒识别的可学习多滞后差分注意力-卷积网络",
+      "abstract_zh": "基于低成本金属氧化物（MOX）气体传感器的便携式电子鼻系统为气体和气味识别提供了实用解决方案，但其信号受到缓慢化学瞬态、传感器偏移漂移、尺度变化和跨通道相关性的影响。现有流程通常使用固定的一阶时间差分（FOTD），这需要手动选择滞后，并可能丢弃有用的响应信息。我们提出了LDAC-Net，一种端到端的可学习多滞后差分注意力-卷积网络，直接对多通道MOX信号进行操作。其可学习差分特征增强前端将窗口条件统计仿射归一化（补偿窗口特定的偏移和尺度变化）与可学习多滞后差分（加权并组合多个滞后上的时间差分）相结合。紧凑的注意力-卷积骨干网络随后对局部瞬态和更长范围的时间依赖性进行建模。在50类SmellNet-Base任务上，LDAC-Net实现了68.2%的top-1准确率，超过最佳FOTD预处理对比模型约14个百分点，超过原始输入Transformer 30多个百分点。消融研究证实了所提出两个组件的贡献。该表示还迁移到SmellNet-Mixtures，将准确率从45.4%提高到50.5%，并在强长期漂移下泛化到62通道eNose-Drift基准，实现了70.6%的top-1准确率和69.6%的宏F1。这些结果分别超过使用数据集重新调优FOTD预处理的最佳对比模型8.0和3.0个百分点，表明对于低成本MOX气体传感器识别，可学习的、感知传感器的预处理比固定的手工差分更有效。"
+    },
+    {
+      "id": "arxiv_2608.25601",
+      "arxiv_id": "2608.25601",
+      "title": "A Dual-Transformer for Multi-Camera View Recommendation",
+      "authors": [
+        "Josep Cabacas-Maso",
+        "Carles Ventura",
+        "Ismael Benito-Altamirano"
+      ],
+      "abstract": "Multi-camera systems are foundational to modern media production, and multi-camera editing is a critical task. This involves the proper selection of the appropriate camera view at each moment. In this paper, we propose a novel Dual-Transformer architecture with Cross-Attention that heavily outperformed the current SOTA models over the TVMCE dataset (TV Shows Multicamera Editing dataset). Our model decouples these tasks: (1) a dedicated temporal encoder first processes the sequence of past frames to build a rich memory of the recent history, and (2) the candidate camera views then act as queries to this memory via a cross-attention module, allowing each candidate to independently interrogate the historical context and find the most relevant information for its own evaluation. Our approach achieved 56.60% Precision@0.5, representing a substantial improvement over the prior best result of 37.16%. We further conducted an ablation study exploring the use of lightweight backbone architectures, where the SwinV2 backbone yielded the best performance, achieving 69.65% Precision@0.5. Using this best-performing configuration, we then investigated the feasibility of adapting the model to replicate the editing style of a specific human editor. To this end, we fine-tuned the model using varying proportions of the initial segment of a target video. Our results demonstrate that even with only 20% of the video used for fine-tuning, the model exhibited measurable improvements in Precision@0.5, indicating strong potential for data-efficient personalization of editing style adapted to each individual TV show or producer.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T10:22:29Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25601",
+      "pdf_link": "https://arxiv.org/pdf/2608.25601",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Multi-camera systems are foundational to modern media production, and multi-camera editing is a critical task. This involves the proper selection of the appropriate camera view at each moment. In this paper, we propose a novel Dual-Transformer architecture with Cross-Attention that heavily outperformed the current SOTA models over the TVMCE dataset (TV Shows Multicamera Editing dataset). Our model decouples these tasks: (1) a dedicated temporal encoder first processes the sequence of past frames to build a rich memory of the recent history, and (2) the candidate camera views then act as queries to this memory via a cross-attention module, allowing each candidate to independently interrogate the historical context and find the most relevant information for its own evaluation. Our approach achieved 56.60% Precision@0.5, representing a substantial improvement over the prior best result of 37.16%. We further conducted an ablation study exploring the use of lightweight backbone architectures, where the SwinV2 backbone yielded the best performance, achieving 69.65% Precision@0.5. Using this best-performing configuration, we then investigated the feasibility of adapting the model to replicate the editing style of a specific human editor. To this end, we fine-tuned the model using varying proportions of the initial segment of a target video. Our results demonstrate that even with only 20% of the video used for fine-tuning, the model exhibited measurable improvements in Precision@0.5, indicating strong potential for data-efficient personalization of editing style adapted to each individual TV show or producer.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "transformer",
+        "视频编辑"
+      ],
+      "relevance_reason_zh": "仅用Transformer架构做多摄像机视角推荐，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "一种用于多摄像机视角推荐的双Transformer模型",
+      "abstract_zh": "多摄像机系统是现代媒体制作的基础，而多摄像机剪辑是一项关键任务。这涉及到在每个时刻正确选择合适的摄像机视角。在本文中，我们提出了一种带有交叉注意力机制的新型Dual-Transformer架构，其在TVMCE数据集（TV Shows Multicamera Editing dataset，即电视节目多摄像机剪辑数据集）上大幅超越了当前的SOTA模型。我们的模型将这些任务解耦：(1) 专门的时序编码器首先处理过去帧的序列，以构建对最近历史的丰富记忆；(2) 然后候选摄像机视角通过交叉注意力模块作为查询作用于该记忆，使每个候选能够独立查询历史上下文，并找到与其自身评估最相关的信息。我们的方法达到了56.60%的Precision@0.5，相比先前最佳结果37.16%有显著提升。我们进一步进行了消融研究，探索了轻量级骨干架构的使用，其中SwinV2骨干取得了最佳性能，达到了69.65%的Precision@0.5。使用这一性能最佳的配置，我们随后研究了将模型适配为复制特定人工剪辑师剪辑风格的可行性。为此，我们使用目标视频初始片段的不同比例对模型进行了微调。我们的结果表明，即使仅使用视频的20%进行微调，模型在Precision@0.5上也表现出可测量的提升，这表明在针对每个电视节目或制作人定制剪辑风格时，具有数据高效个性化的强大潜力。"
+    },
+    {
+      "id": "arxiv_2608.25593",
+      "arxiv_id": "2608.25593",
+      "title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+      "authors": [
+        "Guibin Zhang",
+        "Leo Lu",
+        "Fangzhou Xie",
+        "Kang Zhu",
+        "Junhao Wang",
+        "Zhifei Xie",
+        "Zhaochen Yu",
+        "Zihang Liu",
+        "Zhongxiang Sun",
+        "Qiankun Li",
+        "Yue Liao",
+        "Heng Chang",
+        "Xiaobin Hu",
+        "Qibing Ren",
+        "Wangchunshu Zhou",
+        "Shuicheng Yan"
+      ],
+      "abstract": "Agent capability is not determined by the model alone. The agent harness, encompassing memory management, planning strategy, action protocol, and tool/skill orchestration, can dominate the contribution of the underlying foundation model. Yet harness design remains manual, task-specific, and fundamentally unscalable. We present JIT-Agent, a harness intelligence model trained to synthesize task-adaptive agent harnesses on the fly for arbitrary off-the-shelf agentic LLMs. We formalize the agent harness as a composable, machine-generatable artifact governed by a fixed four-module protocol, and train JIT-Agent to customize harnesses for a given task at hand, repair harnesses for stable and reliable execution, and self-evolve by distilling performance signals from an expanding archive of prior harness configurations. Equipped with JIT-Agent as a harness helper, DeepSeek-V4-Flash surpasses GPT-5.6 on DeepSearchQA (+9.1) and OdysseyBench (+4.3), while the already strong GLM-5.2 gains up to +20.2 points. Across controlled evaluations, JIT-Agent-generated harnesses are performance-competitive with mature agent runtimes such as OpenCode and Claude Code and consistently improve multi-scale model families of DeepSeek V4, Mimo-V2.5, and Qwen3.6. To our knowledge, JIT-Agent is the first model purpose-built for just-in-time harness generation, establishing harness intelligence as a trainable, transferable, and compounding dimension of agent capability orthogonal to model scaling.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T10:05:33Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25593",
+      "pdf_link": "https://arxiv.org/pdf/2608.25593",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Agent capability is not determined by the model alone. The agent harness, encompassing memory management, planning strategy, action protocol, and tool/skill orchestration, can dominate the contribution of the underlying foundation model. Yet harness design remains manual, task-specific, and fundamentally unscalable. We present JIT-Agent, a harness intelligence model trained to synthesize task-adaptive agent harnesses on the fly for arbitrary off-the-shelf agentic LLMs. We formalize the agent harness as a composable, machine-generatable artifact governed by a fixed four-module protocol, and train JIT-Agent to customize harnesses for a given task at hand, repair harnesses for stable and reliable execution, and self-evolve by distilling performance signals from an expanding archive of prior harness configurations. Equipped with JIT-Agent as a harness helper, DeepSeek-V4-Flash surpasses GPT-5.6 on DeepSearchQA (+9.1) and OdysseyBench (+4.3), while the already strong GLM-5.2 gains up to +20.2 points. Across controlled evaluations, JIT-Agent-generated harnesses are performance-competitive with mature agent runtimes such as OpenCode and Claude Code and consistently improve multi-scale model families of DeepSeek V4, Mimo-V2.5, and Qwen3.6. To our knowledge, JIT-Agent is the first model purpose-built for just-in-time harness generation, establishing harness intelligence as a trainable, transferable, and compounding dimension of agent capability orthogonal to model scaling.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "AI agent",
+        "LLM"
+      ],
+      "relevance_reason_zh": "核心是Agent harness的自动生成与进化，不涉及安全推理或隐私保护。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "JIT-Agent：通过即时智能体框架演化扩展智能体框架智能",
+      "abstract_zh": "智能体能力并非仅由模型决定。智能体框架（agent harness）涵盖记忆管理、规划策略、动作协议以及工具/技能编排，可能主导底层基础模型的贡献。然而，智能体框架的设计仍然是手动的、特定于任务的，并且从根本上不可扩展。我们提出JIT-Agent，一个智能体框架智能模型，经过训练可以即时为任意现成的智能体LLM合成任务自适应的智能体框架。我们将智能体框架形式化为一个可组合、机器可生成的工件，由固定的四模块协议控制，并训练JIT-Agent为手头给定任务定制框架、修复框架以实现稳定可靠的执行，并通过从先前框架配置的不断扩展的档案中提取性能信号进行自我进化。以JIT-Agent作为框架助手，DeepSeek-V4-Flash在DeepSearchQA上超越GPT-5.6（+9.1），在OdysseyBench上超越GPT-5.6（+4.3），而本已强大的GLM-5.2则获得高达+20.2分的提升。在受控评估中，JIT-Agent生成的框架与成熟的智能体运行时（如OpenCode和Claude Code）在性能上具有竞争力，并持续改进DeepSeek V4、Mimo-V2.5和Qwen3.6等多尺度模型家族。据我们所知，JIT-Agent是首个专为即时框架生成而构建的模型，将框架智能确立为一个可训练、可迁移且可复合的智能体能力维度，与模型扩展正交。"
+    },
+    {
+      "id": "arxiv_2608.25555",
+      "arxiv_id": "2608.25555",
+      "title": "Virgil: Navigating Explainability for Transformer-based Language Models",
+      "authors": [
+        "Martino Ciaperoni",
+        "Sezer Kutluk",
+        "Benedetta Muscato",
+        "Marta Marchiori Manerba",
+        "Fosca Giannotti"
+      ],
+      "abstract": "Explainability for transformer-based language models is becoming crucial as these systems are deployed in high-stakes applications. As a result, the ecosystem of explainability tools is rapidly evolving, becoming richer, but also more fragmented and harder to navigate. To address this challenge, we present Virgil, an interactive system that lets practitioners and researchers, including non-experts, navigate explainability tools for transformer language models. Supported by a curated knowledge base, the system enables users to discover and compare explainability tools within a unified interface.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T09:05:25Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25555",
+      "pdf_link": "https://arxiv.org/pdf/2608.25555",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Explainability for transformer-based language models is becoming crucial as these systems are deployed in high-stakes applications. As a result, the ecosystem of explainability tools is rapidly evolving, becoming richer, but also more fragmented and harder to navigate. To address this challenge, we present Virgil, an interactive system that lets practitioners and researchers, including non-experts, navigate explainability tools for transformer language models. Supported by a curated knowledge base, the system enables users to discover and compare explainability tools within a unified interface.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "可解释性",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "面向Transformer语言模型的可解释性工具导航系统，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "Virgil：为基于Transformer的语言模型导航可解释性",
+      "abstract_zh": "随着基于Transformer的语言模型被部署在高风险应用中，其可解释性正变得至关重要。因此，可解释性工具的生态系统正在迅速发展，变得更为丰富，但也更加碎片化，更难驾驭。为了应对这一挑战，我们提出了Virgil，一个交互式系统，让从业者和研究人员（包括非专家）能够为Transformer语言模型导航可解释性工具。在精心整理的知识库支持下，该系统使用户能够在统一界面中发现和比较可解释性工具。"
+    },
+    {
+      "id": "arxiv_2608.25465",
+      "arxiv_id": "2608.25465",
+      "title": "Automatic weld seam segmentation for industrial quality control: a comparison of RGB and polarimetric imaging with CNN and transformer architectures",
+      "authors": [
+        "Simone Garbin",
+        "Leonardo Venturoso",
+        "Marco Todescato"
+      ],
+      "abstract": "Visual inspection of welded assemblies remains one of the least automated stages in many industrial production processes, still depending largely on the experience of human operators and thus subject to inter-operator variability; the manufacturing of special-purpose machinery cabins, the setting of this study, is one representative case. This work evaluates the feasibility of automatic weld seam segmentation from RGB and polarimetric imagery, comparing controlled laboratory acquisitions with images captured under real, uncontrolled conditions. Convolutional neural network (CNN) architectures and transformer-based architectures are benchmarked under a unified, threshold-independent protocol, training each CNN with three random seeds to separate genuine effects from seed noise. In controlled RGB conditions, CNN models reach a mean mask mAP50 of up to 0.87, but drop to 0.22-0.48 under uncontrolled acquisition, showing that the acquisition setup is a first-order component of the inspection system. Polarimetric imaging with alignment-preserving geometric augmentation localizes previously unseen welds with a mean mask mAP50 up to 0.93: on par with, rather than ahead of, the best controlled-RGB result, but reaching that accuracy on uncontrolled RGB without requiring acquisition control. The clearest architectural finding concerns viewpoint robustness. In-distribution, transformers and CNNs are broadly comparable; but under a test-time viewpoint shift, the transformer models, and RF-DETR in particular, retain high accuracy while every CNN collapses. The gap holds across three seeds and a resolution-matched control, pointing to architecture rather than training resolution. Within the CNN family, capacity brings no reliable in-distribution gain once seed variance is accounted for: small CNNs suffice for fixed viewpoints, transformers for variable ones.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T07:32:43Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25465",
+      "pdf_link": "https://arxiv.org/pdf/2608.25465",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Visual inspection of welded assemblies remains one of the least automated stages in many industrial production processes, still depending largely on the experience of human operators and thus subject to inter-operator variability; the manufacturing of special-purpose machinery cabins, the setting of this study, is one representative case. This work evaluates the feasibility of automatic weld seam segmentation from RGB and polarimetric imagery, comparing controlled laboratory acquisitions with images captured under real, uncontrolled conditions. Convolutional neural network (CNN) architectures and transformer-based architectures are benchmarked under a unified, threshold-independent protocol, training each CNN with three random seeds to separate genuine effects from seed noise. In controlled RGB conditions, CNN models reach a mean mask mAP50 of up to 0.87, but drop to 0.22-0.48 under uncontrolled acquisition, showing that the acquisition setup is a first-order component of the inspection system. Polarimetric imaging with alignment-preserving geometric augmentation localizes previously unseen welds with a mean mask mAP50 up to 0.93: on par with, rather than ahead of, the best controlled-RGB result, but reaching that accuracy on uncontrolled RGB without requiring acquisition control. The clearest architectural finding concerns viewpoint robustness. In-distribution, transformers and CNNs are broadly comparable; but under a test-time viewpoint shift, the transformer models, and RF-DETR in particular, retain high accuracy while every CNN collapses. The gap holds across three seeds and a resolution-matched control, pointing to architecture rather than training resolution. Within the CNN family, capacity brings no reliable in-distribution gain once seed variance is accounted for: small CNNs suffice for fixed viewpoints, transformers for variable ones.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "图像分割",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "工业焊缝分割任务中比较CNN与Transformer，不涉及任何隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "用于工业质量控制的自动焊缝分割：RGB与偏振成像结合CNN和Transformer架构的比较",
+      "abstract_zh": "焊接组件的视觉检测仍是许多工业生产过程中自动化程度最低的环节之一，在很大程度上仍依赖人工操作员的经验，因此存在操作员间变异性；本研究所在的专用机械舱体制造便是典型一例。本工作评估了从RGB和偏振图像中进行自动焊缝分割的可行性，并将受控实验室采集与真实非受控条件下捕获的图像进行了比较。在统一的、与阈值无关的协议下，对卷积神经网络（CNN）架构和基于Transformer的架构进行了基准测试，并使用三个随机种子训练每个CNN，以区分真实效应与种子噪声。在受控RGB条件下，CNN模型的平均掩膜mAP50最高可达0.87，但在非受控采集下降至0.22-0.48，这表明采集设置是检测系统的首要组成部分。采用保持对齐的几何增强的偏振成像，能以最高达0.93的平均掩膜mAP50定位以前未见过的焊缝：这一结果与最佳受控RGB结果持平，而非超越，但它在非受控RGB条件下达到该精度，且无需采集控制。最清晰的架构发现涉及视角鲁棒性。在分布内，Transformer和CNN大致相当；但在测试时的视角偏移下，Transformer模型——尤其是RF-DETR——保持高精度，而所有CNN均崩溃。这一差距在三个种子和分辨率匹配的控制实验中均成立，表明差异源于架构而非训练分辨率。在CNN家族内部，一旦考虑种子方差，容量并不能带来可靠的分布内增益：小型CNN足以应对固定视角，而Transformer则适用于可变视角。"
+    },
+    {
+      "id": "arxiv_2608.25410",
+      "arxiv_id": "2608.25410",
+      "title": "Token-Oriented Semantic Communication with Pretrained Vision Transformers",
+      "authors": [
+        "Jiwoong Im",
+        "Minwoo Kim",
+        "Jaeho Lee",
+        "Yo-Seb Jeon",
+        "Yongjune Kim"
+      ],
+      "abstract": "Token communications realize the semantic communication principle at the granularity of transformer tokens, providing a promising direction for client--server collaborative inference in resource-constrained edge systems. However, directly transmitting token embeddings presents two practical challenges: substantial communication cost and limited interoperability across model-specific token embedding spaces. To address these challenges, we propose a \\emph{token-oriented} semantic communication framework. In this framework, token-level task relevance determines which compressed image latents are transmitted, enabling token-granular transmission without directly transmitting token embeddings. The framework is modular, coordinating three pretrained components---a lightweight client-side vision transformer (ViT), a learned image compression (LIC) model, and a large server-side ViT---without end-to-end training. The key enabler is the one-to-one spatial alignment between ViT patch tokens and the LIC latent vectors, which allows token-level task relevance to directly determine which latent vectors are transmitted. Building on this alignment, token-aligned LIC selectively transmits task-relevant latents, layer-selective attention rollout estimates token relevance from a selected range of attention layers in a single forward pass, and surrogate token substitution adapts the frozen server model by optimizing a single learnable token. Experiments on ImageNet show that the proposed framework achieves a more favorable rate--accuracy trade-off than recent semantic communication schemes, hand-crafted codecs, and task-agnostic LIC models.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T06:13:45Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25410",
+      "pdf_link": "https://arxiv.org/pdf/2608.25410",
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Token communications realize the semantic communication principle at the granularity of transformer tokens, providing a promising direction for client--server collaborative inference in resource-constrained edge systems. However, directly transmitting token embeddings presents two practical challenges: substantial communication cost and limited interoperability across model-specific token embedding spaces. To address these challenges, we propose a \\emph{token-oriented} semantic communication framework. In this framework, token-level task relevance determines which compressed image latents are transmitted, enabling token-granular transmission without directly transmitting token embeddings. The framework is modular, coordinating three pretrained components---a lightweight client-side vision transformer (ViT), a learned image compression (LIC) model, and a large server-side ViT---without end-to-end training. The key enabler is the one-to-one spatial alignment between ViT patch tokens and the LIC latent vectors, which allows token-level task relevance to directly determine which latent vectors are transmitted. Building on this alignment, token-aligned LIC selectively transmits task-relevant latents, layer-selective attention rollout estimates token relevance from a selected range of attention layers in a single forward pass, and surrogate token substitution adapts the frozen server model by optimizing a single learnable token. Experiments on ImageNet show that the proposed framework achieves a more favorable rate--accuracy trade-off than recent semantic communication schemes, hand-crafted codecs, and task-agnostic LIC models.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "语义通信",
+        "视觉Transformer"
+      ],
+      "relevance_reason_zh": "面向语义通信的token级传输优化，虽涉及协作推理但未提及安全或隐私保护。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "面向Token的语义通信与预训练视觉Transformer",
+      "abstract_zh": "Token通信在Transformer token粒度上实现了语义通信原理，为资源受限边缘系统中的客户端-服务器协同推理提供了一个有前途的方向。然而，直接传输token嵌入带来了两个实际挑战：大量通信成本和跨模型特定token嵌入空间的有限互操作性。为解决这些挑战，我们提出了一种面向token的语义通信框架。在该框架中，token级任务相关性决定传输哪些压缩图像潜变量，从而在不直接传输token嵌入的情况下实现token粒度传输。该框架是模块化的，协调了三个预训练组件——一个轻量级客户端视觉Transformer（ViT）、一个学习型图像压缩（LIC）模型和一个大型服务器端ViT——而无需端到端训练。关键使能因素是ViT patch token与LIC潜变量之间的一对一空间对齐，这允许token级任务相关性直接决定传输哪些潜变量。基于这一对齐，token对齐的LIC选择性地传输任务相关的潜变量；层选择性注意力展开在单次前向传播中从选定的注意力层范围估计token相关性；替代token替换通过优化单个可学习token来适应冻结的服务器模型。在ImageNet上的实验表明，所提出的框架比近期的语义通信方案、手工设计的编解码器和任务无关的LIC模型取得了更有利的率-准确率权衡。"
+    },
+    {
+      "id": "arxiv_2608.25379",
+      "arxiv_id": "2608.25379",
+      "title": "Adaptive Triggering for Bias Correction in LLM Reasoning",
+      "authors": [
+        "Nayoung Kim",
+        "Mickey Mancenido",
+        "Huan Liu"
+      ],
+      "abstract": "Chain-of-thought prompting can expose and amplify demographic stereotypes within an LLM's intermediate reasoning and create a failure mode that final-answer debiasing alone cannot address. Mitigating such bias during generation presents a fundamental timing problem: intervening too late allows biased reasoning to propagate, while unnecessarily intervening can disrupt otherwise correct reasoning. Existing approaches largely avoid this decision by either evaluating completed reasoning chains post hoc or intervening at predetermined steps, leaving open when a developing reasoning trajectory provides sufficient evidence to warrant correction. We formulate this decision as an online change-point detection problem. A per-step bias signal updates a CUSUM statistic and a targeted correction is injected only when accumulated evidence crosses a detector-specific threshold calibrated on held-out data. We instantiate the framework with a white-box signal derived from next-token probabilities and a black-box signal obtained from an LLM judge, enabling deployment with both open-weight and hosted models. On gpt-4o-mini adaptive black-box triggering recovers most of the disambiguated-context accuracy lost under fixed-interval intervention while requiring substantially fewer interventions. That result holds even with an independent judge. Across six open-weight models, the white-box signal improves ambiguous-item accuracy on all six but reduces disambiguated-item accuracy on five because it cannot distinguish unsupported stereotype reliance from correct, stereotype-congruent evidence.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T05:08:35Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25379",
+      "pdf_link": "https://arxiv.org/pdf/2608.25379",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Chain-of-thought prompting can expose and amplify demographic stereotypes within an LLM's intermediate reasoning and create a failure mode that final-answer debiasing alone cannot address. Mitigating such bias during generation presents a fundamental timing problem: intervening too late allows biased reasoning to propagate, while unnecessarily intervening can disrupt otherwise correct reasoning. Existing approaches largely avoid this decision by either evaluating completed reasoning chains post hoc or intervening at predetermined steps, leaving open when a developing reasoning trajectory provides sufficient evidence to warrant correction. We formulate this decision as an online change-point detection problem. A per-step bias signal updates a CUSUM statistic and a targeted correction is injected only when accumulated evidence crosses a detector-specific threshold calibrated on held-out data. We instantiate the framework with a white-box signal derived from next-token probabilities and a black-box signal obtained from an LLM judge, enabling deployment with both open-weight and hosted models. On gpt-4o-mini adaptive black-box triggering recovers most of the disambiguated-context accuracy lost under fixed-interval intervention while requiring substantially fewer interventions. That result holds even with an independent judge. Across six open-weight models, the white-box signal improves ambiguous-item accuracy on all six but reduces disambiguated-item accuracy on five because it cannot distinguish unsupported stereotype reliance from correct, stereotype-congruent evidence.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM偏差纠正",
+        "在线检测"
+      ],
+      "relevance_reason_zh": "针对LLM推理偏差的在线检测与纠正，不属于密码学保护下的安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LLM推理中偏差校正的自适应触发",
+      "abstract_zh": "思维链提示可以暴露并放大LLM中间推理中的人口统计学刻板印象，并产生一种仅靠最终答案去偏无法解决的失败模式。在生成过程中缓解此类偏差带来一个基本的时机问题：干预太晚会让有偏推理传播，而不必要的干预则会干扰原本正确的推理。现有方法大多回避了这一决策，要么事后评估已完成推理链，要么在预定步骤进行干预，从而留下一个问题：发展中的推理轨迹何时提供足够证据以支持纠正。我们将这一决策形式化为在线变点检测问题。每步偏差信号更新CUSUM统计量，且仅当累积证据跨过在保留数据上校准的检测器特定阈值时，才注入有针对性的纠正。我们用从下一个词元概率导出的白盒信号和从LLM评判器获得的黑盒信号实例化该框架，从而支持在开放权重模型和托管模型上进行部署。在gpt-4o-mini上，自适应黑盒触发恢复了在固定间隔干预下损失的大部分消歧上下文准确率，同时所需的干预次数大幅减少。即使使用独立的评判器，该结果仍然成立。在六个开放权重模型上，白盒信号在所有六个模型上提高了模糊项准确率，但在五个模型上降低了消歧项准确率，因为它无法区分无根据的刻板印象依赖与正确的、与刻板印象一致的证据。"
+    },
+    {
+      "id": "arxiv_2608.25286",
+      "arxiv_id": "2608.25286",
+      "title": "BixBench3: Benchmarking AI agents on research-study-scale computational biology tasks",
+      "authors": [
+        "Zane Koch",
+        "Asmamaw T. Wassie",
+        "Javier Valdes-Aleman",
+        "Jason Lee",
+        "Michaela M. Hinks",
+        "Samuel G. Rodriques",
+        "Andrew D. White",
+        "Jon M. Laurent"
+      ],
+      "abstract": "Artificial intelligence (AI) promises to accelerate biological research by automating computational analyses. Yet the ability of AI agents to carry out computational biology at the scale of complete research studies has not been systematically evaluated. Here we introduce BixBench3, a benchmark that measures the capacity of AI agents to process raw biological data through to scientific results. We designed BixBench3 tasks to mirror the delegation of work from a scientist to an agent: the scientist chooses the research question and high-level methods, then delegates implementation of all analyses to the agent. In each task, an agent receives a research objective, methodological guidance, and raw data derived from a published scientific study, and must execute a sequence of analyses to achieve the research objective. The data artifacts resulting from these analyses - such as peak call matrices or differential expression tables - are programmatically graded against the corresponding artifacts generated and reported in the original study. Across 20 BixBench3 tasks encompassing the generation of 138 unique artifacts, we find that 13 frontier models achieve scores ranging from 0.00 for Gemini 3.1 Flash Lite to 0.48 for GPT 5.6 Sol. Agents perform worse on tasks with larger raw datasets (0.36 on tasks with <100 GB versus 0.10 on tasks with >100 GB) and on analyses requiring more sequential steps (0.36 at 1-2 steps vs 0.24 at 3+). On average, agents use 6.8 hours, 102 million tokens, and $43 to complete each task, with the longest attempts consuming 24 hours, 1.07 billion tokens, and $525. Notably, the highest-scoring agents used fewer tokens and were cheaper than less performant options. These results reveal that LLMs vary substantially in their ability to (1) execute multiple sequential analysis steps coherently, (2) manage large quantities of raw data, and (3) work across scientific domains.",
+      "published": "2026-08-26",
+      "published_at": "2026-08-26T01:45:55Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.25286",
+      "pdf_link": "https://arxiv.org/pdf/2608.25286",
+      "categories": [
+        "cs.AI",
+        "q-bio.QM"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Artificial intelligence (AI) promises to accelerate biological research by automating computational analyses. Yet the ability of AI agents to carry out computational biology at the scale of complete research studies has not been systematically evaluated. Here we introduce BixBench3, a benchmark that measures the capacity of AI agents to process raw biological data through to scientific results. We designed BixBench3 tasks to mirror the delegation of work from a scientist to an agent: the scientist chooses the research question and high-level methods, then delegates implementation of all analyses to the agent. In each task, an agent receives a research objective, methodological guidance, and raw data derived from a published scientific study, and must execute a sequence of analyses to achieve the research objective. The data artifacts resulting from these analyses - such as peak call matrices or differential expression tables - are programmatically graded against the corresponding artifacts generated and reported in the original study. Across 20 BixBench3 tasks encompassing the generation of 138 unique artifacts, we find that 13 frontier models achieve scores ranging from 0.00 for Gemini 3.1 Flash Lite to 0.48 for GPT 5.6 Sol. Agents perform worse on tasks with larger raw datasets (0.36 on tasks with <100 GB versus 0.10 on tasks with >100 GB) and on analyses requiring more sequential steps (0.36 at 1-2 steps vs 0.24 at 3+). On average, agents use 6.8 hours, 102 million tokens, and $43 to complete each task, with the longest attempts consuming 24 hours, 1.07 billion tokens, and $525. Notably, the highest-scoring agents used fewer tokens and were cheaper than less performant options. These results reveal that LLMs vary substantially in their ability to (1) execute multiple sequential analysis steps coherently, (2) manage large quantities of raw data, and (3) work across scientific domains.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "AI智能体",
+        "基准评测"
+      ],
+      "relevance_reason_zh": "AI智能体在计算生物学任务上的基准评测，与隐私计算或安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "BixBench3：在科研规模计算生物学任务上对AI智能体进行基准测试",
+      "abstract_zh": "人工智能（AI）有望通过自动化计算分析来加速生物研究。然而，AI智能体在完整研究规模上开展计算生物学工作的能力尚未得到系统评估。为此，我们引入了BixBench3，一个衡量AI智能体从原始生物数据到科学结果处理能力的基准。我们设计BixBench3任务以模拟科学家向智能体委派工作的过程：科学家选择研究问题和顶层方法，然后将所有分析的实施委派给智能体。在每个任务中，智能体接收研究目标、方法指导以及来自已发表科学研究的原始数据，并且必须执行一系列分析以实现研究目标。这些分析产生的数据产物——例如峰值调用矩阵或差异表达表——会根据原始研究中生成并报告的对应产物进行程序化评分。在涵盖生成138个唯一产物的20个BixBench3任务中，我们发现13个前沿模型的得分范围从Gemini 3.1 Flash Lite的0.00到GPT 5.6 Sol的0.48。智能体在原始数据集更大的任务上表现更差（<100 GB的任务得分为0.36，而>100 GB的任务为0.10），在需要更多顺序步骤的分析上表现也更差（1-2步为0.36，3步及以上为0.24）。平均而言，智能体完成每个任务需使用6.8小时、1.02亿个token和43美元，最长的尝试消耗了24小时、10.7亿个token和525美元。值得注意的是，得分最高的智能体使用的token更少，成本也低于性能较差的选项。这些结果表明，不同LLM在以下能力上存在显著差异：（1）连贯地执行多个顺序分析步骤，（2）管理大量原始数据，以及（3）跨科学领域工作。"
+    },
+    {
       "id": "arxiv_2608.24876",
       "arxiv_id": "2608.24876",
       "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
@@ -8928,6 +9642,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-26T03:18:01.319610Z",
-  "total_count": 224
+  "last_updated": "2026-08-27T12:46:51.711844Z",
+  "total_count": 241
 }

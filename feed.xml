@@ -4,8 +4,216 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Wed, 26 Aug 2026 03:26:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 12:54:16 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LoRA需要多少秩？Transformer注意力的秩-误差界</title>
+      <link>https://arxiv.org/abs/2608.26052</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.26052</guid>
+      <description>英文原题：How Much Rank Does LoRA Need? Rank-Error Bounds for Transformer Attention
+
+选择低秩适配（LoRA）更新的秩通常是一项经验性任务。在本文中，我们针对Transformer注意力，提供了在每个LoRA秩下可实现的近似误差的任务相关理论。我们固定一个预训练的注意力头、一个目标注意力函数以及下游任务输入上的分布，并限定由秩为$r$的查询LoRA更新可实现的最小期望Kullback--Leibler（KL）误差。当目标注意力概率有界地远离零时，我们证明误差的一个下界正比于$ψ(\|d\|_2)$，其中$d$是候选注意力得分与目标注意力得分之差，$ψ(t)=\min\{t^2,t\}$。我们还证明了一个无条件上界$\min\{\|d\|_2^2/4,\sqrt{2}\|d\|_2\}$。在显式可实现性、几何条件和矩条件下，我们将最佳秩$r$误差界定在$ψ(\sqrt{T_r})$的显式倍数与$\min\{T_r/4,\sqrt{2T_r}\}$之间，其中$T_r$是目标更新的下游加权尾能量。我们还提供了当候选得分保持在目标得分的固定范围内时的目标Fisher界，以及当一部分token承载了大部分概率质量时的无限制下界。这些谱界描述了有限得分近似。然后我们构造了显式族，在其中softmax饱和使得匹配注意力函数所需的秩严格小于匹配有限logits所需的秩。最后，我们将分析扩展到融合的多头LoRA和联合查询/键更新，揭示了秩共享和查询/键分解约束的影响。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>鲁棒CurveMoE：基于模式连通性的专家混合模型多范数对抗防御</title>
+      <link>https://arxiv.org/abs/2608.26043</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.26043</guid>
+      <description>英文原题：Robust CurveMoE: Multi-Norm Adversarial Defense for Mixture-of-Experts Models via Mode Connectivity
+
+多范数对抗防御旨在保护神经网络免受由不同范数约束定义的扰动的影响，但现有方法通常会在单个参数配置中优化相互竞争的鲁棒性目标，导致训练成本高昂且产生不利的鲁棒性权衡。我们提出了Robust CurveMoE，一种高效的专家混合框架，它通过低损失路径连接针对不同扰动范数特化的模型，并利用沿该路径模型的互补鲁棒性特征。Robust CurveMoE从受鲁棒性约束的曲线位置中推导出干净专家和范数特化专家，并仅对影响力大的层进行选择性专家化，同时沿路由路径共享其余参数。为进一步降低曲线构建成本，我们引入了贡献引导的部分更新，该方法使用基于初始化的梯度分数来选择有影响力的曲线参数。我们还从理论上界定了部分曲线优化与完整曲线优化之间的目标差距。在CIFAR-100和ImageNet-100上使用WideResNet和Vision Transformer架构的实验表明，Robust CurveMoE在干净准确率、范数特定准确率和Union准确率上均持续优于MSD和ERMC。特别是，它在CIFAR-100和ImageNet-100上分别比最强基线提高了2.37和2.13个百分点的Union准确率。广泛的消融实验进一步验证了部分更新、选择性专家化和鲁棒性约束专家选择的有效性。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>谱分配：为什么Muon优于Adam，以及如何改进Muon</title>
+      <link>https://arxiv.org/abs/2608.25990</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25990</guid>
+      <description>英文原题：Spectral Allocation: Why Muon Outperforms Adam, and How to Improve Muon
+
+诸如Muon之类的正交优化器相对于Adam可以大幅加速大型语言模型的预训练，但其机制仍未完全理解。我们通过对Transformer损失景观的样本外谱探查分析来研究这一问题。在真实训练轨迹的检查点上，我们将每个动量缓冲分解为奇异方向，并在保留数据上估计每个方向上的损失最优步长。由此产生的谱剖面是各向异性的，但在批次和训练阶段之间保持稳定，并且在优化器和模型规模之间保持一致：一个在稳定性边缘（Edge-of-Stability）运行的波动头部所支持的步长远小于容忍的主体（bulk）所支持的步长，后者允许明显更大的步长。该剖面为为什么Muon优于Adam、而Adam优于SGD提供了统一的谱分配解释。它还揭示了Muon均匀缩放的一个局限性：它仍未充分利用主体。在这一发现的指导下，我们引入了谱感知Muon（SAMuon），它将头部保持在Muon尺度，并使用静态谱先验放大主体。我们提供了两个变体：完整的SAMuon使用低秩随机SVD遵循测量的剖面，而简化的SAMuon-lite通过秩一幂迭代使用两级近似。在规模上，这两种方法都没有增加持久优化器状态，也没有在Muon之外增加显著的计算量（FLOPs），并且两者的理想化精确白化版本在标准假设下保留了Muon的渐近收敛率。在从124M到1B参数的“modded-nanogpt”模型中，两个变体在所有评估的模型规模和批大小配置下都优于调优的AdamW和Muon（Scion实现）基线。SAMuon达到与Muon相同的验证损失所需的训练token减少13.3%至24.0%，而SAMuon-lite以接近零的挂钟开销保留了大部分收益。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>CEDAR：基于残差分解的受控与事件驱动需求预测</title>
+      <link>https://arxiv.org/abs/2608.25871</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25871</guid>
+      <description>英文原题：CEDAR: Controlled and Event-Driven Demand Forecasting via Residual Decomposition
+
+大规模电子商务市场中的预测日益需要支持规划：商家需要评估未来行动序列（如预算安排）下的销售结果，而不是被动地预测接下来会发生什么。然而，大多数现有时间序列预测（TSF）方法本质上仍然是被动的。即使将运营决策作为辅助协变量纳入，它们通常也在历史策略下优化基于相关性的外推。这种设计存在自回归惯性，并将内生市场演化与决策引发的转变混为一谈，导致对策略不敏感的推演和不可靠的反事实分析。为弥补这一差距，我们提出了CEDAR（通过行动感知残差分解进行受控和事件驱动的需求预测），这是一个用于稳健决策条件模拟的两阶段框架。在第一阶段，行动交织Transformer学习可控的、以行动为条件的状态转换，以在计划干预下进行推演。在第二阶段，残差校正模块利用外部事件信号和LLM辅助的文本表示，将嘈杂的事件描述与产品上下文对齐，并纠正事件驱动的偏差。我们的研究得益于来自阿里巴巴1688的大规模真实世界数据集，包含约3200万条产品轨迹，配有状态-行动序列对和对齐的事件信号。在生产环境中进行的大量离线实验和在线受控实验表明，CEDAR在强TSF基线上持续提高了模拟准确性，并为现实世界的预算规划带来了实际收益。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>Cooperative Multi-Agent Reinforcement Learning for Adaptive Aggregation in Semi-Supervised Federated Learning with non-IID Data</title>
+      <link>https://arxiv.org/abs/2608.25794</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25794</guid>
+      <description>## 一句话结论
+
+本文提出 **pFedMARL**，利用多智能体强化学习（Multi-Agent Reinforcement Learning, MARL）动态调整联邦学习的聚合策略，在半监督音频 Transformer 任务上匹配或超越 FedAvg、Ditto 和本地训练方法。
+
+## 问题与动机
+
+联邦学习（Federated Learning, FL）能在不共享原始数据的前提下进行分布式模型训练，从而保护数据隐私。然而，当客户端数据呈 **non-IID**（非独立同分布）时，传统 FL 训练的全局模型容易次优且有偏。固定或启发式的聚合权重难以适应异构数据分布，因此需要一种能动态调整客户端贡献的自适应聚合机制。
+
+## 方法与技术路线
+
+pFedMARL 将聚合策略建模为多智能体协作问题，在 FL 训练过程中引入两类智能体：
+
+- **服务端智能体**：负责调整各客户端的贡献权重（即聚合系数），目标是优化全局模型的鲁棒性；
+- **客户端智能体**：负责在全局更新与本地更新之间做平衡，从而实现有效的个性化模型，且无需预训练。
+
+这些智能体采用 **TD3**（Twin Delayed Deep Deterministic Policy Gradient，双延迟深度确定性策略梯度）算法进行训练。摘要未说明智能体的具体状态空间、动作空间、奖励函数设计，也未说明 TD3 网络结构或训练超参数。
+
+实验设定为：训练一个**半监督音频频谱图 Transformer** 模型。比较对象包括 **FedAvg**（联邦平均）、**Ditto**（一种个性化 FL 方法）以及**本地训练**。评测覆盖多个 non-IID 场景，并引入**对抗客户端**（adversarial clients）来测试鲁棒性。摘要未披露数据集来源、non-IID 划分方式、对抗行为的具体定义或实验轮数等细节。
+
+## 主要结果
+
+pFedMARL 在这些场景中匹配或优于 FedAvg、Ditto 和本地训练方法。摘要指出该方法能主动提升**准确性、鲁棒性和公平性**，因此适合真实世界部署。
+
+## 为什么与兴趣相关
+
+联邦学习的核心难点之一是在保护隐私与提升模型泛化之间取得平衡。pFedMARL 将聚合策略从静态规则变为强化学习驱动的动态决策，为异构数据下的分布式训练提供了新思路。虽然本文不涉及具体密码学安全推理协议，但其“服务端-客户端协同”的优化机制对隐私保护场景下的模型聚合、公平性与抗攻击能力研究具有参考价值。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>LocalLSTC：一种用于本地部署GUI智能体的长短期控制架构</title>
+      <link>https://arxiv.org/abs/2608.25777</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25777</guid>
+      <description>英文原题：LocalLSTC: A Long Short-Term Control Architecture for Locally Deployed GUI Agents
+
+现代GUI智能体框架借助前沿API模型在桌面任务上取得了强劲表现，但持续的控制信息在日益增长的交互相轨中往往仍是隐式的。在每一步，规划器需先重建当前任务阶段、累积证据和运行时反馈，然后才决定下一步动作。在较弱的本地推理骨干下，这种依赖性变得更加明显。在四个具有代表性的最新框架中，将GPT-5替换为Qwen3.5-9B会使OSWorld SR-100的平均值从60.9%降至37.7%。轨迹标注进一步表明，91.6%的失败轨迹中至少存在一次控制失败。为解决这一问题，我们提出了LocalLSTC，一种无需训练的架构，按时间范围组织控制，维护跨步骤的持久状态以指导短期执行承诺。长期控制维护跨交互的当前子目标、与子目标一致的证据和运行时反馈，而短期执行则实现当前步骤的有界承诺。长到短规划从持久状态形成每个承诺，而短到长控制将执行结果整合回该状态，用于进度评估、恢复和终止。使用Qwen3.6-27B，LocalLSTC在OSWorld上达到64.7%的SR-100，在WindowsAgentArena上达到65.3%，在两项基准上都优于此前最强的本地结果。消融研究进一步支持执行两侧机制的贡献。这些发现将控制信息的时间组织确立为本地部署GUI智能体的一个独立架构维度。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>EXAONE Tabular 1.0：技术报告</title>
+      <link>https://arxiv.org/abs/2608.25774</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25774</guid>
+      <description>英文原题：EXAONE Tabular 1.0 : Technical Report
+
+EXAONE Tabular是一个紧凑型表格基础模型系列，通过上下文学习进行分类和回归，无需针对特定数据集的梯度更新即可产生预测。其仅使用合成结构因果模型（SCM）先验进行预训练，核心贡献在于对表格上下文学习进行以架构为中心的重新设计。EXAONE Tabular并非在独立的行级学习器之前将特征压缩为固定的行嵌入，而是在每个Transformer层中，将每个项内的特征轴注意力与每个特征内由支持集条件化的项轴注意力交错进行，并通过项摘要和特征摘要token进行中介。在四个公开基准上，EXAONE Tabular兼具强大的预测性能和高效率。在TabArena上，其20.81M参数分类模型总体排名第一，超越了调优后的集成模型和4小时AutoML流水线，而回归则以约1/11的推理成本达到了1.64B参数TabFM的性能水平。在BCCO和TALENT上，EXAONE Tabular分类排名第二、回归排名第一。在ScoringBench上，它在点估计和预测分布质量两方面均取得最佳平均排名，在R²、RMSE和CRPS评估中领先。综上，这些结果确立了EXAONE Tabular作为最先进的紧凑型表格基础模型系列的地位，将分类、点回归和概率回归方面的强预测性能与高效的模型设计相结合。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>MeMark：脉冲神经网络的膜空间水印</title>
+      <link>https://arxiv.org/abs/2608.25738</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25738</guid>
+      <description>英文原题：MeMark: Membrane-Space Watermarking for Spiking Neural Networks
+
+脉冲神经网络（SNNs）越来越多地以预训练检查点的形式分发，并作为新任务的主干网络被复用。然而，当前的SNN水印主要针对模型输出进行验证。因此，替换输出头的用户可以在保留大部分原始网络的同时移除用于验证的证据。我们提出MeMark，一种为检查点复用场景设计的水印。MeMark不是将水印存储在输出头中，而是将多位标识符嵌入所选漏电积分发放（LIF）神经元的内部膜状态。一个秘密输入驱动每个选定神经元到达其自身放电阈值的选定一侧，之后使用同一阈值恢复秘密比特，因此验证者不需要学习得到的解码器。我们在循环、卷积、残差和Transformer SNN上评估了MeMark。在一个215.4M参数的SpikeGPT检查点上，所有20个独立的64位密钥都通过固定的51/64验证规则，而在针对所有20个受保护检查点和干净模型进行测试时，30000个全新的随机密钥没有一个通过。所有20个真实密钥在微调、90%剪枝、int8量化和输出头替换后仍保持在阈值之上。在我们所述的威胁模型下，自适应攻击可以削弱水印，但在我们测试的设置中并不能移除所有权证据。此外，我们研究了虚假所有权声明、密钥相关与密钥无关的移除、部分密钥泄露、回滚以及提取到学生模型。结果表明，MeMark既能提供检查点衍生模型的证据，又能抵抗对手的攻击和完全输出头替换。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>LMSM: LLM Security Framework Inspired by Linux Security Modules</title>
+      <link>https://arxiv.org/abs/2608.25697</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25697</guid>
+      <description>⚠️ 摘要导读生成失败，已加入自动重试队列。可先切换到英文原始摘要阅读。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>LLM security</category>
+    </item>
+    <item>
+      <title>LDAC-Net: 一种用于低成本MOX气体传感器漂移鲁棒识别的可学习多滞后差分注意力-卷积网络</title>
+      <link>https://arxiv.org/abs/2608.25646</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25646</guid>
+      <description>英文原题：LDAC-Net: A Learnable Multi-Lag Differencing Attention-Convolution Network for Drift-Robust Recognition with Low-Cost MOX Gas Sensors
+
+基于低成本金属氧化物（MOX）气体传感器的便携式电子鼻系统为气体和气味识别提供了实用解决方案，但其信号受到缓慢化学瞬态、传感器偏移漂移、尺度变化和跨通道相关性的影响。现有流程通常使用固定的一阶时间差分（FOTD），这需要手动选择滞后，并可能丢弃有用的响应信息。我们提出了LDAC-Net，一种端到端的可学习多滞后差分注意力-卷积网络，直接对多通道MOX信号进行操作。其可学习差分特征增强前端将窗口条件统计仿射归一化（补偿窗口特定的偏移和尺度变化）与可学习多滞后差分（加权并组合多个滞后上的时间差分）相结合。紧凑的注意力-卷积骨干网络随后对局部瞬态和更长范围的时间依赖性进行建模。在50类SmellNet-Base任务上，LDAC-Net实现了68.2%的top-1准确率，超过最佳FOTD预处理对比模型约14个百分点，超过原始输入Transformer 30多个百分点。消融研究证实了所提出两个组件的贡献。该表示还迁移到SmellNet-Mixtures，将准确率从45.4%提高到50.5%，并在强长期漂移下泛化到62通道eNose-Drift基准，实现了70.6%的top-1准确率和69.6%的宏F1。这些结果分别超过使用数据集重新调优FOTD预处理的最佳对比模型8.0和3.0个百分点，表明对于低成本MOX气体传感器识别，可学习的、感知传感器的预处理比固定的手工差分更有效。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>一种用于多摄像机视角推荐的双Transformer模型</title>
+      <link>https://arxiv.org/abs/2608.25601</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25601</guid>
+      <description>英文原题：A Dual-Transformer for Multi-Camera View Recommendation
+
+多摄像机系统是现代媒体制作的基础，而多摄像机剪辑是一项关键任务。这涉及到在每个时刻正确选择合适的摄像机视角。在本文中，我们提出了一种带有交叉注意力机制的新型Dual-Transformer架构，其在TVMCE数据集（TV Shows Multicamera Editing dataset，即电视节目多摄像机剪辑数据集）上大幅超越了当前的SOTA模型。我们的模型将这些任务解耦：(1) 专门的时序编码器首先处理过去帧的序列，以构建对最近历史的丰富记忆；(2) 然后候选摄像机视角通过交叉注意力模块作为查询作用于该记忆，使每个候选能够独立查询历史上下文，并找到与其自身评估最相关的信息。我们的方法达到了56.60%的Precision@0.5，相比先前最佳结果37.16%有显著提升。我们进一步进行了消融研究，探索了轻量级骨干架构的使用，其中SwinV2骨干取得了最佳性能，达到了69.65%的Precision@0.5。使用这一性能最佳的配置，我们随后研究了将模型适配为复制特定人工剪辑师剪辑风格的可行性。为此，我们使用目标视频初始片段的不同比例对模型进行了微调。我们的结果表明，即使仅使用视频的20%进行微调，模型在Precision@0.5上也表现出可测量的提升，这表明在针对每个电视节目或制作人定制剪辑风格时，具有数据高效个性化的强大潜力。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>JIT-Agent：通过即时智能体框架演化扩展智能体框架智能</title>
+      <link>https://arxiv.org/abs/2608.25593</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25593</guid>
+      <description>英文原题：JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution
+
+智能体能力并非仅由模型决定。智能体框架（agent harness）涵盖记忆管理、规划策略、动作协议以及工具/技能编排，可能主导底层基础模型的贡献。然而，智能体框架的设计仍然是手动的、特定于任务的，并且从根本上不可扩展。我们提出JIT-Agent，一个智能体框架智能模型，经过训练可以即时为任意现成的智能体LLM合成任务自适应的智能体框架。我们将智能体框架形式化为一个可组合、机器可生成的工件，由固定的四模块协议控制，并训练JIT-Agent为手头给定任务定制框架、修复框架以实现稳定可靠的执行，并通过从先前框架配置的不断扩展的档案中提取性能信号进行自我进化。以JIT-Agent作为框架助手，DeepSeek-V4-Flash在DeepSearchQA上超越GPT-5.6（+9.1），在OdysseyBench上超越GPT-5.6（+4.3），而本已强大的GLM-5.2则获得高达+20.2分的提升。在受控评估中，JIT-Agent生成的框架与成熟的智能体运行时（如OpenCode和Claude Code）在性能上具有竞争力，并持续改进DeepSeek V4、Mimo-V2.5和Qwen3.6等多尺度模型家族。据我们所知，JIT-Agent是首个专为即时框架生成而构建的模型，将框架智能确立为一个可训练、可迁移且可复合的智能体能力维度，与模型扩展正交。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Virgil：为基于Transformer的语言模型导航可解释性</title>
+      <link>https://arxiv.org/abs/2608.25555</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25555</guid>
+      <description>英文原题：Virgil: Navigating Explainability for Transformer-based Language Models
+
+随着基于Transformer的语言模型被部署在高风险应用中，其可解释性正变得至关重要。因此，可解释性工具的生态系统正在迅速发展，变得更为丰富，但也更加碎片化，更难驾驭。为了应对这一挑战，我们提出了Virgil，一个交互式系统，让从业者和研究人员（包括非专家）能够为Transformer语言模型导航可解释性工具。在精心整理的知识库支持下，该系统使用户能够在统一界面中发现和比较可解释性工具。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>用于工业质量控制的自动焊缝分割：RGB与偏振成像结合CNN和Transformer架构的比较</title>
+      <link>https://arxiv.org/abs/2608.25465</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25465</guid>
+      <description>英文原题：Automatic weld seam segmentation for industrial quality control: a comparison of RGB and polarimetric imaging with CNN and transformer architectures
+
+焊接组件的视觉检测仍是许多工业生产过程中自动化程度最低的环节之一，在很大程度上仍依赖人工操作员的经验，因此存在操作员间变异性；本研究所在的专用机械舱体制造便是典型一例。本工作评估了从RGB和偏振图像中进行自动焊缝分割的可行性，并将受控实验室采集与真实非受控条件下捕获的图像进行了比较。在统一的、与阈值无关的协议下，对卷积神经网络（CNN）架构和基于Transformer的架构进行了基准测试，并使用三个随机种子训练每个CNN，以区分真实效应与种子噪声。在受控RGB条件下，CNN模型的平均掩膜mAP50最高可达0.87，但在非受控采集下降至0.22-0.48，这表明采集设置是检测系统的首要组成部分。采用保持对齐的几何增强的偏振成像，能以最高达0.93的平均掩膜mAP50定位以前未见过的焊缝：这一结果与最佳受控RGB结果持平，而非超越，但它在非受控RGB条件下达到该精度，且无需采集控制。最清晰的架构发现涉及视角鲁棒性。在分布内，Transformer和CNN大致相当；但在测试时的视角偏移下，Transformer模型——尤其是RF-DETR——保持高精度，而所有CNN均崩溃。这一差距在三个种子和分辨率匹配的控制实验中均成立，表明差异源于架构而非训练分辨率。在CNN家族内部，一旦考虑种子方差，容量并不能带来可靠的分布内增益：小型CNN足以应对固定视角，而Transformer则适用于可变视角。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>面向Token的语义通信与预训练视觉Transformer</title>
+      <link>https://arxiv.org/abs/2608.25410</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25410</guid>
+      <description>英文原题：Token-Oriented Semantic Communication with Pretrained Vision Transformers
+
+Token通信在Transformer token粒度上实现了语义通信原理，为资源受限边缘系统中的客户端-服务器协同推理提供了一个有前途的方向。然而，直接传输token嵌入带来了两个实际挑战：大量通信成本和跨模型特定token嵌入空间的有限互操作性。为解决这些挑战，我们提出了一种面向token的语义通信框架。在该框架中，token级任务相关性决定传输哪些压缩图像潜变量，从而在不直接传输token嵌入的情况下实现token粒度传输。该框架是模块化的，协调了三个预训练组件——一个轻量级客户端视觉Transformer（ViT）、一个学习型图像压缩（LIC）模型和一个大型服务器端ViT——而无需端到端训练。关键使能因素是ViT patch token与LIC潜变量之间的一对一空间对齐，这允许token级任务相关性直接决定传输哪些潜变量。基于这一对齐，token对齐的LIC选择性地传输任务相关的潜变量；层选择性注意力展开在单次前向传播中从选定的注意力层范围估计token相关性；替代token替换通过优化单个可学习token来适应冻结的服务器模型。在ImageNet上的实验表明，所提出的框架比近期的语义通信方案、手工设计的编解码器和任务无关的LIC模型取得了更有利的率-准确率权衡。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>LLM推理中偏差校正的自适应触发</title>
+      <link>https://arxiv.org/abs/2608.25379</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25379</guid>
+      <description>英文原题：Adaptive Triggering for Bias Correction in LLM Reasoning
+
+思维链提示可以暴露并放大LLM中间推理中的人口统计学刻板印象，并产生一种仅靠最终答案去偏无法解决的失败模式。在生成过程中缓解此类偏差带来一个基本的时机问题：干预太晚会让有偏推理传播，而不必要的干预则会干扰原本正确的推理。现有方法大多回避了这一决策，要么事后评估已完成推理链，要么在预定步骤进行干预，从而留下一个问题：发展中的推理轨迹何时提供足够证据以支持纠正。我们将这一决策形式化为在线变点检测问题。每步偏差信号更新CUSUM统计量，且仅当累积证据跨过在保留数据上校准的检测器特定阈值时，才注入有针对性的纠正。我们用从下一个词元概率导出的白盒信号和从LLM评判器获得的黑盒信号实例化该框架，从而支持在开放权重模型和托管模型上进行部署。在gpt-4o-mini上，自适应黑盒触发恢复了在固定间隔干预下损失的大部分消歧上下文准确率，同时所需的干预次数大幅减少。即使使用独立的评判器，该结果仍然成立。在六个开放权重模型上，白盒信号在所有六个模型上提高了模糊项准确率，但在五个模型上降低了消歧项准确率，因为它无法区分无根据的刻板印象依赖与正确的、与刻板印象一致的证据。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>BixBench3：在科研规模计算生物学任务上对AI智能体进行基准测试</title>
+      <link>https://arxiv.org/abs/2608.25286</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.25286</guid>
+      <description>英文原题：BixBench3: Benchmarking AI agents on research-study-scale computational biology tasks
+
+人工智能（AI）有望通过自动化计算分析来加速生物研究。然而，AI智能体在完整研究规模上开展计算生物学工作的能力尚未得到系统评估。为此，我们引入了BixBench3，一个衡量AI智能体从原始生物数据到科学结果处理能力的基准。我们设计BixBench3任务以模拟科学家向智能体委派工作的过程：科学家选择研究问题和顶层方法，然后将所有分析的实施委派给智能体。在每个任务中，智能体接收研究目标、方法指导以及来自已发表科学研究的原始数据，并且必须执行一系列分析以实现研究目标。这些分析产生的数据产物——例如峰值调用矩阵或差异表达表——会根据原始研究中生成并报告的对应产物进行程序化评分。在涵盖生成138个唯一产物的20个BixBench3任务中，我们发现13个前沿模型的得分范围从Gemini 3.1 Flash Lite的0.00到GPT 5.6 Sol的0.48。智能体在原始数据集更大的任务上表现更差（&lt;100 GB的任务得分为0.36，而&gt;100 GB的任务为0.10），在需要更多顺序步骤的分析上表现也更差（1-2步为0.36，3步及以上为0.24）。平均而言，智能体完成每个任务需使用6.8小时、1.02亿个token和43美元，最长的尝试消耗了24小时、10.7亿个token和525美元。值得注意的是，得分最高的智能体使用的token更少，成本也低于性能较差的选项。这些结果表明，不同LLM在以下能力上存在显著差异：（1）连贯地执行多个顺序分析步骤，（2）管理大量原始数据，以及（3）跨科学领域工作。</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
     <item>
       <title>面向长视野智能体框架的递归经验-工作记忆演化</title>
       <link>https://arxiv.org/abs/2608.24876</link>
@@ -1022,327 +1230,6 @@ MPC协议通常假设腐败方数量不超过某个阈值。Ishai等人提出的
       <description>英文原题：Explainable Transformer Models for Clinical Prediction Tasks on Structured Electronic Health Records
 
 基于结构化电子健康记录（EHRs）的预测模型仍然是医疗保健机器学习领域的核心，但很少有模型同时强调定量实验室信息和针对输入医疗事件的可解释性。我们提出了BERT-LER，一种面向编码EHR时间线的BERT风格模型，该模型在包含7500万患者的去标识化EHR数据集上进行预训练和微调，将实验室检测结果编码为离散词元，同时通过基于百分位的分箱保留分级信息，并配对使用积分梯度（Integrated Gradients）以获得基于输入EHR序列的词元级归因。我们在公开的EHRShot基准套件和基于真实世界数据的哮喘严重程度进展研究中评估了我们的方法。这通过将实验室值表示和可解释性统一在单一框架中，填补了EHR基础模型风格建模中的方法论空白，同时评估了预测性能和解释是否都能推广到标准临床预测任务之外。在EHRShot和哮喘任务中，BERT-LER的预测性能与公开可用的基准模型相当，且在实验室相关任务上通常超过这些模型，并提供了与临床已知风险因素一致的归因。我们的架构和可解释性方法可应用于许多治疗领域以及使用在结构化EHR上训练的语言模型的预测任务。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>面向解剖无关分割的层次特征调制的提示条件通道注意力</title>
-      <link>https://arxiv.org/abs/2608.20229</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20229</guid>
-      <description>英文原题：Prompt-Conditioned Channel Attention for Hierarchical Feature Modulation toward Anatomy-Agnostic Segmentation
-
-解剖学上合理的分割由于低对比度、模糊边界和模态特异性伪影仍然具有挑战性。交互式分割已成为一种有前景的策略，用于引导特征提取并改善定位，特别是在结构模糊区域。然而，现有方法通过后期融合整合提示，并且缺乏跨层次特征表示的提示驱动通道级调制的显式机制，限制了它们捕获更深层上下文和模态特异性变化的能力。为了解决这些限制，我们引入了提示条件通道注意力（PCCA），一种新颖的调制机制，能够在编码器-解码器网络内实现语义提示的深度、层次化整合。PCCA通过池化提取紧凑的通道描述符，将其投影到共享空间，并通过门控激励机制融合它们以计算提示感知的通道注意力权重。这些权重自适应地重新校准多个网络阶段中的特征响应，实现提示条件化、语义丰富的层次表示。在此基础上，我们提出了PROMISE-Net，实例化两种网络变体：卷积模型（PROMISE-CNN）和基于Transformer的模型（PROMISE-Txformer）。在ISIC-Lesion、Kvasir-Polyp、CAMUS-Cardiac和Kvasir-Instrument基准上，将PCCA集成到PROMISE-CNN中相对于基线U-Net分别产生了10.4%、8.7%、0.8%和3.4%的相对IoU增益，而PROMISE-Txformer相对于基线UNETR分别实现了7.6%、23.0%、2.1%和1.1%的相应增益。这些结果表明在不同架构、成像模态和解剖目标上的一致改进，将PCCA和PROMISE-Net确立为医学图像分割中提示感知层次特征调制的可扩展、可泛化框架。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>Daedalus-150M：为CPU推理设计的卷积-注意力混合模型</title>
-      <link>https://arxiv.org/abs/2608.20210</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20210</guid>
-      <description>英文原题：Daedalus-150M: A Convolution-Attention Hybrid Designed for CPU Inference
-
-小语言模型通常像大模型一样构建，之后才被压缩到CPU上运行。我们反其道而行之：首先确定目标——单个用户、一次一个token、4比特权重、普通CPU，然后选择适合它的架构。最终模型在18个块中仅6个保留完整注意力，其余12个使用短卷积，其记忆宽度为两个时间步，无论对话多长都不变，因此网络三分之二的部分从不重新读取不断增长的缓存。该模型在59.9B token上从头训练，在训练开始前设定的42.20基线之上，于五任务基准上取得47.31分。它超越了GPT-2 124M、Pythia-160M、OPT-125M和GPT-neo-125M（这些模型均使用3到6倍的数据训练），并超过了MobileLLM-125M的已发表分数，尽管后者看到了万亿级token。验证集的bits-per-byte为0.8685。为了检验架构而非训练配方，我们在相同数据上训练了一个同等规模的常规全注意力模型，并在评分前写下了获胜条件。混合模型在所选质量指标上以0.81%的优势获胜，在下游任务上与之持平，生成的4比特文件小6.3%，在2048 token上下文下解码速度快1.76倍，与外部相似规模模型相比快2.08倍。在所有测量中，速度优势在空上下文时接近零，并随长度增长而增大——这正是该机制所预测的，而单纯的更精简模型不会表现出这一点。简单的带宽计算仅预测1.17倍，因此仅内存容量无法解释这一差距。我们还报告了不奏效的部分：未缓解的4比特质量损失，约一半卷积通道最终无效且无法移除，以及超出该模型规模合理范围的词表大小。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>从非侵入性脑电图中解码默读</title>
-      <link>https://arxiv.org/abs/2608.20186</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20186</guid>
-      <description>英文原题：Decoding silent reading from non-invasive EEG
-
-非侵入式内心言语解码面临一个根本性的数据问题：无法收集将大脑活动与个体自发内心独白配对的数据集，而现有的代理范式（提示性重复和回顾性报告的生成性内心言语）采集速度慢、时间锁定不佳，且受试者依从性无法验证。因此，我们将默读视为一种可扩展的代理任务，并探究对比解码器能从中提取多少词汇和语义信息。我们报告了一项开放词汇分析，该分析记录了来自单一密集采样参与者在393轮（约49小时）19通道干电极脑电图中的约24万次单词呈现。连续叙事文本中的单词以快速序列视觉呈现方式展示，每次试验的排版均随机化，以部分去相关单词身份与低级视觉形式。一个卷积脑电图编码器（可选后接因果Transformer）通过CLIP式对比目标进行训练，将短时脑电图窗口与来自大型语言模型的所呈现单词的隐状态嵌入对齐。解码（以按词分组的top-10检索与置换基线进行评估）可靠地高于随机水平，扩展到中频和稀有单词，并随训练数据量呈对数线性增长，且无饱和迹象。移除枕叶和后颞电极后，单词级增益减少了约三分之一，但上下文追踪保持不变。控制分析将单词级解码与叙事上下文追踪以及由Transformer位置嵌入引入的非神经位置先验区分开来。这些结果证实，在默读期间可从脑电图中恢复开放词汇的单词级信息，且解码受数据限制而非饱和。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>视觉Transformer训练过程中的特征演化与迁移</title>
-      <link>https://arxiv.org/abs/2608.20134</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20134</guid>
-      <description>英文原题：Feature Evolution and Migration during Vision Transformer Training
-
-我们通过沿两个维度——网络深度（层）和训练时间（轮次）——可视化训练过程，提出了一种关于视觉Transformer（ViTs）中特征演化的新视角。我们采用稀疏自编码器（SAEs）从CLS-token表示中提取候选稀疏特征，并比较它们在不同epoch-层对上的激活概况。这使我们能够研究从表示级相似性度量中无法直接看到的特征级动态。此外，我们展示了这一特征演化框架如何使我们能够描述特征迁移，即训练过程中特征最可检测层的变化。我们的实验表明，迁移集中在训练早期，更多发生在前面的层而非更深的层，并随着特征组织的稳定而减少。我们进一步发现，深层比浅层更早且更强烈地稳定下来。结果表明，我们的方法可作为理解ViTs如何学习和演化的工具。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>Privacy-Preserving Detection of Rare Disease-Associated Cell Subsets via Secure Multi-Party Computation</title>
-      <link>https://arxiv.org/abs/2608.20118</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20118</guid>
-      <description># 全文精选
-
-## 核心结论
-
-本文提出了一种基于安全多方计算（MPC）的 CellCnn 训练与推理框架，用于从高维单细胞数据中检测频率可低至 0.01% 的疾病相关细胞亚群。该方法使多医疗机构无需共享原始数据即可协作训练模型，全程在秘密分享数据上完成运算，参与方与计算服务器均不看到原始数据或中间值。实验表明，在 CMV 与 AML 两个公开数据集上，该方案（称 Ours）的分类准确率与明文 CellCnn 相当，并优于已有 MPC 方案 PriCell；在 AML MRD 回归任务上，Ours 的 Pearson 相关系数为 0.98，接近明文水平的 0.99。需注意，上述结果均为实验观察，作者并未给出安全性定理证明。
-
-## 问题与威胁模型
-
-**问题**：单中心拥有的单细胞数据量不足，且单细胞数据高度敏感，受 GDPR/HIPAA 约束，因此需要多中心协作但不可共享原始数据。
-
-**威胁模型**：采用三方 MPC、半诚实安全模型、诚实多数假设；最多一方被腐化，各方不串谋。原始数据、模型更新、中间激活始终以秘密分享形式存在，仅最终约定输出被重构。作者明确说明，输出本身的泄露（如成员推断、模型反演）不在 MPC 威胁模型覆盖范围内。已有方案 PriCell 基于多方同态加密、被动安全对抗最多 N−1 方合谋，但省略 ReLU 与偏置项、仅支持分类，且要求数据方全程在线——本文针对这些不足进行改进。
-
-## 方法与关键技术
-
-以下为端到端协议流程，依据正文证据整理：
-
-1. **参与方与输入输出**：两个计算代理 P0、P1 和辅助方 P2（Helper）。数据方为医疗机构，将每个数值拆成两个随机分享分别发给 P0、P1。训练与推理全程在秘密分享上进行，数据方只需提供分享，不必保持在线；结束时仅重构约定输出。
-
-2. **数据与模型表示**：使用环 Z₂^64 上的 2-out-of-2 加法秘密分享，实数值用定点表示。模型结构沿用 CellCnn，包含卷积层与全连接层，并保留偏置项。
-
-3. **密码学原语**：加法在本地完成、无通信；乘法需要 P2 预计算相关随机性（Beaver 三元组）以辅助交互，P2 不接触未掩码的分享。
-
-4. **协议阶段与优化**：为适配 MPC，作者做了若干关键修改——用带动量的小批量 SGD 替换 Adam（动量更新仅含本地操作）；ReLU 原生支持，无需近似；采用均值池化（无需通信）；将 softmax/交叉熵替换为逐类 sigmoid one-vs-rest，sigmoid 用三次最小二乘多项式 σ(z) ≈ 0.5 + 0.23323z − 0.00981z³ 近似，适用范围 z ∈ [−3,3]，全连接层输出先裁剪到该区间；回归头使用 tanh 输出和 MSE 损失，通过掩码安全指数与除法计算。
-
-5. **模块衔接与执行流程**：数据方完成秘密分享分发 → P0/P1 在执行训练轮次时，层间前向传播中的卷积、池化、激活均在分享域内完成，乘法步骤借助 P2 的 Beaver 三元组交互实现 → 反向传播与带动量参数更新同样在分享域内进行 → 训练完成后，模型参数用于分享域内的推理 → 最后仅重构输出。
-
-6. **性能特征**：正文未给出显式的通信轮次/复杂度数据（未从可提取正文确认）。运行时间实验显示，在 5 Gbps、0.8 ms RTT 的 LAN 上训练 CMV/NK 20 轮约 1200 秒；限至 1 Gbps 时约 2700 秒，表明带宽为主要瓶颈。
-
-## 安全性
-
-方案在半诚实安全模型、诚实多数假设下保护原始数据和中间值的机密性；参与方与计算服务器在整个流程中不看到明文数据或中间激活。作者指出，威胁模型可加强为恶意安全，且输出发布导致的泄露不在 MPC 覆盖范围内，建议与差分隐私结合。正文未从可提取部分给出形式化安全证明。
-
-## 实验与性能
-
-- **数据集与设置**：CMV 数据集含 20 名供者、37 个标记/细胞，11 CMV−、9 CMV+，14 训练/6 测试，10 次划分；AML 数据集含 16 个标记/细胞，三类（健康、正常核型、CBF 易位），7 训练/6 测试。AML MRD 回归将 CBF 白血病原始细胞以 log 均匀比例 f ∈ [0.1%, 5%] 混入健康骨髓，10% 训练样本令 f=0。比较对象为 Ours、明文 CellCnn、PriCell，使用相同划分与小批量顺序。
-- **CMV 分类**：Ours 多细胞准确率 0.727±0.141、表型准确率 0.681±0.146；明文 CellCnn 为 0.721±0.173、0.716±0.158；PriCell 为 0.633±0.127、0.649±0.146。Ours 对 PriCell 在多细胞指标上显著性 p=0.004（9/10 划分占优）；表型统计无显著差异。
-- **AML 分类**：明文 CellCnn 多细胞准确率 1.000±0.000；Ours 多细胞 0.935±0.047、表型 0.916±0.088；PriCell 分别为 0.898±0.055、0.900±0.086；Ours 多细胞优势 8/10 划分，p=0.08。
-- **AML MRD 回归**：42 个测试多细胞输入（7 个频率，每频率 6 重复），Ours Pearson r=0.98、MAE=1.0 个百分点；明文 r=0.99、MAE=0.8 个百分点。
-- **运行时间**：如上文所述；PriCell 在 1 Gbps、N=10 活动方时约 1550 秒，但部署模式不同，不可直接对比。
-
-## 局限与阅读判断
-
-**局限**：正文明确列出——仍为半诚实安全模型，可加强为恶意安全；输出发布泄露不在 MPC 覆盖范围内；基准测试继承了小队列和合成回归真值，需在更大真实队列和连续临床生物标志物上验证。此外，正文未给出显式的通信轮次/复杂度分析。
-
-**阅读判断**：本文的工作价值在于将 MPC 适配到 CellCnn 这一特定深度学习架构时做了细致的协议层优化（ReLU 原生支持、均值池化免通信、多项式近似 sigmoid），使安全训练精度逼近明文。但其安全性论证仅停留在半诚实模型且无形式化证明，实际临床部署前仍需面对恶意安全、输出隐私和更大规模验证三方面挑战。数据与代码已公开（https://github.com/mdppml/CECILIA-CellCNN），CMV 与 AML 数据集源自原始 CellCnn 研究，可公开获取。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>MPC</category>
-      <category>multi-party computation</category>
-    </item>
-    <item>
-      <title>TrustRAG: Blockchain-Enhanced RAG via Committee-Based Credibility Scoring</title>
-      <link>https://arxiv.org/abs/2608.20097</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20097</guid>
-      <description>## 一句话结论
-
-TrustRAG 在检索增强生成（RAG，让大语言模型从外部知识库获取信息的技术）中引入“委员会评分 + 区块链存证”，为文档可信度提供可验证、防篡改的信任评分机制。
-
-## 问题与动机
-
-RAG 虽能让大语言模型（LLM，Large Language Model）利用实时、领域特定的信息，但现有 RAG 系统大多依赖缺少监督的集中式数据库。文档的来源是否真实、是否被篡改、是否值得信任，都难以验证。在医疗、金融、物流、法律等对检索内容时效性和准确性要求很高的场景中，一份错误或被恶意修改的文档可能直接导致错误决策。
-
-## 方法与技术路线
-
-TrustRAG 是一个“委员会驱动、区块链背书”的 RAG 系统，核心流程如下：
-
-- **研究对象与设定**：面向 RAG 检索链路中“文档入库前”和“排序使用时”两个环节。文档不是直接进入数据库，而是先经过一个由领域专家组成的委员会评审。
-- **关键步骤与模块**：
-  1. **委员会认证**：文档在使用前，由领域专家委员会通过零知识协议（zero-knowledge protocol，一种能在不泄露具体内容的情况下证明某个陈述为真的密码学技术）完成认证。这样做的目的是让文档通过专家审核，同时不暴露评审细节。
-  2. **信任分数合成**：委员会成员各自产生“隐藏评分”，这些评分通过安全多方计算（secure multi-party computation，MPC，允许多方在不公开各自输入的前提下共同计算函数结果）合并成一个统一的信任分数。该分数可被任何客户端验证，但单个成员的评分不会被披露。
-  3. **跨链存证**：信任分数和底层文档数据通过哈希承诺（hash commitment，将数据映射为固定长度哈希值并公开，事后无法抵赖或篡改）在多个区块链上共同维护。这样设计是为了防止任何单一方静默改动或丢弃文档/分数，所有历史状态都可以追溯。
-  4. **排名可重放**：基于信任分数的排序结果被记录上链，任何客户端都可以独立重放并检查排序过程，确保排名未被操纵。
-
-- **输出**：每个文档获得一个公开可验证的信任分数，RAG 系统据此决定检索结果的使用顺序；客户端可随时验证文档和分数的完整性。
-
-需要说明：摘要未披露零知识协议的具体类型、MPC 的具体算法、哈希承诺跨链细节、链结构以及实验数据集和对比指标。
-
-## 主要结果
-
-摘要声明 TrustRAG 能够保证文档和分数不会被静默修改或丢弃，且每个排名结果都能被独立重放和校验。该系统同时保护了委员会评分过程中的隐私性（通过零知识证明与 MPC），又提供了公开可审计性（通过区块链与哈希承诺）。摘要未给出任何实验数据或定量安全结论。
-
-## 为什么与兴趣相关
-
-TrustRAG 将密码学工具（零知识协议、安全多方计算、区块链）用于 RAG 文档的可信度评估，而不是直接保护 LLM 的推理过程。它关注的是“检索内容是否可信”这一横跨隐私计算与 LLM 系统安全的问题，对需要强审计、高可信来源的 RAG 应用（如医疗、法律、金融）有启发意义，也为后续在模型外挂知识管线中引入去中心化信任机制提供了参考思路。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>multi-party computation</category>
-    </item>
-    <item>
-      <title>安全网适用性研究：一种用于神经网络认证的安全性设计解决方案</title>
-      <link>https://arxiv.org/abs/2608.20053</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.20053</guid>
-      <description>英文原题：On the Applicability of Safety Nets: A Safety-By-Design Solution for Certifying Neural Networks
-
-人工智能（AI）在安全关键型航空系统中的集成对认证和部署提出了重大挑战。航空通常被视为最安全的交通方式，依赖众多安全关键系统。对于未来基于AI的安全关键系统，EASA要求采用安全性设计（Safety-by-Design）方法，该方法可通过结合神经网络压缩与查找表的安全网（Safety Nets）来实现，从而确保在离散化操作设计域内100%正确的运行时行为。尽管安全网已被研究，但尚未对其性能特征和系统设计权衡进行全面的研究。本工作首次系统分析了安全网中神经网络与查找表大小之间的权衡。通过系统比较不同架构的神经网络，本研究确定了在保持认证合规性的同时，最小化总体存储和内存需求的最优设计参数。结果表明，具有3至5个隐藏层、每层约50至100个节点并结合独热编码的架构达到了最佳平衡。在这些配置中，神经网络准确表示至少97%的数据，而紧凑的查找表则处理剩余的错误。由此产生的安全网将系统规模减少了近三个数量级，在适应当前航空电子硬件内存预算的同时，保证了整个离散化输入空间上100%的正确输出，符合EASA指南的要求。本工作首次提供了用于HCAS和VCAS的安全网开源实现，且结果可复现，展示了在航空领域实现可认证AI系统的实际路径，并将安全网确立为面向安全关键应用的可行安全性设计解决方案。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>lookup table</category>
-    </item>
-    <item>
-      <title>基于语义结构化分区对基于补丁的多变量时间序列预测的再思考</title>
-      <link>https://arxiv.org/abs/2608.19966</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19966</guid>
-      <description>英文原题：Rethinking Patch Based Multivariate Time Series Forecasting with Semantic Structured Partitioning
-
-多变量时间序列预测（MTSF）是许多实际应用中的基本任务。现有基于补丁的预测方法通常分为三类：固定分区、多尺度分区和可扩展分区。固定分区通常会破坏有意义的时间边界，多尺度分区可能引入跨尺度的冗余表示，而可扩展分区虽然提高了灵活性，但仍缺乏用于组织语义结构和建模异构时间模式间交互的显式机制。为解决这些局限性，我们提出了SCPaT，一个基于Transformer的框架，构建在语义结构化分区之上。SCPaT首先通过自适应语义单元生成将输入序列分解为语义一致的单元，然后构建动态语义图以建模这些单元之间的有向依赖关系，并将它们组织成高阶语义块。基于这些结构化表示，重要性感知的路由机制自适应地将不同的语义块分派给不同的专家以进行定制化建模。在12个真实世界数据集上的大量实验证明了SCPaT的有效性。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>从噪声到信号：利用LLMs与端点特定日志改进安全日志异常检测</title>
-      <link>https://arxiv.org/abs/2608.19938</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19938</guid>
-      <description>英文原题：From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs
-
-现有异常行为日志检测方法（如Wazuh）主要依赖预定义检测规则，而统计异常检测方法（如OpenSearch）则识别与先前观察到的行为模式的偏差。近期研究已探索将LLMs用于日志异常检测，因为它们能够解释语义和上下文信息。然而，基于LLM的方法可能受到提示构建、噪声日志数据以及依赖可能缺乏端点特定认证行为的通用数据集的影响。为解决这些局限，本研究开发了一个标准化的基于指令的LLM分类框架，用于检测异常认证行为，包括边界情况。开发了一个受控网络安全测试平台以生成端点特定认证数据，产出了一个包含正常、边界和异常行为场景的精选数据集。三个指令调优的LLM——Meta Llama 3.1 8B Instruct、Qwen 2.5 7B Instruct和GPT-OSS 20B——在共同真值严重性框架下，与Wazuh基于规则的检测和OpenSearch异常检测进行了评估。Meta Llama 3.1 8B Instruct实现了最强的整体端到端检测性能，准确率为89.3%，召回率为88.2%，F1分数为91.8%，假阴性率为11.8%。相比之下，Wazuh的准确率为52.0%，假阴性率为68.6%，而OpenSearch的准确率为49.3%，假阴性率为74.5%。Meta Llama还检测到了80%的边界异常场景，而Wazuh为20%，OpenSearch为15%。Qwen的整体检测性能低于Meta Llama，但记录了最低的平均推理延迟和100%的结构化响应有效性。GPT-OSS在产生有效响应时表现出强大的分类性能。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>学习如何遗忘：面向长上下文稀疏注意力的微调</title>
-      <link>https://arxiv.org/abs/2608.19920</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19920</guid>
-      <description>英文原题：Learning how to Forget: Fine-tuning for Long-Context Sparse Attention
-
-先前的大量工作通过稀疏注意力解决了键值（KV）缓存选择与压缩问题，以便在没有过高硬件预算的情况下实现Transformer语言模型的长上下文推理。我们提出了一种对稀疏注意力模型进行微调的新方法。该方法适用于任意KV缓存策略，可在适度的硬件预算（例如，单个配备40 GB内存的Nvidia A100 GPU）上运行，并允许模型与策略共同适应，其性能往往优于使用精确注意力（序列并行）训练的模型。我们还提供了H2O稀疏注意力（我们实验中领先的策略）的高效实现，并带有专门的缩放点积注意力内核支持。KeysAndValues（https://github.com/awslabs/keys_values）是一个用于长上下文推理和微调的新开源库，为本文讨论的所有方法提供了易于使用且高性能的代码。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>前向聆听：下一补丁嵌入预测实现可扩展音频学习器</title>
-      <link>https://arxiv.org/abs/2608.19863</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19863</guid>
-      <description>英文原题：Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners
-
-自监督学习（SSL）推动了音频表示学习的显著进展，尽管现有方法日益依赖精心设计的预训练方案以达到有竞争力的性能。一种截然不同的预训练理念支撑着语言建模以及最近视觉表示学习领域最具影响力的进展：不是将编码器训练为静态特征提取器，而是训练模型从先前上下文中预测下一个元素——无论是离散词元还是连续嵌入。自回归预测由此提供了一种跨模态迁移的统一预训练接口，迫使模型学习底层数据分布。鉴于音频的时间结构使得补丁嵌入的自回归预测成为自然契合，我们探究这种简单的因果范式能否产生强大的音频学习器。我们提出NAPE（Next-Audio-Patch-Embedding prediction，下一音频补丁嵌入预测），一种自监督框架，其中因果Transformer从之前的补丁嵌入预测log-mel频谱图的每一个下一补丁嵌入，仅使用因果掩蔽和停止梯度作为训练信号。该设计刻意保持极简，避免重建解码器、声学分词器、师生架构和辅助正则化损失。在六个音频和语音基准测试中，NAPE在若干任务上取得了最先进的微调性能，在编码器规模上持续扩展，并产生了强线性探测结果。NAPE还在没有显式监督的情况下产生了结构化的注意力模式。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents</title>
-      <link>https://arxiv.org/abs/2608.19861</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19861</guid>
-      <description>## 一句话结论
-
-PolicyGuide 通过将领域策略编译为工作流图，并在用户轮次边界调用主动校验器，把客服 LLM 智能体在多领域基准上的策略合规率（Pass⁴）从 0.42 提升到 0.62，同时实现跨模型迁移与较低攻击成功率。
-
-## 问题与动机
-
-客服 LLM 智能体代表用户执行操作时必须遵守组织策略。现有合规失败主要来自两类：一是执行了被禁止的动作（如给予不符合条件的变更），二是遗漏了流程中的必需步骤（如身份识别或确认）。运行时安全防护能对单个风险动作做干预，但“动作局部”的检查无法引导智能体走完多步骤流程；而面向工作流遵循的系统虽支持既定流程执行，却主要关注任务完成而非保障智能体行为合规。
-
-## 方法与技术路线
-
-- **研究对象与设定**：面向客服 LLM 智能体的策略合规防护，覆盖航空、零售、电信三个领域，使用 GPT-5.4 智能体与校验器，并迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro。
-- **核心思路**：PolicyGuide 将每个领域策略编译成“工作流图”（workflow graph），以此替代只对单步动作做检查的机制。工作流图编码了策略允许的操作顺序和必需步骤，从而能够在多步骤流程中判断“当前位置”和“下一步合规动作”。
-- **关键模块与衔接**：在用户轮次边界（user-turn boundaries）调用一个主动校验器（proactive verifier）。校验器读取持久化的图状态（persisted graph state），将当前待办请求与工作流图进行比对，识别缺失步骤或禁止动作，并返回针对当前步骤的修正建议（step-specific remediation），引导智能体沿一条符合策略的路径继续执行。摘要未说明工作流图的具体构建方式、状态表示、校验器的模型结构或提示设计，也未披露实验数据集细节与超参数。
-- **评估方式**：摘要提及两类评估：一是与 τ²-bench 基准上的基线比较，使用 Pass⁴ 指标；二是针对对抗性用户的攻击成功率评估，以及作者设计的流程级（workflow-level）合规性验证。摘要未说明对抗性用户的具体攻击类型、评估样本量或基线方法名称。
-
-## 主要结果
-
-在 τ²-bench 的航空、零售、电信领域中，使用 GPT-5.4 智能体与校验器时，PolicyGuide 将平均 Pass⁴ 从 0.42 提高到 0.62，其中电信领域提升最大（从 0.19 到 0.61），该领域也是工作流结构化程度最高的。相同的工作流可迁移到 Claude Sonnet 4.6 和 Gemini 2.5 Pro 智能体。补充评估显示：在对抗性用户下取得最低的观测攻击成功率，并在作者设计的流程级验证中表现出最强流程合规性。
-
-## 为什么与兴趣相关
-
-这项研究切中大模型智能体落地中的关键安全缺口：仅做单步动作过滤不足以保证长流程合规。PolicyGuide 把策略显式编码为流程结构，使校验器能提供“下一步做什么”的修正，这比单纯拒绝或告警更实用。对关注 LLM 安全、智能体治理和可信 AI 系统的研究者与工程人员，该方法展示了将领域知识融入运行时防护的新方向，且其跨模型迁移特性对部署具有参考价值。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Repo0：设计驱动的从零到全代码生成</title>
-      <link>https://arxiv.org/abs/2608.19854</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19854</guid>
-      <description>英文原题：Repo0: Design-Driven Zero-to-All Code Generation
-
-大型语言模型智能体在代码生成方面取得了实质性进展，但大多数现有系统假设预定义的仓库架构。这一假设在从零到全代码生成中不成立，因为智能体必须直接从自然语言需求构建整个软件项目，并在整个开发过程中保持模块化的仓库架构。我们提出了Repo0，一个用于从零到全代码生成的持续结构演化框架。Repo0维护一个显式的架构状态，实例化为双有向无环图（Dual-DAG），由需求级DAG、组件级DAG及其对齐关系组成。从自然语言需求出发，它通过由模块化指标引导的结构化操作迭代演化组件边界，直至结构收敛，之后收敛的架构指导测试驱动的开发代码生成。我们使用GPT-5 mini和DeepSeek V3.2在来自RepoCraft的六个真实世界仓库上评估Repo0。Repo0在所有设置中取得了最高的功能覆盖率和通过率。与最强的仓库规划基线RPG相比，Repo0的功能覆盖率提高了高达20.08个百分点，通过率提高了高达29.74个百分点。消融和结构演化分析进一步证明了Dual-DAG架构状态、模块化引导的结构演化以及显式结构收敛的重要性。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>TempJail: Temporal Jailbreak Attack against Large Vision-Language Models via Subtitle Scheduling</title>
-      <link>https://arxiv.org/abs/2608.19737</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19737</guid>
-      <description>## 一句话结论
-TempJail 是一种针对大视觉语言模型（LVLM）的黑盒视频越狱攻击框架，通过优化字幕的时间调度（而非仅字幕语义）来诱导模型输出有害内容。
-
-## 问题与动机
-文本和图像越狱已被广泛研究，但针对 LVLM 的视频越狱仍少有人探索。现有视频越狱方法主要操纵视频中嵌入的文本内容，却忽略了这些信息在时间维度上如何组织。作者发现，越狱效果不仅取决于文本语义，还取决于其时间呈现方式（如持续时长、时间槽分配）。这提示 LVLM 在视频理解中存在“时序漏洞”，而字幕天然适合作为攻击载体：它在真实视频中常见，可对语义内容进行精确的时间控制，且视觉上不突兀。
-
-## 方法与技术路线
-TempJail 是一个黑盒（black-box）的、完全基于视频的越狱框架。研究对象是大型视觉语言模型（LVLM）的视频理解与推理过程；输入是带有有害意图的源查询，以及作为攻击媒介的、由模型生成的查询对齐字幕序列。
-
-技术路线按下述步骤衔接：
-
-1. **构建查询对齐的对话式字幕序列**：不直接使用单句有害提示，而是将源查询拆解/转化为一组以对话形式组织的字幕，使语义内容在时间上分段展开。
-2. **优化时序调度（subtitle scheduling）**：摘要明确提到，攻击只依赖于字幕的语义和时序，因此核心模块是在给定字幕序列的基础上，优化每个字幕的持续时间与时间槽分配。该过程利用 LVLM 的时序脆弱性，使整体呈现方式更易触发模型违反安全约束。
-3. **黑盒攻击执行**：将调度好的字幕序列嵌入视频中，输入待攻击的 LVLM，无需访问模型内部参数或梯度，只通过输入视频和观察输出来完成攻击。
-
-摘要未说明具体的时间调度优化算法、字幕长度/数量、视频生成方式、搜索步数等细节，也未披露实验所用的具体提示模板和越狱评估协议。
-
-## 主要结果
-该框架在四个代表性 LVLM 和两个数据集上进行了评估。结果显示，在所有模型–数据集组合下，TempJail 的攻击成功率（ASR）均最高；与最强基线相比，在数据集平均 ASR 上，对 GPT-5 提升了 53 个百分点，对 Gemini 3.5-Flash 提升了 18 个百分点。摘要未给出其他模型、具体数据集名称、单组实验方差或基线名称。
-
-## 为什么与兴趣相关
-这项工作揭示了大模型安全评估中的一个盲区：即使语义内容本身已被安全对齐，攻击者仍可利用“何时、持续多久、如何排列”等信息的时间结构来绕过防御。由于字幕是视频中最普通的信息载体之一，该攻击具有现实可部署性。对 LVLM 安全研究者而言，它提示防御不能只做文本/语义过滤，还需考虑跨模态时序一致性与对抗鲁棒性；对模型开发者而言，它强调了视频推理中的时间建模与安全对齐之间可能存在的内在张力。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>RecPFN：面向基于上下文内学习的推荐的先验拟合网络</title>
-      <link>https://arxiv.org/abs/2608.19735</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19735</guid>
-      <description>英文原题：RecPFN: Prior-Fitted Networks for In-Context-Based Recommendations
-
-我们介绍RecPFN，一种先验拟合网络，它将上下文内学习引入序列推荐。RecPFN完全在从广泛的结构因果先验中采样的合成点击流环境上进行预训练，使其能够从小支持集中摊销贝叶斯式推理。在推理时，一个轻量级的仅解码器Transformer以少量领域序列为条件，并在单次前向传播中为查询产生下一项预测，无需任何权重更新。在八个公开基准上，RecPFN实现了最先进的零样本性能，同时在低计算和低数据场景中与监督方法保持强劲竞争力。它具有部署高效性且对领域偏移具有鲁棒性，优于依赖大型真实交互语料库的强零样本基线。RecPFN为可泛化、数据高效的推荐器提供了一条实用路径，并为更丰富的先验、更长上下文的ICL以及多模态扩展开辟了途径。用于训练和评估的代码可在https://github.com/SAP-samples/tabular-ai-recpfn/公开获取。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>DeltaML-Bench：在真实世界研究仓库上评估机器学习智能体</title>
-      <link>https://arxiv.org/abs/2608.19653</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19653</guid>
-      <description>英文原题：DeltaML-Bench: Evaluating Machine Learning Agents on Real-World Research Repositories
-
-用于机器学习实验的自主智能体必须能够在异构仓库中导航、修复训练流水线，并在现实计算约束下评估候选改进。现有基准仅部分涵盖这些条件。我们提出DeltaML-Bench，这是一个包含48个任务的基准，这些任务源自研究论文，要求智能体在不完美的开源仓库中改进已发表的基线。我们使用标准的Modular智能体和基于搜索的ARG脚手架评估GPT-5和Claude Sonnet 4。在4×6小时分配下，ARG将GPT-5的每次运行成功率从9.4%提升至33.9%；在2×12小时分配下，GPT-5 ARG达到49.0%。Modular配置展现出高达47.9%的规格博弈率，而在所评估的ARG配置中未观察到博弈行为。这些结果表明，在部署智能体进行自主机器学习实验时，脚手架设计和完整性检查是重要的考量因素。</description>
-      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Enhancing Privacy in Federated Learning via Dual Obfuscation of Gradients and Training Images</title>
-      <link>https://arxiv.org/abs/2608.19650</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.19650</guid>
-      <description>## 一句话结论
-
-本文提出一种在联邦学习中同时混淆**梯度**与**训练图像**的“双重混淆”方法，能在不额外损害分类性能的前提下，降低基于梯度的图像恢复攻击（如 APRIL）所还原出的视觉信息量。
-
-## 问题与动机
-
-联邦学习（Federated Learning, FL）允许客户端在本地保留数据、仅共享模型更新进行协作训练。但近年研究表明，攻击者可以从共享的模型更新（如梯度）中重建训练图像，造成隐私泄露。为应对此类“图像恢复攻击”，作者提出联合混淆更新信息与训练图像，从两个层面削弱攻击者可利用的信息。
-
-## 方法与技术路线
-
-摘要所述方法包含两个互补的混淆模块，并按如下方式协同工作：
-
-- **研究对象与设定**：联邦学习环境中的图像分类任务，客户端本地持有训练图像，需将模型更新上传至服务器。攻击者可能利用这些更新进行图像重建（摘要考察了 Attention Privacy Leakage, APRIL 攻击，即一种通过注意力图泄露隐私的攻击方式）。
-
-- **模块一：随机二进制梯度置零**。该方法基于随机二进制权重，将一部分梯度元素随机置零。其作用是直接减少攻击者可获得的原始梯度信息量，从而降低重建图像时所能利用的信息密度。这一步不依赖图像内容，主要用于“削减信息”。
-
-- **模块二：图像加密**。对训练图像进行加密，使即便攻击者重建出图像，得到的也是缺乏视觉可解释性的内容。该加密方案允许每个客户端、每张图像使用独立密钥，从而避免显式地共享密钥（摘要未说明密钥的具体分发或管理机制）。这一步主要用于“降低重建结果的可用性”。
-
-- **两模块的衔接**：梯度置零从“源头上”减少可供攻击者推断的信息，图像加密则从“结果上”抹除重建图像的视觉意义，两者形成互补。摘要特别指出，这种组合不会在图像加密已造成的性能损失之外，再额外降低分类精度。
-
-- **实验与比较**：实验采用 Vision Transformer（ViT，一种基于自注意力机制的视觉模型）进行图像分类任务，并评估所提方法对 APRIL 攻击的防御效果。摘要未说明数据集、加密算法具体参数、梯度置零比例或实验环境等细节。
-
-## 主要结果
-
-在所述评估设置下，该双重混淆方法能够减少 APRIL 攻击恢复出的视觉信息，同时不会造成超越图像加密本身的额外分类性能下降。作者同时强调，这种组合并不能提供绝对的安全保证，但实验结果显示了将梯度修改与图像加密相结合对增强联邦学习隐私的潜在价值。
-
-## 为什么与兴趣相关
-
-该工作属于隐私计算领域，但针对的是训练过程而非模型推理，面向的是联邦学习中真实存在的梯度泄漏风险。它将梯度扰动与图像加密两种思路结合，并提供了一种支持每客户端、每图像独立密钥的轻量级密钥设计方向，对后续探索更实用的联邦学习隐私保护方案具有参考意义。</description>
       <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
       <category>arXiv</category>
       <category>transformer</category>
