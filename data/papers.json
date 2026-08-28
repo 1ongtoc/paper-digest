@@ -1,6 +1,769 @@
 {
   "papers": [
     {
+      "id": "iacr_2026/1823",
+      "iacr_id": "2026/1823",
+      "title": "HyperSolver: Asymptotically and Concretely Accelerating the Delfs–Galbraith Attack using Isogeny Ladders",
+      "authors": [
+        "Lorenz Panny",
+        "Ryan Rueger",
+        "Alessandro Sferlazza",
+        "Aleksei Udovenko"
+      ],
+      "abstract": "We present a new variant of the memoryless Delfs-Galbraith algorithm for finding an isogeny path from any given supersingular elliptic curve to a curve with known endomorphism ring. Through existing polynomial-time reductions, our algorithm allows one to solve the supersingular endomorphism-ring problem which lies at the heart of isogeny-based cryptography. For arbitrary characteristics $p$ our algorithm asymptotically outperforms the previous best Delfs-Galbraith variant by a logarithmic factor; and matches the best previous asymptotic for characteristics with favourable structure. In addition to the asymptotic analysis, we also calculate a concrete cost estimate for our algorithm in terms of finite-field operations, which indicates that our expected cost is lower than all previous Delfs-Galbraith variants, even concretely. By substituting bit-operation counts for the cost of arithmetic, we can deduce concrete bit-security estimates for isogeny-based cryptographic primitives, including (but not limited to) SQIsign. As part of the calculation of the expected cost, we also provide a novel analysis of the probability of encountering \"distinguished\" subgraphs in an expander graph when relying various modes of graph exploration, whose potentially counterintuitive behaviour had apparently remained unnoticed thus far. Finally, we provide a complete implementation of our algorithm(s), with the asymptotic bottleneck being attacked on GPUs, and the easier post-processing done on CPU using C++ as well as SageMath. Preliminary experimental results suggest that we can solve $100$-bit instances of the problem within less than $100$ GPU hours. For comparison, the current cryptanalytic record for ECDLP (which has a comparable classical attack complexity) stands at $114$ bits, achieved using significantly more hardware and time.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T17:29:45Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1823",
+      "pdf_link": "https://eprint.iacr.org/2026/1823.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-28T05:48:02Z",
+      "matched_terms": [],
+      "summary_en": "We present a new variant of the memoryless Delfs-Galbraith algorithm for finding an isogeny path from any given supersingular elliptic curve to a curve with known endomorphism ring. Through existing polynomial-time reductions, our algorithm allows one to solve the supersingular endomorphism-ring problem which lies at the heart of isogeny-based cryptography. For arbitrary characteristics $p$ our algorithm asymptotically outperforms the previous best Delfs-Galbraith variant by a logarithmic factor; and matches the best previous asymptotic for characteristics with favourable structure. In addition to the asymptotic analysis, we also calculate a concrete cost estimate for our algorithm in terms of finite-field operations, which indicates that our expected cost is lower than all previous Delfs-Galbraith variants, even concretely. By substituting bit-operation counts for the cost of arithmetic, we can deduce concrete bit-security estimates for isogeny-based cryptographic primitives, including (but not limited to) SQIsign. As part of the calculation of the expected cost, we also provide a novel analysis of the probability of encountering \"distinguished\" subgraphs in an expander graph when relying various modes of graph exploration, whose potentially counterintuitive behaviour had apparently remained unnoticed thus far. Finally, we provide a complete implementation of our algorithm(s), with the asymptotic bottleneck being attacked on GPUs, and the easier post-processing done on CPU using C++ as well as SageMath. Preliminary experimental results suggest that we can solve $100$-bit instances of the problem within less than $100$ GPU hours. For comparison, the current cryptanalytic record for ECDLP (which has a comparable classical attack complexity) stands at $114$ bits, achieved using significantly more hardware and time.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.27397",
+      "arxiv_id": "2608.27397",
+      "title": "Making Clinical Language Models Auditable: Concept-Guided Fine-Tuning for Robust Prediction",
+      "authors": [
+        "Jin Mu",
+        "Guanhua Chen"
+      ],
+      "abstract": "Clinical language models can achieve strong in-hospital accuracy yet fail under deployment shifts because they exploit note-specific artifacts (e.g., templates, separators, boilerplate) that do not reflect patient state. We propose CAST (Concept-guided Artifact Suppression Tuning), an SAE-based framework for auditable clinical text classification. CAST uses Sparse Autoencoders to expose sparse, human-auditable features from intermediate Transformer activations, labels SAE latents with an LLM-assisted interpretation pipeline and ICD-10 retrieval constraints, suppresses verified artifact latents via residual subtraction during fine-tuning, and provides post-hoc per-concept attributions for auditing model decisions. On MIMIC-IV discharge-note mortality prediction, CAST improves over its corresponding fine-tuned encoder baselines and remains competitive with strong LLM baselines, while producing a feature-level audit trail of the clinical concepts that support each prediction and the artifact concepts suppressed during training.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T17:28:35Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27397",
+      "pdf_link": "https://arxiv.org/pdf/2608.27397",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Clinical language models can achieve strong in-hospital accuracy yet fail under deployment shifts because they exploit note-specific artifacts (e.g., templates, separators, boilerplate) that do not reflect patient state. We propose CAST (Concept-guided Artifact Suppression Tuning), an SAE-based framework for auditable clinical text classification. CAST uses Sparse Autoencoders to expose sparse, human-auditable features from intermediate Transformer activations, labels SAE latents with an LLM-assisted interpretation pipeline and ICD-10 retrieval constraints, suppresses verified artifact latents via residual subtraction during fine-tuning, and provides post-hoc per-concept attributions for auditing model decisions. On MIMIC-IV discharge-note mortality prediction, CAST improves over its corresponding fine-tuned encoder baselines and remains competitive with strong LLM baselines, while producing a feature-level audit trail of the clinical concepts that support each prediction and the artifact concepts suppressed during training.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "clinical NLP",
+        "interpretability",
+        "fine-tuning"
+      ],
+      "relevance_reason_zh": "论文核心是临床语言模型的可审计微调与可解释性，不涉及隐私计算、安全推理或大模型安全。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "使临床语言模型可审计：概念引导的微调以实现稳健预测",
+      "abstract_zh": "临床语言模型可以在院内取得较高的准确率，但在部署环境变化时却会失败，因为它们利用了不能反映患者状态的笔记特有伪影（例如模板、分隔符、套话）。我们提出了CAST（概念引导的伪影抑制微调），一个基于SAE的可审计临床文本分类框架。CAST使用稀疏自编码器从Transformer中间激活中暴露稀疏的、可人工审计的特征，通过LLM辅助的解释流水线和ICD-10检索约束来标记SAE潜在变量，在微调期间通过残差减法抑制已验证的伪影潜在变量，并提供事后逐概念归因以审计模型决策。在MIMIC-IV出院小结死亡率预测任务上，CAST相对于其对应的微调编码器基线有所提升，并且与强大的LLM基线保持竞争力，同时产生了支持每个预测的临床概念以及训练期间被抑制的伪影概念的特征级审计轨迹。"
+    },
+    {
+      "id": "arxiv_2608.27367",
+      "arxiv_id": "2608.27367",
+      "title": "Successive Capacity Growth: Task-Complexity-Driven Width and Depth Expansion for Vision Transformer Encoders in JEPA World Models",
+      "authors": [
+        "Frederik Berenz"
+      ],
+      "abstract": "Joint-Embedding Predictive Architectures (JEPAs) for world modeling typically employ fixed-size Vision Transformer encoders that are over-provisioned for simple tasks and under-provisioned for complex ones, with significant redundancy across attention heads. We propose Successive Capacity Growth (SCG), a method that starts from a minimal encoder (1 head, 2 layers, 283K parameters) and grows incrementally in width (adding attention heads for low-level semantic capacity) or depth (adding transformer blocks for higher-order semantic abstraction), driven by a task-agnostic test-and-verify mechanism that exploits function-preserving expansion to safely trial architectural changes and roll back if they do not improve prediction loss. The Sketched Isotropic Gaussian Regularizer (SIGReg) ensures that all learned semantic dimensions remain statistically independent and aligned with the predictive objective, preventing collapse even as the architecture grows. On a 60-dimensional multi-object dynamics task, SCG naturally triggers depth expansion, improving prediction loss by 20.3% over the fixed small baseline with 56 times greater parameter efficiency than scaling to the fixed large model; on a 2D navigation task, a single width expansion yields even an 23% improvement over the fixed large model. Across all three tested environments of increasing complexity, the adaptive encoder matches or exceeds the fixed small baseline, with zero false-positive expansions and bit-exact function preservation (ratio = 1.0, absolute difference = 0.0). The take-away is that JEPA world model encoders need not be pre-allocated at maximum capacity - they can grow successively as the task demands, achieving significant compute and data efficiency while maintaining representation quality.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T17:04:57Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27367",
+      "pdf_link": "https://arxiv.org/pdf/2608.27367",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Joint-Embedding Predictive Architectures (JEPAs) for world modeling typically employ fixed-size Vision Transformer encoders that are over-provisioned for simple tasks and under-provisioned for complex ones, with significant redundancy across attention heads. We propose Successive Capacity Growth (SCG), a method that starts from a minimal encoder (1 head, 2 layers, 283K parameters) and grows incrementally in width (adding attention heads for low-level semantic capacity) or depth (adding transformer blocks for higher-order semantic abstraction), driven by a task-agnostic test-and-verify mechanism that exploits function-preserving expansion to safely trial architectural changes and roll back if they do not improve prediction loss. The Sketched Isotropic Gaussian Regularizer (SIGReg) ensures that all learned semantic dimensions remain statistically independent and aligned with the predictive objective, preventing collapse even as the architecture grows. On a 60-dimensional multi-object dynamics task, SCG naturally triggers depth expansion, improving prediction loss by 20.3% over the fixed small baseline with 56 times greater parameter efficiency than scaling to the fixed large model; on a 2D navigation task, a single width expansion yields even an 23% improvement over the fixed large model. Across all three tested environments of increasing complexity, the adaptive encoder matches or exceeds the fixed small baseline, with zero false-positive expansions and bit-exact function preservation (ratio = 1.0, absolute difference = 0.0). The take-away is that JEPA world model encoders need not be pre-allocated at maximum capacity - they can grow successively as the task demands, achieving significant compute and data efficiency while maintaining representation quality.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "vision transformer",
+        "world models",
+        "model capacity"
+      ],
+      "relevance_reason_zh": "论文关注JEPA世界模型中Vision Transformer编码器的容量增长方法，属于模型架构与训练效率，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "连续容量增长：JEPA世界模型中视觉Transformer编码器的任务复杂度驱动的宽度与深度扩展",
+      "abstract_zh": "用于世界建模的联合嵌入预测架构（JEPA）通常采用固定大小的视觉Transformer编码器，这些编码器对于简单任务而言过度配置，而对于复杂任务则配置不足，并且在注意力头之间存在显著冗余。我们提出连续容量增长（SCG）方法，该方法从一个极小编码器（1个头、2层、28.3万参数）开始，在宽度上（增加注意力头以获取低层语义容量）或深度上（增加Transformer块以获取更高阶的语义抽象）逐步增长，并由一种任务无关的测试与验证机制驱动，该机制利用保持功能的扩展来安全地试验架构变更，若预测损失未改善则回滚。草稿各向同性高斯正则化器（SIGReg）确保所有学习到的语义维度保持统计独立并与预测目标对齐，即使在架构增长时也能防止坍缩。在60维多物体动力学任务上，SCG自然地触发深度扩展，与固定小基线相比预测损失改善了20.3%，且参数效率比扩展到固定大模型高56倍；在2D导航任务上，仅一次宽度扩展相比固定大模型甚至带来23%的改善。在所有三个复杂度递增的测试环境中，自适应编码器均达到或超过固定小基线，零误报扩展，且函数保持逐位精确（比率=1.0，绝对差=0.0）。结论是，JEPA世界模型编码器无需预先分配最大容量——它们可以根据任务需求逐步增长，在保持表示质量的同时显著提升计算和数据效率。"
+    },
+    {
+      "id": "arxiv_2608.27334",
+      "arxiv_id": "2608.27334",
+      "title": "BTS-AgentBench: A Deterministic, Replayable Pipeline from Read-Only Telemetry Logs to Agent Benchmarks",
+      "authors": [
+        "Jeong-Yoon Kim"
+      ],
+      "abstract": "Industrial sites contain large volumes of read-only telemetry, but few benchmarks specify how to compile these records into executable multi-turn agent tasks. We present a telemetry-to-episode construction method instantiated as BTS-AgentBench. The pipeline normalizes BTS metadata and raw histories into a read-only tool store, compiles static tasks with tool-derived gold answers and evidence, and lifts retained tasks into typed, bounded operator-facing episodes. The 532-row release adds clarification, goal revision, timestamp policy, quality-gated reporting, and evidence attribution while preserving the source computation and split. Coded contract preflight reports zero findings, and the construction-exclusion controller completes 0/532 rows. Two independent raw-to-episode builds match all 11 logical tool-store exports and reproduce the released 356/87/89 train/dev/test artifact exactly. Applying the shared construction path to XAI4HEAT produces 204 episodes; on its 41-row held-out test split, the controller completes 0 rows and the retained GPT-5.5 execution completes all 41. Code, artifacts, and replay reports are available at https://github.com/kjy7567/BTS-AgentBench.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T16:35:52Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27334",
+      "pdf_link": "https://arxiv.org/pdf/2608.27334",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Industrial sites contain large volumes of read-only telemetry, but few benchmarks specify how to compile these records into executable multi-turn agent tasks. We present a telemetry-to-episode construction method instantiated as BTS-AgentBench. The pipeline normalizes BTS metadata and raw histories into a read-only tool store, compiles static tasks with tool-derived gold answers and evidence, and lifts retained tasks into typed, bounded operator-facing episodes. The 532-row release adds clarification, goal revision, timestamp policy, quality-gated reporting, and evidence attribution while preserving the source computation and split. Coded contract preflight reports zero findings, and the construction-exclusion controller completes 0/532 rows. Two independent raw-to-episode builds match all 11 logical tool-store exports and reproduce the released 356/87/89 train/dev/test artifact exactly. Applying the shared construction path to XAI4HEAT produces 204 episodes; on its 41-row held-out test split, the controller completes 0 rows and the retained GPT-5.5 execution completes all 41. Code, artifacts, and replay reports are available at https://github.com/kjy7567/BTS-AgentBench.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "agent benchmarks",
+        "telemetry",
+        "benchmark construction"
+      ],
+      "relevance_reason_zh": "论文描述从遥测日志构建Agent评测基准的流水线，与隐私计算或安全推理无实质关联。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "BTS-AgentBench：从只读遥测日志到智能体基准的确定性、可重放流水线",
+      "abstract_zh": "工业现场包含大量只读遥测数据，但很少有基准明确说明如何将这些记录编译为可执行的多轮智能体任务。我们提出了一种遥测到情节（telemetry-to-episode）的构建方法，并以BTS-AgentBench实例化。该流水线将BTS元数据和原始历史记录规范化为只读工具存储，编译带有工具派生的金标准答案和证据的静态任务，并将保留的任务提升为类型化、有界、面向操作员的情节。此次发布的532行数据增加了澄清、目标修订、时间戳策略、质量门控报告和证据归属，同时保留了源计算和划分。编码合约预检报告为零发现，构建排除控制器完成了0/532行。两次独立的原始到情节构建匹配全部11个逻辑工具存储导出，并精确复现了发布的356/87/89训练/开发/测试工件。将共享构建路径应用于XAI4HEAT生成204个情节；在其41行留出测试划分上，控制器完成0行，保留的GPT-5.5执行完成全部41行。代码、工件和重放报告可在 https://github.com/kjy7567/BTS-AgentBench 获取。"
+    },
+    {
+      "id": "iacr_2026/1822",
+      "iacr_id": "2026/1822",
+      "title": "Non-Malleable Reductions of Knowledge",
+      "authors": [
+        "Antonio Faonio",
+        "Lili Tong"
+      ],
+      "abstract": "Non-malleability for non-interactive zero-knowledge proofs requires that, given a proof for a statement, it is infeasible to derive a valid proof for a related statement without knowing a corresponding witness. We introduce a modular framework for analyzing non-malleable reductions of knowledge (RoKs). A reduction of knowledge transforms the task of proving knowledge for a source relation into proving knowledge for a target relation, often simpler or more structured. RoKs are an extremely useful tools for compositions. We identify different settings in which the composition of two RoKs, and in particular two non-interactive RoKs obtained via the Fiat-Shamir transform, preserves simulation extractability, and thus non-malleability. Our framework isolates simple and concrete properties required from each component, including novel forms of zero knowledge and new security notions that are easier to verify than full simulation extractability. This yields a systematic toolbox for establishing non malleability in modular proof systems. Finally, we illustrate the power of our approach by analyzing LaBRADOR (Beullens and Seiler, CRYPTO’23), a lattice based proof system for R1CS. We provide the first analysis of its simulation extractability and, since LaBRADOR is not zero knowledge, we design a zero knowledge variant that preserves its practical efficiency and sublinear proof size. Our results show that non-malleability for advanced proof systems can be achieved modularly, significantly simplifying the security analysis.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T16:31:50Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1822",
+      "pdf_link": "https://eprint.iacr.org/2026/1822.pdf",
+      "categories": [
+        "Foundations"
+      ],
+      "updated_at": "2026-08-27T16:31:50Z",
+      "matched_terms": [],
+      "summary_en": "Non-malleability for non-interactive zero-knowledge proofs requires that, given a proof for a statement, it is infeasible to derive a valid proof for a related statement without knowing a corresponding witness. We introduce a modular framework for analyzing non-malleable reductions of knowledge (RoKs). A reduction of knowledge transforms the task of proving knowledge for a source relation into proving knowledge for a target relation, often simpler or more structured. RoKs are an extremely useful tools for compositions. We identify different settings in which the composition of two RoKs, and in particular two non-interactive RoKs obtained via the Fiat-Shamir transform, preserves simulation extractability, and thus non-malleability. Our framework isolates simple and concrete properties required from each component, including novel forms of zero knowledge and new security notions that are easier to verify than full simulation extractability. This yields a systematic toolbox for establishing non malleability in modular proof systems. Finally, we illustrate the power of our approach by analyzing LaBRADOR (Beullens and Seiler, CRYPTO’23), a lattice based proof system for R1CS. We provide the first analysis of its simulation extractability and, since LaBRADOR is not zero knowledge, we design a zero knowledge variant that preserves its practical efficiency and sublinear proof size. Our results show that non-malleability for advanced proof systems can be achieved modularly, significantly simplifying the security analysis.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.27296",
+      "arxiv_id": "2608.27296",
+      "title": "LLMs Can Design Near-Optimal OR Algorithms",
+      "authors": [
+        "Jackie Baek"
+      ],
+      "abstract": "We ask whether large language models (LLMs) can design effective algorithms for well-specified operations research (OR) problems. We study inventory control, queueing network control, and assortment optimization. We evaluate two levels of LLM use: at level 1, the model receives one problem instance and returns a solution for that instance; at level 2, it receives only the problem class description and broad parameter ranges, and returns an algorithm that maps instance parameters to solutions. Human input is minimal: we give one untuned prompt that describes the problem, and the model has access to a Python sandbox tool with a fixed compute budget. The strongest model we test, gpt-5.6-sol, matches or outperforms the best existing method on almost all evaluated instances. This holds even at level 2, where the returned algorithm is fixed before seeing the evaluation instances. Performance also improves sharply across models released less than eight months apart, suggesting that this capability is moving quickly. Thus, for the well-specified operations problems we study, a single untuned LLM query can already produce algorithms competitive with specialized methods. These results suggest that frontier LLMs can be a serious empirical baseline for algorithm design in well-specified OR problems.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T16:01:11Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27296",
+      "pdf_link": "https://arxiv.org/pdf/2608.27296",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "We ask whether large language models (LLMs) can design effective algorithms for well-specified operations research (OR) problems. We study inventory control, queueing network control, and assortment optimization. We evaluate two levels of LLM use: at level 1, the model receives one problem instance and returns a solution for that instance; at level 2, it receives only the problem class description and broad parameter ranges, and returns an algorithm that maps instance parameters to solutions. Human input is minimal: we give one untuned prompt that describes the problem, and the model has access to a Python sandbox tool with a fixed compute budget. The strongest model we test, gpt-5.6-sol, matches or outperforms the best existing method on almost all evaluated instances. This holds even at level 2, where the returned algorithm is fixed before seeing the evaluation instances. Performance also improves sharply across models released less than eight months apart, suggesting that this capability is moving quickly. Thus, for the well-specified operations problems we study, a single untuned LLM query can already produce algorithms competitive with specialized methods. These results suggest that frontier LLMs can be a serious empirical baseline for algorithm design in well-specified OR problems.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM",
+        "operations research",
+        "algorithm design"
+      ],
+      "relevance_reason_zh": "论文研究LLM为运筹学问题设计算法，属于算法设计应用，与安全推理和隐私计算无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "LLMs 能够设计近乎最优的 OR 算法",
+      "abstract_zh": "我们探究大语言模型（LLMs）是否能为明确指定的运筹学（OR）问题设计有效的算法。我们研究了库存控制、排队网络控制和分类优化。我们评估了两种级别的LLM使用方式：在级别1中，模型接收一个问题实例并返回该实例的解决方案；在级别2中，模型仅接收问题类别描述和宽泛的参数范围，并返回一个将实例参数映射到解决方案的算法。人工输入极少：我们提供一个未调优的提示来描述问题，模型可使用一个具有固定计算预算的Python沙盒工具。我们测试的最强模型 gpt-5.6-sol 在几乎所有评估实例上都匹配或超越了现有最佳方法。即使在级别2中，返回的算法在看到评估实例之前就已固定，这一结论依然成立。在发布间隔不到八个月的模型中，性能也急剧提升，表明这一能力正在快速发展。因此，对于我们研究的明确指定的运筹问题，一次未调优的LLM查询已能生成与专门方法相竞争的算法。这些结果表明，前沿LLMs可以作为明确指定的OR问题中算法设计的严肃经验基线。"
+    },
+    {
+      "id": "arxiv_2608.27265",
+      "arxiv_id": "2608.27265",
+      "title": "SCIT: Testing Causal Cache Carriers in Latent Chain-of-Thought Models",
+      "authors": [
+        "Yi Ding",
+        "Lijun Huang",
+        "Menglin Yang"
+      ],
+      "abstract": "Latent chain-of-thought models move intermediate reasoning from emitted text into continuous states, improving compactness but hiding the causal object. We introduce SCIT, the Suffix Cache Interchange Test, a causal protocol that constructs exact source-recipient counterfactuals, patches declared cache segments, and identifies which transformer object carries the counterfactual computation. SCIT combines sufficiency tests with K/V component splits, hidden-state controls, semantic source controls, decoded validation, and matched corruption. On CODI-GPT2 and a Sim-CoT-style GPT-2 reproduction, counterfactual arithmetic transfers primarily through value-cache suffix trajectories rather than hidden states, keys, reusable answer slots, or single-token triggers. Complete sufficiency-and-necessity evidence for the late-value-suffix mechanism holds for the main CODI-GPT2 checkpoint; the Sim-CoT-style checkpoint shows the same sufficiency and decoded-control pattern but insufficient matched-corruption evidence for a necessity call. Beyond these local arithmetic cells, SCIT reveals carrier-regime shifts: arithmetic-like GPT-2/1B cells preserve latent-tail value/KV transfer, whereas competent 8B and repaired non-arithmetic cells route through prompt-prefix or full-cache K/V; boundary cells receive no mechanism call. SCIT therefore contributes a cache-level diagnostic, a checkpoint-specific GPT-2 arithmetic mechanism, and a competence-gated carrier map rather than a universal latent-tail claim.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T15:47:48Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27265",
+      "pdf_link": "https://arxiv.org/pdf/2608.27265",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer",
+        "GPT"
+      ],
+      "summary_en": "Latent chain-of-thought models move intermediate reasoning from emitted text into continuous states, improving compactness but hiding the causal object. We introduce SCIT, the Suffix Cache Interchange Test, a causal protocol that constructs exact source-recipient counterfactuals, patches declared cache segments, and identifies which transformer object carries the counterfactual computation. SCIT combines sufficiency tests with K/V component splits, hidden-state controls, semantic source controls, decoded validation, and matched corruption. On CODI-GPT2 and a Sim-CoT-style GPT-2 reproduction, counterfactual arithmetic transfers primarily through value-cache suffix trajectories rather than hidden states, keys, reusable answer slots, or single-token triggers. Complete sufficiency-and-necessity evidence for the late-value-suffix mechanism holds for the main CODI-GPT2 checkpoint; the Sim-CoT-style checkpoint shows the same sufficiency and decoded-control pattern but insufficient matched-corruption evidence for a necessity call. Beyond these local arithmetic cells, SCIT reveals carrier-regime shifts: arithmetic-like GPT-2/1B cells preserve latent-tail value/KV transfer, whereas competent 8B and repaired non-arithmetic cells route through prompt-prefix or full-cache K/V; boundary cells receive no mechanism call. SCIT therefore contributes a cache-level diagnostic, a checkpoint-specific GPT-2 arithmetic mechanism, and a competence-gated carrier map rather than a universal latent-tail claim.",
+      "keywords": [
+        "transformer",
+        "GPT"
+      ],
+      "topics": [
+        "latent chain-of-thought",
+        "interpretability",
+        "causal analysis"
+      ],
+      "relevance_reason_zh": "论文通过因果测试分析潜在思维链Transformer模型的内部机制，属于可解释性研究，不涉及安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "SCIT：测试潜在思维链模型中的因果缓存载体",
+      "abstract_zh": "潜在思维链模型将中间推理从生成的文本转移到连续状态中，提高了紧凑性，但隐藏了因果对象。我们引入了SCIT，即后缀缓存交换测试（Suffix Cache Interchange Test），这是一种因果协议，它构造精确的源-接收方反事实，修补声明的缓存片段，并识别哪个Transformer对象承载了反事实计算。SCIT将充分性测试与K/V组件拆分、隐藏状态控制、语义源控制、解码验证和匹配破坏相结合。在CODI-GPT2和一个Sim-CoT风格的GPT-2复现中，反事实算术主要通过值缓存后缀轨迹传输，而不是通过隐藏状态、键、可复用答案槽或单令牌触发。关于晚期值后缀机制的完整充分性和必要性证据适用于主要的CODI-GPT2检查点；Sim-CoT风格检查点显示出相同的充分性和解码控制模式，但在必要性判定上缺乏足够的匹配破坏证据。在这些局部算术单元之外，SCIT揭示了载体机制的变化：类似算术的GPT-2/1B单元保留了潜在尾部值/KV传输，而能力更强的8B和修复后的非算术单元则通过提示前缀或全缓存K/V进行路由；边界单元没有获得机制判定。因此，SCIT贡献了一个缓存级诊断、一个针对特定检查点的GPT-2算术机制，以及一个以能力为门控的载体图谱，而非一个普遍的潜在尾部断言。"
+    },
+    {
+      "id": "iacr_2026/1821",
+      "iacr_id": "2026/1821",
+      "title": "Concrete Security Assessment of Isogeny-based Cryptography with the new Isogeny-Path algorithm",
+      "authors": [
+        "Maher Mamah"
+      ],
+      "abstract": "Very recently, Wesolowski (ePrint 2026/1486) proposed a heuristic algorithm for solving the supersingular isogeny-path problem in time and memory \\(p^{1/3+o(1)}\\), where \\(p\\) is the characteristic of the underlying field. Although this constitutes an asymptotic improvement over the previous best-known complexity of \\(p^{1/2}\\log^{O(1)}(p)\\), its concrete impact on the security of isogeny-based cryptographic schemes, particularly SQIsign, remains unclear due to the superpolynomial overhead hidden in the \\(p^{o(1)}\\) factor and the algorithm's exponential memory requirement. In this work, we assess the concrete cost of Wesolowski's attack, study its time--memory tradeoffs, and investigate optimizations based on the van Oorschot--Wiener (vOW) technique. Our analysis shows that, over the practical memory ranges considered, neither the optimized full-list attack nor its vOW variants outperform the previous state-of-the-art low-memory algorithm for computing supersingular endomorphism rings. We further study quantum claw-finding improvements. While Grover search can essentially remove the large memory requirement, it offers little improvement in running time, whereas Tani's algorithm provides a stronger gate--memory tradeoff at the cost of substantial coherent quantum memory. Overall, our results show that the asymptotic \\(p^{1/3+o(1)}\\) improvement does not directly translate into a comparable reduction in concrete security.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T15:45:18Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1821",
+      "pdf_link": "https://eprint.iacr.org/2026/1821.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-27T15:45:18Z",
+      "matched_terms": [],
+      "summary_en": "Very recently, Wesolowski (ePrint 2026/1486) proposed a heuristic algorithm for solving the supersingular isogeny-path problem in time and memory \\(p^{1/3+o(1)}\\), where \\(p\\) is the characteristic of the underlying field. Although this constitutes an asymptotic improvement over the previous best-known complexity of \\(p^{1/2}\\log^{O(1)}(p)\\), its concrete impact on the security of isogeny-based cryptographic schemes, particularly SQIsign, remains unclear due to the superpolynomial overhead hidden in the \\(p^{o(1)}\\) factor and the algorithm's exponential memory requirement. In this work, we assess the concrete cost of Wesolowski's attack, study its time--memory tradeoffs, and investigate optimizations based on the van Oorschot--Wiener (vOW) technique. Our analysis shows that, over the practical memory ranges considered, neither the optimized full-list attack nor its vOW variants outperform the previous state-of-the-art low-memory algorithm for computing supersingular endomorphism rings. We further study quantum claw-finding improvements. While Grover search can essentially remove the large memory requirement, it offers little improvement in running time, whereas Tani's algorithm provides a stronger gate--memory tradeoff at the cost of substantial coherent quantum memory. Overall, our results show that the asymptotic \\(p^{1/3+o(1)}\\) improvement does not directly translate into a comparable reduction in concrete security.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.27259",
+      "arxiv_id": "2608.27259",
+      "title": "Making Latent Evolution Explicit: Operator-Structured Transitions for World Action Models",
+      "authors": [
+        "Xiaoxiao Lu",
+        "Yunlong Dong",
+        "Jiahao Shi",
+        "Ye Yuan"
+      ],
+      "abstract": "World Action Models (WAMs) augment robot policies by predicting how task-relevant scene states may evolve under interaction. Recent WAMs increasingly perform such prediction in latent representation spaces, avoiding full appearance-level generation while preserving control-relevant information. Yet latent transitions are commonly realized with Transformer-based predictors whose inductive structure is centered on token interaction rather than temporal evolution. We study transition realization as an architectural choice distinct from predictive representation and prediction-policy coupling. We introduce the Latent Evolution Operator Network (LEON), which models latent evolution in a learned observable space through context-modulated operator-based propagation and additive forcing. Grounded in the controlled Koopman generator view of evolution, LEON organizes context-dependent transition variation around a shared evolution-operator structure while retaining a complementary path for additive change. Controlled dynamical systems verify the resulting evolution-specific inductive bias and the complementary roles of operator propagation and forcing. Across two WAM formulations that integrate latent prediction into the policy differently, LEON improves closed-loop performance and robustness while remaining effective under full transition replacement. These results establish transition realization as a consequential architectural choice in latent WAMs.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T15:43:44Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27259",
+      "pdf_link": "https://arxiv.org/pdf/2608.27259",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "World Action Models (WAMs) augment robot policies by predicting how task-relevant scene states may evolve under interaction. Recent WAMs increasingly perform such prediction in latent representation spaces, avoiding full appearance-level generation while preserving control-relevant information. Yet latent transitions are commonly realized with Transformer-based predictors whose inductive structure is centered on token interaction rather than temporal evolution. We study transition realization as an architectural choice distinct from predictive representation and prediction-policy coupling. We introduce the Latent Evolution Operator Network (LEON), which models latent evolution in a learned observable space through context-modulated operator-based propagation and additive forcing. Grounded in the controlled Koopman generator view of evolution, LEON organizes context-dependent transition variation around a shared evolution-operator structure while retaining a complementary path for additive change. Controlled dynamical systems verify the resulting evolution-specific inductive bias and the complementary roles of operator propagation and forcing. Across two WAM formulations that integrate latent prediction into the policy differently, LEON improves closed-loop performance and robustness while remaining effective under full transition replacement. These results establish transition realization as a consequential architectural choice in latent WAMs.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "world action models",
+        "latent dynamics",
+        "robot policy"
+      ],
+      "relevance_reason_zh": "论文提出潜空间演化算子网络用于世界动作模型，属于机器人预测架构设计，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "将潜在演化显式化：世界动作模型的算子结构化转移",
+      "abstract_zh": "世界动作模型（WAMs）通过预测任务相关场景状态在交互下可能如何演化来增强机器人策略。近期的WAMs越来越多地在潜在表示空间中进行此类预测，避免了完整的表象级生成，同时保留了控制相关信息。然而，潜在转移通常由基于Transformer的预测器实现，其归纳结构以token交互为中心，而非时间演化。我们将转移实现研究为一种独立于预测表示和预测-策略耦合的架构选择。我们引入了潜在演化算子网络（LEON），该网络通过上下文调制的基于算子的传播和加性强迫，在 learned 可观测空间中对潜在演化进行建模。基于受控Koopman生成元视角的演化理论，LEON将上下文相关的转移变化组织在共享的演化算子结构周围，同时保留用于加性变化的互补路径。受控动力系统验证了由此产生的演化特异性归纳偏差以及算子传播和强迫的互补作用。在两种将潜在预测以不同方式集成到策略中的WAM公式中，LEON提高了闭环性能和鲁棒性，同时在完全转移替换下仍然有效。这些结果确立了转移实现作为潜在WAMs中一个重要的架构选择。"
+    },
+    {
+      "id": "iacr_2026/1820",
+      "iacr_id": "2026/1820",
+      "title": "Practical Silent Threshold Signatures and Silent Threshold Encryption for Dynamic Committees",
+      "authors": [
+        "Yifei He",
+        "Zheng Zhou",
+        "Yu Chen",
+        "Zhi Guan",
+        "Zhong Chen"
+      ],
+      "abstract": "Silent threshold signatures (STS) and encryption (STE) enable threshold cryptography without interactive distributed key generation, allowing a group of $N$ parties to non-interactively generate a joint public signature verification key or an encryption key. However, modern distributed systems (such as Ethereum) rely on small, dynamically changing committees of size $n \\ll N$ for efficiency, and existing silent threshold schemes either fail to support this dynamic setting or suffer from severe scalability issues. The only known STS construction for dynamic committees, Dyna-hinTS, requires an aggregation time of $O(N\\log N)$ per epoch, tightly coupling the cost to the global system size rather than the small active committee. Furthermore, no STE scheme for dynamic committees has been proposed yet. In this work, we present practical silent threshold signature and encryption schemes for dynamic committees, bringing the aggregation cost down to strictly depend only on the committee size $n$. For signatures, we redesign the Dyna-hinTS framework by replacing its Plonk-style SNARKs with linear pairing checks and a new polynomial commitment for representing the committee, yielding an aggregation time of $O(n\\log^2n)$. We also introduce the first silent threshold encryption scheme for dynamic committees with matching efficiency. We further significantly optimize the silent setup phase common to prior STS and STE schemes, reducing each party’s one-time setup (i.e., generating the setup data, referred to as a \"hint\") cost from $O(N^2)$ to $O(N)$. We implement our schemes in Rust, and the results demonstrate practicality at scale. For a system parameterized with $N = 2^{20}$ and $n = 2^{10}$, the per-party hint generation takes 197 seconds, and signature aggregation takes 0.153 seconds, achieving a $>1900\\times$ improvement over Dyna-hinTS. At the same time, our aggregated signature size, verification key size, and verification time remain constant.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T15:40:10Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1820",
+      "pdf_link": "https://eprint.iacr.org/2026/1820.pdf",
+      "categories": [
+        "Public-key cryptography"
+      ],
+      "updated_at": "2026-08-27T15:40:10Z",
+      "matched_terms": [],
+      "summary_en": "Silent threshold signatures (STS) and encryption (STE) enable threshold cryptography without interactive distributed key generation, allowing a group of $N$ parties to non-interactively generate a joint public signature verification key or an encryption key. However, modern distributed systems (such as Ethereum) rely on small, dynamically changing committees of size $n \\ll N$ for efficiency, and existing silent threshold schemes either fail to support this dynamic setting or suffer from severe scalability issues. The only known STS construction for dynamic committees, Dyna-hinTS, requires an aggregation time of $O(N\\log N)$ per epoch, tightly coupling the cost to the global system size rather than the small active committee. Furthermore, no STE scheme for dynamic committees has been proposed yet. In this work, we present practical silent threshold signature and encryption schemes for dynamic committees, bringing the aggregation cost down to strictly depend only on the committee size $n$. For signatures, we redesign the Dyna-hinTS framework by replacing its Plonk-style SNARKs with linear pairing checks and a new polynomial commitment for representing the committee, yielding an aggregation time of $O(n\\log^2n)$. We also introduce the first silent threshold encryption scheme for dynamic committees with matching efficiency. We further significantly optimize the silent setup phase common to prior STS and STE schemes, reducing each party’s one-time setup (i.e., generating the setup data, referred to as a \"hint\") cost from $O(N^2)$ to $O(N)$. We implement our schemes in Rust, and the results demonstrate practicality at scale. For a system parameterized with $N = 2^{20}$ and $n = 2^{10}$, the per-party hint generation takes 197 seconds, and signature aggregation takes 0.153 seconds, achieving a $>1900\\times$ improvement over Dyna-hinTS. At the same time, our aggregated signature size, verification key size, and verification time remain constant.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.27241",
+      "arxiv_id": "2608.27241",
+      "title": "Importance Scoring of Transformer Attention Heads in Learning Tabular Data",
+      "authors": [
+        "Ahmad Jad Allah",
+        "Kazi F. Akhter",
+        "Md. Kamrozzaman Bhuiyan",
+        "Manar D. Samad"
+      ],
+      "abstract": "Computationally demanding and opaque deep learning models can be better understood and optimized by analyzing how they transform data. While deep transformers have been widely studied in computer vision and natural language processing, their application in tabular data remains relatively underexplored. This paper presents one of the first applications of an importance-scoring metric to interpret multi-head transformer models in learning from tabular data. Experiments conducted on 40 diverse tabular datasets demonstrate robustness to head drops based on the proposed head importance score. In 72.5\\% of experimental examples, the model remains most resilient to performance drops when heads with the lowest importance scores are gradually removed. In contrast, removing the most important attention head first results in the greatest reduction in classification performance. A closer look at individual head importance scores across six attention layers reveals that important heads are scattered across layers, with no consistent layer-specific trends. In contrast to the image and language domains, the importance of individual attention heads varies considerably across tabular datasets with different schemas and feature spaces. The proposed importance score can improve efficiency and redundancy within transformer architectures. We make the source code for measuring the importance of individual attention heads publicly available.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T15:22:37Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27241",
+      "pdf_link": "https://arxiv.org/pdf/2608.27241",
+      "categories": [
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Computationally demanding and opaque deep learning models can be better understood and optimized by analyzing how they transform data. While deep transformers have been widely studied in computer vision and natural language processing, their application in tabular data remains relatively underexplored. This paper presents one of the first applications of an importance-scoring metric to interpret multi-head transformer models in learning from tabular data. Experiments conducted on 40 diverse tabular datasets demonstrate robustness to head drops based on the proposed head importance score. In 72.5\\% of experimental examples, the model remains most resilient to performance drops when heads with the lowest importance scores are gradually removed. In contrast, removing the most important attention head first results in the greatest reduction in classification performance. A closer look at individual head importance scores across six attention layers reveals that important heads are scattered across layers, with no consistent layer-specific trends. In contrast to the image and language domains, the importance of individual attention heads varies considerably across tabular datasets with different schemas and feature spaces. The proposed importance score can improve efficiency and redundancy within transformer architectures. We make the source code for measuring the importance of individual attention heads publicly available.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "transformer",
+        "attention head importance",
+        "tabular data"
+      ],
+      "relevance_reason_zh": "论文研究表格数据中Transformer注意力头的重要性评分，属于模型可解释性与效率，不涉及隐私或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "学习表格数据中Transformer注意力头的重要性评分",
+      "abstract_zh": "计算需求高且不透明的深度学习模型可以通过分析其如何转换数据来得到更好的理解和优化。虽然深度Transformer已在计算机视觉和自然语言处理领域得到广泛研究，但它们在表格数据上的应用仍相对未被充分探索。本文提出了将重要性评分指标应用于解释多头部Transformer模型从表格数据中学习的首批工作之一。在40个不同的表格数据集上进行的实验表明，基于所提出的头部重要性评分，模型对删除注意力头具有鲁棒性。在72.5%的实验示例中，当逐步移除重要性评分最低的注意力头时，模型对性能下降的抵抗力最强。相反，首先移除最重要的注意力头会导致分类性能的最大下降。对跨越六个注意力层的各个头部重要性评分的更细致观察显示，重要头部分散在各层中，没有一致的层特定趋势。与图像和语言领域相比，在具有不同模式和特征空间的表格数据集之间，各个注意力头的重要性差异很大。所提出的重要性评分可以提高Transformer架构内的效率和冗余度。我们公开了用于衡量各个注意力头重要性的源代码。"
+    },
+    {
+      "id": "arxiv_2608.27172",
+      "arxiv_id": "2608.27172",
+      "title": "X-WAD: eXplainable Web Anomaly Detection",
+      "authors": [
+        "Matteo Bitussi",
+        "Roberto Doriguzzi-Corin"
+      ],
+      "abstract": "The rapid growth of web-based services, particularly API-driven architectures, reflects an increasing reliance on distributed systems, exposing sensitive data to security risks and making the adoption of automated defensive mechanisms essential. In this context, where benign traffic predominates in real-world settings, modern defenses increasingly model normal behavior, relying on semi-supervised approaches trained on only normal data. However, ensuring the complete absence of anomalous instances in such training data is inherently difficult in practice, and mislabeled or contaminated attack samples can introduce backdoors into the learned defense, causing the model to silently misclassify certain attack patterns as normal behavior. This paper investigates the effectiveness of Transformer-based Language Models (TLMs) in the detection of anomalies in HTTP requests, focussing on providing detailed explanations for the detected anomalies. The study employs token-level logit-based surprisal mapping to provide both an anomaly score and a direct, detailed explanation via heatmap-like highlighting. The effectiveness of the proposed explainability approach is demonstrated by the discovery of labelling inconsistencies in a popular public dataset, revealing how anomalous contamination in the training data had induced backdoor-like failures in the detection models.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T14:23:01Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27172",
+      "pdf_link": "https://arxiv.org/pdf/2608.27172",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "The rapid growth of web-based services, particularly API-driven architectures, reflects an increasing reliance on distributed systems, exposing sensitive data to security risks and making the adoption of automated defensive mechanisms essential. In this context, where benign traffic predominates in real-world settings, modern defenses increasingly model normal behavior, relying on semi-supervised approaches trained on only normal data. However, ensuring the complete absence of anomalous instances in such training data is inherently difficult in practice, and mislabeled or contaminated attack samples can introduce backdoors into the learned defense, causing the model to silently misclassify certain attack patterns as normal behavior. This paper investigates the effectiveness of Transformer-based Language Models (TLMs) in the detection of anomalies in HTTP requests, focussing on providing detailed explanations for the detected anomalies. The study employs token-level logit-based surprisal mapping to provide both an anomaly score and a direct, detailed explanation via heatmap-like highlighting. The effectiveness of the proposed explainability approach is demonstrated by the discovery of labelling inconsistencies in a popular public dataset, revealing how anomalous contamination in the training data had induced backdoor-like failures in the detection models.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "anomaly detection",
+        "web security",
+        "LLM explainability"
+      ],
+      "relevance_reason_zh": "论文用Transformer语言模型做Web异常检测与可解释分析，属于网络安全检测，并非隐私计算或安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "X-WAD：可解释的网络异常检测",
+      "abstract_zh": "基于Web的服务，特别是API驱动的架构的快速增长，反映了对分布式系统日益增长的依赖，使敏感数据暴露于安全风险之中，并使得采用自动化防御机制变得至关重要。在这种背景下，现实环境中良性流量占主导地位，现代防御机制越来越多地对正常行为进行建模，依赖仅使用正常数据训练的半监督方法。然而，确保此类训练数据完全不存在异常实例在实践中本质上是困难的，而错误标记或受污染的攻擊样本可能在被学习的防御中引入后门，导致模型将某些攻击模式静默地错误分类为正常行为。本文研究了基于Transformer的语言模型（TLMs）在检测HTTP请求中的异常方面的有效性，重点是为检测到的异常提供详细的解释。该研究采用基于token级logit的surprisal映射，通过类似热图的高亮方式同时提供异常分数和直接、详细的解释。所提出的可解释性方法的有效性通过在一个流行的公共数据集中发现标记不一致性得到证明，揭示了训练数据中的异常污染如何诱导检测模型出现类似后门的故障。"
+    },
+    {
+      "id": "arxiv_2608.27165",
+      "arxiv_id": "2608.27165",
+      "title": "Prediction of Prediction (PoP): Inter-Layer Activation Fusion for Single-Pass Hallucination Detection in Large Language Models",
+      "authors": [
+        "Himal Badu"
+      ],
+      "abstract": "Autoregressive large language models (LLMs) routinely generate factually incorrect outputs with high decoding confidence, limiting their deployment in high-stakes workflows. Existing output-stage uncertainty metrics can fail when models are overconfident on false assertions, while multi-sample verification pipelines introduce substantial memory and latency overhead. This work evaluates whether internal hidden-state transition dynamics during generation can signal factual errors without auxiliary decoding calls. We introduce Prediction of Prediction (PoP), a mechanism that captures layer-transition uncertainty by fusing intermediate hidden representations across depth during a single forward pass. Evaluated on the TruthfulQA benchmark using autoregressive transformer backbones, PoP achieves an area under the receiver operating characteristic curve (AUROC) of 75.5% for factual-correctness classification. The mechanism operates within the base forward pass, adding less than 1.2% runtime latency and requiring zero additional generation passes. The numerical results are reported from the author-verified experimental implementation and are bounded by the evaluation scope described below.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T14:17:14Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27165",
+      "pdf_link": "https://arxiv.org/pdf/2608.27165",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Autoregressive large language models (LLMs) routinely generate factually incorrect outputs with high decoding confidence, limiting their deployment in high-stakes workflows. Existing output-stage uncertainty metrics can fail when models are overconfident on false assertions, while multi-sample verification pipelines introduce substantial memory and latency overhead. This work evaluates whether internal hidden-state transition dynamics during generation can signal factual errors without auxiliary decoding calls. We introduce Prediction of Prediction (PoP), a mechanism that captures layer-transition uncertainty by fusing intermediate hidden representations across depth during a single forward pass. Evaluated on the TruthfulQA benchmark using autoregressive transformer backbones, PoP achieves an area under the receiver operating characteristic curve (AUROC) of 75.5% for factual-correctness classification. The mechanism operates within the base forward pass, adding less than 1.2% runtime latency and requiring zero additional generation passes. The numerical results are reported from the author-verified experimental implementation and are bounded by the evaluation scope described below.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "hallucination detection",
+        "LLM reliability",
+        "internal states"
+      ],
+      "relevance_reason_zh": "论文提出单遍前向传播的幻觉检测方法，属于LLM事实性可靠性，不是密码学保护下的安全推理。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "预测的预测（PoP）：用于大语言模型单次前向传播幻觉检测的层间激活融合",
+      "abstract_zh": "自回归大语言模型（LLM）在生成事实错误输出时通常仍具有较高的解码置信度，这限制了其在高风险工作流程中的部署。当模型对错误断言过度自信时，现有的输出阶段不确定性指标可能失效，而多样本验证流程则会引入大量的内存和延迟开销。本研究评估了生成过程中的内部隐藏状态转换动态是否能在不进行额外解码调用的情况下指示事实错误。我们引入了预测的预测（PoP），这一机制通过在一次前向传播中融合跨深度的中间隐藏表示来捕获层间转换的不确定性。在使用自回归Transformer骨干网络对TruthfulQA基准进行评估时，PoP在事实正确性分类上实现了75.5%的受试者工作特征曲线下面积（AUROC）。该机制在基础前向传播内运行，增加了不到1.2%的运行时延迟，且无需任何额外的生成次数。数值结果来自作者验证的实验实现，并受限于下文所述评估范围。"
+    },
+    {
+      "id": "arxiv_2608.27162",
+      "arxiv_id": "2608.27162",
+      "title": "Data-efficient crack quantification in lithium-ion cathodes using foundation model transfer",
+      "authors": [
+        "Thorsten Tegetmeyer-Kleine",
+        "Thomas Schmitt",
+        "Phillip Aquino",
+        "Christiane Rahe",
+        "Dirk Uwe Sauer",
+        "Weihan Li"
+      ],
+      "abstract": "Battery lifetime is central to sustainable electrification, yet the particle cracking that drives lithium-ion cathode aging is hard to measure: quantitative microscopy of this degradation is bottlenecked by annotation, because each destructive electron-microscopy cross-section spans hundreds of megapixels and pixel-level expert labelling requires hours per image. We show that a frozen self-supervised vision-transformer encoder, combined with a lightweight trainable decoder and iterative model-assisted annotation, turns this sparse labelling budget into population-scale degradation measurements. Applied to three 120-megapixel NMC cathode cross-sections representing initial, cycled-aged and calendar-aged states, the framework distinguishes intragranular cracks from early- and late-stage intergranular cracks and yields per-particle distributions of crack width, tortuosity and area fraction. Late intergranular crack coverage reaches 4.6% in the cycled sample versus 0.5% in the initial and calendar-aged samples, forming more tortuous, higher-coverage networks, consistent with degradation from repeated electrochemical cycling rather than elevated-temperature storage alone. A single destructive image yields the population-level statistics needed for lifetime-extending design, aging assessment and second-life decisions.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T14:15:26Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27162",
+      "pdf_link": "https://arxiv.org/pdf/2608.27162",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Battery lifetime is central to sustainable electrification, yet the particle cracking that drives lithium-ion cathode aging is hard to measure: quantitative microscopy of this degradation is bottlenecked by annotation, because each destructive electron-microscopy cross-section spans hundreds of megapixels and pixel-level expert labelling requires hours per image. We show that a frozen self-supervised vision-transformer encoder, combined with a lightweight trainable decoder and iterative model-assisted annotation, turns this sparse labelling budget into population-scale degradation measurements. Applied to three 120-megapixel NMC cathode cross-sections representing initial, cycled-aged and calendar-aged states, the framework distinguishes intragranular cracks from early- and late-stage intergranular cracks and yields per-particle distributions of crack width, tortuosity and area fraction. Late intergranular crack coverage reaches 4.6% in the cycled sample versus 0.5% in the initial and calendar-aged samples, forming more tortuous, higher-coverage networks, consistent with degradation from repeated electrochemical cycling rather than elevated-temperature storage alone. A single destructive image yields the population-level statistics needed for lifetime-extending design, aging assessment and second-life decisions.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "foundation model",
+        "crack quantification",
+        "materials science"
+      ],
+      "relevance_reason_zh": "论文利用基础模型迁移量化锂电池阴极裂纹，属于材料科学图像分析，与安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "使用基础模型迁移对锂离子正极进行数据高效的裂纹量化",
+      "abstract_zh": "电池寿命对于可持续电气化至关重要，然而导致锂离子正极老化的颗粒开裂难以测量：这种退化的定量显微分析受限于标注，因为每个破坏性电子显微镜截面跨越数百兆像素，而像素级专家标注每张图像需要数小时。我们证明，一个冻结的自监督视觉Transformer编码器，结合轻量级可训练解码器和迭代式模型辅助标注，能够将这种稀疏的标注预算转化为群体规模的退化测量。应用于代表初始、循环老化和日历老化状态的三个120兆像素NMC正极截面，该框架区分晶内裂纹与早期和晚期晶间裂纹，并得出每个颗粒的裂纹宽度、曲折度和面积分数分布。晚期晶间裂纹覆盖率在循环样品中达到4.6%，而在初始和日历老化样品中为0.5%，形成更曲折、更高覆盖率的网络，这与重复电化学循环而非仅高温储存导致的退化一致。单张破坏性图像即可获得延长寿命设计、老化评估和二次寿命决策所需的群体级统计信息。"
+    },
+    {
+      "id": "iacr_2026/1819",
+      "iacr_id": "2026/1819",
+      "title": "On Memory Effects in PWXL variants",
+      "authors": [
+        "Jintai Ding",
+        "Hao Guo",
+        "Bo-Yin Yang"
+      ],
+      "abstract": "We estimate the intrinsic undercounting in the free-memory-access, Macaulay coefficient-on-demand RAM modeling when applied to the Parallelized Wiedemann-based XL in the Ran Wedge attack and in the Furue--Ikematsu intersection attack, under some optimistic but still feasible-sounding assumptions for the attackers. We believe that this shows the memory effects makes UOV secure enough for Ip, Is, and III. If NIST considers our original parameters insufficiently convincing, we do not take Furue's suggested replacements; we offer instead the following perturbations, which hold $m$ --- and hence the compressed public key --- fixed and spend only on the vinegar count: uov-Ip\\# (256,116,44), uov-III\\# (256,186,72) and uov-V\\# (256,250,96).",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T14:13:30Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1819",
+      "pdf_link": "https://eprint.iacr.org/2026/1819.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-27T14:13:30Z",
+      "matched_terms": [],
+      "summary_en": "We estimate the intrinsic undercounting in the free-memory-access, Macaulay coefficient-on-demand RAM modeling when applied to the Parallelized Wiedemann-based XL in the Ran Wedge attack and in the Furue--Ikematsu intersection attack, under some optimistic but still feasible-sounding assumptions for the attackers. We believe that this shows the memory effects makes UOV secure enough for Ip, Is, and III. If NIST considers our original parameters insufficiently convincing, we do not take Furue's suggested replacements; we offer instead the following perturbations, which hold $m$ --- and hence the compressed public key --- fixed and spend only on the vinegar count: uov-Ip\\# (256,116,44), uov-III\\# (256,186,72) and uov-V\\# (256,250,96).",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.27161",
+      "arxiv_id": "2608.27161",
+      "title": "STAR : Sentence Translation Alignment Rate for Document-to-Document Machine Translation",
+      "authors": [
+        "Yichen Dong",
+        "Hao Wang",
+        "Junhui Li",
+        "Linlong Xu",
+        "Longyue Wang",
+        "Weihua Luo"
+      ],
+      "abstract": "Large Language Models (LLMs) have enabled a shift from sentence-level to document-to-document (Doc2Doc) machine translation, promising improved global coherence. However, document-to-document generation in a single pass frequently suffers from structural misalignment, manifesting as sentence omissions or hallucinations that violate the core requirement of source-target correspondence. To address this, we introduce Sentence Translation Alignment Rate (STAR), an auxiliary metric that explicitly quantifies sentence-level structural fidelity. Building on this, we propose STAR-masked Preference Optimization (StarPO), a framework that ranks document-level hypotheses by structural quality and utilizes a dynamic alignment mask to focus optimization on misaligned segments. Experimental results across news and literary domains demonstrate that StarPO significantly enhances translation quality and structural integrity. Notably, StarPO allows compact models to surpass the performance of massive proprietary systems like GPT-4o while maintaining superior token efficiency.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T14:12:45Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27161",
+      "pdf_link": "https://arxiv.org/pdf/2608.27161",
+      "categories": [
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Large Language Models (LLMs) have enabled a shift from sentence-level to document-to-document (Doc2Doc) machine translation, promising improved global coherence. However, document-to-document generation in a single pass frequently suffers from structural misalignment, manifesting as sentence omissions or hallucinations that violate the core requirement of source-target correspondence. To address this, we introduce Sentence Translation Alignment Rate (STAR), an auxiliary metric that explicitly quantifies sentence-level structural fidelity. Building on this, we propose STAR-masked Preference Optimization (StarPO), a framework that ranks document-level hypotheses by structural quality and utilizes a dynamic alignment mask to focus optimization on misaligned segments. Experimental results across news and literary domains demonstrate that StarPO significantly enhances translation quality and structural integrity. Notably, StarPO allows compact models to surpass the performance of massive proprietary systems like GPT-4o while maintaining superior token efficiency.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "机器翻译",
+        "偏好优化"
+      ],
+      "relevance_reason_zh": "文档级机器翻译与偏好优化，不涉及隐私计算、安全推理或大模型安全核心问题。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "STAR：面向文档到文档机器翻译的句子翻译对齐率",
+      "abstract_zh": "大型语言模型（LLM）推动了机器翻译从句子级向文档到文档（Doc2Doc）的转变，有望改善整体连贯性。然而，单次生成的文档到文档翻译常常面临结构错位问题，表现为句子遗漏或幻觉，从而违背了源文与译文对应的核心要求。为解决这一问题，我们引入了句子翻译对齐率（STAR），一种显式量化句子级结构保真度的辅助指标。在此基础上，我们提出了STAR掩码偏好优化（StarPO）框架，该框架根据结构质量对文档级候选进行排序，并利用动态对齐掩码将优化聚焦于错位片段。新闻和文学领域的实验结果表明，StarPO显著提升了翻译质量和结构完整性。值得注意的是，StarPO使紧凑型模型能够超越GPT-4o等大规模专有系统的性能，同时保持更优的标记效率。"
+    },
+    {
+      "id": "arxiv_2608.27129",
+      "arxiv_id": "2608.27129",
+      "title": "SLIDE: Shuffle Shamir Secret Shares Uniformly with Linear Online Communication and Guaranteed Output Delivery",
+      "authors": [
+        "Jiacheng Gao",
+        "Moyang Xie",
+        "Yuan Zhang",
+        "Sheng Zhong"
+      ],
+      "abstract": "We revisit shuffle protocols for Shamir secret sharing. Existing constructions either produce non-uniform shuffles or incur high communication and round complexity, sometimes exponential in the number of parties. We propose two new shuffle protocols that achieve uniform shuffling with communication complexity $O((k+l)n^2m\\log m/\\log k)$ for an $m$-by-$l$ matrix shared among $n$ parties, where $k\\leq m$ is a tunable parameter. The first protocol is concretely efficient, while the second achieves the best-known $O(nml)$ online communication and $O(n)$ rounds. Experiments show significant improvements in online efficiency and total cost over prior work. Our key technical ingredient is a novel permutation sharing technique that represents permutations using smaller permutation matrices, making their application significantly more efficient. The first protocol applies independent secret permutations sequentially, while the second builds on shuffle correlation to achieve optimal online complexity. We further extend shuffle correlation to support guaranteed output delivery with linear online communication, yielding SLIDE, the first protocol to achieve both $O(nml)$ online communication and guaranteed output delivery. Our constructions rely only on basic Shamir secret sharing over any field of size greater than $n$. As shuffling is a fundamental primitive for MPC tasks such as sorting and oblivious data structures, our results enable more efficient and scalable secure computation in practice.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T13:44:17Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27129",
+      "pdf_link": "https://arxiv.org/pdf/2608.27129",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "MPC",
+        "secure computation",
+        "secret sharing"
+      ],
+      "summary_en": "We revisit shuffle protocols for Shamir secret sharing. Existing constructions either produce non-uniform shuffles or incur high communication and round complexity, sometimes exponential in the number of parties. We propose two new shuffle protocols that achieve uniform shuffling with communication complexity $O((k+l)n^2m\\log m/\\log k)$ for an $m$-by-$l$ matrix shared among $n$ parties, where $k\\leq m$ is a tunable parameter. The first protocol is concretely efficient, while the second achieves the best-known $O(nml)$ online communication and $O(n)$ rounds. Experiments show significant improvements in online efficiency and total cost over prior work. Our key technical ingredient is a novel permutation sharing technique that represents permutations using smaller permutation matrices, making their application significantly more efficient. The first protocol applies independent secret permutations sequentially, while the second builds on shuffle correlation to achieve optimal online complexity. We further extend shuffle correlation to support guaranteed output delivery with linear online communication, yielding SLIDE, the first protocol to achieve both $O(nml)$ online communication and guaranteed output delivery. Our constructions rely only on basic Shamir secret sharing over any field of size greater than $n$. As shuffling is a fundamental primitive for MPC tasks such as sorting and oblivious data structures, our results enable more efficient and scalable secure computation in practice.",
+      "keywords": [
+        "MPC",
+        "secure computation",
+        "secret sharing"
+      ],
+      "topics": [
+        "MPC",
+        "秘密共享",
+        "shuffle协议"
+      ],
+      "relevance_reason_zh": "提出Shamir秘密共享下的shuffle协议，属于MPC基础原语与隐私计算，但未聚焦于保护模型推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n\n本文针对 Shamir 秘密共享（Shamir secret sharing）下的洗牌（shuffle）协议，提出两种可实现均匀洗牌、通信复杂度更优的新协议，并首次在达到最优在线通信量的同时保证输出交付（guaranteed output delivery）。\n\n## 问题与动机\n\n在安全多方计算（MPC）中，洗牌是排序、 oblivious 数据结构等基础原语。现有 Shamir 秘密共享下的洗牌协议要么产生非均匀的洗牌结果，要么通信量和轮数过高，甚至随参与方数量指数增长。因此需要设计均匀、高效、可扩展的洗牌协议。\n\n## 方法与技术路线\n\n**研究对象与设定**：一个 \\(m \\times l\\) 的秘密共享矩阵，由 \\(n\\) 方分别持有共享份额；目标是让各方协作产生一个均匀随机置换作用后的新份额。摘要未说明具体协议步骤、轮次细节或实验数据集。\n\n**关键技术与执行顺序**：\n\n1. **置换共享技术（核心模块）**：作者提出一种新的置换分享方式，用更小的置换矩阵来表示置换，从而显著降低应用置换时的计算与通信开销。这是两个协议共同的底层基础。\n\n2. **第一个协议：独立秘密置换顺序执行**。将多个小的秘密置换依次作用于矩阵，以获得均匀的最终置换效果。摘要称其“具体高效”（concretely efficient），但未给出具体轮数或常数。\n\n3. **第二个协议：基于洗牌相关性（shuffle correlation）**。在预处理或离线阶段构造“相关性”，使在线阶段能达到目前已知最优的 \\(O(nml)\\) 通信量和 \\(O(n)\\) 轮。摘要未说明相关性如何生成和验证。\n\n4. **扩展到保证输出交付**：将洗牌相关性进一步扩展，使协议在恶意或异步环境中仍能完成输出，得到 SLIDE 协议。安全性假设仅依赖任意大于 \\(n\\) 的域上的基本 Shamir 秘密共享。\n\n**输出与比较**：目标输出为均匀洗牌后的矩阵份额。通信复杂度为 \\(O((k+l)n^2m\\log m/\\log k)\\)，其中 \\(k \\leq m\\) 为可调参数。实验比较了与先前工作的在线效率和总成本，摘要表明改进显著，但未给出具体数值或基准协议名称。\n\n## 主要结果\n\n- 两个新协议均实现均匀洗牌，通信复杂度优于现有构造。\n- 第二个协议达到目前已知最优的在线通信量 \\(O(nml)\\) 和 \\(O(n)\\) 轮。\n- SLIDE 是首个同时实现 \\(O(nml)\\) 在线通信与保证输出交付的洗牌协议。\n- 依赖条件仅为域大小大于 \\(n\\) 的基本 Shamir 秘密共享，无需额外密码学假设。\n\n## 为什么与兴趣相关\n\n洗牌是排序、 oblivious 数据结构等 MPC 任务的基础原语。该工作在不依赖重密码学工具的前提下，显著降低通信开销并增强鲁棒性，对隐私计算、安全数据库查询和通用安全计算框架的可扩展性具有直接推动意义。不过，本文属于 MPC 基础原语研究，并未聚焦于保护模型推理。",
+      "summary": "## 一句话结论\n\n本文针对 Shamir 秘密共享（Shamir secret sharing）下的洗牌（shuffle）协议，提出两种可实现均匀洗牌、通信复杂度更优的新协议，并首次在达到最优在线通信量的同时保证输出交付（guaranteed output delivery）。\n\n## 问题与动机\n\n在安全多方计算（MPC）中，洗牌是排序、 oblivious 数据结构等基础原语。现有 Shamir 秘密共享下的洗牌协议要么产生非均匀的洗牌结果，要么通信量和轮数过高，甚至随参与方数量指数增长。因此需要设计均匀、高效、可扩展的洗牌协议。\n\n## 方法与技术路线\n\n**研究对象与设定**：一个 \\(m \\times l\\) 的秘密共享矩阵，由 \\(n\\) 方分别持有共享份额；目标是让各方协作产生一个均匀随机置换作用后的新份额。摘要未说明具体协议步骤、轮次细节或实验数据集。\n\n**关键技术与执行顺序**：\n\n1. **置换共享技术（核心模块）**：作者提出一种新的置换分享方式，用更小的置换矩阵来表示置换，从而显著降低应用置换时的计算与通信开销。这是两个协议共同的底层基础。\n\n2. **第一个协议：独立秘密置换顺序执行**。将多个小的秘密置换依次作用于矩阵，以获得均匀的最终置换效果。摘要称其“具体高效”（concretely efficient），但未给出具体轮数或常数。\n\n3. **第二个协议：基于洗牌相关性（shuffle correlation）**。在预处理或离线阶段构造“相关性”，使在线阶段能达到目前已知最优的 \\(O(nml)\\) 通信量和 \\(O(n)\\) 轮。摘要未说明相关性如何生成和验证。\n\n4. **扩展到保证输出交付**：将洗牌相关性进一步扩展，使协议在恶意或异步环境中仍能完成输出，得到 SLIDE 协议。安全性假设仅依赖任意大于 \\(n\\) 的域上的基本 Shamir 秘密共享。\n\n**输出与比较**：目标输出为均匀洗牌后的矩阵份额。通信复杂度为 \\(O((k+l)n^2m\\log m/\\log k)\\)，其中 \\(k \\leq m\\) 为可调参数。实验比较了与先前工作的在线效率和总成本，摘要表明改进显著，但未给出具体数值或基准协议名称。\n\n## 主要结果\n\n- 两个新协议均实现均匀洗牌，通信复杂度优于现有构造。\n- 第二个协议达到目前已知最优的在线通信量 \\(O(nml)\\) 和 \\(O(n)\\) 轮。\n- SLIDE 是首个同时实现 \\(O(nml)\\) 在线通信与保证输出交付的洗牌协议。\n- 依赖条件仅为域大小大于 \\(n\\) 的基本 Shamir 秘密共享，无需额外密码学假设。\n\n## 为什么与兴趣相关\n\n洗牌是排序、 oblivious 数据结构等 MPC 任务的基础原语。该工作在不依赖重密码学工具的前提下，显著降低通信开销并增强鲁棒性，对隐私计算、安全数据库查询和通用安全计算框架的可扩展性具有直接推动意义。不过，本文属于 MPC 基础原语研究，并未聚焦于保护模型推理。"
+    },
+    {
+      "id": "arxiv_2608.27108",
+      "arxiv_id": "2608.27108",
+      "title": "SecureDrive-FL: Joint Differential Privacy and Gradient-Aware Selective Homomorphic Encryption for Federated Driver Monitoring",
+      "authors": [
+        "Baran Can Gül",
+        "Hanuma Siddhartha Tunuguntla",
+        "Anjana Arvind Naik",
+        "Abhishek Vijay Potekar",
+        "Nasser Jazdi",
+        "Michael Weyrich"
+      ],
+      "abstract": "Federated Learning (FL) enables privacy-aware distributed training, yet gradient updates remain exploitable: Man-in-the-Middle (MitM) interception exposes updates in transit, while model poisoning corrupts global convergence. We first introduce GASHE (Gradient-Aware Selective Homomorphic Encryption), a novel selective encryption strategy that dynamically identifies and encrypts only the gradient components exceeding a DP-calibrated sensitivity threshold, rather than encrypting all parameters uniformly as in static layer-based or full-parameter CKKS schemes. Building on GASHE, we introduce SecureDrive-FL, a federated driver monitoring framework that couples DP-SGD with GASHE to create the first closed-loop DP+HE privacy pipeline: DP-SGD calibration parameters directly derive the GASHE encryption mask, unifying training-time privacy and communication-time confidentiality. Evaluated on a ten-class distracted driver classification task under non-IID federated splits, SecureDrive-FL matches DP-SGD alone's poisoning resistance (73.6% vs. 74.0% accuracy, 3.9% Attack Success Rate for both) while additionally withstanding MitM interception, where DP-SGD alone collapses to near-random accuracy (78.2% vs. 10.4%), all under only approx. 8--10% additional runtime overhead relative to DP-SGD alone---under DP-SGD noise injection with per-round privacy parameter epsilon_0=4.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T13:24:33Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27108",
+      "pdf_link": "https://arxiv.org/pdf/2608.27108",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "matched_terms": [
+        "homomorphic encryption"
+      ],
+      "summary_en": "Federated Learning (FL) enables privacy-aware distributed training, yet gradient updates remain exploitable: Man-in-the-Middle (MitM) interception exposes updates in transit, while model poisoning corrupts global convergence. We first introduce GASHE (Gradient-Aware Selective Homomorphic Encryption), a novel selective encryption strategy that dynamically identifies and encrypts only the gradient components exceeding a DP-calibrated sensitivity threshold, rather than encrypting all parameters uniformly as in static layer-based or full-parameter CKKS schemes. Building on GASHE, we introduce SecureDrive-FL, a federated driver monitoring framework that couples DP-SGD with GASHE to create the first closed-loop DP+HE privacy pipeline: DP-SGD calibration parameters directly derive the GASHE encryption mask, unifying training-time privacy and communication-time confidentiality. Evaluated on a ten-class distracted driver classification task under non-IID federated splits, SecureDrive-FL matches DP-SGD alone's poisoning resistance (73.6% vs. 74.0% accuracy, 3.9% Attack Success Rate for both) while additionally withstanding MitM interception, where DP-SGD alone collapses to near-random accuracy (78.2% vs. 10.4%), all under only approx. 8--10% additional runtime overhead relative to DP-SGD alone---under DP-SGD noise injection with per-round privacy parameter epsilon_0=4.",
+      "keywords": [
+        "homomorphic encryption"
+      ],
+      "topics": [
+        "联邦学习",
+        "同态加密",
+        "差分隐私"
+      ],
+      "relevance_reason_zh": "联邦学习结合差分隐私与选择性同态加密保护梯度，属于隐私计算，但不是安全推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\nSecureDrive-FL 是一个面向联邦驾驶员监控的隐私保护框架，将 DP-SGD 与梯度感知选择性同态加密（GASHE）结合，在保持与单独 DP-SGD 相当抗投毒能力的同时，额外抵御中间人（MitM）拦截，且仅增加约 8–10% 运行开销。\n\n## 问题与动机\n联邦学习（Federated Learning, FL）通过分布式训练避免集中原始数据，但梯度更新仍可被利用：通信链路上的中间人（Man-in-the-Middle, MitM）拦截会暴露传输中的梯度，模型投毒则会破坏全局收敛。因此需要同时保护训练期隐私和通信期机密性。\n\n## 方法与技术路线\n- **研究对象与设定**：十类分心驾驶分类任务，采用非独立同分布（non-IID）联邦数据划分；威胁模型包括通信中的 MitM 拦截和模型投毒。\n- **GASHE 模块**：GASHE（Gradient-Aware Selective Homomorphic Encryption）是一种梯度感知选择性同态加密策略。它并非像静态逐层或全参数 CKKS 方案那样对所有参数统一加密，而是动态识别梯度分量中超过“由差分隐私校准的敏感度阈值”的部分，只加密这些高风险分量。CKKS 是一种支持在密文上进行近似计算的同态加密方案（Homomorphic Encryption, HE）。\n- **SecureDrive-FL 管线**：将 DP-SGD（差分隐私随机梯度下降）与 GASHE 耦合。DP-SGD 的校准参数直接导出 GASHE 的加密掩码，形成“闭环”的 DP+HE 隐私管线：训练时注入的 DP 噪声与通信时选择的 HE 加密对象相互关联，从而统一训练时隐私与通信时机密性。摘要未说明敏感度阈值计算、CKKS 参数、联邦聚合协议等具体实现细节。\n- **输出与比较**：输出是经过选择性加密的梯度；实验与仅用 DP-SGD 的基线比较，报告准确率、攻击成功率（Attack Success Rate）和运行开销。\n\n## 主要结果\n在十类分心驾驶分类、non-IID 联邦划分下：  \n1. 抗投毒方面，SecureDrive-FL 与单独 DP-SGD 相当（准确率 73.6% vs. 74.0%，攻击成功率均为 3.9%）；  \n2. 在 MitM 拦截下，SecureDrive-FL 仍保持 78.2% 准确率，而单独 DP-SGD 崩溃至接近随机的 10.4%；  \n3. 与单独 DP-SGD 相比，额外运行开销约 8–10%。实验在每轮 DP-SGD 噪声注入的隐私参数 ε₀=4 下进行。\n\n## 为什么与兴趣相关\n该工作不是简单地把差分隐私和同态加密叠加，而是让 DP 校准结果驱动 HE 的加密选择，从而减少需要加密的梯度数量、缓解同态加密的计算开销，同时保持对投毒和 MitM 的鲁棒性。对于联邦学习在隐私敏感场景（如驾驶员监控）中的实用化有参考价值；按相关性判断，它属于隐私计算中的联邦学习梯度保护，而非安全推理。",
+      "summary": "## 一句话结论\nSecureDrive-FL 是一个面向联邦驾驶员监控的隐私保护框架，将 DP-SGD 与梯度感知选择性同态加密（GASHE）结合，在保持与单独 DP-SGD 相当抗投毒能力的同时，额外抵御中间人（MitM）拦截，且仅增加约 8–10% 运行开销。\n\n## 问题与动机\n联邦学习（Federated Learning, FL）通过分布式训练避免集中原始数据，但梯度更新仍可被利用：通信链路上的中间人（Man-in-the-Middle, MitM）拦截会暴露传输中的梯度，模型投毒则会破坏全局收敛。因此需要同时保护训练期隐私和通信期机密性。\n\n## 方法与技术路线\n- **研究对象与设定**：十类分心驾驶分类任务，采用非独立同分布（non-IID）联邦数据划分；威胁模型包括通信中的 MitM 拦截和模型投毒。\n- **GASHE 模块**：GASHE（Gradient-Aware Selective Homomorphic Encryption）是一种梯度感知选择性同态加密策略。它并非像静态逐层或全参数 CKKS 方案那样对所有参数统一加密，而是动态识别梯度分量中超过“由差分隐私校准的敏感度阈值”的部分，只加密这些高风险分量。CKKS 是一种支持在密文上进行近似计算的同态加密方案（Homomorphic Encryption, HE）。\n- **SecureDrive-FL 管线**：将 DP-SGD（差分隐私随机梯度下降）与 GASHE 耦合。DP-SGD 的校准参数直接导出 GASHE 的加密掩码，形成“闭环”的 DP+HE 隐私管线：训练时注入的 DP 噪声与通信时选择的 HE 加密对象相互关联，从而统一训练时隐私与通信时机密性。摘要未说明敏感度阈值计算、CKKS 参数、联邦聚合协议等具体实现细节。\n- **输出与比较**：输出是经过选择性加密的梯度；实验与仅用 DP-SGD 的基线比较，报告准确率、攻击成功率（Attack Success Rate）和运行开销。\n\n## 主要结果\n在十类分心驾驶分类、non-IID 联邦划分下：  \n1. 抗投毒方面，SecureDrive-FL 与单独 DP-SGD 相当（准确率 73.6% vs. 74.0%，攻击成功率均为 3.9%）；  \n2. 在 MitM 拦截下，SecureDrive-FL 仍保持 78.2% 准确率，而单独 DP-SGD 崩溃至接近随机的 10.4%；  \n3. 与单独 DP-SGD 相比，额外运行开销约 8–10%。实验在每轮 DP-SGD 噪声注入的隐私参数 ε₀=4 下进行。\n\n## 为什么与兴趣相关\n该工作不是简单地把差分隐私和同态加密叠加，而是让 DP 校准结果驱动 HE 的加密选择，从而减少需要加密的梯度数量、缓解同态加密的计算开销，同时保持对投毒和 MitM 的鲁棒性。对于联邦学习在隐私敏感场景（如驾驶员监控）中的实用化有参考价值；按相关性判断，它属于隐私计算中的联邦学习梯度保护，而非安全推理。"
+    },
+    {
+      "id": "arxiv_2608.27092",
+      "arxiv_id": "2608.27092",
+      "title": "The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents",
+      "authors": [
+        "Md Habibur Rahman",
+        "Jaeho Kim"
+      ],
+      "abstract": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T13:12:03Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27092",
+      "pdf_link": "https://arxiv.org/pdf/2608.27092",
+      "categories": [
+        "cs.CR"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "提示注入",
+        "大模型安全",
+        "Agent安全"
+      ],
+      "relevance_reason_zh": "研究LLM智能体的提示注入攻击与防御，属于大模型安全，但不是安全推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论  \n对于持有秘密并使用工具读取网页的 LLM 智能体，攻击者把提示注入内容“重新框定”为其他可信形式，可绕过表面防御，导致秘密泄露；真正有效的防御是约束目标地址或隔离能力，而非让模型自己识别攻击。\n\n## 问题与动机  \n工具使用的 LLM 智能体会读取攻击者控制的网页内容，同时可能持有秘密，因此面临间接提示注入（indirect prompt-injection）：网页内容可以诱导它外泄秘密。已有表面防御对明显的注入有效，但本文发现存在“framing gap”——对同一泄露行为更换语义框架后，防御会失效。\n\n## 方法与技术路线  \n实验在安全合成实验室中进行，使用 canary secret（诱饵秘密）、mock tools（模拟工具）和 matched clean-vs-poisoned metric（匹配干净与投毒样本的指标）。研究对象是工具使用智能体，输入是攻击者控制的网页内容，秘密存在智能体内部。\n\n摘要未说明具体提示模板、模型版本清单、数据集规模与协议步骤。攻击构造分三层验证成本：\n\n- 改写已知机制：对已有泄露机制做不同措辞表述，实验显示在 3 种措辞下成功率达 96%；\n- 在已知有效模板内交换字段：如把泄露内容包装为配置字段等，成功率最高 60%；\n- 围绕新机制创作全新页面：成功率 0/130，说明可复用的是模板而非机制本身。\n\n防御实验采用多种条件和对照：\n\n- 消融：移除保密策略后，基础攻击仍为 0%，重新框定攻击仅从 31.9% 升至 38.1%，说明机制是指令/数据混淆（instruction/data confusion），而非击败了模型对齐（alignment）；\n- payload-blind 检查：不检查载荷内容，而是检查目标地址的 allow-list（允许列表），在目标封闭时泄露率为 0%；将规划与读取能力分离的 planner/reader split（规划器/读取器拆分）也为 0%；\n- 模型端策略：添加“in any form”的宽泛保密条款可把执行模型上的攻击率降到 0%，但去掉该 catch-all 条款后泄露率回升至 48.8%，因此脆弱；\n- 已有防御：已发表的微调防御 SecAlign（CCS 2025）在工具智能体上失败（32.5%，阳性对照验证有效）；通道分离（channel separation）失败（38.8%）；输出规范化守卫（output-normalizing guard）无法抵抗保留编码 ROT13，攻击率达到 100%。\n\n## 主要结果  \n六模型上十类显式注入均被拒绝（gpt-4o 为 0%），但把相同泄露重新框定为“强制完整性签名”“配置字段”或类似“受信”主机后，gpt-4o 泄露率升至 100%。攻击成本具有三层差异，且关键资产是模板而非新机制。消融与防御对照表明，关闭差距的手段是约束目的地或隔离能力，而不是依赖模型识别攻击。\n\n## 为什么与兴趣相关  \n这项研究清楚地展示了大模型智能体安全中的一个盲区：语义层面的重新框定可以绕过依赖模型判断的表面防御。对构建工具使用型智能体的人而言，它提示防御设计应放在外部约束和能力隔离上，而不是期望模型“认出”所有恶意内容；同时也为评估注入防御提供了分层攻击成本与对照指标的思路。",
+      "summary": "## 一句话结论  \n对于持有秘密并使用工具读取网页的 LLM 智能体，攻击者把提示注入内容“重新框定”为其他可信形式，可绕过表面防御，导致秘密泄露；真正有效的防御是约束目标地址或隔离能力，而非让模型自己识别攻击。\n\n## 问题与动机  \n工具使用的 LLM 智能体会读取攻击者控制的网页内容，同时可能持有秘密，因此面临间接提示注入（indirect prompt-injection）：网页内容可以诱导它外泄秘密。已有表面防御对明显的注入有效，但本文发现存在“framing gap”——对同一泄露行为更换语义框架后，防御会失效。\n\n## 方法与技术路线  \n实验在安全合成实验室中进行，使用 canary secret（诱饵秘密）、mock tools（模拟工具）和 matched clean-vs-poisoned metric（匹配干净与投毒样本的指标）。研究对象是工具使用智能体，输入是攻击者控制的网页内容，秘密存在智能体内部。\n\n摘要未说明具体提示模板、模型版本清单、数据集规模与协议步骤。攻击构造分三层验证成本：\n\n- 改写已知机制：对已有泄露机制做不同措辞表述，实验显示在 3 种措辞下成功率达 96%；\n- 在已知有效模板内交换字段：如把泄露内容包装为配置字段等，成功率最高 60%；\n- 围绕新机制创作全新页面：成功率 0/130，说明可复用的是模板而非机制本身。\n\n防御实验采用多种条件和对照：\n\n- 消融：移除保密策略后，基础攻击仍为 0%，重新框定攻击仅从 31.9% 升至 38.1%，说明机制是指令/数据混淆（instruction/data confusion），而非击败了模型对齐（alignment）；\n- payload-blind 检查：不检查载荷内容，而是检查目标地址的 allow-list（允许列表），在目标封闭时泄露率为 0%；将规划与读取能力分离的 planner/reader split（规划器/读取器拆分）也为 0%；\n- 模型端策略：添加“in any form”的宽泛保密条款可把执行模型上的攻击率降到 0%，但去掉该 catch-all 条款后泄露率回升至 48.8%，因此脆弱；\n- 已有防御：已发表的微调防御 SecAlign（CCS 2025）在工具智能体上失败（32.5%，阳性对照验证有效）；通道分离（channel separation）失败（38.8%）；输出规范化守卫（output-normalizing guard）无法抵抗保留编码 ROT13，攻击率达到 100%。\n\n## 主要结果  \n六模型上十类显式注入均被拒绝（gpt-4o 为 0%），但把相同泄露重新框定为“强制完整性签名”“配置字段”或类似“受信”主机后，gpt-4o 泄露率升至 100%。攻击成本具有三层差异，且关键资产是模板而非新机制。消融与防御对照表明，关闭差距的手段是约束目的地或隔离能力，而不是依赖模型识别攻击。\n\n## 为什么与兴趣相关  \n这项研究清楚地展示了大模型智能体安全中的一个盲区：语义层面的重新框定可以绕过依赖模型判断的表面防御。对构建工具使用型智能体的人而言，它提示防御设计应放在外部约束和能力隔离上，而不是期望模型“认出”所有恶意内容；同时也为评估注入防御提供了分层攻击成本与对照指标的思路。"
+    },
+    {
+      "id": "arxiv_2608.27010",
+      "arxiv_id": "2608.27010",
+      "title": "A Multi-Modal AI Framework for Real-Time Queue Prediction, Management and Optimisation in Intelligent Border Control Systems",
+      "authors": [
+        "Varvara Mama",
+        "Eleni Veroni",
+        "Nikolaos Kapsalis",
+        "Christos D. Nikolopoulos",
+        "Anargyros T. Baklezos"
+      ],
+      "abstract": "In the present work an efficient border control management procedure is proposed. Compared to operational queue management systems, whose operations are based on mostly static data, the proposed work takes into account dynamic traffic conditions, thus enabling optimal performance, even in cases of uncertainty. To this end, we are proposing a multi-modal Artificial Intelligence (AI) framework, tailored to th needs of border control systems, which enables real-time queue prediction, management, and resource optimization. The novel proposed approach integrates heterogeneous data sources and presents them through a unified representation by employing Long Short-Term Memory (LSTM) networks for queue forecasting. Furthermore, it leverages Model Predictive Control (MPC) and scheduling optimization to derive actionable control policies, which in turn can be presented to border control officers. The proposed work has been evaluated using synthetic data simulating realistic traffic. The evaluation results demonstrate that the proposed method reduces queue prediction error by up to 35% and average waiting time by 30%. Accordingly, the average throughput increases by nearly 20%, compared to ARIMA and rule-based methods. The abovementioned results show the effectiveness and efficiency of combining AI architectures with optimization techniques for proactive and adaptive border traffic management.",
+      "published": "2026-08-27",
+      "published_at": "2026-08-27T11:55:40Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.27010",
+      "pdf_link": "https://arxiv.org/pdf/2608.27010",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "MPC"
+      ],
+      "summary_en": "In the present work an efficient border control management procedure is proposed. Compared to operational queue management systems, whose operations are based on mostly static data, the proposed work takes into account dynamic traffic conditions, thus enabling optimal performance, even in cases of uncertainty. To this end, we are proposing a multi-modal Artificial Intelligence (AI) framework, tailored to th needs of border control systems, which enables real-time queue prediction, management, and resource optimization. The novel proposed approach integrates heterogeneous data sources and presents them through a unified representation by employing Long Short-Term Memory (LSTM) networks for queue forecasting. Furthermore, it leverages Model Predictive Control (MPC) and scheduling optimization to derive actionable control policies, which in turn can be presented to border control officers. The proposed work has been evaluated using synthetic data simulating realistic traffic. The evaluation results demonstrate that the proposed method reduces queue prediction error by up to 35% and average waiting time by 30%. Accordingly, the average throughput increases by nearly 20%, compared to ARIMA and rule-based methods. The abovementioned results show the effectiveness and efficiency of combining AI architectures with optimization techniques for proactive and adaptive border traffic management.",
+      "keywords": [
+        "MPC"
+      ],
+      "topics": [
+        "队列预测",
+        "模型预测控制"
+      ],
+      "relevance_reason_zh": "MPC在此指模型预测控制，用于边境队列管理，与隐私计算、安全推理无关。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "一种用于智能边境控制系统实时队列预测、管理与优化的多模态人工智能框架",
+      "abstract_zh": "在本工作中，提出了一种高效的边境管控管理程序。与主要基于静态数据进行操作的运营队列管理系统相比，所提出的工作考虑了动态交通状况，从而即使在不确定情况下也能实现最优性能。为此，我们提出了一种针对边境控制系统需求量身定制的多模态人工智能（AI）框架，该框架能够实现实时队列预测、管理和资源优化。该新颖方法整合了异构数据源，并通过采用长短期记忆（LSTM）网络进行队列预测，以统一表示形式呈现这些数据。此外，它还利用模型预测控制（MPC）和调度优化来推导可操作的控制策略，进而可呈现给边境管控官员。所提出的工作已使用模拟真实交通的合成数据进行了评估。评估结果表明，与ARIMA和基于规则的方法相比，所提方法将队列预测误差降低了高达35%，平均等待时间降低了30%。相应地，平均吞吐量提高了近20%。上述结果表明，将AI架构与优化技术相结合用于主动且自适应的边境交通管理具有有效性和高效性。"
+    },
+    {
       "id": "arxiv_2608.26052",
       "arxiv_id": "2608.26052",
       "title": "How Much Rank Does LoRA Need? Rank-Error Bounds for Transformer Attention",
@@ -9642,6 +10405,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-27T12:46:51.711844Z",
-  "total_count": 241
+  "last_updated": "2026-08-28T14:20:35.215358Z",
+  "total_count": 261
 }

@@ -3,9 +3,9 @@
     {
       "paper_id": "arxiv_2608.25697",
       "task": "abstract",
-      "attempts": 1,
+      "attempts": 2,
       "last_error": "RuntimeError"
     }
   ],
-  "last_updated": "2026-08-27T12:46:51.711844Z"
+  "last_updated": "2026-08-28T14:20:35.215358Z"
 }
