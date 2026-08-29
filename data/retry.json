@@ -1,11 +1,4 @@
 {
-  "items": [
-    {
-      "paper_id": "arxiv_2608.25697",
-      "task": "abstract",
-      "attempts": 2,
-      "last_error": "RuntimeError"
-    }
-  ],
-  "last_updated": "2026-08-28T14:20:35.215358Z"
+  "items": [],
+  "last_updated": "2026-08-29T09:02:35.230026Z"
 }
