@@ -1,6 +1,579 @@
 {
   "papers": [
     {
+      "id": "iacr_2026/1833",
+      "iacr_id": "2026/1833",
+      "title": "On the Fault Injection Security of White-box Ciphers",
+      "authors": [
+        "Md Alamgir Alam",
+        "Avik Chakraborti",
+        "Takanori Isobe",
+        "Sajani Kundu",
+        "Sayandeep Saha"
+      ],
+      "abstract": "White-box security settings assume an extremely powerful adversary having full visibility and control of the software implementation and internal computations. Leakage-based attacks extract secret information via a local passive attacker (e.g., malware) and transmit it to a remote server. However, an active adversary, who can perform fault injections in a white box setting, has received limited attention, especially in the symmetric-key setting. In this paper, we initiate a formal study of active data-only adversaries in the white-box setting. Such adversaries preserve the control flow of the implementation but corrupt a bounded number of key-embedded lookup-table entries, enabling precise and repeatable manipulation of table values. Unlike leakage-based attacks, which are constrained by the bandwidth and existence of firewalls, such fault attacks can operate entirely locally. We focus on a data-only tampering adversary that preserves the control flow of the white-box implementation, but corrupts a bounded number of key-embedded lookup-table entries. Even under this stealth-preserving restriction, the adversary can cryptographically weaken the implementation and make faulty ciphertexts significantly easier to decrypt. We formalize such an active adversary by defining a new security notion and studying its impact on contemporary table-based white-box implementations. Our analyses reveal a structural disparity between two major design paradigms: Feistel-based white-box ciphers appear significantly more vulnerable to fault injection than SPN-based designs. Finally, we propose a software-based fault detection mechanism that detects fault injections with high probability, strengthening resilience. We provide detailed analysis of the SPN-based cipher WEM (the same analyses also work for other SPN-based ciphers like SPNbox), and two Feistel-based ciphers SPACE and Galaxy. Our analyses reveal that SPACE and Galaxy are significantly more vulnerable than WEM, under our fault-based security setting. Precisely, we show that WEM achieves high security under all the adversarial models, whereas SPACE and Galaxy instances can be attacked with a very high message recovery probability of $2^{-8}$, when the adversary can choose the fault positions and the values and corrupts up to one fourth of the implementation table entries.",
+      "published": "2026-08-29",
+      "published_at": "2026-08-29T16:48:09Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1833",
+      "pdf_link": "https://eprint.iacr.org/2026/1833.pdf",
+      "categories": [
+        "Secret-key cryptography"
+      ],
+      "updated_at": "2026-08-29T16:48:09Z",
+      "matched_terms": [
+        "lookup table"
+      ],
+      "summary_en": "White-box security settings assume an extremely powerful adversary having full visibility and control of the software implementation and internal computations. Leakage-based attacks extract secret information via a local passive attacker (e.g., malware) and transmit it to a remote server. However, an active adversary, who can perform fault injections in a white box setting, has received limited attention, especially in the symmetric-key setting. In this paper, we initiate a formal study of active data-only adversaries in the white-box setting. Such adversaries preserve the control flow of the implementation but corrupt a bounded number of key-embedded lookup-table entries, enabling precise and repeatable manipulation of table values. Unlike leakage-based attacks, which are constrained by the bandwidth and existence of firewalls, such fault attacks can operate entirely locally. We focus on a data-only tampering adversary that preserves the control flow of the white-box implementation, but corrupts a bounded number of key-embedded lookup-table entries. Even under this stealth-preserving restriction, the adversary can cryptographically weaken the implementation and make faulty ciphertexts significantly easier to decrypt. We formalize such an active adversary by defining a new security notion and studying its impact on contemporary table-based white-box implementations. Our analyses reveal a structural disparity between two major design paradigms: Feistel-based white-box ciphers appear significantly more vulnerable to fault injection than SPN-based designs. Finally, we propose a software-based fault detection mechanism that detects fault injections with high probability, strengthening resilience. We provide detailed analysis of the SPN-based cipher WEM (the same analyses also work for other SPN-based ciphers like SPNbox), and two Feistel-based ciphers SPACE and Galaxy. Our analyses reveal that SPACE and Galaxy are significantly more vulnerable than WEM, under our fault-based security setting. Precisely, we show that WEM achieves high security under all the adversarial models, whereas SPACE and Galaxy instances can be attacked with a very high message recovery probability of $2^{-8}$, when the adversary can choose the fault positions and the values and corrupts up to one fourth of the implementation table entries.",
+      "keywords": [
+        "lookup table"
+      ],
+      "topics": [
+        "白盒密码",
+        "故障注入"
+      ],
+      "relevance_reason_zh": "论文研究白盒密码实现的故障注入安全性，虽涉及查找表，但核心并非隐私计算、安全推理或大模型安全。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "论白盒密码的故障注入安全性",
+      "abstract_zh": "白盒安全设置假设一个极其强大的对手，能够完全查看和控制软件实现及内部计算。基于泄漏的攻击通过本地被动攻击者（例如恶意软件）提取秘密信息，并将其传输到远程服务器。然而，能够在白盒设置中执行故障注入的主动攻击者受到的关注有限，尤其是在对称密钥设置中。在本文中，我们首次对白盒设置中的主动纯数据攻击者进行正式研究。此类攻击者保留实现的控制流，但破坏有限数量的密钥嵌入查找表条目，从而能够精确且可重复地操纵表值。与受带宽和防火墙存在性约束的基于泄漏的攻击不同，此类故障攻击可以完全在本地运行。我们关注一种纯数据篡改攻击者，其保留白盒实现的控制流，但破坏有限数量的密钥嵌入查找表条目。即使在此种保持隐蔽性的限制下，攻击者仍可在密码学上削弱实现，并使错误密文显著更容易被解密。我们通过定义一个新的安全概念，并研究其对当代基于表的白盒实现的影响，来形式化此类主动攻击者。我们的分析揭示了两种主要设计范式之间的结构性差异：基于Feistel的白盒密码似乎比基于SPN的设计更容易受到故障注入的影响。最后，我们提出一种基于软件的故障检测机制，能够以高概率检测故障注入，从而增强韧性。我们提供了对基于SPN的密码WEM（同样的分析也适用于其他基于SPN的密码，如SPNbox）以及两种基于Feistel的密码SPACE和Galaxy的详细分析。我们的分析表明，在我们的基于故障的安全设置下，SPACE和Galaxy比WEM脆弱得多。具体而言，我们表明WEM在所有对抗模型下均实现高安全性，而当攻击者可以选择故障位置和值并破坏多达四分之一实现表条目时，SPACE和Galaxy实例可以以非常高的消息恢复概率 $2^{-8}$ 被攻击。"
+    },
+    {
+      "id": "iacr_2026/1832",
+      "iacr_id": "2026/1832",
+      "title": "Universally Composable Hybrid PAKE Secure Against Harvest-Now-Decrypt-Later Attacks",
+      "authors": [
+        "Yasmine Vazirinejad",
+        "Feng Hao",
+        "You Lyu",
+        "Shengli Liu"
+      ],
+      "abstract": "We present a hybrid password-authenticated key exchange (PAKE) protocol that is secure against harvest-now-decrypt-later (HNDL) attacks by quantum adversaries, and is universally composable under the parallel composition framework of Lyu and Liu (EUROCRYPT 2025). Existing hybrid PAKE constructions combine a classical PAKE with a post-quantum (PQ) PAKE, with the overall security intended to rely on the stronger of the two. However, identifying which PAKE is stronger is non-trivial, given the limited maturity of post-quantum PAKE designs. Recognizing that the immediate quantum threat is passive, we propose a different hybrid compiler: rather than combining two PAKEs, we encapsulate a classical PAKE within a standard post-quantum Key Encapsulation Mechanism (KEM). This modular separation avoids the fragility of post-quantum password handling while neutralizing HNDL attacks. Our compiler works with any two-pass or three-pass PAKEs. As a concrete instantiation, we construct a three-pass protocol that combines J-PAKE and a post-quantum KEM. We also implement the resulting protocol and provide performance results demonstrating that the hybrid construction remains practical, with the complete handshake executing in $2.81\\text{ ms}$. This construction has the distinctive advantage that it does not require any ideal cipher, (constant-time) hash-to-curve, or trusted setup assumptions. Within the Lyu-Liu framework, we show that J-PAKE satisfies the notion of a Full DH-type PAKE. We model the KEM as a password-independent Simulatable DH-type component satisfying the minimal simulation properties required for parallel composition. To capture the prospective quantum threat, we formalize a stronger variant of the standard HNDL threat model—where the quantum adversary is explicitly granted the plaintext password—and prove that our protocol achieves Session Key Security and Post-Quantum Forward Secrecy. Our construction relies solely on standardized and widely deployed primitives, yielding a hybrid PAKE that is UC-secure, efficient, and well-suited for real-world deployment during the post-quantum transition.",
+      "published": "2026-08-29",
+      "published_at": "2026-08-29T08:53:38Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1832",
+      "pdf_link": "https://eprint.iacr.org/2026/1832.pdf",
+      "categories": [
+        "Cryptographic protocols"
+      ],
+      "updated_at": "2026-08-29T08:53:38Z",
+      "matched_terms": [],
+      "summary_en": "We present a hybrid password-authenticated key exchange (PAKE) protocol that is secure against harvest-now-decrypt-later (HNDL) attacks by quantum adversaries, and is universally composable under the parallel composition framework of Lyu and Liu (EUROCRYPT 2025). Existing hybrid PAKE constructions combine a classical PAKE with a post-quantum (PQ) PAKE, with the overall security intended to rely on the stronger of the two. However, identifying which PAKE is stronger is non-trivial, given the limited maturity of post-quantum PAKE designs. Recognizing that the immediate quantum threat is passive, we propose a different hybrid compiler: rather than combining two PAKEs, we encapsulate a classical PAKE within a standard post-quantum Key Encapsulation Mechanism (KEM). This modular separation avoids the fragility of post-quantum password handling while neutralizing HNDL attacks. Our compiler works with any two-pass or three-pass PAKEs. As a concrete instantiation, we construct a three-pass protocol that combines J-PAKE and a post-quantum KEM. We also implement the resulting protocol and provide performance results demonstrating that the hybrid construction remains practical, with the complete handshake executing in $2.81\\text{ ms}$. This construction has the distinctive advantage that it does not require any ideal cipher, (constant-time) hash-to-curve, or trusted setup assumptions. Within the Lyu-Liu framework, we show that J-PAKE satisfies the notion of a Full DH-type PAKE. We model the KEM as a password-independent Simulatable DH-type component satisfying the minimal simulation properties required for parallel composition. To capture the prospective quantum threat, we formalize a stronger variant of the standard HNDL threat model—where the quantum adversary is explicitly granted the plaintext password—and prove that our protocol achieves Session Key Security and Post-Quantum Forward Secrecy. Our construction relies solely on standardized and widely deployed primitives, yielding a hybrid PAKE that is UC-secure, efficient, and well-suited for real-world deployment during the post-quantum transition.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1831",
+      "iacr_id": "2026/1831",
+      "title": "Silent-Share: Decoupling Hidden Threshold Matching from Pairing Operations via Group-Valued Oblivious Key-Value Stores",
+      "authors": [
+        "Jie Zhang",
+        "Xiaohong Li",
+        "Ruitao Feng",
+        "Guangdong Bai"
+      ],
+      "abstract": "Matchmaking encryption (ME) enables bilateral access control with private policies, but existing pairing-based constructions tie receiver-side authorization cost to the policy size. This is especially problematic when one party holds a large hidden policy while the other holds only a small attribute set. We present Silent-Share, a bilateral hidden-policy threshold access-control protocol that decouples policy representation from pairing-based authorization. The construction combines a one-sided hidden-threshold policy-based key encapsulation mechanism (PB-KEM) with a sparse group-valued oblivious key-value store (GOKVS). The GOKVS compactly encodes policy-dependent group elements, so a receiver holding attribute set $\\mathcal{A}$ performs exactly $2|\\mathcal{A}|$ pairings, independent of the policy size $|\\mathcal{P}|$ and threshold $d$. Total decapsulation additionally incurs a hidden-threshold reconstruction cost, characterized separately. Two independent one-sided instances are composed and bound with AES-GCM to realize bilateral authorization. We prove one-sided KEM confidentiality and policy hiding in the random-oracle model under a hidden common exponent assumption, and extend these guarantees to the bilateral composition. Our implementation on BN254 shows that, when the correct $d$-subset is provided, one-sided decapsulation for $|\\mathcal{A}|=10$ takes about $394$ ms, dominated by pairing operations. The pairing-based authorization layer remains flat as $|\\mathcal{P}|$ grows from $50$ to $800$, confirming the policy-size independence. The hidden-threshold reconstruction cost is reported separately and can dominate when $|\\mathcal{A}|$ is large. Encapsulation is approximately $2$--$3\\times$ faster than fuzzy matchmaking encryption across the tested parameter range.",
+      "published": "2026-08-29",
+      "published_at": "2026-08-29T08:03:59Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1831",
+      "pdf_link": "https://eprint.iacr.org/2026/1831.pdf",
+      "categories": [
+        "Public-key cryptography"
+      ],
+      "updated_at": "2026-08-29T08:03:59Z",
+      "matched_terms": [],
+      "summary_en": "Matchmaking encryption (ME) enables bilateral access control with private policies, but existing pairing-based constructions tie receiver-side authorization cost to the policy size. This is especially problematic when one party holds a large hidden policy while the other holds only a small attribute set. We present Silent-Share, a bilateral hidden-policy threshold access-control protocol that decouples policy representation from pairing-based authorization. The construction combines a one-sided hidden-threshold policy-based key encapsulation mechanism (PB-KEM) with a sparse group-valued oblivious key-value store (GOKVS). The GOKVS compactly encodes policy-dependent group elements, so a receiver holding attribute set $\\mathcal{A}$ performs exactly $2|\\mathcal{A}|$ pairings, independent of the policy size $|\\mathcal{P}|$ and threshold $d$. Total decapsulation additionally incurs a hidden-threshold reconstruction cost, characterized separately. Two independent one-sided instances are composed and bound with AES-GCM to realize bilateral authorization. We prove one-sided KEM confidentiality and policy hiding in the random-oracle model under a hidden common exponent assumption, and extend these guarantees to the bilateral composition. Our implementation on BN254 shows that, when the correct $d$-subset is provided, one-sided decapsulation for $|\\mathcal{A}|=10$ takes about $394$ ms, dominated by pairing operations. The pairing-based authorization layer remains flat as $|\\mathcal{P}|$ grows from $50$ to $800$, confirming the policy-size independence. The hidden-threshold reconstruction cost is reported separately and can dominate when $|\\mathcal{A}|$ is large. Encapsulation is approximately $2$--$3\\times$ faster than fuzzy matchmaking encryption across the tested parameter range.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1830",
+      "iacr_id": "2026/1830",
+      "title": "The Extended Wedge Attack",
+      "authors": [
+        "John Baena",
+        "Javier Verbel",
+        "Luis Villota"
+      ],
+      "abstract": "The wedge attack of Ran (EUROCRYPT 2026) recovers the secret oil space of a UOV public key over fields of characteristic two by exploiting the fact that the polar forms of the public map are alternating. It has since been generalized in several directions, each carrying its own algebraic tools, e.g., Jin et al. (PKC 2026). Working directly with the polynomials of an oil and vinegar map, we give a simpler description of the attack, based on a dual decomposition of oil-vinegar polynomials, and we recover the original wedge attack and its odd-characteristic analogue as special cases. This framework leads to a generalization, which we call the extended wedge attack. We identify two explicit conditions on the parameters that guarantee that the attack terminates with the recovery of the secret space. We also prove that the matrix of the extended wedge attack is permutation equivalent to the truncated Macaulay matrix in the attack by Furue-Ikematsu (CRYPTO 2026).",
+      "published": "2026-08-29",
+      "published_at": "2026-08-29T06:19:36Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1830",
+      "pdf_link": "https://eprint.iacr.org/2026/1830.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-29T06:19:36Z",
+      "matched_terms": [],
+      "summary_en": "The wedge attack of Ran (EUROCRYPT 2026) recovers the secret oil space of a UOV public key over fields of characteristic two by exploiting the fact that the polar forms of the public map are alternating. It has since been generalized in several directions, each carrying its own algebraic tools, e.g., Jin et al. (PKC 2026). Working directly with the polynomials of an oil and vinegar map, we give a simpler description of the attack, based on a dual decomposition of oil-vinegar polynomials, and we recover the original wedge attack and its odd-characteristic analogue as special cases. This framework leads to a generalization, which we call the extended wedge attack. We identify two explicit conditions on the parameters that guarantee that the attack terminates with the recovery of the secret space. We also prove that the matrix of the extended wedge attack is permutation equivalent to the truncated Macaulay matrix in the attack by Furue-Ikematsu (CRYPTO 2026).",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1829",
+      "iacr_id": "2026/1829",
+      "title": "Decomposed LWE is Equivalent to Succinct LWE",
+      "authors": [
+        "Damiano Abram",
+        "Gal Arnon",
+        "Valerio Cini",
+        "Paul Lou",
+        "Giulio Malavolta",
+        "Lawrence Roy"
+      ],
+      "abstract": "We prove that the Succinct Learning with Errors assumption, introduced by Wee (CRYPTO '24), and the Decomposed Learning with Errors assumption, introduced by Abram, Malavolta, and Roy (CRYPTO '25), are equivalent under appropriate parameter settings. Abram, Malavolta, and Roy proved that Succinct LWE implies Decomposed LWE. We establish the converse implication, showing that Decomposed LWE implies Succinct LWE.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T20:46:06Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1829",
+      "pdf_link": "https://eprint.iacr.org/2026/1829.pdf",
+      "categories": [
+        "Foundations"
+      ],
+      "updated_at": "2026-08-28T20:46:06Z",
+      "matched_terms": [],
+      "summary_en": "We prove that the Succinct Learning with Errors assumption, introduced by Wee (CRYPTO '24), and the Decomposed Learning with Errors assumption, introduced by Abram, Malavolta, and Roy (CRYPTO '25), are equivalent under appropriate parameter settings. Abram, Malavolta, and Roy proved that Succinct LWE implies Decomposed LWE. We establish the converse implication, showing that Decomposed LWE implies Succinct LWE.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.28491",
+      "arxiv_id": "2608.28491",
+      "title": "AcrossVAM1.0: Particle World Modeling for Text-Assisted Robot Video Prediction",
+      "authors": [
+        "Yafei Zhang",
+        "Nan Wu"
+      ],
+      "abstract": "Predicting robot videos requires both precise motion reasoning and preservation of high-frequency appearance, yet monolithic pixel models entangle these objectives and often conceal their progress behind a strong last-frame baseline. We present AcrossVAM1.0, a lightweight, text-assisted video action model that factorizes future prediction into object-centric motion and dense appearance. A frozen SAM3-DLP codec decomposes four context frames into semantic particles for the robot, arm, and gripper, together with a background latent. A 0.28M-parameter spatio-temporal Transformer aligns particle identities, rolls their states forward, and is modulated by a frozen OpenCLIP instruction embedding through FiLM. A causal dual-stream decoder combines particle-rendered motion with appearance encoded exclusively from the last observed frame; a residual refiner and learned delivery mask produce five future frames without access to future appearance. On our VRS benchmark constructed from diverse real-robot trajectories, particle dynamics reduce trajectory error by 21.0\\% over persistence. Across three delivery-mask seeds, AcrossVAM1.0 improves future-frame PSNR/SSIM from 19.97/0.796 to 20.573/0.8004, while raw particle generation improves motion-region PSNR from 11.89 to 13.23. The delivered model does not yet beat persistence in LPIPS, and correct-versus- shuffled language changes trajectory error by only 2.8--3.1%. We report these limitations alongside oracle, negative-control, multi-seed, and per-robot analyses. The results show that explicit particle dynamics are a promising low-dimensional interface for robot video prediction, while robust language grounding and appearance delivery remain the principal open challenges.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T16:19:24Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28491",
+      "pdf_link": "https://arxiv.org/pdf/2608.28491",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Predicting robot videos requires both precise motion reasoning and preservation of high-frequency appearance, yet monolithic pixel models entangle these objectives and often conceal their progress behind a strong last-frame baseline. We present AcrossVAM1.0, a lightweight, text-assisted video action model that factorizes future prediction into object-centric motion and dense appearance. A frozen SAM3-DLP codec decomposes four context frames into semantic particles for the robot, arm, and gripper, together with a background latent. A 0.28M-parameter spatio-temporal Transformer aligns particle identities, rolls their states forward, and is modulated by a frozen OpenCLIP instruction embedding through FiLM. A causal dual-stream decoder combines particle-rendered motion with appearance encoded exclusively from the last observed frame; a residual refiner and learned delivery mask produce five future frames without access to future appearance. On our VRS benchmark constructed from diverse real-robot trajectories, particle dynamics reduce trajectory error by 21.0\\% over persistence. Across three delivery-mask seeds, AcrossVAM1.0 improves future-frame PSNR/SSIM from 19.97/0.796 to 20.573/0.8004, while raw particle generation improves motion-region PSNR from 11.89 to 13.23. The delivered model does not yet beat persistence in LPIPS, and correct-versus- shuffled language changes trajectory error by only 2.8--3.1%. We report these limitations alongside oracle, negative-control, multi-seed, and per-robot analyses. The results show that explicit particle dynamics are a promising low-dimensional interface for robot video prediction, while robust language grounding and appearance delivery remain the principal open challenges.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "视频预测",
+        "Transformer"
+      ],
+      "relevance_reason_zh": "论文是机器人视频预测的模型架构与训练，不涉及隐私计算、安全推理或大模型安全。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "AcrossVAM1.0：面向文本辅助机器人视频预测的粒子世界建模",
+      "abstract_zh": "预测机器人视频需要精确的运动推理和保持高频外观，然而整体像素模型将这两个目标纠缠在一起，并且常常将其进展隐藏在强大的最后一帧基线之后。我们提出了AcrossVAM1.0，一个轻量级的、文本辅助的视频动作模型，它将未来预测分解为以对象为中心的运动和密集外观。一个冻结的SAM3-DLP编解码器将四个上下文帧分解为机器人、手臂和夹爪的语义粒子，以及一个背景潜变量。一个0.28M参数的时空Transformer对齐粒子身份，向前滚动其状态，并通过FiLM由冻结的OpenCLIP指令嵌入进行调制。一个因果双流解码器将粒子渲染的运动与仅从最后观测帧编码的外观相结合；一个残差细化器和学习到的递送掩码生成五个未来帧，而无需访问未来外观。在我们基于多样真实机器人轨迹构建的VRS基准上，粒子动力学相对于持久性将轨迹误差降低了21.0%。在三个递送掩码种子下，AcrossVAM1.0将未来帧PSNR/SSIM从19.97/0.796提高到20.573/0.8004，而原始粒子生成将运动区域PSNR从11.89提高到13.23。交付的模型在LPIPS上尚未超越持久性，并且正确语言与打乱语言相比仅将轨迹误差改变了2.8–3.1%。我们报告了这些局限性，并附带了oracle、阴性对照、多种子和逐机器人分析。结果表明，显式粒子动力学是机器人视频预测的一种有前景的低维接口，而鲁棒的语言接地和外观递送仍然是主要的开放挑战。"
+    },
+    {
+      "id": "arxiv_2608.28455",
+      "arxiv_id": "2608.28455",
+      "title": "ARC-CT: Anatomy-Routed Contrastive Vision-Language Learning for 3D Chest CT",
+      "authors": [
+        "Huseyin Umut Isik",
+        "Mehmet Alp Ozaydin",
+        "Sila Kurugol",
+        "Şeyda Ertekin"
+      ],
+      "abstract": "Contrastive vision-language learning uses paired chest CT volumes and radiology reports to learn abnormality classifiers without manually annotated labels. However, two characteristics of chest CT challenge conventional global contrastive learning. First, many critical abnormalities are small or anatomically localized, and pooling an en- tire volume into a single embedding may dilute their visual evidence. Second, the standard contrastive objective treats every other scan in a batch as a negative. Because many chest CTs share abnormalities, this objective incorrectly pushes co-positive pairs apart. We propose Anatomy-Routed Contrastive Learning for 3D Chest CT (ARC-CT), a region-aware framework that addresses these limitations using only la- bels extracted from reports by an LLM, with no manual annotations or bounding boxes. ARC-CT combines three components: (1) an Anato- myQFormer localizing evidence via queries constrained by automatically generated organ masks; (2) a label-Jaccard soft InfoNCE objective in- tegrating the standard one-hot target with the label-set overlap of each pair, which reduces false-negative penalties between studies that share clinical findings; and (3) an organ-level alignment loss connecting mask- pooled visual features to organ-specific report text extracted offline with a large language model. ARC-CT achieves a 0.86 mask-free macro AUC across 18 abnormalities using a compact 3D ResNet-18 backbone. Over- all, ARC-CT outperforms both comparable efficient baselines and sev- eral larger transformer models. Our code and weights are available at https://github.com/arc-ct/arc-ct.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T15:45:33Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28455",
+      "pdf_link": "https://arxiv.org/pdf/2608.28455",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "transformer"
+      ],
+      "summary_en": "Contrastive vision-language learning uses paired chest CT volumes and radiology reports to learn abnormality classifiers without manually annotated labels. However, two characteristics of chest CT challenge conventional global contrastive learning. First, many critical abnormalities are small or anatomically localized, and pooling an en- tire volume into a single embedding may dilute their visual evidence. Second, the standard contrastive objective treats every other scan in a batch as a negative. Because many chest CTs share abnormalities, this objective incorrectly pushes co-positive pairs apart. We propose Anatomy-Routed Contrastive Learning for 3D Chest CT (ARC-CT), a region-aware framework that addresses these limitations using only la- bels extracted from reports by an LLM, with no manual annotations or bounding boxes. ARC-CT combines three components: (1) an Anato- myQFormer localizing evidence via queries constrained by automatically generated organ masks; (2) a label-Jaccard soft InfoNCE objective in- tegrating the standard one-hot target with the label-set overlap of each pair, which reduces false-negative penalties between studies that share clinical findings; and (3) an organ-level alignment loss connecting mask- pooled visual features to organ-specific report text extracted offline with a large language model. ARC-CT achieves a 0.86 mask-free macro AUC across 18 abnormalities using a compact 3D ResNet-18 backbone. Over- all, ARC-CT outperforms both comparable efficient baselines and sev- eral larger transformer models. Our code and weights are available at https://github.com/arc-ct/arc-ct.",
+      "keywords": [
+        "transformer"
+      ],
+      "topics": [
+        "医学影像",
+        "对比学习"
+      ],
+      "relevance_reason_zh": "论文是医学影像对比学习与分类，无密码学或安全推理内容。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "ARC-CT：面向三维胸部CT的解剖路由对比视觉-语言学习",
+      "abstract_zh": "对比视觉-语言学习利用配对的胸部CT体数据和放射学报告来学习异常分类器，无需人工标注标签。然而，胸部CT的两个特征对传统的全局对比学习提出了挑战。首先，许多关键异常是微小或解剖定位的，将整个体数据池化为单一嵌入可能会稀释其视觉证据。其次，标准的对比目标将批次中的每一个其他扫描视为负样本。由于许多胸部CT共享异常，这一目标会错误地将共阳性配对推开。我们提出了用于三维胸部CT的解剖路由对比学习（ARC-CT），这是一个区域感知框架，仅使用由LLM从报告中提取的标签来解决这些局限性，无需人工标注或边界框。ARC-CT结合了三个组成部分：（1）AnatomyQFormer，通过由自动生成的器官掩膜约束的查询来定位证据；（2）label-Jaccard软InfoNCE目标，将标准one-hot目标与每对配对的标签集重叠相结合，从而减少共享临床发现的研究之间的假阴性惩罚；（3）器官级对齐损失，将掩膜池化的视觉特征与通过大语言模型离线提取的器官特定报告文本连接起来。ARC-CT使用紧凑的3D ResNet-18主干在18种异常上实现了0.86的无掩膜宏平均AUC。总体而言，ARC-CT优于可比的高效基线和几个更大的Transformer模型。我们的代码和权重可在https://github.com/arc-ct/arc-ct获取。"
+    },
+    {
+      "id": "iacr_2026/1828",
+      "iacr_id": "2026/1828",
+      "title": "WeaveTLS: High-Throughput Cross-Connection ML-DSA Authentication in Mutual TLS",
+      "authors": [
+        "Ganqin Liu",
+        "Hao Cheng",
+        "Jipeng Zhang"
+      ],
+      "abstract": "Mutual TLS (mTLS) authenticates both peers and therefore incurs post-quantum signature costs on every connection. Concurrent handshakes expose independent ML-DSA operations, but executing them jointly is difficult: signing is rejection-divergent, verification uses heterogeneous keys, and synchronous TLS APIs expose authentication work one connection at a time. We present WeaveTLS, a wire-transparent architecture that executes ML-DSA authentication across concurrent TLS connections. Its primitive interface combines rejection-aware slot refill with per-request expanded-key handles, supporting both unrelated client keys and shared issuer keys. A stackless OpenSSL continuation lets an nginx worker suspend authentication, expose work from other connections, and execute compatible operations through optimized single-request, four-request, or eight-request AVX-512 kernels without fibers or cross-thread handoff. WeaveTLS preserves the TLS authentication barrier, certificate validation, and wire protocol. On an AMD Ryzen 9 9950X3D, WeaveTLS improves one-core nginx mTLS throughput by 2.81-4.31$\\times$ over OpenSSL's default ML-DSA path and by 2.19-3.29$\\times$ over a synchronous reference-C control in the same provider across ML-DSA-44/65/87. At the primitive boundary, expanded-key eight-request verification is 1.65-2.23$\\times$ faster than matched cached AVX2, and rejection-aware refill makes ML-DSA-65 signing 1.90$\\times$ faster than otherwise identical lockstep scheduling. Cohort publication also weakens client-visible rejection timing under load, reducing attempt-count/latency correlation to 0.063 at concurrency 16 and 0.008 at 64; singleton execution retains the signal.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T15:26:02Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1828",
+      "pdf_link": "https://eprint.iacr.org/2026/1828.pdf",
+      "categories": [
+        "Implementation"
+      ],
+      "updated_at": "2026-08-28T15:26:02Z",
+      "matched_terms": [],
+      "summary_en": "Mutual TLS (mTLS) authenticates both peers and therefore incurs post-quantum signature costs on every connection. Concurrent handshakes expose independent ML-DSA operations, but executing them jointly is difficult: signing is rejection-divergent, verification uses heterogeneous keys, and synchronous TLS APIs expose authentication work one connection at a time. We present WeaveTLS, a wire-transparent architecture that executes ML-DSA authentication across concurrent TLS connections. Its primitive interface combines rejection-aware slot refill with per-request expanded-key handles, supporting both unrelated client keys and shared issuer keys. A stackless OpenSSL continuation lets an nginx worker suspend authentication, expose work from other connections, and execute compatible operations through optimized single-request, four-request, or eight-request AVX-512 kernels without fibers or cross-thread handoff. WeaveTLS preserves the TLS authentication barrier, certificate validation, and wire protocol. On an AMD Ryzen 9 9950X3D, WeaveTLS improves one-core nginx mTLS throughput by 2.81-4.31$\\times$ over OpenSSL's default ML-DSA path and by 2.19-3.29$\\times$ over a synchronous reference-C control in the same provider across ML-DSA-44/65/87. At the primitive boundary, expanded-key eight-request verification is 1.65-2.23$\\times$ faster than matched cached AVX2, and rejection-aware refill makes ML-DSA-65 signing 1.90$\\times$ faster than otherwise identical lockstep scheduling. Cohort publication also weakens client-visible rejection timing under load, reducing attempt-count/latency correlation to 0.063 at concurrency 16 and 0.008 at 64; singleton execution retains the signal.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1827",
+      "iacr_id": "2026/1827",
+      "title": "AVXPoS: Reducing Consensus Verification Cost in the Ethereum Proof-of-Stake Client",
+      "authors": [
+        "Ganqin Liu",
+        "Hao Cheng",
+        "Georgios Fotiadis",
+        "Jipeng Zhang",
+        "Chen Qian"
+      ],
+      "abstract": "Ethereum Proof-of-Stake (PoS) clients must verify large volumes of Boneh--Lynn--Shacham (BLS) signatures for attestations, sync-committee messages, and other consensus-critical objects within fixed slot deadlines. This recurring cost competes with state transition, fork choice, and message propagation for client CPU time, so reducing it increases the verification headroom available under bursty load. Prior cryptographic-engineering work has shown that SIMD can substantially accelerate BLS verification kernels, but these gains do not automatically survive client software boundaries, runtime scheduling, and irregular verification ranges. We present AVXPoS, a client-aware batching framework for BLS verification in the Prysm Ethereum PoS client. AVXPoS treats batched verification as a client-level systems problem: it preserves Prysm's verification semantics while reorganizing protocol-shaped requests into native batched states that expose SIMD parallelism across API, worker, and native-backend boundaries. We instantiate AVXPoS with an AVX-512 backend for BLS12-381, combining Go-side range formation with C-side width-adaptive dispatch. On a resource-constrained two-core Intel host, AVXPoS gains $1.44$--$2.10\\times$ over Prysm's production \\texttt{blst} backend at selected small batch sizes that bracket the post-aggregation $p50/p95/p99$ batch-size quantiles of an all-subnets steady-state mainnet stress trace, and reaches up to $3.18\\times$ in controlled capacity sweeps. On a 16-core AMD host, a production checkpoint-backfill verifier at Ethereum's 128-block request cap improves by $1.81\\times$. Cross-platform results indicate that the relative speedup depends in part on Prysm's worker budget, because worker partitioning determines how much SIMD parallelism remains within each native range.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T15:14:10Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1827",
+      "pdf_link": "https://eprint.iacr.org/2026/1827.pdf",
+      "categories": [
+        "Implementation"
+      ],
+      "updated_at": "2026-08-28T15:14:10Z",
+      "matched_terms": [],
+      "summary_en": "Ethereum Proof-of-Stake (PoS) clients must verify large volumes of Boneh--Lynn--Shacham (BLS) signatures for attestations, sync-committee messages, and other consensus-critical objects within fixed slot deadlines. This recurring cost competes with state transition, fork choice, and message propagation for client CPU time, so reducing it increases the verification headroom available under bursty load. Prior cryptographic-engineering work has shown that SIMD can substantially accelerate BLS verification kernels, but these gains do not automatically survive client software boundaries, runtime scheduling, and irregular verification ranges. We present AVXPoS, a client-aware batching framework for BLS verification in the Prysm Ethereum PoS client. AVXPoS treats batched verification as a client-level systems problem: it preserves Prysm's verification semantics while reorganizing protocol-shaped requests into native batched states that expose SIMD parallelism across API, worker, and native-backend boundaries. We instantiate AVXPoS with an AVX-512 backend for BLS12-381, combining Go-side range formation with C-side width-adaptive dispatch. On a resource-constrained two-core Intel host, AVXPoS gains $1.44$--$2.10\\times$ over Prysm's production \\texttt{blst} backend at selected small batch sizes that bracket the post-aggregation $p50/p95/p99$ batch-size quantiles of an all-subnets steady-state mainnet stress trace, and reaches up to $3.18\\times$ in controlled capacity sweeps. On a 16-core AMD host, a production checkpoint-backfill verifier at Ethereum's 128-block request cap improves by $1.81\\times$. Cross-platform results indicate that the relative speedup depends in part on Prysm's worker budget, because worker partitioning determines how much SIMD parallelism remains within each native range.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "iacr_2026/1826",
+      "iacr_id": "2026/1826",
+      "title": "Threshold Encryption with Internally Motivated Corruptions",
+      "authors": [
+        "Jan Bormet",
+        "Hussien Othman",
+        "Benedikt Wagner"
+      ],
+      "abstract": "In recent years, threshold encryption has gained a lot of interest, particularly due to its potential use in encrypted mempools in blockchains. Standard security models allow the adversary to corrupt parties either statically (i.e., fixed at the onset of the game) or adaptively (i.e., via an oracle one-by-one, depending on keys and ciphertexts). In this work, we observe that neither of these models captures the case in which a party decides to become corrupted based on secret information. For instance, in an encrypted mempool application with randomly rotating committees, an adversary may set up a smart contract that pays parties who reveal their decryption share, and parties decide whether to claim it based on, say, whether they are on the next committee. Such corruptions are not fixed in advance, but they are also not chosen solely by an external adversary based on public information. We initiate the formal study of such internally motivated corruptions and partial decryptions. We introduce a security framework in which each party's corruption behavior may depend on its local secret state. That is, on a corruption, the adversary can submit a motivation function and all parties for which this motivation function outputs $1$ (on their secret information) are corrupted. A similar internally motivated behavior is allowed for releasing partial decryptions. We then study threshold encryption under this stronger notion of security. In particular, we show: - Negative Results: We show that for certain classes of motivation functions and number of queries, no threshold encryption scheme can satisfy security. We also show a concrete practical attack with internally motivated corruptions against a scheme that has been proven secure with standard corruptions. - Positive Results: We give two efficient classes of constructions from the (Bilinear) Diffie-Hellman assumptions. The first is secure when partial decryptions on the challenge ciphertext are internally motivated. The second additionally allows internally motivated corruptions.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T15:04:44Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1826",
+      "pdf_link": "https://eprint.iacr.org/2026/1826.pdf",
+      "categories": [
+        "Public-key cryptography"
+      ],
+      "updated_at": "2026-08-28T15:04:44Z",
+      "matched_terms": [],
+      "summary_en": "In recent years, threshold encryption has gained a lot of interest, particularly due to its potential use in encrypted mempools in blockchains. Standard security models allow the adversary to corrupt parties either statically (i.e., fixed at the onset of the game) or adaptively (i.e., via an oracle one-by-one, depending on keys and ciphertexts). In this work, we observe that neither of these models captures the case in which a party decides to become corrupted based on secret information. For instance, in an encrypted mempool application with randomly rotating committees, an adversary may set up a smart contract that pays parties who reveal their decryption share, and parties decide whether to claim it based on, say, whether they are on the next committee. Such corruptions are not fixed in advance, but they are also not chosen solely by an external adversary based on public information. We initiate the formal study of such internally motivated corruptions and partial decryptions. We introduce a security framework in which each party's corruption behavior may depend on its local secret state. That is, on a corruption, the adversary can submit a motivation function and all parties for which this motivation function outputs $1$ (on their secret information) are corrupted. A similar internally motivated behavior is allowed for releasing partial decryptions. We then study threshold encryption under this stronger notion of security. In particular, we show: - Negative Results: We show that for certain classes of motivation functions and number of queries, no threshold encryption scheme can satisfy security. We also show a concrete practical attack with internally motivated corruptions against a scheme that has been proven secure with standard corruptions. - Positive Results: We give two efficient classes of constructions from the (Bilinear) Diffie-Hellman assumptions. The first is secure when partial decryptions on the challenge ciphertext are internally motivated. The second additionally allows internally motivated corruptions.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.28405",
+      "arxiv_id": "2608.28405",
+      "title": "CultureConverse: A Multilingual Multi-turn Simulation Harness for Culturally Grounded Assistance in East and Southeast Asia",
+      "authors": [
+        "Bryan Chen Zhengyu Tan",
+        "Weihua Zheng",
+        "Thong T. Doan",
+        "Bich Ngoc Doan",
+        "Jia Wang Peh",
+        "Xiaoyuan Yi",
+        "Jing Yao",
+        "Xing Xie",
+        "Nancy F. Chen",
+        "Zhengyuan Liu",
+        "JinYeong Bak",
+        "Wafi Shamdi",
+        "Soo Kai Chie",
+        "Liew Yu Siong",
+        "Aina Azyyati Binti Mohamad Rezal",
+        "Lew Yan Yan Vanessa",
+        "Huadan Wu",
+        "Dylan Raharja",
+        "Nadya Yuki Wangsajaya",
+        "Akane Fukushige",
+        "Kazushi Kato",
+        "Koji Inoue",
+        "Tatsuya Kawahara",
+        "Jaehyung Seo",
+        "Dongjun Kim",
+        "Seungyoon Lee",
+        "Zi Haur Pang",
+        "Rui Yang Tan",
+        "Charibeth Ko Cheng",
+        "Maria Regina Justina Estuar",
+        "Jann Railey Montalan",
+        "Pham Minh Duc",
+        "Roy Ka-Wei Lee"
+      ],
+      "abstract": "Current cultural evaluations for large language models (LLMs) often reduce culture to single-turn factual recall via MCQs, failing to capture a common use case: users seeking practical help over multiple turns in culturally grounded scenarios. We introduce CultureConverse, a scalable, multilingual simulation and evaluation harness for culturally grounded assistant dialogue that covers 10 East and Southeast Asian regions, 58 subgroup identities, and 7 domains. Each simulated and evaluated episode produces a scored interaction where the assistant assists the user and infers cultural constraints from partial information. The resulting CultureConverse-DS dataset contains 14,610 benchmark (evaluation) episodes and 274,295 oracle-guided (gold-mode) dialogues. In our benchmark evaluation of 18 models, GPT-5 mini achieves the highest assistance quality. Human annotation experiments suggest that our evaluation framework is a sufficient proxy for human judgment. Performance gains from fine-tuning on 27,860 high-quality CultureConverse-DS samples improve in-domain assistance and transfer out-of-domain to cultural MCQ and safety classification benchmarks. We release the harness, both splits, and judge prompts to support interactive evaluation of cultural competency.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T14:56:46Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28405",
+      "pdf_link": "https://arxiv.org/pdf/2608.28405",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Current cultural evaluations for large language models (LLMs) often reduce culture to single-turn factual recall via MCQs, failing to capture a common use case: users seeking practical help over multiple turns in culturally grounded scenarios. We introduce CultureConverse, a scalable, multilingual simulation and evaluation harness for culturally grounded assistant dialogue that covers 10 East and Southeast Asian regions, 58 subgroup identities, and 7 domains. Each simulated and evaluated episode produces a scored interaction where the assistant assists the user and infers cultural constraints from partial information. The resulting CultureConverse-DS dataset contains 14,610 benchmark (evaluation) episodes and 274,295 oracle-guided (gold-mode) dialogues. In our benchmark evaluation of 18 models, GPT-5 mini achieves the highest assistance quality. Human annotation experiments suggest that our evaluation framework is a sufficient proxy for human judgment. Performance gains from fine-tuning on 27,860 high-quality CultureConverse-DS samples improve in-domain assistance and transfer out-of-domain to cultural MCQ and safety classification benchmarks. We release the harness, both splits, and judge prompts to support interactive evaluation of cultural competency.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大语言模型评估",
+        "文化能力"
+      ],
+      "relevance_reason_zh": "论文是大语言模型文化评测与模拟，不属于安全推理或隐私计算。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "CultureConverse：面向东亚和东南亚文化情境协助的多语言多轮模拟框架",
+      "abstract_zh": "当前对大型语言模型（LLM）的文化评估通常通过多项选择题（MCQ）将文化简化为单轮事实性回忆，未能捕捉到一个常见使用场景：用户在多轮交互中于文化情境下寻求实用帮助。我们提出了CultureConverse，一个可扩展的多语言模拟与评估框架，用于文化情境下的助手对话，覆盖东亚和东南亚10个地区、58个亚群体身份和7个领域。每个模拟和评估的会话都会产生一个带评分的交互，其中助手协助用户并从部分信息中推断文化约束。由此生成的CultureConverse-DS数据集包含14,610个基准（评估）会话和274,295个预言机引导（黄金模式）对话。在我们对18个模型的基准评估中，GPT-5 mini实现了最高的协助质量。人工标注实验表明，我们的评估框架足以作为人工判断的替代。在27,860个高质量CultureConverse-DS样本上进行微调后，性能提升改善了域内协助，并跨域迁移至文化MCQ和安全分类基准。我们发布了该框架、两个数据划分以及评判提示词，以支持文化能力的交互式评估。"
+    },
+    {
+      "id": "arxiv_2608.28389",
+      "arxiv_id": "2608.28389",
+      "title": "CamoDocs: A Poisoning Attack Against Retrieval-Augmented Language Models Using Camouflaged Documents",
+      "authors": [
+        "Jaewon Jung",
+        "Haizhong Zheng",
+        "Hongsun Jang",
+        "Jaeyong Song",
+        "Beidi Chen",
+        "Jinho Lee"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) augments LLMs with external documents, but public or user-editable sources expose RAG systems to data poisoning: attackers can inject malicious documents to steer outputs toward targeted answers. Existing poisoning attacks often rely on query inclusion, inserting the target query into poisoned documents to improve retrieval; however, this creates lexical and embedding-space artifacts that make them easy to filter. We propose CamoDocs, a poisoning attack that avoids direct query inclusion by camouflaging adversarial documents among benign content. CamoDocs chunks synthesized benign and adversarial drafts, replaces selected tokens in benign chunks with dispersion tokens that spread poisoned-document embeddings, and applies coherence filtering to limit readability degradation. Across seven RAG defenses, three open-weight LLMs, and three benchmarks, CamoDocs achieves strong average ASR while avoiding query-overlap artifacts exploited by simple query detection. It also remains effective against proprietary models, achieving average ASRs of 61.80% on GPT-5.4-mini and 55.09% on Claude-Haiku-4.5. Finally, we show that erasure-heavy clustering defenses such as TrustRAG can reduce ASR, but only with substantial utility drops on retrieval-dependent benchmarks such as NeoQA. Code is available at https://github.com/jaewonalive/CamoDocs.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T14:44:28Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28389",
+      "pdf_link": "https://arxiv.org/pdf/2608.28389",
+      "categories": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "Retrieval-augmented generation (RAG) augments LLMs with external documents, but public or user-editable sources expose RAG systems to data poisoning: attackers can inject malicious documents to steer outputs toward targeted answers. Existing poisoning attacks often rely on query inclusion, inserting the target query into poisoned documents to improve retrieval; however, this creates lexical and embedding-space artifacts that make them easy to filter. We propose CamoDocs, a poisoning attack that avoids direct query inclusion by camouflaging adversarial documents among benign content. CamoDocs chunks synthesized benign and adversarial drafts, replaces selected tokens in benign chunks with dispersion tokens that spread poisoned-document embeddings, and applies coherence filtering to limit readability degradation. Across seven RAG defenses, three open-weight LLMs, and three benchmarks, CamoDocs achieves strong average ASR while avoiding query-overlap artifacts exploited by simple query detection. It also remains effective against proprietary models, achieving average ASRs of 61.80% on GPT-5.4-mini and 55.09% on Claude-Haiku-4.5. Finally, we show that erasure-heavy clustering defenses such as TrustRAG can reduce ASR, but only with substantial utility drops on retrieval-dependent benchmarks such as NeoQA. Code is available at https://github.com/jaewonalive/CamoDocs.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "大模型安全",
+        "RAG投毒攻击",
+        "数据投毒"
+      ],
+      "relevance_reason_zh": "论文针对RAG系统提出数据投毒攻击，属于大模型安全，但不涉及用密码学保护推理过程。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "## 一句话结论\n本文提出一种名为 CamoDocs 的检索增强生成（RAG）数据投毒攻击，通过避免直接包含目标查询、将恶意文档伪装为良性内容，在多种防御下实现高攻击成功率，并揭示现有防御可能以显著效用下降为代价。\n\n## 问题与动机\nRAG 系统通过外部文档增强大语言模型（LLM）能力，但公共或用户可编辑的来源使其面临数据投毒风险：攻击者可注入恶意文档，把模型输出引导到特定目标答案。已有投毒攻击常依赖“查询包含”（query inclusion）——把目标查询写进中毒文档以提升被检索概率，但这会在词法空间和嵌入空间留下明显伪影，容易被简单过滤方法识别。因此，需要一种更隐蔽的攻击方式来评估 RAG 系统的真实脆弱性。\n\n## 方法与技术路线\nCamoDocs 的核心设定是：攻击者向 RAG 的知识库中注入恶意文档，目标是在不直接出现目标查询的前提下，使恶意文档在检索时被命中并促使模型给出攻击者期望的输出。\n\n实现上，CamoDocs 由三个关键环节构成，依次解决“内容伪装”“检索偏向”和“可读性保持”三个子问题：\n\n1. **分块合成**：将合成的良性草稿与对抗草稿分别切分成块（chunk）。良性块用于提供与正常内容相近的外表，对抗草稿则承载攻击意图；两块内容被组合以形成最终注入文档。\n2. **分散令牌注入**：在良性块的选定位置，用“分散令牌”（dispersion tokens）替换原始令牌。这些令牌的作用是改变中毒文档在嵌入空间（embedding space）中的分布，使其嵌入与恶意目标之间产生更分散的距离，从而避免被基于嵌入一致性的防御聚类或过滤。\n3. **连贯性过滤**：对生成后的文档进行连贯性筛选，以限制因令牌替换导致的可读性退化，使文档在人工或自动审查时看起来更自然。\n\n摘要未说明如何具体选择需要替换的令牌、如何生成良性/对抗草稿，也未披露连贯性过滤的阈值。攻击的最终输出是可用于注入的中毒文档。\n\n在实验部分，作者在 **七个 RAG 防御**、**三个开源权重 LLM** 和**三个基准数据集**上进行了评估，主要指标为平均攻击成功率（ASR，Attack Success Rate），并与现有依赖查询包含的攻击进行对比。摘要未说明具体防御名称、模型清单及各基准的细节。\n\n## 主要结果\n- CamoDocs 在多个防御下取得较高的平均 ASR，同时避免了查询重叠伪影（query-overlap artifacts），能够绕过简单的查询检测。\n- 对专有模型同样有效：在 GPT-5.4-mini 上平均 ASR 为 61.80%，在 Claude-Haiku-4.5 上为 55.09%。\n- 以删除/聚类为主要机制的防御（如 TrustRAG）能够降低 ASR，但会在 NeoQA 这类检索依赖基准上造成明显的效用（utility）下降，表明防御的成功伴随可用性损失。\n- 代码已公开：https://github.com/jaewonalive/CamoDocs\n\n## 为什么与兴趣相关\n该工作聚焦大模型供应链中检索环节的安全威胁，而非密码学保护推理过程。它说明：仅靠“避免查询关键词”的简单过滤并不足以防御投毒，嵌入层面的隐蔽攻击仍能奏效；同时，防御方需要在安全性与检索质量之间权衡。对部署 RAG 系统的从业者而言，这是一项需要关注的风险信号。",
+      "summary": "## 一句话结论\n本文提出一种名为 CamoDocs 的检索增强生成（RAG）数据投毒攻击，通过避免直接包含目标查询、将恶意文档伪装为良性内容，在多种防御下实现高攻击成功率，并揭示现有防御可能以显著效用下降为代价。\n\n## 问题与动机\nRAG 系统通过外部文档增强大语言模型（LLM）能力，但公共或用户可编辑的来源使其面临数据投毒风险：攻击者可注入恶意文档，把模型输出引导到特定目标答案。已有投毒攻击常依赖“查询包含”（query inclusion）——把目标查询写进中毒文档以提升被检索概率，但这会在词法空间和嵌入空间留下明显伪影，容易被简单过滤方法识别。因此，需要一种更隐蔽的攻击方式来评估 RAG 系统的真实脆弱性。\n\n## 方法与技术路线\nCamoDocs 的核心设定是：攻击者向 RAG 的知识库中注入恶意文档，目标是在不直接出现目标查询的前提下，使恶意文档在检索时被命中并促使模型给出攻击者期望的输出。\n\n实现上，CamoDocs 由三个关键环节构成，依次解决“内容伪装”“检索偏向”和“可读性保持”三个子问题：\n\n1. **分块合成**：将合成的良性草稿与对抗草稿分别切分成块（chunk）。良性块用于提供与正常内容相近的外表，对抗草稿则承载攻击意图；两块内容被组合以形成最终注入文档。\n2. **分散令牌注入**：在良性块的选定位置，用“分散令牌”（dispersion tokens）替换原始令牌。这些令牌的作用是改变中毒文档在嵌入空间（embedding space）中的分布，使其嵌入与恶意目标之间产生更分散的距离，从而避免被基于嵌入一致性的防御聚类或过滤。\n3. **连贯性过滤**：对生成后的文档进行连贯性筛选，以限制因令牌替换导致的可读性退化，使文档在人工或自动审查时看起来更自然。\n\n摘要未说明如何具体选择需要替换的令牌、如何生成良性/对抗草稿，也未披露连贯性过滤的阈值。攻击的最终输出是可用于注入的中毒文档。\n\n在实验部分，作者在 **七个 RAG 防御**、**三个开源权重 LLM** 和**三个基准数据集**上进行了评估，主要指标为平均攻击成功率（ASR，Attack Success Rate），并与现有依赖查询包含的攻击进行对比。摘要未说明具体防御名称、模型清单及各基准的细节。\n\n## 主要结果\n- CamoDocs 在多个防御下取得较高的平均 ASR，同时避免了查询重叠伪影（query-overlap artifacts），能够绕过简单的查询检测。\n- 对专有模型同样有效：在 GPT-5.4-mini 上平均 ASR 为 61.80%，在 Claude-Haiku-4.5 上为 55.09%。\n- 以删除/聚类为主要机制的防御（如 TrustRAG）能够降低 ASR，但会在 NeoQA 这类检索依赖基准上造成明显的效用（utility）下降，表明防御的成功伴随可用性损失。\n- 代码已公开：https://github.com/jaewonalive/CamoDocs\n\n## 为什么与兴趣相关\n该工作聚焦大模型供应链中检索环节的安全威胁，而非密码学保护推理过程。它说明：仅靠“避免查询关键词”的简单过滤并不足以防御投毒，嵌入层面的隐蔽攻击仍能奏效；同时，防御方需要在安全性与检索质量之间权衡。对部署 RAG 系统的从业者而言，这是一项需要关注的风险信号。"
+    },
+    {
+      "id": "iacr_2026/1825",
+      "iacr_id": "2026/1825",
+      "title": "Enhanced Differential-linear Cryptanalysis of Forr\\'{o} with MILP",
+      "authors": [
+        "Zhengting Li",
+        "Lin Ding",
+        "Xinhai Wang",
+        "Honglei Wang",
+        "Jiang Wan",
+        "Fan Zhang"
+      ],
+      "abstract": "ARX-based design is a major building block of modern cryptographic ciphers due to its efficiency in software. Forr\\'{o} is an ARX-based stream cipher proposed by Coutinho et al. at ASIACRYPT 2022, which was designed to provide higher security margin than the ChaCha stream cipher. In this paper, we propose a full automated MILP model called \\textit{MinForr\\'{o}}, to derive linear approximations for the Forr\\'{o} stream cipher. For the differential part, a two-stage strategy to search for single-bit differential trails with high differential correlations is presented, which helps us to find the first-ever 3-round differential trails for Forr\\'{o}. By combining the linear approximations obtained by \\textit{MinForr\\'{o}} and 3-round differential trail for Forr\\'{o}, we propose improved differential-linear distinguishers for 4-, 5-, 5.25-, 5.5-, 5.75-, 6-, 6.25- and 6.5-round Forr\\'{o} with complexities ${2^{32.44}}$, ${2^{46}}$, ${2^{50}}$, ${2^{64.32}}$, ${2^{87.12}}$, ${2^{117.92}}$, ${2^{174.92}}$ and ${2^{226.88}}$, respectively. The proposed differential-linear distinguishers for 4-, 5-, 5.25- and 5.5-round Forr\\'{o} significantly improve the existing distinguishers by factors of ${2^{4.11}}$, ${2^{83.68}}$, ${2^{127.64}}$ and ${2^{178.20}}$, respectively. To the best of our knowledge, this is the first differential-linear distinguisher for Forr\\'{o} that reaches 6.5 rounds, which is a significant advancement over the existing record of 5.5 rounds. We have implemented the differential-linear distinguishers for 4- and 5-round Forr\\'{o} on a common PC, and the experimental results confirm the correctness of these distinguishers. Furthermore, when combined with the \\textit{Probabilistic Neutral Bits} (PNB) technique, we obtain key recovery attacks on 5.5-, 6-, 6.5- and 6.75-round Forr\\'{o} with time complexities ${2^{149.20}}$, ${2^{151.84}}$, ${2^{213.49}}$ and ${2^{251.97}}$, respectively. The proposed key recovery attack on 5.5-round Forr\\'{o} significantly improves the time complexity of the existing attack by a factor of ${2^{75.84}}$. To the best of our knowledge, this is the first key recovery attack on Forr\\'{o} that reaches 6.75 rounds, which is a significant advancement over the existing record of 5.5 rounds.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T14:17:31Z",
+      "source": "IACR",
+      "url": "https://eprint.iacr.org/2026/1825",
+      "pdf_link": "https://eprint.iacr.org/2026/1825.pdf",
+      "categories": [
+        "Attacks and cryptanalysis"
+      ],
+      "updated_at": "2026-08-28T14:17:31Z",
+      "matched_terms": [],
+      "summary_en": "ARX-based design is a major building block of modern cryptographic ciphers due to its efficiency in software. Forr\\'{o} is an ARX-based stream cipher proposed by Coutinho et al. at ASIACRYPT 2022, which was designed to provide higher security margin than the ChaCha stream cipher. In this paper, we propose a full automated MILP model called \\textit{MinForr\\'{o}}, to derive linear approximations for the Forr\\'{o} stream cipher. For the differential part, a two-stage strategy to search for single-bit differential trails with high differential correlations is presented, which helps us to find the first-ever 3-round differential trails for Forr\\'{o}. By combining the linear approximations obtained by \\textit{MinForr\\'{o}} and 3-round differential trail for Forr\\'{o}, we propose improved differential-linear distinguishers for 4-, 5-, 5.25-, 5.5-, 5.75-, 6-, 6.25- and 6.5-round Forr\\'{o} with complexities ${2^{32.44}}$, ${2^{46}}$, ${2^{50}}$, ${2^{64.32}}$, ${2^{87.12}}$, ${2^{117.92}}$, ${2^{174.92}}$ and ${2^{226.88}}$, respectively. The proposed differential-linear distinguishers for 4-, 5-, 5.25- and 5.5-round Forr\\'{o} significantly improve the existing distinguishers by factors of ${2^{4.11}}$, ${2^{83.68}}$, ${2^{127.64}}$ and ${2^{178.20}}$, respectively. To the best of our knowledge, this is the first differential-linear distinguisher for Forr\\'{o} that reaches 6.5 rounds, which is a significant advancement over the existing record of 5.5 rounds. We have implemented the differential-linear distinguishers for 4- and 5-round Forr\\'{o} on a common PC, and the experimental results confirm the correctness of these distinguishers. Furthermore, when combined with the \\textit{Probabilistic Neutral Bits} (PNB) technique, we obtain key recovery attacks on 5.5-, 6-, 6.5- and 6.75-round Forr\\'{o} with time complexities ${2^{149.20}}$, ${2^{151.84}}$, ${2^{213.49}}$ and ${2^{251.97}}$, respectively. The proposed key recovery attack on 5.5-round Forr\\'{o} significantly improves the time complexity of the existing attack by a factor of ${2^{75.84}}$. To the best of our knowledge, this is the first key recovery attack on Forr\\'{o} that reaches 6.75 rounds, which is a significant advancement over the existing record of 5.5 rounds.",
+      "keywords": [],
+      "topics": [],
+      "relevance_reason_zh": "未进入兴趣宽召回，仅保留 IACR 元数据。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "not_requested",
+      "summary_zh": "",
+      "summary": ""
+    },
+    {
+      "id": "arxiv_2608.28363",
+      "arxiv_id": "2608.28363",
+      "title": "EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses",
+      "authors": [
+        "Tanmay Sah",
+        "Dolly Sah",
+        "Harshul Jain",
+        "Tanya Sah"
+      ],
+      "abstract": "LLM agents increasingly modify their own prompts, tools, middleware, resources, and execution harnesses at runtime. Such self-evolution can improve capability, but a successful mutation may leave persistent effects that cannot be safely reversed in states different from the one in which it was created. We introduce EvoUndo, a framework for representing, synthesizing, diagnosing, and independently verifying recoverability of model-generated self-modifications across counterfactual states. Across 600 unseen one-shot self-evolution tasks, we identify 197 capability-improving mutations that fail recoverability verification. Under the original recovery representation, conventional repair strategies recover 0/197 of these natural failures. Deterministic oracle analysis recovers 48/197 under the original recovery language L0, while the extended recovery calculus increases empirical oracle recovery to 191/197. A protocol-locked 2x2 grounding-by-expressivity intervention then separates two bottlenecks: exact state-address grounding increases successful recovery from 0/48 to 38/48 (79.2%) when the original language is sufficient, while extending the recovery language enables recovery on 142/143 (99.3%) failures in the oracle-defined S1 stratum. On the primary gpt-oss-120b backbone, adding exact-address diagnostics to the richer language reduces recovery to 133/143 (93.0%); a Qwen3.8-27B replication preserves the grounding and expressivity effects but not this negative interaction, indicating that the latter is model-dependent. These results indicate that reliable agent self-evolution requires co-designing verification, state grounding, witness semantics, and recovery-language expressivity rather than relying on iterative prompting alone.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T14:15:36Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28363",
+      "pdf_link": "https://arxiv.org/pdf/2608.28363",
+      "categories": [
+        "cs.AI"
+      ],
+      "matched_terms": [
+        "GPT"
+      ],
+      "summary_en": "LLM agents increasingly modify their own prompts, tools, middleware, resources, and execution harnesses at runtime. Such self-evolution can improve capability, but a successful mutation may leave persistent effects that cannot be safely reversed in states different from the one in which it was created. We introduce EvoUndo, a framework for representing, synthesizing, diagnosing, and independently verifying recoverability of model-generated self-modifications across counterfactual states. Across 600 unseen one-shot self-evolution tasks, we identify 197 capability-improving mutations that fail recoverability verification. Under the original recovery representation, conventional repair strategies recover 0/197 of these natural failures. Deterministic oracle analysis recovers 48/197 under the original recovery language L0, while the extended recovery calculus increases empirical oracle recovery to 191/197. A protocol-locked 2x2 grounding-by-expressivity intervention then separates two bottlenecks: exact state-address grounding increases successful recovery from 0/48 to 38/48 (79.2%) when the original language is sufficient, while extending the recovery language enables recovery on 142/143 (99.3%) failures in the oracle-defined S1 stratum. On the primary gpt-oss-120b backbone, adding exact-address diagnostics to the richer language reduces recovery to 133/143 (93.0%); a Qwen3.8-27B replication preserves the grounding and expressivity effects but not this negative interaction, indicating that the latter is model-dependent. These results indicate that reliable agent self-evolution requires co-designing verification, state grounding, witness semantics, and recovery-language expressivity rather than relying on iterative prompting alone.",
+      "keywords": [
+        "GPT"
+      ],
+      "topics": [
+        "LLM智能体",
+        "自我演化"
+      ],
+      "relevance_reason_zh": "论文讨论LLM智能体自我演化的可恢复性，不涉及安全推理或隐私计算。",
+      "relevance_level": "unrelated",
+      "summary_type": "metadata",
+      "summary_status": "not_requested",
+      "translation_status": "success",
+      "summary_zh": "",
+      "summary": "",
+      "title_zh": "EvoUndo：面向LLM代理执行框架的可恢复性约束自演化",
+      "abstract_zh": "LLM代理越来越多地在运行时修改自身的提示词、工具、中间件、资源和执行框架。这种自演化可以提升能力，但一次成功的变异可能会留下持久影响，在与创建该变异的状态不同的状态下，这些影响无法被安全逆转。我们引入了EvoUndo，一个用于跨反事实状态表示、综合、诊断并独立验证模型生成的自我修改之可恢复性的框架。在600个未见过的单次自演化任务中，我们识别出197个通过能力提升但未通过可恢复性验证的变异。在原始恢复表示下，传统修复策略对这些自然失败案例的修复率为0/197。确定性预言机分析在原始恢复语言L0下恢复了48/197，而扩展恢复演算将经验性预言机恢复率提高到191/197。一种协议锁定的2x2表达性-锚定干预随后分离出两个瓶颈：当原始语言充分时，精确状态地址锚定将成功恢复率从0/48提高到38/48（79.2%），而扩展恢复语言使得在预言机定义的S1层中142/143（99.3%）的失败案例得以恢复。在主要的gpt-oss-120b骨干模型上，向更丰富的语言添加精确地址诊断将恢复率降至133/143（93.0%）；Qwen3.8-27B上的复现实验保留了锚定效应和表达性效应，但未再现这种负向交互，表明后者依赖于模型。这些结果表明，可靠的代理自演化需要协同设计验证、状态锚定、见证语义和恢复语言表达性，而非仅依赖迭代式提示。"
+    },
+    {
+      "id": "arxiv_2608.28327",
+      "arxiv_id": "2608.28327",
+      "title": "Layered LLM Defenses as an Ensemble: Access Tiers, Inference Cost, and the Measured Failure Correlation Between Defense Layers",
+      "authors": [
+        "Abrar Alotaibi",
+        "Muhammad Shahid Jabbar",
+        "Sadam Al-Azani",
+        "Moataz Ahmed"
+      ],
+      "abstract": "Practitioners defend large language models (LLMs) by stacking defenses, assuming the layers compound. A stack is an ensemble, and ensembles compound only under a condition the LLM security literature recommends but never measures: the members must fail on different inputs. Two instruments make that measurable. The Adversary Access-Tier Model (AATM) grades an adversary by the access it holds, from system-only (A0) to influence over training data (A4). A cost model sorts defenses into five classes of inference-time overhead; because two classes require training weights or reading activations, they tier the defender as AATM tiers the adversary. From these we derive how a stack behaves, and the quantities a defender cares about diverge: coverage saturates within a tier, cost rises by class, false refusals accumulate as a union, and residual attack success falls multiplicatively only under independence. We measure that independence. Running one adaptive adversary against a seven-layer stack, failure correlation is positive in all fifteen measurable pairs ($φ$ from $0.30$ to $0.75$), and the joint residual exceeds the multiplicative prediction by up to $0.172$. Stratifying on behavior difficulty dissolves most of the association, so the dependence is predominantly common-cause, but it survives permutation inference, majority-vote grader labels, and externally calibrated thresholds. The same stack refuses four in five benign prompts while remaining statistically indistinguishable from its strongest single layer. The dependence is architectural rather than sampling-based: members correlate through the model they all wrap, so no wider member pool weakens it. Diversity therefore selects stack members but does not predict what an assembled stack delivers, which has to be measured end to end.",
+      "published": "2026-08-28",
+      "published_at": "2026-08-28T13:36:06Z",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.28327",
+      "pdf_link": "https://arxiv.org/pdf/2608.28327",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "matched_terms": [
+        "LLM security"
+      ],
+      "summary_en": "Practitioners defend large language models (LLMs) by stacking defenses, assuming the layers compound. A stack is an ensemble, and ensembles compound only under a condition the LLM security literature recommends but never measures: the members must fail on different inputs. Two instruments make that measurable. The Adversary Access-Tier Model (AATM) grades an adversary by the access it holds, from system-only (A0) to influence over training data (A4). A cost model sorts defenses into five classes of inference-time overhead; because two classes require training weights or reading activations, they tier the defender as AATM tiers the adversary. From these we derive how a stack behaves, and the quantities a defender cares about diverge: coverage saturates within a tier, cost rises by class, false refusals accumulate as a union, and residual attack success falls multiplicatively only under independence. We measure that independence. Running one adaptive adversary against a seven-layer stack, failure correlation is positive in all fifteen measurable pairs ($φ$ from $0.30$ to $0.75$), and the joint residual exceeds the multiplicative prediction by up to $0.172$. Stratifying on behavior difficulty dissolves most of the association, so the dependence is predominantly common-cause, but it survives permutation inference, majority-vote grader labels, and externally calibrated thresholds. The same stack refuses four in five benign prompts while remaining statistically indistinguishable from its strongest single layer. The dependence is architectural rather than sampling-based: members correlate through the model they all wrap, so no wider member pool weakens it. Diversity therefore selects stack members but does not predict what an assembled stack delivers, which has to be measured end to end.",
+      "keywords": [
+        "LLM security"
+      ],
+      "topics": [
+        "大模型安全",
+        "对抗防御",
+        "推理开销"
+      ],
+      "relevance_reason_zh": "论文研究LLM防御层的集成效应与对抗失败相关性，属于大模型安全，而非安全推理。",
+      "relevance_level": "related",
+      "summary_type": "abstract",
+      "summary_status": "success",
+      "translation_status": "not_requested",
+      "summary_zh": "### 一句话结论  \n堆叠式 LLM 防御本质是一个集成（ensemble），只有各层在不同输入上失效时才能复合增益；实测显示防御层间失败正相关（φ 在 0.30—0.75），导致堆叠收益低于乘法独立预测，并伴随严重误拒。\n\n### 问题与动机  \n实践者通过堆叠多层防御来保护大语言模型（LLM），并假设各层效果会复合叠加。但一个堆叠等价于集成，而集成的复合增益有一个关键前提：各成员必须**在不同的输入上失败**。这一条件在 LLM 安全文献中一直被推荐，却从未被实际测量。作者旨在通过可测工具量化这一前提是否成立。\n\n### 方法与技术路线  \n- **两个度量工具**：  \n  - 对手访问层级模型（AATM）按对手持有的访问权限分级，从仅系统访问（A0）到可影响训练数据（A4）。  \n  - 成本模型将防御按推理时开销分为五类；其中两类需要训练权重或读取激活（read activations），因此也将防御者按类似 AATM 的层级划分。  \n- **堆叠行为的推导**：基于上述工具，得出堆叠的性能边界：覆盖率在层级内饱和，成本按防御类别上升，错误拒绝（false refusal）以并集方式累积，而攻击成功率只有在各层独立失败时才按乘法方式下降。  \n- **独立性测量**：作者对一个七层防御堆叠运行一个自适应对抗攻击者，在全部十五个可测量的防御层对之间计算失败相关（failure correlation）。摘要未说明这七层防御的具体构成、数据集或攻击者实现细节。  \n- **稳健性分析**：为检验相关性来源，作者按行为难度分层（stratifying on behavior difficulty）、做置换推断（permutation inference）、使用多数投票评分标签和外部校准阈值进行验证。摘要未说明这些分析的具体参数设定。\n\n### 主要结果  \n- 所有十五对层之间的失败相关均为正，φ 介于 0.30 到 0.75；联合残余攻击成功率比乘法独立预测最多高出 0.172。  \n- 按行为难度分层后，大部分相关性消失，说明依赖主要是共同原因（common-cause）导致；但相关性在置换推断、多数投票评分和外部校准阈值下依然存在。  \n- 同一堆叠会拒绝五分之四的良性提示（benign prompts），但统计上与其最强单层无法区分。  \n- 依赖是架构性的而非采样性的：各层通过它们共同包装的基础模型产生关联，扩大成员池无法减弱这种依赖。\n\n### 为什么与兴趣相关  \n该研究为 LLM 防御的集成效应提供了首次可测量的实证评估：成员多样性只能用于选择堆叠组件，但不能预测组装后堆叠的实际表现，最终必须端到端测量。这提醒安全从业者，基于“层间独立失效”的乘法收益假设可能过于乐观，堆叠防御的真实误拒成本也需纳入设计考量。",
+      "summary": "### 一句话结论  \n堆叠式 LLM 防御本质是一个集成（ensemble），只有各层在不同输入上失效时才能复合增益；实测显示防御层间失败正相关（φ 在 0.30—0.75），导致堆叠收益低于乘法独立预测，并伴随严重误拒。\n\n### 问题与动机  \n实践者通过堆叠多层防御来保护大语言模型（LLM），并假设各层效果会复合叠加。但一个堆叠等价于集成，而集成的复合增益有一个关键前提：各成员必须**在不同的输入上失败**。这一条件在 LLM 安全文献中一直被推荐，却从未被实际测量。作者旨在通过可测工具量化这一前提是否成立。\n\n### 方法与技术路线  \n- **两个度量工具**：  \n  - 对手访问层级模型（AATM）按对手持有的访问权限分级，从仅系统访问（A0）到可影响训练数据（A4）。  \n  - 成本模型将防御按推理时开销分为五类；其中两类需要训练权重或读取激活（read activations），因此也将防御者按类似 AATM 的层级划分。  \n- **堆叠行为的推导**：基于上述工具，得出堆叠的性能边界：覆盖率在层级内饱和，成本按防御类别上升，错误拒绝（false refusal）以并集方式累积，而攻击成功率只有在各层独立失败时才按乘法方式下降。  \n- **独立性测量**：作者对一个七层防御堆叠运行一个自适应对抗攻击者，在全部十五个可测量的防御层对之间计算失败相关（failure correlation）。摘要未说明这七层防御的具体构成、数据集或攻击者实现细节。  \n- **稳健性分析**：为检验相关性来源，作者按行为难度分层（stratifying on behavior difficulty）、做置换推断（permutation inference）、使用多数投票评分标签和外部校准阈值进行验证。摘要未说明这些分析的具体参数设定。\n\n### 主要结果  \n- 所有十五对层之间的失败相关均为正，φ 介于 0.30 到 0.75；联合残余攻击成功率比乘法独立预测最多高出 0.172。  \n- 按行为难度分层后，大部分相关性消失，说明依赖主要是共同原因（common-cause）导致；但相关性在置换推断、多数投票评分和外部校准阈值下依然存在。  \n- 同一堆叠会拒绝五分之四的良性提示（benign prompts），但统计上与其最强单层无法区分。  \n- 依赖是架构性的而非采样性的：各层通过它们共同包装的基础模型产生关联，扩大成员池无法减弱这种依赖。\n\n### 为什么与兴趣相关  \n该研究为 LLM 防御的集成效应提供了首次可测量的实证评估：成员多样性只能用于选择堆叠组件，但不能预测组装后堆叠的实际表现，最终必须端到端测量。这提醒安全从业者，基于“层间独立失效”的乘法收益假设可能过于乐观，堆叠防御的真实误拒成本也需纳入设计考量。"
+    },
+    {
       "id": "iacr_2026/1823",
       "iacr_id": "2026/1823",
       "title": "HyperSolver: Asymptotically and Concretely Accelerating the Delfs–Galbraith Attack using Isogeny Ladders",
@@ -10405,6 +10978,6 @@
       "translation_status": "success"
     }
   ],
-  "last_updated": "2026-08-29T09:02:35.230026Z",
-  "total_count": 261
+  "last_updated": "2026-08-31T08:38:38.447734Z",
+  "total_count": 276
 }

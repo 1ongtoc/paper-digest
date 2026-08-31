@@ -4,8 +4,192 @@
     <title>安全推理论文脉搏</title>
     <link>https://1ongtoc.github.io/paper-digest</link>
     <description>IACR ePrint 全部新论文与 arXiv 宽召回论文；宽召回后 AI 判不相关的论文提供元数据翻译，相关论文提供中文导读</description>
-    <lastBuildDate>Sat, 29 Aug 2026 09:03:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 08:40:19 +0000</lastBuildDate>
     <atom:link href="https://1ongtoc.github.io/paper-digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>论白盒密码的故障注入安全性</title>
+      <link>https://eprint.iacr.org/2026/1833</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1833</guid>
+      <description>英文原题：On the Fault Injection Security of White-box Ciphers
+
+白盒安全设置假设一个极其强大的对手，能够完全查看和控制软件实现及内部计算。基于泄漏的攻击通过本地被动攻击者（例如恶意软件）提取秘密信息，并将其传输到远程服务器。然而，能够在白盒设置中执行故障注入的主动攻击者受到的关注有限，尤其是在对称密钥设置中。在本文中，我们首次对白盒设置中的主动纯数据攻击者进行正式研究。此类攻击者保留实现的控制流，但破坏有限数量的密钥嵌入查找表条目，从而能够精确且可重复地操纵表值。与受带宽和防火墙存在性约束的基于泄漏的攻击不同，此类故障攻击可以完全在本地运行。我们关注一种纯数据篡改攻击者，其保留白盒实现的控制流，但破坏有限数量的密钥嵌入查找表条目。即使在此种保持隐蔽性的限制下，攻击者仍可在密码学上削弱实现，并使错误密文显著更容易被解密。我们通过定义一个新的安全概念，并研究其对当代基于表的白盒实现的影响，来形式化此类主动攻击者。我们的分析揭示了两种主要设计范式之间的结构性差异：基于Feistel的白盒密码似乎比基于SPN的设计更容易受到故障注入的影响。最后，我们提出一种基于软件的故障检测机制，能够以高概率检测故障注入，从而增强韧性。我们提供了对基于SPN的密码WEM（同样的分析也适用于其他基于SPN的密码，如SPNbox）以及两种基于Feistel的密码SPACE和Galaxy的详细分析。我们的分析表明，在我们的基于故障的安全设置下，SPACE和Galaxy比WEM脆弱得多。具体而言，我们表明WEM在所有对抗模型下均实现高安全性，而当攻击者可以选择故障位置和值并破坏多达四分之一实现表条目时，SPACE和Galaxy实例可以以非常高的消息恢复概率 $2^{-8}$ 被攻击。</description>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+      <category>lookup table</category>
+    </item>
+    <item>
+      <title>Universally Composable Hybrid PAKE Secure Against Harvest-Now-Decrypt-Later Attacks</title>
+      <link>https://eprint.iacr.org/2026/1832</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1832</guid>
+      <description>We present a hybrid password-authenticated key exchange (PAKE) protocol that is secure against harvest-now-decrypt-later (HNDL) attacks by quantum adversaries, and is universally composable under the parallel composition framework of Lyu and Liu (EUROCRYPT 2025). Existing hybrid PAKE constructions combine a classical PAKE with a post-quantum (PQ) PAKE, with the overall security intended to rely on the stronger of the two. However, identifying which PAKE is stronger is non-trivial, given the limited maturity of post-quantum PAKE designs. Recognizing that the immediate quantum threat is passive, we propose a different hybrid compiler: rather than combining two PAKEs, we encapsulate a classical PAKE within a standard post-quantum Key Encapsulation Mechanism (KEM). This modular separation avoids the fragility of post-quantum password handling while neutralizing HNDL attacks. Our compiler works with any two-pass or three-pass PAKEs. As a concrete instantiation, we construct a three-pass protocol that combines J-PAKE and a post-quantum KEM. We also implement the resulting protocol and provide performance results demonstrating that the hybrid construction remains practical, with the complete handshake executing in $2.81\text{ ms}$. This construction has the distinctive advantage that it does not require any ideal cipher, (constant-time) hash-to-curve, or trusted setup assumptions. Within the Lyu-Liu framework, we show that J-PAKE satisfies the notion of a Full DH-type PAKE. We model the KEM as a password-independent Simulatable DH-type component satisfying the minimal simulation properties required for parallel composition. To capture the prospective quantum threat, we formalize a stronger variant of the standard HNDL threat model—where the quantum adversary is explicitly granted the plaintext password—and prove that our protocol achieves Session Key Security and Post-Quantum Forward Secrecy. Our construction relies solely on standardized and widely deployed primitives, yielding a hybrid PAKE that is UC-secure, efficient, and well-suited for real-world deployment during the post-quantum transition.</description>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Silent-Share: Decoupling Hidden Threshold Matching from Pairing Operations via Group-Valued Oblivious Key-Value Stores</title>
+      <link>https://eprint.iacr.org/2026/1831</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1831</guid>
+      <description>Matchmaking encryption (ME) enables bilateral access control with private policies, but existing pairing-based constructions tie receiver-side authorization cost to the policy size. This is especially problematic when one party holds a large hidden policy while the other holds only a small attribute set. We present Silent-Share, a bilateral hidden-policy threshold access-control protocol that decouples policy representation from pairing-based authorization. The construction combines a one-sided hidden-threshold policy-based key encapsulation mechanism (PB-KEM) with a sparse group-valued oblivious key-value store (GOKVS). The GOKVS compactly encodes policy-dependent group elements, so a receiver holding attribute set $\mathcal{A}$ performs exactly $2|\mathcal{A}|$ pairings, independent of the policy size $|\mathcal{P}|$ and threshold $d$. Total decapsulation additionally incurs a hidden-threshold reconstruction cost, characterized separately. Two independent one-sided instances are composed and bound with AES-GCM to realize bilateral authorization. We prove one-sided KEM confidentiality and policy hiding in the random-oracle model under a hidden common exponent assumption, and extend these guarantees to the bilateral composition. Our implementation on BN254 shows that, when the correct $d$-subset is provided, one-sided decapsulation for $|\mathcal{A}|=10$ takes about $394$ ms, dominated by pairing operations. The pairing-based authorization layer remains flat as $|\mathcal{P}|$ grows from $50$ to $800$, confirming the policy-size independence. The hidden-threshold reconstruction cost is reported separately and can dominate when $|\mathcal{A}|$ is large. Encapsulation is approximately $2$--$3\times$ faster than fuzzy matchmaking encryption across the tested parameter range.</description>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>The Extended Wedge Attack</title>
+      <link>https://eprint.iacr.org/2026/1830</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1830</guid>
+      <description>The wedge attack of Ran (EUROCRYPT 2026) recovers the secret oil space of a UOV public key over fields of characteristic two by exploiting the fact that the polar forms of the public map are alternating. It has since been generalized in several directions, each carrying its own algebraic tools, e.g., Jin et al. (PKC 2026). Working directly with the polynomials of an oil and vinegar map, we give a simpler description of the attack, based on a dual decomposition of oil-vinegar polynomials, and we recover the original wedge attack and its odd-characteristic analogue as special cases. This framework leads to a generalization, which we call the extended wedge attack. We identify two explicit conditions on the parameters that guarantee that the attack terminates with the recovery of the secret space. We also prove that the matrix of the extended wedge attack is permutation equivalent to the truncated Macaulay matrix in the attack by Furue-Ikematsu (CRYPTO 2026).</description>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Decomposed LWE is Equivalent to Succinct LWE</title>
+      <link>https://eprint.iacr.org/2026/1829</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1829</guid>
+      <description>We prove that the Succinct Learning with Errors assumption, introduced by Wee (CRYPTO '24), and the Decomposed Learning with Errors assumption, introduced by Abram, Malavolta, and Roy (CRYPTO '25), are equivalent under appropriate parameter settings. Abram, Malavolta, and Roy proved that Succinct LWE implies Decomposed LWE. We establish the converse implication, showing that Decomposed LWE implies Succinct LWE.</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>AcrossVAM1.0：面向文本辅助机器人视频预测的粒子世界建模</title>
+      <link>https://arxiv.org/abs/2608.28491</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28491</guid>
+      <description>英文原题：AcrossVAM1.0: Particle World Modeling for Text-Assisted Robot Video Prediction
+
+预测机器人视频需要精确的运动推理和保持高频外观，然而整体像素模型将这两个目标纠缠在一起，并且常常将其进展隐藏在强大的最后一帧基线之后。我们提出了AcrossVAM1.0，一个轻量级的、文本辅助的视频动作模型，它将未来预测分解为以对象为中心的运动和密集外观。一个冻结的SAM3-DLP编解码器将四个上下文帧分解为机器人、手臂和夹爪的语义粒子，以及一个背景潜变量。一个0.28M参数的时空Transformer对齐粒子身份，向前滚动其状态，并通过FiLM由冻结的OpenCLIP指令嵌入进行调制。一个因果双流解码器将粒子渲染的运动与仅从最后观测帧编码的外观相结合；一个残差细化器和学习到的递送掩码生成五个未来帧，而无需访问未来外观。在我们基于多样真实机器人轨迹构建的VRS基准上，粒子动力学相对于持久性将轨迹误差降低了21.0%。在三个递送掩码种子下，AcrossVAM1.0将未来帧PSNR/SSIM从19.97/0.796提高到20.573/0.8004，而原始粒子生成将运动区域PSNR从11.89提高到13.23。交付的模型在LPIPS上尚未超越持久性，并且正确语言与打乱语言相比仅将轨迹误差改变了2.8–3.1%。我们报告了这些局限性，并附带了oracle、阴性对照、多种子和逐机器人分析。结果表明，显式粒子动力学是机器人视频预测的一种有前景的低维接口，而鲁棒的语言接地和外观递送仍然是主要的开放挑战。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>ARC-CT：面向三维胸部CT的解剖路由对比视觉-语言学习</title>
+      <link>https://arxiv.org/abs/2608.28455</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28455</guid>
+      <description>英文原题：ARC-CT: Anatomy-Routed Contrastive Vision-Language Learning for 3D Chest CT
+
+对比视觉-语言学习利用配对的胸部CT体数据和放射学报告来学习异常分类器，无需人工标注标签。然而，胸部CT的两个特征对传统的全局对比学习提出了挑战。首先，许多关键异常是微小或解剖定位的，将整个体数据池化为单一嵌入可能会稀释其视觉证据。其次，标准的对比目标将批次中的每一个其他扫描视为负样本。由于许多胸部CT共享异常，这一目标会错误地将共阳性配对推开。我们提出了用于三维胸部CT的解剖路由对比学习（ARC-CT），这是一个区域感知框架，仅使用由LLM从报告中提取的标签来解决这些局限性，无需人工标注或边界框。ARC-CT结合了三个组成部分：（1）AnatomyQFormer，通过由自动生成的器官掩膜约束的查询来定位证据；（2）label-Jaccard软InfoNCE目标，将标准one-hot目标与每对配对的标签集重叠相结合，从而减少共享临床发现的研究之间的假阴性惩罚；（3）器官级对齐损失，将掩膜池化的视觉特征与通过大语言模型离线提取的器官特定报告文本连接起来。ARC-CT使用紧凑的3D ResNet-18主干在18种异常上实现了0.86的无掩膜宏平均AUC。总体而言，ARC-CT优于可比的高效基线和几个更大的Transformer模型。我们的代码和权重可在https://github.com/arc-ct/arc-ct获取。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>transformer</category>
+    </item>
+    <item>
+      <title>WeaveTLS: High-Throughput Cross-Connection ML-DSA Authentication in Mutual TLS</title>
+      <link>https://eprint.iacr.org/2026/1828</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1828</guid>
+      <description>Mutual TLS (mTLS) authenticates both peers and therefore incurs post-quantum signature costs on every connection. Concurrent handshakes expose independent ML-DSA operations, but executing them jointly is difficult: signing is rejection-divergent, verification uses heterogeneous keys, and synchronous TLS APIs expose authentication work one connection at a time. We present WeaveTLS, a wire-transparent architecture that executes ML-DSA authentication across concurrent TLS connections. Its primitive interface combines rejection-aware slot refill with per-request expanded-key handles, supporting both unrelated client keys and shared issuer keys. A stackless OpenSSL continuation lets an nginx worker suspend authentication, expose work from other connections, and execute compatible operations through optimized single-request, four-request, or eight-request AVX-512 kernels without fibers or cross-thread handoff. WeaveTLS preserves the TLS authentication barrier, certificate validation, and wire protocol. On an AMD Ryzen 9 9950X3D, WeaveTLS improves one-core nginx mTLS throughput by 2.81-4.31$\times$ over OpenSSL's default ML-DSA path and by 2.19-3.29$\times$ over a synchronous reference-C control in the same provider across ML-DSA-44/65/87. At the primitive boundary, expanded-key eight-request verification is 1.65-2.23$\times$ faster than matched cached AVX2, and rejection-aware refill makes ML-DSA-65 signing 1.90$\times$ faster than otherwise identical lockstep scheduling. Cohort publication also weakens client-visible rejection timing under load, reducing attempt-count/latency correlation to 0.063 at concurrency 16 and 0.008 at 64; singleton execution retains the signal.</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>AVXPoS: Reducing Consensus Verification Cost in the Ethereum Proof-of-Stake Client</title>
+      <link>https://eprint.iacr.org/2026/1827</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1827</guid>
+      <description>Ethereum Proof-of-Stake (PoS) clients must verify large volumes of Boneh--Lynn--Shacham (BLS) signatures for attestations, sync-committee messages, and other consensus-critical objects within fixed slot deadlines. This recurring cost competes with state transition, fork choice, and message propagation for client CPU time, so reducing it increases the verification headroom available under bursty load. Prior cryptographic-engineering work has shown that SIMD can substantially accelerate BLS verification kernels, but these gains do not automatically survive client software boundaries, runtime scheduling, and irregular verification ranges. We present AVXPoS, a client-aware batching framework for BLS verification in the Prysm Ethereum PoS client. AVXPoS treats batched verification as a client-level systems problem: it preserves Prysm's verification semantics while reorganizing protocol-shaped requests into native batched states that expose SIMD parallelism across API, worker, and native-backend boundaries. We instantiate AVXPoS with an AVX-512 backend for BLS12-381, combining Go-side range formation with C-side width-adaptive dispatch. On a resource-constrained two-core Intel host, AVXPoS gains $1.44$--$2.10\times$ over Prysm's production \texttt{blst} backend at selected small batch sizes that bracket the post-aggregation $p50/p95/p99$ batch-size quantiles of an all-subnets steady-state mainnet stress trace, and reaches up to $3.18\times$ in controlled capacity sweeps. On a 16-core AMD host, a production checkpoint-backfill verifier at Ethereum's 128-block request cap improves by $1.81\times$. Cross-platform results indicate that the relative speedup depends in part on Prysm's worker budget, because worker partitioning determines how much SIMD parallelism remains within each native range.</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>Threshold Encryption with Internally Motivated Corruptions</title>
+      <link>https://eprint.iacr.org/2026/1826</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1826</guid>
+      <description>In recent years, threshold encryption has gained a lot of interest, particularly due to its potential use in encrypted mempools in blockchains. Standard security models allow the adversary to corrupt parties either statically (i.e., fixed at the onset of the game) or adaptively (i.e., via an oracle one-by-one, depending on keys and ciphertexts). In this work, we observe that neither of these models captures the case in which a party decides to become corrupted based on secret information. For instance, in an encrypted mempool application with randomly rotating committees, an adversary may set up a smart contract that pays parties who reveal their decryption share, and parties decide whether to claim it based on, say, whether they are on the next committee. Such corruptions are not fixed in advance, but they are also not chosen solely by an external adversary based on public information. We initiate the formal study of such internally motivated corruptions and partial decryptions. We introduce a security framework in which each party's corruption behavior may depend on its local secret state. That is, on a corruption, the adversary can submit a motivation function and all parties for which this motivation function outputs $1$ (on their secret information) are corrupted. A similar internally motivated behavior is allowed for releasing partial decryptions. We then study threshold encryption under this stronger notion of security. In particular, we show: - Negative Results: We show that for certain classes of motivation functions and number of queries, no threshold encryption scheme can satisfy security. We also show a concrete practical attack with internally motivated corruptions against a scheme that has been proven secure with standard corruptions. - Positive Results: We give two efficient classes of constructions from the (Bilinear) Diffie-Hellman assumptions. The first is secure when partial decryptions on the challenge ciphertext are internally motivated. The second additionally allows internally motivated corruptions.</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>CultureConverse：面向东亚和东南亚文化情境协助的多语言多轮模拟框架</title>
+      <link>https://arxiv.org/abs/2608.28405</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28405</guid>
+      <description>英文原题：CultureConverse: A Multilingual Multi-turn Simulation Harness for Culturally Grounded Assistance in East and Southeast Asia
+
+当前对大型语言模型（LLM）的文化评估通常通过多项选择题（MCQ）将文化简化为单轮事实性回忆，未能捕捉到一个常见使用场景：用户在多轮交互中于文化情境下寻求实用帮助。我们提出了CultureConverse，一个可扩展的多语言模拟与评估框架，用于文化情境下的助手对话，覆盖东亚和东南亚10个地区、58个亚群体身份和7个领域。每个模拟和评估的会话都会产生一个带评分的交互，其中助手协助用户并从部分信息中推断文化约束。由此生成的CultureConverse-DS数据集包含14,610个基准（评估）会话和274,295个预言机引导（黄金模式）对话。在我们对18个模型的基准评估中，GPT-5 mini实现了最高的协助质量。人工标注实验表明，我们的评估框架足以作为人工判断的替代。在27,860个高质量CultureConverse-DS样本上进行微调后，性能提升改善了域内协助，并跨域迁移至文化MCQ和安全分类基准。我们发布了该框架、两个数据划分以及评判提示词，以支持文化能力的交互式评估。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>CamoDocs: A Poisoning Attack Against Retrieval-Augmented Language Models Using Camouflaged Documents</title>
+      <link>https://arxiv.org/abs/2608.28389</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28389</guid>
+      <description>## 一句话结论
+本文提出一种名为 CamoDocs 的检索增强生成（RAG）数据投毒攻击，通过避免直接包含目标查询、将恶意文档伪装为良性内容，在多种防御下实现高攻击成功率，并揭示现有防御可能以显著效用下降为代价。
+
+## 问题与动机
+RAG 系统通过外部文档增强大语言模型（LLM）能力，但公共或用户可编辑的来源使其面临数据投毒风险：攻击者可注入恶意文档，把模型输出引导到特定目标答案。已有投毒攻击常依赖“查询包含”（query inclusion）——把目标查询写进中毒文档以提升被检索概率，但这会在词法空间和嵌入空间留下明显伪影，容易被简单过滤方法识别。因此，需要一种更隐蔽的攻击方式来评估 RAG 系统的真实脆弱性。
+
+## 方法与技术路线
+CamoDocs 的核心设定是：攻击者向 RAG 的知识库中注入恶意文档，目标是在不直接出现目标查询的前提下，使恶意文档在检索时被命中并促使模型给出攻击者期望的输出。
+
+实现上，CamoDocs 由三个关键环节构成，依次解决“内容伪装”“检索偏向”和“可读性保持”三个子问题：
+
+1. **分块合成**：将合成的良性草稿与对抗草稿分别切分成块（chunk）。良性块用于提供与正常内容相近的外表，对抗草稿则承载攻击意图；两块内容被组合以形成最终注入文档。
+2. **分散令牌注入**：在良性块的选定位置，用“分散令牌”（dispersion tokens）替换原始令牌。这些令牌的作用是改变中毒文档在嵌入空间（embedding space）中的分布，使其嵌入与恶意目标之间产生更分散的距离，从而避免被基于嵌入一致性的防御聚类或过滤。
+3. **连贯性过滤**：对生成后的文档进行连贯性筛选，以限制因令牌替换导致的可读性退化，使文档在人工或自动审查时看起来更自然。
+
+摘要未说明如何具体选择需要替换的令牌、如何生成良性/对抗草稿，也未披露连贯性过滤的阈值。攻击的最终输出是可用于注入的中毒文档。
+
+在实验部分，作者在 **七个 RAG 防御**、**三个开源权重 LLM** 和**三个基准数据集**上进行了评估，主要指标为平均攻击成功率（ASR，Attack Success Rate），并与现有依赖查询包含的攻击进行对比。摘要未说明具体防御名称、模型清单及各基准的细节。
+
+## 主要结果
+- CamoDocs 在多个防御下取得较高的平均 ASR，同时避免了查询重叠伪影（query-overlap artifacts），能够绕过简单的查询检测。
+- 对专有模型同样有效：在 GPT-5.4-mini 上平均 ASR 为 61.80%，在 Claude-Haiku-4.5 上为 55.09%。
+- 以删除/聚类为主要机制的防御（如 TrustRAG）能够降低 ASR，但会在 NeoQA 这类检索依赖基准上造成明显的效用（utility）下降，表明防御的成功伴随可用性损失。
+- 代码已公开：https://github.com/jaewonalive/CamoDocs
+
+## 为什么与兴趣相关
+该工作聚焦大模型供应链中检索环节的安全威胁，而非密码学保护推理过程。它说明：仅靠“避免查询关键词”的简单过滤并不足以防御投毒，嵌入层面的隐蔽攻击仍能奏效；同时，防御方需要在安全性与检索质量之间权衡。对部署 RAG 系统的从业者而言，这是一项需要关注的风险信号。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Enhanced Differential-linear Cryptanalysis of Forr\'{o} with MILP</title>
+      <link>https://eprint.iacr.org/2026/1825</link>
+      <guid isPermaLink="true">https://eprint.iacr.org/2026/1825</guid>
+      <description>ARX-based design is a major building block of modern cryptographic ciphers due to its efficiency in software. Forr\'{o} is an ARX-based stream cipher proposed by Coutinho et al. at ASIACRYPT 2022, which was designed to provide higher security margin than the ChaCha stream cipher. In this paper, we propose a full automated MILP model called \textit{MinForr\'{o}}, to derive linear approximations for the Forr\'{o} stream cipher. For the differential part, a two-stage strategy to search for single-bit differential trails with high differential correlations is presented, which helps us to find the first-ever 3-round differential trails for Forr\'{o}. By combining the linear approximations obtained by \textit{MinForr\'{o}} and 3-round differential trail for Forr\'{o}, we propose improved differential-linear distinguishers for 4-, 5-, 5.25-, 5.5-, 5.75-, 6-, 6.25- and 6.5-round Forr\'{o} with complexities ${2^{32.44}}$, ${2^{46}}$, ${2^{50}}$, ${2^{64.32}}$, ${2^{87.12}}$, ${2^{117.92}}$, ${2^{174.92}}$ and ${2^{226.88}}$, respectively. The proposed differential-linear distinguishers for 4-, 5-, 5.25- and 5.5-round Forr\'{o} significantly improve the existing distinguishers by factors of ${2^{4.11}}$, ${2^{83.68}}$, ${2^{127.64}}$ and ${2^{178.20}}$, respectively. To the best of our knowledge, this is the first differential-linear distinguisher for Forr\'{o} that reaches 6.5 rounds, which is a significant advancement over the existing record of 5.5 rounds. We have implemented the differential-linear distinguishers for 4- and 5-round Forr\'{o} on a common PC, and the experimental results confirm the correctness of these distinguishers. Furthermore, when combined with the \textit{Probabilistic Neutral Bits} (PNB) technique, we obtain key recovery attacks on 5.5-, 6-, 6.5- and 6.75-round Forr\'{o} with time complexities ${2^{149.20}}$, ${2^{151.84}}$, ${2^{213.49}}$ and ${2^{251.97}}$, respectively. The proposed key recovery attack on 5.5-round Forr\'{o} significantly improves the time complexity of the existing attack by a factor of ${2^{75.84}}$. To the best of our knowledge, this is the first key recovery attack on Forr\'{o} that reaches 6.75 rounds, which is a significant advancement over the existing record of 5.5 rounds.</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>IACR</category>
+    </item>
+    <item>
+      <title>EvoUndo：面向LLM代理执行框架的可恢复性约束自演化</title>
+      <link>https://arxiv.org/abs/2608.28363</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28363</guid>
+      <description>英文原题：EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses
+
+LLM代理越来越多地在运行时修改自身的提示词、工具、中间件、资源和执行框架。这种自演化可以提升能力，但一次成功的变异可能会留下持久影响，在与创建该变异的状态不同的状态下，这些影响无法被安全逆转。我们引入了EvoUndo，一个用于跨反事实状态表示、综合、诊断并独立验证模型生成的自我修改之可恢复性的框架。在600个未见过的单次自演化任务中，我们识别出197个通过能力提升但未通过可恢复性验证的变异。在原始恢复表示下，传统修复策略对这些自然失败案例的修复率为0/197。确定性预言机分析在原始恢复语言L0下恢复了48/197，而扩展恢复演算将经验性预言机恢复率提高到191/197。一种协议锁定的2x2表达性-锚定干预随后分离出两个瓶颈：当原始语言充分时，精确状态地址锚定将成功恢复率从0/48提高到38/48（79.2%），而扩展恢复语言使得在预言机定义的S1层中142/143（99.3%）的失败案例得以恢复。在主要的gpt-oss-120b骨干模型上，向更丰富的语言添加精确地址诊断将恢复率降至133/143（93.0%）；Qwen3.8-27B上的复现实验保留了锚定效应和表达性效应，但未再现这种负向交互，表明后者依赖于模型。这些结果表明，可靠的代理自演化需要协同设计验证、状态锚定、见证语义和恢复语言表达性，而非仅依赖迭代式提示。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>GPT</category>
+    </item>
+    <item>
+      <title>Layered LLM Defenses as an Ensemble: Access Tiers, Inference Cost, and the Measured Failure Correlation Between Defense Layers</title>
+      <link>https://arxiv.org/abs/2608.28327</link>
+      <guid isPermaLink="true">https://arxiv.org/abs/2608.28327</guid>
+      <description>### 一句话结论  
+堆叠式 LLM 防御本质是一个集成（ensemble），只有各层在不同输入上失效时才能复合增益；实测显示防御层间失败正相关（φ 在 0.30—0.75），导致堆叠收益低于乘法独立预测，并伴随严重误拒。
+
+### 问题与动机  
+实践者通过堆叠多层防御来保护大语言模型（LLM），并假设各层效果会复合叠加。但一个堆叠等价于集成，而集成的复合增益有一个关键前提：各成员必须**在不同的输入上失败**。这一条件在 LLM 安全文献中一直被推荐，却从未被实际测量。作者旨在通过可测工具量化这一前提是否成立。
+
+### 方法与技术路线  
+- **两个度量工具**：  
+  - 对手访问层级模型（AATM）按对手持有的访问权限分级，从仅系统访问（A0）到可影响训练数据（A4）。  
+  - 成本模型将防御按推理时开销分为五类；其中两类需要训练权重或读取激活（read activations），因此也将防御者按类似 AATM 的层级划分。  
+- **堆叠行为的推导**：基于上述工具，得出堆叠的性能边界：覆盖率在层级内饱和，成本按防御类别上升，错误拒绝（false refusal）以并集方式累积，而攻击成功率只有在各层独立失败时才按乘法方式下降。  
+- **独立性测量**：作者对一个七层防御堆叠运行一个自适应对抗攻击者，在全部十五个可测量的防御层对之间计算失败相关（failure correlation）。摘要未说明这七层防御的具体构成、数据集或攻击者实现细节。  
+- **稳健性分析**：为检验相关性来源，作者按行为难度分层（stratifying on behavior difficulty）、做置换推断（permutation inference）、使用多数投票评分标签和外部校准阈值进行验证。摘要未说明这些分析的具体参数设定。
+
+### 主要结果  
+- 所有十五对层之间的失败相关均为正，φ 介于 0.30 到 0.75；联合残余攻击成功率比乘法独立预测最多高出 0.172。  
+- 按行为难度分层后，大部分相关性消失，说明依赖主要是共同原因（common-cause）导致；但相关性在置换推断、多数投票评分和外部校准阈值下依然存在。  
+- 同一堆叠会拒绝五分之四的良性提示（benign prompts），但统计上与其最强单层无法区分。  
+- 依赖是架构性的而非采样性的：各层通过它们共同包装的基础模型产生关联，扩大成员池无法减弱这种依赖。
+
+### 为什么与兴趣相关  
+该研究为 LLM 防御的集成效应提供了首次可测量的实证评估：成员多样性只能用于选择堆叠组件，但不能预测组装后堆叠的实际表现，最终必须端到端测量。这提醒安全从业者，基于“层间独立失效”的乘法收益假设可能过于乐观，堆叠防御的真实误拒成本也需纳入设计考量。</description>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <category>arXiv</category>
+      <category>LLM security</category>
+    </item>
     <item>
       <title>HyperSolver: Asymptotically and Concretely Accelerating the Delfs–Galbraith Attack using Isogeny Ladders</title>
       <link>https://eprint.iacr.org/2026/1823</link>
@@ -1140,190 +1324,6 @@ TEE-X 的安全论证是结构性的：整个模型（包括权重和中间张�
       <category>IACR</category>
       <category>homomorphic encryption</category>
       <category>fully homomorphic encryption</category>
-    </item>
-    <item>
-      <title>Faster Post-Quantum zkSNARK Provers Using the LCH Polynomial Basis</title>
-      <link>https://eprint.iacr.org/2026/1784</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1784</guid>
-      <description>Univariate-polynomial interactive oracle proofs (IOPs) over binary extension fields $\mathbb{F}_{2^m}$ underpin a class of plausibly post-quantum zkSNARKs, but rely heavily on polynomial arithmetic, where large-domain evaluation and division by subspace vanishing polynomials are the dominant prover costs. General-basis additive FFTs, such as Gao--Mateer and Lin-Chung-Han (LCH), accelerate the evaluation but impose a basis-conversion stage costing $O(n (\log n)^2)$ field additions and $O(n \log n)$ field multiplications that dominates in practice. To eliminate basis conversion entirely, we introduce a divide-and-conquer algorithm for polynomial division by vanishing polynomials that operates directly in the LCH polynomial basis, for arbitrary $\mathbb{F}_2$-basis elements, achieving optimal $O(n \log n)$ complexity. In the LCH polynomial basis, multiplying a vanishing polynomial by the random blinding polynomial reduces to appending random field elements, eliminating the multiplication entirely. We integrate native LCH-basis arithmetic and auxiliary optimizations across all phases of the Aurora IOP. Benchmarks on Preon (a NIST PQC Round-1 signature scheme candidate built on Aurora) show end-to-end signing speedups of $5.0\times$ for Preon-128A and $5.8\times$ for Preon-256C, with the polynomial transform alone $12.6$--$17.9\times$ faster.</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>Compiling Sparse Keys for Bootstrapping FHEs: Algorithms, Hardware Acceleration, and Beyond</title>
-      <link>https://eprint.iacr.org/2026/1783</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1783</guid>
-      <description>Blind rotation is the dominant computational bottleneck in bootstrapping for bitwise FHE schemes such as TFHE. Existing constructions typically evaluate $O(n)$ sequential external products for an LWE secret of dimension $n$, incurring substantial latency and a large number of NTT/iNTT operations. In this work, we present a new framework for NTRU-based bootstrapping that reduces the sequential complexity of blind rotation for sparse binary LWE secrets. Inspired by Jain et al. (CRYPTO 2026), we use Cuckoo hashing to transform an $n$-dimensional binary LWE secret of Hamming weight $h$ into extended buckets of one-hot representation. This structured representation reduces the sequential external products from $O(n)$ to $O(h)$ in blind rotation. We also design a modulus-switching method tailored to sparse secrets. We further explore an NTT-free variant that eliminates all online NTT/iNTT operations during blind rotation while supporting gate bootstrapping with lower parallel depth, offering a potentially useful building block for hardware-friendly FHE implementations. Empirically, we achieve state-of-the-art bootstrapping performance on both CPUs and GPUs. At comparable decryption failure rates and on a single CPU thread with AVX-512, our implementation executes Boolean gate, 4-bit, and 6-bit bootstrapping in $0.83$, $1.75$, and $2.65$\,ms, outperforming TFHE-rs by $3.31\times$, $4.18\times$, and $20.47\times$, respectively. On an RTX~4090 GPU, we attain a throughput of $154{,}739$ gate bootstraps per second, corresponding to an amortized time of $6.46\,\mu\mathrm{s}$, and speedups of $86.7\times$ over our CPU result and $13.6\times$ over VeloFHE (Shen et al., TCHES 2025). As a concrete application, we develop the first NTRU-based 8-bit FHE instruction set, achieving up to over $10\times$ speedup over Trama et al. (TCHES 2025) with over $100\times$ smaller key size.</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>CONTRAMEM：从对比多模型轨迹学习自进化程序性记忆</title>
-      <link>https://arxiv.org/abs/2608.22533</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22533</guid>
-      <description>英文原题：CONTRAMEM: Learning Self-Evolving Procedural Memory from Contrasting Multi-Model Trajectories
-
-自主计算机使用智能体越来越多地应用于需要协调应用调用、持续状态跟踪和验证器敏感写入的长时程任务，但它们仍然容易出现程序性失败：误读应用状态、工具语义或任务进度。程序性记忆有望带来更一致的决策和更少的冗余探索，但在不进行模型训练的情况下构建高质量记忆仍然具有挑战性。我们提出CONTRAMEM，一种源灵活、无需训练的自进化程序性记忆框架，它将同任务结果差异视为监督信号：正确性、效率、恢复和失败模式上的差异揭示了与结果相关的程序性区别，并将其提炼为紧凑的应用级功能卡和任务级技能卡库，该库通过局部策展而非追加式累积或全库重写来实现进化。在保留的GAIA2/ARE计算机使用任务上，CONTRAMEM将三种源模型目标的成功率提高了一倍以上（从26.2%提高到55.3%），且各模型均有一致提升（GPT-5.5：27.5到61.0；Claude Sonnet 4.6：28.0到52.5；DeepSeek V4 Pro：23.0到52.5）。同一记忆库原封不动地迁移到未见过的Qwen3.7 Plus（18.5到35.5），表明其包含的是可迁移的程序性知识而非特定于模型的行为。同样的构建方式原封不动地迁移到AppWorld，在公开测试的两个划分上，对所有三个中端智能体均优于无记忆和其自身的单源自记忆变体。在匹配的轨迹预算下，异构多模型轨迹比自模型或多轮同模型记忆产生更强的记忆：优势来自对比性行为多样性，而非更强的源智能体或更多采样。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>可解释统计特征工程用于短脉冲ADITYA托卡马克早期破裂预测</title>
-      <link>https://arxiv.org/abs/2608.22515</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22515</guid>
-      <description>英文原题：Interpretable statistical feature engineering for early disruption prediction in the short pulse ADITYA tokamak
-
-可靠的早期破裂预测对于托卡马克的安全运行和实时控制至关重要。然而，基于机器学习预测框架主要针对中长脉冲装置，对短脉冲托卡马克的关注相对有限，因为这类装置可用的预警时间本质上受到限制。在本工作中，开发了一个可解释的机器学习框架，用于在欧姆变压器电源的负变换器激活之前，利用初始等离子体演化信息对ADITYA中的破裂进行特征工程和早期预测。从常规可用的等离子体诊断中提取了包含均值、方差、偏度、峰度和小波能量熵的统计描述符，覆盖不同的运行时间窗口。采用基于决策树的特征选择来识别具有物理意义的破裂前兆并降低特征维度。这些选定的特征用于训练随机森林分类器。所提出的框架在不同分析窗口上实现了稳定的预测性能，在0-35 ms和0-40 ms窗口下最大ROC-AUC为0.87。使用缩减后的特征集获得了可比的、在某些情况下甚至更好的性能，表明选定的统计描述符保留了破裂预测所需的基本信息。所提出的方法为短脉冲托卡马克中的实时破裂预测提供了一个可解释且计算高效的框架，并确立了精心设计的统计描述符可以有效替代原始时间序列输入用于早期破裂预测，从而为类似ADITYA和ADITYA-U的短脉冲托卡马克中的实时等离子体控制提供了一条实用路径。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>EA Codes Approaching Singleton Bound (with Application to Field-Agnostic SNARKs)</title>
-      <link>https://eprint.iacr.org/2026/1782</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1782</guid>
-      <description>SNARKs based on error-correcting codes require codes that simultaneously support fast encoding and large relative distance. Reed--Solomon codes achieve the optimal rate--distance tradeoff given by the Singleton bound, but their fast encoding relies on FFT-friendly fields, limiting their applicability to field-agnostic constructions. In this work, we revisit expand--accumulate (EA) codes, a simple family of linear codes that admit efficient encoding over arbitrary fields. We prove strong distance guarantees for EA codes whose sparse expansion matrix is sampled from the exact-weight ensemble. Over sufficiently large finite fields, we show that these codes achieve a rate--distance tradeoff arbitrarily close to the Singleton bound with high probability, resolving conjectures from prior work. Building on these results, we construct \textsf{Flare}, a new field-agnostic polynomial commitment scheme based on EA codes. Our construction develops an efficient IOP for the constrained relation of EA codes and combines it with code switching and random linear folding for interleaved codes. For statements of size $M$, \textsf{Flare} achieves $O(M\log M)$ prover time and $O(\log^2 M)$ proof size, improving upon the $O(\sqrt{M})$ proof size of prior constructions based on EA codes.</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>面向大语言模型可靠决策的声明级置信度校准</title>
-      <link>https://arxiv.org/abs/2608.22483</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22483</guid>
-      <description>英文原题：Claim-Level Confidence Calibration for Reliable Decision Making with Large Language Models
-
-大语言模型（LLMs）在高风险领域的决策支持中应用日益广泛，但它们经常产生幻觉，且所表达的置信度与事实正确性不一致。响应级置信度是一种粗糙的信号：单次生成可能混合正确与错误的陈述，因此对于必须接受、拒绝或验证每条信息的用户而言，单一数值不具有可操作性。我们研究声明级置信度校准作为一种与决策相关的不确定性信号：每个响应被分解为原子性的、可验证的声明，并且利用样本间一致性及自我验证的推理时信号，为每条声明分配经过校准的置信度。我们的框架在黑盒设置中运行（无需logits，无需微调），并直接在声明级别应用事后校准，从而实现对低置信度声明的选择性干预，如证据检索或人工审查。在TriviaQA和TruthfulQA上，我们评估了六个近期模型（Llama-3.1、Mistral、Qwen2.5、DeepSeek-R1、GPT-4、GPT-4o）的七种基线方法，结果表明声明级分解结合事后校准能够降低事实性问题上的期望校准误差，同时在对抗性虚假前提问题上暴露出失败模式——而正是在这类问题上，决策者最需要可靠的不确定性估计。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>功能兼容性作为持久神经学习的决定因素</title>
-      <link>https://arxiv.org/abs/2608.22462</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22462</guid>
-      <description>英文原题：Functional compatibility as a determinant of persistent neural learning
-
-人工神经网络可以获得新能力，但在继续学习时往往会破坏已有能力。这一稳定性-可塑性困境推动了回放、正则化和约束更新等方法的发展，但尚不清楚输入学习本身的某种属性是否决定了在不破坏受保护行为的前提下哪些内容可以被保留。在这里，我们表明功能兼容性——新学习与必须保留的行为能够共存的程度——是持久学习的因果决定因素。据我们所知，这是首次受控因果演示，其中兼容性被刻意地从匹配的神经状态出发加以改变，并在共同的保持要求下测量持久学习。该效应在独立学习方向、卷积架构和Transformer架构、视觉和文本以及额外随机种子上均能推广。不同的学习规则在利用可用兼容性的效率上有所不同，而保持约束限制了可以存储的内容量。在更大的有限更新下，非线性几何改变了可用的学习机会，并最终阻止了匹配的兼容性连续体得以实现。这些结果确立了功能兼容性作为持久神经学习的一个实验可控制原则，将问题从防止遗忘转向识别新学习中的哪些组成部分可以安全地变为永久性的。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>比喻正义：使用定性评估和Transformer检测印地语判决书中的隐喻</title>
-      <link>https://arxiv.org/abs/2608.22446</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22446</guid>
-      <description>英文原题：Figurative Justice: Detecting metaphors in Hindi judgements with qualitative assessment and transformers
-
-隐喻是词语的概念映射比喻用法。在法律语境中，隐喻检测至关重要，因为隐喻是创造法律意义和概念的有说服力的司法手段，会产生重大后果。法官、律师和立法者在法律话语中的隐喻框架会对个人产生实时影响，并影响司法决策、论证和对法律的解释。这在人权侵犯案件中尤为关键，因为语言决定了惩罚的严重程度、公众看法和司法结果。虽然英语、西班牙语、波兰语、立陶宛语等主要语言的自动隐喻检测有助于理解语言隐喻使用背后的内在意图，但在像印地语这样的低资源语言中尚无此类尝试。印地语法律标注语料库的匮乏使得开发NLP模型并在司法程序中检测隐喻变得困难。在印度语境下，卷积神经网络（CNNs）已被用于保释判决的分类，但目前没有专门设计用于隐喻检测的模型。我们通过从印地语法律数据语料库（HLDC）中提取判决书，构建了一个印地语法律隐喻语料库（HiLeMe）。法律专家使用MIPVU框架对HiLeMe进行了标注，以对隐喻结构进行分类。我们在印地语法律隐喻检测任务上对mBERT进行了下游微调。我们构建了一个基于Transformer的隐喻检测架构，已知该架构在法律分类任务中优于传统模型。该模型为解读司法判决提供了对司法心理的洞察。我们的研究有助于推进像印地语这样的低资源语言在法律话语中的自动化模型，并设想将其推广到22种印度附表语言。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>用于调查文本分析的LLM——人类与GPT-5在归纳性内容分析上的性能比较</title>
-      <link>https://arxiv.org/abs/2608.22417</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22417</guid>
-      <description>英文原题：LLMs for Survey Text Analysis - A Performance Comparison Between Humans and GPT-5 on Inductive Content Analysis
-
-大型语言模型（LLM）越来越多地被用于支持定性研究中的文本分析，但关于它们在归纳性内容分析中表现出的证据仍然有限。本研究比较了来自一项欧洲博士生调查的903条回答中六个变量的人类编码与基于LLM的归纳性编码。五位人类编码者按照标准化编码方案进行了归纳性内容分析，而一个LLM（GPT-5.4）则使用既定的提示程序执行了相同任务。人类与LLM输出之间的一致性采用调整兰德指数（ARI）进行评估。结果显示人类与LLM之间存在对齐，编码的ARI值为0.61，主题生成的ARI值为0.54。这些值接近人类内部编码和主题结果的一致性（ARI = 0.68）以及LLM内部的一致性（ARI = 0.76）。不同变量之间的一致性差异很大，实体内部一致性低始终与实体间一致性低相关，这强调了数据特征和个体表现在可靠性中的作用。总体而言，研究结果表明，在这种特定情境下，LLM能够接近人类的编码水平，尤其是在编码层面，并且可以作为归纳性定性分析的可扩展支持工具。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Efficient Additive Randomized Encodings for String Oblivious Transfer: A Core Primitive for General Functions</title>
-      <link>https://eprint.iacr.org/2026/1781</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1781</guid>
-      <description>## 一句话结论
-
-本文针对字符串不经意传输（SOT）提出了两种更高效的加法随机编码（ARE）构造，将编码大小降至 O(λ)，从而改善通用函数安全计算框架的效率瓶颈。
-
-## 问题与动机
-
-Additive Randomized Encodings（ARE，加法随机编码）提供一条轻量级的非交互安全计算路线：各方在本地生成其输入的随机编码，求值器从这些编码的总和中恢复函数值，而不泄露额外信息。此前面向一般函数的 ARE 框架，最终都归结为对字符串不经意传输（String Oblivious Transfer, SOT）构造高效 ARE，因此 SOT-ARE 成为整体效率的核心瓶颈。本文聚焦这一最终步骤，提出改进构造。
-
-## 方法与技术路线
-
-摘要给出两条独立的技术路线。
-
-**路线一：简化 PKE-based 构造。** 作者直接构造 SOT 所需的单侧 ARE（one-sided ARE, OSARE），而不是先构造更通用的 ARE 再实例化。该 OSARE 基于公钥加密（PKE）技术，具有完全正确性（perfect correctness）和统计单侧安全性（statistically one-sided security），规模为 O(λ)。这一直接构造省去了中间转换的额外开销，从而减小了最终基于 PKE 的 ARE 整体尺寸。
-
-**路线二：基于 Squaring DDH 假设的无配对方案。** 作者首先为 Rabin-OT（一种基础不经意传输）构造 ARE，关键技巧是把待传输消息嵌入到等值检查（equality check）过程中；随后利用 Halevi 等人提出的高效的“等值检查→SOT”转换方法，将该 ARE 转换为 SOT 的 ARE。该转换只引入常数因子的通信开销，并且不增加正确性错误。最终所得 SOT-ARE 的规模为 O(λ)，正确性错误可忽略。
-
-两条路线互为补充：前者优化已有 PKE 框架的中间层；后者在不使用双线性配对的前提下，借助数论假设和模块化转换实现同样的渐近尺寸。摘要未具体说明上述 OSARE 或 Rabin-OT-ARE 的编码步骤、参数设置与安全模型细节，也未报告实验数据。
-
-## 主要结果
-
-- 改进的 PKE-based OSARE for SOT：完全正确、统计单侧安全，大小为 O(λ)。
-- 在 Squaring DDH 假设下，无配对的 ARE for SOT：大小为 O(λ)，可忽略正确性错误，转换通信开销仅为常数因子。
-
-## 为什么与兴趣相关
-
-SOT-ARE 是通用函数非交互安全计算的基础原语。本文在不依赖配对的情况下将编码大小优化到 O(λ)，降低了 ARE 框架的渐近开销，对安全计算协议的设计有直接参考价值；但论文面向通用安全计算原语，并不针对机器学习模型推理协议。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-      <category>secure computation</category>
-    </item>
-    <item>
-      <title>TransHands：将人体姿态编码器重新用作手部姿态编码器</title>
-      <link>https://arxiv.org/abs/2608.22341</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22341</guid>
-      <description>英文原题：TransHands: Repurposing Human Pose Encoders as Hand Pose Encoders
-
-从二维单目表示中提升三维手部姿态，仍然具有挑战性，因为大规模、多样化的三维标注手部数据集有限，而人体运动数据则十分丰富。我们通过将从大规模人体姿态语料库中学习到的运动表示迁移到手部领域来解决这一局限。我们提出了TransHands，一个与骨干网络无关的迁移学习框架，能够使预训练的人体运动编码器被有效地适配，用于从二维姿态输入进行三维手部姿态估计。TransHands并非从头训练特定于手部的生物力学模型，而是将两阶段训练与微调策略相结合，并配以一个轻量级的、特定于手部的输入适配模块，该模块将手部运动学与为全身运动学习到的表示空间对齐。我们在四种最先进的运动建模架构上评估了TransHands，包括基于Transformer的、基于图的和频域模型。结果表明，从人体姿态数据中学习到的运动先验能够在不同架构间一致地迁移，带来一致的精度提升、强大的跨域泛化能力（尤其是在具有挑战性的以自我为中心的设置中），以及在实际场景下游任务中的适用性。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>The Limits of $t$-Private Share Conversion</title>
-      <link>https://eprint.iacr.org/2026/1780</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1780</guid>
-      <description># 摘要导读：t-私有共享转换的极限
-
-**一句话结论**：当 $t\ge2$ 且 $q$ 与 $m$ 互素时，不存在从环 $\mathbb{Z}_m$ 到有限域 $\mathbb{F}_q$ 的 $t$-私有共享转换；因此 Alon、Beimel 和 Lasri 的 PIR 框架无法实例化为 $t$-私有 PIR 协议。
-
-**问题与动机**：私有信息检索（Private Information Retrieval, PIR）允许用户从多个服务器持有的数据库中取出一条记录，且任何单个服务器都无法获知用户查询的索引。当前最优的信息论 PIR 协议基于环 $\mathbb{Z}_m$ 上的匹配向量（matching vectors）与解码多项式（decoding polynomials）的组合（如 Efremenko、Dvir-Gopi、Ghasemi-Kopparty-Sudan 的工作）。Beimel、Ishai、Kushilevitz 和 Orlov 将其抽象为共享转换（share conversion）：一组参与方可将一种秘密共享方案下的份额转换为另一种相关方案下的份额。Alon 等人进一步抽象了近期 PIR 协议，其共享转换将份额从 $\mathbb{Z}_m$ 变换到有限域 $\mathbb{F}_q$（$q$ 为与 $m$ 互素的素数幂）。如果初始转换基于 $t$-私有秘密共享方案（即任意 $t$ 个服务器无法获知秘密），则相应 PIR 协议也是 $t$-私有的；这类转换称为 $t$-私有共享转换。此类转换有可能比已知最优的 $t$-私有 PIR 协议（Woodruff-Yekhanin、Barkol-Ishai-Weinreb）获得更好的通信复杂度，因此其存在性成为自然问题。
-
-**方法与技术路线**：研究对象是 $t$-私有共享转换，输入是 $\mathbb{Z}_m$ 上的秘密共享份额，输出是 $\mathbb{F}_q$ 上的相关秘密共享份额，要求 $q$ 与 $m$ 互素。作者首先观察到：若初始转换基于 $t$-私有秘密共享方案，则 Alon 等人的 PIR 构造也是 $t$-私有的，并将此类转换命名为 $t$-私有共享转换。接着，他们考察“是否存在这样的转换”这一核心问题。在 $t\ge2$ 且 $\gcd(q,m)=1$ 的条件下，作者证明了不存在从 $\mathbb{Z}_m$ 到 $\mathbb{F}_q$ 的 $t$-私有共享转换。摘要未披露具体证明技术或代数构造；其逻辑结论是，一旦 $t$-私有转换缺失，Alon 等人的 PIR 框架便无法通过该路径得到 $t$-私有的 PIR 协议。最后，作者将结果推广到输出为环 $\mathbb{Z}_{m'}$ 的共享转换，显示同一不可能性在更一般的环目标上也成立。
-
-**主要结果**：当 $t\ge2$ 且 $q$ 与 $m$ 互素时，不存在 $t$-私有共享转换 $\mathbb{Z}_m\to\mathbb{F}_q$；该结论还推广至输出为 $\mathbb{Z}_{m'}$ 的情形。因此，Alon 等人的 PIR 框架不能以产生 $t$-私有 PIR 协议的方式实例化。
-
-**为什么与兴趣相关**：这一结果为 $t$-私有共享转换的存在性划定了界限</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-      <category>secret sharing</category>
-    </item>
-    <item>
-      <title>超越稠密Adam状态：面向内存高效优化器的自适应对数空间量化</title>
-      <link>https://arxiv.org/abs/2608.22322</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22322</guid>
-      <description>英文原题：Beyond Dense Adam States: Adaptive Log-Space Quantization for Memory-Efficient Optimizers
-
-低精度优化器状态方法通常针对稠密的Adam风格矩进行设计，但内存高效的优化器维护的是因式分解的、基于置信度的或投影的状态，其量化误差以不同的方式传播。我们刻画了语言模型预训练中优化器状态轨迹的这种异质性，并引入了自适应对数空间（AL）量化——一种针对非负状态的分块表示，它按块自适应非零范围，同时保留精确的零值。AL8和AL16与独立的符号动量编码以及特定于状态的精度选择相结合。在总计214.7 GPU小时、共96次运行中，我们评估了AdamW、Adafactor、CAME和APOLLO路径。在20K步TinyLlama-1.1B基准上，使用AL8二阶矩和8位均匀动量的AdamW达到72.90的困惑度，而FP32为72.48，8位动态量化基线为73.54，同时将测得的优化器状态存储从8392.7 MiB减少到2119.2 MiB。CAME对其非负状态需要更高精度：AL16达到86.16的困惑度，而FP32为86.68，全AL8则达到90.19。在100K步GPT-2实验中，拓扑感知的参数保护将量化Adafactor的后期损失差距从+0.1185降低到+0.0159。这些结果支持状态感知和拓扑感知的优化器量化。端到端比较使用单一训练种子，并作为经验测量结果报告。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
-    </item>
-    <item>
-      <title>Bootstrapping using Ring Switching without Slot Recovery</title>
-      <link>https://eprint.iacr.org/2026/1779</link>
-      <guid isPermaLink="true">https://eprint.iacr.org/2026/1779</guid>
-      <description>Bootstrapping is a performance bottleneck in most ring-based FHE schemes, and ring switching can reduce its cost by moving computation from a large ring to smaller rings. However, for SIMD-packed ciphertexts, ring switching is usually followed by a slot recovery step to restore the original slot layout, which consumes much “noise capacity”, leaving the remaining capacity insufficient for subsequent operations and impeding parallelism. In this paper, we show that slot recovery is not indispensable. For CKKS and BGV/BFV bootstrapping, we prove that their ring-switched realizations operate correctly without slot recovery. More generally, for CKKS over arbitrary real inputs, we prove that a continuous slotwise function can be evaluated independently on the ring-switched leaves without slot recovery if and only if the function is affine. Our results substantially improve bootstrapping performance by exploiting the inherent parallelism across the smaller rings, lowering the correction bounds, and reducing the complexity of CoeffToSlot and SlotToCoeff as the number of slots decreases. For CKKS with \(N=2^{17}\) and \(n=2^{16}\), our implementation outperforms direct bootstrapping in throughput by \(99.7\%\)–\(113.5\%\) with sparse-secret encapsulation and by \(121.3\%\) with an alternative dense-key bootstrapper. For BGV at \(p=65537\), \(N=2^{16}\), and \(n=2^{15}\), our implementation achieves \(3.16\times\) and \(1.46\times\) speedups over partition-matched and capacity-comparable baselines, respectively. Furthermore, server key sizes are reduced by \(16.4\%\)–\(57.6\%\).</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>IACR</category>
-    </item>
-    <item>
-      <title>分歧以探索，一致以提交：路由引导的软件智能体测试时扩展</title>
-      <link>https://arxiv.org/abs/2608.22191</link>
-      <guid isPermaLink="true">https://arxiv.org/abs/2608.22191</guid>
-      <description>英文原题：Disagree to Explore, Agree to Commit: Routing-Guided Test-Time Scaling for Software Agents
-
-软件工程智能体通过长的、随机性的工具使用轨迹来解决仓库级任务，重复尝试往往能发现单次运行遗漏的修复方案。测试时扩展很困难，因为补丁缺乏规范的答案形式，而来自共享前缀的兄弟动作是相关的。我们研究了原生MoE路由器轨迹是否能在没有外部评判者或选择时测试执行的情况下指导引导和选择。我们的分析表明，路由提供了稳健的行为角色信号；令牌粒度的读取和决策匹配的比较集将其转化为有效的控制。因此，我们引入了Risa（路由信息引导与仲裁）：在轨迹内部，路由鼓励多样化探索，并在补丁提交期间进行受控收敛；在单独采样的轨迹之间，在信息丰富的补丁位置上的一致性用于选择最终候选。我们在SWE-bench Verified上使用跨规模和推理努力设置的开放权重稀疏MoE智能体进行评估。Risa的路由仲裁将宏平均解决率从均匀采样下的44.9%提高到gpt-oss系列上的48.2%，在不进行答案字符串匹配的情况下与文本共识相匹配，并且它迁移到Qwen3.6，在完整500任务基准上优于均匀选择并与文本共识相匹配。</description>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>arXiv</category>
-      <category>GPT</category>
     </item>
   </channel>
 </rss>
